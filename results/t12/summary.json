@@ -1,0 +1,513 @@
+{
+ "schema": "jev-match-bench t12 summary v1",
+ "design": "plan/t12.md",
+ "report": "results/t12-findings.md",
+ "note": "One entry per local model, chart-ready. route1.accuracy is pooled over every route1 question that was asked (MASSIVE scenario and intent de/en, fast-decisions en): the 100 support_intent:intent questions have 28 options, more than the 26 letters, and are written as unanswered by design for every local model, so they are left out (route1.excluded_unanswered_by_design). accuracy_groups are the score report groups. letter_mass_below_05_share: share of asked questions whose answer letters had less than half of the probability among the top 20 tokens. wall_s: run time of the task from the T12 driver (first to last row for winnow-12b, measured before T12); items_per_s = items / wall_s, one stream, from a Mac over the LAN to Ollama 0.35.0 on one RTX 4090 (24 GB). vram_max_mib: peak nvidia-smi memory.used during the runs, including about 1.7 to 3.3 GiB of the desktop (vram_idle_mib). fits_in_vram: Ollama /api/ps size_vram equals size (all layers on the GPU); for the Gemma 4 builds /api/ps is not usable under Ollama 0.35.0, so it is peak VRAM below 24,000 MiB. ex1 F1 in percent, micro over slots.",
+ "models": [
+  {
+   "arm": "qwen3-4b",
+   "model": "qwen3:4b-q4_K_M",
+   "family": "Qwen3",
+   "size_class": "small",
+   "params_b": 4,
+   "quant": "Q4_K_M",
+   "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
+   "route1": {
+    "accuracy": 69.2,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 57.5,
+     "massive scenario, en": 63,
+     "massive intent, 2+ options, de": 77,
+     "massive intent, 2+ options, en": 82.6,
+     "fastdec, tasks with 26 options or fewer, en": 59.7
+    },
+    "letter_mass_below_05_share": 0.004,
+    "letter_mass_median": 1,
+    "format_failure": false,
+    "wall_s": 558,
+    "items_per_s": 25.8,
+    "p50_ms": 36
+   },
+   "ex1": {
+    "slot_f1_de": 26.3,
+    "slot_f1_en": 36.1,
+    "exact_frame_de": 32.4,
+    "exact_frame_en": 32.8,
+    "n": 2000,
+    "wall_s": 258,
+    "items_per_s": 7.75,
+    "p50_ms": 112
+   },
+   "vram_max_mib": 8421,
+   "vram_idle_mib": 3315,
+   "fits_in_vram": true,
+   "load_s": 2,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "qwen3-14b",
+   "model": "qwen3:14b",
+   "family": "Qwen3",
+   "size_class": "medium",
+   "params_b": 14.8,
+   "quant": "Q4_K_M",
+   "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+   "route1": {
+    "accuracy": 73,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 65.6,
+     "massive scenario, en": 69,
+     "massive intent, 2+ options, de": 79.9,
+     "massive intent, 2+ options, en": 83.5,
+     "fastdec, tasks with 26 options or fewer, en": 60.9
+    },
+    "letter_mass_below_05_share": 0.0022,
+    "letter_mass_median": 1,
+    "format_failure": false,
+    "wall_s": 752,
+    "items_per_s": 19.14,
+    "p50_ms": 49
+   },
+   "ex1": {
+    "slot_f1_de": 35.1,
+    "slot_f1_en": 43.9,
+    "exact_frame_de": 28.5,
+    "exact_frame_en": 32.6,
+    "n": 2000,
+    "wall_s": 651,
+    "items_per_s": 3.07,
+    "p50_ms": 279
+   },
+   "vram_max_mib": 13932,
+   "vram_idle_mib": 2093,
+   "fits_in_vram": true,
+   "load_s": 3,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "qwen3-30b-a3b",
+   "model": "qwen3:30b-a3b-q4_K_M",
+   "family": "Qwen3 (MoE)",
+   "size_class": "moe",
+   "params_b": 30.5,
+   "quant": "Q4_K_M",
+   "digest": "0b28110b7a3364296d5cef609095537189fbb81547761de69fd22dd68d2166c2",
+   "route1": {
+    "accuracy": 66.6,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 59.8,
+     "massive scenario, en": 61.5,
+     "massive intent, 2+ options, de": 70.8,
+     "massive intent, 2+ options, en": 77,
+     "fastdec, tasks with 26 options or fewer, en": 56.2
+    },
+    "letter_mass_below_05_share": 0.4373,
+    "letter_mass_median": 0.8789,
+    "format_failure": false,
+    "wall_s": 1005,
+    "items_per_s": 14.32,
+    "p50_ms": 60
+   },
+   "ex1": {
+    "slot_f1_de": 33.9,
+    "slot_f1_en": 39,
+    "exact_frame_de": 24.4,
+    "exact_frame_en": 29.2,
+    "n": 2000,
+    "wall_s": 498,
+    "items_per_s": 4.02,
+    "p50_ms": 228
+   },
+   "vram_max_mib": 21866,
+   "vram_idle_mib": 2226,
+   "fits_in_vram": true,
+   "load_s": 4.7,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "qwen3-32b",
+   "model": "qwen3:32b",
+   "family": "Qwen3",
+   "size_class": "large",
+   "params_b": 32.8,
+   "quant": "Q4_K_M",
+   "digest": "030ee887880fc378860c2dd35101da424377520441ae4bfe7be6deff8ade7840",
+   "route1": {
+    "accuracy": 74.9,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 67.3,
+     "massive scenario, en": 69.8,
+     "massive intent, 2+ options, de": 84.2,
+     "massive intent, 2+ options, en": 86.7,
+     "fastdec, tasks with 26 options or fewer, en": 60.6
+    },
+    "letter_mass_below_05_share": 0.0042,
+    "letter_mass_median": 1,
+    "format_failure": false,
+    "wall_s": 2827,
+    "items_per_s": 5.09,
+    "p50_ms": 168
+   },
+   "ex1": {
+    "slot_f1_de": 39.8,
+    "slot_f1_en": 44.3,
+    "exact_frame_de": 28.9,
+    "exact_frame_en": 29.9,
+    "n": 2000,
+    "wall_s": 1346,
+    "items_per_s": 1.49,
+    "p50_ms": 563
+   },
+   "vram_max_mib": 23889,
+   "vram_idle_mib": 2093,
+   "fits_in_vram": false,
+   "load_s": 6,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "gemma4-e4b",
+   "model": "gemma4:e4b",
+   "family": "Gemma 4",
+   "size_class": "small",
+   "params_b": 7.5,
+   "quant": "Q4_K_M",
+   "digest": "dc35e8d9c6061baa6f0fa870975ab6932e2542b579b13ea0f199fa4bb7300c9c",
+   "route1": {
+    "accuracy": 76.8,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 69.7,
+     "massive scenario, en": 72.9,
+     "massive intent, 2+ options, de": 86,
+     "massive intent, 2+ options, en": 88.8,
+     "fastdec, tasks with 26 options or fewer, en": 61.1
+    },
+    "letter_mass_below_05_share": 0.0031,
+    "letter_mass_median": 0.9998,
+    "format_failure": false,
+    "wall_s": 781,
+    "items_per_s": 18.43,
+    "p50_ms": 52
+   },
+   "ex1": {
+    "slot_f1_de": 39.3,
+    "slot_f1_en": 42.2,
+    "exact_frame_de": 23.2,
+    "exact_frame_en": 26.3,
+    "n": 2000,
+    "wall_s": 443,
+    "items_per_s": 4.51,
+    "p50_ms": 204
+   },
+   "vram_max_mib": 7025,
+   "vram_idle_mib": 1693,
+   "fits_in_vram": true,
+   "load_s": 5.5,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "granite4-micro",
+   "model": "granite4:micro",
+   "family": "Granite 4",
+   "size_class": "small",
+   "params_b": 3.4,
+   "quant": "Q4_K_M",
+   "digest": "89962fcc75239ac434cdebceb6b7e0669397f92eaef9c487774b718bc36a3e5f",
+   "route1": {
+    "accuracy": 63.8,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 47.4,
+     "massive scenario, en": 51.9,
+     "massive intent, 2+ options, de": 77.2,
+     "massive intent, 2+ options, en": 81.5,
+     "fastdec, tasks with 26 options or fewer, en": 54.9
+    },
+    "letter_mass_below_05_share": 0.0361,
+    "letter_mass_median": 0.9737,
+    "format_failure": false,
+    "wall_s": 568,
+    "items_per_s": 25.35,
+    "p50_ms": 39
+   },
+   "ex1": {
+    "slot_f1_de": 19.5,
+    "slot_f1_en": 28.4,
+    "exact_frame_de": 35.1,
+    "exact_frame_en": 33.9,
+    "n": 2000,
+    "wall_s": 228,
+    "items_per_s": 8.77,
+    "p50_ms": 105
+   },
+   "vram_max_mib": 5533,
+   "vram_idle_mib": 1693,
+   "fits_in_vram": true,
+   "load_s": 1.7,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "phi4-14b",
+   "model": "phi4:14b",
+   "family": "Phi-4",
+   "size_class": "medium",
+   "params_b": 14.7,
+   "quant": "Q4_K_M",
+   "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba",
+   "route1": {
+    "accuracy": 75.6,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 67.8,
+     "massive scenario, en": 70.3,
+     "massive intent, 2+ options, de": 85.9,
+     "massive intent, 2+ options, en": 89,
+     "fastdec, tasks with 26 options or fewer, en": 59.7
+    },
+    "letter_mass_below_05_share": 0.3204,
+    "letter_mass_median": 0.6149,
+    "format_failure": false,
+    "wall_s": 637,
+    "items_per_s": 22.6,
+    "p50_ms": 42
+   },
+   "ex1": {
+    "slot_f1_de": 37.8,
+    "slot_f1_en": 43.6,
+    "exact_frame_de": 31.5,
+    "exact_frame_en": 35,
+    "n": 2000,
+    "wall_s": 571,
+    "items_per_s": 3.5,
+    "p50_ms": 260
+   },
+   "vram_max_mib": 13933,
+   "vram_idle_mib": 1693,
+   "fits_in_vram": true,
+   "load_s": 3,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "gemma4-12b",
+   "model": "gemma4:12b",
+   "family": "Gemma 4",
+   "size_class": "medium",
+   "params_b": 11.9,
+   "quant": "Q4_K_M",
+   "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+   "route1": {
+    "accuracy": 76.6,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 72.2,
+     "massive scenario, en": 71.9,
+     "massive intent, 2+ options, de": 83.8,
+     "massive intent, 2+ options, en": 87.6,
+     "fastdec, tasks with 26 options or fewer, en": 61.6
+    },
+    "letter_mass_below_05_share": 0.0193,
+    "letter_mass_median": 0.9997,
+    "format_failure": false,
+    "wall_s": 1366,
+    "items_per_s": 10.54,
+    "p50_ms": 82
+   },
+   "ex1": {
+    "slot_f1_de": 47.9,
+    "slot_f1_en": 51.9,
+    "exact_frame_de": 45.6,
+    "exact_frame_en": 46.1,
+    "n": 2000,
+    "wall_s": 406,
+    "items_per_s": 4.93,
+    "p50_ms": 196
+   },
+   "vram_max_mib": 11261,
+   "vram_idle_mib": 1693,
+   "fits_in_vram": true,
+   "load_s": 4.8,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "mistral-small3.2-24b",
+   "model": "mistral-small3.2:24b",
+   "family": "Mistral Small 3.2",
+   "size_class": "large",
+   "params_b": 24,
+   "quant": "Q4_K_M",
+   "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+   "route1": {
+    "accuracy": 73.5,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 62.9,
+     "massive scenario, en": 66.6,
+     "massive intent, 2+ options, de": 83.6,
+     "massive intent, 2+ options, en": 86.1,
+     "fastdec, tasks with 26 options or fewer, en": 62.8
+    },
+    "letter_mass_below_05_share": 0.482,
+    "letter_mass_median": 0.58025,
+    "format_failure": false,
+    "wall_s": 869,
+    "items_per_s": 16.57,
+    "p50_ms": 52
+   },
+   "ex1": {
+    "slot_f1_de": 36.4,
+    "slot_f1_en": 39.5,
+    "exact_frame_de": 20.8,
+    "exact_frame_en": 20.3,
+    "n": 2000,
+    "wall_s": 1284,
+    "items_per_s": 1.56,
+    "p50_ms": 643
+   },
+   "vram_max_mib": 19075,
+   "vram_idle_mib": 1693,
+   "fits_in_vram": true,
+   "load_s": 4.3,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "qwen3.8-27b",
+   "model": "qwen3.8:27b",
+   "family": "Qwen3.8",
+   "size_class": "large",
+   "params_b": 27.3,
+   "quant": "Q4_K_M",
+   "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+   "route1": {
+    "accuracy": 79.1,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 72.4,
+     "massive scenario, en": 73.8,
+     "massive intent, 2+ options, de": 90.5,
+     "massive intent, 2+ options, en": 92,
+     "fastdec, tasks with 26 options or fewer, en": 62
+    },
+    "letter_mass_below_05_share": 0.0001,
+    "letter_mass_median": 0.9851,
+    "format_failure": false,
+    "wall_s": 3118,
+    "items_per_s": 4.62,
+    "p50_ms": 207
+   },
+   "ex1": {
+    "slot_f1_de": 54.3,
+    "slot_f1_en": 55.6,
+    "exact_frame_de": 49.9,
+    "exact_frame_en": 49.1,
+    "n": 2000,
+    "wall_s": 739,
+    "items_per_s": 2.71,
+    "p50_ms": 351
+   },
+   "vram_max_mib": 20958,
+   "vram_idle_mib": 1799,
+   "fits_in_vram": true,
+   "load_s": 5.3,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "shisa-de-1",
+   "model": "hf.co/mradermacher/shisa-de-1-GGUF:Q4_K_M",
+   "family": "Gemma 4 (MoE, German-tuned)",
+   "size_class": "german-moe",
+   "params_b": 25.2,
+   "quant": "Q4_K_M",
+   "digest": "2be0f84519fab670d3d4b30503b948afc6ca0af9426f3433b1947c91658ded30",
+   "route1": {
+    "accuracy": 75.9,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 69.1,
+     "massive scenario, en": 68.8,
+     "massive intent, 2+ options, de": 86.6,
+     "massive intent, 2+ options, en": 88.9,
+     "fastdec, tasks with 26 options or fewer, en": 61
+    },
+    "letter_mass_below_05_share": 0.0011,
+    "letter_mass_median": 0.998,
+    "format_failure": false,
+    "wall_s": 1200,
+    "items_per_s": 12,
+    "p50_ms": 73
+   },
+   "ex1": {
+    "slot_f1_de": 46.3,
+    "slot_f1_en": 49.3,
+    "exact_frame_de": 36.6,
+    "exact_frame_en": 38.6,
+    "n": 2000,
+    "wall_s": 473,
+    "items_per_s": 4.23,
+    "p50_ms": 206
+   },
+   "vram_max_mib": 20238,
+   "vram_idle_mib": 2104,
+   "fits_in_vram": true,
+   "load_s": 5.3,
+   "measured_by_t12_driver": true
+  },
+  {
+   "arm": "winnow-12b",
+   "model": "hf.co/EldanRing/Winnow-12B:Q8_0",
+   "family": "Gemma 4 (LoRA)",
+   "size_class": "medium",
+   "params_b": 11.9,
+   "quant": "Q8_0",
+   "digest": "b5bedb24694537069a766763f5b25f84afe40950f4dc8bf66263bdcd6b4883a1",
+   "route1": {
+    "accuracy": 78.3,
+    "n": 14396,
+    "excluded_unanswered_by_design": 100,
+    "accuracy_groups": {
+     "massive scenario, de": 71.8,
+     "massive scenario, en": 70.6,
+     "massive intent, 2+ options, de": 89,
+     "massive intent, 2+ options, en": 91.6,
+     "fastdec, tasks with 26 options or fewer, en": 63.6
+    },
+    "letter_mass_below_05_share": 0.0313,
+    "letter_mass_median": 0.9997,
+    "format_failure": false,
+    "wall_s": 1455,
+    "items_per_s": 9.89,
+    "p50_ms": 90
+   },
+   "ex1": {
+    "slot_f1_de": 45.1,
+    "slot_f1_en": 48.9,
+    "exact_frame_de": 45.1,
+    "exact_frame_en": 44.9,
+    "n": 2000,
+    "wall_s": 769,
+    "items_per_s": 2.6,
+    "p50_ms": 397
+   },
+   "vram_max_mib": 15675,
+   "vram_note": "not run by the T12 driver: VRAM after loading with num_ctx 16384, no run peak",
+   "vram_idle_mib": 1697,
+   "fits_in_vram": true,
+   "load_s": 4.5,
+   "measured_by_t12_driver": false
+  }
+ ]
+}

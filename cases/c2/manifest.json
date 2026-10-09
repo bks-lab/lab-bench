@@ -1,0 +1,13 @@
+{
+  "test": "C2",
+  "repo": "google/fleurs",
+  "config": "de_de",
+  "split": "test",
+  "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+  "licence": "CC BY 4.0",
+  "utterances": 862,
+  "sentences": 347,
+  "audio_hours": 3.1526,
+  "test_tsv_sha256": "82fab72c58a347345675c238f2492bb997105a4ab45d69e2a2b34ed29082fa97",
+  "test_tar_gz_sha256": "e86b42dfcdef749926cd92135045f87c25966c09e50d01c401adb04ee7d8628f"
+}

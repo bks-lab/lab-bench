@@ -21,6 +21,7 @@
  },
  "note": "Each cell is one task and one tool family. \"best_arm\" is the arm of that family with the highest value on the same test data the value is measured on, so it is chosen after the fact and flatters the families with many arms (GLiNER has up to six arms in route1 and nine in pv1, the local family has one arm in route1 and ex1 and four in pv1). Cells are per task: a family that is best on one task says nothing about another. All numbers are run 1, one run per arm. For German rows, English-only GLiNER models (GLiNER2.5-Decide, GLiNER2.5-Decide-1B) are not eligible as best arm, in route1 and pv1 alike; their best value is listed as english_model_extra. pv1 rows: baseline computed from the reference with the rule of results/pv1/gliner.md, run dates 2026-10-01 (Jev, local) and 2026-10-08 (GLiNER). skill = (value - baseline) / (100 - baseline). p50 values in route1 rows are per question group (the p50 ms column of results/route1/score.md); the Speed table of results/route1/findings.md gives medians per source and language, so the two can differ by a few ms. Latencies are not one clock: Jev is an HTTP round trip to api.typesafe.ai, the local LLM an HTTP call over the LAN, GLiNER GPU time in-process. Local cost (hardware, power) was not estimated. Tests: route1 and pv1 cells carry top_family (the family with the highest value in the row) and mcnemar_vs_top_p, an exact two-sided McNemar between this family's best arm and the top family's best arm on the same items (unanswered counts as wrong); route1 and pv1 cells other than Jev also carry mcnemar_vs_jev_p. Both compared arms are picked after the fact as the best of their family, and no p value is corrected for that or for the number of tests, so p >= 0.05 means the difference is not established, not that the two are level. ex1 cells have no test; their skill is F1 against a baseline F1 of 0, exact_frame_skill compares whole frames against extracting nothing.",
  "classic_note": "The classic family (plan/t3.md) is a trained classifier: multilingual-e5-base sentence embeddings plus logistic regression, fitted on the MASSIVE 1.1 train split of the same locale. The other three families get no training data. top_family and mcnemar_vs_top_p are therefore computed among jev, gliner and local-llm only; a classic cell carries top_family (that zero-shot top), its own mcnemar_vs_top_p against it, and mcnemar_vs_jev_p. Its two arms are classic-e5-lr (full train split) and classic-e5-lr-10shot (10 rows per class); best_arm is chosen as for every family.",
+ "local_series_note": "T12 (plan/t12.md): route1 and ex1 rows carry local_size_classes, one column per size class, each the one Qwen3 model named for that class before any T12 run (small qwen3-4b, medium qwen3-14b, large qwen3-32b, moe qwen3-30b-a3b). They are not best-of picks. The local-llm family cell stays restricted to winnow-12b in route1 and ex1, so no existing cell changed. Every other local model of the series is reported only in results/t12-findings.md. local_size_contrast is the one preregistered test per route1 row (large against small).",
  "states": {
   "measured": "a value from a run; see the cell's source_report",
   "planned": "a dated test design is committed (see plan); nothing is measured yet",
@@ -186,6 +187,81 @@
      "vs_top_only_top_right": 141,
      "vs_top_only_arm_right": 559
     }
+   },
+   "local_size_classes": {
+    "small": {
+     "arm": "qwen3-4b",
+     "value": 57.5,
+     "macro_f1": 59.3,
+     "baseline": 13.5,
+     "baseline_name": "most frequent answer",
+     "skill": 0.509,
+     "n": 2974,
+     "answered": 2974,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 36,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:4b-q4_K_M (Ollama digest 2bfd38a7daaf, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "medium": {
+     "arm": "qwen3-14b",
+     "value": 65.6,
+     "macro_f1": 66.4,
+     "baseline": 13.5,
+     "baseline_name": "most frequent answer",
+     "skill": 0.602,
+     "n": 2974,
+     "answered": 2974,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 52,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:14b (Ollama digest bdbd181c33f2, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "large": {
+     "arm": "qwen3-32b",
+     "value": 67.3,
+     "macro_f1": 69.7,
+     "baseline": 13.5,
+     "baseline_name": "most frequent answer",
+     "skill": 0.622,
+     "n": 2974,
+     "answered": 2974,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 160,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:32b (Ollama digest 030ee887880f, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "moe": {
+     "arm": "qwen3-30b-a3b",
+     "value": 59.8,
+     "macro_f1": 61.6,
+     "baseline": 13.5,
+     "baseline_name": "most frequent answer",
+     "skill": 0.535,
+     "n": 2974,
+     "answered": 2974,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 66,
+     "letter_mass_median": 0.8789,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:30b-a3b-q4_K_M (Ollama digest 0b28110b7a33, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    }
+   },
+   "local_size_contrast": {
+    "test": "exact two-sided McNemar, large against small representative, preregistered in plan/t12.md",
+    "large": "qwen3-32b",
+    "small": "qwen3-4b",
+    "paired": 2974,
+    "only_large_right": 459,
+    "only_small_right": 168,
+    "p": "<0.001"
    }
   },
   {
@@ -289,6 +365,81 @@
      "vs_top_only_top_right": 92,
      "vs_top_only_arm_right": 560
     }
+   },
+   "local_size_classes": {
+    "small": {
+     "arm": "qwen3-4b",
+     "value": 63,
+     "macro_f1": 65.2,
+     "baseline": 13.5,
+     "baseline_name": "most frequent answer",
+     "skill": 0.572,
+     "n": 2974,
+     "answered": 2974,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 36,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:4b-q4_K_M (Ollama digest 2bfd38a7daaf, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "medium": {
+     "arm": "qwen3-14b",
+     "value": 69,
+     "macro_f1": 71,
+     "baseline": 13.5,
+     "baseline_name": "most frequent answer",
+     "skill": 0.642,
+     "n": 2974,
+     "answered": 2974,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 50,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:14b (Ollama digest bdbd181c33f2, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "large": {
+     "arm": "qwen3-32b",
+     "value": 69.8,
+     "macro_f1": 72.9,
+     "baseline": 13.5,
+     "baseline_name": "most frequent answer",
+     "skill": 0.651,
+     "n": 2974,
+     "answered": 2974,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 163,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:32b (Ollama digest 030ee887880f, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "moe": {
+     "arm": "qwen3-30b-a3b",
+     "value": 61.5,
+     "macro_f1": 62.6,
+     "baseline": 13.5,
+     "baseline_name": "most frequent answer",
+     "skill": 0.554,
+     "n": 2974,
+     "answered": 2974,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 61,
+     "letter_mass_median": 0.8789,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:30b-a3b-q4_K_M (Ollama digest 0b28110b7a33, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    }
+   },
+   "local_size_contrast": {
+    "test": "exact two-sided McNemar, large against small representative, preregistered in plan/t12.md",
+    "large": "qwen3-32b",
+    "small": "qwen3-4b",
+    "paired": 2974,
+    "only_large_right": 368,
+    "only_small_right": 166,
+    "p": "<0.001"
    }
   },
   {
@@ -399,6 +550,81 @@
      "vs_top_only_top_right": 243,
      "vs_top_only_arm_right": 144
     }
+   },
+   "local_size_classes": {
+    "small": {
+     "arm": "qwen3-4b",
+     "value": 77,
+     "macro_f1": 72.1,
+     "baseline": 50.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.539,
+     "n": 2622,
+     "answered": 2622,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 35,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:4b-q4_K_M (Ollama digest 2bfd38a7daaf, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "medium": {
+     "arm": "qwen3-14b",
+     "value": 79.9,
+     "macro_f1": 78.1,
+     "baseline": 50.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.596,
+     "n": 2622,
+     "answered": 2622,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 46,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:14b (Ollama digest bdbd181c33f2, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "large": {
+     "arm": "qwen3-32b",
+     "value": 84.2,
+     "macro_f1": 83.1,
+     "baseline": 50.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.682,
+     "n": 2622,
+     "answered": 2622,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 144.5,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:32b (Ollama digest 030ee887880f, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "moe": {
+     "arm": "qwen3-30b-a3b",
+     "value": 70.8,
+     "macro_f1": 67.1,
+     "baseline": 50.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.413,
+     "n": 2622,
+     "answered": 2622,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 52,
+     "letter_mass_median": 0.8789,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:30b-a3b-q4_K_M (Ollama digest 0b28110b7a33, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    }
+   },
+   "local_size_contrast": {
+    "test": "exact two-sided McNemar, large against small representative, preregistered in plan/t12.md",
+    "large": "qwen3-32b",
+    "small": "qwen3-4b",
+    "paired": 2622,
+    "only_large_right": 316,
+    "only_small_right": 129,
+    "p": "<0.001"
    }
   },
   {
@@ -502,6 +728,81 @@
      "vs_top_only_top_right": 159,
      "vs_top_only_arm_right": 140
     }
+   },
+   "local_size_classes": {
+    "small": {
+     "arm": "qwen3-4b",
+     "value": 82.6,
+     "macro_f1": 76.1,
+     "baseline": 50.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.65,
+     "n": 2622,
+     "answered": 2622,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 35,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:4b-q4_K_M (Ollama digest 2bfd38a7daaf, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "medium": {
+     "arm": "qwen3-14b",
+     "value": 83.5,
+     "macro_f1": 81.3,
+     "baseline": 50.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.669,
+     "n": 2622,
+     "answered": 2622,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 45,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:14b (Ollama digest bdbd181c33f2, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "large": {
+     "arm": "qwen3-32b",
+     "value": 86.7,
+     "macro_f1": 85.4,
+     "baseline": 50.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.732,
+     "n": 2622,
+     "answered": 2622,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 148,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:32b (Ollama digest 030ee887880f, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "moe": {
+     "arm": "qwen3-30b-a3b",
+     "value": 77,
+     "macro_f1": 74.1,
+     "baseline": 50.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.539,
+     "n": 2622,
+     "answered": 2622,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 49,
+     "letter_mass_median": 0.8789,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:30b-a3b-q4_K_M (Ollama digest 0b28110b7a33, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    }
+   },
+   "local_size_contrast": {
+    "test": "exact two-sided McNemar, large against small representative, preregistered in plan/t12.md",
+    "large": "qwen3-32b",
+    "small": "qwen3-4b",
+    "paired": 2622,
+    "only_large_right": 229,
+    "only_small_right": 122,
+    "p": "<0.001"
    }
   },
   {
@@ -588,7 +889,82 @@
      "plan": "plan/t3.md"
     }
    },
-   "note": "Home ground for GLiNER: Fastino built fast-decisions, and its dataset card calls it the classification suite behind GLiNER2.5-Decide. Whether these dev rows were used in training is not stated, so a Decide lead or tie here is not a neutral result."
+   "note": "Home ground for GLiNER: Fastino built fast-decisions, and its dataset card calls it the classification suite behind GLiNER2.5-Decide. Whether these dev rows were used in training is not stated, so a Decide lead or tie here is not a neutral result.",
+   "local_size_classes": {
+    "small": {
+     "arm": "qwen3-4b",
+     "value": 59.7,
+     "macro_f1": 54.2,
+     "baseline": 31.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.414,
+     "n": 2500,
+     "answered": 2500,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 43,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:4b-q4_K_M (Ollama digest 2bfd38a7daaf, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "medium": {
+     "arm": "qwen3-14b",
+     "value": 60.9,
+     "macro_f1": 54.9,
+     "baseline": 31.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.432,
+     "n": 2500,
+     "answered": 2500,
+     "mcnemar_vs_jev_p": 0.005,
+     "p50_ms_per_decision": 64,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:14b (Ollama digest bdbd181c33f2, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "large": {
+     "arm": "qwen3-32b",
+     "value": 60.6,
+     "macro_f1": 54,
+     "baseline": 31.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.428,
+     "n": 2500,
+     "answered": 2500,
+     "mcnemar_vs_jev_p": 0.002,
+     "p50_ms_per_decision": 200,
+     "letter_mass_median": 1,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:32b (Ollama digest 030ee887880f, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    },
+    "moe": {
+     "arm": "qwen3-30b-a3b",
+     "value": 56.2,
+     "macro_f1": 47.5,
+     "baseline": 31.2,
+     "baseline_name": "most frequent answer",
+     "skill": 0.364,
+     "n": 2500,
+     "answered": 2500,
+     "mcnemar_vs_jev_p": "<0.001",
+     "p50_ms_per_decision": 65,
+     "letter_mass_median": 0.8789,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:30b-a3b-q4_K_M (Ollama digest 0b28110b7a33, ollama 0.35.0)",
+     "source_report": "results/route1/score.md"
+    }
+   },
+   "local_size_contrast": {
+    "test": "exact two-sided McNemar, large against small representative, preregistered in plan/t12.md",
+    "large": "qwen3-32b",
+    "small": "qwen3-4b",
+    "paired": 2500,
+    "only_large_right": 192,
+    "only_small_right": 168,
+    "p": 0.225
+   }
   },
   {
    "id": "ex1-slots-de",
@@ -652,6 +1028,72 @@
      "state": "open",
      "reason": "a trained slot tagger is possible (MASSIVE train has slot annotations) but is a different model; T3 covers classification only",
      "plan": "plan/t3.md"
+    }
+   },
+   "local_size_classes": {
+    "small": {
+     "arm": "qwen3-4b",
+     "value": 26.3,
+     "precision": 27,
+     "recall": 25.7,
+     "baseline": 0,
+     "skill": 0.263,
+     "exact_frame": 32.4,
+     "exact_frame_skill": -0.017,
+     "n": 1000,
+     "errors": 0,
+     "p50_ms_per_utterance": 110,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:4b-q4_K_M (Ollama digest 2bfd38a7daaf, ollama 0.35.0)",
+     "source_report": "results/ex1/score.md"
+    },
+    "medium": {
+     "arm": "qwen3-14b",
+     "value": 35.1,
+     "precision": 31.6,
+     "recall": 39.5,
+     "baseline": 0,
+     "skill": 0.351,
+     "exact_frame": 28.5,
+     "exact_frame_skill": -0.075,
+     "n": 1000,
+     "errors": 0,
+     "p50_ms_per_utterance": 287.5,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:14b (Ollama digest bdbd181c33f2, ollama 0.35.0)",
+     "source_report": "results/ex1/score.md"
+    },
+    "large": {
+     "arm": "qwen3-32b",
+     "value": 39.8,
+     "precision": 33.8,
+     "recall": 48.4,
+     "baseline": 0,
+     "skill": 0.398,
+     "exact_frame": 28.9,
+     "exact_frame_skill": -0.069,
+     "n": 1000,
+     "errors": 0,
+     "p50_ms_per_utterance": 592,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:32b (Ollama digest 030ee887880f, ollama 0.35.0)",
+     "source_report": "results/ex1/score.md"
+    },
+    "moe": {
+     "arm": "qwen3-30b-a3b",
+     "value": 33.9,
+     "precision": 27.4,
+     "recall": 44.2,
+     "baseline": 0,
+     "skill": 0.339,
+     "exact_frame": 24.4,
+     "exact_frame_skill": -0.137,
+     "n": 1000,
+     "errors": 0,
+     "p50_ms_per_utterance": 235,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:30b-a3b-q4_K_M (Ollama digest 0b28110b7a33, ollama 0.35.0)",
+     "source_report": "results/ex1/score.md"
     }
    }
   },
@@ -717,6 +1159,72 @@
      "state": "open",
      "reason": "a trained slot tagger is possible (MASSIVE train has slot annotations) but is a different model; T3 covers classification only",
      "plan": "plan/t3.md"
+    }
+   },
+   "local_size_classes": {
+    "small": {
+     "arm": "qwen3-4b",
+     "value": 36.1,
+     "precision": 34.1,
+     "recall": 38.4,
+     "baseline": 0,
+     "skill": 0.361,
+     "exact_frame": 32.8,
+     "exact_frame_skill": -0.011,
+     "n": 1000,
+     "errors": 1,
+     "p50_ms_per_utterance": 113,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:4b-q4_K_M (Ollama digest 2bfd38a7daaf, ollama 0.35.0)",
+     "source_report": "results/ex1/score.md"
+    },
+    "medium": {
+     "arm": "qwen3-14b",
+     "value": 43.9,
+     "precision": 38.9,
+     "recall": 50.4,
+     "baseline": 0,
+     "skill": 0.439,
+     "exact_frame": 32.6,
+     "exact_frame_skill": -0.014,
+     "n": 1000,
+     "errors": 0,
+     "p50_ms_per_utterance": 275,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:14b (Ollama digest bdbd181c33f2, ollama 0.35.0)",
+     "source_report": "results/ex1/score.md"
+    },
+    "large": {
+     "arm": "qwen3-32b",
+     "value": 44.3,
+     "precision": 38,
+     "recall": 53.3,
+     "baseline": 0,
+     "skill": 0.443,
+     "exact_frame": 29.9,
+     "exact_frame_skill": -0.054,
+     "n": 1000,
+     "errors": 0,
+     "p50_ms_per_utterance": 538.5,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:32b (Ollama digest 030ee887880f, ollama 0.35.0)",
+     "source_report": "results/ex1/score.md"
+    },
+    "moe": {
+     "arm": "qwen3-30b-a3b",
+     "value": 39,
+     "precision": 32.8,
+     "recall": 48.2,
+     "baseline": 0,
+     "skill": 0.39,
+     "exact_frame": 29.2,
+     "exact_frame_skill": -0.065,
+     "n": 1000,
+     "errors": 0,
+     "p50_ms_per_utterance": 220,
+     "measured": "2026-10-09",
+     "model_version": "qwen3:30b-a3b-q4_K_M (Ollama digest 0b28110b7a33, ollama 0.35.0)",
+     "source_report": "results/ex1/score.md"
     }
    }
   },

@@ -1,0 +1,60 @@
+{
+  "test": "C1",
+  "note": "texts not committed; hashes of the parquet files and of the loaded rows",
+  "sets": {
+    "miracl": {
+      "repo": "mteb/MIRACLRetrievalHardNegatives",
+      "planned_revision": "95c8db7d4a6e9c1d8a60601afd63d553ae20a2eb",
+      "revision": "332a9acb49f5e83d5397683f79d23e588f685916",
+      "split": "dev",
+      "licence": "CC BY-SA 4.0",
+      "files": {
+        "corpus": {
+          "hub_path": "de-corpus/dev-00000-of-00001.parquet",
+          "sha256": "8e33b4da3abaf1bf7101d1d68f50d4c3c59fda65010153d95a7412a5c0d1196b",
+          "rows_sha256": "f2d40d0c034c0b99b3f5b0855f37a2a3d662295cc7e79d82c88abd4d4859d113",
+          "rows": 71277
+        },
+        "queries": {
+          "hub_path": "de-queries/dev-00000-of-00001.parquet",
+          "sha256": "467473a078857c52663082b4db7e6c68a2c25dee08f7bb5ca054975fd8dde1f9",
+          "rows_sha256": "39c7d0e99de5d99a47d8a7129db5144148b3247deb449e4f556ac4fd049fd80b",
+          "rows": 305
+        },
+        "qrels": {
+          "hub_path": "de-qrels/dev-00000-of-00001.parquet",
+          "sha256": "a1a8e7b83ed9b197523e6ccd0aad968a59ee7ea1821d4c757c82662832c0d8d1",
+          "rows_sha256": "82610da63f5a8efa6f31ccf7d2f8aad9b97fc2a484b0deda045bccdf9212ae7b",
+          "rows": 3144
+        }
+      }
+    },
+    "germandpr": {
+      "repo": "mteb/GermanDPR",
+      "planned_revision": "64a4860e55ba6d8fcb923d5306d08e08b1c72794",
+      "revision": "64a4860e55ba6d8fcb923d5306d08e08b1c72794",
+      "split": "test",
+      "licence": "CC BY 4.0",
+      "files": {
+        "corpus": {
+          "hub_path": "corpus/test-00000-of-00001.parquet",
+          "sha256": "dbc98a814b7f597b331a1452342947f8c0f8c039172aa1d40ecfe6144862b7d9",
+          "rows_sha256": "4a6cd4ee9c095bcfa84a854cdfc74d9e5154de626d8e39bf8d57df98febe923f",
+          "rows": 2876
+        },
+        "queries": {
+          "hub_path": "queries/test-00000-of-00001.parquet",
+          "sha256": "e7c65e82283ac0d0420461ffdba3d8254e060980fe4ec5f1805053799936ca6a",
+          "rows_sha256": "a28d465a173eb3550595b1e5b62080202b7ebe29dcbd3b22e0ea989fdff760c3",
+          "rows": 1025
+        },
+        "qrels": {
+          "hub_path": "qrels/test-00000-of-00001.parquet",
+          "sha256": "3bbabe567e43d41570e2744b838a44abfe9bdd3682c2fc3e7e6c3135c9340677",
+          "rows_sha256": "be8acd0d5a41a787ae7268b8dc25717fdc46a2327335556ffcc6519044a72a03",
+          "rows": 1025
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
  *
  *   OLLAMA_HOST=http://<workstation>:11434 HOST_LABEL=local-rtx4090:11434 \
  *   VRAM_CMD='nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits' \
- *   node bench/run-t12.mjs [--only qwen3-4b,qwen3-14b] [--skip-ex1] [--probe-only]
+ *   node bench/run-t12.mjs [--only qwen3-4b,qwen3-14b] [--skip-ex1] [--probe-only] [--load-only]
  *
  * Per model:
  *   1. unload every loaded model (keep_alive 0), read idle VRAM (VRAM_CMD,
@@ -36,6 +36,8 @@ const VRAM_CMD = process.env.VRAM_CMD || 'nvidia-smi --query-gpu=memory.used --f
 const ONLY = (arg('only', '') || '').split(',').filter(Boolean);
 const SKIP_EX1 = process.argv.includes('--skip-ex1');
 const PROBE_ONLY = process.argv.includes('--probe-only');
+// --load-only: per model, three cold loads (unload, then an empty generate), wall time from the Mac
+const LOAD_ONLY = process.argv.includes('--load-only');
 
 // plan/t12.md, in the order of the plan
 export const SERIES = [
@@ -106,6 +108,28 @@ const save = () => fs.writeFileSync(outFile, JSON.stringify(machine, null, 1) + 
 if (import.meta.main ?? process.argv[1] === import.meta.filename) {
   const version = await fetch(`${HOST}/api/version`).then(r => r.json()).then(j => j.version);
   const tags = await fetch(`${HOST}/api/tags`).then(r => r.json());
+  if (LOAD_ONLY) {
+    for (const m of [...SERIES, ...MEASURED].filter(x => !ONLY.length || ONLY.includes(x.arm))) {
+      const walls = [];
+      for (let i = 0; i < 3; i++) {
+        await unloadAll();
+        const t0 = Date.now();
+        const r = await post('/api/generate', { model: m.model, prompt: '', keep_alive: '5m', options: { num_ctx: 16384 } });
+        if (r.error) { log(m.arm, r.error); break; }
+        walls.push(Date.now() - t0);
+      }
+      const loadedVram = vram();
+      await unloadAll();
+      const idleVram = vram();
+      const e = machine.arms[m.arm] ||= { arm: m.arm, model: m.model, class: m.cls, template: m.template };
+      e.load_wall_ms = walls; e.load_wall_ms_median = walls.length ? [...walls].sort((a, b) => a - b)[Math.floor(walls.length / 2)] : null;
+      if (!e.route1) { e.loaded_vram_mib = loadedVram; e.idle_vram_mib = idleVram; e.vram_note = 'not run by the T12 driver: VRAM after loading with num_ctx 16384, no run peak'; }
+      e.load_note = 'three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load';
+      log(m.arm, 'load ms', walls.join(', '));
+      save();
+    }
+    process.exit(0);
+  }
   for (const m of SERIES.filter(x => !ONLY.length || ONLY.includes(x.arm))) {
     const info = tags.models.find(t => t.name === m.model || t.model === m.model);
     if (!info) { log(`${m.arm}: ${m.model} not installed, skipped`); continue; }

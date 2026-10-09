@@ -1,0 +1,11 @@
+# Ollama template of phi4:14b (digest ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba), /api/show, read 2026-10-09T16:05:35.567Z
+# runner template: phi4
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 -}}
+<|im_start|>{{ .Role }}<|im_sep|>
+{{ .Content }}{{ if not $last }}<|im_end|>
+{{ end }}
+{{- if and (ne .Role "assistant") $last }}<|im_end|>
+<|im_start|>assistant<|im_sep|>
+{{ end }}
+{{- end }}

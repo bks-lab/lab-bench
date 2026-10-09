@@ -1,0 +1,674 @@
+{
+ "note": "plan/t12.md, written by bench/run-t12.mjs",
+ "arms": {
+  "qwen3-4b": {
+   "arm": "qwen3-4b",
+   "model": "qwen3:4b-q4_K_M",
+   "class": "small",
+   "template": "chatml",
+   "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
+   "quantization": "Q4_K_M",
+   "parameter_size": "4.0B",
+   "file_bytes": 2620788260,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T13:15:32.695Z",
+   "idle_vram_mib": 3315,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 136,
+    "raw_prompt_tokens": 138,
+    "diff": 2,
+    "chat_first": "",
+    "raw_first": "The"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 5221604392,
+   "ps_size_vram_bytes": 5221604392,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 8611,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.005,
+     "file": "results/route1/qwen3-4b/2026-10-09-run1-probe.jsonl"
+    },
+    {
+     "prefix": "Answer: **",
+     "median_mass": 1,
+     "file": "results/route1/qwen3-4b/2026-10-09-run1-probe-answer.jsonl"
+    }
+   ],
+   "prefix": "Answer: **",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 558,
+    "vram_max_mib": 8421,
+    "vram_samples": 27,
+    "ps_size_bytes": 5221604392,
+    "ps_size_vram_bytes": 5221604392
+   },
+   "ex1": {
+    "wall_s": 258,
+    "vram_max_mib": 5653,
+    "vram_samples": 12,
+    "ps_size_bytes": 3301651250,
+    "ps_size_vram_bytes": 3301651250
+   },
+   "finished": "2026-10-09T13:29:54.300Z",
+   "load_wall_ms": [
+    3063,
+    1955,
+    1962
+   ],
+   "load_wall_ms_median": 1962,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "qwen3-14b": {
+   "arm": "qwen3-14b",
+   "model": "qwen3:14b",
+   "class": "medium",
+   "template": "chatml",
+   "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+   "quantization": "Q4_K_M",
+   "parameter_size": "14.8B",
+   "file_bytes": 9276198565,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T13:29:54.464Z",
+   "idle_vram_mib": 2093,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 136,
+    "raw_prompt_tokens": 138,
+    "diff": 2,
+    "chat_first": "",
+    "raw_first": "A"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 11827402505,
+   "ps_size_vram_bytes": 11827402505,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 13763,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 1,
+     "file": "results/route1/qwen3-14b/2026-10-09-run1-probe.jsonl"
+    }
+   ],
+   "prefix": "",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 752,
+    "vram_max_mib": 13932,
+    "vram_samples": 37,
+    "ps_size_bytes": 11827402505,
+    "ps_size_vram_bytes": 11827402505
+   },
+   "ex1": {
+    "wall_s": 651,
+    "vram_max_mib": 11840,
+    "vram_samples": 32,
+    "ps_size_bytes": 9646353939,
+    "ps_size_vram_bytes": 9646353939
+   },
+   "finished": "2026-10-09T13:53:45.528Z",
+   "load_wall_ms": [
+    7065,
+    2983,
+    2968
+   ],
+   "load_wall_ms_median": 2983,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "qwen3-30b-a3b": {
+   "arm": "qwen3-30b-a3b",
+   "model": "qwen3:30b-a3b-q4_K_M",
+   "class": "moe",
+   "template": "chatml",
+   "digest": "0b28110b7a3364296d5cef609095537189fbb81547761de69fd22dd68d2166c2",
+   "quantization": "Q4_K_M",
+   "parameter_size": "30.5B",
+   "file_bytes": 18622563179,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T13:53:45.692Z",
+   "idle_vram_mib": 2226,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 136,
+    "raw_prompt_tokens": 138,
+    "diff": 2,
+    "chat_first": "",
+    "raw_first": "A"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 20157038591,
+   "ps_size_vram_bytes": 20157038591,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 21840,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.6066,
+     "file": "results/route1/qwen3-30b-a3b/2026-10-09-run1-probe.jsonl"
+    }
+   ],
+   "prefix": "",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 1005,
+    "vram_max_mib": 21866,
+    "vram_samples": 50,
+    "ps_size_bytes": 20157038591,
+    "ps_size_vram_bytes": 20157038591
+   },
+   "ex1": {
+    "wall_s": 498,
+    "vram_max_mib": 20567,
+    "vram_samples": 24,
+    "ps_size_bytes": 18936496127,
+    "ps_size_vram_bytes": 18936496127
+   },
+   "finished": "2026-10-09T14:19:37.349Z",
+   "load_wall_ms": [
+    12345,
+    4736,
+    4494
+   ],
+   "load_wall_ms_median": 4736,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "qwen3-32b": {
+   "arm": "qwen3-32b",
+   "model": "qwen3:32b",
+   "class": "large",
+   "template": "chatml",
+   "digest": "030ee887880fc378860c2dd35101da424377520441ae4bfe7be6deff8ade7840",
+   "quantization": "Q4_K_M",
+   "parameter_size": "32.8B",
+   "file_bytes": 20201253829,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T14:19:37.813Z",
+   "idle_vram_mib": 2093,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 136,
+    "raw_prompt_tokens": 138,
+    "diff": 2,
+    "chat_first": "",
+    "raw_first": "A"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 24810178477,
+   "ps_size_vram_bytes": 22803245957,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 23769,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.24955,
+     "file": "results/route1/qwen3-32b/2026-10-09-run1-probe.jsonl"
+    },
+    {
+     "prefix": "Answer: **",
+     "median_mass": 1,
+     "file": "results/route1/qwen3-32b/2026-10-09-run1-probe-answer.jsonl"
+    }
+   ],
+   "prefix": "Answer: **",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 2827,
+    "vram_max_mib": 23889,
+    "vram_samples": 141,
+    "ps_size_bytes": 24810178477,
+    "ps_size_vram_bytes": 22803245957
+   },
+   "ex1": {
+    "wall_s": 1346,
+    "vram_max_mib": 22169,
+    "vram_samples": 67,
+    "ps_size_bytes": 21030670171,
+    "ps_size_vram_bytes": 21030670171
+   },
+   "finished": "2026-10-09T15:31:19.512Z",
+   "load_wall_ms": [
+    22566,
+    5486,
+    6020
+   ],
+   "load_wall_ms_median": 6020,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "gemma4-e4b": {
+   "arm": "gemma4-e4b",
+   "model": "gemma4:e4b",
+   "class": "small",
+   "template": "gemma4",
+   "digest": "dc35e8d9c6061baa6f0fa870975ab6932e2542b579b13ea0f199fa4bb7300c9c",
+   "quantization": "Q4_K_M",
+   "parameter_size": "7.5B",
+   "file_bytes": 6583656505,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T15:31:19.690Z",
+   "idle_vram_mib": 1693,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 137,
+    "raw_prompt_tokens": 139,
+    "diff": 2,
+    "chat_first": "",
+    "raw_first": "The"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 330553097,
+   "ps_size_vram_bytes": 330553097,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 6975,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.0001,
+     "file": "results/route1/gemma4-e4b/2026-10-09-run1-probe.jsonl"
+    },
+    {
+     "prefix": "Answer: **",
+     "median_mass": 0.99975,
+     "file": "results/route1/gemma4-e4b/2026-10-09-run1-probe-answer.jsonl"
+    }
+   ],
+   "prefix": "Answer: **",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 781,
+    "vram_max_mib": 7025,
+    "vram_samples": 39,
+    "ps_size_bytes": 330553097,
+    "ps_size_vram_bytes": 330553097
+   },
+   "ex1": {
+    "wall_s": 443,
+    "vram_max_mib": 6629,
+    "vram_samples": 22,
+    "ps_size_bytes": 257152777,
+    "ps_size_vram_bytes": 257152777
+   },
+   "finished": "2026-10-09T15:52:08.728Z",
+   "load_wall_ms": [
+    7850,
+    4835,
+    5501
+   ],
+   "load_wall_ms_median": 5501,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "granite4-micro": {
+   "arm": "granite4-micro",
+   "model": "granite4:micro",
+   "class": "small",
+   "template": "granite",
+   "digest": "89962fcc75239ac434cdebceb6b7e0669397f92eaef9c487774b718bc36a3e5f",
+   "quantization": "Q4_K_M",
+   "parameter_size": "3.4B",
+   "file_bytes": 2099521385,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T15:52:09.045Z",
+   "idle_vram_mib": 1693,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 135,
+    "raw_prompt_tokens": 135,
+    "diff": 0,
+    "chat_first": "E",
+    "raw_first": "E"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 3603808910,
+   "ps_size_vram_bytes": 3603808910,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 5521,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.9776,
+     "file": "results/route1/granite4-micro/2026-10-09-run1-probe.jsonl"
+    }
+   ],
+   "prefix": "",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 568,
+    "vram_max_mib": 5533,
+    "vram_samples": 28,
+    "ps_size_bytes": 3603808910,
+    "ps_size_vram_bytes": 3603808910
+   },
+   "ex1": {
+    "wall_s": 228,
+    "vram_max_mib": 4481,
+    "vram_samples": 11,
+    "ps_size_bytes": 2501745048,
+    "ps_size_vram_bytes": 2501745048
+   },
+   "finished": "2026-10-09T16:05:35.451Z",
+   "load_wall_ms": [
+    2883,
+    1698,
+    1697
+   ],
+   "load_wall_ms_median": 1698,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "phi4-14b": {
+   "arm": "phi4-14b",
+   "model": "phi4:14b",
+   "class": "medium",
+   "template": "phi4",
+   "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba",
+   "quantization": "Q4_K_M",
+   "parameter_size": "14.7B",
+   "file_bytes": 9053116391,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T16:05:35.554Z",
+   "idle_vram_mib": 1693,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 138,
+    "raw_prompt_tokens": 138,
+    "diff": 0,
+    "chat_first": "The",
+    "raw_first": "The"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 12411710995,
+   "ps_size_vram_bytes": 12411710995,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 13919,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.7460500000000001,
+     "file": "results/route1/phi4-14b/2026-10-09-run1-probe.jsonl"
+    }
+   ],
+   "prefix": "",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 637,
+    "vram_max_mib": 13933,
+    "vram_samples": 31,
+    "ps_size_bytes": 12411710995,
+    "ps_size_vram_bytes": 12411710995
+   },
+   "ex1": {
+    "wall_s": 571,
+    "vram_max_mib": 11379,
+    "vram_samples": 28,
+    "ps_size_bytes": 9734685981,
+    "ps_size_vram_bytes": 9734685981
+   },
+   "finished": "2026-10-09T16:26:03.482Z",
+   "load_wall_ms": [
+    6850,
+    2969,
+    2707
+   ],
+   "load_wall_ms_median": 2969,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "gemma4-12b": {
+   "arm": "gemma4-12b",
+   "model": "gemma4:12b",
+   "class": "medium",
+   "template": "gemma4",
+   "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+   "quantization": "Q4_K_M",
+   "parameter_size": "11.9B",
+   "file_bytes": 8021618941,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T16:26:03.602Z",
+   "idle_vram_mib": 1693,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 137,
+    "raw_prompt_tokens": 139,
+    "diff": 2,
+    "chat_first": "",
+    "raw_first": "A"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 1351740292,
+   "ps_size_vram_bytes": 1351740292,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 11231,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.99905,
+     "file": "results/route1/gemma4-12b/2026-10-09-run1-probe.jsonl"
+    }
+   ],
+   "prefix": "",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 1366,
+    "vram_max_mib": 11261,
+    "vram_samples": 68,
+    "ps_size_bytes": 1351740292,
+    "ps_size_vram_bytes": 1351740292
+   },
+   "ex1": {
+    "wall_s": 406,
+    "vram_max_mib": 10661,
+    "vram_samples": 20,
+    "ps_size_bytes": 1085926276,
+    "ps_size_vram_bytes": 1085926276
+   },
+   "finished": "2026-10-09T16:55:56.589Z",
+   "load_wall_ms": [
+    8665,
+    4829,
+    4574
+   ],
+   "load_wall_ms_median": 4829,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "mistral-small3.2-24b": {
+   "arm": "mistral-small3.2-24b",
+   "model": "mistral-small3.2:24b",
+   "class": "large",
+   "template": "mistral",
+   "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+   "quantization": "Q4_K_M",
+   "parameter_size": "24.0B",
+   "file_bytes": 15177384862,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T16:56:04.078Z",
+   "idle_vram_mib": 1693,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 128,
+    "raw_prompt_tokens": 128,
+    "diff": 0,
+    "chat_first": "A",
+    "raw_first": "A"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 16945428561,
+   "ps_size_vram_bytes": 16945428561,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 19053,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.69145,
+     "file": "results/route1/mistral-small3.2-24b/2026-10-09-run1-probe.jsonl"
+    }
+   ],
+   "prefix": "",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 869,
+    "vram_max_mib": 19075,
+    "vram_samples": 43,
+    "ps_size_bytes": 16945428561,
+    "ps_size_vram_bytes": 16945428561
+   },
+   "ex1": {
+    "wall_s": 1284,
+    "vram_max_mib": 17245,
+    "vram_samples": 64,
+    "ps_size_bytes": 14919579729,
+    "ps_size_vram_bytes": 14919579729
+   },
+   "finished": "2026-10-09T17:32:17.865Z",
+   "load_wall_ms": [
+    10530,
+    4256,
+    4250
+   ],
+   "load_wall_ms_median": 4256,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "qwen3.8-27b": {
+   "arm": "qwen3.8-27b",
+   "model": "qwen3.8:27b",
+   "class": "large",
+   "template": "chatml",
+   "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+   "quantization": "Q4_K_M",
+   "parameter_size": "27.3B",
+   "file_bytes": 17741872154,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T17:32:18.027Z",
+   "idle_vram_mib": 1799,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 137,
+    "raw_prompt_tokens": 139,
+    "diff": 2,
+    "chat_first": "",
+    "raw_first": "A"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 17315859003,
+   "ps_size_vram_bytes": 17315859003,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 20890,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.9852000000000001,
+     "file": "results/route1/qwen3.8-27b/2026-10-09-run1-probe.jsonl"
+    }
+   ],
+   "prefix": "",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 3118,
+    "vram_max_mib": 20958,
+    "vram_samples": 155,
+    "ps_size_bytes": 17315859003,
+    "ps_size_vram_bytes": 17315859003
+   },
+   "ex1": {
+    "wall_s": 739,
+    "vram_max_mib": 20048,
+    "vram_samples": 36,
+    "ps_size_bytes": 17278110267,
+    "ps_size_vram_bytes": 17278110267
+   },
+   "finished": "2026-10-09T18:37:06.392Z",
+   "load_wall_ms": [
+    12532,
+    5271,
+    5258
+   ],
+   "load_wall_ms_median": 5271,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "shisa-de-1": {
+   "arm": "shisa-de-1",
+   "model": "hf.co/mradermacher/shisa-de-1-GGUF:Q4_K_M",
+   "class": "german-moe",
+   "template": "gemma4",
+   "digest": "2be0f84519fab670d3d4b30503b948afc6ca0af9426f3433b1947c91658ded30",
+   "quantization": "Q4_K_M",
+   "parameter_size": "25.2B",
+   "file_bytes": 17602427464,
+   "runtime": "ollama 0.35.0",
+   "host": "local-rtx4090:11434",
+   "started": "2026-10-09T18:37:06.566Z",
+   "idle_vram_mib": 2104,
+   "template_check": {
+    "question": "massive-0-de scenario",
+    "chat_prompt_tokens": 137,
+    "raw_prompt_tokens": 139,
+    "diff": 2,
+    "chat_first": "",
+    "raw_first": "A"
+   },
+   "load_ms": null,
+   "ps_size_bytes": 17689036717,
+   "ps_size_vram_bytes": 17689036717,
+   "ps_context_length": 16384,
+   "loaded_vram_mib": 20190,
+   "probe": [
+    {
+     "prefix": "",
+     "median_mass": 0.99785,
+     "file": "results/route1/shisa-de-1/2026-10-09-run1-probe.jsonl"
+    }
+   ],
+   "prefix": "",
+   "route1_format_failure": false,
+   "route1": {
+    "wall_s": 1200,
+    "vram_max_mib": 20238,
+    "vram_samples": 60,
+    "ps_size_bytes": 17689036717,
+    "ps_size_vram_bytes": 17689036717
+   },
+   "ex1": {
+    "wall_s": 473,
+    "vram_max_mib": 19722,
+    "vram_samples": 23,
+    "ps_size_bytes": 17405375937,
+    "ps_size_vram_bytes": 17405375937
+   },
+   "finished": "2026-10-09T19:05:31.836Z",
+   "load_wall_ms": [
+    12515,
+    5304,
+    5026
+   ],
+   "load_wall_ms_median": 5304,
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  },
+  "winnow-12b": {
+   "arm": "winnow-12b",
+   "model": "hf.co/EldanRing/Winnow-12B:Q8_0",
+   "class": "medium",
+   "template": "gemma4",
+   "load_wall_ms": [
+    10326,
+    4528,
+    4518
+   ],
+   "load_wall_ms_median": 4528,
+   "loaded_vram_mib": 15675,
+   "idle_vram_mib": 1697,
+   "vram_note": "not run by the T12 driver: VRAM after loading with num_ctx 16384, no run peak",
+   "load_note": "three loads after an unload, empty prompt, num_ctx 16384, wall time of the HTTP call from the Mac; the file is in the OS cache after the run, so this is a warm-disk load"
+  }
+ }
+}
