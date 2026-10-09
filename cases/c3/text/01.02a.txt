@@ -1,0 +1,161 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                         DE123456789/123456
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        04011000-12346-97                          Ort:              [Buyer city]
+ Name:                  [Buyer name]                               Ländercode:       DE
+
+ Adresszeile 1:         [Buyer address line 1]                     Kennung:          BI12345678
+
+ PLZ:                   12345                                      Kontaktstelle :   [Buyer contact person]
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                              Ländercode:       DE
+
+ Adresszeile 1:         [Seller address line 1]                    Name:             -
+
+ PLZ:                   12345                                      Telefon:          [012-3456789]
+
+ Ort:                   [Seller city]                              E-Mail-Adresse:   Seller@email.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       123456                                     Währung:          EUR
+
+ Rechnungsdatum:        21.6.2016                                  Auragsnummer:    SO12345678
+
+ Rechnungsart:          380
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                              11,78
+ Gesamtsumme                                                                                                         11,78
+ Summe Umsatzsteuer                                                                                                   0,82
+ Gesamtsumme                                                                                                         12,60
+ Summe Fremdforderungen                                                                                               0,00
+ Fälliger Betrag                                                                                                     12,60
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                         11,78
+ Umsatzsteuersatz                                                                                                   7,00%
+ Umsatzsteuerbetrag                                                                                                   0,82
+
+ Zahlungsdaten
+
+ Skonto; weitere        Bitte überweisen Sie den Betrag            Code für das      58
+ Zahlungsbedingungen:   innerhalb von 14 Tagen auf unten           Zahlungsmittel:
+                        stehendes Konto. Das Rechnungsdatum
+                        entspricht dem Versanddatum.
+
+
+ Überweisung
+ IBAN:                  DE79000000001234567890
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:                ADU
+
+
+
+                                                         Seite 1 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                  DE123456789/123456
+
+
+
+ Bemerkung:               Bei Fragen zu Ihrer Rechnung wenden Sie sich bitte an unseren Kundenserivce. Sie erreichen uns per
+                          Email: […], Tel.: […] oder Fax: […]
+
+ Betreﬀ:                  ADU
+
+ Bemerkung:               Die Lieferung erfolgt aufgrund der AGB […] erhältlich unter […]. Auf Wunsch senden wir sie auch zu.
+
+ Betreﬀ:                  ADU
+
+ Bemerkung:               Hinweis gemäß § 33 BDSG: Kundendaten werden gespeichert.
+
+ Betreﬀ:                  ADU
+
+ Bemerkung:               Beschädigt eingehende Sendungen bitte sofort beim Spediteur bzw. Paketdienstleister reklamieren.
+                          Genehmigte Rücksendungen schicken Sie bitte mit den Unterlagen an: […]
+
+Details
+ SZ300540
+
+ Position:                SZ300540
+
+
+ Preiseinzelheiten
+ Menge                                                        1,00        Umsatzsteuer:        S
+ Einheit                                                      XPP
+                                                                          Umsatzsteuersatz:    7,00%
+ Preis pro Einheit (netto)                                   11,78
+ Gesamtpreis (netto)                                         11,78
+
+ Artikelinformationen
+ Bezeichnung:             Denk doch, wie du willst                        Artikelnummer:       SZ300540
+
+ Beschreibung:            Einblicke v. Deutschlands wicht.
+                          Ökonomen
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                           Register-/           [HRB-Eintrag]
+ Handelsname:                                                             Registriernummer:
+
+ Elektronische Adresse:   seller@email.de                                 Umsatzsteuer-ID:     DE123456789
+
+ Schema der               EM                                              Weitere rechtliche   Geschäsführer: […], Sitz der GmbH ist
+ elektronischen                                                           Informationen:       […], Amtsgericht […]
+ Adresse:
+
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                   Schema der           EM
+                                                                          elektronischen
+                                                                          Adresse:
+
+
+
+ Lieferinformationen
+
+ Lieferdatum:             21.6.2016
+
+
+
+
+                                                                Seite 2 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                  DE123456789/123456
+
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:         urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+
+ Speziﬁkationskennung:   urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+ Vom Verkäufer abweichender Zahlungsempfänger
+
+ Name:                   VSB - Verlagsservice Braunschweig
+                         GmbH
+
+
+
+
+                                                              Seite 3 / 3
+

@@ -1,0 +1,274 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                      ATU123456789/1234567
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:     90000000-03083-72                        Ort:                  [Buyer city]
+ Name:               [Buyer name]                             Ländercode:           DE
+
+ Adresszeile 1:      [Buyer address line 1]                   Kennung:              138
+
+ Adresszeile 2:      [Buyer address line 2]                   Kontaktstelle :       Tina Tester
+
+ Adresszeile 3:      [Buyer address line 3]                   Telefon:              0800 123456
+
+ PLZ:                98765                                    E-Mail-Adresse:       tester@test.de
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:         [Seller name]                            Kennung:              4721480668400
+
+ Adresszeile 1:      [Seller address line 1]                  Schema der Kennung:   0088
+
+ Adresszeile 2:      [Seller address line 2]                  Name:                 Tim Tester
+
+ PLZ:                12345                                    Telefon:              012 3456789
+
+ Ort:                [Seller city]                            E-Mail-Adresse:       tim.tester@test.com
+
+ Ländercode:         DE
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:    1234567                                  Projektnummer:        PR12345678
+
+ Rechnungsdatum:     13.4.2018                                Vertragsnummer:       0000000752
+
+ Rechnungsart:       380                                      Bestellnummer:        65002278
+
+ Währung:            EUR                                      Auragsnummer:        ABC123456789
+
+ Abrechnungsdatum    13.4.2018
+ der Umsatzsteuer:
+
+
+ Abrechnungszeitraum
+ Von:                1.1.2016                                 Bis:                  31.12.2016
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                         10.781,25
+ Summe Nachlässe                                                                                                     0,00
+ Summe Zuschläge                                                                                                     0,00
+ Gesamtsumme                                                                                                    10.781,25
+ Summe Umsatzsteuer                                                                                              2.048,44
+ Summe Umsatzsteuer in Abrechnungswährung                                                                        2.048,44
+ Gesamtsumme                                                                                                    12.829,69
+ Gezahlter Betrag                                                                                                    0,00
+ Rundungsbetrag                                                                                                      0,00
+ Summe Fremdforderungen                                                                                              0,00
+ Fälliger Betrag                                                                                                12.829,69
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+
+
+
+
+                                                    Seite 1 / 4
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                   ATU123456789/1234567
+
+
+
+ Gesamtsumme                                                                                                                 10.781,25
+ Umsatzsteuersatz                                                                                                              19,00%
+ Umsatzsteuerbetrag                                                                                                           2.048,44
+
+ Umsatzsteuerkategorie: E
+ Gesamtsumme                                                                                                                      0,00
+ Umsatzsteuersatz                                                                                                               0,00%
+ Umsatzsteuerbetrag                                                                                                               0,00
+
+ Kennung für den        VATEX-EU-132-1A
+ Befreiungsgrund:
+
+
+ Nachlass auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie des Nachlasses: E                                    Grund für den       Fixed long term
+ Grundbetrag                                                 0,00           Nachlass:
+
+ Prozentsatz                                               0,00%            Kennung für den     102
+ Nachlass                                                    0,00           Nachlassgrund:
+ Umsatzsteuersatz des Nachlasses                           0,00%
+
+ Zuschlag auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie des Zuschlages: E                                    Grund für den       Testing
+ Grundbetrag                                                 0,00           Zuschlag:
+
+ Prozentsatz                                               0,00%            Kennung für den     TAC
+ Zuschlag                                                    0,00           Zuschlagsgrund:
+ Umsatzsteuersatz des Zuschlages                           0,00%
+
+ Zahlungsdaten
+
+ Skonto; weitere        Bitte überweisen Sie bis zum 24.01.2015             Code für das        58
+ Zahlungsbedingungen:   auf das unten aufgeführte Konto.                    Zahlungsmittel:
+
+ Fälligkeitsdatum:      13.4.2018                                           Verwendungszweck:   Deb. 12345 / Fact. 9876543
+
+
+ Überweisung
+ Kontoinhaber:          [Payment account name]                              BIC:                [BIC]
+
+ IBAN:                  DE79000000001234567890
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:                AAC
+
+ Bemerkung:             Invoice Note Description
+
+Details
+ 1
+
+ Position:              1                                                   Nummer der          6171175.1
+                                                                            Auragsposition:
+ Freitext:              Die letzte Lieferung im Rahmen des
+                        abgerechneten Abonnements erfolgt
+                        in 12/2016 Lieferung erfolgt / erfolgte
+                        direkt vom Verlag
+
+
+ Abrechnungszeitraum
+
+
+
+                                                                  Seite 2 / 4
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                    ATU123456789/1234567
+
+
+
+ Von:                     1.1.2016                                         Bis:                     31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                                        33,00        Umsatzsteuer:            S
+ Einheit                                                       XPP
+                                                                           Umsatzsteuersatz:        19,00%
+ Preis pro Einheit (netto)                                   143,75
+ Gesamtpreis (netto)                                     4.743,75
+
+ Artikelinformationen
+ Bezeichnung:             Beratung                                         Code der                 0721-880X
+                                                                           Artikelklassiﬁzierung:
+ Beschreibung:            Anforderungmanagament
+                                                                           Kennung zur Bildung      IB
+ Artikelnummer:           1034                                             des Schemas:
+
+
+
+ 2
+
+ Position:                2
+
+
+ Preiseinzelheiten
+ Menge                                                        42,00        Umsatzsteuer:            S
+ Einheit                                                       XPP
+                                                                           Umsatzsteuersatz:        19,00%
+ Preis pro Einheit (netto)                                   143,75
+ Gesamtpreis (netto)                                     6.037,50
+
+ Artikelinformationen
+ Bezeichnung:             Beratung
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                            Schema der               0088
+ Handelsname:                                                              Registernummer:
+
+ Elektronische Adresse:   rechnungsausgang@test.com                        Umsatzsteuer-ID:         ATU123456789
+
+ Schema der               EM                                               Steuernummer:            123/456/789
+ elektronischen
+ Adresse:                                                                  Weitere rechtliche       Amtsgericht […], Geschäsführer:
+                                                                           Informationen:           […], Sitz der Gesellscha […],
+ Register-/               5923183878011                                                             Aufsichtsratvorsitzender: […]
+ Registriernummer:
+                                                                           Code der                 GBP
+                                                                           Umsatzsteuerwährung:
+
+
+
+ Steuervertreter des Verkäufers
+
+ Name:                    [Seller tax representative name]                 Umsatzsteuer-ID:         DE124567
+
+ Ländercode:              DE
+
+
+ Informationen zum Käufer
+
+ Abweichender             [Buyer trading name]                             Schema der               EM
+ Handelsname:                                                              elektronischen
+                                                                           Adresse:
+ Elektronische Adresse:   rechnungseingang@test.de
+
+
+
+
+                                                                 Seite 3 / 4
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                 ATU123456789/1234567
+
+
+
+ Register-/              90000000-03083-72                              Umsatzsteuer-ID:    DE12345ABC
+ Registriernummer:
+                                                                        Abrechnungsdatum    13.4.2018
+ Schema der Register-/   0204                                           der Umsatzsteuer:
+ Registriernummer:
+
+
+
+ Lieferinformationen
+
+ Kennung des             68                                             Adresszeile 2:      4. OG
+ Lieferorts:
+                                                                        PLZ:                98765
+ Lieferdatum:            13.4.2018
+                                                                        Ort:                [Deliver to city]
+ Name des Empfängers:    [Deliver to party name]
+                                                                        Bundesland:         Bayern
+ Adresszeile 1:          [Deliver to street]
+                                                                        Ländercode:         DE
+
+
+ Informationen zum Vertrag
+
+ Vergabenummer:          ANG987654321
+ Prozesskennung:         urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+
+ Speziﬁkationskennung:   urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+ Vom Verkäufer abweichender Zahlungsempfänger
+
+ Name:                   [Payee name]                                   Kennung:            74
+
+
+Anlagen
+ Rechnungsbegründende Unterlagen
+
+ Kennung:                01_15_Anhang_01.pdf                            Format des          application/pdf
+                                                                        Anhangdokuments:
+ Beschreibung:           Aufschlüsselung der einzelnen
+                         Leistungspositionen                            Name des            01_15_Anhang_01.pdf
+                                                                        Anhangsdokuments:
+ Anhangsdokument:        01_15_Anhang_01.pdf
+
+
+
+
+                                                              Seite 4 / 4
+

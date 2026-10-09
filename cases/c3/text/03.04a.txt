@@ -1,0 +1,317 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                          ATU123456789/123456789
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        90000000-03083-72                              Ort:              [Buyer city]
+ Name:                  [Buyer name]                                   Ländercode:       DE
+
+ Adresszeile 1:         [Buyer address line 1]                         Kennung:          BI123456
+
+ PLZ:                   12345
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                                  Ländercode:       DE
+
+ Adresszeile 1:         [Seller address line 1]                        Name:             Kundencenter
+
+ PLZ:                   12345                                          Telefon:          0800-12345678
+
+ Ort:                   [Seller city]                                  E-Mail-Adresse:   kundencenter@sellder.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       123456789                                      Währung:          EUR
+
+ Rechnungsdatum:        5.6.2018                                       Vertragsnummer:   CR123456
+
+ Rechnungsart:          380
+
+ Abrechnungszeitraum
+ Von:                   1.1.2016                                       Bis:              31.12.2016
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                                35.156,82
+ Gesamtsumme                                                                                                           35.156,82
+ Summe Umsatzsteuer                                                                                                     6.679,80
+ Gesamtsumme                                                                                                           41.836,62
+ Gezahlter Betrag                                                                                                      39.839,00
+ Summe Fremdforderungen                                                                                                     0,00
+ Fälliger Betrag                                                                                                        1.997,62
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                           35.156,82
+ Umsatzsteuersatz                                                                                                        19,00%
+ Umsatzsteuerbetrag                                                                                                     6.679,80
+
+ Zahlungsdaten
+
+ Skonto; weitere        Dieses Guthaben werden wir auf Ihr             Code für das      59
+ Zahlungsbedingungen:   Konto erstatten.                               Zahlungsmittel:
+
+ Fälligkeitsdatum:      14.3.2019
+
+ Lastschri
+ Mandatsreferenznr.:    [Mandate reference identiﬁer]                  Gläubiger-ID:     [Bank assigned creditor identiﬁer]
+
+ IBAN:                  DE79000000001234567890
+
+
+
+
+                                                             Seite 1 / 5
+Bereiche ohne Inhalte werden nicht dargestellt!                                                        ATU123456789/123456789
+
+
+
+
+Details
+ 1
+
+ Position:             1                                            Freitext:           Energiepreis
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                     Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                            804.878,94        Umsatzsteuer:       S
+ Einheit                                               KWH
+                                                                    Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            0,0258
+ Gesamtpreis (netto)                              20.765,88
+
+ Artikelinformationen
+ Bezeichnung:          Energiepreis
+
+
+ 2
+
+ Position:             2                                            Freitext:           Arbeitspreis Netznutzung
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                     Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                            804.878,94        Umsatzsteuer:       S
+ Einheit                                               KWH
+                                                                    Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                           0,01146
+ Gesamtpreis (netto)                               9.223,92
+
+ Artikelinformationen
+ Bezeichnung:          Arbeitspreis Netznutzung
+
+
+ 3
+
+ Position:             3                                            Freitext:           Konzessionsabgabe
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                     Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                            804.878,94        Umsatzsteuer:       S
+ Einheit                                               KWH
+                                                                    Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            0,0003
+ Gesamtpreis (netto)                                 241,47
+
+ Artikelinformationen
+ Bezeichnung:          Konzessionsabgabe
+
+
+
+
+                                                          Seite 2 / 5
+Bereiche ohne Inhalte werden nicht dargestellt!                                                        ATU123456789/123456789
+
+
+
+
+ 4
+
+ Position:             4                                             Freitext:           Grundpreis Netz
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                      Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                                   1,00        Umsatzsteuer:       S
+ Einheit                                                ANN
+                                                                     Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              29,51
+ Gesamtpreis (netto)                                    29,51
+
+ Artikelinformationen
+ Bezeichnung:          Grundpreis Netz
+
+
+ 5
+
+ Position:             5                                             Freitext:           Messstellenbetrieb Netz
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                      Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                                   1,00        Umsatzsteuer:       S
+ Einheit                                                ANN
+                                                                     Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              17,73
+ Gesamtpreis (netto)                                    17,73
+
+ Artikelinformationen
+ Bezeichnung:          Messstellenbetrieb Netz
+
+
+ 6
+
+ Position:             6                                             Freitext:           Messstellendienstleistung Netz
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                      Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                                   1,00        Umsatzsteuer:       S
+ Einheit                                                ANN
+                                                                     Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                                1,7
+ Gesamtpreis (netto)                                     1,70
+
+ Artikelinformationen
+ Bezeichnung:          Messstellendienstleistung Netz
+
+
+
+
+                                                           Seite 3 / 5
+Bereiche ohne Inhalte werden nicht dargestellt!                                                         ATU123456789/123456789
+
+
+
+ 7
+
+ Position:             7                                            Freitext:           Abrechnung Netz
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                     Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                                  1,00        Umsatzsteuer:       S
+ Einheit                                               ANN
+                                                                    Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                             14,77
+ Gesamtpreis (netto)                                  14,77
+
+ Artikelinformationen
+ Bezeichnung:          Abrechnung Netz
+
+
+ 8
+
+ Position:             8                                            Freitext:           Bilanzierungsumlage
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                     Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                            543.758,89        Umsatzsteuer:       S
+ Einheit                                               KWH
+                                                                    Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            0,0008
+ Gesamtpreis (netto)                                 435,01
+
+ Artikelinformationen
+ Bezeichnung:          Bilanzierungsumlage
+
+
+ 9
+
+ Position:             9                                            Freitext:           Energiesteuer
+
+
+ Abrechnungszeitraum
+ Von:                  1.1.2016                                     Bis:                31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                            804.878,94        Umsatzsteuer:       S
+ Einheit                                               KWH
+                                                                    Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            0,0055
+ Gesamtpreis (netto)                               4.426,83
+
+ Artikelinformationen
+ Bezeichnung:          Energiesteuer
+
+
+
+
+                                                          Seite 4 / 5
+Bereiche ohne Inhalte werden nicht dargestellt!                                                             ATU123456789/123456789
+
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                          Schema der          EM
+ Handelsname:                                                            elektronischen
+                                                                         Adresse:
+ Elektronische Adresse:   seller@email.de
+                                                                         Umsatzsteuer-ID:    ATU123456789
+
+
+ Informationen zum Käufer
+
+ Abweichender             [Buyer trading name]                           Schema der          EM
+ Handelsname:                                                            elektronischen
+                                                                         Adresse:
+ Elektronische Adresse:   buyer@info.de
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+Anlagen
+ Rechnungsbegründende Unterlagen
+
+ Kennung:                 01_15_Anhang_01.pdf                            Format des          application/pdf
+                                                                         Anhangdokuments:
+ Beschreibung:            Aufschlüsselung der einzelnen
+                          Leistungspositionen                            Name des            01_15_Anhang_01.pdf
+                                                                         Anhangsdokuments:
+ Anhangsdokument:         01_15_Anhang_01.pdf
+
+
+
+
+                                                               Seite 5 / 5
+

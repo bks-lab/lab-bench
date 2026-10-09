@@ -1,0 +1,192 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                         DE123456789/Rechnungsnummer
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:     04011000-12353-76                        PLZ:              12345
+ Name:               [Buyer name]                             Ort:              [Buyer city]
+
+ Adresszeile 1:      [Buyer address line 1]                   Ländercode:       DE
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:         [Seller name]                            Ländercode:       DE
+
+ Adresszeile 1:      [Seller address line 1]                  Name:             Auskun erteilt Ihnen
+
+ PLZ:                12345                                    Telefon:          1234567890
+
+ Ort:                [Seller city]                            E-Mail-Adresse:   seller@test.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:    Rechnungsnummer                          Währung:          EUR
+
+ Rechnungsdatum:     2.3.2016                                 Auragsnummer:    Auragsnummer
+
+ Rechnungsart:       380
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                      256,61
+ Gesamtsumme                                                                                                 256,61
+ Summe Umsatzsteuer                                                                                           48,76
+ Gesamtsumme                                                                                                 305,37
+ Summe Fremdforderungen                                                                                        0,00
+ Fälliger Betrag                                                                                             305,37
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                  256,61
+ Umsatzsteuersatz                                                                                            19,00%
+ Umsatzsteuerbetrag                                                                                           48,76
+
+ Zahlungsdaten
+
+ Fälligkeitsdatum:   16.3.2016                                Code für das      58
+                                                              Zahlungsmittel:
+
+
+
+ Überweisung
+ IBAN:               DE79000000001234567890
+
+
+ IBAN:               DE16000000002345678901
+
+
+ IBAN:               DE03000000003456789012
+
+
+
+
+                                                    Seite 1 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                          DE123456789/Rechnungsnummer
+
+
+
+Details
+ 0010
+
+ Position:             0010
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                         12,52
+ Gesamtpreis (netto)                               12,52
+
+ Artikelinformationen
+ Bezeichnung:          Keyboard/Maus - weiß                     Artikelnummer:      CUF-90541432
+
+
+ 0020
+
+ Position:             0020
+
+
+ Preiseinzelheiten
+ Menge                                              2,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                         63,45
+ Gesamtpreis (netto)                              126,90
+
+ Artikelinformationen
+ Bezeichnung:          MX Master                                Artikelnummer:      CUF-90597289
+
+
+ 0030
+
+ Position:             0030
+
+
+ Preiseinzelheiten
+ Menge                                              2,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                         47,82
+ Gesamtpreis (netto)                               95,64
+
+ Artikelinformationen
+ Bezeichnung:          Tastatur Deutsch                         Artikelnummer:      CUF-90271291
+
+
+ 0040
+
+ Position:             0040
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                         11,75
+ Gesamtpreis (netto)                               11,75
+
+ Artikelinformationen
+
+
+                                                      Seite 2 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                       DE123456789/Rechnungsnummer
+
+
+
+ Bezeichnung:             Beschaﬀungspauschale                           Artikelnummer:       51001
+
+
+ 0050
+
+ Position:                0050
+
+
+ Preiseinzelheiten
+ Menge                                                       1,00        Umsatzsteuer:        S
+ Einheit                                                     XPP
+                                                                         Umsatzsteuersatz:    19,00%
+ Preis pro Einheit (netto)                                    9,8
+ Gesamtpreis (netto)                                         9,80
+
+ Artikelinformationen
+ Bezeichnung:             Lieferkosten                                   Artikelnummer:       51010
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                          Register-/           HRB 123
+ Handelsname:                                                            Registriernummer:
+
+ Elektronische Adresse:   seller@email.de                                Umsatzsteuer-ID:     DE123456789
+
+ Schema der               EM                                             Weitere rechtliche   Amtsgericht […], Geschäsführer:
+ elektronischen                                                          Informationen:       […], Sitz der Gesellscha […],
+ Adresse:                                                                                     Aufsichtsratvorsitzender: […]
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Schema der           EM
+                                                                         elektronischen
+                                                                         Adresse:
+
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 3 / 3
+

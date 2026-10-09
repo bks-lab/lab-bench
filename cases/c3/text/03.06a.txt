@@ -1,0 +1,198 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                DE12345464867/112233
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:     991-33333TEST-33                         PLZ:              12345
+ Name:               Testkäufer                               Ort:              Testhausen
+
+ Adresszeile 1:      Teststraße                               Ländercode:       DE
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:         Testverkäufer                            Kennung:          116078
+
+ Adresszeile 1:      Teststraße                               Name:             Test
+
+ PLZ:                12345                                    Telefon:          123456789
+
+ Ort:                Testhausen                               E-Mail-Adresse:   test@test.de
+
+ Ländercode:         DE
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:    112233                                   Rechnungsart:     380
+
+ Rechnungsdatum:     23.4.2021                                Währung:          EUR
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                    1.500,00
+ Gesamtsumme                                                                                               1.500,00
+ Summe Umsatzsteuer                                                                                          304,00
+ Gesamtsumme                                                                                               1.804,00
+ Summe Fremdforderungen                                                                                        0,00
+ Fälliger Betrag                                                                                           1.804,00
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                               1.600,00
+ Umsatzsteuersatz                                                                                           19,00%
+ Umsatzsteuerbetrag                                                                                          304,00
+
+ Umsatzsteuerkategorie: Z
+ Gesamtsumme                                                                                                -100,00
+ Umsatzsteuersatz                                                                                            0,00%
+ Umsatzsteuerbetrag                                                                                            0,00
+
+ Zahlungsdaten
+
+ Fälligkeitsdatum:   28.4.2021                                Zahlungsmittel:   SEPA-Überweisung
+
+ Code für das        58
+ Zahlungsmittel:
+
+
+
+ Überweisung
+ Kontoinhaber:       Testkäufer                               IBAN:             DE79000000001234567890
+
+
+
+
+                                                    Seite 1 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                        DE12345464867/112233
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:               ADU
+
+ Bemerkung:            Rechnung enthält 100 EUR (Umsatz)Steuer auf Altteile gem. Abschn. 10.5 Abs. 3 UStAE
+
+Details
+ 1
+
+ Position:             1
+
+
+ Preiseinzelheiten
+ Menge                                                   1,00        Listenpreis (netto):   1.010
+ Einheit                                                  C62
+                                                                     Umsatzsteuer:          S
+ Preis pro Einheit (netto)                              1.000
+ Gesamtpreis (netto)                                 1.000,00        Umsatzsteuersatz:      19,00%
+
+ Rabatt (netto):       10
+
+ Artikelinformationen
+ Bezeichnung:          Neumotor
+
+
+ 2
+
+ Position:             2
+
+
+ Preiseinzelheiten
+ Menge                                                   1,00        Listenpreis (netto):   110
+ Einheit                                                 C62
+                                                                     Umsatzsteuer:          S
+ Preis pro Einheit (netto)                                100
+ Gesamtpreis (netto)                                  100,00         Umsatzsteuersatz:      19,00%
+
+ Rabatt (netto):       10
+
+ Artikelinformationen
+ Bezeichnung:          Bemessungsgrundlage und
+                       Umsatzsteuer auf Altteil
+
+
+ 3
+
+ Position:             3
+
+
+ Preiseinzelheiten
+ Menge                                                  -1,00        Listenpreis (netto):   110
+ Einheit                                                 C62
+                                                                     Umsatzsteuer:          Z
+ Preis pro Einheit (netto)                                100
+ Gesamtpreis (netto)                                  -100,00        Umsatzsteuersatz:      0,00%
+
+ Rabatt (netto):       10
+
+ Artikelinformationen
+ Bezeichnung:          Korrektur/Stornierung
+                       Bemessungsgrundlage der
+                       Umsatzsteuer auf Altteil
+
+
+
+
+                                                           Seite 2 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                 DE12345464867/112233
+
+
+
+
+ 4
+
+ Position:                4
+
+
+ Preiseinzelheiten
+ Menge                                                      1,00         Listenpreis (netto):   510
+ Einheit                                                    HUR
+                                                                         Umsatzsteuer:          S
+ Preis pro Einheit (netto)                                   500
+ Gesamtpreis (netto)                                      500,00         Umsatzsteuersatz:      19,00%
+
+ Rabatt (netto):          10
+
+ Artikelinformationen
+ Bezeichnung:             Montage
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Elektronische Adresse:   seller@email.de                                Umsatzsteuer-ID:       DE12345464867
+
+ Schema der               EM                                             Steuernummer:          1121081508150
+ elektronischen
+ Adresse:
+
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Schema der             EM
+                                                                         elektronischen
+                                                                         Adresse:
+
+
+
+ Lieferinformationen
+
+ Lieferdatum:             23.11.2020
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 3 / 3
+

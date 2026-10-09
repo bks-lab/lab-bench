@@ -1,0 +1,140 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                            DE 123 456 789/2020-1
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:     Leitweg-ID                                   Ort:                  Berlin
+ Name:               Rechnungsempfänger                           Ländercode:           DE
+
+ Adresszeile 1:      Musterstraße 2                               Kennung:              123456789
+
+ PLZ:                01234                                        Schema der Kennung:   XR03
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:         Rechnungssteller                             Kennung:              987654321
+
+ Adresszeile 1:      Musterstraße 1                               Schema der Kennung:   XR03
+
+ PLZ:                01234                                        Name:                 Max Mustermann
+
+ Ort:                Berlin                                       Telefon:              +49 000 001 0001
+
+ Ländercode:         DE                                           E-Mail-Adresse:       max.mustermann@rechnungssteller.de
+
+ Kennung:            TEST_RECHNUNGSSTELLER
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:    2020-1                                       Rechnungsart:         380
+
+ Rechnungsdatum:     3.1.2020                                     Währung:              EUR
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                                  100,00
+ Gesamtsumme                                                                                                             100,00
+ Summe Umsatzsteuer                                                                                                       19,00
+ Gesamtsumme                                                                                                             119,00
+ Summe Fremdforderungen                                                                                                    0,00
+ Fälliger Betrag                                                                                                         119,00
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                              100,00
+ Umsatzsteuersatz                                                                                                        19,00%
+ Umsatzsteuerbetrag                                                                                                       19,00
+
+ Zahlungsdaten
+
+ Fälligkeitsdatum:   17.1.2020                                    Code für das          30
+                                                                  Zahlungsmittel:
+
+
+
+ Überweisung
+ IBAN:               DE79000000001234567890
+
+
+
+ Bemerkungen zur Rechnung
+
+ Bemerkung:          Eine Testrechnung für das Projekt DiGA-Rechnung.
+
+
+
+                                                        Seite 1 / 2
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                  DE 123 456 789/2020-1
+
+
+
+
+Details
+ TEST_POSITION_01
+
+ Position:                TEST_POSITION_01
+
+
+ Preiseinzelheiten
+ Menge                                                        1,00        Umsatzsteuer:         S
+ Einheit                                                      C62
+                                                                          Umsatzsteuersatz:     19,00%
+ Preis pro Einheit (netto)                                     100
+ Gesamtpreis (netto)                                        100,00
+
+ Artikelinformationen
+ Bezeichnung:             Tinnitus Rex                                    Artikelkennung:       12345678
+ Beschreibung:            Ein Artikel für Testrechnungen.                 Schema der            XR01
+                                                                          Artikelkennung:
+ Artikelkennung des       ABCDEFGHIJKLMNOP
+ Käufers:
+
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Elektronische Adresse:   seller@email.de                                 Umsatzsteuer-ID:      DE 123 456 789
+
+ Schema der               EM
+ elektronischen
+ Adresse:
+
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                   Schema der            EM
+                                                                          elektronischen
+                                                                          Adresse:
+
+
+
+ Lieferinformationen
+
+ Lieferdatum:             2.1.2020
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+                          #conformant#urn:xeinkauf.de:kosit:extension:xrechnung_3.0
+
+ Vom Verkäufer abweichender Zahlungsempfänger
+
+ Name:                    Payee                                           Schema der Kennung:   XR03
+
+ Kennung:                 987654322
+
+
+
+
+                                                                Seite 2 / 2
+

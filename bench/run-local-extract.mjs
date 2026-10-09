@@ -4,7 +4,7 @@
  * to list the MASSIVE slots of an utterance as JSON.
  *
  *   node bench/run-local-extract.mjs --model hf.co/EldanRing/Winnow-12B:Q8_0 --arm winnow-12b
- *        [--template gemma4|chatml|gemma] [--host http://localhost:11434] [--pv ex1]
+ *        [--template gemma4|chatml|gemma|phi4|mistral|granite] [--host http://localhost:11434] [--pv ex1]
  *        [--lang de] [--limit N] [--tag smoke] [--run 1] [--host-label local-gpu]
  *   -> results/<pv>/<arm>/<date>-run<k>[-<lang>][-<tag>].jsonl, one row per utterance
  *
@@ -34,11 +34,13 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { rawPrompt, TEMPLATES } from './lib/templates.mjs';
 
 const arg = (name, dflt) => { const i = process.argv.indexOf(`--${name}`); return i > 0 ? process.argv[i + 1] : dflt; };
 const MODEL = arg('model');
 if (!MODEL) { console.error('--model is required'); process.exit(1); }
 const TEMPLATE = arg('template', 'gemma4');
+if (!TEMPLATES.includes(TEMPLATE)) { console.error(`unknown --template ${TEMPLATE}, one of ${TEMPLATES.join(', ')}`); process.exit(1); }
 const HOST = arg('host', process.env.OLLAMA_HOST || 'http://localhost:11434').replace(/\/$/, '');
 const ARM = arg('arm', MODEL.replace(/[:/]/g, '-'));
 // What the `host` field of every row says; default: the Ollama address without scheme.
@@ -59,9 +61,7 @@ const user = utt => `Slot types: ${Object.values(LABELS).join(', ')}\n\nText: ${
 
 function prompt(utt) {
   const u = user(utt);
-  if (TEMPLATE === 'gemma4') return `<|turn>system\n${SYSTEM}<turn|>\n<|turn>user\n${u}<turn|>\n<|turn>model\n<|channel>thought\n<channel|>`;
-  if (TEMPLATE === 'gemma') return `<start_of_turn>user\n${SYSTEM}\n\n${u}<end_of_turn>\n<start_of_turn>model\n`;
-  return `<|im_start|>system\n${SYSTEM}<|im_end|>\n<|im_start|>user\n${u}<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n`;
+  return rawPrompt(TEMPLATE, SYSTEM, u);
 }
 
 /** Label text answered by the model -> MASSIVE slot type; a MASSIVE name or an unknown text stays as it is. */

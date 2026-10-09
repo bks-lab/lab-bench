@@ -1,0 +1,310 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                  DE123456789/Rechnungsnummer
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        04011000-12354-73                              PLZ:              12345
+ Name:                  [Buyer name]                                   Ort:              [Buyer city]
+
+ Adresszeile 1:         [Buyer address line 1]                         Ländercode:       DE
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                                  Ländercode:       DE
+
+ Adresszeile 1:         [Seller address line 1]                        Name:             [Seller contact person]
+
+ PLZ:                   12345                                          Telefon:          1234567890
+
+ Ort:                   [Seller city]                                  E-Mail-Adresse:   info@seller.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       Rechnungsnummer                                Währung:          EUR
+
+ Rechnungsdatum:        9.1.2015                                       Projektnummer:    PR12345678
+
+ Rechnungsart:          380                                            Auragsnummer:    Auragsnummer
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                              5.330,00
+ Gesamtsumme                                                                                                         5.330,00
+ Summe Umsatzsteuer                                                                                                  1.012,70
+ Gesamtsumme                                                                                                         6.342,70
+ Summe Fremdforderungen                                                                                                  0,00
+ Fälliger Betrag                                                                                                     6.342,70
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                         5.330,00
+ Umsatzsteuersatz                                                                                                     19,00%
+ Umsatzsteuerbetrag                                                                                                  1.012,70
+
+ Zahlungsdaten
+
+ Skonto; weitere        Bitte überweisen Sie bis zum 24.01.2015        Code für das      58
+ Zahlungsbedingungen:   auf das unten aufgeführte Konto.               Zahlungsmittel:
+
+ Fälligkeitsdatum:      24.1.2015
+
+
+ Überweisung
+ IBAN:                  DE79000000001234567890
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:                ADU
+
+ Bemerkung:             Bearbeitungszeitraum: Dezember 2014/ 5.01.-09.01.2015 Abschlagsrechnung A 9
+
+
+
+                                                             Seite 1 / 5
+Bereiche ohne Inhalte werden nicht dargestellt!                                                DE123456789/Rechnungsnummer
+
+
+
+
+Details
+ 7
+
+ Position:             7
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00           Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                      Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              400
+ Gesamtpreis (netto)                                 400,00
+
+ Artikelinformationen
+ Bezeichnung:          Aussetzen der Kanten Neorokokosofa
+                       laut N2
+
+
+ 8
+
+ Position:             8
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00           Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                      Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              240
+ Gesamtpreis (netto)                                 240,00
+
+ Artikelinformationen
+ Bezeichnung:          Aussetzen der Kanten am Sofa um 1780
+                       laut N2
+
+
+ 9
+
+ Position:             9
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00           Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                      Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              120
+ Gesamtpreis (netto)                                 120,00
+
+ Artikelinformationen
+ Bezeichnung:          Analyse Pigment
+
+
+ 10
+
+ Position:             10
+
+
+ Preiseinzelheiten
+
+
+
+
+                                                            Seite 2 / 5
+Bereiche ohne Inhalte werden nicht dargestellt!                                             DE123456789/Rechnungsnummer
+
+
+
+ Menge                                                 1,00        Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                   Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                               70
+ Gesamtpreis (netto)                                  70,00
+
+ Artikelinformationen
+ Bezeichnung:          Querschliﬀ
+
+
+ 5.2
+
+ Position:             5.2
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00        Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                   Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              140
+ Gesamtpreis (netto)                                 140,00
+
+ Artikelinformationen
+ Bezeichnung:          Furnierniederlegung 50 %
+
+
+ 2
+
+ Position:             2
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00        Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                   Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              400
+ Gesamtpreis (netto)                                 400,00
+
+ Artikelinformationen
+ Bezeichnung:          Transport 25 %
+
+
+ 7.1
+
+ Position:             7.1
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00        Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                   Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              280
+ Gesamtpreis (netto)                                 280,00
+
+ Artikelinformationen
+ Bezeichnung:          Sofa um 1780 Reinigung der Oberﬂäche
+
+
+ 7.2
+
+ Position:             7.2
+
+
+
+
+                                                         Seite 3 / 5
+Bereiche ohne Inhalte werden nicht dargestellt!                                               DE123456789/Rechnungsnummer
+
+
+
+
+ Preiseinzelheiten
+ Menge                                                  1,00         Umsatzsteuer:       S
+ Einheit                                                XPP
+                                                                     Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                               480
+ Gesamtpreis (netto)                                 480,00
+
+ Artikelinformationen
+ Bezeichnung:          Konstruktive Ertüchtigung, Ergänzung
+                       eines Beines
+
+
+ 7.3
+
+ Position:             7.3
+
+
+ Preiseinzelheiten
+ Menge                                                  1,00         Umsatzsteuer:       S
+ Einheit                                                XPP
+                                                                     Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                             1.600
+ Gesamtpreis (netto)                                1.600,00
+
+ Artikelinformationen
+ Bezeichnung:          Abnahme der rotbraunen Fassung 50 %
+
+
+ 9.1
+
+ Position:             9.1
+
+
+ Preiseinzelheiten
+ Menge                                                  1,00         Umsatzsteuer:       S
+ Einheit                                                XPP
+                                                                     Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                               400
+ Gesamtpreis (netto)                                 400,00
+
+ Artikelinformationen
+ Bezeichnung:          Neorokokosofo konstruktive
+                       Ertüchtigung
+
+
+ 9.2
+
+ Position:             9.2
+
+
+ Preiseinzelheiten
+ Menge                                                  1,00         Umsatzsteuer:       S
+ Einheit                                                XPP
+                                                                     Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                             1.200
+ Gesamtpreis (netto)                                1.200,00
+
+ Artikelinformationen
+ Bezeichnung:          Reinigung, Fassungssicherung 50 %
+
+
+
+
+                                                           Seite 4 / 5
+Bereiche ohne Inhalte werden nicht dargestellt!                                                   DE123456789/Rechnungsnummer
+
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Elektronische Adresse:   seller@email.de                                Register-/          HRB 123
+                                                                         Registriernummer:
+ Schema der               EM
+ elektronischen                                                          Umsatzsteuer-ID:    DE123456789
+ Adresse:
+                                                                         Steuernummer:       123/456/789
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Schema der          EM
+                                                                         elektronischen
+                                                                         Adresse:
+
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 5 / 5
+

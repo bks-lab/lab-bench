@@ -21,6 +21,16 @@
  * never pass a threshold and stay in the denominator.
  * Baseline: most frequent answer per option set; its confidence is that
  * label's in-sample share in the option set.
+ *
+ * Also writes results/<pv>/automation-curves.json, per language and arm on
+ * the pooled set (aggregates only, no per-item answer):
+ *   coverage   selective-prediction curve: for every grid point c = 1 %, 2 %,
+ *              ..., 100 %, the largest prefix of the items ranked by
+ *              confidence (ties never split, the auto95 rule) whose share of
+ *              all items is not above c; its coverage and accuracy
+ *   targets    for every target accuracy 80 %, 81 %, ..., 99 %, the largest
+ *              automatable share, in-sample (bestThreshold, as auto95)
+ * Arms without any probability are skipped and listed with a note.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,8 +42,11 @@ const WHICH = arg('pv', 'all');
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SEED = 20261009;
 const TARGETS = [0.95, 0.9];
+const CURVE_GRID = Array.from({ length: 100 }, (_, i) => i + 1); // coverage in percent
+const CURVE_TARGETS = Array.from({ length: 20 }, (_, i) => 80 + i); // target accuracy in percent
 const LANGS = ['de', 'en'];
 export const ENGLISH_ONLY = a => /^gliner2\.5-decide/.test(a);
+const r4 = x => (x == null ? null : +x.toFixed(4));
 export const famOf = a => (a === 'jev' ? 'jev' : a.startsWith('gliner') ? 'gliner' : a.startsWith('classic') ? 'classic' : 'local-llm');
 
 // ------------------------------------------------------------ metrics
@@ -48,6 +61,36 @@ export function bestThreshold(items, target) {
     if (right / n >= target && n > best.passed) best = { t: s[i].conf, passed: n, right };
   }
   return { ...best, coverage: items.length ? best.passed / items.length : 0, acc: best.passed ? best.right / best.passed : null };
+}
+
+/**
+ * Selective-prediction curve. Prefixes of the items ranked by confidence end
+ * only at tie boundaries; for grid point k (percent) the largest prefix with
+ * passed / n <= k / 100 is reported. Unanswered items are never in a prefix.
+ */
+export function coverageCurve(items, grid = CURVE_GRID) {
+  const s = items.filter(x => x.conf != null).sort((a, b) => b.conf - a.conf);
+  const cuts = [{ passed: 0, right: 0 }];
+  let right = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i].right) right += 1;
+    if (i + 1 < s.length && s[i + 1].conf === s[i].conf) continue; // never split ties
+    cuts.push({ passed: i + 1, right });
+  }
+  const N = items.length;
+  return grid.map(k => {
+    let c = cuts[0];
+    for (const x of cuts) if (x.passed * 100 <= k * N) c = x; else break;
+    return { grid: k, coverage: r4(N ? c.passed / N : 0), acc: c.passed ? r4(c.right / c.passed) : null, passed: c.passed };
+  });
+}
+
+/** Largest automatable share per target accuracy, in-sample (the auto95 rule). */
+export function targetCurve(items, targets = CURVE_TARGETS) {
+  return targets.map(k => {
+    const b = bestThreshold(items, k / 100);
+    return { target: k, coverage: r4(b.coverage), threshold: b.t, acc: r4(b.acc), passed: b.passed };
+  });
 }
 
 /** Split lines into two halves by a seeded shuffle of the sorted ids. */
@@ -88,7 +131,6 @@ export function calibration(items) {
   };
 }
 
-const r4 = x => (x == null ? null : +x.toFixed(4));
 export function metrics(items) {
   const out = { n: items.length, acc: r4(items.filter(x => x.right).length / items.length) };
   for (const t of TARGETS) {
@@ -184,9 +226,26 @@ function score(pv) {
   say('Columns: `auto95` / `auto90` = in-sample automation rate (largest share of items, ranked by the arm\'s probability for its own answer, whose accuracy stays at or above 95 % / 90 %; the threshold is chosen on the same rows, so this is optimistic). `cf95` / `cf90` = 2-fold cross-fitted (threshold chosen on one half of the lines, seed 20261009, applied to the other; mean coverage, and in brackets the accuracy of the passed items). `ECE` over 10 equal-width bins and multi-class `Brier`, both on answered rows. `mass` = median letter mass before renormalising (local LLM only). Unanswered rows count as wrong and are never automated. `baseline` = most frequent answer per option set, confidence = its in-sample share.\n');
   say('The probabilities are distributions over the offered options (GLiNER: a softmax over labels; local LLM: next-token letter probabilities renormalised over the letters), not calibrated claims that the answer is right.\n');
   const notArgmax = {};
+  const curves = {
+    pv, design: 'plan/t1.md', generated_by: `node bench/score-automation.mjs --pv ${pv}`, seed: SEED, references: res.references,
+    item_set: 'pooled', coverage_grid_percent: CURVE_GRID, target_accuracy_percent: CURVE_TARGETS,
+    note: 'Aggregates only. coverage: for each grid point the largest share of items, ranked by the probability of the arm\'s own answer with tied probabilities never split, that is not above the grid point, and the accuracy of those items. targets: for each target accuracy the largest automatable share whose accuracy stays at or above it; threshold chosen in-sample, as auto95 in automation.json (optimistic). Unanswered items count as wrong and are never automated.',
+    langs: {},
+  };
   for (const lang of LANGS) {
     const L = (res.langs[lang] = { sets: {} });
     const langGolds = golds.filter(g => g.lang === lang);
+    const C = (curves.langs[lang] = { n: langGolds.length, baseline: null, arms: {}, skipped: [] });
+    C.baseline = { coverage: coverageCurve(baselineItems(langGolds)), targets: targetCurve(baselineItems(langGolds)) };
+    for (const a of armNames) {
+      const items = armItems(pv, a, langGolds);
+      if (!items.length) continue;
+      if (!items.some(x => x.conf != null)) { C.skipped.push({ arm: a, reason: 'no probabilities in the rows' }); continue; }
+      const t = targetCurve(items);
+      const m95 = bestThreshold(items, 0.95);
+      if (t.find(x => x.target === 95).coverage !== r4(m95.coverage)) throw new Error(`${pv} ${lang} ${a}: curve at 95 % differs from auto95`);
+      C.arms[a] = { family: famOf(a), english_only_extra: lang === 'de' && ENGLISH_ONLY(a), n: items.length, answered: items.filter(x => x.conf != null).length, coverage: coverageCurve(items), targets: t };
+    }
     const sets = [['pooled', langGolds], ...parts.map(p => [p, langGolds.filter(g => g.part === p)])].filter(([, gs]) => gs.length);
     for (const [name, gs] of sets) {
       const S = (L.sets[name] = { n: gs.length, baseline: metrics(baselineItems(gs)), arms: {} });
@@ -224,6 +283,11 @@ function score(pv) {
   say(`Rows where the arm's answer is not its most probable option (confidence = probability of the answer): ${na.length ? na.map(([k, v]) => `${k}: ${v}`).join(', ') : 'none'}.\n`);
   fs.writeFileSync(path.join(ROOT, 'results', pv, 'automation.md'), md.join('\n'));
   fs.writeFileSync(path.join(ROOT, 'results', pv, 'automation.json'), JSON.stringify(res, null, 1) + '\n');
+  for (const lang of LANGS) {
+    const auto = res.langs[lang].sets.pooled.arms;
+    for (const [a, c] of Object.entries(curves.langs[lang].arms)) if (c.targets.find(x => x.target === 95).coverage !== auto[a].auto95) throw new Error(`${pv} ${lang} ${a}: curves file and automation.json disagree at 95 %`);
+  }
+  fs.writeFileSync(path.join(ROOT, 'results', pv, 'automation-curves.json'), JSON.stringify(curves) + '\n');
   console.log(md.join('\n'));
 }
 

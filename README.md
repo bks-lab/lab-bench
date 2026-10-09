@@ -6,7 +6,7 @@ locally or hosted in the EU, answer the match questions as well as Jev?
 ## Notice: no Jev raw answers
 
 This repository is the public export of BKS-Lab's private bench
-(source commit `1239571bae86`). It publishes evaluations only:
+(source commit `b8f714f5b31d`). It publishes evaluations only:
 
 - Jev's raw answers per question (the result rows under `results/*/jev/`)
   are not published, and neither are per-case Jev values (the Jev columns of
@@ -74,6 +74,19 @@ route1 and ex1 data: [cases/route1/README.md](cases/route1/README.md).
 The full route1 and ex1 run is one command per machine:
 `bench/run-route-ex.sh` (Jev and Ollama) and `bench/run-route-ex.bat`
 (GLiNER on the GPU machine).
+
+A second family is planned and preregistered, but not yet run:
+**capabilities of a local workstation**, C1 to C9. These tests do not
+compare against Jev. They ask what one in-house PC (RTX 4090, 24 GB) with
+open models does on German business tasks: retrieval for RAG, speech to
+text, invoice fields from rendered e-invoices, structured output and tool
+calling, translation, reading comprehension, long context, throughput and
+energy, and personal data detection. Each reports quality with a 95 %
+bootstrap interval, speed, peak VRAM, GPU energy and the licence class of
+the model, and each must first reproduce a published reference number
+before other models are scored. Designs: [plan/c0-common.md](plan/c0-common.md)
+and `plan/c1.md` to `plan/c9.md`; data, licences, run order and GPU hours:
+[plan/ROADMAP.md](plan/ROADMAP.md).
 
 ## Tool map
 

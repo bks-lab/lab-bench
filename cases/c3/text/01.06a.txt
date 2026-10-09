@@ -1,0 +1,250 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                       DE123456789/R123456789
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        99000000-01944-98                            Ort:              [Buyer city]
+ Name:                  [Buyer name]                                 Ländercode:       DE
+
+ Adresszeile 1:         [Buyer address line 1]                       Kennung:          B123456789
+
+ PLZ:                   12345                                        Kontaktstelle :   Abteilung Buchhaltung
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                                Ländercode:       DE
+
+ Adresszeile 1:         [Seller address line 1]                      Name:             Kundenservice - Vertriebspartner
+                                                                                       Direktkunden
+ PLZ:                   12345
+                                                                     Telefon:          +49(0)12 3456-7890
+ Ort:                   [Seller city]
+                                                                     E-Mail-Adresse:   kundenservice@email.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       R123456789                                   Währung:          EUR
+
+ Rechnungsdatum:        6.7.2016                                     Vertragsnummer:   CR987654321
+
+ Rechnungsart:          380
+
+ Abrechnungszeitraum
+ Von:                   1.6.2016                                     Bis:              30.6.2016
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                             18.236,72
+ Gesamtsumme                                                                                                       18.236,72
+ Summe Umsatzsteuer                                                                                                 3.464,98
+ Gesamtsumme                                                                                                       21.701,70
+ Summe Fremdforderungen                                                                                                 0,00
+ Fälliger Betrag                                                                                                   21.701,70
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                        18.236,72
+ Umsatzsteuersatz                                                                                                     19,00%
+ Umsatzsteuerbetrag                                                                                                  3.464,98
+
+ Zahlungsdaten
+
+ Skonto; weitere        Bitte überweisen Sie den Gesamtbetrag        Code für das      58
+ Zahlungsbedingungen:   in Höhe von EUR […] innerhalb von            Zahlungsmittel:
+                        […] Tagen ohne Abzug auf unser Konto
+                        IBAN […] bei […] BIC […].
+
+
+ Überweisung
+ IBAN:                  DE79000000001234567890
+
+
+
+
+                                                           Seite 1 / 4
+Bereiche ohne Inhalte werden nicht dargestellt!                                                  DE123456789/R123456789
+
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:               ADU
+
+ Bemerkung:            Die auf Transaktionsebene ausgewiesenen Händlerentgelte und Interchangewerte werden im Rahmen der
+                       Abrechnung addiert und kaufmännisch auf ganze Währungseinheiten gerundet.
+
+Details
+ 8000593202
+
+ Position:             8000593202
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00        Umsatzsteuer:       S
+ Einheit                                              MON
+                                                                   Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            17,24
+ Gesamtpreis (netto)                                  17,24
+
+ Artikelinformationen
+ Bezeichnung:          Servicegebühren A
+
+
+ 8000612340
+
+ Position:             8000612340
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00        Umsatzsteuer:       S
+ Einheit                                              MON
+                                                                   Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        16.704,07
+ Gesamtpreis (netto)                              16.704,07
+
+ Artikelinformationen
+ Bezeichnung:          Servicegebühren B
+
+
+ 8000619834
+
+ Position:             8000619834
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00        Umsatzsteuer:       S
+ Einheit                                              MON
+                                                                   Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                             5,21
+ Gesamtpreis (netto)                                   5,21
+
+ Artikelinformationen
+ Bezeichnung:          Servicegebühren C
+
+
+ 8000619863
+
+ Position:             8000619863
+
+
+
+
+                                                         Seite 2 / 4
+Bereiche ohne Inhalte werden nicht dargestellt!                                              DE123456789/R123456789
+
+
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                           MON
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        282,36
+ Gesamtpreis (netto)                              282,36
+
+ Artikelinformationen
+ Bezeichnung:          Servicegebühren D
+
+
+ 8000613563
+
+ Position:             8000613563
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                           MON
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        386,68
+ Gesamtpreis (netto)                              386,68
+
+ Artikelinformationen
+ Bezeichnung:          Servicegebühren E
+
+
+ 8000648582
+
+ Position:             8000648582
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                           MON
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        535,11
+ Gesamtpreis (netto)                              535,11
+
+ Artikelinformationen
+ Bezeichnung:          Servicegebühren F
+
+
+ 8000648584
+
+ Position:             8000648584
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                           MON
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        306,05
+ Gesamtpreis (netto)                              306,05
+
+ Artikelinformationen
+ Bezeichnung:          Servicegebühren G
+
+
+
+
+                                                      Seite 3 / 4
+Bereiche ohne Inhalte werden nicht dargestellt!                                                               DE123456789/R123456789
+
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Elektronische Adresse:   seller@email.de                                Register-/           HRB 123456
+                                                                         Registriernummer:
+ Schema der               EM
+ elektronischen                                                          Umsatzsteuer-ID:     DE123456789
+ Adresse:
+                                                                         Weitere rechtliche   Amtsgericht […]
+                                                                         Informationen:
+
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Schema der           EM
+                                                                         elektronischen
+                                                                         Adresse:
+
+
+
+ Lieferinformationen
+
+ Name des Empfängers:     Leistungsempfänger                             Ort:                 [Deliver to city]
+
+ Adresszeile 1:           [Deliver to address line 1]                    Ländercode:          DE
+
+ PLZ:                     12345
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 4 / 4
+

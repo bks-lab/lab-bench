@@ -3,7 +3,7 @@
  * Local arm: asks an open-weight model the same questions Jev gets, through
  * Ollama, and reads the probabilities from the logprobs of the answer letter.
  *
- *   node bench/run-local.mjs --model qwen3:32b [--template chatml|gemma4|gemma] [--prefix 'Answer: **']
+ *   node bench/run-local.mjs --model qwen3:32b [--template chatml|gemma4|gemma|phi4|mistral|granite] [--prefix 'Answer: **']
  *        [--host http://localhost:11434] [--arm qwen3-32b] [--pv pv1]
  *        [--runs 5] [--only p01] [--unit line|project|profile] [--run-ids 1,5] [--limit N]
  *        [--lang de] [--per-group N] [--tag smoke] [--skip-over-26] [--host-label local-gpu]
@@ -41,11 +41,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { optionsOf, withShuffledOptions } from './normalize.mjs';
 import { perGroup } from './lib/route-ex.mjs';
+import { rawPrompt, TEMPLATES } from './lib/templates.mjs';
 
 const arg = (name, dflt) => { const i = process.argv.indexOf(`--${name}`); return i > 0 ? process.argv[i + 1] : dflt; };
 const MODEL = arg('model');
 if (!MODEL) { console.error('--model is required'); process.exit(1); }
 const TEMPLATE = arg('template', 'chatml');
+if (!TEMPLATES.includes(TEMPLATE)) { console.error(`unknown --template ${TEMPLATE}, one of ${TEMPLATES.join(', ')}`); process.exit(1); }
 // What the answer turn starts with; the next token should be the letter.
 const PREFIX = arg('prefix', 'Answer: **');
 // Default: OLLAMA_HOST if set, else the local Ollama.
@@ -107,10 +109,7 @@ function lettered(q) {
 
 function prompt(state, q, opts) {
   const user = `${stateText(state)}\n\nQuestion: ${q.instructions}\n${opts.map((o, i) => `${LETTERS[i]}) ${o.label}`).join('\n')}`;
-  // Gemma 4 (2026): <|turn>role ... <turn|>, thinking off by an empty thought channel
-  if (TEMPLATE === 'gemma4') return `<|turn>system\n${SYSTEM}<turn|>\n<|turn>user\n${user}<turn|>\n<|turn>model\n<|channel>thought\n<channel|>${PREFIX}`;
-  if (TEMPLATE === 'gemma') return `<start_of_turn>user\n${SYSTEM}\n\n${user}<end_of_turn>\n<start_of_turn>model\n${PREFIX}`;
-  return `<|im_start|>system\n${SYSTEM}<|im_end|>\n<|im_start|>user\n${user}<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n${PREFIX}`;
+  return rawPrompt(TEMPLATE, SYSTEM, user, PREFIX);
 }
 
 async function generate(p) {

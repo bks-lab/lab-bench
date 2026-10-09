@@ -1,0 +1,142 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                           DE123456789/Rechnungsnummer
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        04011000-12350-85                         Ort:              [Buyer city]
+ Name:                  [Buyer name]                              Ländercode:       DE
+
+ Adresszeile 1:         [Buyer address line 1]                    Kontaktstelle :   Ansprechpartner Käufer
+
+ PLZ:                   12345
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                             Ländercode:       DE
+
+ Adresszeile 1:         [Seller address line 1]                   Name:             Berater / Sachbearbeiter
+
+ PLZ:                   12345                                     Telefon:          +49(0)1234-0
+
+ Ort:                   [Seller city]                             E-Mail-Adresse:   info@seller.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       Rechnungsnummer                           Währung:          EUR
+
+ Rechnungsdatum:        27.6.2016                                 Auragsnummer:    Auragsnummer
+
+ Rechnungsart:          380
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                        2.180,00
+ Gesamtsumme                                                                                                   2.180,00
+ Summe Umsatzsteuer                                                                                              414,20
+ Gesamtsumme                                                                                                   2.594,20
+ Summe Fremdforderungen                                                                                            0,00
+ Fälliger Betrag                                                                                               2.594,20
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                   2.180,00
+ Umsatzsteuersatz                                                                                               19,00%
+ Umsatzsteuerbetrag                                                                                             414,20
+
+ Zahlungsdaten
+
+ Skonto; weitere        #SKONTO#TAGE=7#PROZENT=2.00#              Code für das      58
+ Zahlungsbedingungen:   #SKONTO#TAGE=14#PROZENT=1.00#             Zahlungsmittel:
+                        #SKONTO#TAGE=30#PROZENT=0.00#
+
+
+ Überweisung
+ IBAN:                  DE79000000001234567890
+
+
+ IBAN:                  DE16000000002345678901
+
+
+
+
+                                                        Seite 1 / 2
+Bereiche ohne Inhalte werden nicht dargestellt!                                                      DE123456789/Rechnungsnummer
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:                  ADU
+
+ Bemerkung:               Wir liefern Ihnen ausschließlich zu unseren allgemeinen Geschäsbedingungen (Stand Februar 2013).
+                          Diese werden Ihnen jederzeit auf Wunsch übersandt. Bei Aurägen, basierend auf öﬀentlichen Vergaben,
+                          gelten die ggf. vereinbarten abweichenden Liefer- und Zahungsbedingungen des Auraggebers.
+
+Details
+ 1
+
+ Position:                1
+
+
+ Preiseinzelheiten
+ Menge                                                       10,00        Umsatzsteuer:        S
+ Einheit                                                      XPP
+                                                                          Umsatzsteuersatz:    19,00%
+ Preis pro Einheit (netto)                                     218
+ Gesamtpreis (netto)                                      2.180,00
+
+ Artikelinformationen
+ Bezeichnung:             Drehstuhl                                       Artikelnummer:       AL281982
+
+ Beschreibung:            Sitz: 10-301 blau, Rücken: 10-301 blau,
+                          ….
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                           Register-/           HRB 123456
+ Handelsname:                                                             Registriernummer:
+
+ Elektronische Adresse:   seller@email.de                                 Umsatzsteuer-ID:     DE123456789
+
+ Schema der               EM                                              Steuernummer:        123/456/789
+ elektronischen
+ Adresse:                                                                 Weitere rechtliche   Sitz der Gesellscha: […],
+                                                                          Informationen:       Registergericht: […], Geschäsführer:
+                                                                                               […]
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                   Schema der           EM
+                                                                          elektronischen
+                                                                          Adresse:
+
+
+
+ Lieferinformationen
+
+ Name des Empfängers:     Außenstelle XY                                  Ort:                 [Deliver to city]
+
+ Adresszeile 1:           [Deliver to address line 1]                     Ländercode:          DE
+
+ PLZ:                     12345
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                                Seite 2 / 2
+

@@ -1,0 +1,129 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                    /1234/78/901
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        04011000-12348-91                               PLZ:              12345
+ Name:                  [Buyer name]                                    Ort:              [Buyer city]
+
+ Adresszeile 1:         [Buyer address line 1]                          Ländercode:       DE
+
+ Adresszeile 2:         [Buyer address line 2]                          Kontaktstelle :   [Buyer contact person]
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                                   Ländercode:       DE
+
+ Adresszeile 1:         [Seller address line 1]                         Name:             […]
+
+ Adresszeile 2:         [Seller address line 2]                         Telefon:          +49 (0)12-345678-90
+
+ PLZ:                   12345                                           E-Mail-Adresse:   mail@seller.eu
+
+ Ort:                   [Seller city]
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       1234/78/901                                     Rechnungsart:     380
+
+ Rechnungsdatum:        16.6.2016                                       Währung:          EUR
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                                 120,00
+ Gesamtsumme                                                                                                            120,00
+ Summe Umsatzsteuer                                                                                                       0,00
+ Gesamtsumme                                                                                                            120,00
+ Summe Fremdforderungen                                                                                                   0,00
+ Fälliger Betrag                                                                                                        120,00
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: O
+ Gesamtsumme                                                                                                            120,00
+ Umsatzsteuersatz                                                                                                       0,00%
+ Umsatzsteuerbetrag                                                                                                       0,00
+
+ Befreiungsgrund:       als gemeinnützig anerkannt
+
+ Zahlungsdaten
+
+ Skonto; weitere        Wir möchten Sie bitten, die                     Code für das      58
+ Zahlungsbedingungen:   Teilnahmegebühr iHv. 120,00 €                   Zahlungsmittel:
+                        innerhalb von 14 Tagen auf das oben
+                        genannte Konto unter Angabe der
+                        Rechnungsnummer 1234/78/901 zu
+                        überweisen.
+
+
+ Überweisung
+ IBAN:                  DE79000000001234567890
+
+
+
+
+                                                              Seite 1 / 2
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                          /1234/78/901
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:                  ADU
+
+ Bemerkung:               Diese Leistung ist umsatzsteuerbefreit nach § 4 Nr. 22a UStG.
+
+Details
+ Teilnahmegebühr
+
+ Position:                Teilnahmegebühr
+
+
+ Preiseinzelheiten
+ Menge                                                       1,00         Umsatzsteuer:        O
+ Einheit                                                     XPP
+ Preis pro Einheit (netto)                                    120
+ Gesamtpreis (netto)                                       120,00
+
+ Artikelinformationen
+ Bezeichnung:             Teilnahmegebühr                                 Beschreibung:        Anmeldung von […]
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                           Register-/           VR 12345 Nz
+ Handelsname:                                                             Registriernummer:
+
+ Elektronische Adresse:   seller@email.de                                 Steuernummer:        12/345/67890
+
+ Schema der               EM                                              Weitere rechtliche   Vorstand: [...] (Vorsitzender),
+ elektronischen                                                           Informationen:       […] (Stellvertreterin), Dr. […]
+ Adresse:                                                                                      (Schatzmeister); Beirat: […]
+                                                                                               (Vorsitzender); Geschäsführung: […],
+                                                                                               AG […], FA für Körperschaen […]
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                   Schema der           EM
+                                                                          elektronischen
+                                                                          Adresse:
+
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                                Seite 2 / 2
+

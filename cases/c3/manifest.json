@@ -1,0 +1,841 @@
+{
+ "test": "C3",
+ "written": "2026-10-09",
+ "testsuite": {
+  "repo": "https://github.com/itplr-kosit/xrechnung-testsuite",
+  "commit": "1ce1dafffd035e5ce59a7ab0d3bf44ac14af16c9",
+  "licence": "Apache-2.0"
+ },
+ "renderer": {
+  "repo": "https://github.com/itplr-kosit/xrechnung-visualization",
+  "tag": "v2026-08-31",
+  "commit": "e158048ec6774cd4837744b21ca34dc95ba14862",
+  "licence": "Apache-2.0",
+  "steps": "cii-xr.xsl, xr-pdf.xsl (foengine=fop, default layout, lang de), conf/fop.xconf"
+ },
+ "tools": {
+  "saxon": "Saxon-HE 12.8 (MPL-2.0, Maven Central net.sf.saxon:Saxon-HE:12.8)",
+  "xmlresolver": "5.3.3",
+  "fop": "Apache FOP 2.11 (fop-2.11-bin.tar.gz)",
+  "java": "OpenJDK 27 (Homebrew)",
+  "poppler": "pdftoppm/pdftotext 26.10.0 (Homebrew)",
+  "raster": "pdftoppm -r 200 -gray -png",
+  "text": "pdftotext -layout -enc UTF-8"
+ },
+ "invoices": 34,
+ "pages": 118,
+ "items": [
+  {
+   "id": "01.01a",
+   "source_file": "01.01a-INVOICE_uncefact.xml",
+   "xml_sha256": "727b51982a84c9b406599a7384783570910440ed405c9bb6d918b22442636886",
+   "pdf_sha256": "64046a027b8f0c39128cd13da1e4082b2ca46c831860fca746a40d3f34395c5b",
+   "text_sha256": "a0330a538865d596fe649d9f4cbed62a6ab69318d7e8fe7c9e35b38d97d4a15d",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.01a-1.png",
+     "sha256": "97e49abb03b0bc2e2591a192c085269bbc91df0993f55cadcc2f9e368196e03d"
+    },
+    {
+     "file": "01.01a-2.png",
+     "sha256": "a610f4f4e0fee199601d3abeee3dda3510598574d9d47ca4ccccbb9cc4cb77a7"
+    },
+    {
+     "file": "01.01a-3.png",
+     "sha256": "8ad7a066d8ac98da66fcf4aab4975a608b223d4cc4ae6b55b9bd385315ffe56f"
+    }
+   ]
+  },
+  {
+   "id": "01.02a",
+   "source_file": "01.02a-INVOICE_uncefact.xml",
+   "xml_sha256": "4d04b67a753b3cac8e1e7759745b27bc6a19ce9913ab303942384b634bc1fae0",
+   "pdf_sha256": "99d26d426290deeb89bac5f76afd5409cc5a9f74c954147cec3c1997b4544ff0",
+   "text_sha256": "f72ca4505c21d80b9b618787bbf7a4eac63946e6d280f38de9d8d8611ccf9348",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.02a-1.png",
+     "sha256": "a51266e6260035fd0afa5da2840ab4085f701a6665e8efa73dfbb94578304475"
+    },
+    {
+     "file": "01.02a-2.png",
+     "sha256": "c0f8485a121c2c2d7efc5639ec24e70e6d1dba16dca00d0c21ab3378c20cec43"
+    },
+    {
+     "file": "01.02a-3.png",
+     "sha256": "b948c06f9116250711631c99feb85f64ce462b47f9e492cf1cd66310a801a195"
+    }
+   ]
+  },
+  {
+   "id": "01.03a",
+   "source_file": "01.03a-INVOICE_uncefact.xml",
+   "xml_sha256": "4926207a26939a034845d9342ea6f5d664020da6f1c0dedf7c408564e6a19da2",
+   "pdf_sha256": "7fcc59d236988069dec69054962afac8925a6347feda974febe38127f9407e49",
+   "text_sha256": "cb276a2300e6723763373cb0bc5987169cf6f9e120159551471ed637b95b6b5f",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.03a-1.png",
+     "sha256": "11ac41df81f4c59f409afdda92747a6dade21c07e119b9ea4d45a088f922cf80"
+    },
+    {
+     "file": "01.03a-2.png",
+     "sha256": "6baef151d7676651ef09bf8c11eff260774b4dd96688c2182074edd14fe98943"
+    },
+    {
+     "file": "01.03a-3.png",
+     "sha256": "0bb8f33e68bfc7a7b095484416c0036277a36cc76cbcb3fb4c88a725cf2cb1df"
+    }
+   ]
+  },
+  {
+   "id": "01.04a",
+   "source_file": "01.04a-INVOICE_uncefact.xml",
+   "xml_sha256": "42ac152e480463adb81999aa7d70da490a8b709808e239f54531c7ddd4319b4f",
+   "pdf_sha256": "440134f609ae751501e97eb4bfb904b9617a6d03d9bbf0851c5446677f0fe2e7",
+   "text_sha256": "9f4e9c743c3f5dd8ab018dd907be59ba54f9db67fb531c299f686abdbf365674",
+   "pages": 2,
+   "png": [
+    {
+     "file": "01.04a-1.png",
+     "sha256": "0d76a6f2ecaee38d1e04575b088762de8b61fcdb749286262d7617195893b218"
+    },
+    {
+     "file": "01.04a-2.png",
+     "sha256": "869397ecb957556d2428c6663ac829f26606247fcecdede92d289c21776d2eb8"
+    }
+   ]
+  },
+  {
+   "id": "01.05a",
+   "source_file": "01.05a-INVOICE_uncefact.xml",
+   "xml_sha256": "8f95097b5231474c835bf6685aa215bd41076af8ac0c0c8be0e98fdd93001764",
+   "pdf_sha256": "3fb8638a18accaa0dda410b5ae223269702b1814fc47263353ead012b7817e0c",
+   "text_sha256": "45fcd581fc4d34f78dac5f5e3ac8fd486a5806abec273638dc2fcad2959549f3",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.05a-1.png",
+     "sha256": "b3d9c02b9755681b5e1d798bdf7fc414eb8626531a10e12167f4c97551658c6a"
+    },
+    {
+     "file": "01.05a-2.png",
+     "sha256": "36a9546776c13625dfc2ec6b7e6c4c4b8be11451e23d2b85eb419f099b20647e"
+    },
+    {
+     "file": "01.05a-3.png",
+     "sha256": "8f6071caefde1abc28fb29bd4ebada6b25976dfe5d923de147f557a9d4b1fce0"
+    }
+   ]
+  },
+  {
+   "id": "01.06a",
+   "source_file": "01.06a-INVOICE_uncefact.xml",
+   "xml_sha256": "2f073590a86308b020671dc40b41feb76f0e8918ae04d7066f7984b1aaa0fd17",
+   "pdf_sha256": "9704872318eefda0be9d3af666d303054390d915d3bb66e64356ba9e053e14cc",
+   "text_sha256": "04a8b8ca96e9eeff28c59a0088e7d219c3ad8f5ff308ecfb71fd1ac83b768215",
+   "pages": 4,
+   "png": [
+    {
+     "file": "01.06a-1.png",
+     "sha256": "df179a84201f129a5c7d5988f41eb9019d3e7d283e5a1b74760722058439eef7"
+    },
+    {
+     "file": "01.06a-2.png",
+     "sha256": "14b6ece347216b6325a553a0b1c0bb1982f7f5f3564b3ab0fb287e8778036dcf"
+    },
+    {
+     "file": "01.06a-3.png",
+     "sha256": "ba50dad6f72613ad0b8a0ff0786a23c6d4fb10bf18cd00f5d6941a4027032c94"
+    },
+    {
+     "file": "01.06a-4.png",
+     "sha256": "e4ae3e0e4b4a51ef309f2c7d0d1f4bc7525bf96a42d4f3eaaa26a3622dc04449"
+    }
+   ]
+  },
+  {
+   "id": "01.07a",
+   "source_file": "01.07a-INVOICE_uncefact.xml",
+   "xml_sha256": "6c8ece702656e7592acf1fbe9155965e07981fec4ad7bb65c2908c1e2685a945",
+   "pdf_sha256": "ad68ca3687fc7f0fddfba13f3e1df6ef9335d5b7d0abecf3918fdb3046919635",
+   "text_sha256": "a1b815efec276504fa2749fbac8f54a1a60486a0c3839128a2d0906b0cfb6725",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.07a-1.png",
+     "sha256": "52e33ff95b28869bc4edaeea38d5092c80b7416a67ec4d74d06e6c70849382fe"
+    },
+    {
+     "file": "01.07a-2.png",
+     "sha256": "86dbfa9706a335aff0c669b570a6c88ba50073c21deed623a02d2c8a451f3dd1"
+    },
+    {
+     "file": "01.07a-3.png",
+     "sha256": "5412a200c926946529f3db7767b5aeea0ee2f771c2bebfb4271e91c6e0c204d2"
+    }
+   ]
+  },
+  {
+   "id": "01.08a",
+   "source_file": "01.08a-INVOICE_uncefact.xml",
+   "xml_sha256": "96db4c3c6e5ce9fdc28fec75f911274ea2f7d94bed5ddfce195fdaf357ba4a75",
+   "pdf_sha256": "757e7bbb681cd5844e62a68f3bbf00b7156b7c3532cf28c78b46b34906048cef",
+   "text_sha256": "398337a641ae36d5b52f98db82799226a842a8a93015ec14aa69d96255b5675b",
+   "pages": 2,
+   "png": [
+    {
+     "file": "01.08a-1.png",
+     "sha256": "d3395191ecdf50bc63e6719145b730085c3bab6386380621a780e2ba0f14c59f"
+    },
+    {
+     "file": "01.08a-2.png",
+     "sha256": "8eea3d144a77dfcf9ca30cd6cbf96cf15b3a2c9da1fde8f986cd8602562ad3eb"
+    }
+   ]
+  },
+  {
+   "id": "01.09a",
+   "source_file": "01.09a-INVOICE_uncefact.xml",
+   "xml_sha256": "36aa85ae8a80f681b75b30cbaedb86477cee200461bf1b7c4b28e247ea5affde",
+   "pdf_sha256": "bb2545466330d497e584d7f91977b753ae4ddeab866f86e3d4d9d83b627eb5bb",
+   "text_sha256": "4f8c4e744ed18a103591a02bf83e8e9e73395d78ca534b84bec5e03574d09a86",
+   "pages": 2,
+   "png": [
+    {
+     "file": "01.09a-1.png",
+     "sha256": "b7f81d45e2a1c5e6200a48a0b17a420b5cc2f905ae903f5fa9623d3ab981c799"
+    },
+    {
+     "file": "01.09a-2.png",
+     "sha256": "28675d331e21164130e53f48387626d4b38e6c8d4e3304b1d4912a65c7273e24"
+    }
+   ]
+  },
+  {
+   "id": "01.10a",
+   "source_file": "01.10a-INVOICE_uncefact.xml",
+   "xml_sha256": "3755ea7764f6e2c8c7427ab24777d64add1cc4e489362ed9c3d1049fdb2629d3",
+   "pdf_sha256": "57130f1e6b4599bd5ddd8deb3039a3c6370fcc2436b1fae4568c3a9ca0355920",
+   "text_sha256": "5ca5f6d805f74dcd0cb9cf642743222c610c5634af3a95146589b36813605e3e",
+   "pages": 2,
+   "png": [
+    {
+     "file": "01.10a-1.png",
+     "sha256": "116c377f357725787a44c46d5bf11b3c0ec3c2cad227889f7c9b7da582ed4abc"
+    },
+    {
+     "file": "01.10a-2.png",
+     "sha256": "72113017675d9e692563917c39d82f8deb9489002256e7a79cf278678a0816b9"
+    }
+   ]
+  },
+  {
+   "id": "01.11a",
+   "source_file": "01.11a-INVOICE_uncefact.xml",
+   "xml_sha256": "0cbcf2d8e4a2f9d8ac2ae9d5a70ed21292233a8e18b7a512c7fb7809803fe847",
+   "pdf_sha256": "5e19453d7e9d57def437f8e850c9f5056ce2ad9d323f3a256556effb86f2a7f2",
+   "text_sha256": "78c5142fbd4eda131f7c0a1daf727b3711665f8750bea71432e70796b1f581aa",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.11a-1.png",
+     "sha256": "a8f4e72014a96037d88b2239860f79800c1a00794d81f923e8f07284d8e9b168"
+    },
+    {
+     "file": "01.11a-2.png",
+     "sha256": "301f84421b4626bd44795cdbd82f3572eb0b85fda1499d72a55c1ccfd2937921"
+    },
+    {
+     "file": "01.11a-3.png",
+     "sha256": "56c7c0d6d2e20a47f6fcc504ed86f6f5fe8805ff5742308b8ecc168241e8a45d"
+    }
+   ]
+  },
+  {
+   "id": "01.12a",
+   "source_file": "01.12a-INVOICE_uncefact.xml",
+   "xml_sha256": "b6b3186df8ade85abaea25b083e34864a5e3427cdbee62bf929a996bbd304c1d",
+   "pdf_sha256": "632c7e4afccc010ec1c6df59174001bcee6594e773e04b8bf83c5483ed66fec7",
+   "text_sha256": "b398d9a28778d8811b642bf1f7f177bf0ecec9e75ca721804ad435063d930222",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.12a-1.png",
+     "sha256": "e6f71daf849ce5f1b444f1786f7553d7cffebed5c62d3f078f43cf138c5a721c"
+    },
+    {
+     "file": "01.12a-2.png",
+     "sha256": "00fc7417f8b991ccc6971ccb2f7ecfac2eabdcf33af308efc36d1c067c9e166c"
+    },
+    {
+     "file": "01.12a-3.png",
+     "sha256": "a07f03d4781c6cdaa254a2a0b3983b95237115e85587af31594dcfca8519ee5a"
+    }
+   ]
+  },
+  {
+   "id": "01.13a",
+   "source_file": "01.13a-INVOICE_uncefact.xml",
+   "xml_sha256": "bf3a7deaeb49fe4ea1e03edeb5642df662f5ed71d5dfad5637a534b398e22b20",
+   "pdf_sha256": "21a70c12b6a02dbfb392f46025995b6d51aa1539f6ef7598ba00e968573eb3c1",
+   "text_sha256": "5103c05bab9f93829686595e01313dd2eb6f91303acaa42c71a92f53a811c4b8",
+   "pages": 5,
+   "png": [
+    {
+     "file": "01.13a-1.png",
+     "sha256": "13dd8c3d4708962f3d6135d41a44ad074faf94b7a09ba14ae350ba9889664923"
+    },
+    {
+     "file": "01.13a-2.png",
+     "sha256": "425a2109d08404f6ce6bb8a1f2731473ebe549df8897b84ac8a584e0b61ee605"
+    },
+    {
+     "file": "01.13a-3.png",
+     "sha256": "78b0c690b2b65591161c6a8a0bb8c01ae1dd7a4d04ba483435102f9b2fbf67aa"
+    },
+    {
+     "file": "01.13a-4.png",
+     "sha256": "c81aeab86fde6f202968de2c3e9f12f3c5cbe23df21e35c2196fc932763c32b0"
+    },
+    {
+     "file": "01.13a-5.png",
+     "sha256": "6910a425b22593cd293e73d5d963ebec0a90ffb7f7e6c3de7fc7ff9b6364bf11"
+    }
+   ]
+  },
+  {
+   "id": "01.14a",
+   "source_file": "01.14a-INVOICE_uncefact.xml",
+   "xml_sha256": "8c6b4a9e40f140bc633bd67d01c549c4cff227f5e500dcdea1a75eb1bb905c03",
+   "pdf_sha256": "4c932e16be9a44a2aa0eb4cf77879b43abde52b4cd3f8f3a0e243c70b9c54def",
+   "text_sha256": "d12c0ab17eb5abb07df9c138617077cf9dd20c5afd28dd03cc5abfc314c05534",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.14a-1.png",
+     "sha256": "b4afcf395bfb3912fd03c4bb667b7cc290003724d69afc66a553871e4394049f"
+    },
+    {
+     "file": "01.14a-2.png",
+     "sha256": "25ca0d4015d12c82f5eae07e66c6c2ba775eec8a073d6f03121d6c3899e603e0"
+    },
+    {
+     "file": "01.14a-3.png",
+     "sha256": "e53b8359392c8316dc3143e3cbcd5307b11d022d18fa6806371753d33d7c1b1c"
+    }
+   ]
+  },
+  {
+   "id": "01.15a",
+   "source_file": "01.15a-INVOICE_uncefact.xml",
+   "xml_sha256": "b89c8593f45f8057f691726cc1a1ec48d1289a2f6d25d95b85fa694aeeacd41e",
+   "pdf_sha256": "ea41bd22b7722f2b7ea41f14adc439d91765fe4a754eb946e961d35c96245a90",
+   "text_sha256": "0b0b713223e0dbded2b410bbdfa498bce02522ee2e801f867ea2c35b25d0c86d",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.15a-1.png",
+     "sha256": "7cda269e20a23332a1d4edf4fe6dba58d3fcf9d819afc67b8847f80172e016c8"
+    },
+    {
+     "file": "01.15a-2.png",
+     "sha256": "0a378dcb166aab5af1b818697648f494e1cbc9c6fbec0c00081d9875325aec58"
+    },
+    {
+     "file": "01.15a-3.png",
+     "sha256": "543b1fe724ba4c24e58f6f8b66159fd210b1257d79e837bc31d807180e924aa4"
+    }
+   ]
+  },
+  {
+   "id": "01.17a",
+   "source_file": "01.17a-INVOICE_uncefact.xml",
+   "xml_sha256": "99832b7873fcf11c85506f9fd3614fa3841e0fda435ca424bb37ce0833294fdc",
+   "pdf_sha256": "d5f6081f7578c54b14ec4b824778136487be90e510ba9c1e171231f11144739f",
+   "text_sha256": "1e73f59ab54838fdf93457a90138fd99f15c4a3e091b6a5a4ade700867693efd",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.17a-1.png",
+     "sha256": "941f1b3a1e0d2e8c2c37c6fdeba816e67de92d8a76dcc7d315994b74383f9f9b"
+    },
+    {
+     "file": "01.17a-2.png",
+     "sha256": "a610f4f4e0fee199601d3abeee3dda3510598574d9d47ca4ccccbb9cc4cb77a7"
+    },
+    {
+     "file": "01.17a-3.png",
+     "sha256": "8ad7a066d8ac98da66fcf4aab4975a608b223d4cc4ae6b55b9bd385315ffe56f"
+    }
+   ]
+  },
+  {
+   "id": "01.18a",
+   "source_file": "01.18a-INVOICE_uncefact.xml",
+   "xml_sha256": "6be54635ad7afff2516151458f68eeb59340cbb602463f3123b60de348b3861f",
+   "pdf_sha256": "5758072ee98be16ccc39b3b08ea9653d663a2513447dc38068d036994fc26894",
+   "text_sha256": "ea9b512cf88f4b401733a8c518bd6f996509af438974352fa12037adb53477e4",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.18a-1.png",
+     "sha256": "8281d5ca7bc78acee5763933b00386a49ce6b54a666319742a81a8e961f1b363"
+    },
+    {
+     "file": "01.18a-2.png",
+     "sha256": "84153c5001b7fab50e7dfb5e42406a4e721a27d818e199acceb2a7afa3a78326"
+    },
+    {
+     "file": "01.18a-3.png",
+     "sha256": "6af61da63ae89453eab073ad82436b25bcd562d496e0664aa421c4d195ebe5c4"
+    }
+   ]
+  },
+  {
+   "id": "01.19a",
+   "source_file": "01.19a-INVOICE_uncefact.xml",
+   "xml_sha256": "c1f62d00d1d0dac9dc1c3387bb76e47b58fe98881fe0c879901fdf3f8c474f47",
+   "pdf_sha256": "b167f482ff371f3245fb944e0ef427283cb4f7f32e1339d44be0e637ca7bb8ac",
+   "text_sha256": "f874f8de064c27da4211cddb685c68db38002ae486634f0a1a8ddc6b5d8d8c50",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.19a-1.png",
+     "sha256": "0791d69710d5a5114d5ca908d03a06924965eed36ffda3a2af68b64f12b37079"
+    },
+    {
+     "file": "01.19a-2.png",
+     "sha256": "529e3ea81091e275acf8c36637ca260107191ca1b09ba602b83fb27da200f69a"
+    },
+    {
+     "file": "01.19a-3.png",
+     "sha256": "71c47da4354795f2af6c57d81f570b71b4b950ccfb14bd2540d4bbc6e7ae02fe"
+    }
+   ]
+  },
+  {
+   "id": "01.20a",
+   "source_file": "01.20a-INVOICE_uncefact.xml",
+   "xml_sha256": "b86fb34c45e0c30cc8b8f50a375ef8d68d0914ac902a3aac6e0009d35f73196b",
+   "pdf_sha256": "a604aafdb2c6ff4c2e7ad4c555404eb8e0bd433370a91973ff035bfc3d5a6356",
+   "text_sha256": "b0e3ffe5605a26de5b9f40098837651e42ba3b8682c614472419b4453ab8e3d7",
+   "pages": 3,
+   "png": [
+    {
+     "file": "01.20a-1.png",
+     "sha256": "9aed6ad750b24b43f70146912f86a48cb38e8a186ae79d7ec504fbdc409d3dcd"
+    },
+    {
+     "file": "01.20a-2.png",
+     "sha256": "3b9a534d5376173d8dd3df43562382f2b11baa64854752d97aaad44f8c203af6"
+    },
+    {
+     "file": "01.20a-3.png",
+     "sha256": "d2da50f8c267414ab23758acb053cd755e518b9bda407276e0ca13928f3638e2"
+    }
+   ]
+  },
+  {
+   "id": "01.21a",
+   "source_file": "01.21a-INVOICE_uncefact.xml",
+   "xml_sha256": "e88c6b6498bf96f78aa1ff20d20d0751fa790704e8e879fd388c0499df2c1ee1",
+   "pdf_sha256": "1a4e4f45c06608a7b3502f7ae45cfaf07d39a7c90073fca40b25242e37b6d91b",
+   "text_sha256": "ffa84710dcef659d20b36ac47481855d351d3a1fdb6f512c46d4bfe4b83dcd16",
+   "pages": 2,
+   "png": [
+    {
+     "file": "01.21a-1.png",
+     "sha256": "3e705e3e300d9b7678a53ccc9c391fd0f03f9b8e3a162a488d610acea1e7b895"
+    },
+    {
+     "file": "01.21a-2.png",
+     "sha256": "a530f6abb3c58962b65e07ad39bbc942ad3efe1796e69f988c3193b4221ab3f6"
+    }
+   ]
+  },
+  {
+   "id": "02.01a",
+   "source_file": "02.01a-INVOICE_uncefact.xml",
+   "xml_sha256": "b0bc3f139d52d6717e35415fb4ddbd91fe656eb431da41ef41c7edcd911005e3",
+   "pdf_sha256": "fe5a0172f61d461faac987d6929ca1fc5605ad93f611c179f537a932c0926127",
+   "text_sha256": "055fcfc26376a204637504c15090143f8330103d02af7caa883679fb78f224f4",
+   "pages": 4,
+   "png": [
+    {
+     "file": "02.01a-1.png",
+     "sha256": "bfe97c01043d353618433fc43f878d38a9b222998623aca28543613490abce5c"
+    },
+    {
+     "file": "02.01a-2.png",
+     "sha256": "0c957dc02dacba10f90c7c69321dc2ab7efce136427ad213255e59644746ee2b"
+    },
+    {
+     "file": "02.01a-3.png",
+     "sha256": "99b089d5b8db0eb283c0cbf08db1d2d52eb09f152c9da6d906791d22d14d3e45"
+    },
+    {
+     "file": "02.01a-4.png",
+     "sha256": "14f31f152c79a974625796624a193a0106fa4da69af2b68057cb9ecce51c2d3e"
+    }
+   ]
+  },
+  {
+   "id": "02.02a",
+   "source_file": "02.02a-INVOICE_uncefact.xml",
+   "xml_sha256": "551e9667b1c54b9845d46d0b650961e867e90fd61e81f76206c23efa8943148f",
+   "pdf_sha256": "db7de6ebe22a8980ae6cc1f4eb85d9ff33e2cdbc113e66f96aa395056983ed53",
+   "text_sha256": "b88201ea8e65849bc917d7a4c0bf24c984e33027804d768a7b0efda67c493139",
+   "pages": 4,
+   "png": [
+    {
+     "file": "02.02a-1.png",
+     "sha256": "64f2eb633e623801eab83b403a1ff5e58a61244fb0b9a95c3d87af75caa084d4"
+    },
+    {
+     "file": "02.02a-2.png",
+     "sha256": "69f58e7184c8f4669044672a1af842b58b19445b8f9dd64baca8c5d5402ea6de"
+    },
+    {
+     "file": "02.02a-3.png",
+     "sha256": "cb9bda01d3b2c7a6941a04925203208489b3554e18002c2e479a20791821f6de"
+    },
+    {
+     "file": "02.02a-4.png",
+     "sha256": "e9e41cbbb321e3cb5c86d034aa3828f1752c6f6e56fd6eb1f7e6505645ec2b57"
+    }
+   ]
+  },
+  {
+   "id": "02.03a",
+   "source_file": "02.03a-INVOICE_uncefact.xml",
+   "xml_sha256": "0c1d5983bd99613bb0352634b16990f9d70c43d189dca31b979b7191b45bb51e",
+   "pdf_sha256": "8970b2ad76da0fcea7b23d4e1150c73109fe8a2b1fd8197e1e91a3a8f237800b",
+   "text_sha256": "bf2417d09a0df5b26601ad7a6682a133dec7b94416527cc6b9911bde5993a7c4",
+   "pages": 4,
+   "png": [
+    {
+     "file": "02.03a-1.png",
+     "sha256": "be919ea03a80d0996b1327a830ee078f4bb0c88b58103ffdcc2b0bce336dc507"
+    },
+    {
+     "file": "02.03a-2.png",
+     "sha256": "0c957dc02dacba10f90c7c69321dc2ab7efce136427ad213255e59644746ee2b"
+    },
+    {
+     "file": "02.03a-3.png",
+     "sha256": "95676c56d4865f97c79595323a5da8ff787c5b8f8d732e9c96b16dcbcfbae684"
+    },
+    {
+     "file": "02.03a-4.png",
+     "sha256": "14f31f152c79a974625796624a193a0106fa4da69af2b68057cb9ecce51c2d3e"
+    }
+   ]
+  },
+  {
+   "id": "02.04a",
+   "source_file": "02.04a-INVOICE_uncefact.xml",
+   "xml_sha256": "451f14f8b45814e92d11212dffba91bcb0c02f1698b30eeb474d3bd5ea1bf16e",
+   "pdf_sha256": "f709c5219133d21429f78bc856149a1b0d3b377caf9346e7d0837483ef67a986",
+   "text_sha256": "7341bd9cbf0d527fa070017e245ff777a57e313ec415a31d1297edb2781cff90",
+   "pages": 4,
+   "png": [
+    {
+     "file": "02.04a-1.png",
+     "sha256": "7ee3c9855205744bd03a92b6472e2e4ad81945e9ef5ecd59055a6a1d95763aa7"
+    },
+    {
+     "file": "02.04a-2.png",
+     "sha256": "b562cfe996d70359bef84252c489e9c1c4b7e450a89fb1d5214a1869fd024fd7"
+    },
+    {
+     "file": "02.04a-3.png",
+     "sha256": "b0daa21f3ee9d2755b3d405f4e247cf918b7c3c6ccc85c6b716e219ac2eaf517"
+    },
+    {
+     "file": "02.04a-4.png",
+     "sha256": "14f31f152c79a974625796624a193a0106fa4da69af2b68057cb9ecce51c2d3e"
+    }
+   ]
+  },
+  {
+   "id": "02.05a",
+   "source_file": "02.05a-INVOICE_uncefact.xml",
+   "xml_sha256": "abdb5ddd5b0c177d54029c3e10e71e3ebfc6ec78a8c6e23772218b109e90a962",
+   "pdf_sha256": "c1a658902739ec51fea27b8baa40696b52ee82c81ad546767e8354c2ad1201a0",
+   "text_sha256": "ad6ef7fbc51cadae363a52ef9c854fa75154e5d0a47cbbd05d106f6dd29c763e",
+   "pages": 9,
+   "png": [
+    {
+     "file": "02.05a-1.png",
+     "sha256": "3a12a25f5ebd7e83c14794a274cdcef5650bce5d9a3ca7672687e61120a6ea06"
+    },
+    {
+     "file": "02.05a-2.png",
+     "sha256": "a54bfb42be4e84ec3517c2c2fefd4a61c81f2183c3b6851e16efcf7954042add"
+    },
+    {
+     "file": "02.05a-3.png",
+     "sha256": "f76befc5202dfd3f8a491c0f4c3129916989f53ea8392585ff86631bd4c1e019"
+    },
+    {
+     "file": "02.05a-4.png",
+     "sha256": "86b15732349fc77b84599df31d2d10514aecf2ebc34565f7a6f094c0df120dc0"
+    },
+    {
+     "file": "02.05a-5.png",
+     "sha256": "7f232e00edc031659f69e5e9dcf9310a06676e89542e0fd0addf4166c7cc798b"
+    },
+    {
+     "file": "02.05a-6.png",
+     "sha256": "f294c527353e07311f5c923763d0c3394f8a06ee39ade83df7c30f6946e92797"
+    },
+    {
+     "file": "02.05a-7.png",
+     "sha256": "87422f99fc491b84998586d03ff80182eff8e984ac3153a21c1049fddd4b0655"
+    },
+    {
+     "file": "02.05a-8.png",
+     "sha256": "25dedb612e3d5aede5b1cd7a4558806e8bcc3395ac1bb55ed33964226906ee89"
+    },
+    {
+     "file": "02.05a-9.png",
+     "sha256": "0dfe0622dd455b2a64a7a5112ea8a1db83d7f0c71346bdd6101701673b07d9d9"
+    }
+   ]
+  },
+  {
+   "id": "02.06a",
+   "source_file": "02.06a-INVOICE_uncefact.xml",
+   "xml_sha256": "17a539fe569a2d75366078d3e435a5427c234fdbdf690219a6f898cfc05d6076",
+   "pdf_sha256": "c95607bf016653b325c626a9264fa7a87ab03a2c4a68f90d869379eca9976fde",
+   "text_sha256": "a8a6645ae7c5f55eeebde7b608a18a287c5ef245c0dcbfbd89a8e2e83edba29f",
+   "pages": 3,
+   "png": [
+    {
+     "file": "02.06a-1.png",
+     "sha256": "0c4dc25b801aea9148715f814914bc17e70482e063b2b28102b616bb5b1a4f25"
+    },
+    {
+     "file": "02.06a-2.png",
+     "sha256": "9065da2ec44537b3ae2fdba1526c28f3d438684de6ea493ff815bb7f7c1dbb82"
+    },
+    {
+     "file": "02.06a-3.png",
+     "sha256": "5602d994c56e5e2eb812f3d2ed104b25918c623448d46f95cc44977792c78bf0"
+    }
+   ]
+  },
+  {
+   "id": "03.01a",
+   "source_file": "03.01a-INVOICE_uncefact.xml",
+   "xml_sha256": "f42a6b02d0acada2bd9e9d1520b88385878f2377cb99444f0e87052eafb1e1de",
+   "pdf_sha256": "e6a8f26ba7e0f40463bcdf40ba094298a752a11ffa12cf75ff3c1c2756bcfd6d",
+   "text_sha256": "1230a03d260e5e62c9ddc64bceee8eb8053df9e0ed0b4ca5843e520d8f732b70",
+   "pages": 7,
+   "png": [
+    {
+     "file": "03.01a-1.png",
+     "sha256": "5ba2f56524505778b5a3dc0a2d260464855644d785c23a8f306b3e7ae203f59c"
+    },
+    {
+     "file": "03.01a-2.png",
+     "sha256": "0530dab3072be95ca44bc6d19954660259b5b52fbeffdf5ef3aa5c751dca9e45"
+    },
+    {
+     "file": "03.01a-3.png",
+     "sha256": "030124de3a6f69cb0f3cb67dadc927395bf93fd3fc39c3521af9a0dca740c357"
+    },
+    {
+     "file": "03.01a-4.png",
+     "sha256": "81acc36150ae10281c186cd5e69c915191d1bd1d85e2a531d157956fffb68960"
+    },
+    {
+     "file": "03.01a-5.png",
+     "sha256": "0c507e241dd9f02bfaa6a846800d1af9a3405f68d83805845423a3a25fd815cf"
+    },
+    {
+     "file": "03.01a-6.png",
+     "sha256": "c044267c31b708a421575781b28ef3f6718b12b6c241e1737645f06d1f500f42"
+    },
+    {
+     "file": "03.01a-7.png",
+     "sha256": "e773ccaede502edd2a126132319d2a80bcf0fd4a0c6c3e23cce31625c7627f9d"
+    }
+   ]
+  },
+  {
+   "id": "03.02a",
+   "source_file": "03.02a-INVOICE_uncefact.xml",
+   "xml_sha256": "c19244a664390db2d45424db3129659e785daa643fc0ec9434ac6c85e1413646",
+   "pdf_sha256": "26fad21f6a4a5828803bb8de6dec561f7f7607dab9c666a87179b44dffbba1af",
+   "text_sha256": "a8e8fa7a8159f3e7d6d378c2b513deddb39ac29fee13e9d58e4f7710650a6e7b",
+   "pages": 3,
+   "png": [
+    {
+     "file": "03.02a-1.png",
+     "sha256": "06eef872176fd22d77fef768a7756105eff4306a727c4061613870a86c8027f0"
+    },
+    {
+     "file": "03.02a-2.png",
+     "sha256": "0a378dcb166aab5af1b818697648f494e1cbc9c6fbec0c00081d9875325aec58"
+    },
+    {
+     "file": "03.02a-3.png",
+     "sha256": "c09e087cbe2c7c187726f979a40ed861ff0eb90e5ccfb57ed3a6d26f7eb8634e"
+    }
+   ]
+  },
+  {
+   "id": "03.03a",
+   "source_file": "03.03a-INVOICE_uncefact.xml",
+   "xml_sha256": "6d61b2ebce34ec02fcd8395debc59b235af6364aa9cf5bfde7cc40b5bb0729f0",
+   "pdf_sha256": "6b38957edf93021e943409ceab5cfd23aa775cc9ae8b7814cd011231830d6075",
+   "text_sha256": "b650e626002bc503d49f15e98cc5ed2a1545ea1a59652c85b3dcfbb658116bd6",
+   "pages": 3,
+   "png": [
+    {
+     "file": "03.03a-1.png",
+     "sha256": "06eef872176fd22d77fef768a7756105eff4306a727c4061613870a86c8027f0"
+    },
+    {
+     "file": "03.03a-2.png",
+     "sha256": "0a378dcb166aab5af1b818697648f494e1cbc9c6fbec0c00081d9875325aec58"
+    },
+    {
+     "file": "03.03a-3.png",
+     "sha256": "357c94e931d4e50e21e36e4b6137c829cd862e0730cd7a039022d8d404f7eb26"
+    }
+   ]
+  },
+  {
+   "id": "03.04a",
+   "source_file": "03.04a-INVOICE_uncefact.xml",
+   "xml_sha256": "49701b86b040112823b9a279634dcaf68fa371848dba85d2028fb0dc2d5b9d8d",
+   "pdf_sha256": "11b47855cf8794b0cc19715dfccd6c2796a36e50a392d959112c07e969e58d91",
+   "text_sha256": "29f3d33a50cd7fac256c86e70af83c603f11ddacbac46bcc98566b3600046421",
+   "pages": 5,
+   "png": [
+    {
+     "file": "03.04a-1.png",
+     "sha256": "46f166cc82a4c8fbe5d0350d0a1544b3fd5105acc0080aa94a3be0b7d75958cf"
+    },
+    {
+     "file": "03.04a-2.png",
+     "sha256": "01f6653cbf613eaa337f77320fa7155fff966ec9b6d48ac0ef812824711020c8"
+    },
+    {
+     "file": "03.04a-3.png",
+     "sha256": "10c5cf30830f0bbcb5d4e61f200b25b8189d931e230c84e09712b1aeeca257ae"
+    },
+    {
+     "file": "03.04a-4.png",
+     "sha256": "63b1b22b2a09b596f2077074d499af7edf8cd246cb08469c5a1475c0bac1f238"
+    },
+    {
+     "file": "03.04a-5.png",
+     "sha256": "882d197c525bceca4be3b2493773fde3f11fdde37cad8330841972638bf65f73"
+    }
+   ]
+  },
+  {
+   "id": "03.05a",
+   "source_file": "03.05a-INVOICE_uncefact.xml",
+   "xml_sha256": "86fa1ea53fdb2ee15ba5541dd71c5f0e0d5132bd88ea2b6249a39ce3c3c5503f",
+   "pdf_sha256": "78bfe59edd72c77e9812733d84c0641760f0d8d3b6d74d735492c4d91b7da89c",
+   "text_sha256": "4f5f7011018ac67850a5ae7a3058456e2fd8b10f7d24de71dac44328f6fe7af3",
+   "pages": 3,
+   "png": [
+    {
+     "file": "03.05a-1.png",
+     "sha256": "533d245a3f2fedce6e73373f93ec79ff402633af4ca0c555816b0625aa4ac56a"
+    },
+    {
+     "file": "03.05a-2.png",
+     "sha256": "71348a14e9ddc0040bad9066608cdce646cbeb752aa05ecec3f6fa56455642de"
+    },
+    {
+     "file": "03.05a-3.png",
+     "sha256": "a4c5d48534b02f3b87841a36bfe9cd25162290eb296fa35650f19ca3ffefc049"
+    }
+   ]
+  },
+  {
+   "id": "03.06a",
+   "source_file": "03.06a-INVOICE_uncefact.xml",
+   "xml_sha256": "7401cbb320bd2dd9665b27eb594dcfe5d577184cd6c1c85a22773a643da71d35",
+   "pdf_sha256": "a1d5b9c310dbc2b6c1bf2285494795e96ef5da9830c798fadd627666a0626a5e",
+   "text_sha256": "9ffd99beaaa91f7d8107886405b4e46b227e6f5b193ed4a588cef30996ff6f90",
+   "pages": 3,
+   "png": [
+    {
+     "file": "03.06a-1.png",
+     "sha256": "4571407fda41562d5ed6f16d5b185f42ec139223aaf75b837b8b85dcccb96cbc"
+    },
+    {
+     "file": "03.06a-2.png",
+     "sha256": "362bf513e0cddf54ad67a958e52d26bd18fad36f30dcb026a642fbf85b35f894"
+    },
+    {
+     "file": "03.06a-3.png",
+     "sha256": "2bb158b1416cac8c62ad10f15bf6ba7dad11b55f40ee7ee8550852e87d880f59"
+    }
+   ]
+  },
+  {
+   "id": "03.07a",
+   "source_file": "03.07a-INVOICE_uncefact.xml",
+   "xml_sha256": "0240935e541603f57cd52d3e1ff5707ca21eedfe7db8a16b29cf14ca2b14b4fa",
+   "pdf_sha256": "a525f770e7586509614f5eb34c982a10de01f62460b0bc63c0d889920e11653b",
+   "text_sha256": "555e0c4da83c3e6558fd4500cdf280db82977d40e60670b60f5e63f90bbbf30f",
+   "pages": 6,
+   "png": [
+    {
+     "file": "03.07a-1.png",
+     "sha256": "2d23c337e41d5412ce0a98f9dcd52ea7dc25d3cdd1704b08718ec38bb6fbc92d"
+    },
+    {
+     "file": "03.07a-2.png",
+     "sha256": "af44ddc728bb7fd09ab9861525f696738d90c4eb6898802c09018da689fda13d"
+    },
+    {
+     "file": "03.07a-3.png",
+     "sha256": "f6d4b8fd5c37ae065d24b68924a571420e079678defbcdf914267e9b755da946"
+    },
+    {
+     "file": "03.07a-4.png",
+     "sha256": "8172f6f956aec8a9b577e4cdedffcb8652167a449c0d912fbad4e85cc1ac452e"
+    },
+    {
+     "file": "03.07a-5.png",
+     "sha256": "182d572893ec585bc31d39ed434d50a57983f04b220dddd753c5612a42e1fe79"
+    },
+    {
+     "file": "03.07a-6.png",
+     "sha256": "e06ce95a7989f60cbb772685a61c599b1d9fde8bde08227feeba0bc13e0e7663"
+    }
+   ]
+  },
+  {
+   "id": "04.05a",
+   "source_file": "04.05a-INVOICE_uncefact.xml",
+   "xml_sha256": "5ab587a3c10b18f1da85626054de3bcd9162cfc4add31b2e3fa44be0b40bcf3e",
+   "pdf_sha256": "4d792b7417d999153780f793f94e1532636aab68d69ed962aa4f1f7d58286d43",
+   "text_sha256": "0192a1f46ff0f5a5aaa0c67dd8598e4512af2312d2e61393d054f6a767053309",
+   "pages": 2,
+   "png": [
+    {
+     "file": "04.05a-1.png",
+     "sha256": "af6d03a0cad6675695f714fac7c259c48a446e021d15397fb5764ce673cabd37"
+    },
+    {
+     "file": "04.05a-2.png",
+     "sha256": "b34ba44ae66c26ca359509de305255618c9a21409c24e15dc12639440c6ccf62"
+    }
+   ]
+  }
+ ]
+}

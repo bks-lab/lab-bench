@@ -1,0 +1,410 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                    ATU123456789/1234567
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:     90000000-03083-72                      Bundesland:           Bayern
+ Name:               [Buyer name]                           Ländercode:           DE
+
+ Adresszeile 1:      [Buyer address line 1]                 Kennung:              138
+
+ Adresszeile 2:      [Buyer address line 2]                 Kontaktstelle :       Tina Tester
+
+ Adresszeile 3:      [Buyer address line 3]                 Telefon:              0800 123456
+
+ PLZ:                98765                                  E-Mail-Adresse:       tester@test.de
+
+ Ort:                [Buyer city]
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:         [Seller name]                          Kennung:              9876543217894897438
+
+ Adresszeile 1:      [Seller address line 1]                Kennung:              748387437438
+
+ Adresszeile 2:      [Seller address line 2]                Kennung:              987654321
+
+ Adresszeile 3:      [Seller address line 3]                Schema der Kennung:   0088
+
+ PLZ:                12345                                  Name:                 Tim Tester
+
+ Ort:                [Seller city]                          Telefon:              012 3456789
+
+ Bundesland:         Bayern                                 E-Mail-Adresse:       tim.tester@test.com
+ Ländercode:         DE
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:    1234567                                Projektnummer:        PR12345678
+
+ Rechnungsdatum:     13.4.2018                              Vertragsnummer:       0000000752
+
+ Rechnungsart:       380                                    Bestellnummer:        65002278
+ Währung:            EUR                                    Auragsnummer:        ABC123456789
+
+ Abrechnungsdatum    13.4.2018
+ der Umsatzsteuer:
+
+
+ Abrechnungszeitraum
+ Von:                13.4.2018                              Bis:                  13.4.2018
+
+ Vorausgegangene Rechnungen
+ Rechnungsnummer:    PIR1234567890                          Rechnungsdatum:       4.2.2018
+
+
+
+
+                                                  Seite 1 / 6
+Bereiche ohne Inhalte werden nicht dargestellt!                                                       ATU123456789/1234567
+
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                       10.781.250,00
+ Summe Nachlässe                                                                                                  20.000,00
+ Summe Zuschläge                                                                                                  20.000,00
+ Gesamtsumme                                                                                                  10.781.250,00
+ Summe Umsatzsteuer                                                                                            2.048.437,50
+ Summe Umsatzsteuer in Abrechnungswährung                                                                      2.048.437,50
+ Gesamtsumme                                                                                                  12.829.687,50
+ Gezahlter Betrag                                                                                                      0,00
+ Rundungsbetrag                                                                                                        0,00
+ Summe Fremdforderungen                                                                                                0,00
+ Fälliger Betrag                                                                                              12.829.687,50
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                  10.781.250,00
+ Umsatzsteuersatz                                                                                                   19,00%
+ Umsatzsteuerbetrag                                                                                            2.048.437,50
+
+ Umsatzsteuerkategorie: E
+ Gesamtsumme                                                                                                           0,00
+ Umsatzsteuersatz                                                                                                    0,00%
+ Umsatzsteuerbetrag                                                                                                    0,00
+
+ Befreiungsgrund:   [VAT exemption reason text]
+
+ Kennung für den    VATEX-EU-132-1A
+ Befreiungsgrund:
+
+
+ Nachlass auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie des Nachlasses: E
+                                                                    Umsatzsteuerkategorie des Nachlasses: E
+ Grundbetrag                                      100.000,00
+                                                                    Grundbetrag                                  100.000,00
+ Prozentsatz                                         10,00%
+                                                                    Prozentsatz                                     10,00%
+ Nachlass                                         10.000,00
+                                                                    Nachlass                                     10.000,00
+ Umsatzsteuersatz des Nachlasses                      0,00%
+                                                                    Umsatzsteuersatz des Nachlasses                  0,00%
+ Grund für den      Fixed long term
+ Nachlass:
+                                                                    Grund für den     Fixed long term 2
+                                                                    Nachlass:
+ Kennung für den    102
+ Nachlassgrund:
+                                                                    Kennung für den   102
+                                                                    Nachlassgrund:
+
+
+
+ Zuschlag auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie des Zuschlages: E
+                                                                    Umsatzsteuerkategorie des Zuschlages: E
+ Grundbetrag                                      100.000,00
+                                                                    Grundbetrag                                  100.000,00
+ Prozentsatz                                         10,00%
+                                                                    Prozentsatz                                     10,00%
+ Zuschlag                                         10.000,00
+                                                                    Zuschlag                                     10.000,00
+ Umsatzsteuersatz des Zuschlages                      0,00%
+                                                                    Umsatzsteuersatz des Zuschlages                  0,00%
+ Grund für den      Testing
+ Zuschlag:
+                                                                    Grund für den     Testing 2
+                                                                    Zuschlag:
+ Kennung für den    TAC
+ Zuschlagsgrund:
+                                                                    Kennung für den   TAC
+                                                                    Zuschlagsgrund:
+
+
+
+
+                                                          Seite 2 / 6
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                   ATU123456789/1234567
+
+
+
+ Zahlungsdaten
+
+ Skonto; weitere         Beschreibung 1: Bitte überweisen                 Code für das           58
+ Zahlungsbedingungen:    Sie bis zum 13.04.2018 auf das unten             Zahlungsmittel:
+                         aufgeführte Konto.
+                                                                          Zahlungsmittel:        [Payment means text]
+ Fälligkeitsdatum:       13.4.2018
+                                                                          Verwendungszweck:      Deb. 12345 / Fact. 9876543
+
+
+ Überweisung
+ Kontoinhaber:           [Payment account name]                           BIC:                   [BIC]
+
+ IBAN:                   DE79000000001234567890
+
+
+ Kontoinhaber:           [Payment account name 2]                         BIC:                   [BIC]
+
+ IBAN:                   DE16000000002345678901
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:                 AAC
+
+ Bemerkung:              Invoice Note Description
+
+ Betreﬀ:                 AAC
+
+ Bemerkung:              Invoice Note Description 2
+
+Details
+ 1
+
+ Position:               1                                                Nummer der             6171175.1
+                                                                          Auragsposition:
+ Freitext:               Invoice Note Description Line Item
+                                                                          Kontierungshinweis:    Konto 1
+ Objektkennung:          ANG987654321
+
+
+ Abrechnungszeitraum
+ Von:                    13.4.2018                                        Bis:                   13.4.2018
+
+
+ Preiseinzelheiten
+ Menge                                                         30         Basismenge zum         1,00
+ Einheit                                                     XPP          Artikelpreis:
+
+ Preis pro Einheit (netto)                                158.125         Code der Maßeinheit:   XPP
+ Gesamtpreis (netto)                                  4.743.750,00
+                                                                          Umsatzsteuer:          S
+ Rabatt (netto):         10.000
+                                                                          Umsatzsteuersatz:      19,00%
+ Listenpreis (netto):    168.125
+
+ Nachlässe auf Ebene der Rechnungsposition
+ Grundbetrag (netto)                                    200.000,00        Code für den           102
+ Prozentsatz                                               10,00%         Nachlassgrund:
+
+ Nachlass (netto)                                       20.000,00
+                                                                          Grundbetrag (netto)                                 200.000,00
+ Grund des Nachlasses:   Fixed long term                                  Prozentsatz                                            10,00%
+                                                                          Nachlass (netto)                                    20.000,00
+
+
+
+
+                                                                Seite 3 / 6
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                       ATU123456789/1234567
+
+
+
+ Grund des Nachlasses:    Fixed long term 2                                  Code für den           102
+                                                                             Nachlassgrund:
+
+
+
+ Zuschläge auf Ebene der Rechnungsposition
+ Grundbetrag (netto)                                       200.000,00        Grundbetrag (netto)                                  200.000,00
+ Prozentsatz                                                  10,00%         Prozentsatz                                             10,00%
+ Zuschlag (netto)                                          20.000,00         Zuschlag (netto)                                     20.000,00
+
+ Grund des Zuschlags:     Testing                                            Grund des Zuschlags:   Testing 2
+ Code für den             TAC                                                Code für den           TAC
+ Zuschlagsgrund:                                                             Zuschlagsgrund:
+
+
+
+ Artikelinformationen
+ Bezeichnung:             Fahrzeug XY der Klasse Z                           Artikelkennung des     5034
+                                                                             Käufers:
+ Beschreibung:            Gruppe von Fahrzeugde XY der Klasse
+                          Z                                                  Artikelkennung:        123456789
+
+ Artikelnummer:           1034                                               Schema der             0088
+                                                                             Artikelkennung:
+
+
+ Eigenschaen des Artikels
+ Leistung:                    [Leistung Value]                               Lauﬂeistung:               [Lauﬂeistung Value]
+
+ Länge:                       [Länge Value]                                  Zeitpunkt                  [Zeitpunkt Inbetriebnahme Value]
+                                                                             Inbetriebnahme:
+ Starthöchstmasse:            [Starthöchstmasse Value]
+
+
+ 2
+
+ Position:                2
+
+
+ Preiseinzelheiten
+ Menge                                                         42,00         Umsatzsteuer:          S
+ Einheit                                                        XPP
+                                                                             Umsatzsteuersatz:      19,00%
+ Preis pro Einheit (netto)                                   143.750
+ Gesamtpreis (netto)                                     6.037.500,00
+
+ Artikelinformationen
+ Bezeichnung:             Fahrzeug AB der Klasse C                           Beschreibung:          Gruppe von Fahrzeugde AB der Klasse
+                                                                                                    C
+
+ Eigenschaen des Artikels
+ Leistung:                    [Leistung Value]                               Lauﬂeistung:               [Lauﬂeistung Value]
+
+ Länge:                       [Länge Value]                                  Zeitpunkt                  [Zeitpunkt Inbetriebnahme Value]
+                                                                             Inbetriebnahme:
+ Starthöchstmasse:            [Starthöchstmasse Value]
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                              Schema der             EM
+ Handelsname:                                                                elektronischen
+                                                                             Adresse:
+ Bundesland:              Bayern
+                                                                             Register-/             123456789
+ Elektronische Adresse:   rechnungsausgang@test.com                          Registriernummer:
+
+
+
+
+                                                                   Seite 4 / 6
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                         ATU123456789/1234567
+
+
+
+ Schema der               0088                                              Weitere rechtliche      Amtsgericht […], Geschäsführer:
+ Registernummer:                                                            Informationen:          […], Sitz der Gesellscha […],
+                                                                                                    Aufsichtsratvorsitzender: […]
+ Umsatzsteuer-ID:         ATU123456789
+                                                                            Code der                GBP
+ Steuernummer:            123/456/789                                       Umsatzsteuerwährung:
+
+
+
+ Steuervertreter des Verkäufers
+
+ Name:                    [Seller tax representative name]                  Ort:                    [Seller tax representative city]
+
+ Adresszeile 1:           [Seller tax representative address line 1]        Bundesland:             Bayern
+
+ Adresszeile 2:           [Seller tax representative address line 2]        Ländercode:             DE
+
+ Adresszeile 3:           [Seller tax representative address line 3]        Umsatzsteuer-ID:        DE124567
+
+ PLZ:                     12345
+
+
+ Informationen zum Käufer
+
+ Abweichender             [Buyer trading name]                              Register-/              90000000-03083-72
+ Handelsname:                                                               Registriernummer:
+
+ Bundesland:              Bayern                                            Schema der Register-/   0204
+                                                                            Registriernummer:
+ Elektronische Adresse:   rechnungseingang@test.de
+                                                                            Umsatzsteuer-ID:        DE12345ABC
+ Schema der               EM
+ elektronischen                                                             Abrechnungsdatum        13.4.2018
+ Adresse:                                                                   der Umsatzsteuer:
+
+                                                                            Kontierungsinformation: Buchungscode1
+
+
+
+ Lieferinformationen
+
+ Kennung des              68                                                Adresszeile 3:          More Details
+ Lieferorts:
+                                                                            PLZ:                    98765
+ Lieferdatum:             13.4.2018
+                                                                            Ort:                    [Deliver to city]
+ Name des Empfängers:     [Deliver to party name]
+                                                                            Bundesland:             Bayern
+ Adresszeile 1:           [Deliver to street]
+                                                                            Ländercode:             DE
+ Adresszeile 2:           4. OG
+
+
+ Informationen zum Vertrag
+
+ Vergabenummer:           ANG987654321
+ Kennung der              RAR123456789
+ Empfangsbestätigung:
+
+ Kennung der              DAR123456789
+ Versandanzeige:
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+ Objektkennung:           OK987654321
+
+ Vom Verkäufer abweichender Zahlungsempfänger
+
+ Name:                    [Payee name]                                      Kennung:                74
+
+
+
+
+                                                                  Seite 5 / 6
+Bereiche ohne Inhalte werden nicht dargestellt!                                                           ATU123456789/1234567
+
+
+
+ Register-/          90000000-03083-72                          Schema der Register-/   0204
+ Registriernummer:                                              Registriernummer:
+
+
+
+Anlagen
+ Rechnungsbegründende Unterlagen
+
+ Kennung:            01_15_Anhang_01.pdf                        Anhangsdokument:        01_15_Anhang_01.pdf
+
+ Beschreibung:       Aufschlüsselung der einzelnen              Format des              application/pdf
+                     Leistungspositionen                        Anhangdokuments:
+
+ Verweis (z.B.       https://xeinkauf.de/xrechnung/             Name des                01_15_Anhang_01.pdf
+ Internetadresse):                                              Anhangsdokuments:
+
+
+
+ Kennung:            01_15_Anhang_02.pdf                        Anhangsdokument:        01_15_Anhang_02.pdf
+
+ Beschreibung:       Aufschlüsselung der einzelnen              Format des              application/pdf
+                     Leistungspositionen                        Anhangdokuments:
+
+ Verweis (z.B.       https://xeinkauf.de/xrechnung/             Name des                01_15_Anhang_02.pdf
+ Internetadresse):                                              Anhangsdokuments:
+
+
+
+
+                                                      Seite 6 / 6
+

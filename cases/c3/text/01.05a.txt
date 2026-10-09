@@ -1,0 +1,192 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                 DE123456789/PRG1502112
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        99000000-18188-18                     Ort:              [Buyer city]
+ Name:                  [Buyer name]                          Ländercode:       DE
+
+ Adresszeile 1:         [Buyer address line 1]                Kennung:          BI123456
+
+ PLZ:                   12345
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                         Ländercode:       DE
+
+ Adresszeile 1:         [Seller address line 1]               Name:             [Seller contact person]
+
+ PLZ:                   12345                                 Telefon:          +49 123456789
+
+ Ort:                   [Seller city]                         E-Mail-Adresse:   xxx@schulung.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       PRG1502112                            Währung:          EUR
+
+ Rechnungsdatum:        24.4.2015                             Projektnummer:    PR456789
+
+ Rechnungsart:          380
+
+ Abrechnungszeitraum
+ Von:                   20.4.2015                             Bis:              24.4.2015
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                        8.870,00
+ Gesamtsumme                                                                                                  8.870,00
+ Summe Umsatzsteuer                                                                                           1.685,30
+ Gesamtsumme                                                                                                 10.555,30
+ Summe Fremdforderungen                                                                                           0,00
+ Fälliger Betrag                                                                                             10.555,30
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                   8.870,00
+ Umsatzsteuersatz                                                                                               19,00%
+ Umsatzsteuerbetrag                                                                                           1.685,30
+
+ Zahlungsdaten
+
+ Skonto; weitere        14 Tage                               Code für das      58
+ Zahlungsbedingungen:                                         Zahlungsmittel:
+
+
+
+ Überweisung
+ IBAN:                  DE79000000001234567890
+
+
+ IBAN:                  DE16000000002345678901
+
+
+
+
+                                                    Seite 1 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                DE123456789/PRG1502112
+
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:               ADU
+
+ Bemerkung:            Trainer: Herr […]
+
+Details
+ Seminar: […]
+
+ Position:             Seminar: […]
+
+
+ Preiseinzelheiten
+ Menge                                                5,00        Umsatzsteuer:       S
+ Einheit                                              DAY
+                                                                  Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                           1.340
+ Gesamtpreis (netto)                              6.700,00
+
+ Artikelinformationen
+ Bezeichnung:          Seminar
+
+
+ Raumkosten Schulungsort
+
+ Position:             Raumkosten Schulungsort
+
+
+ Preiseinzelheiten
+ Menge                                               5,00         Umsatzsteuer:       S
+ Einheit                                             DAY
+                                                                  Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            300
+ Gesamtpreis (netto)                              1.500,00
+
+ Artikelinformationen
+ Bezeichnung:          Raumkosten
+
+
+ Reisekostenpauschale
+
+ Position:             Reisekostenpauschale
+
+
+ Preiseinzelheiten
+ Menge                                                5,00        Umsatzsteuer:       S
+ Einheit                                              XPP
+                                                                  Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                              90
+ Gesamtpreis (netto)                               450,00
+
+ Artikelinformationen
+ Bezeichnung:          Reisekostenpauschale
+
+
+ Seminarunterlagen
+
+ Position:             Seminarunterlagen
+
+
+ Preiseinzelheiten
+
+
+
+                                                        Seite 2 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                              DE123456789/PRG1502112
+
+
+
+ Menge                                                      11,00        Umsatzsteuer:        S
+ Einheit                                                     XPP
+                                                                         Umsatzsteuersatz:    19,00%
+ Preis pro Einheit (netto)                                     20
+ Gesamtpreis (netto)                                      220,00
+
+ Artikelinformationen
+ Bezeichnung:             Seminarunterlagen
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Elektronische Adresse:   seller@email.de                                Register-/           HRB 123456
+                                                                         Registriernummer:
+ Schema der               EM
+ elektronischen                                                          Umsatzsteuer-ID:     DE123456789
+ Adresse:
+                                                                         Weitere rechtliche   Sitz der Gesellscha […],
+                                                                         Informationen:       Registergericht […], Amtsgericht […]
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Schema der           EM
+                                                                         elektronischen
+                                                                         Adresse:
+
+
+
+ Lieferinformationen
+
+ Name des Empfängers:     Schulungsanbieter                              Ort:                 Schulungsort
+
+ PLZ:                     12345                                          Ländercode:          DE
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 3 / 3
+

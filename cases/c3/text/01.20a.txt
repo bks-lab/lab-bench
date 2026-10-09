@@ -1,0 +1,179 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                            DE123456789/1234567890
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        1234567890-54321-40                            PLZ:                12345
+ Name:                  Kunde 1                                        Ort:                [City]
+
+ Adresszeile 1:         [Street]                                       Ländercode:         DE
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            Betriebsstätte                                 Ländercode:         DE
+
+ Adresszeile 1:         [Street]                                       Name:               Reimund Kann
+
+ PLZ:                   12345                                          Telefon:            0123456789
+
+ Ort:                   [City]                                         E-Mail-Adresse:     test@test.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       1234567890                                     Währung:            EUR
+
+ Rechnungsdatum:        25.1.2021                                      Bestellnummer:      Bestellung XRechnung
+
+ Rechnungsart:          389
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                                    300,00
+ Summe Nachlässe                                                                                                             0,00
+ Summe Zuschläge                                                                                                             0,00
+ Gesamtsumme                                                                                                               300,00
+ Summe Umsatzsteuer                                                                                                         57,00
+ Gesamtsumme                                                                                                               357,00
+ Gezahlter Betrag                                                                                                            0,00
+ Summe Fremdforderungen                                                                                                      0,00
+ Fälliger Betrag                                                                                                           357,00
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                               300,00
+ Umsatzsteuersatz                                                                                                         19,00%
+ Umsatzsteuerbetrag                                                                                                         57,00
+
+ Zahlungsdaten
+
+ Skonto; weitere        Zahlbar unter Angabe der Rechungs-             Code für das        42
+ Zahlungsbedingungen:   und Debitornummer sofort netto                 Zahlungsmittel:
+                        Kasse; fällig zum 04.02.2021 ohne
+                        Abzug                                          Zahlungsmittel:     Bank transfer
+
+ Fälligkeitsdatum:      4.2.2021                                       Verwendungszweck:   1234567890
+
+
+ Überweisung
+ Kontoinhaber:          Postbank Düsseldorf                            BIC:                PBNKDEFF
+
+ IBAN:                  DE79000000001234567890
+
+
+
+
+                                                             Seite 1 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                       DE123456789/1234567890
+
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:                  REG
+
+ Bemerkung:               Betriebsstätte
+
+Details
+ 1
+
+ Position:                1
+
+
+ Abrechnungszeitraum
+ Von:                     25.1.2021                              Bis:                   25.1.2021
+
+
+ Preiseinzelheiten
+ Menge                                                -1         Basismenge zum         1
+ Einheit                                             C62         Artikelpreis:
+
+ Preis pro Einheit (netto)                           100         Code der Maßeinheit:   C62
+ Gesamtpreis (netto)                              -100,00
+                                                                 Umsatzsteuer:          S
+ Rabatt (netto):          10
+                                                                 Umsatzsteuersatz:      19,00%
+ Listenpreis (netto):     110
+
+ Artikelinformationen
+ Bezeichnung:             Behältermiete
+
+
+ 2
+
+ Position:                2
+
+
+ Abrechnungszeitraum
+ Von:                     25.1.2021                              Bis:                   25.1.2021
+
+
+ Preiseinzelheiten
+ Menge                                                 4         Basismenge zum         1
+ Einheit                                            TNE          Artikelpreis:
+
+ Preis pro Einheit (netto)                           100         Code der Maßeinheit:   TNE
+ Gesamtpreis (netto)                              400,00
+                                                                 Umsatzsteuer:          S
+ Rabatt (netto):          10
+                                                                 Umsatzsteuersatz:      19,00%
+ Listenpreis (netto):     110
+
+ Artikelinformationen
+ Bezeichnung:             Entsorgung                             Beschreibung:          Ersatztext bei Entsorgung
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Elektronische Adresse:   seller@email.de
+
+
+
+
+                                                       Seite 2 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                           DE123456789/1234567890
+
+
+
+ Schema der               EM                                             Umsatzsteuer-ID:   DE123456789
+ elektronischen
+ Adresse:
+
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Umsatzsteuer-ID:   DE987654321
+
+ Schema der               EM
+ elektronischen
+ Adresse:
+
+
+
+ Lieferinformationen
+
+ Lieferdatum:             25.1.2021                                      PLZ:               54321
+
+ Name des Empfängers:     [ShipToTradeParty]                             Ort:               [City]
+
+ Adresszeile 1:           [Street]                                       Ländercode:        DE
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 3 / 3
+

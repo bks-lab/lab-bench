@@ -1,0 +1,201 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                        DE123456789/0000123456
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        11002002-98765-14                             Ort:              [Buyer city]
+ Name:                  [Buyer name]                                  Ländercode:       DE
+
+ Adresszeile 1:         [Buyer street]                                Kontaktstelle :   [Buyer contact person]
+
+ PLZ:                   12345                                         E-Mail-Adresse:   buyer@contact.com
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                                 Ländercode:       DE
+
+ Adresszeile 1:         [Seller street]                               Name:             [Seller contact person]
+
+ PLZ:                   10623                                         Telefon:          1234567890
+
+ Ort:                   [Seller city]                                 E-Mail-Adresse:   contact@seller.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       0000123456                                    Projektnummer:    Entwicklung System
+
+ Rechnungsdatum:        11.12.2017                                    Vertragsnummer:   0000000752
+
+ Rechnungsart:          380                                           Bestellnummer:    10520
+
+ Währung:               EUR
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                               8.980,00
+ Gesamtsumme                                                                                                          8.980,00
+ Summe Umsatzsteuer                                                                                                   1.706,20
+ Gesamtsumme                                                                                                         10.686,20
+ Summe Fremdforderungen                                                                                                   0,00
+ Fälliger Betrag                                                                                                     10.686,20
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                          8.980,00
+ Umsatzsteuersatz                                                                                                      19,00%
+ Umsatzsteuerbetrag                                                                                                   1.706,20
+
+ Zahlungsdaten
+
+ Skonto; weitere        Bei Zahlungen binnen 14 Tagen, 2%             Code für das      48
+ Zahlungsbedingungen:   Skonto                                        Zahlungsmittel:
+
+ Fälligkeitsdatum:      10.1.2018
+
+ Karteninformation
+ Kartennummer:          41234                                         Karteninhaber:    [Payment card holder name]
+
+
+
+
+                                                            Seite 1 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                    DE123456789/0000123456
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:               ADU
+
+ Bemerkung:            [Invoice note]
+
+Details
+ 0
+
+ Position:             0
+
+
+ Preiseinzelheiten
+ Menge                                                    1,00        Umsatzsteuer:       S
+ Einheit                                                  XPP
+                                                                      Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                                 850
+ Gesamtpreis (netto)                                 850,00
+
+ Artikelinformationen
+ Bezeichnung:          Anforderungsaufnahme                           Artikelnummer:      1034
+
+ Beschreibung:         Anforderungmanagament
+
+
+ 1
+
+ Position:             1
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00           Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                      Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            2.986
+ Gesamtpreis (netto)                               2.986,00
+
+ Artikelinformationen
+ Bezeichnung:          Lastenhe                                      Artikelnummer:      1035
+
+ Beschreibung:         Erstellung Lastenhe bis Abnahme
+
+
+ 2
+
+ Position:             2
+
+
+ Preiseinzelheiten
+ Menge                                                 1,00           Umsatzsteuer:       S
+ Einheit                                               XPP
+                                                                      Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            2.344
+ Gesamtpreis (netto)                               2.344,00
+
+ Artikelinformationen
+ Bezeichnung:          Pﬂichtenhe                                    Artikelnummer:      1036
+
+ Beschreibung:         Erstellung Pﬂichtenhe bis Abnahme
+
+
+ 3
+
+
+
+
+                                                            Seite 2 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                             DE123456789/0000123456
+
+
+
+ Position:                3
+
+
+ Preiseinzelheiten
+ Menge                                                        1,00        Umsatzsteuer:       S
+ Einheit                                                      XPP
+                                                                          Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                                   2.800
+ Gesamtpreis (netto)                                      2.800,00
+
+ Artikelinformationen
+ Bezeichnung:             Entwicklung                                     Artikelnummer:      1037
+
+ Beschreibung:            Entwicklung System bis
+                          Implementierung
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                           Schema der          EM
+ Handelsname:                                                             elektronischen
+                                                                          Adresse:
+ Elektronische Adresse:   seller@email.de
+                                                                          Umsatzsteuer-ID:    DE123456789
+
+
+ Informationen zum Käufer
+
+ Abweichender             [Buyer trading name]                            Schema der          EM
+ Handelsname:                                                             elektronischen
+                                                                          Adresse:
+ Elektronische Adresse:   buyer@info.de
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+Anlagen
+ Rechnungsbegründende Unterlagen
+
+ Kennung:                 01_15_Anhang_01                                 Verweis (z.B.       https://xeinkauf.de/xrechnung/
+                                                                          Internetadresse):
+ Beschreibung:            Aufschlüsselung der einzelnen
+                          Leistungspositionen
+
+
+ Kennung:                 01_15_Anhang_02                                 Verweis (z.B.       https://xeinkauf.de/xrechnung/
+                                                                          Internetadresse):
+ Beschreibung:            Gesamtübersicht der
+                          Leistungspositionen
+
+
+
+
+                                                                Seite 3 / 3
+

@@ -1,0 +1,142 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                DE152338654/18383
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        04011000-12349-88                                Ort:                Berlin
+ Name:                  DB Station&Service AG RB Mitte                   Ländercode:         DE
+
+ Adresszeile 1:         Musterweg 1                                      Kennung:            10099
+
+ PLZ:                   10115                                            Kontaktstelle :     Klaus Koﬀer
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            Mustermann GmbH                                  Kennung:            116078
+
+ Adresszeile 1:         Musterstrasse 4                                  Name:               Wolfgang Muster
+
+ PLZ:                   60388                                            Telefon:            069-12335
+
+ Ort:                   Frankfurt am Main                                E-Mail-Adresse:     mail@muster.de
+
+ Ländercode:            DE
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       18383                                            Rechnungsart:       380
+
+ Rechnungsdatum:        27.11.2020                                       Währung:            EUR
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                                   208,00
+ Summe Nachlässe                                                                                                            0,00
+ Summe Zuschläge                                                                                                           25,00
+ Gesamtsumme                                                                                                              233,00
+ Summe Umsatzsteuer                                                                                                         0,00
+ Gesamtsumme                                                                                                              233,00
+ Summe Fremdforderungen                                                                                                     0,00
+ Fälliger Betrag                                                                                                          233,00
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: AE
+ Gesamtsumme                                                                                                              233,00
+ Umsatzsteuersatz                                                                                                         0,00%
+ Umsatzsteuerbetrag                                                                                                         0,00
+
+ Befreiungsgrund:       als gemeinnützig anerkannt
+
+ Zuschlag auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie des Zuschlages: AE                                Grund für den       Lieferpauschale
+ Zuschlag                                                   25,00        Zuschlag:
+
+ Umsatzsteuersatz des Zuschlages                           0,00%
+
+ Zahlungsdaten
+
+ Skonto; weitere        10 Tage 3% Skonto, 30 Tage netto                 Fälligkeitsdatum:   27.12.2020
+ Zahlungsbedingungen:
+
+
+
+
+                                                               Seite 1 / 2
+Bereiche ohne Inhalte werden nicht dargestellt!                                                               DE152338654/18383
+
+
+
+ Code für das             58                                             Zahlungsmittel:        Rechnung
+ Zahlungsmittel:
+
+
+
+ Überweisung
+ Kontoinhaber:            Mustermann GmbH                                BIC:                   DRESDEFFXXX
+
+ IBAN:                    DE79000000001234567890
+
+
+
+Details
+ 1
+
+ Position:                1
+
+
+ Preiseinzelheiten
+ Menge                                                      4,00         Listenpreis (netto):   62
+ Einheit                                                    HUR
+                                                                         Umsatzsteuer:          AE
+ Preis pro Einheit (netto)                                    52
+ Gesamtpreis (netto)                                      208,00         Umsatzsteuersatz:      0,00%
+
+ Rabatt (netto):          10
+
+ Artikelinformationen
+ Bezeichnung:             Tür Instandsetzung                             Artikelnummer:         1
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Elektronische Adresse:   seller@email.de                                Umsatzsteuer-ID:       DE152338654
+
+ Schema der               EM                                             Steuernummer:          04523149435
+ elektronischen
+ Adresse:
+
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Umsatzsteuer-ID:       DE152138634
+
+ Schema der               EM
+ elektronischen
+ Adresse:
+
+
+
+ Lieferinformationen
+
+ Lieferdatum:             23.11.2020
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 2 / 2
+

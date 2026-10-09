@@ -1,0 +1,125 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                         DE123456789/R123456789
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        04011000-12349-88                            PLZ:              12345
+ Name:                  [Buyer name]                                 Ort:              [Buyer city]
+
+ Adresszeile 1:         [Buyer address line 1]                       Ländercode:       DE
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                                Ländercode:       DE
+
+ Adresszeile 1:         Postfach 123456                              Name:             Auskun erteilt Ihnen
+
+ PLZ:                   12345                                        Telefon:          1234567890
+
+ Ort:                   [Seller city]                                E-Mail-Adresse:   seller@test.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       R123456789                                   Währung:          EUR
+
+ Rechnungsdatum:        18.1.2016                                    Vertragsnummer:   V876543210
+
+ Rechnungsart:          380                                          Auragsnummer:    A123456789
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                               2.374,68
+ Gesamtsumme                                                                                                          2.374,68
+ Summe Umsatzsteuer                                                                                                     451,19
+ Gesamtsumme                                                                                                          2.825,87
+ Summe Fremdforderungen                                                                                                   0,00
+ Fälliger Betrag                                                                                                      2.825,87
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                          2.374,68
+ Umsatzsteuersatz                                                                                                      19,00%
+ Umsatzsteuerbetrag                                                                                                     451,19
+
+ Zahlungsdaten
+
+ Skonto; weitere        Die Zahlung wird als Teilleistung            Code für das      58
+ Zahlungsbedingungen:   monatl. Erbracht und ist monatl. zum         Zahlungsmittel:
+                        letzten Werktag fällig. …
+ Fälligkeitsdatum:      1.2.2016
+
+
+ Überweisung
+ IBAN:                  DE79000000001234567890
+
+
+ IBAN:                  DE16000000002345678901
+
+
+ IBAN:                  DE03000000003456789012
+
+
+
+
+                                                           Seite 1 / 2
+Bereiche ohne Inhalte werden nicht dargestellt!                                                             DE123456789/R123456789
+
+
+
+
+Details
+ 0020
+
+ Position:                0020
+
+
+ Preiseinzelheiten
+ Menge                                                      12,00        Umsatzsteuer:        S
+ Einheit                                                     XPP
+                                                                         Umsatzsteuersatz:    19,00%
+ Preis pro Einheit (netto)                                 197,89
+ Gesamtpreis (netto)                                     2.374,68
+
+ Artikelinformationen
+ Bezeichnung:             Zentrale Administrationslösung                 Artikelnummer:       519304
+                          Bereitstellung von Werkzeugen zur
+                          Administration/Betreuung
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                          Register-/           HRB 123
+ Handelsname:                                                            Registriernummer:
+
+ Elektronische Adresse:   seller@email.de                                Umsatzsteuer-ID:     DE123456789
+
+ Schema der               EM                                             Weitere rechtliche   Amtsgericht […], Geschäsführer:
+ elektronischen                                                          Informationen:       […], Sitz der Gesellscha […],
+ Adresse:                                                                                     Aufsichtsratvorsitzender: […]
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Schema der           EM
+                                                                         elektronischen
+                                                                         Adresse:
+
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 2 / 2
+

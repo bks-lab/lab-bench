@@ -1,0 +1,587 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                      ATU123456789/1234567
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:    90000000-03083-72                         Ort:                  [Buyer city]
+ Name:              [Buyer name]                              Ländercode:           DE
+
+ Adresszeile 1:     [Buyer address line 1]                    Kennung:              138
+
+ Adresszeile 2:     [Buyer address line 2]                    Kontaktstelle :       Tina Tester
+
+ Adresszeile 3:     [Buyer address line 3]                    Telefon:              0800 123456
+
+ PLZ:               98765                                     E-Mail-Adresse:       tester@test.de
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:        [Seller name]                             Kennung:              0197842701377
+
+ Adresszeile 1:     [Seller address line 1]                   Schema der Kennung:   0088
+
+ Adresszeile 2:     [Seller address line 2]                   Name:                 Tim Tester
+
+ PLZ:               12345                                     Telefon:              012 3456789
+
+ Ort:               [Seller city]                             E-Mail-Adresse:       tim.tester@test.com
+
+ Ländercode:        DE
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:   1234567                                   Währung:              EUR
+
+ Rechnungsdatum:    20.8.2019                                 Vertragsnummer:       0000000752
+
+ Rechnungsart:      380
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                          1.492,23
+ Summe Nachlässe                                                                                                   100,29
+ Summe Zuschläge                                                                                                   920,00
+ Gesamtsumme                                                                                                     2.311,94
+ Summe Umsatzsteuer                                                                                                264,47
+ Gesamtsumme                                                                                                     2.576,41
+ Summe Fremdforderungen                                                                                              0,00
+ Fälliger Betrag                                                                                                 2.576,41
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                     1.391,94
+ Umsatzsteuersatz                                                                                                 19,00%
+ Umsatzsteuerbetrag                                                                                                264,47
+
+ Umsatzsteuerkategorie: E
+ Gesamtsumme                                                                                                       920,00
+ Umsatzsteuersatz                                                                                                  0,00%
+ Umsatzsteuerbetrag                                                                                                  0,00
+
+ Kennung für den    VATEX-EU-132-1A
+ Befreiungsgrund:
+
+
+
+
+                                                    Seite 1 / 9
+Bereiche ohne Inhalte werden nicht dargestellt!                                                               ATU123456789/1234567
+
+
+
+
+ Nachlass auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie des Nachlasses: S                                 Grund für den       Rabatte
+ Grundbetrag                                               100,29        Nachlass:
+
+ Prozentsatz                                             100,00%         Kennung für den     103
+ Nachlass                                                 100,29         Nachlassgrund:
+ Umsatzsteuersatz des Nachlasses                          19,00%
+
+ Zuschlag auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie des Zuschlages: E                                 Grund für den       Fremdleistung Anbieter
+ Grundbetrag                                               920,00        Zuschlag:
+
+ Prozentsatz                                             100,00%
+ Zuschlag                                                 920,00
+ Umsatzsteuersatz des Zuschlages                           0,00%
+
+ Zahlungsdaten
+
+ Skonto; weitere        Bitte überweisen Sie bis zum …                   Code für das        58
+ Zahlungsbedingungen:                                                    Zahlungsmittel:
+
+ Fälligkeitsdatum:      29.8.2019                                        Verwendungszweck:   Deb. 12345 / Fact. 9876543
+
+
+ Überweisung
+ Kontoinhaber:          [Payment account name]                           BIC:                [BIC]
+
+ IBAN:                  DE79000000001234567890
+
+
+
+Details
+ 1
+
+ Position:              1
+
+
+ Preiseinzelheiten
+ Menge                                                      1,00         Umsatzsteuer:       S
+ Einheit                                                    XPP
+                                                                         Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                                 29,95
+ Gesamtpreis (netto)                                       29,95
+
+ Artikelinformationen
+ Bezeichnung:           Produkt 1
+
+
+ 2
+
+ Position:              2
+
+
+ Preiseinzelheiten
+ Menge                                                      7,00         Umsatzsteuer:       S
+ Einheit                                                    XPP
+                                                                         Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                                 19,95
+ Gesamtpreis (netto)                                      139,65
+
+
+
+
+                                                               Seite 2 / 9
+Bereiche ohne Inhalte werden nicht dargestellt!                                              ATU123456789/1234567
+
+
+
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 2
+
+
+ 3
+
+ Position:             3
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            16
+ Gesamtpreis (netto)                               16,00
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 3
+
+
+ 4
+
+ Position:             4
+
+
+ Preiseinzelheiten
+ Menge                                             10,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                         32,95
+ Gesamtpreis (netto)                              329,50
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 4
+
+
+ 5
+
+ Position:             5
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                         22,95
+ Gesamtpreis (netto)                               22,95
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 5
+
+
+ 6
+
+ Position:             6
+
+
+ Preiseinzelheiten
+
+
+
+
+                                                      Seite 3 / 9
+Bereiche ohne Inhalte werden nicht dargestellt!                                               ATU123456789/1234567
+
+
+
+ Menge                                               1,00        Umsatzsteuer:       S
+ Einheit                                             XPP
+                                                                 Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                          12,95
+ Gesamtpreis (netto)                               12,95
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 6
+
+
+ 7
+
+ Position:             7
+
+
+ Preiseinzelheiten
+ Menge                                               1,00        Umsatzsteuer:       S
+ Einheit                                             XPP
+                                                                 Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                          69,95
+ Gesamtpreis (netto)                               69,95
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 7
+
+
+ 8
+
+ Position:             8
+
+
+ Preiseinzelheiten
+ Menge                                               3,00        Umsatzsteuer:       S
+ Einheit                                             XPP
+                                                                 Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                          42,95
+ Gesamtpreis (netto)                              128,85
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 8
+
+
+ 9
+
+ Position:             9
+
+
+ Preiseinzelheiten
+ Menge                                               6,00        Umsatzsteuer:       S
+ Einheit                                             XPP
+                                                                 Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        41,5645
+ Gesamtpreis (netto)                              249,39
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 9
+
+
+ 10
+
+ Position:             10
+
+
+
+
+                                                       Seite 4 / 9
+Bereiche ohne Inhalte werden nicht dargestellt!                                              ATU123456789/1234567
+
+
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            15
+ Gesamtpreis (netto)                              15,00
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 10
+
+
+ 11
+
+ Position:             11
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            10
+ Gesamtpreis (netto)                              10,00
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 11
+
+
+ 12
+
+ Position:             12
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        9,6774
+ Gesamtpreis (netto)                               9,68
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 12
+
+
+ 13
+
+ Position:             13
+
+
+ Preiseinzelheiten
+ Menge                                              1,00        Umsatzsteuer:       S
+ Einheit                                            XPP
+                                                                Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                          3,75
+ Gesamtpreis (netto)                               3,75
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 13
+
+
+ 14
+
+
+
+
+                                                      Seite 5 / 9
+Bereiche ohne Inhalte werden nicht dargestellt!                                             ATU123456789/1234567
+
+
+
+ Position:             14
+
+
+ Preiseinzelheiten
+ Menge                                             1,00        Umsatzsteuer:       S
+ Einheit                                           XPP
+                                                               Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            7
+ Gesamtpreis (netto)                              7,00
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 14
+
+
+ 15
+
+ Position:             15
+
+
+ Preiseinzelheiten
+ Menge                                            24,00        Umsatzsteuer:       S
+ Einheit                                           XPP
+                                                               Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            0
+ Gesamtpreis (netto)                              0,00
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 15
+
+
+ 16
+
+ Position:             16
+
+
+ Preiseinzelheiten
+ Menge                                             6,00        Umsatzsteuer:       S
+ Einheit                                           XPP
+                                                               Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            0
+ Gesamtpreis (netto)                              0,00
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 16
+
+
+ 17
+
+ Position:             17
+
+
+ Preiseinzelheiten
+ Menge                                             1,00        Umsatzsteuer:       S
+ Einheit                                           XPP
+                                                               Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        4,564
+ Gesamtpreis (netto)                              4,56
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 17
+
+
+
+
+                                                     Seite 6 / 9
+Bereiche ohne Inhalte werden nicht dargestellt!                                                ATU123456789/1234567
+
+
+
+ 18
+
+ Position:             18
+
+
+ Preiseinzelheiten
+ Menge                                                1,00        Umsatzsteuer:       S
+ Einheit                                              XPP
+                                                                  Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                         20,0542
+ Gesamtpreis (netto)                                20,05
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 18
+
+
+ 19
+
+ Position:             19
+
+
+ Preiseinzelheiten
+ Menge                                                1,00        Umsatzsteuer:       S
+ Einheit                                              XPP
+                                                                  Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                            3,45
+ Gesamtpreis (netto)                                  3,45
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 19
+
+
+ 20
+
+ Position:             20
+
+
+ Preiseinzelheiten
+ Menge                                                1,00        Umsatzsteuer:       S
+ Einheit                                              XPP
+                                                                  Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                        417,6011
+ Gesamtpreis (netto)                               417,60
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 20
+
+
+ 21
+
+ Position:             21
+
+
+ Preiseinzelheiten
+ Menge                                                1,00        Umsatzsteuer:       S
+ Einheit                                              XPP
+                                                                  Umsatzsteuersatz:   19,00%
+ Preis pro Einheit (netto)                          1,9496
+ Gesamtpreis (netto)                                  1,95
+
+ Artikelinformationen
+ Bezeichnung:          Produkt 21
+
+
+
+                                                        Seite 7 / 9
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                 ATU123456789/1234567
+
+
+
+
+ 22
+
+ Position:                22
+
+
+ Preiseinzelheiten
+ Menge                                                       1,00        Umsatzsteuer:           E
+ Einheit                                                     XPP
+                                                                         Umsatzsteuersatz:       0,00%
+ Preis pro Einheit (netto)                                      0
+ Gesamtpreis (netto)                                         0,00
+
+ Artikelinformationen
+ Bezeichnung:             Fremdleistung Anbieter A
+
+
+ 23
+
+ Position:                23
+
+
+ Preiseinzelheiten
+ Menge                                                       1,00        Umsatzsteuer:           E
+ Einheit                                                     XPP
+                                                                         Umsatzsteuersatz:       0,00%
+ Preis pro Einheit (netto)                                      0
+ Gesamtpreis (netto)                                         0,00
+
+ Artikelinformationen
+ Bezeichnung:             Fremdleistung Anbieter B
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                          Schema der              0088
+ Handelsname:                                                            Registernummer:
+
+ Elektronische Adresse:   rechnungsausgang@test.com                      Umsatzsteuer-ID:        ATU123456789
+
+ Schema der               EM                                             Steuernummer:           123/456/789
+ elektronischen
+ Adresse:                                                                Weitere rechtliche      Amtsgericht […], Geschäsführer:
+                                                                         Informationen:          […], Sitz der Gesellscha […],
+ Register-/               9823636820856                                                          Aufsichtsratvorsitzender: […]
+ Registriernummer:
+
+
+
+ Informationen zum Käufer
+
+ Abweichender             [Buyer trading name]                           Register-/              90000000-03083-72
+ Handelsname:                                                            Registriernummer:
+
+ Elektronische Adresse:   rechnungseingang@test.de                       Schema der Register-/   0204
+                                                                         Registriernummer:
+ Schema der               EM
+ elektronischen                                                          Umsatzsteuer-ID:        DE12345ABC
+ Adresse:
+
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+
+
+
+
+                                                               Seite 8 / 9
+Bereiche ohne Inhalte werden nicht dargestellt!                                                             ATU123456789/1234567
+
+
+
+ Speziﬁkationskennung:   urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+Anlagen
+ Rechnungsbegründende Unterlagen
+
+ Kennung:                01_15_Anhang_01.pdf                          Format des          application/pdf
+                                                                      Anhangdokuments:
+ Beschreibung:           Aufschlüsselung der einzelnen
+                         Leistungspositionen                          Name des            01_15_Anhang_01.pdf
+                                                                      Anhangsdokuments:
+ Anhangsdokument:        01_15_Anhang_01.pdf
+
+
+
+
+                                                            Seite 9 / 9
+

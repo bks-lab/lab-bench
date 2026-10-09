@@ -169,6 +169,16 @@ const ver = (pv, arm) => {
 };
 const date = (pv, arm) => STATS[pv][arm].ts[0].slice(0, 10);
 const famOf = a => a === 'jev' ? 'jev' : a.startsWith('gliner') ? 'gliner' : a.startsWith('classic') ? 'classic' : 'local-llm';
+// The local-llm family cell takes only these arms in route1 and ex1 (the arm
+// named in results/route1/method.md before those runs). The T12 series
+// (plan/t12.md) adds arms to the same folders; they reach the map only
+// through the pre-named size-class representatives below.
+const LOCAL_FAMILY_ARMS = ['winnow-12b'];
+const localEligible = (fam, arm) => fam !== 'local-llm' || LOCAL_FAMILY_ARMS.includes(arm);
+// plan/t12.md: one representative per size class, named before any T12 run.
+const SIZE_CLASSES = { small: 'qwen3-4b', medium: 'qwen3-14b', large: 'qwen3-32b', moe: 'qwen3-30b-a3b' };
+const T12_MACHINE = 'results/t12/machine.json';
+const t12Machine = () => (fs.existsSync(abs(T12_MACHINE)) ? JSON.parse(rd(T12_MACHINE)).arms || {} : {});
 const EXTRA = ' (English model, extra)';
 const cleanArm = a => a.replace(EXTRA, '');
 
@@ -213,7 +223,7 @@ function routeRow(id, task, lang, section, extraKeys = {}) {
   const row = { id, kind: 'route', task, lang, metric: 'accuracy', source_report: R1, section, cells: {} };
   const items = {};
   for (const fam of FAMILIES) {
-    let cand = rows.filter(r => famOf(cleanArm(r.arm)) === fam);
+    let cand = rows.filter(r => famOf(cleanArm(r.arm)) === fam && localEligible(fam, cleanArm(r.arm)));
     const extra = cand.filter(r => r.arm.includes(EXTRA));
     cand = cand.filter(r => !r.arm.includes(EXTRA));
     if (!cand.length) continue; // no eligible arm: the register has to say why
@@ -247,7 +257,38 @@ function routeRow(id, task, lang, section, extraKeys = {}) {
     row.cells[fam] = cell;
   }
   testAgainstTop(row.cells, items);
-  return Object.assign(row, extraKeys);
+  Object.assign(row, extraKeys);
+  // T12 (plan/t12.md): pre-named size-class columns, outside `cells`
+  const mach = t12Machine();
+  const classes = {}; const repItems = {};
+  for (const [cls, arm] of Object.entries(SIZE_CLASSES)) {
+    const r = rows.find(x => x.arm === arm);
+    if (!r) continue;
+    repItems[cls] = routeItems(arm, section);
+    const mass = med(routeRunCache[arm].map(x => x.mass).filter(x => x != null));
+    const failed = mach[arm]?.route1_format_failure === true || mass < 0.5;
+    classes[cls] = failed
+      ? { arm, format_failure: true, letter_mass_median: mass, note: 'median letter mass below 0.5 (plan/t12.md); no value' }
+      : {
+        arm, value: pnum(r.acc), macro_f1: pnum(r['macro-F1']), baseline: pnum(r.base), baseline_name: 'most frequent answer',
+        skill: pnum(r.skill), n: pnum(r.n), answered: pnum(r.answered),
+        mcnemar_vs_jev_p: r['p (McNemar)'] === '0.000' ? '<0.001' : pnum(r['p (McNemar)']),
+        p50_ms_per_decision: pnum(r['p50 ms']), letter_mass_median: mass,
+        measured: date('route1', arm), model_version: ver('route1', arm), source_report: R1,
+      };
+    if (!failed) {
+      const recount = +(100 * [...repItems[cls].values()].filter(Boolean).length / repItems[cls].size).toFixed(1);
+      if (recount !== classes[cls].value) fail(`${id} ${cls} ${arm}: recount ${recount} % differs from the report (${classes[cls].value} %)`);
+    }
+  }
+  if (Object.keys(classes).length) {
+    row.local_size_classes = classes;
+    if (classes.large?.value != null && classes.small?.value != null) {
+      const t = paired(repItems.large, repItems.small);
+      row.local_size_contrast = { test: 'exact two-sided McNemar, large against small representative, preregistered in plan/t12.md', large: SIZE_CLASSES.large, small: SIZE_CLASSES.small, paired: t.n, only_large_right: t.b, only_small_right: t.c, p: fmtP(t.p) };
+    }
+  }
+  return row;
 }
 
 /** ex1: GLiNER and local LLM only; the Jev cell comes from the register (not_applicable). */
@@ -257,7 +298,7 @@ function exRow(id, lang) {
   const baseFrame = pnum(base['exact frame']);
   const row = { id, kind: 'extract', task: 'slot extraction (MASSIVE slots)', lang, metric: 'micro F1, threshold 0.5 for GLiNER', source_report: E1, section: lang, cells: {} };
   for (const fam of ['gliner', 'local-llm']) {
-    const cand = rows.filter(r => !r.arm.startsWith('no extraction') && famOf(r.arm) === fam);
+    const cand = rows.filter(r => !r.arm.startsWith('no extraction') && famOf(r.arm) === fam && localEligible(fam, r.arm));
     if (!cand.length) continue; // no arm of this family: the register has to say why
     const best = Math.max(...cand.map(r => pnum(r.F1)));
     const top = cand.filter(r => pnum(r.F1) === best);
@@ -273,6 +314,20 @@ function exRow(id, lang) {
       measured: date('ex1', r.arm), model_version: ver('ex1', r.arm), source_report: E1,
     };
   }
+  // T12 (plan/t12.md): pre-named size-class columns, outside `cells`
+  const classes = {};
+  for (const [cls, arm] of Object.entries(SIZE_CLASSES)) {
+    const r = rows.find(x => x.arm === arm);
+    if (!r) continue;
+    const frame = pnum(r['exact frame']);
+    classes[cls] = {
+      arm, value: pnum(r.F1), precision: pnum(r.P), recall: pnum(r.R), baseline: 0, skill: +(pnum(r.F1) / 100).toFixed(3),
+      exact_frame: frame, exact_frame_skill: +(((frame - baseFrame) / (100 - baseFrame))).toFixed(3),
+      n: pnum(r.utterances), errors: pnum(r.errors), p50_ms_per_utterance: pnum(r['p50 ms']),
+      measured: date('ex1', arm), model_version: ver('ex1', arm), source_report: E1,
+    };
+  }
+  if (Object.keys(classes).length) row.local_size_classes = classes;
   return row;
 }
 
@@ -450,7 +505,7 @@ for (const pv of ['route1', 'pv1']) {
       reference: res.references[lang], design: 'plan/t1.md', source_report: AUTO[pv].report, section: `pooled, ${lang}`, cells: {},
     };
     for (const fam of FAMILIES) {
-      const cand = Object.entries(set.arms).filter(([, m]) => m.family === fam && !m.english_only_extra);
+      const cand = Object.entries(set.arms).filter(([a, m]) => m.family === fam && !m.english_only_extra && (fam !== 'local-llm' || (pv === 'pv1' ? PV1_LOCAL : LOCAL_FAMILY_ARMS).includes(a)));
       if (!cand.length) {
         if (fam !== 'classic') fail(`${row.id}: no arm for ${fam}`);
         row.cells[fam] = { state: 'not_applicable', reason: `no ${fam} arm on ${pv}: the classic classifier needs a train split, ${pv} has none (plan/t3.md)` };
@@ -492,6 +547,7 @@ const out = {
   findings: { route1: 'results/route1/findings.md', ex1: 'results/ex1/findings.md', pv1: 'results/pv1/gliner.md', automation: 'results/automation-findings.md' },
   note: 'Each cell is one task and one tool family. "best_arm" is the arm of that family with the highest value on the same test data the value is measured on, so it is chosen after the fact and flatters the families with many arms (GLiNER has up to six arms in route1 and nine in pv1, the local family has one arm in route1 and ex1 and four in pv1). Cells are per task: a family that is best on one task says nothing about another. All numbers are run 1, one run per arm. For German rows, English-only GLiNER models (GLiNER2.5-Decide, GLiNER2.5-Decide-1B) are not eligible as best arm, in route1 and pv1 alike; their best value is listed as english_model_extra. pv1 rows: baseline computed from the reference with the rule of results/pv1/gliner.md, run dates 2026-10-01 (Jev, local) and 2026-10-08 (GLiNER). skill = (value - baseline) / (100 - baseline). p50 values in route1 rows are per question group (the p50 ms column of results/route1/score.md); the Speed table of results/route1/findings.md gives medians per source and language, so the two can differ by a few ms. Latencies are not one clock: Jev is an HTTP round trip to api.typesafe.ai, the local LLM an HTTP call over the LAN, GLiNER GPU time in-process. Local cost (hardware, power) was not estimated. Tests: route1 and pv1 cells carry top_family (the family with the highest value in the row) and mcnemar_vs_top_p, an exact two-sided McNemar between this family\'s best arm and the top family\'s best arm on the same items (unanswered counts as wrong); route1 and pv1 cells other than Jev also carry mcnemar_vs_jev_p. Both compared arms are picked after the fact as the best of their family, and no p value is corrected for that or for the number of tests, so p >= 0.05 means the difference is not established, not that the two are level. ex1 cells have no test; their skill is F1 against a baseline F1 of 0, exact_frame_skill compares whole frames against extracting nothing.',
   classic_note: 'The classic family (plan/t3.md) is a trained classifier: multilingual-e5-base sentence embeddings plus logistic regression, fitted on the MASSIVE 1.1 train split of the same locale. The other three families get no training data. top_family and mcnemar_vs_top_p are therefore computed among jev, gliner and local-llm only; a classic cell carries top_family (that zero-shot top), its own mcnemar_vs_top_p against it, and mcnemar_vs_jev_p. Its two arms are classic-e5-lr (full train split) and classic-e5-lr-10shot (10 rows per class); best_arm is chosen as for every family.',
+  ...(rows.some(r => r.local_size_classes) ? { local_series_note: 'T12 (plan/t12.md): route1 and ex1 rows carry local_size_classes, one column per size class, each the one Qwen3 model named for that class before any T12 run (small qwen3-4b, medium qwen3-14b, large qwen3-32b, moe qwen3-30b-a3b). They are not best-of picks. The local-llm family cell stays restricted to winnow-12b in route1 and ex1, so no existing cell changed. Every other local model of the series is reported only in results/t12-findings.md. local_size_contrast is the one preregistered test per route1 row (large against small).' } : {}),
   states: plan.states,
   families: {
     jev: 'TypeSafe Jev, hosted API (api.typesafe.ai)',

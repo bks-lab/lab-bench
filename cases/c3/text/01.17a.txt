@@ -1,0 +1,165 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                           DE 123456789/123456XX
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        04011000-12345-03                             Ort:              [Buyer city]
+ Name:                  [Buyer name]                                  Ländercode:       DE
+
+ Adresszeile 1:         [Buyer address line 1]                        Kennung:          [Buyer identiﬁer]
+
+ PLZ:                   12345
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                                 Ländercode:       DE
+
+ Adresszeile 1:         [Seller address line 1]                       Name:             nicht vorhanden
+
+ PLZ:                   12345                                         Telefon:          +49 1234-5678
+
+ Ort:                   [Seller city]                                 E-Mail-Adresse:   seller@email.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       123456XX                                      Rechnungsart:     380
+
+ Rechnungsdatum:        4.4.2016                                      Währung:          EUR
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                                  314,86
+ Gesamtsumme                                                                                                             314,86
+ Summe Umsatzsteuer                                                                                                       22,04
+ Gesamtsumme                                                                                                             336,90
+ Rundungsbetrag                                                                                                            0,01
+ Summe Fremdforderungen                                                                                                    0,00
+ Fälliger Betrag                                                                                                         336,91
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                             314,86
+ Umsatzsteuersatz                                                                                                        7,00%
+ Umsatzsteuerbetrag                                                                                                       22,04
+
+ Zahlungsdaten
+
+ Skonto; weitere        Zahlbar sofort ohne Abzug.                    Code für das      58
+ Zahlungsbedingungen:                                                 Zahlungsmittel:
+
+
+
+ Überweisung
+ IBAN:                  DE79000000001234567890
+
+
+
+ Bemerkungen zur Rechnung
+
+ Betreﬀ:                ADU
+
+ Bemerkung:             Es gelten unsere Allgem. Geschäsbedingungen, die Sie unter […] ﬁnden.
+
+
+
+
+                                                            Seite 1 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                                        DE 123456789/123456XX
+
+
+
+Details
+ Zeitschri [...]
+
+ Position:                Zeitschri [...]                                    Nummer der               6171175.1
+                                                                              Auragsposition:
+ Freitext:                Die letzte Lieferung im Rahmen des
+                          abgerechneten Abonnements erfolgt
+                          in 12/2016 Lieferung erfolgt / erfolgte
+                          direkt vom Verlag
+
+
+ Abrechnungszeitraum
+ Von:                     1.1.2016                                            Bis:                     31.12.2016
+
+
+ Preiseinzelheiten
+ Menge                                                         1,00           Umsatzsteuer:            S
+ Einheit                                                       XPP
+                                                                              Umsatzsteuersatz:        7,00%
+ Preis pro Einheit (netto)                                   288,79
+ Gesamtpreis (netto)                                         288,79
+
+ Artikelinformationen
+ Bezeichnung:             Zeitschri [...]                                    Code der                 0721-880X
+                                                                              Artikelklassiﬁzierung:
+ Beschreibung:            Zeitschri Inland
+                                                                              Kennung zur Bildung      IB
+ Artikelnummer:           246                                                 des Schemas:
+
+
+
+ Porto + Versandkosten
+
+ Position:                Porto + Versandkosten
+
+
+ Preiseinzelheiten
+ Menge                                                         1,00           Umsatzsteuer:            S
+ Einheit                                                       XPP
+                                                                              Umsatzsteuersatz:        7,00%
+ Preis pro Einheit (netto)                                    26,07
+ Gesamtpreis (netto)                                          26,07
+
+ Artikelinformationen
+ Bezeichnung:             Porto + Versandkosten
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                               Register-/               [HRA-Eintrag]
+ Handelsname:                                                                 Registriernummer:
+
+ Elektronische Adresse:   seller@email.de                                     Umsatzsteuer-ID:         DE 123456789
+
+ Schema der               EM                                                  Weitere rechtliche       123/456/7890, HRA-Eintrag in […]
+ elektronischen                                                               Informationen:
+ Adresse:
+
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de
+
+
+
+
+                                                                    Seite 2 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                  DE 123456789/123456XX
+
+
+
+ Schema der              EM
+ elektronischen
+ Adresse:
+
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:         urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:   urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                              Seite 3 / 3
+

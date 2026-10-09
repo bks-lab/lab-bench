@@ -1,0 +1,175 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                           ATU123456789/1234567
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:        90000000-03083-72                          Ort:                  [Buyer city]
+ Name:                  [Buyer name]                               Ländercode:           DE
+
+ Adresszeile 1:         [Buyer address line 1]                     Kennung:              138
+
+ Adresszeile 2:         [Buyer address line 2]                     Kontaktstelle :       Tina Tester
+
+ Adresszeile 3:         [Buyer address line 3]                     Telefon:              0800 123456
+
+ PLZ:                   98765                                      E-Mail-Adresse:       tester@test.de
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:            [Seller name]                              Kennung:              2428600711948
+
+ Adresszeile 1:         [Seller address line 1]                    Schema der Kennung:   0088
+
+ Adresszeile 2:         [Seller address line 2]                    Name:                 Tim Tester
+
+ PLZ:                   12345                                      Telefon:              012 3456789
+
+ Ort:                   [Seller city]                              E-Mail-Adresse:       tim.tester@test.com
+
+ Ländercode:            DE
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:       1234567                                    Währung:              EUR
+
+ Rechnungsdatum:        20.8.2019                                  Vertragsnummer:       0000000752
+
+ Rechnungsart:          380
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                                  10,95
+ Gesamtsumme                                                                                                             10,95
+ Summe Umsatzsteuer                                                                                                       2,08
+ Gesamtsumme                                                                                                             13,03
+ Summe Fremdforderungen                                                                                                   0,00
+ Fälliger Betrag                                                                                                         13,03
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                             10,95
+ Umsatzsteuersatz                                                                                                      19,00%
+ Umsatzsteuerbetrag                                                                                                       2,08
+
+ Zahlungsdaten
+
+ Skonto; weitere        Bitte überweisen Sie bis zum …             Code für das          58
+ Zahlungsbedingungen:                                              Zahlungsmittel:
+
+ Fälligkeitsdatum:      29.8.2019                                  Verwendungszweck:     Deb. 12345 / Fact. 9876543
+
+
+ Überweisung
+
+
+
+
+                                                         Seite 1 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                           ATU123456789/1234567
+
+
+
+ Kontoinhaber:            [Payment account name]                      BIC:                 [BIC]
+
+ IBAN:                    DE79000000001234567890
+
+
+
+Details
+ 1
+
+ Position:                1
+
+
+ Preiseinzelheiten
+ Menge                                                    1,00        Umsatzsteuer:        S
+ Einheit                                                  XPP
+                                                                      Umsatzsteuersatz:    19,00%
+ Preis pro Einheit (netto)                               29,95
+ Gesamtpreis (netto)                                     29,95
+
+ Artikelinformationen
+ Bezeichnung:             Abschlag Monat
+
+
+ 2
+
+ Position:                2
+
+
+ Preiseinzelheiten
+ Menge                                                  -19,00        Umsatzsteuer:        S
+ Einheit                                                  XPP
+                                                                      Umsatzsteuersatz:    19,00%
+ Preis pro Einheit (netto)                                   1
+ Gesamtpreis (netto)                                    -19,00
+
+ Artikelinformationen
+ Bezeichnung:             Minderleistungen Produkt 2 Vormonat
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                       Schema der           0088
+ Handelsname:                                                         Registernummer:
+
+ Elektronische Adresse:   rechnungsausgang@test.com                   Umsatzsteuer-ID:     ATU123456789
+
+ Schema der               EM                                          Steuernummer:        123/456/789
+ elektronischen
+ Adresse:                                                             Weitere rechtliche   Amtsgericht […], Geschäsführer:
+                                                                      Informationen:       […], Sitz der Gesellscha […],
+ Register-/               3688088306671                                                    Aufsichtsratvorsitzender: […]
+ Registriernummer:
+
+
+
+ Informationen zum Käufer
+
+ Abweichender             [Buyer trading name]                        Schema der           EM
+ Handelsname:                                                         elektronischen
+                                                                      Adresse:
+ Elektronische Adresse:   rechnungseingang@test.de
+                                                                      Register-/           90000000-03083-72
+                                                                      Registriernummer:
+
+
+
+
+                                                            Seite 2 / 3
+Bereiche ohne Inhalte werden nicht dargestellt!                                                               ATU123456789/1234567
+
+
+
+ Schema der Register-/   0204                                           Umsatzsteuer-ID:    DE12345ABC
+ Registriernummer:
+
+
+
+ Informationen zum Vertrag
+
+ Prozesskennung:         urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+ Speziﬁkationskennung:   urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+Anlagen
+ Rechnungsbegründende Unterlagen
+
+ Kennung:                01_15_Anhang_01.pdf                            Format des          application/pdf
+                                                                        Anhangdokuments:
+ Beschreibung:           Aufschlüsselung der einzelnen
+                         Leistungspositionen                            Name des            01_15_Anhang_01.pdf
+                                                                        Anhangsdokuments:
+ Anhangsdokument:        01_15_Anhang_01.pdf
+
+
+
+
+                                                              Seite 3 / 3
+

@@ -1,0 +1,124 @@
+Bereiche ohne Inhalte werden nicht dargestellt!                                                  DE123456789/R123456
+
+
+
+Übersicht
+ Informationen zum Käufer
+
+ Käuferreferenz:     04011000-12350-85                        PLZ:              12345
+ Name:               [Buyer name]                             Ort:              [Buyer city]
+
+ Adresszeile 1:      [Buyer address line 1]                   Ländercode:       DE
+
+
+ Informationen zum Verkäufer
+
+ Firmenname:         [Seller name]                            Ländercode:       DE
+
+ Adresszeile 1:      Postfach 123456                          Name:             Auskun erteilt Ihnen
+
+ PLZ:                12345                                    Telefon:          1234567890
+
+ Ort:                [Seller city]                            E-Mail-Adresse:   seller@test.de
+
+
+ Rechnungsdaten
+
+ Rechnungsnummer:    R123456                                  Währung:          EUR
+
+ Rechnungsdatum:     6.4.2016                                 Auragsnummer:    A123456789
+
+ Rechnungsart:       380
+
+
+ Gesamtbeträge der Rechnung
+
+ Summe aller Positionen                                                                                     6.048,00
+ Gesamtsumme                                                                                                6.048,00
+ Summe Umsatzsteuer                                                                                         1.149,12
+ Gesamtsumme                                                                                                7.197,12
+ Summe Fremdforderungen                                                                                         0,00
+ Fälliger Betrag                                                                                            7.197,12
+
+ Aufschlüsselung der Umsatzsteuer auf Ebene der Rechnung
+
+ Umsatzsteuerkategorie: S
+ Gesamtsumme                                                                                                6.048,00
+ Umsatzsteuersatz                                                                                            19,00%
+ Umsatzsteuerbetrag                                                                                         1.149,12
+
+ Zahlungsdaten
+
+ Fälligkeitsdatum:   20.4.2016                                Code für das      58
+                                                              Zahlungsmittel:
+
+
+
+ Überweisung
+ IBAN:               DE79000000001234567890
+
+
+ IBAN:               DE16000000002345678901
+
+
+ IBAN:               DE03000000003456789012
+
+
+
+
+                                                    Seite 1 / 2
+Bereiche ohne Inhalte werden nicht dargestellt!                                                               DE123456789/R123456
+
+
+
+Details
+ 0010
+
+ Position:                0010
+
+
+ Preiseinzelheiten
+ Menge                                                       1,00        Umsatzsteuer:        S
+ Einheit                                                     XPP
+                                                                         Umsatzsteuersatz:    19,00%
+ Preis pro Einheit (netto)                                  6.048
+ Gesamtpreis (netto)                                     6.048,00
+
+ Artikelinformationen
+ Bezeichnung:             Paketierung der Anwendung "Kofax               Artikelnummer:       519306
+                          10.2" für 180 Geräte
+
+
+Zusätze
+ Informationen zum Verkäufer
+
+ Abweichender             [Seller trading name]                          Register-/           HRB 123
+ Handelsname:                                                            Registriernummer:
+
+ Elektronische Adresse:   seller@email.de                                Umsatzsteuer-ID:     DE123456789
+
+ Schema der               EM                                             Weitere rechtliche   Amtsgericht […], Geschäsführer:
+ elektronischen                                                          Informationen:       […], Sitz der Gesellscha […],
+ Adresse:                                                                                     Aufsichtsratvorsitzender: […]
+
+
+ Informationen zum Käufer
+
+ Elektronische Adresse:   buyer@info.de                                  Schema der           EM
+                                                                         elektronischen
+                                                                         Adresse:
+
+
+
+ Informationen zum Vertrag
+
+ Vergabenummer:           ANG987654321
+ Prozesskennung:          urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+
+ Speziﬁkationskennung:    urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0
+
+
+
+
+                                                               Seite 2 / 2
+
