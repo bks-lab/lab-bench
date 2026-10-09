@@ -1,0 +1,118 @@
+{
+  "profile": {
+    "tagline": "AI Engineer for LLM applications, RAG and multi-agent systems"
+  },
+  "summary": {
+    "summary": "Ten years in data and software, four of them with language models in production. Builds agent platforms, connects internal systems through MCP and puts evaluation in place before the first release."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "M.Sc. Computational Linguistics",
+        "college": "Universität Leipzig",
+        "dates": "2013 - 2015"
+      },
+      {
+        "degree": "B.A. Linguistics and Computer Science",
+        "college": "Universität Leipzig",
+        "dates": "2010 - 2013"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "German",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "fluent"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Lead AI Engineer (freelance)",
+        "company": "Rhein-Main Assekuranz AG · Frankfurt",
+        "dates": "02/2024 - present",
+        "details": "- Designed and built a multi-agent assistant for claims handling: five specialised agents, one orchestrator\n- Connected six internal systems through MCP servers, agent-to-agent calls via A2A\n- RAG over 40,000 policy and claims documents with source references (Azure AI Search)\n- Evaluation harness with 400 golden cases, run on every change; regression gate in the pipeline\n- Python, FastAPI and LangGraph, deployed on Azure Container Apps with monitoring in Application Insights\n- Workshops with the claims department and IT for the rollout",
+        "anchor": "claims-agents"
+      },
+      {
+        "position": "ML Engineer",
+        "company": "Brückenpay GmbH · Berlin",
+        "dates": "04/2022 - 01/2024",
+        "details": "- LLM-based support chat for a payment provider, 40,000 conversations per month in production\n- Retrieval with pgvector, prompt design and guardrails for sensitive topics\n- Offline evaluation with labelled conversations and weekly quality review\n- Infrastructure as code with Terraform on AWS",
+        "anchor": "fintech-support-llm"
+      },
+      {
+        "position": "Software Engineer NLP",
+        "company": "Textwerk Labs UG · Leipzig",
+        "dates": "08/2019 - 03/2022",
+        "details": "- Text classification and entity extraction for contracts with spaCy and transformer models\n- Python services with REST APIs, Docker, GitLab CI\n- Unit and integration tests with pytest for the data pipeline",
+        "anchor": "nlp-engineer"
+      },
+      {
+        "position": "Data Scientist",
+        "company": "Ostsee Analytics GmbH · Rostock",
+        "dates": "02/2017 - 07/2019",
+        "details": "- Demand forecasting for retail clients with scikit-learn and gradient boosting\n- SQL data preparation, reporting for clients",
+        "anchor": "data-scientist"
+      },
+      {
+        "position": "Research Assistant",
+        "company": "Universität Rostock · Institut für Informatik",
+        "dates": "10/2015 - 01/2017",
+        "details": "- Research on named entity recognition for German texts\n- Annotation tooling in Python",
+        "anchor": "research-assistant"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Toolkit for MCP servers",
+        "tagline": "Open-source toolkit for MCP servers with authentication, rate limits and audit logging. Used to connect internal systems to agents.",
+        "tech_stack": [
+          "Python",
+          "MCP",
+          "FastAPI"
+        ],
+        "anchor": "mcp-toolkit",
+        "year": 2025
+      },
+      {
+        "title": "Evaluation framework for agent answers",
+        "tagline": "Runs golden cases against agent versions and compares answers, tool calls and cost. Reports regressions per change.",
+        "tech_stack": [
+          "Python",
+          "pytest"
+        ],
+        "anchor": "agent-eval",
+        "year": 2024
+      },
+      {
+        "title": "Agentic coding workflow for a team",
+        "tagline": "Rules, skills and review gates so that a team of six can use agentic coding tools safely in a shared repository.",
+        "tech_stack": [
+          "Claude Code",
+          "Git"
+        ],
+        "anchor": "agentic-coding-setup",
+        "year": 2025
+      },
+      {
+        "title": "RAG over internal documents",
+        "tagline": "Retrieval pipeline with chunking, hybrid search and cited answers for an internal knowledge base.",
+        "tech_stack": [
+          "Python",
+          "pgvector"
+        ],
+        "anchor": "docs-rag",
+        "year": 2023
+      }
+    ]
+  }
+}

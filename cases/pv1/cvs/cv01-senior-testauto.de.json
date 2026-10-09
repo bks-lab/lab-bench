@@ -1,0 +1,87 @@
+{
+  "profile": {
+    "tagline": "Senior Test Automation Engineer (SDET) für Web, API und CI/CD"
+  },
+  "summary": {
+    "summary": "Elf Jahre Qualitätssicherung, davon acht in der Testautomatisierung. Baut wartbare End-to-End- und API-Testsuiten, bindet sie in Pipelines ein und befähigt Teams, ihre Tests selbst zu tragen."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "B.Sc. Informatik",
+        "college": "Hochschule Bremen",
+        "dates": "2012 - 2015"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "Deutsch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Englisch",
+        "level": "fließend"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Senior SDET (freiberuflich)",
+        "company": "Tidewave Commerce GmbH · Bremen",
+        "dates": "03/2022 - heute",
+        "details": "- End-to-End-Suite mit Playwright und TypeScript für einen Webshop aufgebaut: 1.400 Tests, laufen in Azure DevOps Pipelines bei jedem Pull Request\n- API-Tests für die REST-Dienste (Bestellung, Zahlung, Lager) mit Playwright und Vertragstests mit Pact\n- Flaky-Quote von 9 % auf unter 1 % gesenkt durch Testisolation und stabile Testdaten\n- Drei Entwicklungsteams zur Testpyramide und zum Code-Review von Tests gecoacht\n- Testberichte für Product Owner in Azure-DevOps-Dashboards",
+        "anchor": "e-commerce-sdet"
+      },
+      {
+        "position": "Test Automation Engineer (freiberuflich)",
+        "company": "Hanse Versicherungsdienste AG · Hannover",
+        "dates": "06/2019 - 02/2022",
+        "details": "- 600 Selenium-Tests (Java) auf Playwright migriert, Laufzeit von 3 Stunden auf 25 Minuten\n- BDD-Szenarien mit Cucumber, gemeinsam mit dem Fachbereich geschrieben\n- API-Tests mit Postman und Newman in der Azure DevOps Pipeline\n- Testdatenmanagement für Vertrags- und Schadenszenarien aufgebaut",
+        "anchor": "insurer-automation"
+      },
+      {
+        "position": "QA Engineer",
+        "company": "Kombitel Services GmbH · Köln",
+        "dates": "09/2016 - 05/2019",
+        "details": "- Selenium-WebDriver-Tests in Java mit TestNG für das Kundenportal\n- Mobile Tests mit Appium für die Android- und iOS-Apps\n- Jenkins-Pipelines für nächtliche Regressionsläufe\n- Fehlerbewertung gemeinsam mit der Entwicklung in Jira",
+        "anchor": "telecom-qa"
+      },
+      {
+        "position": "Software Tester",
+        "company": "Pixelfabrik Medien GmbH · Bremen",
+        "dates": "10/2014 - 08/2016",
+        "details": "- Manuelle und explorative Tests von Websites und Webanwendungen für Agenturkunden\n- Erste Selenium-IDE- und WebDriver-Skripte für Smoke-Tests\n- Testdokumentation in Confluence, Fehlerverfolgung in Jira",
+        "anchor": "agency-tester"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Testfallentwürfe mit einem LLM",
+        "tagline": "Internes Werkzeug, das aus User Stories über eine LLM-API Playwright-Testentwürfe erzeugt. Eine Testerin oder ein Tester prüft jeden Entwurf vor dem Merge. Zwei Teams nutzen es als Zeitgewinn bei neuen Features.",
+        "tech_stack": [
+          "TypeScript",
+          "Playwright",
+          "Azure OpenAI"
+        ],
+        "anchor": "llm-testgen",
+        "year": 2024
+      },
+      {
+        "title": "Dashboard zur Fehlerklassifikation",
+        "tagline": "Sammelt Testergebnisse aus Pipelines und gruppiert Fehlschläge nach Ursache (Testdaten, Timing, Umgebung, echter Fehler). Hilft dem Team zu entscheiden, welche Fehlschläge zuerst geprüft werden.",
+        "tech_stack": [
+          "Python",
+          "pytest",
+          "Grafana"
+        ],
+        "anchor": "flaky-radar",
+        "year": 2023
+      }
+    ]
+  }
+}

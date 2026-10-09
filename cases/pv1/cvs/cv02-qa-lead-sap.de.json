@@ -1,0 +1,122 @@
+{
+  "profile": {
+    "tagline": "QA Lead und Testmanager für SAP-S/4HANA-Migrationen"
+  },
+  "summary": {
+    "summary": "Siebzehn Jahre Softwaretest, davon zwölf in SAP-Projekten. Führt Testteams mit bis zu 14 Personen, verantwortet Teststrategie und Abnahme und führt Tricentis Tosca in SAP-Landschaften ein."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "Diplom Wirtschaftsinformatik",
+        "college": "Hochschule Würzburg-Schweinfurt",
+        "dates": "2002 - 2007"
+      },
+      {
+        "degree": "ISTQB Certified Tester Advanced Level, Test Manager",
+        "dates": "2016"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "Deutsch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Englisch",
+        "level": "fließend"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Testmanager (freiberuflich)",
+        "company": "Rheinhandel Gruppe AG · Köln",
+        "dates": "01/2022 - 12/2024",
+        "details": "- Testmanager für die Umstellung von SAP ECC auf S/4HANA (Brownfield) eines Handelskonzerns, Module SD, MM und FI\n- Verantwortung für Teststrategie und Testplanung, Führung eines Teams mit 14 Testern vor Ort und Offshore\n- Steuerung von Integrationstests und fachlichen Abnahmetests mit acht Fachbereichen\n- Fehlermanagement und wöchentliches Reporting an den Lenkungskreis\n- Tricentis Tosca für die Prozesse Order-to-Cash und Procure-to-Pay eingeführt, 380 automatisierte Fälle\n- Datenmigrationsprüfung durch Abgleich von Alt- und Neusystem",
+        "anchor": "s4-retail-testmgr"
+      },
+      {
+        "position": "Testmanager (freiberuflich)",
+        "company": "Kaltenborn Chemie GmbH · Ludwigshafen",
+        "dates": "10/2019 - 12/2021",
+        "details": "- S/4HANA-Greenfield-Rollout in sechs Ländern, Testmanagement für drei Release-Wellen\n- Testplanung und Verfolgung der Testdurchführung im SAP Solution Manager\n- Abnahme mit lokalen Key Usern, Coaching von 30 Fachbereichstestern\n- Go-live-Reifegradprüfungen mit der Projektleitung",
+        "anchor": "s4-chemicals"
+      },
+      {
+        "position": "Testlead SAP",
+        "company": "Alpenstrom Energie AG · München",
+        "dates": "03/2017 - 09/2019",
+        "details": "- Testlead für Releasetests von SAP IS-U (Abrechnung und Kundenservice), Team mit sechs Personen\n- Manuelle Regression durch ein erstes Tosca-Testset abgelöst\n- Testzyklusplanung mit zwei Release-Zügen pro Jahr\n- Fehlerstatistik und Testberichte für das IT-Management",
+        "anchor": "utility-testlead"
+      },
+      {
+        "position": "Senior Consultant Qualitätssicherung",
+        "company": "Quadrant Beratung GmbH · Frankfurt",
+        "dates": "04/2014 - 02/2017",
+        "details": "- Testberatung für Banken und Industriekunden: Testprozess-Assessments gegen TMMi\n- HP ALM als Testmanagementwerkzeug bei zwei Kunden eingeführt\n- Workshops zum risikobasierten Testen für Projektteams",
+        "anchor": "consultancy-qa"
+      },
+      {
+        "position": "SAP Test Analyst",
+        "company": "Mainfranken Systemhaus GmbH · Würzburg",
+        "dates": "05/2011 - 03/2014",
+        "details": "- Testfälle für SAP-SD- und MM-Rollouts geschrieben und ausgeführt\n- Testdaten vorbereitet und Key User in Abnahmetests unterstützt",
+        "anchor": "sap-test-analyst"
+      },
+      {
+        "position": "Test Analyst",
+        "company": "Sparkreis Banking Services · Frankfurt",
+        "dates": "09/2009 - 04/2011",
+        "details": "- Abnahmetests für ein Kernbanksystem, Zahlungsverkehr und Kontoführung\n- Fehlerverfolgung und Nachtests",
+        "anchor": "bank-acceptance"
+      },
+      {
+        "position": "Junior Consultant SAP SD",
+        "company": "Delta Logistik GmbH · Würzburg",
+        "dates": "10/2007 - 08/2009",
+        "details": "- Unterstützung bei SAP-SD-Customizing und Anwenderfragen\n- Erste Testfälle für Release-Änderungen",
+        "anchor": "sap-support-start"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Tosca-Modulbibliothek für Order-to-Cash",
+        "tagline": "Wiederverwendbare Tosca-Module für SD-Auftragserfassung, Lieferung und Fakturierung, in drei Projekten genutzt und von einem kleinen Kernteam gepflegt.",
+        "tech_stack": [
+          "Tricentis Tosca",
+          "SAP SD"
+        ],
+        "anchor": "tosca-order-to-cash",
+        "year": 2021
+      },
+      {
+        "title": "Teststrategie-Vorlage für S/4HANA-Projekte",
+        "tagline": "Eine Teststrategie-Vorlage mit Teststufen, Eingangs- und Endekriterien und Rollenmodell. In fünf Projekten eingesetzt.",
+        "anchor": "strategy-template",
+        "year": 2020
+      },
+      {
+        "title": "Abgleich der Datenmigration",
+        "tagline": "Vorgehen und Skripte zum Abgleich von Stamm- und Bewegungsdaten zwischen ECC und S/4HANA, mit Freigabeliste je Datenobjekt.",
+        "tech_stack": [
+          "SQL",
+          "Excel"
+        ],
+        "anchor": "migration-reconciliation",
+        "year": 2023
+      },
+      {
+        "title": "Schulung für Fachbereichstester",
+        "tagline": "Ein zweitägiges Schulungsprogramm für Fachanwender, die zum ersten Mal testen, mit Übungen an echten Projektprozessen.",
+        "anchor": "uat-tester-training",
+        "year": 2018
+      }
+    ]
+  }
+}

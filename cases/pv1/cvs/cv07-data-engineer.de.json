@@ -1,0 +1,98 @@
+{
+  "profile": {
+    "tagline": "Data Engineer für Spark, Databricks, dbt, Airflow und Azure"
+  },
+  "summary": {
+    "summary": "Zwölf Jahre Daten, davon sieben als Data Engineer. Baut Lakehouse-Plattformen auf Azure und Databricks, modelliert Daten für Analysen und hält Pipelines getestet und beobachtbar."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "M.Sc. Statistik",
+        "college": "Universität zu Köln",
+        "dates": "2011 - 2014"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "Deutsch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Englisch",
+        "level": "fließend"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Senior Data Engineer (freiberuflich)",
+        "company": "Hansekontor Handel GmbH · Hamburg",
+        "dates": "06/2022 - heute",
+        "details": "- Lakehouse für ein Handelsunternehmen aufgebaut auf Azure Data Lake Storage und Databricks, Medallion-Schichten Bronze, Silber und Gold\n- PySpark-Jobs für 60 Quellen (ERP, Webshop, CSV-Lieferungen), 1,5 TB pro Tag\n- 400 dbt-Modelle mit Tests und generierter Dokumentation, dimensionale Modelle in der Gold-Schicht\n- Airflow auf Kubernetes zur Orchestrierung, Alarmierung bei fehlgeschlagenen Ladeläufen\n- Zugriffssteuerung mit Unity Catalog, Kostenüberwachung mit Budgets je Workspace\n- Feature-Tabellen für das Data-Science-Team",
+        "anchor": "trade-lakehouse"
+      },
+      {
+        "position": "Data Engineer",
+        "company": "Sonnenfeld Energie GmbH · Kassel",
+        "dates": "09/2019 - 05/2022",
+        "details": "- Verarbeitung von Smart-Meter-Daten (2 TB pro Tag) von Azure Data Factory auf Spark in Databricks mit Delta Lake umgezogen\n- dbt für die Reporting-Schicht eingeführt\n- Feature-Pipelines mit dem Databricks Feature Store für ein Prognosemodell\n- Azure DevOps Pipelines für das Deployment von Notebooks und Jobs",
+        "anchor": "energy-data"
+      },
+      {
+        "position": "BI-Entwickler",
+        "company": "Mittelland Versicherung AG · Hannover",
+        "dates": "03/2016 - 08/2019",
+        "details": "- Data Warehouse auf SQL Server mit SSIS-Ladeläufen\n- Sternschemata für Schäden und Verträge, Berichte in Power BI\n- Performance-Optimierung von SQL-Abfragen und Indizes",
+        "anchor": "insurance-bi"
+      },
+      {
+        "position": "Junior Data Analyst",
+        "company": "Kontor Marktforschung GmbH · Köln",
+        "dates": "02/2014 - 02/2016",
+        "details": "- Datenaufbereitung und Analyse in SQL und Python (pandas)\n- Umfrageauswertung und Berichte für Kunden",
+        "anchor": "market-analyst"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Wiederverwendbare dbt-Tests und Makros",
+        "tagline": "Ein Paket generischer dbt-Tests (Aktualität, Abweichung der Zeilenzahl, referenzielle Prüfungen), das alle Projekte des Teams nutzen.",
+        "tech_stack": [
+          "dbt",
+          "SQL",
+          "Jinja"
+        ],
+        "anchor": "dbt-quality-pack",
+        "year": 2023
+      },
+      {
+        "title": "Lakehouse für Smart-Meter-Daten",
+        "tagline": "Delta-Lake-Entwurf für Zählerwerte im 15-Minuten-Takt mit verspätet eintreffenden Daten und Neuverarbeitung.",
+        "tech_stack": [
+          "Spark",
+          "Delta Lake",
+          "Databricks"
+        ],
+        "anchor": "meter-lakehouse",
+        "year": 2021
+      },
+      {
+        "title": "Kostenansicht für die Datenplattform",
+        "tagline": "Ein Dashboard der Databricks- und Speicherkosten je Team und Job, mit Alarm bei Überschreitung eines Budgets.",
+        "tech_stack": [
+          "Azure",
+          "Python",
+          "Power BI"
+        ],
+        "anchor": "azure-cost-view",
+        "year": 2024
+      }
+    ]
+  }
+}

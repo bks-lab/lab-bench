@@ -1,0 +1,118 @@
+{
+  "profile": {
+    "tagline": "AI Engineer für LLM-Anwendungen, RAG und Multi-Agenten-Systeme"
+  },
+  "summary": {
+    "summary": "Zehn Jahre Daten und Software, davon vier mit Sprachmodellen im Produktivbetrieb. Baut Agentenplattformen, bindet interne Systeme über MCP an und etabliert die Evaluierung vor dem ersten Release."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "M.Sc. Computerlinguistik",
+        "college": "Universität Leipzig",
+        "dates": "2013 - 2015"
+      },
+      {
+        "degree": "B.A. Linguistik und Informatik",
+        "college": "Universität Leipzig",
+        "dates": "2010 - 2013"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "Deutsch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Englisch",
+        "level": "fließend"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Lead AI Engineer (freiberuflich)",
+        "company": "Rhein-Main Assekuranz AG · Frankfurt",
+        "dates": "02/2024 - heute",
+        "details": "- Multi-Agenten-Assistent für die Schadenbearbeitung entworfen und gebaut: fünf spezialisierte Agenten, ein Orchestrator\n- Sechs interne Systeme über MCP-Server angebunden, Agent-zu-Agent-Aufrufe über A2A\n- RAG über 40.000 Policen- und Schadendokumente mit Quellenangaben (Azure AI Search)\n- Evaluierungsumgebung mit 400 Referenzfällen, bei jeder Änderung ausgeführt; Regressionsschranke in der Pipeline\n- Python, FastAPI und LangGraph, betrieben auf Azure Container Apps mit Monitoring in Application Insights\n- Workshops mit dem Schadenbereich und der IT zur Einführung",
+        "anchor": "claims-agents"
+      },
+      {
+        "position": "ML Engineer",
+        "company": "Brückenpay GmbH · Berlin",
+        "dates": "04/2022 - 01/2024",
+        "details": "- LLM-basierter Support-Chat für einen Zahlungsdienstleister, 40.000 Gespräche pro Monat im Produktivbetrieb\n- Retrieval mit pgvector, Prompt-Design und Leitplanken für sensible Themen\n- Offline-Evaluierung mit gelabelten Gesprächen und wöchentlicher Qualitätsprüfung\n- Infrastruktur als Code mit Terraform auf AWS",
+        "anchor": "fintech-support-llm"
+      },
+      {
+        "position": "Software Engineer NLP",
+        "company": "Textwerk Labs UG · Leipzig",
+        "dates": "08/2019 - 03/2022",
+        "details": "- Textklassifikation und Entitätenerkennung für Verträge mit spaCy und Transformer-Modellen\n- Python-Dienste mit REST-APIs, Docker, GitLab CI\n- Unit- und Integrationstests mit pytest für die Datenpipeline",
+        "anchor": "nlp-engineer"
+      },
+      {
+        "position": "Data Scientist",
+        "company": "Ostsee Analytics GmbH · Rostock",
+        "dates": "02/2017 - 07/2019",
+        "details": "- Absatzprognosen für Handelskunden mit scikit-learn und Gradient Boosting\n- Datenaufbereitung in SQL, Berichte für Kunden",
+        "anchor": "data-scientist"
+      },
+      {
+        "position": "Wissenschaftliche Hilfskraft",
+        "company": "Universität Rostock · Institut für Informatik",
+        "dates": "10/2015 - 01/2017",
+        "details": "- Forschung zur Entitätenerkennung in deutschen Texten\n- Annotationswerkzeug in Python",
+        "anchor": "research-assistant"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Werkzeugkasten für MCP-Server",
+        "tagline": "Open-Source-Werkzeugkasten für MCP-Server mit Authentifizierung, Ratenbegrenzung und Audit-Protokoll. Dient dazu, interne Systeme an Agenten anzubinden.",
+        "tech_stack": [
+          "Python",
+          "MCP",
+          "FastAPI"
+        ],
+        "anchor": "mcp-toolkit",
+        "year": 2025
+      },
+      {
+        "title": "Evaluierungsrahmen für Agentenantworten",
+        "tagline": "Führt Referenzfälle gegen Agentenversionen aus und vergleicht Antworten, Werkzeugaufrufe und Kosten. Meldet Regressionen je Änderung.",
+        "tech_stack": [
+          "Python",
+          "pytest"
+        ],
+        "anchor": "agent-eval",
+        "year": 2024
+      },
+      {
+        "title": "Agentisches Entwickeln im Team",
+        "tagline": "Regeln, Skills und Prüfschritte, damit ein Team mit sechs Personen agentische Coding-Werkzeuge sicher in einem gemeinsamen Repository nutzen kann.",
+        "tech_stack": [
+          "Claude Code",
+          "Git"
+        ],
+        "anchor": "agentic-coding-setup",
+        "year": 2025
+      },
+      {
+        "title": "RAG über interne Dokumente",
+        "tagline": "Retrieval-Pipeline mit Chunking, hybrider Suche und belegten Antworten für eine interne Wissensbasis.",
+        "tech_stack": [
+          "Python",
+          "pgvector"
+        ],
+        "anchor": "docs-rag",
+        "year": 2023
+      }
+    ]
+  }
+}

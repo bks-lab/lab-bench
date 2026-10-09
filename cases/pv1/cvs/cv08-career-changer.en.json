@@ -1,0 +1,73 @@
+{
+  "profile": {
+    "tagline": "Test Automation Engineer, career changer from teaching"
+  },
+  "summary": {
+    "summary": "Eleven years as a teacher for mathematics and computer science, since 2025 in test automation. Writes Playwright tests in TypeScript and explains technical topics clearly."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "Staatsexamen Lehramt Mathematik und Informatik",
+        "college": "Universität Heidelberg",
+        "dates": "2007 - 2013"
+      },
+      {
+        "degree": "ISTQB Certified Tester Foundation Level",
+        "dates": "2025"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "German",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "good"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Test Automation Engineer",
+        "company": "Kurpfalz Software GmbH · Mannheim",
+        "dates": "04/2025 - present",
+        "details": "- End-to-end tests with Playwright and TypeScript for the web shop of a sports retailer, about 150 tests\n- API tests with the Playwright request context for the order and basket services\n- Pipelines in GitHub Actions, first pipeline in Azure DevOps for a second team\n- Uses an AI assistant to draft test code, reviews every result before commit\n- Explains test results to product owners in plain language",
+        "anchor": "shop-automation"
+      },
+      {
+        "position": "Retraining Test Automation",
+        "company": "TechPfad Akademie · Mannheim",
+        "dates": "09/2024 - 03/2025",
+        "details": "- Six-month retraining: JavaScript and TypeScript, Playwright, Git, REST basics\n- ISTQB Foundation preparation\n- Final project: test suite for a demo shop",
+        "anchor": "retraining"
+      },
+      {
+        "position": "Teacher for Mathematics and Computer Science",
+        "company": "Gesamtschule am Park · Mannheim",
+        "dates": "08/2013 - 07/2024",
+        "details": "- Taught mathematics and computer science in grades 7 to 13, class teacher for six years\n- Introduced digital tools to the department and trained colleagues\n- Led the working group for the new computer science curriculum\n- Regular talks with parents, students and school management",
+        "anchor": "teacher"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Public Playwright demo suite",
+        "tagline": "An open demo suite for a public sample shop with page objects, API checks and a pipeline run on every push.",
+        "tech_stack": [
+          "TypeScript",
+          "Playwright",
+          "GitHub Actions"
+        ],
+        "anchor": "portfolio-e2e",
+        "year": 2025
+      }
+    ]
+  }
+}

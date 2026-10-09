@@ -1,0 +1,90 @@
+{
+  "profile": {
+    "tagline": "Performance Test Engineer for JMeter, Gatling and LoadRunner"
+  },
+  "summary": {
+    "summary": "Thirteen years in testing, ten of them focused on load and performance. Plans load scenarios, finds bottlenecks across application, database and infrastructure and builds performance gates into pipelines."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "B.Sc. Computer Science",
+        "college": "Universität Bonn",
+        "dates": "2009 - 2012"
+      },
+      {
+        "degree": "ISTQB Certified Tester Foundation Level and Performance Testing",
+        "dates": "2017"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "German",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "fluent"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Performance Test Engineer (freelance)",
+        "company": "Kronberg Handel AG · Düsseldorf",
+        "dates": "01/2023 - 12/2024",
+        "details": "- Performance tests for the migration of SAP ECC to S/4HANA of a retail company, modules SD and MM\n- LoadRunner scenarios for dialog users (up to 5,000 concurrent) and for batch runs\n- Bottleneck analysis together with SAP Basis and the database team\n- Planned the performance test phases with the test manager and reported results to the steering committee",
+        "anchor": "s4-performance"
+      },
+      {
+        "position": "Performance Test Engineer (freelance)",
+        "company": "Westmark Bank AG · Düsseldorf",
+        "dates": "04/2020 - 12/2022",
+        "details": "- Gatling simulations in Scala and JMeter plans for REST APIs of the online banking platform\n- Performance gates in Azure DevOps pipelines: a build fails when p95 exceeds the budget\n- Monitoring with Grafana, Prometheus and Application Insights during test runs\n- API tests for the performance-relevant endpoints",
+        "anchor": "bank-load"
+      },
+      {
+        "position": "Performance Tester",
+        "company": "Funkwerk Telekom GmbH · Bonn",
+        "dates": "06/2016 - 03/2020",
+        "details": "- JMeter and LoadRunner tests for billing and customer portals\n- Test planning for load, stress and endurance tests\n- Analysis with Dynatrace, recommendations to development and operations",
+        "anchor": "telecom-performance"
+      },
+      {
+        "position": "QA Engineer",
+        "company": "Rhein Softwarehaus GmbH · Bonn",
+        "dates": "04/2013 - 05/2016",
+        "details": "- Functional testing of web applications, test cases and defect tracking\n- SoapUI tests for web services, a few Selenium scripts\n- First JMeter load tests for a booking system",
+        "anchor": "qa-engineer-early"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Performance gate template for pipelines",
+        "tagline": "A reusable pipeline template that runs a short Gatling test per build and compares p95 and error rate with a stored budget.",
+        "tech_stack": [
+          "Gatling",
+          "Azure DevOps",
+          "Grafana"
+        ],
+        "anchor": "perf-gates",
+        "year": 2021
+      },
+      {
+        "title": "Capacity model for a booking system",
+        "tagline": "A model from measured load tests that predicts response times for the expected peak of the holiday season.",
+        "tech_stack": [
+          "JMeter",
+          "Excel"
+        ],
+        "anchor": "capacity-model",
+        "year": 2018
+      }
+    ]
+  }
+}

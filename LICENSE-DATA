@@ -1,0 +1,52 @@
+Data licence
+
+Copyright (c) 2026 BKS-Lab contributors
+
+The test cases, requests, reference judgments and results of this repository,
+that is everything under cases/, requests/, reference/ and results/, are
+licensed under the Creative Commons Attribution 4.0 International licence
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Attribution: "lab-bench, BKS-Lab contributors,
+https://github.com/bks-lab/lab-bench".
+
+Exceptions:
+
+1. bench/match.ts is a vendored copy of src/lib/match.ts from
+   https://github.com/mboiman/mboiman.github.io (source commit in its header).
+   It stays under CC BY 4.0 with the credit given in its header.
+
+2. Some notes in reference/ quote third-party sources (the "Sources:" parts of
+   a note, each with its URL). These quotes belong to their authors and are
+   not covered by the CC BY 4.0 grant above. They are reproduced as short
+   citations only.
+
+3. Model outputs in results/ were produced by the models named in each row
+   (field arm_version). Their use may also be subject to the terms of the
+   respective model or service provider.
+
+4. cases/route1/massive-*.jsonl and cases/ex1/ are taken from MASSIVE 1.1,
+   Copyright Amazon.com Inc. or its affiliates, licensed under CC BY 4.0
+   (https://github.com/alexa/massive). Attribution: FitzGerald et al.,
+   "MASSIVE: A 1M-Example Multilingual Natural Language Understanding
+   Dataset with 51 Typologically-Diverse Languages", 2022, arXiv:2204.08582.
+   MASSIVE includes and translates text from SLURP (Bastianelli et al.,
+   "SLURP: A Spoken Language Understanding Resource Package", EMNLP 2020,
+   https://github.com/pswietojanski/slurp), licensed under CC BY 4.0.
+   Rows were filtered and fields reduced, see cases/route1/README.md. The
+   same applies to the gold rows derived from them in reference/route1/
+   (massive lines) and reference/ex1/, to the massive requests in
+   requests/route1/, to the scenario and intent label names in
+   results/route1/ (massive lines), and to the slot types and slot texts
+   in results/ex1/.
+
+5. cases/route1/fastdec-en.jsonl is taken from fastino/fast-decisions
+   (https://huggingface.co/datasets/fastino/fast-decisions, revision
+   35afb79a0f611a1db44380e855ac2a821b0a4da1), licensed under the Apache
+   License 2.0, a copy of which is in LICENSES/Apache-2.0.txt.
+   Published by Fastino; the dataset card asks for the citation Zaratiana
+   et al., "GLiNER2: An Efficient Multi-Task Information Extraction System
+   with Schema-Driven Interface", 2025, arXiv:2507.18546.
+   Multi-label tasks were removed. The same applies to the fastdec gold
+   rows in reference/route1/, to the texts repeated in requests/route1/,
+   and to the label names in results/route1/ (fastdec lines).

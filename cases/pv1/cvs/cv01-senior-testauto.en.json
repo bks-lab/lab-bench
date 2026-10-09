@@ -1,0 +1,87 @@
+{
+  "profile": {
+    "tagline": "Senior Test Automation Engineer (SDET) for web, API and CI/CD"
+  },
+  "summary": {
+    "summary": "Eleven years in quality assurance, eight of them in test automation. Builds maintainable end-to-end and API test suites, wires them into pipelines and teaches teams to own their tests."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "B.Sc. Computer Science",
+        "college": "Hochschule Bremen",
+        "dates": "2012 - 2015"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "German",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "fluent"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Senior SDET (freelance)",
+        "company": "Tidewave Commerce GmbH · Bremen",
+        "dates": "03/2022 - present",
+        "details": "- Built an end-to-end suite with Playwright and TypeScript for a web shop: 1,400 tests, run in Azure DevOps pipelines on every pull request\n- API tests for the REST services (orders, payment, inventory) with Playwright and contract tests with Pact\n- Cut the flaky test rate from 9% to under 1% through test isolation and stable test data\n- Coached three development teams on the test pyramid and code review for tests\n- Test reports for product owners in Azure DevOps dashboards",
+        "anchor": "e-commerce-sdet"
+      },
+      {
+        "position": "Test Automation Engineer (freelance)",
+        "company": "Hanse Versicherungsdienste AG · Hannover",
+        "dates": "06/2019 - 02/2022",
+        "details": "- Migrated 600 Selenium tests (Java) to Playwright, runtime from 3 hours to 25 minutes\n- BDD scenarios with Cucumber, written together with the business unit\n- API tests with Postman and Newman in the Azure DevOps pipeline\n- Set up test data management for contract and claims scenarios",
+        "anchor": "insurer-automation"
+      },
+      {
+        "position": "QA Engineer",
+        "company": "Kombitel Services GmbH · Köln",
+        "dates": "09/2016 - 05/2019",
+        "details": "- Selenium WebDriver tests in Java with TestNG for the customer portal\n- Mobile tests with Appium for the Android and iOS apps\n- Jenkins pipelines for nightly regression runs\n- Defect triage together with development in Jira",
+        "anchor": "telecom-qa"
+      },
+      {
+        "position": "Software Tester",
+        "company": "Pixelfabrik Medien GmbH · Bremen",
+        "dates": "10/2014 - 08/2016",
+        "details": "- Manual and exploratory testing of websites and web applications for agency clients\n- First Selenium IDE and WebDriver scripts for smoke tests\n- Test documentation in Confluence, bug tracking in Jira",
+        "anchor": "agency-tester"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Test case drafts with an LLM",
+        "tagline": "Internal tool that turns user stories into Playwright test drafts through an LLM API. A tester reviews every draft before it is merged. Used by two teams as a time saver for new features.",
+        "tech_stack": [
+          "TypeScript",
+          "Playwright",
+          "Azure OpenAI"
+        ],
+        "anchor": "llm-testgen",
+        "year": 2024
+      },
+      {
+        "title": "Failure classification dashboard",
+        "tagline": "Collects test results from pipelines and groups failures by cause (test data, timing, environment, real defect). Helps the team decide which failures to look at first.",
+        "tech_stack": [
+          "Python",
+          "pytest",
+          "Grafana"
+        ],
+        "anchor": "flaky-radar",
+        "year": 2023
+      }
+    ]
+  }
+}

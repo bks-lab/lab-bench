@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference judgment</title>
+<style>
+  :root { --bg:#fafaf8; --fg:#1d1d1b; --muted:#6b6b66; --line:#d9d9d2; --card:#fff; --accent:#2457a6; --sel:#dfe9f8; --warn:#9a5b00; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161615; --fg:#ececea; --muted:#a3a39c; --line:#3a3a36; --card:#1f1f1d; --accent:#7aa7ea; --sel:#23344f; --warn:#e0a54a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.45 system-ui, sans-serif; }
+  header { position:sticky; top:0; background:var(--bg); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; z-index:2; }
+  header b { font-size:16px; }
+  .bar { flex:1; min-width:160px; height:6px; background:var(--line); border-radius:3px; overflow:hidden; }
+  .bar i { display:block; height:100%; background:var(--accent); }
+  main { max-width:1180px; margin:0 auto; padding:16px; display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px 16px; }
+  main > .card:first-child { position:sticky; top:60px; align-self:start; max-height:calc(100vh - 76px); overflow:auto; }
+  .req { font-size:18px; font-weight:600; margin:4px 0 10px; }
+  .meta { color:var(--muted); font-size:13px; }
+  h3 { margin:14px 0 6px; font-size:14px; }
+  h3 small { color:var(--muted); font-weight:400; }
+  .opts { display:flex; flex-wrap:wrap; gap:6px; }
+  button.o { border:1px solid var(--line); background:var(--card); color:var(--fg); padding:6px 10px; border-radius:6px; cursor:pointer; text-align:left; font:inherit; }
+  button.o:hover { border-color:var(--accent); }
+  button.o.on { background:var(--sel); border-color:var(--accent); }
+  button.o kbd { color:var(--muted); font-size:12px; margin-right:6px; }
+  .cv button.o { display:block; width:100%; margin-bottom:6px; }
+  .cv .id { font-family:ui-monospace, monospace; font-size:12px; color:var(--muted); }
+  .project { white-space:pre-wrap; font-size:14px; max-height:60vh; overflow:auto; }
+  .nav { display:flex; gap:8px; margin-top:16px; }
+  .nav button { font:inherit; padding:8px 14px; border-radius:6px; border:1px solid var(--line); background:var(--card); color:var(--fg); cursor:pointer; }
+  .nav button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .hint { color:var(--warn); font-size:13px; min-height:18px; }
+  .row { display:grid; grid-template-columns: 170px 1fr; gap:8px; align-items:center; margin-bottom:6px; }
+  select { font:inherit; }
+</style>
+</head>
+<body>
+<header>
+  <b id="title">Reference judgment</b>
+  <span id="who" class="meta"></span>
+  <div class="bar"><i id="prog"></i></div>
+  <span id="count" class="meta"></span>
+  <select id="jump"></select>
+</header>
+<main id="main"></main>
+<script>
+// Wording of the levels as the service asks them (bench/match.ts, COVER_LEVELS and DEMAND_LEVELS).
+const COVER = ['Not at all', 'Adjacent or transferable experience', 'Done in at least one role or project', 'Done repeatedly, across several roles or projects'];
+const COVER_DE = ['gar nicht', 'angrenzend, übertragbar', 'in mindestens einer Rolle oder einem Projekt gemacht', 'wiederholt, in mehreren Rollen oder Projekten'];
+const DEMAND = ['Not asked for', 'Mentioned in passing or nice to have', 'Clearly required', 'Central to the role'];
+const DEMAND_DE = ['nicht gefragt', 'nebenbei oder wünschenswert', 'klar gefordert', 'zentral für die Rolle'];
+
+// lang picks the case language (de or en). The labels follow it: German only with ?lang=de, English otherwise.
+const lang = new URLSearchParams(location.search).get('lang') === 'de' ? 'de' : 'en';
+const T = {
+  en: {
+    title: 'Reference judgment', judged: 'judged', now: 'now', posting: 'Posting', oncePer: 'once per posting',
+    role: 'What kind of role does the posting describe?', demand: 'How important is the area for the work? 0 to 3',
+    isReq: 'Something the person can do, has done or will do? (not the company, benefits, the application)',
+    must: 'Phrased as mandatory, not optional?', axis: 'Which area does the line belong to?',
+    level: 'How well does the CV show that the person has done it?',
+    evidence: 'Which entry supports the requirement best?', evidenceWait: 'only after is_req = yes',
+    none: 'none', noneHint: 'no entry shows it', yes: 'yes', no: 'no', yesKey: 'y',
+    back: '← back', next: 'save and next (Enter)', missing: 'missing',
+    cover: COVER, demandLevels: DEMAND,
+  },
+  de: {
+    title: 'Referenzurteil', judged: 'beurteilt', now: 'jetzt', posting: 'Ausschreibung', oncePer: 'einmal je Ausschreibung',
+    role: 'Was für eine Rolle beschreibt die Ausschreibung?', demand: 'Wie wichtig ist der Bereich für die Arbeit? 0 bis 3',
+    isReq: 'Etwas, das die Person können, getan haben oder tun wird? (nicht Firma, Benefits, Bewerbung)',
+    must: 'Als Pflicht formuliert, nicht optional?', axis: 'Zu welchem Bereich gehört die Zeile?',
+    level: 'Wie gut zeigt der CV, dass die Person das getan hat?',
+    evidence: 'Welcher Eintrag belegt die Anforderung am besten?', evidenceWait: 'erst nach is_req = ja',
+    none: 'keiner', noneHint: 'kein Eintrag zeigt es', yes: 'ja', no: 'nein', yesKey: 'j',
+    back: '← zurück', next: 'speichern und weiter (Enter)', missing: 'fehlt',
+    cover: COVER_DE, demandLevels: DEMAND_DE,
+  },
+}[lang];
+document.documentElement.lang = lang;
+document.title = T.title;
+document.getElementById('title').textContent = T.title;
+let S, idx = 0, cur = {}, started = Date.now();
+
+async function load() {
+  S = await (await fetch(`/api/state?lang=${lang}`)).json();
+  document.getElementById('who').textContent = `${S.pv} · ${S.judge} · ${lang}`;
+  const done = doneKeys();
+  idx = Math.max(0, S.items.findIndex(i => !done.has(i.key)));
+  if (idx < 0) idx = 0;
+  const j = document.getElementById('jump');
+  j.innerHTML = S.items.map((it, i) => `<option value="${i}">${it.unit === 'project' ? '▣ ' + it.posting : it.key}</option>`).join('');
+  j.onchange = () => { idx = Number(j.value); show(); };
+  show();
+}
+function doneKeys() { return new Set(S.judgments.map(r => r.line)); }
+function prior(key) { return Object.fromEntries(S.judgments.filter(r => r.line === key).map(r => [r.question, r.choice])); }
+
+function opt(q, val, label, k) {
+  const on = cur[q] === val ? ' on' : '';
+  return `<button class="o${on}" data-q="${q}" data-v="${val}">${k ? `<kbd>${k}</kbd>` : ''}${label}</button>`;
+}
+
+function show(keep = false) {
+  const it = S.items[idx];
+  if (!keep) { cur = prior(it.key); started = Date.now(); }
+  const done = doneKeys();
+  document.getElementById('prog').style.width = `${100 * done.size / S.items.length}%`;
+  document.getElementById('count').textContent = `${done.size} / ${S.items.length} ${T.judged} · ${T.now} ${idx + 1}`;
+  document.getElementById('jump').value = idx;
+  const m = document.getElementById('main');
+  if (it.unit === 'project') {
+    m.innerHTML = `
+      <div class="card"><div class="meta">${T.posting} ${it.posting} (${T.oncePer})</div><div class="project">${esc(it.text)}</div></div>
+      <div class="card">
+        <h3>role <small>${T.role}</small></h3>
+        <div class="opts">${Object.entries(S.roles).map(([k, v]) => opt('role', k, `${k} <span class="meta">${v}</span>`)).join('')}</div>
+        <h3>demand <small>${T.demand}</small></h3>
+        ${S.axes.filter(a => a.key !== 'other').map(a => `<div class="row"><span title="${esc(a.hint)}">${a.label}</span><div class="opts">${[0,1,2,3].map(n => opt('demand:' + a.key, String(n), `${n} <span class="meta">${T.demandLevels[n]}</span>`)).join('')}</div></div>`).join('')}
+        ${nav()}
+      </div>`;
+  } else {
+    const entries = Object.entries(it.cvEntries);
+    const isReq = cur.is_req;
+    m.innerHTML = `
+      <div class="card">
+        <div class="meta">${it.key} · ${it.posting} × ${it.cv}</div>
+        <div class="req">${esc(it.text)}</div>
+        <h3>is_req <small>${T.isReq}</small></h3>
+        <div class="opts">${opt('is_req', 'yes', T.yes, T.yesKey)}${opt('is_req', 'no', T.no, 'n')}</div>
+        ${isReq === 'yes' ? `
+        <h3>must <small>${T.must}</small></h3>
+        <div class="opts">${opt('must', 'yes', T.yes, 'p')}${opt('must', 'no', T.no, 'o')}</div>
+        <h3>axis <small>${T.axis}</small></h3>
+        <div class="opts">${S.axes.map((a, i) => opt('axis', a.key, a.label, String(i + 1))).join('')}</div>
+        <h3>level <small>${T.level}</small></h3>
+        <div class="opts">${[0,1,2,3].map(n => opt('level', String(n), `${n} <span class="meta">${T.cover[n]}</span>`)).join('')}</div>` : ''}
+        ${nav()}
+      </div>
+      <div class="card cv">
+        <h3>evidence <small>${isReq === 'yes' ? T.evidence : T.evidenceWait}</small></h3>
+        ${isReq === 'yes' ? opt('evidence', 'none', `<b>${T.none}</b> <span class="meta">${T.noneHint}</span>`) : ''}
+        ${entries.map(([id, t]) => isReq === 'yes' ? opt('evidence', id, `<div class="id">${id}</div>${esc(t)}`) : `<div class="o" style="padding:6px 10px"><div class="id">${id}</div>${esc(t)}</div>`).join('')}
+      </div>`;
+  }
+  m.querySelectorAll('button.o').forEach(b => b.onclick = () => { cur[b.dataset.q] = b.dataset.v; show(true); });
+  m.querySelector('#next').onclick = save;
+  m.querySelector('#prev').onclick = () => { if (idx > 0) { idx -= 1; show(); } };
+}
+function nav() { return `<div class="hint" id="hint"></div><div class="nav"><button id="prev">${T.back}</button><button id="next" class="primary">${T.next}</button></div>`; }
+
+function missing() {
+  const it = S.items[idx];
+  if (it.unit === 'project') return ['role', ...S.axes.filter(a => a.key !== 'other').map(a => 'demand:' + a.key)].filter(q => cur[q] == null);
+  if (cur.is_req == null) return ['is_req'];
+  if (cur.is_req === 'no') return [];
+  return ['must', 'axis', 'evidence', 'level'].filter(q => cur[q] == null);
+}
+
+async function save() {
+  const miss = missing();
+  if (miss.length) { document.getElementById('hint').textContent = `${T.missing}: ${miss.join(', ')}`; return; }
+  const it = S.items[idx];
+  const answers = it.unit === 'line' && cur.is_req === 'no' ? { is_req: 'no' } : { ...cur };
+  const seconds = Math.round((Date.now() - started) / 1000);
+  await fetch('/api/judge', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ item: it, answers, seconds }) });
+  S.judgments = S.judgments.filter(r => r.line !== it.key).concat(Object.entries(answers).map(([question, choice]) => ({ line: it.key, question, choice })));
+  if (idx < S.items.length - 1) idx += 1;
+  show();
+}
+
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'SELECT') return;
+  const it = S?.items[idx]; if (!it) return;
+  const k = e.key.toLowerCase();
+  if (k === 'enter') { e.preventDefault(); save(); return; }
+  if (it.unit !== 'line') return;
+  const set = (q, v) => { cur[q] = v; show(true); };
+  if (k === 'j' || k === 'y') set('is_req', 'yes');
+  else if (k === 'n') set('is_req', 'no');
+  else if (k === 'p') set('must', 'yes');
+  else if (k === 'o') set('must', 'no');
+  else if (/^[1-9]$/.test(k) && cur.is_req === 'yes') { const a = S.axes[Number(k) - 1]; if (a) set('axis', a.key); }
+});
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "pv": "route1",
+  "note": "No judges. The reference is the gold label of the source datasets, written by bench/build-route-ex.mjs from the frozen cases in cases/route1/.",
+  "judges": {
+    "gold": {
+      "source": "MASSIVE 1.1 test split (de-DE, en-US): fields scenario and intent. fastino/fast-decisions dev split at revision 35afb79a0f611a1db44380e855ac2a821b0a4da1: true_label of every single-label task",
+      "lang": "de, en",
+      "role": "reference",
+      "frozen_at": "2026-10-09"
+    }
+  }
+}

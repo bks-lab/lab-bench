@@ -1,0 +1,80 @@
+# Register for results/toolmap.json, merged in by bench/toolmap.mjs.
+#
+# Measured cells come from the runs. This file holds what a run cannot say:
+# the tools, the cells that are not measured and why, and rows that are
+# planned before anything is measured. A planned row points to a dated test
+# design under plan/, committed before the run, so the design cannot be
+# fitted to the results afterwards.
+
+states:
+  measured: a value from a run; see the cell's source_report
+  planned: a dated test design is committed (see plan); nothing is measured yet
+  open: a sensible test that nobody has designed yet
+  not_applicable: the tool cannot do the task; see reason
+
+tools:
+  jev:
+    name: Jev (jev-latest, measured as jev-1.13.0)
+    maker: TypeSafe AI, Inc., San Francisco, CA
+    runs: >-
+      hosted API (api.typesafe.ai). TypeSafe's privacy policy says the
+      services are hosted in the United States.
+    licence: >-
+      proprietary hosted service, no weights or code published; use is
+      governed by TypeSafe's terms
+    primitives: choice, score, noul
+    sources:
+      - https://typesafe.ai/legal/privacy-policy (section International Visitors, last updated 2025-11-19, read 2026-10-09)
+      - https://typesafe.ai/legal/terms (offered by TypeSafe AI, Inc., 255 California St, San Francisco; last updated 2026-09-19, read 2026-10-09)
+      - https://docs.typesafe.ai/introduction (three primitives choice, score, noul, read 2026-10-09)
+  gliner:
+    name: GLiNER2 / GLiNER2.5 (Decide classifiers and entity extractors)
+    maker: Fastino
+    runs: >-
+      local, Python package gliner2 with the weights from Hugging Face, on
+      one RTX 4090
+    licence: >-
+      Apache-2.0, for the gliner2 library and for every model measured here
+      (GLiNER2.5-multi-Decide, GLiNER2.5-Decide, GLiNER2.5-Decide-1B,
+      gliner2.5-multi-v1, gliner2-large-v1)
+    sources:
+      - https://github.com/fastino-ai/GLiNER2 (licence Apache-2.0, read 2026-10-09)
+      - https://huggingface.co/fastino (model cards, license apache-2.0 in each card's metadata, read 2026-10-09)
+  local-llm:
+    name: open LLM through Ollama; the arm measured in route1 and ex1 is Winnow-12B (Q8_0)
+    maker: >-
+      EldanRing (Winnow-12B, a Gemma 4 12B IT with a merged LoRA). pv1 also
+      measured Qwen3 32B, Qwen3.8 27B and shisa-de-1, see results/pv1/method.md
+    runs: local, Ollama on one RTX 4090
+    licence: >-
+      Apache-2.0 for Winnow-12B (license field of its model card; base model
+      google/gemma-4-12B-it). Other local models carry their own licences
+    sources:
+      - https://huggingface.co/EldanRing/Winnow-12B (license apache-2.0, base_model google/gemma-4-12B-it, read 2026-10-09)
+
+# Cells of measured rows that have no measurement.
+cells:
+  ex1-slots-de:
+    jev: &jev-no-extraction
+      state: not_applicable
+      reason: Jev has no extraction primitive (choice, score, noul only), docs.typesafe.ai/introduction
+      source_report: results/ex1/method.md
+  ex1-slots-en:
+    jev: *jev-no-extraction
+
+# Rows that exist before any measurement.
+rows:
+  - id: einv1-yesno-de
+    kind: yesno
+    task: >-
+      yes/no question over the free text of an e-invoice (KoSIT XRechnung
+      test suite, 34 invoices, ten questions)
+    lang: de
+    metric: accuracy against a blind reference, pooled over 340 cells and per question
+    plan: plan/einv1.md
+    cells:
+      jev: &einv1-planned
+        state: planned
+        plan: plan/einv1.md
+      gliner: *einv1-planned
+      local-llm: *einv1-planned

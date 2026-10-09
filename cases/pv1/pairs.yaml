@@ -1,0 +1,54 @@
+# pv1 pairs. design_intent is the author's intent only, NOT the reference judgment.
+# The reference is judged blind (reference/pv1/, model judges so far). A human
+# sample is still pending.
+pairs:
+  - id: p01
+    posting: portal-testautomation
+    cv: cv01-senior-testauto
+    design_intent: fit
+    why: Eleven years of QA with Playwright, TypeScript, Azure DevOps and a small LLM test-generation project cover nearly every line.
+  - id: p02
+    posting: portal-testautomation
+    cv: cv08-career-changer
+    design_intent: partial
+    why: Playwright, TypeScript and API tests are there, but only 1.5 years instead of 5, no LLM use in QA and little CI/CD depth.
+  - id: p03
+    posting: portal-testautomation
+    cv: cv04-backend-jvm
+    design_intent: no_fit
+    why: A JVM backend developer who only writes unit tests for own code, with no UI or end-to-end test automation.
+  - id: p04
+    posting: agent-platform
+    cv: cv03-llm-agent-engineer
+    design_intent: fit
+    why: Multi-agent claims assistant with MCP, A2A, RAG, an evaluation harness, Python and Azure in production.
+  - id: p05
+    posting: agent-platform
+    cv: cv01-senior-testauto
+    design_intent: partial
+    why: Strong on tests, Python-adjacent tooling, Azure and one LLM side project, but no agents, MCP or RAG in production.
+  - id: p06
+    posting: agent-platform
+    cv: cv06-junior-qa
+    design_intent: no_fit
+    why: Two years of manual testing with first Cypress scripts, nothing on LLMs, agents, Python or Azure.
+  - id: p07
+    posting: sap-testmanagement
+    cv: cv02-qa-lead-sap
+    design_intent: fit
+    why: Test manager of two S/4HANA projects with Tosca, SD and MM, ISTQB Advanced and team lead experience.
+  - id: p08
+    posting: sap-testmanagement
+    cv: cv05-performance
+    design_intent: partial
+    why: Knows the same S/4HANA migration from the performance side with ISTQB Foundation, but never owned strategy, acceptance or a test team.
+  - id: p09
+    posting: sap-testmanagement
+    cv: cv03-llm-agent-engineer
+    design_intent: no_fit
+    why: An LLM and agent engineer with no SAP, no test management and no ISTQB.
+  - id: p10
+    posting: data-platform
+    cv: cv07-data-engineer
+    design_intent: fit
+    why: Databricks, Spark, dbt, Airflow, Azure and feature tables match, yet most posting lines fall outside the eight areas, so "other" is exercised.

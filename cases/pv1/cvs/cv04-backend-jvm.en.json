@@ -1,0 +1,87 @@
+{
+  "profile": {
+    "tagline": "Backend Developer for Java and Kotlin, Spring Boot and microservices"
+  },
+  "summary": {
+    "summary": "Twelve years of backend development on the JVM. Builds REST services and event-driven systems for logistics and banking, with a focus on clean APIs and stable operation."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "Diplom Informatik",
+        "college": "Ruhr-Universität Bochum",
+        "dates": "2007 - 2013"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "German",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "good"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Senior Backend Developer (freelance)",
+        "company": "Frachtwerk Systems GmbH · Hamburg",
+        "dates": "05/2021 - present",
+        "details": "- Kotlin and Spring Boot microservices for freight booking and tracking\n- Event-driven integration with Kafka, PostgreSQL as main database\n- Kubernetes on AWS (EKS), deployment with GitLab CI and Helm\n- REST and gRPC interfaces to carriers and customs systems\n- Unit tests with JUnit 5 and MockK for own code",
+        "anchor": "freight-backend"
+      },
+      {
+        "position": "Java Developer",
+        "company": "Nordkredit Technologie AG · Hannover",
+        "dates": "09/2017 - 04/2021",
+        "details": "- Java 11 and Spring services for payment processing and account management\n- Oracle database, SOAP and REST interfaces to partner banks\n- Jenkins builds, JUnit tests for business logic\n- Production support in a rotating on-call duty",
+        "anchor": "bank-java"
+      },
+      {
+        "position": "Software Engineer",
+        "company": "Codebrücke Consulting GmbH · Düsseldorf",
+        "dates": "03/2014 - 08/2017",
+        "details": "- Java EE and Spring projects for insurance and industry clients\n- Integration of legacy systems through message queues and web services\n- Maven, Subversion, later Git",
+        "anchor": "consulting-dev"
+      },
+      {
+        "position": "Working Student Software Development",
+        "company": "Lichtblick Software GmbH · Bochum",
+        "dates": "10/2012 - 02/2014",
+        "details": "- Feature development in a Java web application\n- Bug fixing and small database migrations",
+        "anchor": "working-student-dev"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Event gateway for carrier messages",
+        "tagline": "A Kafka-based gateway that receives status messages from 30 carriers in different formats and publishes one common event.",
+        "tech_stack": [
+          "Kotlin",
+          "Kafka",
+          "Spring Boot"
+        ],
+        "anchor": "event-gateway",
+        "year": 2022
+      },
+      {
+        "title": "Java to Kotlin migration",
+        "tagline": "Step-by-step migration of a Spring service from Java to Kotlin while it stayed in production.",
+        "tech_stack": [
+          "Kotlin",
+          "Java",
+          "Gradle"
+        ],
+        "anchor": "kotlin-migration",
+        "year": 2023
+      }
+    ]
+  }
+}

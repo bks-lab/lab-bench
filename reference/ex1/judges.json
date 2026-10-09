@@ -1,0 +1,12 @@
+{
+  "pv": "ex1",
+  "note": "No judges. The reference is the slot annotation of MASSIVE 1.1 (annot_utt), parsed with the regex \\[([^\\]:]+?) : ([^\\]]+?)\\] by bench/freeze-route-ex.mjs.",
+  "judges": {
+    "gold": {
+      "source": "MASSIVE 1.1 test split (de-DE, en-US), 1,000 utterances per language, seeded sample (seed 20261009, stratified by scenario), same ids in both languages",
+      "lang": "de, en",
+      "role": "reference",
+      "frozen_at": "2026-10-09"
+    }
+  }
+}

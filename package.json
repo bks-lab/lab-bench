@@ -1,0 +1,20 @@
+{
+  "name": "jev-match-bench",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bks-lab/lab-bench.git"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "type": "module",
+  "scripts": {
+    "build:requests": "node bench/build-requests.mjs",
+    "run:jev": "node bench/run-jev.mjs"
+  },
+  "dependencies": {
+    "yaml": "^2.5.0"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "pv": "pv1",
+  "note": "Blind reference judges. None saw a model answer. Model ID and time read from the Claude Code session transcripts of the three judge agents (2026-10-01, 19:45 to 19:48 UTC). No human judgment yet.",
+  "judges": {
+    "claude-a": {
+      "model": "claude-opus-5-5",
+      "lang": "de",
+      "role": "reference",
+      "judged_at": "2026-10-01"
+    },
+    "claude-b": {
+      "model": "claude-opus-5-5",
+      "lang": "de",
+      "role": "second judge, comparison only",
+      "judged_at": "2026-10-01"
+    },
+    "claude-c": {
+      "model": "claude-opus-5-5",
+      "lang": "en",
+      "role": "reference, no second judge",
+      "judged_at": "2026-10-01"
+    },
+    "sonnet-a": {
+      "model": "claude-sonnet-5-5",
+      "lang": "de",
+      "role": "cross-check judge, blind, web research allowed",
+      "judged_at": "2026-10-02"
+    },
+    "fable-a": {
+      "model": "claude-fable-5-1",
+      "lang": "de",
+      "role": "cross-check judge, blind, web research allowed",
+      "judged_at": "2026-10-02"
+    },
+    "adjudicated-a": {
+      "model": "claude-a (claude-opus-5-5) with 61 disputed (line, question) pairs decided by adjudicators claude-sonnet-5-5 (30) and claude-fable-5-1 (31)",
+      "lang": "de",
+      "role": "reference after cross-check, rows marked adjudicated: true",
+      "judged_at": "2026-10-02",
+      "method": "results/pv1/crosscheck.md"
+    }
+  },
+  "note_crosscheck": "sonnet-a and fable-a judged 2026-10-02, 16:04 to 16:11 UTC; adjudication 16:11 to 16:46 UTC, times and model IDs from the workflow agent transcripts. No judge or adjudicator saw a model answer. Still no human judgment."
+}

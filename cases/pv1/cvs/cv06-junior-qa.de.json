@@ -1,0 +1,54 @@
+{
+  "profile": {
+    "tagline": "Junior QA Engineer, manuelles Testen und erste Automatisierung"
+  },
+  "summary": {
+    "summary": "Zwei Jahre Testen einer Mobile-App und eines Webportals. Sorgfältig im explorativen Test, lernt Automatisierung mit Cypress."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "B.Sc. Wirtschaftsinformatik",
+        "college": "Universität Leipzig",
+        "dates": "2020 - 2024"
+      },
+      {
+        "degree": "ISTQB Certified Tester Foundation Level",
+        "dates": "2025"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "Deutsch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Englisch",
+        "level": "gut"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "QA Engineer",
+        "company": "Fahrplan24 GmbH · Leipzig",
+        "dates": "10/2024 - heute",
+        "details": "- Manuelle und explorative Tests der Mobile-App und des Webportals\n- Testfälle und Testläufe in Jira mit Xray\n- Erste automatisierte UI-Tests mit Cypress (JavaScript)\n- Fehlerberichte und Regression vor jedem Release",
+        "anchor": "fahrplan-qa"
+      },
+      {
+        "position": "Werkstudent QA",
+        "company": "Datenhaus Solutions GmbH · Leipzig",
+        "dates": "04/2023 - 09/2024",
+        "details": "- Manuelles Testen einer Webanwendung\n- Testfälle aus User Stories geschrieben",
+        "anchor": "datenhaus-student"
+      }
+    ]
+  },
+  "projects": {
+    "list": []
+  }
+}

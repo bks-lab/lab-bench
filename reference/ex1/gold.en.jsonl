@@ -1,0 +1,1000 @@
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-27-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-31-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"hallway"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-61-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-85-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-128-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-158-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-177-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"business"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-178-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"international"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-197-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-201-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-219-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"umbrella"},{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-254-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"jazz"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-258-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-279-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today's"},{"type":"place_name","text":"berlin"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-290-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"vacuum cleaner"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-292-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"vacuum cleaner"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-310-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"this year"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-319-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"barcelona"},{"type":"time","text":"two days from now"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-321-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"okug"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-334-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"san fransico"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-360-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-362-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"anirudh's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-385-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"time of india"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-397-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"joe prsaise"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-400-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-427-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"bathroom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-441-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-486-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"new york city"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-491-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"cold"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-508-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-533-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"nine am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-555-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"mf doom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-560-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"eight am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-625-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"gaga"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-651-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"room"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-660-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"japan"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-668-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"burgers"},{"type":"food_type","text":"coke"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-680-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"bitcoin price"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-686-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"new york"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-712-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"c. n. n."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-726-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"week's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-751-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-761-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-765-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"newest provider"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-796-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-826-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"temperature"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-827-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"bob dylan"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-832-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-843-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"robot roomba"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-862-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-884-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"eight am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-891-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_descriptor","text":"christian"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-897-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"house"},{"type":"color_type","text":"amber"},{"type":"time","text":"six p. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-914-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-931-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-936-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"playlist_name","text":"jogging playlist"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-964-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-969-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-997-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"living room's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-999-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1047-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_descriptor","text":"sad"},{"type":"music_genre","text":"rock"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1061-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"sports"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1076-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"rock metal"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1084-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1093-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"washington post"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1115-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"pop"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1120-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"politic"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1121-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"song_name","text":"lady"},{"type":"artist_name","text":"kenny roger"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1124-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"sia's"},{"type":"song_name","text":"cheap thrills"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1156-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"international women's day"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1160-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"cold"},{"type":"general_frequency","text":"each night"},{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1238-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1249-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1252-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1256-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"joke_type","text":"funniest"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1318-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1351-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"nice"},{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1360-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1374-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1427-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"color_type","text":"blue"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1428-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"color_type","text":"red"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1452-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1454-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1483-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1509-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"timeofday","text":"morning"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1549-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"rain"},{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1551-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"wemo"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1579-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"joke_type","text":"baseball"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1581-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1589-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"sunny"},{"type":"date","text":"tuesday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1646-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1658-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1666-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"so clean"},{"type":"time","text":"past six hours"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1683-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow's"},{"type":"weather_descriptor","text":"temperature"},{"type":"weather_descriptor","text":"hot"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1692-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"smooth jazz"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1722-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"temperature"},{"type":"place_name","text":"london"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1774-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1777-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1784-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"dining room"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1796-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1803-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"},{"type":"news_topic","text":"premier league"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1811-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1812-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"coffee_type","text":"without sweetener"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1831-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"pizza"},{"type":"business_name","text":"pizza hut"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1866-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1870-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1872-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1924-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"vacuum cleaner"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1940-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1941-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"house"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1960-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"color_type","text":"pink"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1993-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-1994-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2016-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"kitchen"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2026-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2085-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"classical"},{"type":"artist_name","text":"bach"},{"type":"artist_name","text":"schubert"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2108-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"song_name","text":"summer lovin"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2128-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2156-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2164-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2167-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"half an hour"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2174-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"song_name","text":"hotel california"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2201-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"c. n. n."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2205-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"two hours"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2206-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2234-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2255-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"order_type","text":"take out"},{"type":"business_name","text":"licari's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2258-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"sweater"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2271-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2320-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"friday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2322-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2334-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"},{"type":"timeofday","text":"morning"},{"type":"time","text":"six am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2338-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"noodles"},{"type":"order_type","text":"takeaway"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2350-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"color_type","text":"dark"},{"type":"house_place","text":"house"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2351-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"color_type","text":"dark"},{"type":"house_place","text":"house"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2354-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2384-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"world"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2403-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2423-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"todays"},{"type":"place_name","text":"new york city"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2432-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2434-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"robot vacuum cleaner"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2441-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"shed"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2447-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"soup"},{"type":"meal_type","text":"lunch"},{"type":"business_name","text":"wangs kitchen"},{"type":"business_type","text":"restaurant"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2480-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"order_type","text":"take-out"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2496-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2512-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"coffee machine"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2517-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"robot vacuum cleaner"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2531-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"rap"},{"type":"music_genre","text":"rock"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2545-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2551-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"home"},{"type":"color_type","text":"green"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2560-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2578-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"porch"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2591-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2605-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2610-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"mcd"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2615-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"jacket"},{"type":"date","text":"wednesday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2639-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"environment"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2673-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"doctor's appointment"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2678-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"raining"},{"type":"timeofday","text":"tonight"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2703-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"folk"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2773-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2777-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2781-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"jazz music"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2796-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2812-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2824-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"december thirteenth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2870-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2906-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"change_amount","text":"ninety percent"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2957-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"ten am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-2965-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"office"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3011-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3021-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"louies"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3030-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3034-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"temperature"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3039-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3077-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3091-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time_zone","text":"pacific"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3098-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3099-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3101-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3117-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"keane's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3124-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3146-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"david bowie"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3162-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3167-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"bedroom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3175-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3193-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3196-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"coffee_type","text":"creamy"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3205-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"song_name","text":"poker face"},{"type":"artist_name","text":"lady gaga"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3212-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3222-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3253-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"timeofday","text":"afternoon"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3295-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"dominoes"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3305-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"this week"},{"type":"place_name","text":"miami"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3329-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3337-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3349-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3361-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tuesday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3400-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"elton john"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3401-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"elton john"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3408-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"nice"},{"type":"date","text":"this weekend"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3434-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"rap"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3435-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3444-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"ten"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3513-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3516-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"precipitation"},{"type":"date","text":"todays"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3554-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"playlist_name","text":"love playlist"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3562-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3566-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"chennai"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3576-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"fox news"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3582-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3590-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3595-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3623-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3631-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"jazz"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3671-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"restaurant"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3686-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"rock"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3750-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"flood"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3785-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"bathroom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3809-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3834-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3838-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3864-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3884-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3980-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"song_name","text":"shape of you"},{"type":"artist_name","text":"said sheeran"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-3986-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"six am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4001-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"walking dead"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4023-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4048-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"charley's steakhouse"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4073-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"fifth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4081-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"},{"type":"event_name","text":"stop at the store and get food"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4086-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4132-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"rain"},{"type":"place_name","text":"seattle washington"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4136-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"imogen heap"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4137-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"paradise"},{"type":"order_type","text":"takeaway"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4152-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"song_name","text":"every time i see you"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4154-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4168-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"kansas"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4173-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"vacuum cleaner"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4177-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"political"},{"type":"place_name","text":"world"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4187-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4189-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4201-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"wemo"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4205-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"song_name","text":"limelight"},{"type":"artist_name","text":"rush"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4217-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"joke_type","text":"good funny"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4240-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"roomba"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4244-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"coffee machine"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4247-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"color_type","text":"blue"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4248-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"color_type","text":"blue"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4258-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4266-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"todays"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4268-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"move"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4283-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"this room"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4299-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"color_type","text":"redder"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4347-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4355-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4383-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4400-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"new york times"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4428-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4439-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"san francisco"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4442-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"three"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4443-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"coffee machine"},{"type":"time","text":"three"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4463-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"saturdays are in march"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4492-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"crime statistics"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4502-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"london"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4544-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"honey mustard wing combo"},{"type":"drink_type","text":"sprite"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4560-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4567-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"nytimescom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4580-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"chicago"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4614-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"temperature"},{"type":"weather_descriptor","text":"higher than forty"},{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4638-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4653-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4659-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4671-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4672-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4692-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"van halen"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4710-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"halloween"},{"type":"date","text":"this year"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4809-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4831-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4845-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"new york"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4851-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4871-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4896-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"overhead"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4913-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4928-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"playlist_name","text":"my soundtrack"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4951-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4960-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"third day"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-4992-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5014-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"room"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5016-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"share market ups and downs"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5027-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"friday the thirteenth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5038-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5116-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5131-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"sanfranscio"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5134-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"playlist_name","text":"big band playlist"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5152-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"skip"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5157-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"living room"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5199-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5225-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"wednesday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5229-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5245-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"environmental"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5250-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5261-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"artist_name","text":"shakira"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5296-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"b. b. c."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5301-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"march twentieth two thousand and seventeen"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5328-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"rock"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5330-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"vacuum"},{"type":"house_place","text":"living room"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5339-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5341-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5365-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"six am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5370-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"trump controversy"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5378-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5401-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5427-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"canada"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5439-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"umbrella"},{"type":"timeofday","text":"night"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5465-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"sandals"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5497-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"california"},{"type":"place_name","text":"new york"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5501-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"all the lights"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5523-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"eight thirty"},{"type":"time_zone","text":"gtm four"},{"type":"time_zone","text":"g. m. t. five thirty"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5552-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"order_type","text":"delivery"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5557-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"reggae"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5570-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5579-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5600-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"dish"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5611-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5623-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"ten am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5635-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"six"},{"type":"timeofday","text":"morning"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5640-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5650-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"},{"type":"timeofday","text":"evening"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5661-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"raincoat"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5691-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5697-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"device_type","text":"vacuuming"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5722-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"the seven day forecast"},{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5871-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"mysore climate"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5902-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"six am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5911-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"replay"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5912-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5974-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"to have tablets"},{"type":"timeofday","text":"noon"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5985-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"un"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-5988-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6013-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6041-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6050-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"sunscreen"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6059-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_genre","text":"rap"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6064-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"an hour"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6069-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"storms"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6073-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"porch"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6093-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"weather_descriptor","text":"open the sun roof"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6101-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6109-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6166-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"five minutes"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6174-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6194-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6213-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meetings"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6214-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"friend's"},{"type":"event_name","text":"birthday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6220-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6241-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6267-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6268-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6289-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6295-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"long"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6313-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6352-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6353-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6372-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"news_topic","text":"plant based"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6376-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"two thousand and sixteen"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6385-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6402-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6403-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6417-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6424-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6431-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"},{"type":"event_name","text":"meeting"},{"type":"person","text":"george"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6433-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"person","text":"george"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6438-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6446-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6495-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6506-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6515-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6516-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6517-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6559-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"girlfriend"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6561-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6568-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6600-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6615-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6621-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6663-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6670-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6682-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6694-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6701-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6708-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6713-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"business meeting"},{"type":"date","text":"wednesday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6720-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"fringe"},{"type":"place_name","text":"edinburgh"},{"type":"date","text":"next year"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6725-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"timeofday","text":"afternoon"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6746-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"first week of june"},{"type":"event_name","text":"holiday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6764-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"wash the windows"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6774-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"friday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6801-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"this friday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6815-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"mom's"},{"type":"event_name","text":"birthday"},{"type":"time","text":"a week before"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6836-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"date","text":"tomorrow"},{"type":"time","text":"six"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6891-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"timeofday","text":"morning"},{"type":"event_name","text":"shows"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6928-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6936-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"medicine"},{"type":"time","text":"nine am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6962-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"saturday"},{"type":"time","text":"six p. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6973-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"conference"},{"type":"date","text":"tomorrow"},{"type":"place_name","text":"new york"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6992-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-6994-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7014-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7026-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"town"},{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7044-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"getting ready"},{"type":"time","text":"five p. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7046-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"tal meeting"},{"type":"date","text":"twenty first"},{"type":"time","text":"seven"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7057-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"lunch meeting"},{"type":"person","text":"brent"},{"type":"date","text":"wednesday"},{"type":"timeofday","text":"noon"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7061-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"twenty four hours before"},{"type":"date","text":"friday"},{"type":"event_name","text":"meeting"},{"type":"person","text":"edg"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7073-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"before"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7100-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"day before"},{"type":"event_name","text":"car"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7111-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"doctor appointment"},{"type":"date","text":"march thirty first"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7117-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"nineteenth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7122-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7170-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"mother's"},{"type":"event_name","text":"birthday"},{"type":"date","text":"today"},{"type":"general_frequency","text":"every year"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7232-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"next week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7258-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"boss"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7291-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"one hour"},{"type":"time","text":"ten"},{"type":"date","text":"tomorrow"},{"type":"timeofday","text":"morning"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7292-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"four"},{"type":"time","text":"six"},{"type":"timeofday","text":"evening"},{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7294-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"appointment"},{"type":"person","text":"george adams"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7316-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"appointments"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7380-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"},{"type":"relation","text":"clients"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7397-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"next three months"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7450-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7455-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"party"},{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7461-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7477-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"fifth march"},{"type":"general_frequency","text":"every year"},{"type":"event_name","text":"wedding anniversary presents"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7500-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7502-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"four p. m."},{"type":"person","text":"joe"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7503-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"d. c."},{"type":"event_name","text":"meeting"},{"type":"time","text":"one p. m."},{"type":"date","text":"friday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7520-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"general_frequency","text":"everyday"},{"type":"time","text":"two p. m."},{"type":"meal_type","text":"lunch"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7524-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"mehta"},{"type":"event_name","text":"meeting"},{"type":"date","text":"today"},{"type":"time","text":"five hundred and twenty p. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7528-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"thirteenth june"},{"type":"event_name","text":"election result"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7531-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"pay days"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7542-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7556-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"buy groceries"},{"type":"general_frequency","text":"every friday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7563-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7569-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7570-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7583-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7596-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"person","text":"derrick"},{"type":"place_name","text":"haysi"},{"type":"timeofday","text":"noon"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7598-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"event_name","text":"discuss terrorism"},{"type":"person","text":"fred"},{"type":"date","text":"next available"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7613-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7655-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"april twenty"},{"type":"relation","text":"bro's"},{"type":"event_name","text":"birthday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7686-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"mike"},{"type":"person","text":"jack"},{"type":"event_name","text":"festival"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7711-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"second march"},{"type":"person","text":"jim's"},{"type":"event_name","text":"birthday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7726-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"general_frequency","text":"every monday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7808-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"mom"},{"type":"relation","text":"hairdresser's"},{"type":"date","text":"thursday"},{"type":"time","text":"one thousand one hundred am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7817-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7863-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"supper"},{"type":"time","text":"afternoon at five"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7870-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7876-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"last two months"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7889-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"soccer match"},{"type":"timeofday","text":"tonight"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7892-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7946-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"dallas"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7956-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-7970-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"wedding"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8004-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"dorothy"},{"type":"event_name","text":"divorce"},{"type":"event_name","text":"meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8033-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"easter"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8037-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8044-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8079-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"one hour"},{"type":"event_name","text":"bread to bake"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8110-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"supervision"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8140-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"thirteenth"},{"type":"meal_type","text":"lunch"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8204-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8245-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"church services"},{"type":"date","text":"sundays"},{"type":"time","text":"eleven am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8260-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"a day before"},{"type":"person","text":"jeff's"},{"type":"event_name","text":"birthday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8280-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"fifteenth march"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8289-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"todays"},{"type":"event_name","text":"faculty meeting"},{"type":"time","text":"four"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8294-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8300-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"five p. m. to six p. m."},{"type":"date","text":"march eighteenth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8302-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"next monday's"},{"type":"event_name","text":"meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8320-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"parade"},{"type":"date","text":"this weekend"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8345-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8347-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"december fourth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8366-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"march eighteen"},{"type":"event_name","text":"appointment for pearl's birthday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8387-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"eight p. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8388-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"eight p. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8409-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"meal_type","text":"dinner"},{"type":"date","text":"tomorrow"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8426-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"yesterday"},{"type":"timeofday","text":"morning"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8442-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8466-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"nine am"},{"type":"event_name","text":"meeting"},{"type":"date","text":"wednesday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8469-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8498-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8520-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8553-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"time","text":"nine am"},{"type":"person","text":"tom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8570-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"tomorrow"},{"type":"time","text":"two p. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8598-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"pick up mark"},{"type":"place_name","text":"airport"},{"type":"time","text":"six p. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8631-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8672-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"kiss concert"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8694-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"walter"},{"type":"person","text":"gemma"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8766-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"date","text":"saturday march twenty fifth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8767-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"jessica's"},{"type":"date","text":"april twelfth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8771-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"shopping trip"},{"type":"date","text":"march twenty third"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8774-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"july seventh"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8782-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"timeofday","text":"this afternoon"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8795-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8828-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8846-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"the fourth of july this year"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8853-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8857-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"person","text":"eminem"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8868-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"call mom"},{"type":"general_frequency","text":"every tuesday"},{"type":"time","text":"ten am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8888-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8900-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"general_frequency","text":"every sunday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8914-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"appointment"},{"type":"date","text":"april fourth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8960-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"timeofday","text":"evening"},{"type":"event_name","text":"meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8977-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"pending bill payments"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-8990-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9009-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"anniversary"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9011-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"thanks giving"},{"type":"date","text":"fourteenth of this month"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9019-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meetings"},{"type":"time","text":"twenty to twenty five june"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9059-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9061-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9074-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9088-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9103-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"timeofday","text":"this afternoon"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9114-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9121-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9149-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"black tie gala dinner"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9153-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"dinner with mary"},{"type":"date","text":"saturday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9155-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"friday"},{"type":"event_name","text":"dentist appointment"},{"type":"time","text":"three"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9187-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"the meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9193-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9197-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9225-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9236-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"one hundred and six point nine"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9237-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"one hundred and six point nine"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9270-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"nine hundred and thirty seven f. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9275-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"nine hundred and ninety nine f. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9284-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9305-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"classic hits"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9321-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9327-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"right now"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9341-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9352-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9361-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9384-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"c. n. n. radio"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9406-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"sirius xm radio channel"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9426-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"station that plays r. & b."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9524-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"xmtune"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9528-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"n. p. r."},{"type":"device_type","text":"speakers"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9541-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9568-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9569-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"one hundred and six point seven"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9577-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"eighty two point four"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9591-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"ninety one point three f. m."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9592-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"podcasts"},{"type":"podcast_descriptor","text":"men's issues"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9601-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"radio_name","text":"country radio"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9620-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"house_place","text":"bedroom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9656-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"music_descriptor","text":"upbeat"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9674-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"audiobook_name","text":"tarzan"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9676-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"resume"},{"type":"audiobook_author","text":"karl pilkington"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9678-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"put on"},{"type":"audiobook_name","text":"the giver"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9691-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"audiobook_name","text":"history of rome"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9694-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"resume"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9700-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"audiobook_name","text":"biography of jackie kennedy"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9706-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"song_name","text":"jingle bells"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9718-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"resume"},{"type":"audiobook_name","text":"animal farm"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9726-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"stop"},{"type":"media_type","text":"audiobook"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9746-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"audiobook_name","text":"pride and prejudice"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9772-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"continue reading"},{"type":"media_type","text":"audiobook"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9812-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"audiobook_name","text":"harrypotter"},{"type":"media_type","text":"audiobook"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9815-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"audiobook"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9827-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"resume"},{"type":"media_type","text":"audiobook"},{"type":"artist_name","text":"beatles"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9857-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9875-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"read"},{"type":"audiobook_author","text":"daisy goodwin"},{"type":"media_type","text":"book"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9885-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"audiobook_name","text":"the notebook"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9895-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"keep playing"},{"type":"audiobook_name","text":"secret garden"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9897-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"playback"},{"type":"audiobook_author","text":"tom clancy"},{"type":"audiobook_name","text":"splinter cell"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9912-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"cooking_type","text":"boil"},{"type":"food_type","text":"eggs"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9918-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"pizza"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9924-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9931-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"cooking_type","text":"boil"},{"type":"food_type","text":"egg"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9969-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"ingredient","text":"saffron"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9976-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"welsh rarebit"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9979-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"ingredient","text":"oats"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9980-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"},{"type":"food_type","text":"boiled vegetables"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-9986-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"cooking_type","text":"boiling"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10019-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"oatmeal cookies"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10027-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10045-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"chicken noodle soup"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10080-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"meatballs"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10097-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"cheeseburger"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10099-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"risotto"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10107-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"veg pulav"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10125-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10150-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"taco"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10156-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"stuffed peppers"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10177-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"spaghetti squash"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10197-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"spaghetti"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10213-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"biryani"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10216-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10226-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"food_type","text":"pasta"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10256-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"game_name","text":"super mario"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10268-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"game_name","text":"global thermonuclear war"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10308-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"game_name","text":"ping pong"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10333-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"game_name","text":"saga"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10357-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10381-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"game_name","text":"competitive crossword"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10426-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10427-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"shopping"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10433-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"task"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10440-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10455-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"to-do"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10462-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10497-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"five star hotels"},{"type":"place_name","text":"paris"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10503-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"errands"},{"type":"date","text":"saturday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10512-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10523-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"old english"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10538-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"shopping"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10565-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10588-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10590-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10636-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10678-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"expenses"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10679-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"to do"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10684-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10687-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10696-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10699-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10731-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10743-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10756-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"shopping"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10759-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"shopping"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10786-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"activities"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10812-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"shopping"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10815-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"shopping"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10843-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"grocery"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10846-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10853-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10893-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"grocery"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10895-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10909-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10927-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10931-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10938-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"grocery"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10940-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"shopping"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10957-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10970-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10982-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"grocery"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-10999-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11053-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11075-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11168-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11174-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11180-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"party"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11186-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"list_name","text":"clothes"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11189-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11257-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11259-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"jump"},{"type":"podcast_descriptor","text":"next podcast"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11261-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11273-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"audiobook_name","text":"harry potter"},{"type":"audiobook_author","text":"j. k. rowling"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11296-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11302-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_name","text":"last libertarian"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11303-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_name","text":"reason"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11306-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_descriptor","text":"listening to yesterday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11331-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_descriptor","text":"rock songs having good rating"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11340-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"allearsnet"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11345-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_descriptor","text":"next episode"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11353-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11361-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_name","text":"shadi special"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11366-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_descriptor","text":"previous episode"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11384-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11409-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_descriptor","text":"next podcast episode"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11418-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"duncan trussel's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11420-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11453-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_name","text":"n. f. l."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11455-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"move"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11458-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"player_setting","text":"move on"},{"type":"podcast_descriptor","text":"next podcast episode"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11460-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_name","text":"sports podcast"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11467-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_descriptor","text":"most recent podcast"},{"type":"podcast_name","text":"american life"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11470-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11474-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_descriptor","text":"series podcast"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11515-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"podcast_name","text":"the united states of anxiety"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11598-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"dog shows"},{"type":"place_name","text":"home town"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11600-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"movie"},{"type":"timeofday","text":"tonight"},{"type":"place_name","text":"boston"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11616-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"downtown"},{"type":"timeofday","text":"tonight"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11628-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"pharmacy"},{"type":"place_name","text":"leavenworth"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11633-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"cinema"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11634-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11650-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11664-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"bar"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11695-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"movie_type","text":"action"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11706-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"round here"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11744-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"movie_type","text":"drama"},{"type":"time","text":"weekend"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11764-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11773-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11798-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"library"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11825-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"shopping mall"},{"type":"place_name","text":"sacramento"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11844-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"bay area"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11861-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11911-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"this weekend"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11914-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11920-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"this week"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11947-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"restaurants"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11953-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"walmart"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-11959-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"shops"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12008-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"la"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12019-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"gluten free bakery"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12066-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"shops"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12070-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"panama city mall"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12104-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"movie_name","text":"kung fu panda three"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12166-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"las vegas"},{"type":"place_name","text":"los angeles"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12189-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"train station"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12213-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"cab"},{"type":"place_name","text":"airport"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12245-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"glasgow"},{"type":"place_name","text":"aberdeen"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12248-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_agency","text":"uber"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12254-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"city"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12261-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"los angles"},{"type":"date","text":"wednesday"},{"type":"date","text":"thursday"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12263-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"california"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12291-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"bombay"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12294-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"metropolitan opera house"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12308-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12310-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"edinburgh"},{"type":"place_name","text":"leeds"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12366-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"london"},{"type":"place_name","text":"paris"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12367-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"sheffield"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12402-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12409-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"gas station"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12413-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12419-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"turiellos"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12442-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"bazaar highway"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12446-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"chicago"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12453-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12473-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"home"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12511-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12532-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12581-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12604-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12634-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"austin"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12672-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12693-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12707-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12710-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"taxi"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12722-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"boston"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12759-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"los angeles"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12800-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"public library"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12818-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"},{"type":"place_name","text":"chicago"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12838-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"the moment"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12839-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"layfayette saint and canal"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12851-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"home"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12856-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12866-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_name","text":"bagmati express"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12873-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"train"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12905-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"transport_type","text":"taxi"},{"type":"time","text":"nine am"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12951-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"world"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12957-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"elaborate"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-12963-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"forensic"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13043-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13064-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13067-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13078-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"billy crytals"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13101-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13102-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13115-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"nigeria"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13135-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"taylor lautner"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13165-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"oscillate"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13186-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"mom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13192-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13197-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13206-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13221-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"priyanka chopra"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13242-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13252-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"george eliot's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13303-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13310-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13318-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_type","text":"supermarket"},{"type":"food_type","text":"gluten free bread"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13341-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13346-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13361-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"timeliness"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13370-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13460-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13486-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13487-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"california"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13494-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"motivation"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13536-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13546-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"will smith"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13547-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"will ferrell"},{"type":"date","text":"last night"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13552-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13575-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13580-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"everest"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13591-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"west virginia"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13604-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"steve jobs"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13616-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13618-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13625-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"largest desk"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13630-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13679-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13681-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"patrick stewart"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13683-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"donald trump"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13738-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"u. s. a."},{"type":"place_name","text":"china"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13741-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"china"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13758-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"marian carey"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13798-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13799-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"subjegant"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13863-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"logic"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13888-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"indianapolis indiana"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13896-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"dollar"},{"type":"currency_name","text":"euro"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13927-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"lebron james"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13929-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-13974-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"laos"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14001-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14029-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"us dollar"},{"type":"currency_name","text":"euro"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14038-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14053-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"george clooney"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14083-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"jackie chan"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14090-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"facebook"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14101-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"jlo"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14115-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"rock sand"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14118-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"pyramids"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14130-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"googs"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14147-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"blanket"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14151-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14163-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14170-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"kim kardashian"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14190-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"starbuck's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14228-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"us dollar"},{"type":"currency_name","text":"canada"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14243-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14283-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"jaipur"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14306-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"india"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14315-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14323-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14342-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"hdfc"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14368-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14406-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"motorolla"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14412-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14417-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14418-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"obama"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14437-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"u. s. d."},{"type":"currency_name","text":"pound"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14444-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"morgan freeman"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14449-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"pink"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14498-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"smartphone"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14505-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"russia"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14509-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"mahatma gandhi"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14526-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"dollar"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14530-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"g. b. p."},{"type":"currency_name","text":"u. s. d."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14544-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"microsoft"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14545-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"india"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14555-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14585-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"japan"},{"type":"place_name","text":"south korea"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14591-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"television circuit"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14599-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14615-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14622-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"sphere"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14658-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"euro"},{"type":"currency_name","text":"dollar"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14673-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"amazon forest"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14690-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"president"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14700-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"resin tooth filling"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14705-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"sophia vergara"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14706-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"sophia vergara"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14746-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"kazakhstan"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14762-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"dollar"},{"type":"currency_name","text":"euro"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14770-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"place_name","text":"world"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14787-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14817-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14820-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14879-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14889-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14939-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"bruce lee"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14958-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-14981-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"iphone seven"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15010-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"currency_name","text":"american dollars"},{"type":"currency_name","text":"england"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15062-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"lisa ann"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15075-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15092-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"definition_word","text":"samsung t. v."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15109-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15181-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15186-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"wedding"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15187-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15199-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15205-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"facebook"},{"type":"general_frequency","text":"every three hours"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15213-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15229-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"friend"},{"type":"person","text":"mike"},{"type":"media_type","text":"facebook"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15296-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15298-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15304-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"twitter"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15326-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"facebook"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15345-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"twitter"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15348-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"facebook live"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15350-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"tesco"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15387-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15401-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"business_name","text":"twitter"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15402-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15454-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"united airlines"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15456-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"united airlines"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15457-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"bk"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15459-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"twitter"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15472-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"online bookstore"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15508-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"twitter"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15511-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15513-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15548-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"samsung"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15561-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15587-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"gallery"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15592-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"at comcast"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15593-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"at comcast"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15610-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15618-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"esurance"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15626-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"},{"type":"business_name","text":"comcast"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15635-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15670-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15693-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"media_type","text":"tweet"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15700-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15708-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15747-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"personal_info","text":"email"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15763-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15777-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15792-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"meeting"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15794-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"seth"},{"type":"personal_info","text":"lives"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15796-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"chelsea"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15839-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15857-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15911-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"susan"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15946-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"john smith"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15948-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"john smith"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15950-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"john doe"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15968-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15970-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"mom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15971-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15994-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"john"},{"type":"event_name","text":"meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15995-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"karen"},{"type":"event_name","text":"budget meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-15998-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16005-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"email_address","text":"joseph at gmail dot com"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16010-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"email_folder","text":"inbox"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16029-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"coworker"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16045-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"ismail"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16049-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"family"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16072-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"boss"},{"type":"date","text":"today"},{"type":"event_name","text":"meeting"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16082-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"peter"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16145-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16165-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"charlotte"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16166-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"charlotte"},{"type":"time","text":"next three weeks"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16178-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"amazon"},{"type":"date","text":"today"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16221-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"kate's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16222-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"mary s."}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16228-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"event_name","text":"birthday"},{"type":"date","text":"this month"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16229-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"twelve months"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16245-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"email_address","text":"joe at a. o. l. dot com"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16248-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16275-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16320-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"bob smith's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16361-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"last hour"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16375-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"bob"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16384-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16406-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16455-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"email_address","text":"macs at gmail dot com"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16459-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"email_address","text":"newmail at gmail dot com"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16467-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16470-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16506-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16518-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"julie smith"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16532-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16560-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"bosses"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16583-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"company worker"},{"type":"personal_info","text":"home phone number"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16593-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16603-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"thirty minutes"},{"type":"relation","text":"mom"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16627-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16712-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16758-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16763-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"time","text":"last ten minutes"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16765-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"date","text":"yesterday's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16777-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"john's"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16780-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"email_address","text":"juanpedro at gmail dot com"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16791-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"email_address","text":"brandon at example dot com"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16813-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"john"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16814-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16846-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"john doe"},{"type":"email_address","text":"johndoe at yahoo dot com"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16851-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16874-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"personal_info","text":"phone numbers"},{"type":"person","text":"brenden"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16883-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"jerry"},{"type":"timeofday","text":"tonight"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16890-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16911-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16914-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16916-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16924-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16930-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16955-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16961-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16987-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"john"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-16995-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"jessica"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17011-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17015-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17020-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17051-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17081-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"company worker"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17087-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"sara"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17095-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"leon's"},{"type":"personal_info","text":"email"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17115-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17119-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"amazon"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17135-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17142-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"email_folder","text":"inbox"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17144-en","lang":"en","arm":"gold","question":"slots","slots":[],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17151-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"relation","text":"friend"},{"type":"person","text":"john"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17156-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"joe"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17157-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"joe"}],"note":""}
+{"pv":"ex1","unit":"utt","pair":null,"posting":null,"cv":null,"line":"massive-17170-en","lang":"en","arm":"gold","question":"slots","slots":[{"type":"person","text":"joshua"}],"note":""}

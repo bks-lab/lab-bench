@@ -1,0 +1,8 @@
+node_modules/
+.cache/
+*.log
+.DS_Store
+.cache/
+*-smoke*.jsonl
+*-smoke.md
+__pycache__/

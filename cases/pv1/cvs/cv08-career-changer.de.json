@@ -1,0 +1,73 @@
+{
+  "profile": {
+    "tagline": "Test Automation Engineer, Quereinstieg aus dem Lehrberuf"
+  },
+  "summary": {
+    "summary": "Elf Jahre Lehrkraft für Mathematik und Informatik, seit 2025 in der Testautomatisierung. Schreibt Playwright-Tests in TypeScript und erklärt technische Themen verständlich."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "Staatsexamen Lehramt Mathematik und Informatik",
+        "college": "Universität Heidelberg",
+        "dates": "2007 - 2013"
+      },
+      {
+        "degree": "ISTQB Certified Tester Foundation Level",
+        "dates": "2025"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "Deutsch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Englisch",
+        "level": "gut"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Test Automation Engineer",
+        "company": "Kurpfalz Software GmbH · Mannheim",
+        "dates": "04/2025 - heute",
+        "details": "- End-to-End-Tests mit Playwright und TypeScript für den Webshop eines Sportartikelhändlers, rund 150 Tests\n- API-Tests mit dem Request-Kontext von Playwright für die Bestell- und Warenkorbdienste\n- Pipelines in GitHub Actions, erste Pipeline in Azure DevOps für ein zweites Team\n- Nutzt einen KI-Assistenten für Entwürfe von Testcode und prüft jedes Ergebnis vor dem Commit\n- Erklärt Testergebnisse Product Ownern in verständlicher Sprache",
+        "anchor": "shop-automation"
+      },
+      {
+        "position": "Umschulung Testautomatisierung",
+        "company": "TechPfad Akademie · Mannheim",
+        "dates": "09/2024 - 03/2025",
+        "details": "- Sechsmonatige Umschulung: JavaScript und TypeScript, Playwright, Git, REST-Grundlagen\n- Vorbereitung auf ISTQB Foundation\n- Abschlussprojekt: Testsuite für einen Demo-Shop",
+        "anchor": "retraining"
+      },
+      {
+        "position": "Lehrkraft für Mathematik und Informatik",
+        "company": "Gesamtschule am Park · Mannheim",
+        "dates": "08/2013 - 07/2024",
+        "details": "- Mathematik und Informatik in den Jahrgängen 7 bis 13 unterrichtet, sechs Jahre Klassenleitung\n- Digitale Werkzeuge im Fachbereich eingeführt und Kolleginnen und Kollegen geschult\n- Arbeitsgruppe für den neuen Informatik-Lehrplan geleitet\n- Regelmäßige Gespräche mit Eltern, Schülerinnen und Schülern und der Schulleitung",
+        "anchor": "teacher"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Öffentliche Playwright-Demosuite",
+        "tagline": "Eine offene Demosuite für einen öffentlichen Beispielshop mit Page Objects, API-Prüfungen und einem Pipeline-Lauf bei jedem Push.",
+        "tech_stack": [
+          "TypeScript",
+          "Playwright",
+          "GitHub Actions"
+        ],
+        "anchor": "portfolio-e2e",
+        "year": 2025
+      }
+    ]
+  }
+}

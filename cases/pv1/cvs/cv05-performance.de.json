@@ -1,0 +1,90 @@
+{
+  "profile": {
+    "tagline": "Performance Test Engineer für JMeter, Gatling und LoadRunner"
+  },
+  "summary": {
+    "summary": "Dreizehn Jahre im Test, davon zehn mit Schwerpunkt Last und Performance. Plant Lastszenarien, findet Engpässe über Anwendung, Datenbank und Infrastruktur und baut Performance-Schranken in Pipelines ein."
+  },
+  "education": {
+    "list": [
+      {
+        "degree": "B.Sc. Informatik",
+        "college": "Universität Bonn",
+        "dates": "2009 - 2012"
+      },
+      {
+        "degree": "ISTQB Certified Tester Foundation Level und Performance Testing",
+        "dates": "2017"
+      }
+    ]
+  },
+  "language": {
+    "list": [
+      {
+        "language": "Deutsch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Englisch",
+        "level": "fließend"
+      }
+    ]
+  },
+  "experiences": {
+    "list": [
+      {
+        "position": "Performance Test Engineer (freiberuflich)",
+        "company": "Kronberg Handel AG · Düsseldorf",
+        "dates": "01/2023 - 12/2024",
+        "details": "- Performancetests für die Migration von SAP ECC auf S/4HANA eines Handelsunternehmens, Module SD und MM\n- LoadRunner-Szenarien für Dialognutzer (bis zu 5.000 gleichzeitig) und für Batch-Läufe\n- Engpassanalyse gemeinsam mit SAP Basis und dem Datenbankteam\n- Performancetestphasen mit dem Testmanager geplant und Ergebnisse an den Lenkungskreis berichtet",
+        "anchor": "s4-performance"
+      },
+      {
+        "position": "Performance Test Engineer (freiberuflich)",
+        "company": "Westmark Bank AG · Düsseldorf",
+        "dates": "04/2020 - 12/2022",
+        "details": "- Gatling-Simulationen in Scala und JMeter-Pläne für REST-APIs der Online-Banking-Plattform\n- Performance-Schranken in Azure DevOps Pipelines: ein Build schlägt fehl, wenn p95 das Budget überschreitet\n- Monitoring mit Grafana, Prometheus und Application Insights während der Testläufe\n- API-Tests für die performancerelevanten Endpunkte",
+        "anchor": "bank-load"
+      },
+      {
+        "position": "Performance Tester",
+        "company": "Funkwerk Telekom GmbH · Bonn",
+        "dates": "06/2016 - 03/2020",
+        "details": "- JMeter- und LoadRunner-Tests für Abrechnungs- und Kundenportale\n- Testplanung für Last-, Stress- und Dauertests\n- Analyse mit Dynatrace, Empfehlungen an Entwicklung und Betrieb",
+        "anchor": "telecom-performance"
+      },
+      {
+        "position": "QA Engineer",
+        "company": "Rhein Softwarehaus GmbH · Bonn",
+        "dates": "04/2013 - 05/2016",
+        "details": "- Funktionale Tests von Webanwendungen, Testfälle und Fehlerverfolgung\n- SoapUI-Tests für Webservices, einige Selenium-Skripte\n- Erste JMeter-Lasttests für ein Buchungssystem",
+        "anchor": "qa-engineer-early"
+      }
+    ]
+  },
+  "projects": {
+    "list": [
+      {
+        "title": "Vorlage für Performance-Schranken in Pipelines",
+        "tagline": "Eine wiederverwendbare Pipeline-Vorlage, die je Build einen kurzen Gatling-Test fährt und p95 sowie Fehlerrate mit einem hinterlegten Budget vergleicht.",
+        "tech_stack": [
+          "Gatling",
+          "Azure DevOps",
+          "Grafana"
+        ],
+        "anchor": "perf-gates",
+        "year": 2021
+      },
+      {
+        "title": "Kapazitätsmodell für ein Buchungssystem",
+        "tagline": "Ein Modell aus gemessenen Lasttests, das Antwortzeiten für die erwartete Spitze der Ferienzeit vorhersagt.",
+        "tech_stack": [
+          "JMeter",
+          "Excel"
+        ],
+        "anchor": "capacity-model",
+        "year": 2018
+      }
+    ]
+  }
+}
