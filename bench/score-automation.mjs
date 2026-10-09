@@ -34,7 +34,7 @@ const SEED = 20261009;
 const TARGETS = [0.95, 0.9];
 const LANGS = ['de', 'en'];
 export const ENGLISH_ONLY = a => /^gliner2\.5-decide/.test(a);
-export const famOf = a => (a === 'jev' ? 'jev' : a.startsWith('gliner') ? 'gliner' : 'local-llm');
+export const famOf = a => (a === 'jev' ? 'jev' : a.startsWith('gliner') ? 'gliner' : a.startsWith('classic') ? 'classic' : 'local-llm');
 
 // ------------------------------------------------------------ metrics
 
@@ -209,7 +209,7 @@ function score(pv) {
     // reliability data: best arm per family on the pooled set (English-only models not eligible on de)
     const P = L.sets.pooled;
     say(`## reliability, pooled, ${lang}: best arm per family by auto95\n`);
-    for (const fam of ['jev', 'gliner', 'local-llm']) {
+    for (const fam of ['jev', 'gliner', 'local-llm', 'classic']) {
       const cand = Object.entries(P.arms).filter(([, m]) => m.family === fam && !m.english_only_extra).sort((x, y) => y[1].auto95 - x[1].auto95 || y[1].auto90 - x[1].auto90 || (x[0] < y[0] ? -1 : 1));
       if (!cand.length) continue;
       const [a, m] = cand[0];

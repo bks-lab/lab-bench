@@ -7,6 +7,8 @@ Run 1 of each arm. Base for McNemar: `jev`. Unanswered rows count as wrong.
 | arm | n | answered | acc | macro-F1 | base | skill | only jev right | only arm right | p (McNemar) | p50 ms |
 |---|---|---|---|---|---|---|---|---|---|---|
 | jev | 2974 | 2974 | 72.8 % | 73.3 % | 13.5 % | 0.686 | | | | 232 |
+| classic-e5-lr | 2974 | 2974 | 86.9 % | 86.1 % | 13.5 % | 0.848 | 141 | 559 | 0.000 | 25 |
+| classic-e5-lr-10shot | 2974 | 2974 | 70.8 % | 68.7 % | 13.5 % | 0.663 | 398 | 339 | 0.033 | 24 |
 | gliner2.5-decide (English model, extra) | 2974 | 2974 | 49.0 % | 46.3 % | 13.5 % | 0.410 | 856 | 147 | 0.000 | 26 |
 | gliner2.5-decide-1b (English model, extra) | 2974 | 2974 | 41.1 % | 41.1 % | 13.5 % | 0.319 | 1149 | 205 | 0.000 | 17 |
 | gliner2.5-decide-1b-intext (English model, extra) | 2974 | 2974 | 40.2 % | 39.7 % | 13.5 % | 0.308 | 1183 | 212 | 0.000 | 18 |
@@ -20,6 +22,8 @@ Run 1 of each arm. Base for McNemar: `jev`. Unanswered rows count as wrong.
 | arm | n | answered | acc | macro-F1 | base | skill | only jev right | only arm right | p (McNemar) | p50 ms |
 |---|---|---|---|---|---|---|---|---|---|---|
 | jev | 2974 | 2974 | 91.8 % | 87.2 % | 56.1 % | 0.812 | | | | 233 |
+| classic-e5-lr | 2974 | 2974 | 88.4 % | 73.9 % | 56.1 % | 0.737 | 243 | 144 | 0.000 | 25 |
+| classic-e5-lr-10shot | 2974 | 2974 | 77.0 % | 71.0 % | 56.1 % | 0.477 | 548 | 110 | 0.000 | 24 |
 | gliner2.5-decide (English model, extra) | 2974 | 2974 | 70.0 % | 64.8 % | 56.1 % | 0.316 | 709 | 61 | 0.000 | 26 |
 | gliner2.5-decide-1b (English model, extra) | 2974 | 2974 | 61.6 % | 53.2 % | 56.1 % | 0.125 | 967 | 69 | 0.000 | 14 |
 | gliner2.5-decide-1b-intext (English model, extra) | 2974 | 2974 | 56.8 % | 46.3 % | 56.1 % | 0.017 | 1112 | 73 | 0.000 | 17 |
@@ -33,6 +37,8 @@ Run 1 of each arm. Base for McNemar: `jev`. Unanswered rows count as wrong.
 | arm | n | answered | acc | macro-F1 | base | skill | only jev right | only arm right | p (McNemar) | p50 ms |
 |---|---|---|---|---|---|---|---|---|---|---|
 | jev | 2622 | 2622 | 90.7 % | 86.5 % | 50.2 % | 0.812 | | | | 234 |
+| classic-e5-lr | 2622 | 2622 | 86.9 % | 72.5 % | 50.2 % | 0.737 | 243 | 144 | 0.000 | 24 |
+| classic-e5-lr-10shot | 2622 | 2622 | 74.0 % | 69.4 % | 50.2 % | 0.477 | 548 | 110 | 0.000 | 24 |
 | gliner2.5-decide (English model, extra) | 2622 | 2622 | 65.9 % | 62.9 % | 50.2 % | 0.316 | 709 | 61 | 0.000 | 26 |
 | gliner2.5-decide-1b (English model, extra) | 2622 | 2622 | 56.4 % | 50.7 % | 50.2 % | 0.125 | 967 | 69 | 0.000 | 14 |
 | gliner2.5-decide-1b-intext (English model, extra) | 2622 | 2622 | 51.0 % | 43.4 % | 50.2 % | 0.017 | 1112 | 73 | 0.000 | 18 |
@@ -46,6 +52,8 @@ Run 1 of each arm. Base for McNemar: `jev`. Unanswered rows count as wrong.
 | arm | n | answered | acc | macro-F1 | base | skill | only jev right | only arm right | p (McNemar) | p50 ms |
 |---|---|---|---|---|---|---|---|---|---|---|
 | jev | 2974 | 2974 | 74.1 % | 74.2 % | 13.5 % | 0.701 | | | | 231 |
+| classic-e5-lr | 2974 | 2974 | 89.8 % | 89.6 % | 13.5 % | 0.883 | 92 | 560 | 0.000 | 23 |
+| classic-e5-lr-10shot | 2974 | 2974 | 73.2 % | 71.8 % | 13.5 % | 0.690 | 346 | 318 | 0.295 | 27 |
 | gliner2.5-decide | 2974 | 2974 | 60.9 % | 60.2 % | 13.5 % | 0.547 | 543 | 149 | 0.000 | 26 |
 | gliner2.5-decide-1b | 2974 | 2974 | 53.3 % | 56.8 % | 13.5 % | 0.460 | 786 | 167 | 0.000 | 18 |
 | gliner2.5-decide-1b-intext | 2974 | 2974 | 52.3 % | 56.6 % | 13.5 % | 0.449 | 817 | 169 | 0.000 | 18 |
@@ -59,6 +67,8 @@ Run 1 of each arm. Base for McNemar: `jev`. Unanswered rows count as wrong.
 | arm | n | answered | acc | macro-F1 | base | skill | only jev right | only arm right | p (McNemar) | p50 ms |
 |---|---|---|---|---|---|---|---|---|---|---|
 | jev | 2974 | 2974 | 92.9 % | 89.0 % | 56.1 % | 0.838 | | | | 230 |
+| classic-e5-lr | 2974 | 2974 | 92.3 % | 80.6 % | 56.1 % | 0.824 | 159 | 140 | 0.298 | 23 |
+| classic-e5-lr-10shot | 2974 | 2974 | 80.4 % | 77.6 % | 56.1 % | 0.553 | 466 | 93 | 0.000 | 27 |
 | gliner2.5-decide | 2974 | 2974 | 80.9 % | 75.6 % | 56.1 % | 0.565 | 428 | 71 | 0.000 | 26 |
 | gliner2.5-decide-1b | 2974 | 2974 | 75.7 % | 72.1 % | 56.1 % | 0.446 | 572 | 60 | 0.000 | 14 |
 | gliner2.5-decide-1b-intext | 2974 | 2974 | 71.2 % | 67.1 % | 56.1 % | 0.345 | 704 | 59 | 0.000 | 15 |
@@ -72,6 +82,8 @@ Run 1 of each arm. Base for McNemar: `jev`. Unanswered rows count as wrong.
 | arm | n | answered | acc | macro-F1 | base | skill | only jev right | only arm right | p (McNemar) | p50 ms |
 |---|---|---|---|---|---|---|---|---|---|---|
 | jev | 2622 | 2622 | 92.0 % | 88.4 % | 50.2 % | 0.838 | | | | 230 |
+| classic-e5-lr | 2622 | 2622 | 91.2 % | 79.6 % | 50.2 % | 0.824 | 159 | 140 | 0.298 | 23 |
+| classic-e5-lr-10shot | 2622 | 2622 | 77.7 % | 76.4 % | 50.2 % | 0.553 | 466 | 93 | 0.000 | 27 |
 | gliner2.5-decide | 2622 | 2622 | 78.3 % | 74.3 % | 50.2 % | 0.565 | 428 | 71 | 0.000 | 26 |
 | gliner2.5-decide-1b | 2622 | 2622 | 72.4 % | 70.6 % | 50.2 % | 0.446 | 572 | 60 | 0.000 | 14 |
 | gliner2.5-decide-1b-intext | 2622 | 2622 | 67.4 % | 65.3 % | 50.2 % | 0.345 | 704 | 59 | 0.000 | 15 |
@@ -108,34 +120,45 @@ Run 1 of each arm. Base for McNemar: `jev`. Unanswered rows count as wrong.
 
 ## fastdec per task, en (accuracy; base in the last column)
 
-| task | jev | gliner2.5-decide | gliner2.5-decide-1b | gliner2.5-decide-1b-intext | gliner2.5-decide-intext | gliner2.5-multi-decide | gliner2.5-multi-decide-intext | winnow-12b | base |
-|---|---|---|---|---|---|---|---|---|---|
-| agent_handoff:should_handoff | 76.0 % | 74.0 % | 65.0 % | 72.0 % | 72.0 % | 55.0 % | 57.0 % | 78.0 % | 54.0 % |
-| banking_intent:intent | 55.0 % | 62.0 % | 61.0 % | 62.0 % | 63.0 % | 48.0 % | 51.0 % | 49.0 % | 13.0 % |
-| benefits_request:asking_status | 59.0 % | 57.0 % | 58.0 % | 55.0 % | 60.0 % | 61.0 % | 59.0 % | 61.0 % | 54.0 % |
-| benefits_request:program | 90.0 % | 82.0 % | 87.0 % | 88.0 % | 84.0 % | 79.0 % | 80.0 % | 92.0 % | 15.0 % |
-| clinic_request:request | 53.0 % | 54.0 % | 55.0 % | 55.0 % | 49.0 % | 45.0 % | 46.0 % | 51.0 % | 13.0 % |
-| clinic_request:urgent | 76.0 % | 69.0 % | 70.0 % | 73.0 % | 66.0 % | 74.0 % | 58.0 % | 75.0 % | 56.0 % |
-| document_type:doc_type | 78.0 % | 80.0 % | 78.0 % | 78.0 % | 81.0 % | 70.0 % | 69.0 % | 78.0 % | 16.0 % |
-| email_triage:action | 53.0 % | 56.0 % | 56.0 % | 57.0 % | 55.0 % | 51.0 % | 55.0 % | 53.0 % | 30.0 % |
-| email_triage:category | 42.0 % | 46.0 % | 50.0 % | 50.0 % | 48.0 % | 48.0 % | 47.0 % | 40.0 % | 18.0 % |
-| email_triage:is_phishing | 56.0 % | 59.0 % | 56.0 % | 60.0 % | 68.0 % | 55.0 % | 54.0 % | 57.0 % | 53.0 % |
-| email_triage:needs_reply | 65.0 % | 66.0 % | 62.0 % | 70.0 % | 68.0 % | 57.0 % | 62.0 % | 65.0 % | 53.0 % |
-| news_topic:topic | 59.0 % | 65.0 % | 63.0 % | 60.0 % | 66.0 % | 57.0 % | 58.0 % | 65.0 % | 14.0 % |
-| paper_field:field | 39.0 % | 41.0 % | 48.0 % | 51.0 % | 43.0 % | 38.0 % | 37.0 % | 40.0 % | 16.0 % |
-| product_feedback:feedback_type | 57.0 % | 70.0 % | 73.0 % | 73.0 % | 67.0 % | 63.0 % | 62.0 % | 58.0 % | 32.0 % |
-| restaurant_review:sentiment | 80.0 % | 80.0 % | 79.0 % | 83.0 % | 84.0 % | 73.0 % | 74.0 % | 80.0 % | 36.0 % |
-| review_sentiment:sentiment | 84.0 % | 83.0 % | 82.0 % | 84.0 % | 86.0 % | 77.0 % | 76.0 % | 87.0 % | 36.0 % |
-| screen_tags:format | 80.0 % | 75.0 % | 78.0 % | 78.0 % | 76.0 % | 78.0 % | 80.0 % | 81.0 % | 58.0 % |
-| sports_recap:result | 90.0 % | 85.0 % | 88.0 % | 86.0 % | 85.0 % | 66.0 % | 68.0 % | 92.0 % | 31.0 % |
-| sports_recap:sport | 75.0 % | 63.0 % | 58.0 % | 54.0 % | 62.0 % | 53.0 % | 53.0 % | 77.0 % | 16.0 % |
-| sports_recap:upset | 70.0 % | 64.0 % | 58.0 % | 56.0 % | 51.0 % | 55.0 % | 54.0 % | 68.0 % | 53.0 % |
-| support_intent:intent | 65.0 % | 65.0 % | 64.0 % | 70.0 % | 68.0 % | 64.0 % | 64.0 % | 0.0 % | 9.0 % |
-| support_topic:topic | 42.0 % | 49.0 % | 44.0 % | 43.0 % | 47.0 % | 47.0 % | 50.0 % | 41.0 % | 11.0 % |
-| ticket_route:contains_pii | 69.0 % | 51.0 % | 69.0 % | 64.0 % | 53.0 % | 56.0 % | 59.0 % | 80.0 % | 52.0 % |
-| ticket_route:queue | 37.0 % | 51.0 % | 53.0 % | 54.0 % | 55.0 % | 56.0 % | 56.0 % | 29.0 % | 11.0 % |
-| ticket_route:urgency | 32.0 % | 39.0 % | 34.0 % | 41.0 % | 34.0 % | 28.0 % | 29.0 % | 38.0 % | 27.0 % |
-| travel_request:intent | 57.0 % | 61.0 % | 61.0 % | 63.0 % | 63.0 % | 53.0 % | 56.0 % | 56.0 % | 13.0 % |
+| task | jev | classic-e5-lr | classic-e5-lr-10shot | gliner2.5-decide | gliner2.5-decide-1b | gliner2.5-decide-1b-intext | gliner2.5-decide-intext | gliner2.5-multi-decide | gliner2.5-multi-decide-intext | winnow-12b | base |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| agent_handoff:should_handoff | 76.0 % |  |  | 74.0 % | 65.0 % | 72.0 % | 72.0 % | 55.0 % | 57.0 % | 78.0 % | 54.0 % |
+| banking_intent:intent | 55.0 % |  |  | 62.0 % | 61.0 % | 62.0 % | 63.0 % | 48.0 % | 51.0 % | 49.0 % | 13.0 % |
+| benefits_request:asking_status | 59.0 % |  |  | 57.0 % | 58.0 % | 55.0 % | 60.0 % | 61.0 % | 59.0 % | 61.0 % | 54.0 % |
+| benefits_request:program | 90.0 % |  |  | 82.0 % | 87.0 % | 88.0 % | 84.0 % | 79.0 % | 80.0 % | 92.0 % | 15.0 % |
+| clinic_request:request | 53.0 % |  |  | 54.0 % | 55.0 % | 55.0 % | 49.0 % | 45.0 % | 46.0 % | 51.0 % | 13.0 % |
+| clinic_request:urgent | 76.0 % |  |  | 69.0 % | 70.0 % | 73.0 % | 66.0 % | 74.0 % | 58.0 % | 75.0 % | 56.0 % |
+| document_type:doc_type | 78.0 % |  |  | 80.0 % | 78.0 % | 78.0 % | 81.0 % | 70.0 % | 69.0 % | 78.0 % | 16.0 % |
+| email_triage:action | 53.0 % |  |  | 56.0 % | 56.0 % | 57.0 % | 55.0 % | 51.0 % | 55.0 % | 53.0 % | 30.0 % |
+| email_triage:category | 42.0 % |  |  | 46.0 % | 50.0 % | 50.0 % | 48.0 % | 48.0 % | 47.0 % | 40.0 % | 18.0 % |
+| email_triage:is_phishing | 56.0 % |  |  | 59.0 % | 56.0 % | 60.0 % | 68.0 % | 55.0 % | 54.0 % | 57.0 % | 53.0 % |
+| email_triage:needs_reply | 65.0 % |  |  | 66.0 % | 62.0 % | 70.0 % | 68.0 % | 57.0 % | 62.0 % | 65.0 % | 53.0 % |
+| news_topic:topic | 59.0 % |  |  | 65.0 % | 63.0 % | 60.0 % | 66.0 % | 57.0 % | 58.0 % | 65.0 % | 14.0 % |
+| paper_field:field | 39.0 % |  |  | 41.0 % | 48.0 % | 51.0 % | 43.0 % | 38.0 % | 37.0 % | 40.0 % | 16.0 % |
+| product_feedback:feedback_type | 57.0 % |  |  | 70.0 % | 73.0 % | 73.0 % | 67.0 % | 63.0 % | 62.0 % | 58.0 % | 32.0 % |
+| restaurant_review:sentiment | 80.0 % |  |  | 80.0 % | 79.0 % | 83.0 % | 84.0 % | 73.0 % | 74.0 % | 80.0 % | 36.0 % |
+| review_sentiment:sentiment | 84.0 % |  |  | 83.0 % | 82.0 % | 84.0 % | 86.0 % | 77.0 % | 76.0 % | 87.0 % | 36.0 % |
+| screen_tags:format | 80.0 % |  |  | 75.0 % | 78.0 % | 78.0 % | 76.0 % | 78.0 % | 80.0 % | 81.0 % | 58.0 % |
+| sports_recap:result | 90.0 % |  |  | 85.0 % | 88.0 % | 86.0 % | 85.0 % | 66.0 % | 68.0 % | 92.0 % | 31.0 % |
+| sports_recap:sport | 75.0 % |  |  | 63.0 % | 58.0 % | 54.0 % | 62.0 % | 53.0 % | 53.0 % | 77.0 % | 16.0 % |
+| sports_recap:upset | 70.0 % |  |  | 64.0 % | 58.0 % | 56.0 % | 51.0 % | 55.0 % | 54.0 % | 68.0 % | 53.0 % |
+| support_intent:intent | 65.0 % |  |  | 65.0 % | 64.0 % | 70.0 % | 68.0 % | 64.0 % | 64.0 % | 0.0 % | 9.0 % |
+| support_topic:topic | 42.0 % |  |  | 49.0 % | 44.0 % | 43.0 % | 47.0 % | 47.0 % | 50.0 % | 41.0 % | 11.0 % |
+| ticket_route:contains_pii | 69.0 % |  |  | 51.0 % | 69.0 % | 64.0 % | 53.0 % | 56.0 % | 59.0 % | 80.0 % | 52.0 % |
+| ticket_route:queue | 37.0 % |  |  | 51.0 % | 53.0 % | 54.0 % | 55.0 % | 56.0 % | 56.0 % | 29.0 % | 11.0 % |
+| ticket_route:urgency | 32.0 % |  |  | 39.0 % | 34.0 % | 41.0 % | 34.0 % | 28.0 % | 29.0 % | 38.0 % | 27.0 % |
+| travel_request:intent | 57.0 % |  |  | 61.0 % | 61.0 % | 63.0 % | 63.0 % | 53.0 % | 56.0 % | 56.0 % | 13.0 % |
+
+## massive intent, flat 60-way (extra, no option list)
+
+The argmax over all 60 intents, without the gold scenario's options. Not comparable to the intent sections above.
+
+| arm | lang | n | acc flat | acc with the gold scenario's options |
+|---|---|---|---|---|
+| classic-e5-lr | de | 2974 | 77.0 % | 88.4 % |
+| classic-e5-lr | en | 2974 | 83.5 % | 92.3 % |
+| classic-e5-lr-10shot | de | 2974 | 63.0 % | 77.0 % |
+| classic-e5-lr-10shot | en | 2974 | 67.4 % | 80.4 % |
 
 ## Jev cost
 

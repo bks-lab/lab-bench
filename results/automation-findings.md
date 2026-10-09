@@ -136,3 +136,22 @@ per set can differ from the pooled best arm; the reports list every arm.
 - Unanswered rows (Winnow on the 28-option fast-decisions task, one row
   without a letter) count as wrong and are never automated.
 - No significance test on the automation rows.
+
+## Addendum 2026-10-09: classic classifier (T3)
+
+After T3 was merged, `bench/score-automation.mjs` was rerun so the classic
+arms (`plan/t3.md`) appear as their own family in `results/route1/automation.md`.
+They were not part of the T1 design, which predates them, so this is an
+addition and the T1 numbers above are unchanged.
+
+- Trained on the full MASSIVE train split, `classic-e5-lr` automates 76.4 %
+  (de, pooled) at 95 % accuracy, against 60.3 % for Jev and 58.0 % for
+  Winnow-12B. Its ECE is 0.174, so it is overconfident too, but its ranking
+  of its own answers is good enough to pass more items.
+- With 10 examples per class (`classic-e5-lr-10shot`) it automates 2.1 %:
+  the probabilities of a classifier trained on so little carry almost no
+  usable ranking.
+- In `results/toolmap.json` the classic family is shown beside the zero-shot
+  families and is not ranked with them (`top_family` is computed among Jev,
+  GLiNER and the local LLM), because it needs labelled data the others do
+  not. pv1 has no train split, so the classic cell there is not applicable.

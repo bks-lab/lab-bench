@@ -245,3 +245,73 @@ workstation's hardware and power were not estimated.
   the most probable letter, renormalised from a small mass. Counted by a
   script over the result rows.
 - **Latency is not one measurement** across arms (see Speed).
+
+## Addendum 2026-10-09: Classic baseline
+
+Test T3, design committed before the run: [plan/t3.md](../../plan/t3.md).
+A new tool family `classic`: `intfloat/multilingual-e5-base` sentence
+embeddings (revision `d1287505`, prefix `query: `, L2-normalised) plus a
+scikit-learn `LogisticRegression(C=1.0, max_iter=2000)`, multinomial. One
+classifier for scenario and one for intent per language, trained on the
+MASSIVE 1.1 train split of the same locale (11,514 rows each, not
+committed; tarball SHA-256 and a hash of the training rows are in every
+result row). No tuning, no dev split. Unlike every other arm, this one
+has seen labelled examples of exactly these classes: it is the home ground
+of the family, and the numbers measure what labelled data buys.
+
+| arm | training rows |
+|---|---|
+| `classic-e5-lr` | full train split: 11,514 per classifier |
+| `classic-e5-lr-10shot` | 10 per class, seeded: 180 for scenario, 594 for intent (`cooking_query` has only 4 train rows) |
+
+Run on a Mac (Apple silicon, MPS) with Python 3.14.8, torch 2.14.1,
+sentence-transformers 6.1.0, scikit-learn 1.9.1. Fitting took about a
+minute per language on the full split. Intent is scored exactly like the
+other arms: the classifier's 60 intent probabilities are cut to the
+options of the gold scenario and renormalised.
+
+Source: [score.md](score.md). McNemar against Jev, exact, two-sided.
+
+| group | jev | classic-e5-lr | jev only / arm only | p vs Jev | classic-e5-lr-10shot | jev only / arm only | p vs Jev |
+|---|---|---|---|---|---|---|---|
+| scenario, de | 72.8 % | **86.9 %** | 141 / 559 | < 0.001 | 70.8 % | 398 / 339 | 0.033 |
+| scenario, en | 74.1 % | **89.8 %** | 92 / 560 | < 0.001 | 73.2 % | 346 / 318 | 0.295 |
+| intent 2+ options, de | **90.7 %** | 86.9 % | 243 / 144 | < 0.001 | 74.0 % | 548 / 110 | < 0.001 |
+| intent 2+ options, en | 92.0 % | 91.2 % | 159 / 140 | 0.298 | 77.7 % | 466 / 93 | < 0.001 |
+
+Flat 60-way intent (argmax over all intents, no option list, an extra that
+no other arm was asked): 77.0 % German and 83.5 % English for the full
+arm, 63.0 % and 67.4 % for the 10-shot arm. This is the end-to-end number
+a router would see; it is not comparable to the intent rows above.
+
+Median latency per question: 24 ms (full) and 25 ms (10-shot), one item at
+a time on the Mac, embedding plus predict_proba. A third clock next to the
+ones in Speed.
+
+Reading it:
+
+- **Scenario:** with the train split the classic arm is 14 to 16 points
+  ahead of Jev in both languages (p < 0.001), and ahead of every zero-shot
+  arm. The 18 scenarios are coarse topics that a linear probe on good
+  embeddings separates well once it has seen examples.
+- **Intent given the scenario:** the classic arm does not catch up. It is
+  3.8 points behind Jev in German (significant) and level in English (0.8
+  points, p = 0.298). Its macro-F1 on intent (72.5 % de, 79.6 % en against
+  Jev's 86.5 % and 88.4 %) shows where it loses: the rarer intents, where
+  the label texts help a zero-shot model and about 190 training rows per
+  class do not suffice for a linear probe.
+- **Data hunger:** with 10 examples per class the classic arm falls to
+  Jev's level on scenario (German 2.0 points behind, p = 0.033; English
+  level, p = 0.295) and 14 to 17 points behind on intent. The full-data lead
+  on scenario is the data, not the model.
+- In the tool map the classic family is reported as its own cell. The top
+  family of a row is still chosen among the three zero-shot families, so
+  no existing cell changed; the classic cell carries its test against Jev
+  and against that top (`classic_note` in `results/toolmap.json`).
+- Not run: fast-decisions (no train split published), pv1, einv1 (no
+  training labels), ex1 (a slot tagger is a different model, `open`).
+
+Self-check: scenario de accuracy (86.9 %), English intent 2+ accuracy
+(91.2 %) and the German scenario McNemar counts (141 / 559) were recounted
+by a separate Python script straight from the result rows and the gold
+files, and match the report.

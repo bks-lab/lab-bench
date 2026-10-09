@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Builds results/toolmap.json: one row per task, one cell per tool family
- * (jev, gliner, local-llm).
+ * (jev, gliner, local-llm, classic).
  *
  *   node bench/toolmap.mjs [--out results/toolmap.json] [--plan plan/toolmap-plan.yaml]
  *
@@ -36,7 +36,11 @@ const arg = (k, d) => { const i = args.indexOf(`--${k}`); return i >= 0 ? args[i
 const OUT = arg('out', 'results/toolmap.json');
 const PLAN = arg('plan', 'plan/toolmap-plan.yaml');
 
-const FAMILIES = ['jev', 'gliner', 'local-llm'];
+const FAMILIES = ['jev', 'gliner', 'local-llm', 'classic'];
+// Families that get no training data. The top family of a row is chosen
+// among these, so adding the trained classic family (plan/t3.md) changes
+// no existing cell; a classic cell is tested against that top.
+const ZERO_SHOT = ['jev', 'gliner', 'local-llm'];
 const STATES = ['measured', 'planned', 'open', 'not_applicable'];
 
 // relative paths are repo-relative, absolute ones stay as given
@@ -60,7 +64,7 @@ function paired(first, second) {
 }
 /**
  * Top family of a row and each cell's test against it. Top = highest value
- * (ties: more items right, then FAMILIES order). Every cell gets top_family;
+ * among the ZERO_SHOT families (ties: more items right, then FAMILIES order). Every cell gets top_family;
  * the others also mcnemar_vs_top_p (exact, two-sided, between this family's
  * best arm and the top family's best arm on the items both answered) and the
  * discordant counts. `items` maps family -> Map(key -> right?).
@@ -69,7 +73,9 @@ function testAgainstTop(cells, items) {
   const fams = FAMILIES.filter(f => cells[f] && items[f]);
   if (!fams.length) return;
   const right = f => [...items[f].values()].filter(Boolean).length;
-  const top = [...fams].sort((x, y) => (cells[y].value - cells[x].value) || (right(y) - right(x)) || (FAMILIES.indexOf(x) - FAMILIES.indexOf(y)))[0];
+  const zs = fams.filter(f => ZERO_SHOT.includes(f));
+  if (!zs.length) return;
+  const top = [...zs].sort((x, y) => (cells[y].value - cells[x].value) || (right(y) - right(x)) || (FAMILIES.indexOf(x) - FAMILIES.indexOf(y)))[0];
   for (const f of fams) {
     cells[f].top_family = top;
     if (f === top) { cells[f].mcnemar_vs_top_p = null; continue; }
@@ -162,7 +168,7 @@ const ver = (pv, arm) => {
   return base;
 };
 const date = (pv, arm) => STATS[pv][arm].ts[0].slice(0, 10);
-const famOf = a => a === 'jev' ? 'jev' : a.startsWith('gliner') ? 'gliner' : 'local-llm';
+const famOf = a => a === 'jev' ? 'jev' : a.startsWith('gliner') ? 'gliner' : a.startsWith('classic') ? 'classic' : 'local-llm';
 const EXTRA = ' (English model, extra)';
 const cleanArm = a => a.replace(EXTRA, '');
 
@@ -332,7 +338,7 @@ for (const lang of ['de', 'en']) {
     const items = {};
     for (const fam of FAMILIES) {
       const english = a => a.startsWith('gliner2.5-decide');
-      const famArms = Object.keys(counts).filter(a => fam === 'jev' ? a === 'jev' : fam === 'gliner' ? a.startsWith('gliner') : PV1_LOCAL.includes(a));
+      const famArms = Object.keys(counts).filter(a => fam === 'jev' ? a === 'jev' : fam === 'gliner' ? a.startsWith('gliner') : fam === 'classic' ? a.startsWith('classic') : PV1_LOCAL.includes(a));
       const cand = lang === 'de' && fam === 'gliner' ? famArms.filter(a => !english(a)) : famArms;
       const extra = lang === 'de' && fam === 'gliner' ? famArms.filter(english) : [];
       if (!cand.length) continue; // no eligible arm: the register has to say why
@@ -445,7 +451,11 @@ for (const pv of ['route1', 'pv1']) {
     };
     for (const fam of FAMILIES) {
       const cand = Object.entries(set.arms).filter(([, m]) => m.family === fam && !m.english_only_extra);
-      if (!cand.length) fail(`${row.id}: no arm for ${fam}`);
+      if (!cand.length) {
+        if (fam !== 'classic') fail(`${row.id}: no arm for ${fam}`);
+        row.cells[fam] = { state: 'not_applicable', reason: `no ${fam} arm on ${pv}: the classic classifier needs a train split, ${pv} has none (plan/t3.md)` };
+        continue;
+      }
       cand.sort((x, y) => y[1].auto95 - x[1].auto95 || y[1].auto90 - x[1].auto90 || (x[0] < y[0] ? -1 : 1));
       const [arm, m] = cand[0];
       const p1 = x => (x == null ? null : +(100 * x).toFixed(1));
@@ -462,8 +472,11 @@ for (const pv of ['route1', 'pv1']) {
         source_report: AUTO[pv].report,
       };
     }
-    const top = [...FAMILIES].sort((x, y) => (row.cells[y].value - row.cells[x].value) || (FAMILIES.indexOf(x) - FAMILIES.indexOf(y)))[0];
-    for (const fam of FAMILIES) row.cells[fam].top_family = top;
+    // top among the zero-shot families, as for the route1 rows: the classic
+    // classifier is trained on labelled data and is shown beside them, not ranked with them
+    const measured = FAMILIES.filter(f => f !== 'classic' && row.cells[f].state === 'measured');
+    const top = [...measured].sort((x, y) => (row.cells[y].value - row.cells[x].value) || (FAMILIES.indexOf(x) - FAMILIES.indexOf(y)))[0];
+    for (const fam of measured) row.cells[fam].top_family = top;
     row.note = 'In-sample threshold: optimistic. crossfit95 picks the threshold on one half of the lines (seed 20261009) and applies it to the other. Probabilities are distributions over the offered options (GLiNER softmax, local LLM letter probabilities renormalised over the letters), not calibrated claims. No significance test on this row.';
     autoRows.push(row);
   }
@@ -478,11 +491,13 @@ const out = {
   generated_from: ['results/route1/score.md', 'results/ex1/score.md', 'results/pv1/score-de-adjudicated.md', 'results/pv1/score-en.md', 'reference/pv1/adjudicated-a.de.jsonl', 'reference/pv1/claude-c.en.jsonl', 'result rows for versions, dates and Jev tokens', PLAN, 'results/route1/automation.json', 'results/pv1/automation.json'],
   findings: { route1: 'results/route1/findings.md', ex1: 'results/ex1/findings.md', pv1: 'results/pv1/gliner.md', automation: 'results/automation-findings.md' },
   note: 'Each cell is one task and one tool family. "best_arm" is the arm of that family with the highest value on the same test data the value is measured on, so it is chosen after the fact and flatters the families with many arms (GLiNER has up to six arms in route1 and nine in pv1, the local family has one arm in route1 and ex1 and four in pv1). Cells are per task: a family that is best on one task says nothing about another. All numbers are run 1, one run per arm. For German rows, English-only GLiNER models (GLiNER2.5-Decide, GLiNER2.5-Decide-1B) are not eligible as best arm, in route1 and pv1 alike; their best value is listed as english_model_extra. pv1 rows: baseline computed from the reference with the rule of results/pv1/gliner.md, run dates 2026-10-01 (Jev, local) and 2026-10-08 (GLiNER). skill = (value - baseline) / (100 - baseline). p50 values in route1 rows are per question group (the p50 ms column of results/route1/score.md); the Speed table of results/route1/findings.md gives medians per source and language, so the two can differ by a few ms. Latencies are not one clock: Jev is an HTTP round trip to api.typesafe.ai, the local LLM an HTTP call over the LAN, GLiNER GPU time in-process. Local cost (hardware, power) was not estimated. Tests: route1 and pv1 cells carry top_family (the family with the highest value in the row) and mcnemar_vs_top_p, an exact two-sided McNemar between this family\'s best arm and the top family\'s best arm on the same items (unanswered counts as wrong); route1 and pv1 cells other than Jev also carry mcnemar_vs_jev_p. Both compared arms are picked after the fact as the best of their family, and no p value is corrected for that or for the number of tests, so p >= 0.05 means the difference is not established, not that the two are level. ex1 cells have no test; their skill is F1 against a baseline F1 of 0, exact_frame_skill compares whole frames against extracting nothing.',
+  classic_note: 'The classic family (plan/t3.md) is a trained classifier: multilingual-e5-base sentence embeddings plus logistic regression, fitted on the MASSIVE 1.1 train split of the same locale. The other three families get no training data. top_family and mcnemar_vs_top_p are therefore computed among jev, gliner and local-llm only; a classic cell carries top_family (that zero-shot top), its own mcnemar_vs_top_p against it, and mcnemar_vs_jev_p. Its two arms are classic-e5-lr (full train split) and classic-e5-lr-10shot (10 rows per class); best_arm is chosen as for every family.',
   states: plan.states,
   families: {
     jev: 'TypeSafe Jev, hosted API (api.typesafe.ai)',
     gliner: 'Fastino GLiNER2 / GLiNER2.5 encoders, local GPU (RTX 4090)',
     'local-llm': 'open LLM through Ollama, local GPU (RTX 4090)',
+    classic: 'sentence embeddings plus a trained logistic regression, local (Mac, MPS)',
   },
   tools: plan.tools,
   rows,

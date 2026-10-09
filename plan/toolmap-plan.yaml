@@ -52,6 +52,26 @@ tools:
     sources:
       - https://huggingface.co/EldanRing/Winnow-12B (license apache-2.0, base_model google/gemma-4-12B-it, read 2026-10-09)
 
+  classic:
+    name: >-
+      sentence embeddings (intfloat/multilingual-e5-base) plus a scikit-learn
+      LogisticRegression trained on labelled examples
+    maker: >-
+      Microsoft (multilingual-e5-base, published as intfloat on Hugging
+      Face, Wang et al., arXiv:2402.05672) and the scikit-learn developers
+      (LogisticRegression); the training here is ours, see plan/t3.md
+    runs: >-
+      local, Python with sentence-transformers and scikit-learn, on a Mac
+      (Apple silicon, MPS); no GPU server needed
+    licence: >-
+      MIT for multilingual-e5-base (card metadata), BSD-3-Clause for
+      scikit-learn, Apache-2.0 for sentence-transformers. The trained
+      classifier inherits the licence of its training data (MASSIVE, CC BY 4.0)
+    sources:
+      - https://huggingface.co/intfloat/multilingual-e5-base (license mit, revision d128750597153bb5987e10b1c3493a34e5a4502a, read 2026-10-09)
+      - https://github.com/scikit-learn/scikit-learn (licence BSD-3-Clause, read 2026-10-09)
+      - https://github.com/UKPLab/sentence-transformers (licence Apache-2.0, read 2026-10-09)
+
 # Cells of measured rows that have no measurement.
 cells:
   ex1-slots-de:
@@ -59,8 +79,47 @@ cells:
       state: not_applicable
       reason: Jev has no extraction primitive (choice, score, noul only), docs.typesafe.ai/introduction
       source_report: results/ex1/method.md
+    classic: &classic-no-slots
+      state: open
+      reason: >-
+        a trained slot tagger is possible (MASSIVE train has slot
+        annotations) but is a different model; T3 covers classification only
+      plan: plan/t3.md
   ex1-slots-en:
     jev: *jev-no-extraction
+    classic: *classic-no-slots
+  route1-fastdec26-en:
+    classic:
+      state: not_applicable
+      reason: >-
+        fast-decisions publishes only the dev split, no train split, so the
+        classic classifier has nothing to train on (plan/t3.md)
+      plan: plan/t3.md
+  pv1-is_req-de:
+    classic: &classic-no-pv1
+      state: not_applicable
+      reason: >-
+        no labelled training data for this task; the only labels are the
+        blind reference of the test rows themselves (plan/t3.md)
+      plan: plan/t3.md
+  pv1-is_req-en:
+    classic: *classic-no-pv1
+  pv1-must-de:
+    classic: *classic-no-pv1
+  pv1-must-en:
+    classic: *classic-no-pv1
+  pv1-axis-de:
+    classic: *classic-no-pv1
+  pv1-axis-en:
+    classic: *classic-no-pv1
+  pv1-evidence-de:
+    classic: *classic-no-pv1
+  pv1-evidence-en:
+    classic: *classic-no-pv1
+  pv1-level-de:
+    classic: *classic-no-pv1
+  pv1-level-en:
+    classic: *classic-no-pv1
 
 # Rows that exist before any measurement.
 rows:
@@ -78,3 +137,9 @@ rows:
         plan: plan/einv1.md
       gliner: *einv1-planned
       local-llm: *einv1-planned
+      classic:
+        state: not_applicable
+        reason: >-
+          no labelled training data; the 34 invoices are the test set
+          (plan/t3.md)
+        plan: plan/t3.md

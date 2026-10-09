@@ -21,6 +21,11 @@
  *              question; only Jev rows written by a joint call (no
  *              `call_scope: "question"`, run files before 2026-10-09 fixes)
  *              are counted once per request
+ * Flat intent: arms whose MASSIVE intent rows carry `choice_flat` (the
+ * classic family, plan/t3.md) also get a table of that answer, the argmax
+ * over all 60 intents without the gold scenario's option list. It is not
+ * comparable to the intent rows above, which offer only the gold
+ * scenario's intents.
  * Groups: `fastdec, tasks with 26 options or fewer` leaves out
  * support_intent:intent (28 options), which the local arm cannot be asked;
  * it is the like-for-like fast-decisions comparison.
@@ -78,7 +83,7 @@ const armNames = listArms(ROOT, PV);
 const data = Object.fromEntries(armNames.map(a => [a, loadArm(a)]).filter(([, m]) => m.size));
 const order = [BASE, ...Object.keys(data).filter(a => a !== BASE)].filter(a => data[a]);
 if (!order.length) { console.error(`no rows for ${PV} run ${RUN}${TAG ? ` tag ${TAG}` : ''}: nothing to score`); process.exit(1); }
-const EXPECTED = ['jev', 'winnow-12b', 'gliner2.5-multi-decide', 'gliner2.5-multi-decide-intext', 'gliner2.5-decide', 'gliner2.5-decide-intext', 'gliner2.5-decide-1b', 'gliner2.5-decide-1b-intext'];
+const EXPECTED = ['jev', 'winnow-12b', 'gliner2.5-multi-decide', 'gliner2.5-multi-decide-intext', 'gliner2.5-decide', 'gliner2.5-decide-intext', 'gliner2.5-decide-1b', 'gliner2.5-decide-1b-intext', 'classic-e5-lr', 'classic-e5-lr-10shot'];
 const missing = PV === 'route1' ? EXPECTED.filter(a => !data[a]) : [];
 if (missing.length) console.error(`warning: no rows for ${missing.join(', ')}`);
 
@@ -159,6 +164,22 @@ if (taskRows.length) {
   say(`| task | ${order.join(' | ')} | base |`);
   say(`|---|${order.map(() => '---').join('|')}|---|`);
   for (const [t, ss] of taskRows) say(`| ${t} | ${ss.map(s => (s ? pct(s.acc) : '')).join(' | ')} | ${pct(ss.find(Boolean).base)} |`);
+  say('');
+}
+
+// flat 60-way intent: only arms that record choice_flat
+const flatArms = order.filter(a => [...data[a].values()].some(r => r.question === 'intent' && r.choice_flat != null));
+if (flatArms.length) {
+  say('## massive intent, flat 60-way (extra, no option list)\n');
+  say('The argmax over all 60 intents, without the gold scenario\'s options. Not comparable to the intent sections above.\n');
+  say('| arm | lang | n | acc flat | acc with the gold scenario\'s options |');
+  say('|---|---|---|---|---|');
+  for (const a of flatArms) for (const lang of ['de', 'en']) {
+    const its = [...data[a]].map(([k, r]) => [gold.get(k), r]).filter(([g, r]) => g && g.lang === lang && r.question === 'intent' && sourceOf(g.line) === 'massive');
+    if (!its.length) continue;
+    const flat = its.filter(([g, r]) => r.choice_flat === g.choice).length; const opt = its.filter(([g, r]) => r.choice === g.choice).length;
+    say(`| ${a} | ${lang} | ${its.length} | ${pct(flat / its.length)} | ${pct(opt / its.length)} |`);
+  }
   say('');
 }
 

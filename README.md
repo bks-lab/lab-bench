@@ -6,7 +6,7 @@ locally or hosted in the EU, answer the match questions as well as Jev?
 ## Notice: no Jev raw answers
 
 This repository is the public export of BKS-Lab's private bench
-(source commit `aa27bf4cfe7a`). It publishes evaluations only:
+(source commit `1239571bae86`). It publishes evaluations only:
 
 - Jev's raw answers per question (the result rows under `results/*/jev/`)
   are not published, and neither are per-case Jev values (the Jev columns of
