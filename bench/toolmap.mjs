@@ -418,13 +418,65 @@ for (const p of plan.rows || []) {
   rows.push({ ...p, cells });
 }
 
+// ---------------------------------------------------------------- automation rows (T1, plan/t1.md)
+
+/**
+ * One row per family and language from results/<pv>/automation.json
+ * (bench/score-automation.mjs), pooled item set. value = in-sample automation
+ * rate at 95 % of the family's best arm by that value (ties: higher 90 % rate,
+ * then name); English-only GLiNER models are not eligible on German rows.
+ */
+const AUTO = {
+  route1: { task: 'automation: route1 (MASSIVE scenario, intent 2+ options; en also fast-decisions)', report: 'results/route1/automation.md' },
+  pv1: { task: 'automation: pv1 line questions (is_req, must, axis, evidence, level)', report: 'results/pv1/automation.md' },
+};
+const autoRows = [];
+for (const pv of ['route1', 'pv1']) {
+  const file = `results/${pv}/automation.json`;
+  if (!fs.existsSync(abs(file))) fail(`${file} missing: run node bench/score-automation.mjs first`);
+  const res = JSON.parse(rd(file));
+  for (const lang of ['de', 'en']) {
+    const set = res.langs[lang].sets.pooled;
+    const b = set.baseline;
+    const row = {
+      id: `${pv}-automation95-${lang}`, kind: 'automation', task: AUTO[pv].task, lang,
+      metric: 'automation rate at 95 % accuracy: largest share of items, ranked by the probability of the arm\'s own answer, whose accuracy stays >= 95 %; threshold chosen in-sample',
+      reference: res.references[lang], design: 'plan/t1.md', source_report: AUTO[pv].report, section: `pooled, ${lang}`, cells: {},
+    };
+    for (const fam of FAMILIES) {
+      const cand = Object.entries(set.arms).filter(([, m]) => m.family === fam && !m.english_only_extra);
+      if (!cand.length) fail(`${row.id}: no arm for ${fam}`);
+      cand.sort((x, y) => y[1].auto95 - x[1].auto95 || y[1].auto90 - x[1].auto90 || (x[0] < y[0] ? -1 : 1));
+      const [arm, m] = cand[0];
+      const p1 = x => (x == null ? null : +(100 * x).toFixed(1));
+      const value = p1(m.auto95), base = p1(b.auto95);
+      row.cells[fam] = {
+        state: 'measured', best_arm: arm, tied_with: cand.slice(1).filter(([, x]) => x.auto95 === m.auto95).map(([a]) => a), arms_compared: cand.length,
+        value, baseline: base, baseline_name: 'most frequent answer per option set, confidence = its in-sample share',
+        skill: +((value - base) / (100 - base)).toFixed(3), skill_note: base === 0 ? 'baseline is 0, so skill equals value / 100' : 'skill = (value - baseline) / (100 - baseline)',
+        n: m.n, accuracy_all: p1(m.acc), threshold: m.auto95_threshold, accuracy_automated: p1(m.auto95_acc),
+        automation90: p1(m.auto90), automation90_baseline: p1(b.auto90),
+        crossfit95: p1(m.cf95), crossfit95_accuracy: p1(m.cf95_acc), crossfit90: p1(m.cf90), crossfit90_accuracy: p1(m.cf90_acc),
+        ece: m.ece, brier: m.brier, answered: m.answered,
+        ...(m.mass_median != null ? { letter_mass_median: m.mass_median, letter_mass_p10: m.mass_p10 } : {}),
+        source_report: AUTO[pv].report,
+      };
+    }
+    const top = [...FAMILIES].sort((x, y) => (row.cells[y].value - row.cells[x].value) || (FAMILIES.indexOf(x) - FAMILIES.indexOf(y)))[0];
+    for (const fam of FAMILIES) row.cells[fam].top_family = top;
+    row.note = 'In-sample threshold: optimistic. crossfit95 picks the threshold on one half of the lines (seed 20261009) and applies it to the other. Probabilities are distributions over the offered options (GLiNER softmax, local LLM letter probabilities renormalised over the letters), not calibrated claims. No significance test on this row.';
+    autoRows.push(row);
+  }
+}
+rows.push(...autoRows);
+
 // ---------------------------------------------------------------- write
 
 const out = {
   schema: 'jev-match-bench toolmap v2',
   generated: new Date().toISOString().slice(0, 10),
-  generated_from: ['results/route1/score.md', 'results/ex1/score.md', 'results/pv1/score-de-adjudicated.md', 'results/pv1/score-en.md', 'reference/pv1/adjudicated-a.de.jsonl', 'reference/pv1/claude-c.en.jsonl', 'result rows for versions, dates and Jev tokens', PLAN],
-  findings: { route1: 'results/route1/findings.md', ex1: 'results/ex1/findings.md', pv1: 'results/pv1/gliner.md' },
+  generated_from: ['results/route1/score.md', 'results/ex1/score.md', 'results/pv1/score-de-adjudicated.md', 'results/pv1/score-en.md', 'reference/pv1/adjudicated-a.de.jsonl', 'reference/pv1/claude-c.en.jsonl', 'result rows for versions, dates and Jev tokens', PLAN, 'results/route1/automation.json', 'results/pv1/automation.json'],
+  findings: { route1: 'results/route1/findings.md', ex1: 'results/ex1/findings.md', pv1: 'results/pv1/gliner.md', automation: 'results/automation-findings.md' },
   note: 'Each cell is one task and one tool family. "best_arm" is the arm of that family with the highest value on the same test data the value is measured on, so it is chosen after the fact and flatters the families with many arms (GLiNER has up to six arms in route1 and nine in pv1, the local family has one arm in route1 and ex1 and four in pv1). Cells are per task: a family that is best on one task says nothing about another. All numbers are run 1, one run per arm. For German rows, English-only GLiNER models (GLiNER2.5-Decide, GLiNER2.5-Decide-1B) are not eligible as best arm, in route1 and pv1 alike; their best value is listed as english_model_extra. pv1 rows: baseline computed from the reference with the rule of results/pv1/gliner.md, run dates 2026-10-01 (Jev, local) and 2026-10-08 (GLiNER). skill = (value - baseline) / (100 - baseline). p50 values in route1 rows are per question group (the p50 ms column of results/route1/score.md); the Speed table of results/route1/findings.md gives medians per source and language, so the two can differ by a few ms. Latencies are not one clock: Jev is an HTTP round trip to api.typesafe.ai, the local LLM an HTTP call over the LAN, GLiNER GPU time in-process. Local cost (hardware, power) was not estimated. Tests: route1 and pv1 cells carry top_family (the family with the highest value in the row) and mcnemar_vs_top_p, an exact two-sided McNemar between this family\'s best arm and the top family\'s best arm on the same items (unanswered counts as wrong); route1 and pv1 cells other than Jev also carry mcnemar_vs_jev_p. Both compared arms are picked after the fact as the best of their family, and no p value is corrected for that or for the number of tests, so p >= 0.05 means the difference is not established, not that the two are level. ex1 cells have no test; their skill is F1 against a baseline F1 of 0, exact_frame_skill compares whole frames against extracting nothing.',
   states: plan.states,
   families: {

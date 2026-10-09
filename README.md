@@ -6,7 +6,7 @@ locally or hosted in the EU, answer the match questions as well as Jev?
 ## Notice: no Jev raw answers
 
 This repository is the public export of BKS-Lab's private bench
-(source commit `e4d8b864245c`). It publishes evaluations only:
+(source commit `aa27bf4cfe7a`). It publishes evaluations only:
 
 - Jev's raw answers per question (the result rows under `results/*/jev/`)
   are not published, and neither are per-case Jev values (the Jev columns of
@@ -233,11 +233,61 @@ p04-de-l09. Most is_req
 disagreements are the title and frame lines (title, duration, location), which
 the judges call no and every model calls yes; that is a definition question.
 
-## Status
+## Coverage
 
-See [results/pv1/report.md](results/pv1/report.md) for the latest run.
-Accuracy is measured against the blind Opus reference (`score-de.md`,
-`score-en.md`). No human reference yet.
+Which arm ran on which family, run 1 unless noted. "n/a" means the tool has
+no way to answer that kind of question, "not run" means it could and was not
+measured yet.
+
+| tool family | arm | pv1 (match) | route1 (routing) | ex1 (extraction) |
+|---|---|---|---|---|
+| Jev | jev | runs 1 to 5 | run 1 | n/a (choice, score and noul only) |
+| local LLM | winnow-12b | yes | yes | yes |
+| local LLM | qwen3.8-27b | yes | not run | not run |
+| local LLM | qwen3-32b | yes | not run | not run |
+| local LLM | shisa-de-1 | yes | not run | not run |
+| GLiNER Decide | gliner2.5-multi-decide (prompt, intext, focus) | yes | prompt, intext | n/a (classifier) |
+| GLiNER Decide | gliner2.5-decide (prompt, intext, focus) | yes | prompt, intext | n/a (classifier) |
+| GLiNER Decide | gliner2.5-decide-1b (prompt, intext, focus) | yes | prompt, intext | n/a (classifier) |
+| GLiNER extraction | gliner2.5-multi | n/a | n/a | de, en |
+| GLiNER extraction | gliner2-large | n/a | n/a | en only |
+
+`focus` is a pv1 adaptation (only the state sections a question names) and
+does not apply to route1, whose state is one short text. Planned next: the
+e-invoice yes/no test in [plan/einv1.md](plan/einv1.md), written down before
+it runs. The local LLMs other than Winnow-12B were left out of route1 and ex1
+on purpose: Winnow-12B was the best local arm in pv1, and every extra arm
+makes "best arm of the family" more flattering (see the note in
+`results/toolmap.json`).
+
+References: pv1 de against `adjudicated-a` (a model judgment cross-checked by
+two more model judges) and the first judge `claude-a`, pv1 en against a
+single model judge `claude-c`. route1 and ex1 against the gold labels of the
+public datasets. No human reference sample yet.
+
+## Public export
+
+The bench has two homes. The private working repository keeps Jev's raw
+answers, because TypeSafe's Master Customer Agreement (section 2.3(b)) rules
+out using Output to train an imitating model, and TypeSafe has been asked
+whether they may be published. The public repository
+[bks-lab/lab-bench](https://github.com/bks-lab/lab-bench) carries everything
+else. It is made from the private one by `bench/export-public.sh`, which:
+
+- copies only the paths listed in `bench/export-allow.json`, so a new kind
+  of file stays private until someone allows it,
+- drops Jev columns from per-case tables,
+- runs `bench/leak-scan.mjs`, which parses every structured file and does
+  not reuse the selection rules,
+- makes one commit with the GitHub noreply address.
+
+Refresh after a merge to main (run in the private repository):
+
+```bash
+gh repo clone bks-lab/lab-bench /tmp/lab-bench
+bench/export-public.sh --ref main --into /tmp/lab-bench
+git -C /tmp/lab-bench push origin main
+```
 
 ## Local runs
 
