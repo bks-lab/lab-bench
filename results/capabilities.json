@@ -134,6 +134,87 @@
    "unfinished": [
     "qwen3-vl-32b"
    ]
+  },
+  {
+   "id": "C4",
+   "capability": "Structured output and tool calling",
+   "design": "plan/c4.md",
+   "report": "results/c4/findings.md",
+   "best_local_model": "qwen3-14b",
+   "best_by_value": "qwen3-14b",
+   "tie": null,
+   "licence_class": "open source",
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live, 1,000 items, native tool calling",
+    "value": 0.919,
+    "ci95": [
+     0.901,
+     0.935
+    ],
+    "schema_validity_constrained": 0.9071,
+    "schema_validity_free": 0.81,
+    "baseline": "prompt mode of the same model",
+    "baseline_value": 0.946,
+    "reference": "BFCL leaderboard Qwen3-14B (FC) simple 95.25 % (sanity gate)",
+    "reference_ours": 0.935
+   },
+   "speed": {
+    "unit": "ms per tool-calling item, median (one call at a time)",
+    "value": 606.5,
+    "out_tok_s": 87.3453
+   },
+   "vram_peak_gb": 10.31,
+   "energy": {
+    "unit": "GPU joules per 1,000 tool-calling items",
+    "value": 288452
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "qwen3-14b",
+    "value": 0.919,
+    "vram_peak_gb": 10.31,
+    "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
+   },
+   "unfinished": []
+  },
+  {
+   "id": "C6",
+   "capability": "German reading comprehension (answer from a passage)",
+   "design": "plan/c6.md",
+   "report": "results/c6/findings.md",
+   "best_local_model": "gelectra-large",
+   "best_by_value": "gelectra-large",
+   "tie": null,
+   "licence_class": "open source",
+   "quality": {
+    "metric": "F1 on 1,000 GermanQuAD test questions",
+    "value": 0.8721,
+    "ci95": [
+     0.8551,
+     0.8883
+    ],
+    "baseline": "best-overlap sentence of the passage",
+    "baseline_value": 0.2213,
+    "reference": "GELECTRA-large card F1 88.1 on the full test set (sanity gate)",
+    "reference_ours": 0.871
+   },
+   "speed": {
+    "unit": "ms per question, median",
+    "value": 27.5
+   },
+   "vram_peak_gb": 1.73,
+   "energy": {
+    "unit": "GPU joules per 1,000 questions",
+    "value": 10638
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "gelectra-large",
+    "value": 0.8721,
+    "vram_peak_gb": 1.73,
+    "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
+   },
+   "unfinished": []
   }
  ]
 }
