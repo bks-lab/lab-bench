@@ -40,6 +40,19 @@ LLMS = {
     "mistral-small-3.2": "mistral-small3.2:24b",
     "winnow-12b": "hf.co/EldanRing/Winnow-12B:Q8_0",
 }
+# Arms sent as a raw prompt in the bench's own template (plan/t12.md, template rule)
+# instead of through Ollama's chat template. Winnow-12B ships a Gemma 4 Jinja
+# template whose thinking the API cannot switch off (the tag lists no thinking
+# capability); the bench's gemma4 template opens the model turn with an empty
+# thought channel, as in its earlier runs (plan/c6.md, notes of 2026-10-10).
+RAW_TEMPLATE = {"winnow-12b": "gemma4"}
+
+
+def raw_prompt(template, user):
+    """bench/lib/templates.mjs, one user turn and no system turn."""
+    if template == "gemma4":
+        return f"<|turn>user\n{user}<turn|>\n<|turn>model\n<|channel>thought\n<channel|>"
+    raise ValueError(template)
 
 
 def sha(p):
@@ -137,18 +150,26 @@ def main():
         info = None if a.mock else ol.model_info(tag)
         think = None if a.mock else ol.think_setting(info, False)
         meta.update({"ollama_tag": tag, "model": info, "options": OPTIONS, "format": FORMAT,
+                     "raw_template": RAW_TEMPLATE.get(a.arm),
                      "think": think if think is not None else "not supported by the model",
                      "versions": {"python": sys.version.split()[0], "ollama": None if a.mock else ol.version()}})
 
         def answer(r):
             if a.mock:
                 return {"answer": r["answers"][0]}, 0.0, None
-            body = {"model": tag, "messages": [{"role": "user", "content": prompt.replace("{context}", r["context"]).replace("{question}", r["question"])}],
-                    "format": FORMAT, "options": OPTIONS, "stream": False, "keep_alive": KEEP}
-            if think is not None:
-                body["think"] = think
-            resp, secs, err = ol.call("/api/chat", body, timeout=600)
-            raw = ((resp or {}).get("message") or {}).get("content")
+            user = prompt.replace("{context}", r["context"]).replace("{question}", r["question"])
+            if a.arm in RAW_TEMPLATE:
+                body = {"model": tag, "raw": True, "prompt": raw_prompt(RAW_TEMPLATE[a.arm], user),
+                        "format": FORMAT, "options": OPTIONS, "stream": False, "keep_alive": KEEP}
+                resp, secs, err = ol.call("/api/generate", body, timeout=600)
+                raw = (resp or {}).get("response")
+            else:
+                body = {"model": tag, "messages": [{"role": "user", "content": user}],
+                        "format": FORMAT, "options": OPTIONS, "stream": False, "keep_alive": KEEP}
+                if think is not None:
+                    body["think"] = think
+                resp, secs, err = ol.call("/api/chat", body, timeout=600)
+                raw = ((resp or {}).get("message") or {}).get("content")
             try:
                 ans = json.loads(raw)["answer"]
                 ans = ans if isinstance(ans, str) else json.dumps(ans, ensure_ascii=False)
