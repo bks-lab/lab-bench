@@ -19,8 +19,10 @@ python3 - "$here/bench-queue.task.xml" "$tmp/bench-queue.xml" "$sid" "$pythonw" 
 import sys
 src, dst, sid, pyw, root = sys.argv[1:]
 s = open(src, encoding="utf-8").read()
-s = s.replace("@USER_SID@", sid).replace("@PYTHONW@", pyw).replace("@ROOT@", root)
-assert "@" not in s.split("-->", 1)[1], "unfilled placeholder in task XML"
+head, body = s.split("-->", 1)
+body = body.replace("@USER_SID@", sid).replace("@PYTHONW@", pyw).replace("@ROOT@", root)
+assert "@" not in body, "unfilled placeholder in task XML"
+s = head + "-->" + body
 open(dst, "w", encoding="utf-16").write(s)
 PY2
 scp -q "$tmp/bench-queue.xml" "$JMB_HOST:$JMB_ROOT_SCP/bench-queue.task.xml"

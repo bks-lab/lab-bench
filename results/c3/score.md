@@ -14,8 +14,8 @@ Regex baseline over the PDF text layer: 0.270 (110 of 408 cells).
 | mistral-small-3.2 | vision | 24.0 | 0.909 | [0.880, 0.936] | 0.876 | 0.941 | 0.912 | 10 | -0.071 | 0.000 | yes |
 | docling+gemma4-12b | ocr+text | 11.9 | 0.875 | [0.838, 0.907] | 0.829 | 0.904 | 0.706 | 5 | -0.105 | 0.000 | yes |
 | docling+qwen3.8-27b | ocr+text | 27.3 | 0.591 | [0.561, 0.618] | 0.440 | 0.000 | 0.765 | 0 | -0.390 | 0.000 | yes |
+| qwen3-vl-8b | vision | 8.8 | 0.571 | [0.466, 0.672] | 0.413 | 0.279 | 0.765 | 3 | -0.409 | 0.000 | yes |
 | pdftext+qwen3.8-27b (reference, text layer) | text layer | 27.3 | 0.657 | [0.647, 0.664] | 0.530 | 0.000 | 0.912 | 0 | -0.324 | 0.000 | yes |
-| qwen3-vl-8b | vision | 8 | not finished | | | | | | | | |
 | qwen3-vl-32b | vision | 32 | not finished | | | | | | | | |
 
 ## Per field (share of 34 invoices right, descriptive)
@@ -27,6 +27,7 @@ Regex baseline over the PDF text layer: 0.270 (110 of 408 cells).
 | mistral-small-3.2 | 0.88 | 0.94 | 0.74 | 1.00 | 0.68 | 1.00 | 0.91 | 0.91 | 0.97 | 0.97 | 0.91 | 1.00 |
 | docling+gemma4-12b | 0.62 | 1.00 | 0.91 | 0.94 | 0.71 | 1.00 | 0.71 | 0.82 | 0.94 | 0.91 | 0.94 | 1.00 |
 | docling+qwen3.8-27b | 0.68 | 1.00 | 0.91 | 0.88 | 0.91 | 0.94 | 0.76 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 |
+| qwen3-vl-8b | 0.82 | 0.76 | 0.68 | 0.56 | 0.71 | 0.62 | 0.76 | 0.24 | 0.29 | 0.29 | 0.29 | 0.82 |
 | pdftext+qwen3.8-27b | 1.00 | 1.00 | 0.97 | 1.00 | 1.00 | 1.00 | 0.91 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 |
 
 ## Machine
@@ -38,15 +39,14 @@ Regex baseline over the PDF text layer: 0.270 (110 of 408 cells).
 | mistral-small-3.2 | 4.63 | [4.42, 4.81] | 1.49 | 19.74 | 20.42 | 1704 | yes |
 | docling+gemma4-12b | 6.50 | [6.10, 8.38] | 2.17 | 18.74 | 19.45 | 786 | yes |
 | docling+qwen3.8-27b | 26.15 | [23.87, 30.46] | 8.72 | 22.83 | 23.54 | 2805 | offloaded |
+| qwen3-vl-8b | 39.00 | [33.17, 43.22] | 11.77 | 11.93 | 12.67 | 62110 | yes |
 | pdftext+qwen3.8-27b | 2.08 | [2.05, 2.20] | 0.69 | 19.65 | 20.34 | 790 | yes |
-| qwen3-vl-8b | not finished: timeout after 60 min, killed; 17 of 34 invoices logged, median 39.3644 s | | | 11.91 | 12.59 | | yes |
 | qwen3-vl-32b | not finished: timeout after 180 min, killed; 17 of 34 invoices logged, median 493.7324 s | | | 22.84 | 23.52 | | offloaded |
 
 ## Unfinished arms (descriptive, from the job log, not scored)
 
 | arm | invoices logged | cells right of logged | failed calls | median s per logged invoice | mean GPU power W |
 |---|---|---|---|---|---|
-| qwen3-vl-8b | 17 | 116 of 204 | 3 | 39.3644 | 357.1 |
 | qwen3-vl-32b | 17 | 184 of 204 | 0 | 493.7324 | 59.3 |
 
 Peak VRAM from nvidia-smi over the whole job; total = including the idle desktop. Energy is GPU only, timed pass divided by 34.

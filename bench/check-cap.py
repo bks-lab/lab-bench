@@ -184,10 +184,11 @@ def c3():
             continue
         right = total = 0
         for r in rows("c3", arm.replace("+", "-")):
-            p = r["pred"] if isinstance(r["pred"], dict) else {}
+            failed = not isinstance(r["pred"], dict)  # failed call: all 12 cells wrong (results/c3/method.md)
+            p = r["pred"] if not failed else {}
             for f in fields:
                 total += 1
-                right += cell(f, p.get(f)) == cell(f, gold[r["id"]][f])
+                right += (not failed) and cell(f, p.get(f)) == cell(f, gold[r["id"]][f])
         check(f"C3 {arm} field accuracy ({right} of {total})", right / total, a["quality"]["value"], 0.0005)
 
 
