@@ -1,0 +1,99 @@
+{
+ "test": "C1",
+ "arm": "+bge-rerank",
+ "started": "2026-10-10T09:05:11.114+02:00",
+ "device": "cuda",
+ "probe": false,
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.19.0",
+  "sentence-transformers": "6.1.0",
+  "pytrec-eval-terrier": "0.5.10",
+  "bm25s": "0.3.13",
+  "PyStemmer": "3.1.0",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "torch_cuda": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4090"
+ },
+ "data_manifest": "cases/c1/manifest.json",
+ "arm_config": {
+  "model": "BAAI/bge-reranker-v2-m3",
+  "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+  "base_arm": "qwen3-emb-8b",
+  "rerank_depth": 100,
+  "pair_batch": 32,
+  "dtype": "torch.float16"
+ },
+ "summary": {
+  "miracl": {
+   "ndcg10": 0.6403823359019684,
+   "ndcg10_ci95": [
+    0.6046579179659316,
+    0.677295455066944
+   ],
+   "recall100": 0.9800130106687482,
+   "recall100_ci95": [
+    0.9672492193598751,
+    0.9907005594587562
+   ],
+   "mrr10": 0.6949167317200103,
+   "mrr10_ci95": [
+    0.6531141686182671,
+    0.7399556010928962
+   ],
+   "queries": 305,
+   "rerank_ms_per_query_median": 155.18599998904392,
+   "peak_vram_gb_torch": 1.52296192
+  },
+  "germandpr": {
+   "ndcg10": 0.8787119963031165,
+   "ndcg10_ci95": [
+    0.8646275814461276,
+    0.8906159816824172
+   ],
+   "recall100": 1.0,
+   "recall100_ci95": [
+    1.0,
+    1.0
+   ],
+   "mrr10": 0.8371107239643825,
+   "mrr10_ci95": [
+    0.8196890824622532,
+    0.8524631049167635
+   ],
+   "queries": 1025,
+   "rerank_ms_per_query_median": 244.62459998903796,
+   "peak_vram_gb_torch": 1.523225088
+  }
+ },
+ "sections": [
+  {
+   "name": "model_load",
+   "start": "2026-10-10T09:05:11.990+02:00",
+   "seconds": 7.0166,
+   "end": "2026-10-10T09:05:19.007+02:00"
+  },
+  {
+   "name": "rerank",
+   "start": "2026-10-10T09:05:19.285+02:00",
+   "set": "miracl",
+   "queries": 305,
+   "seconds": 46.8604,
+   "end": "2026-10-10T09:06:06.145+02:00"
+  },
+  {
+   "name": "rerank",
+   "start": "2026-10-10T09:06:06.277+02:00",
+   "set": "germandpr",
+   "queries": 1025,
+   "seconds": 254.9878,
+   "end": "2026-10-10T09:10:21.260+02:00"
+  }
+ ],
+ "finished": "2026-10-10T09:10:21.455+02:00",
+ "gate": null
+}

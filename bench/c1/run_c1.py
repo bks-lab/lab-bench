@@ -221,6 +221,19 @@ class QwenReranker:
         self.suf_ids = self.tok.encode(self.suffix, add_special_tokens=False)
         self.max_length = 8192
 
+    def last_logits(self, enc):
+        """Logits of the last position only (left padding, so it is every pair's last token).
+
+        The plain forward call runs the LM head over every position (pairs x tokens x
+        151k vocabulary) and the first run of 2026-10-10 spent its whole timeout doing
+        that. Same scores: only the last position was ever read.
+        """
+        try:
+            return self.model(**enc, logits_to_keep=1).logits[:, -1, :]
+        except TypeError:  # transformers without logits_to_keep
+            h = self.model.model(**enc).last_hidden_state[:, -1, :]
+            return self.model.lm_head(h)
+
     def score(self, query, docs, batch):
         import torch
         out = []
@@ -231,7 +244,7 @@ class QwenReranker:
             enc["input_ids"] = [self.pre_ids + x + self.suf_ids for x in enc["input_ids"]]
             enc = self.tok.pad(enc, padding=True, return_tensors="pt").to(self.device)
             with torch.no_grad():
-                logits = self.model(**enc).logits[:, -1, :]
+                logits = self.last_logits(enc)
             two = torch.stack([logits[:, self.no], logits[:, self.yes]], dim=1).float()
             out += torch.nn.functional.log_softmax(two, dim=1)[:, 1].exp().tolist()
         return out
@@ -268,7 +281,9 @@ def run_reranker(arm, cfg, sets, device, base_run, batch, sec):
             scorer(t, [text[d] for d, _ in base[(s, q)] if d in text][:8])
         run, lat = {}, {}
         with sec("rerank", set=s, queries=len(qs)):
-            for qid, qtext in qs:
+            for k, (qid, qtext) in enumerate(qs, 1):
+                if k % 50 == 0 or k == len(qs):
+                    print(f"rerank {s} {k}/{len(qs)}", flush=True)
                 cand = [d for d, _ in base[(s, qid)] if d in text]
                 t0 = time.perf_counter()
                 sc = scorer(qtext, [text[d] for d in cand])

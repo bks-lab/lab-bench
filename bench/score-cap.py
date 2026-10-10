@@ -63,6 +63,9 @@ C1_ARMS = {
     "qwen3-emb-0.6b": {"model": "Qwen/Qwen3-Embedding-0.6B", "params_m": 596, "params_source": "safetensors header", "licence": "Apache-2.0", "licence_class": "open source"},
     "qwen3-emb-8b": {"model": "Qwen/Qwen3-Embedding-8B", "params_m": 7567, "params_source": "safetensors header", "licence": "Apache-2.0", "licence_class": "open source"},
     "bm25": {"model": "BM25 (bm25s, German Snowball stemmer, k1 0.9, b 0.4)", "params_m": 0, "params_source": "no model", "licence": "MIT", "licence_class": "open source", "baseline": True},
+    # rerankers: rescore the top 100 of the best embedder (plan/c1.md), so each is a pipeline
+    "+bge-rerank": {"model": "qwen3-emb-8b top 100, reranked by BAAI/bge-reranker-v2-m3", "params_m": 568, "params_source": "safetensors header of the reranker (the base embedder adds 7,567)", "licence": "Apache-2.0", "licence_class": "open source", "reranker": True, "base": "qwen3-emb-8b"},
+    "+qwen3-rerank": {"model": "qwen3-emb-8b top 100, reranked by Qwen/Qwen3-Reranker-0.6B", "params_m": 596, "params_source": "safetensors header of the reranker (the base embedder adds 7,567)", "licence": "Apache-2.0", "licence_class": "open source", "reranker": True, "base": "qwen3-emb-8b"},
 }
 C2_ARMS = {
     "canary-1b-v2": {"model": "nvidia/canary-1b-v2", "params_m": 979, "params_source": "safetensors header", "licence": "CC BY 4.0", "licence_class": "open source (CC BY)"},
@@ -340,6 +343,28 @@ def score_c1():
                 "truncated_passages": meta["summary"][s].get("truncated_passages"),
             }
         res[arm] = {"info": info, "meta": meta, "status": status, "per": per}
+    # A reranker arm is a pipeline: the base embedder indexes and retrieves the
+    # top 100, the reranker rescores it. Index numbers come from the base run,
+    # the query time is base plus rerank per query, and peak VRAM is the larger
+    # of the two jobs (they run one after the other, never together).
+    for arm, info in C1_ARMS.items():
+        if not info.get("reranker"):
+            continue
+        r, b = res[arm], res[info["base"]]
+        rows = latest_rows("c1", arm); brows = latest_rows("c1", info["base"])
+        blat = {(x["set"], x["qid"]): x["latency_ms"] for x in brows}
+        for s in ("miracl", "germandpr"):
+            p, bp = r["per"][s], b["per"][s]
+            rr = [x["latency_ms"] for x in rows if x["set"] == s]
+            tot = [x["latency_ms"] + blat[(s, x["qid"])] for x in rows if x["set"] == s]
+            p["rerank_ms_median"] = float(np.median(rr))
+            p["query_ms_median"] = float(np.median(tot)); p["query_ms_median_ci95"] = ci_median(tot)
+            for k in ("index_seconds", "passages_per_s", "index_energy_j", "index_energy_j_per_1000_passages", "index_peak_vram_gb", "truncated_passages"):
+                p[k] = bp[k]
+        st = json.loads(json.dumps(r["status"]))
+        st["gpu"]["peak_over_idle_mib"] = max(r["status"]["gpu"]["peak_over_idle_mib"], b["status"]["gpu"]["peak_over_idle_mib"])
+        st["gpu"]["peak_mem_mib"] = max(r["status"]["gpu"]["peak_mem_mib"], b["status"]["gpu"]["peak_mem_mib"])
+        r["status_own"], r["status"] = r["status"], st
     bm = res["bm25"]["per"]["miracl"]["ndcg10"]
     models = [a for a in C1_ARMS if not C1_ARMS[a].get("baseline")]
     best = max(models, key=lambda a: res[a]["per"]["miracl"]["ndcg10"])
@@ -367,6 +392,10 @@ def c1_outputs(res, best, order, gates):
             "params_m": r["info"]["params_m"], "params_source": r["info"]["params_source"],
             "licence": r["info"]["licence"], "licence_class": r["info"]["licence_class"],
             "baseline": bool(r["info"].get("baseline")),
+            **({"pipeline": {"base_arm": r["info"]["base"], "rerank_depth": r["meta"]["arm_config"].get("rerank_depth"),
+                             "reranker_job_vram_peak_gb": round(r["status_own"]["gpu"]["peak_over_idle_mib"] / 1024, 2),
+                             "note": "the base embedder indexes and retrieves the top 100, the reranker rescores it; index numbers are the base run's, query time is base plus rerank per query, peak VRAM is the larger of the two jobs"}}
+               if r["info"].get("reranker") else {}),
             "quality": {
                 "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
                 "value": r3(m["ndcg10"]), "ci95": [r3(x) for x in m["ndcg10_ci95"]],
@@ -380,7 +409,8 @@ def c1_outputs(res, best, order, gates):
             "speed": {
                 "index_passages_per_s": r3(m["passages_per_s"]), "index_seconds_71277": r3(m["index_seconds"]),
                 "query_ms_median": r3(m["query_ms_median"]), "query_ms_median_ci95": [r3(x) for x in m["query_ms_median_ci95"]],
-                "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU",
+                **({"rerank_ms_median": r3(m["rerank_ms_median"])} if "rerank_ms_median" in m else {}),
+                "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU",
             },
             "energy": {"index_j": r3(m["index_energy_j"]), "index_j_per_1000_passages": r3(m["index_energy_j_per_1000_passages"]), "note": "GPU only, sum of 1 s power samples during the MIRACL index section"},
             "vram_peak_gb": mc["vram_peak_gb"], "vram_peak_index_gb": m["index_peak_vram_gb"],
@@ -611,7 +641,8 @@ def pick_best(arms, key_value, key_ci, key_vram, higher_better=True, eligible=No
     if not sep:
         if key_vram(nxt) < key_vram(top):
             shown = nxt
-        tie = {"top_by_value": top, "next": nxt, "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown"}
+        tie = {"top_by_value": top, "next": nxt, "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown"
+               + ("" if key_vram(nxt) != key_vram(top) else " (equal peak VRAM, so the better value is shown)")}
     return shown, top, tie
 
 
@@ -632,15 +663,15 @@ def capability_rows(c1, c2, c3):
     _SEP = lambda a, b: res[b]["vs_best"]["difference_shown"] if res[a].get("vs_best") is None else res[a]["vs_best"]["difference_shown"]
     shown, top, tie = pick_best(models, lambda a: d[a]["ndcg10"], None, lambda a: res[a]["status"]["gpu"]["peak_over_idle_mib"])
     small = [a for a in models if a != top and not res[a]["vs_best"]["difference_shown"]]
-    smallest = min(small + [top], key=lambda a: res[a]["status"]["gpu"]["peak_over_idle_mib"])
+    smallest = min([top] + small, key=lambda a: res[a]["status"]["gpu"]["peak_over_idle_mib"])
     rows.append({
-        "id": "C1", "capability": "German retrieval for RAG (embedder)", "design": "plan/c1.md", "report": "results/c1/findings.md",
+        "id": "C1", "capability": "German retrieval for RAG (embedder, optional reranker)", "design": "plan/c1.md", "report": "results/c1/findings.md",
         "best_local_model": shown, "best_by_value": top, "tie": tie,
         "licence_class": C1_ARMS[shown]["licence_class"],
         "quality": {"metric": "nDCG@10 on MIRACL de dev", "value": r3(d[shown]["ndcg10"]), "ci95": [r3(x) for x in d[shown]["ndcg10_ci95"]],
                     "baseline": "BM25", "baseline_value": r3(res["bm25"]["per"]["miracl"]["ndcg10"]),
                     "reference": "MTEB bge-m3 0.5759 (sanity gate)", "reference_ours": r3(gates["bge-m3"]["value"])},
-        "speed": {"unit": "ms per query (batch 1, encode plus exact search over 71,277 passages)", "value": r3(d[shown]["query_ms_median"]),
+        "speed": {"unit": "ms per query (batch 1, encode plus exact search over 71,277 passages" + (", plus reranking the top 100)" if C1_ARMS[shown].get("reranker") else ")"), "value": r3(d[shown]["query_ms_median"]),
                   "index_passages_per_s": r3(d[shown]["passages_per_s"])},
         "vram_peak_gb": round(res[shown]["status"]["gpu"]["peak_over_idle_mib"] / 1024, 2),
         "energy": {"unit": "GPU joules per 1,000 passages indexed", "value": r3(d[shown]["index_energy_j_per_1000_passages"])},
@@ -653,7 +684,7 @@ def capability_rows(c1, c2, c3):
     _SEP = lambda a, b: res2[b]["vs_best"]["difference_shown"] if "vs_best" not in res2[a] else res2[a]["vs_best"]["difference_shown"]
     shown2, top2, tie2 = pick_best(order2, lambda a: res2[a]["wer"], None, lambda a: res2[a]["status"]["gpu"]["peak_over_idle_mib"], higher_better=False)
     small2 = [a for a in order2 if a != top2 and not res2[a]["vs_best"]["difference_shown"]]
-    smallest2 = min(small2 + [top2], key=lambda a: res2[a]["status"]["gpu"]["peak_over_idle_mib"])
+    smallest2 = min([top2] + small2, key=lambda a: res2[a]["status"]["gpu"]["peak_over_idle_mib"])
     rows.append({
         "id": "C2", "capability": "German speech to text", "design": "plan/c2.md", "report": "results/c2/findings.md",
         "best_local_model": shown2, "best_by_value": top2, "tie": tie2,
@@ -675,7 +706,7 @@ def capability_rows(c1, c2, c3):
     _SEP = lambda a, b: res3[b]["vs_best"]["difference_shown"] if "vs_best" not in res3[a] else res3[a]["vs_best"]["difference_shown"]
     shown3, top3, tie3 = pick_best(cand3, lambda a: res3[a]["acc"], None, lambda a: res3[a]["status"]["gpu"]["peak_over_idle_mib"])
     small3 = [a for a in cand3 if a != best3 and not res3[a]["vs_best"]["difference_shown"]]
-    smallest3 = min(small3 + [best3], key=lambda a: res3[a]["status"]["gpu"]["peak_over_idle_mib"])
+    smallest3 = min([best3] + small3, key=lambda a: res3[a]["status"]["gpu"]["peak_over_idle_mib"])
     rows.append({
         "id": "C3", "capability": "Invoice fields from page images", "design": "plan/c3.md", "report": "results/c3/findings.md",
         "best_local_model": shown3, "best_by_value": top3, "tie": tie3,

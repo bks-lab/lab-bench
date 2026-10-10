@@ -1,0 +1,68 @@
+{
+ "test": "C3",
+ "arm": "qwen3-vl-8b",
+ "kind": "vision",
+ "ollama_tag": "qwen3-vl:8b",
+ "num_ctx": 32768,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 32768
+ },
+ "job_id": "20261010-071202-c3-qwen3-vl-8b",
+ "mock": false,
+ "model": {
+  "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+  "size": 6140415879,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3vl",
+   "families": [
+    "qwen3vl"
+   ],
+   "parameter_size": "8.8B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 4096
+  },
+  "blobs": [
+   "ed12a4674d727a74ac4816c906094ea9d3119fbea46ca93288c3ce4ffbe38c55"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools",
+   "thinking"
+  ]
+ },
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "d89f4ee9d5fa1d288987a0a0a1f097f4ee8f5d0d6cf82ac3575f619fd907c0fc",
+  "gold_sha256": "4bdef09c21b34e8b5c6ba4455604782bf09ccb122448aed870c705162571cfad",
+  "method_sha256": "611890b58ed9bbb74c4ed5a3732036db2b91d9d8ff94e25cb02ce89e586a977a"
+ },
+ "started": "2026-10-10T07:22:32.674+02:00",
+ "think": false,
+ "warmup_start": "2026-10-10T07:22:32.674+02:00",
+ "timed_start": "2026-10-10T07:24:49.757+02:00",
+ "timed_end": "2026-10-10T09:04:06.379+02:00",
+ "summary": {
+  "invoices": 34,
+  "cells": 408,
+  "field_accuracy": 0.571078431372549,
+  "money_accuracy": 0.27941176470588236,
+  "iban_accuracy": 0.7647058823529411,
+  "all12": 3,
+  "errors": 6,
+  "truncated": 0,
+  "median_s_per_invoice": 38.99923649999255,
+  "median_s_per_page": 11.773769214998174,
+  "pages": 118
+ },
+ "finished": "2026-10-10T09:04:06.381+02:00"
+}

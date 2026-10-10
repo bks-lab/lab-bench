@@ -7,9 +7,10 @@ with `num_ctx` 32768, temperature 0, seed 1. Data: 34 KoSIT test invoices
 rendered with the KoSIT visualisation, 118 page images at 200 dpi, 408
 cells. Scores: `results/c3/score.md`, chart data: `results/c3/summary.json`,
 capability row: `results/capabilities.json`. Every cell is rescored by the
-scorer and, with a separate normaliser, by `bench/check-cap.py` (6 checks
-agree). Notes after the run, including the two unfinished arms: the dated
-section of 2026-10-10 at the end of `plan/c3.md`.
+scorer and, with a separate normaliser, by `bench/check-cap.py` (7 checks
+agree). Notes after the run, including the unfinished arm and the
+qwen3-vl-8b rerun: the dated sections of 2026-10-10 at the end of
+`plan/c3.md`.
 
 ## Sanity gate
 
@@ -25,8 +26,8 @@ non-null gold values are in the PDF text layer. Passed.
 | mistral-small-3.2 | vision | 24.0 B | 0.909 | 0.880 to 0.936 | 0.941 | 0.912 | 10 of 34 | 4.6 | 19.7 | yes |
 | docling+gemma4-12b | OCR + text | 11.9 B | 0.875 | 0.838 to 0.907 | 0.904 | 0.706 | 5 of 34 | 6.5 | 18.7 | yes |
 | docling+qwen3.8-27b | OCR + text | 27.3 B | 0.591 | 0.561 to 0.618 | 0.000 | 0.765 | 0 | 26.1 | 22.8 | offloaded |
+| qwen3-vl-8b (rerun, 180 min budget) | vision | 8.8 B | 0.571 | 0.466 to 0.672 | 0.279 | 0.765 | 3 of 34 | 39.0 | 11.9 | yes |
 | pdftext+qwen3.8-27b (reference, text layer, not a scan) | text | 27.3 B | 0.657 | 0.647 to 0.664 | 0.000 | 0.912 | 0 | 2.1 | 19.7 | yes |
-| qwen3-vl-8b | vision | 8 B | did not finish in 60 min | | | | | | 11.9 | yes |
 | qwen3-vl-32b | vision | 32 B | did not finish in 180 min | | | | | | 22.8 | offloaded |
 | regex baseline over the text layer | rules | none | 0.270 | | | | | | | |
 
@@ -61,8 +62,8 @@ non-null gold values are in the PDF text layer. Passed.
 
 ## The two Qwen3-VL arms
 
-Both stopped at their queue timeout without writing results. From the job
-logs and the 1 s GPU logs:
+Both stopped at their first queue timeout without writing results; the 8B
+arm finished on one rerun. From the job logs and the 1 s GPU logs:
 
 - **qwen3-vl-32b: CPU spill.** The model (21 GB weights) and the 32,768
   token context do not fit: memory sat at 24.0 of 24.0 GB for the whole
@@ -76,21 +77,22 @@ logs and the 1 s GPU logs:
   resolution changes the method. Result: **did not finish within the
   preregistered budget on one 24 GB RTX 4090.**
 - **qwen3-vl-8b: slow image prompts plus empty answers.** It fits (12.9 GB,
-  no spill; 357 W average). Its good calls took 28 to 59 s per invoice
-  (gemma4-12b: 2.1 s), consistent with Qwen3-VL encoding each 1654 x 2339
-  page near native resolution. Three of the 17 logged invoices (01.09a,
-  01.12a, 01.18a, two or three pages each, so not the long ones) returned
-  empty content twice, and those calls ran for minutes at full GPU load
-  before returning. That fits a generation that runs until the context is
-  full without producing JSON (the tag has the thinking capability, which
-  the runner switches off); the runner keeps no raw answer of a failed
-  call, so the cause is not proven. On 14 good invoices it logged 116 of
-  204 cells right including the failed ones. The cheap, plan-conformant
-  fix is time: one rerun with the same code and settings and a 180 min
-  queue timeout instead of 60 was queued on 2026-10-10
-  (`20261010-071202-c3-qwen3-vl-8b`). The queue timeout is not part of the
-  design. Its result is reported separately when it lands; one attempt
-  only.
+  no spill; 357 W average). The first run stopped at its 60 min queue
+  timeout after 17 invoices. The rerun with the same code and settings and
+  a 180 min queue timeout (`20261010-071202-c3-qwen3-vl-8b`; the timeout is
+  not part of the design) finished in 101 GPU minutes and is the run
+  scored: **0.571 [0.466, 0.672]**, far below the Gemma arms (paired test
+  p < 0.001). Six of 34 invoices failed: five returned empty content after
+  minutes of full GPU load (01.09a, 01.12a, 01.18a, 02.01a, 03.05a; the
+  first three failed the same way in the first run), one got HTTP 400 from
+  Ollama (02.05a, the nine-page invoice). That fits a generation that runs
+  until the context is full without producing JSON; the runner keeps no
+  raw answer of a failed call, so the cause is not proven. On the 28
+  answered invoices it gets 233 of 336 cells (0.69), and on six of them it
+  returned `null` for all four money fields. Good calls take 39 s per
+  invoice (median, 11.8 s per page; gemma4-12b: 2.1 s), consistent with
+  Qwen3-VL encoding each 1654 x 2339 page near native resolution, at
+  62,110 GPU joules per invoice.
 
 ## Capability map
 

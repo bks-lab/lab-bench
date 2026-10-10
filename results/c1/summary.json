@@ -5,7 +5,7 @@
  "report": "results/c1/findings.md",
  "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
  "generator": "bench/score-cap.py",
- "best_by_ndcg10": "qwen3-emb-8b",
+ "best_by_ndcg10": "+bge-rerank",
  "gates": {
   "bge-m3": {
    "reference": 0.5759,
@@ -25,6 +25,143 @@
   }
  },
  "arms": [
+  {
+   "arm": "+bge-rerank",
+   "model": "qwen3-emb-8b top 100, reranked by BAAI/bge-reranker-v2-m3",
+   "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+   "params_m": 568,
+   "params_source": "safetensors header of the reranker (the base embedder adds 7,567)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "baseline": false,
+   "pipeline": {
+    "base_arm": "qwen3-emb-8b",
+    "rerank_depth": 100,
+    "reranker_job_vram_peak_gb": 2.15,
+    "note": "the base embedder indexes and retrieves the top 100, the reranker rescores it; index numbers are the base run's, query time is base plus rerank per query, peak VRAM is the larger of the two jobs"
+   },
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.6404,
+    "ci95": [
+     0.6047,
+     0.6773
+    ],
+    "skill_vs_bm25": 0.551,
+    "recall100": 0.98,
+    "recall100_ci95": [
+     0.9672,
+     0.9907
+    ],
+    "mrr10": 0.6949,
+    "mrr10_ci95": [
+     0.6531,
+     0.74
+    ],
+    "germandpr_ndcg10": 0.8787,
+    "germandpr_ndcg10_ci95": [
+     0.8646,
+     0.8906
+    ],
+    "germandpr_recall100": 1.0,
+    "germandpr_mrr10": 0.8371
+   },
+   "speed": {
+    "index_passages_per_s": 43.9493,
+    "index_seconds_71277": 1621.8,
+    "query_ms_median": 209.445,
+    "query_ms_median_ci95": [
+     207.915,
+     211.771
+    ],
+    "rerank_ms_median": 155.186,
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 719227.36,
+    "index_j_per_1000_passages": 10090.5953,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 21.83,
+   "vram_peak_index_gb": 21.83,
+   "vram_peak_total_gb": 23.49,
+   "fits_24gb": true,
+   "truncated_passages": 1295
+  },
+  {
+   "arm": "+qwen3-rerank",
+   "model": "qwen3-emb-8b top 100, reranked by Qwen/Qwen3-Reranker-0.6B",
+   "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+   "params_m": 596,
+   "params_source": "safetensors header of the reranker (the base embedder adds 7,567)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "baseline": false,
+   "pipeline": {
+    "base_arm": "qwen3-emb-8b",
+    "rerank_depth": 100,
+    "reranker_job_vram_peak_gb": 16.16,
+    "note": "the base embedder indexes and retrieves the top 100, the reranker rescores it; index numbers are the base run's, query time is base plus rerank per query, peak VRAM is the larger of the two jobs"
+   },
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.6339,
+    "ci95": [
+     0.6,
+     0.6665
+    ],
+    "skill_vs_bm25": 0.5429,
+    "recall100": 0.98,
+    "recall100_ci95": [
+     0.9672,
+     0.9907
+    ],
+    "mrr10": 0.676,
+    "mrr10_ci95": [
+     0.6348,
+     0.7169
+    ],
+    "germandpr_ndcg10": 0.8575,
+    "germandpr_ndcg10_ci95": [
+     0.8436,
+     0.8712
+    ],
+    "germandpr_recall100": 1.0,
+    "germandpr_mrr10": 0.812,
+    "vs_best": {
+     "best": "+bge-rerank",
+     "diff": 0.0064,
+     "diff_ci95": [
+      -0.0222,
+      0.0339
+     ],
+     "p": 0.602,
+     "intervals_overlap": true,
+     "difference_shown": false
+    }
+   },
+   "speed": {
+    "index_passages_per_s": 43.9493,
+    "index_seconds_71277": 1621.8,
+    "query_ms_median": 1078.182,
+    "query_ms_median_ci95": [
+     1037.861,
+     1101.886
+    ],
+    "rerank_ms_median": 1021.516,
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 719227.36,
+    "index_j_per_1000_passages": 10090.5953,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 21.83,
+   "vram_peak_index_gb": 21.83,
+   "vram_peak_total_gb": 23.49,
+   "fits_24gb": true,
+   "truncated_passages": 1295
+  },
   {
    "arm": "qwen3-emb-8b",
    "model": "Qwen/Qwen3-Embedding-8B",
@@ -58,7 +195,18 @@
      0.8557
     ],
     "germandpr_recall100": 1.0,
-    "germandpr_mrr10": 0.7914
+    "germandpr_mrr10": 0.7914,
+    "vs_best": {
+     "best": "+bge-rerank",
+     "diff": 0.0277,
+     "diff_ci95": [
+      0.0022,
+      0.055
+     ],
+     "p": 0.036,
+     "intervals_overlap": true,
+     "difference_shown": true
+    }
    },
    "speed": {
     "index_passages_per_s": 43.9493,
@@ -68,7 +216,7 @@
      53.401,
      53.922
     ],
-    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
    },
    "energy": {
     "index_j": 719227.36,
@@ -116,13 +264,13 @@
     "germandpr_recall100": 1.0,
     "germandpr_mrr10": 0.7594,
     "vs_best": {
-     "best": "qwen3-emb-8b",
-     "diff": 0.0311,
+     "best": "+bge-rerank",
+     "diff": 0.0588,
      "diff_ci95": [
-      0.0047,
-      0.0581
+      0.0297,
+      0.087
      ],
-     "p": 0.016,
+     "p": 0.0,
      "intervals_overlap": true,
      "difference_shown": true
     }
@@ -135,7 +283,7 @@
      28.169,
      28.313
     ],
-    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
    },
    "energy": {
     "index_j": 16554.97,
@@ -183,13 +331,13 @@
     "germandpr_recall100": 1.0,
     "germandpr_mrr10": 0.7735,
     "vs_best": {
-     "best": "qwen3-emb-8b",
-     "diff": 0.0361,
+     "best": "+bge-rerank",
+     "diff": 0.0637,
      "diff_ci95": [
-      0.0115,
-      0.0598
+      0.0378,
+      0.0892
      ],
-     "p": 0.006,
+     "p": 0.0,
      "intervals_overlap": true,
      "difference_shown": true
     }
@@ -202,7 +350,7 @@
      14.559,
      15.6377
     ],
-    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
    },
    "energy": {
     "index_j": 25764.63,
@@ -250,14 +398,14 @@
     "germandpr_recall100": 1.0,
     "germandpr_mrr10": 0.7762,
     "vs_best": {
-     "best": "qwen3-emb-8b",
-     "diff": 0.0483,
+     "best": "+bge-rerank",
+     "diff": 0.076,
      "diff_ci95": [
-      0.0244,
-      0.072
+      0.0487,
+      0.1016
      ],
      "p": 0.0,
-     "intervals_overlap": true,
+     "intervals_overlap": false,
      "difference_shown": true
     }
    },
@@ -269,7 +417,7 @@
      12.42,
      12.607
     ],
-    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
    },
    "energy": {
     "index_j": 25926.83,
@@ -317,14 +465,14 @@
     "germandpr_recall100": 0.999,
     "germandpr_mrr10": 0.736,
     "vs_best": {
-     "best": "qwen3-emb-8b",
-     "diff": 0.0666,
+     "best": "+bge-rerank",
+     "diff": 0.0942,
      "diff_ci95": [
-      0.0395,
-      0.0927
+      0.0639,
+      0.1255
      ],
      "p": 0.0,
-     "intervals_overlap": true,
+     "intervals_overlap": false,
      "difference_shown": true
     }
    },
@@ -336,7 +484,7 @@
      39.41,
      39.647
     ],
-    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
    },
    "energy": {
     "index_j": 80016.39,
@@ -384,11 +532,11 @@
     "germandpr_recall100": 0.9941,
     "germandpr_mrr10": 0.7383,
     "vs_best": {
-     "best": "qwen3-emb-8b",
-     "diff": 0.1013,
+     "best": "+bge-rerank",
+     "diff": 0.1289,
      "diff_ci95": [
-      0.0754,
-      0.1275
+      0.1016,
+      0.1566
      ],
      "p": 0.0,
      "intervals_overlap": false,
@@ -403,7 +551,7 @@
      8.732,
      9.106
     ],
-    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
    },
    "energy": {
     "index_j": 12317.95,
@@ -451,11 +599,11 @@
     "germandpr_recall100": 0.998,
     "germandpr_mrr10": 0.7493,
     "vs_best": {
-     "best": "qwen3-emb-8b",
-     "diff": 0.1029,
+     "best": "+bge-rerank",
+     "diff": 0.1305,
      "diff_ci95": [
-      0.0739,
-      0.1311
+      0.0987,
+      0.1623
      ],
      "p": 0.0,
      "intervals_overlap": false,
@@ -470,7 +618,7 @@
      13.376,
      13.44
     ],
-    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
    },
    "energy": {
     "index_j": 25608.04,
@@ -518,11 +666,11 @@
     "germandpr_recall100": 0.9756,
     "germandpr_mrr10": 0.4137,
     "vs_best": {
-     "best": "qwen3-emb-8b",
-     "diff": 0.4136,
+     "best": "+bge-rerank",
+     "diff": 0.4413,
      "diff_ci95": [
-      0.3688,
-      0.4593
+      0.3995,
+      0.483
      ],
      "p": 0.0,
      "intervals_overlap": false,
@@ -537,7 +685,7 @@
      0.326,
      0.356
     ],
-    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1 (rerankers: plus rescoring the top 100, pair batch 32); BM25 runs on the CPU"
    },
    "energy": {
     "index_j": 59.67,

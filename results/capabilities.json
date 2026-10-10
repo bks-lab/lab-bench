@@ -6,19 +6,23 @@
  "rows": [
   {
    "id": "C1",
-   "capability": "German retrieval for RAG (embedder)",
+   "capability": "German retrieval for RAG (embedder, optional reranker)",
    "design": "plan/c1.md",
    "report": "results/c1/findings.md",
-   "best_local_model": "qwen3-emb-8b",
-   "best_by_value": "qwen3-emb-8b",
-   "tie": null,
+   "best_local_model": "+bge-rerank",
+   "best_by_value": "+bge-rerank",
+   "tie": {
+    "top_by_value": "+bge-rerank",
+    "next": "+qwen3-rerank",
+    "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown (equal peak VRAM, so the better value is shown)"
+   },
    "licence_class": "open source",
    "quality": {
     "metric": "nDCG@10 on MIRACL de dev",
-    "value": 0.6127,
+    "value": 0.6404,
     "ci95": [
-     0.5758,
-     0.6511
+     0.6047,
+     0.6773
     ],
     "baseline": "BM25",
     "baseline_value": 0.1991,
@@ -26,8 +30,8 @@
     "reference_ours": 0.5767
    },
    "speed": {
-    "unit": "ms per query (batch 1, encode plus exact search over 71,277 passages)",
-    "value": 53.653,
+    "unit": "ms per query (batch 1, encode plus exact search over 71,277 passages, plus reranking the top 100)",
+    "value": 209.445,
     "index_passages_per_s": 43.9493
    },
    "vram_peak_gb": 21.83,
@@ -37,8 +41,8 @@
    },
    "fits_24gb": true,
    "smallest_within_interval": {
-    "arm": "qwen3-emb-8b",
-    "value": 0.6127,
+    "arm": "+bge-rerank",
+    "value": 0.6404,
     "vram_peak_gb": 21.83,
     "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
    }
@@ -128,7 +132,6 @@
     "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
    },
    "unfinished": [
-    "qwen3-vl-8b",
     "qwen3-vl-32b"
    ]
   }

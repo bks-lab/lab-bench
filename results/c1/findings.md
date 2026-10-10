@@ -54,15 +54,50 @@ published number.
   high, so many negatives share the query's words. 0.199 is a floor for
   this corpus, not a statement about BM25 on company documents.
 
+## Rerankers on top of qwen3-emb-8b (2026-10-10)
+
+Both rerankers rescore the top 100 of `qwen3-emb-8b`, the best embedder,
+chosen after the fact as the plan says. Each row is a pipeline: the
+embedder indexes and retrieves, the reranker reorders. Recall@100 is the
+embedder's (0.980) by construction.
+
+| pipeline | reranker params | nDCG@10 MIRACL de | 95 % CI | GermanDPR nDCG@10 | rerank ms per query | query ms total | reranker job peak VRAM GB |
+|---|---|---|---|---|---|---|---|
+| qwen3-emb-8b + bge-reranker-v2-m3 | 568 M | **0.640** | 0.605 to 0.677 | 0.879 | 155 | 209 | 2.2 |
+| qwen3-emb-8b + Qwen3-Reranker-0.6B | 596 M | 0.634 | 0.600 to 0.667 | 0.858 | 1,022 | 1,078 | 16.2 |
+| qwen3-emb-8b alone | | 0.613 | 0.576 to 0.651 | 0.841 | | 54 | |
+
+- **bge-reranker-v2-m3 adds 0.028 nDCG@10** over the embedder alone, and
+  the paired bootstrap separates the two (p 0.036). On GermanDPR it adds
+  0.038. It costs 155 ms per query for 100 pairs at 512 tokens and 2.2 GB.
+- **Qwen3-Reranker-0.6B is not separated from bge-reranker-v2-m3**
+  (0.006 lower, p 0.60) but takes 6.6 times as long per query and 16 GB,
+  because it scores each pair as a causal language model over the full
+  prompt (max length 8,192 tokens, the model card's; `plan/c1.md` fixes
+  512 tokens for the embedders only).
+- **The first Qwen3-Reranker run did not finish.** Job
+  `20261010-071230-c1-+qwen3-rerank` hit its 60 min queue timeout with the
+  card full (24.0 GB) and no output. Cause: the forward call computed the
+  language-model head over every position of every pair (151k vocabulary)
+  and then kept only the last position. `bench/c1/run_c1.py` now asks for
+  the last position only (`logits_to_keep=1`); the scores are the same
+  (checked on CPU, differences below 2e-10). The rerun
+  `20261010-101637-c1-+qwen3-rerank` with that fix, same model, revision,
+  prompt, length and base run, finished in 41 GPU minutes; that is the run
+  scored here.
+
 ## Capability map
 
-Best local model: `qwen3-emb-8b` (Apache-2.0, open source), 0.613
-[0.576, 0.651], 53.7 ms per query at batch 1, 21.8 GB peak, 10,091 J per
-1,000 passages indexed, fits on one 24 GB card. No smaller arm lies within
-its interval by the paired test, so the smallest model within the interval
-is the model itself. For a stock that is large or changes daily, bge-m3 or
-e5-large (3 GB, about 27 times faster indexing, 0.04 to 0.05 lower) is the
-practical choice; that is advice, not a measured equivalence.
+Best local result: the pipeline **qwen3-emb-8b + bge-reranker-v2-m3**
+(both Apache-2.0, open source), 0.640 [0.605, 0.677] against BM25 0.199,
+209 ms per query at batch 1 (54 ms retrieval plus 155 ms reranking),
+21.8 GB peak (the embedder's indexing job; the reranker needs 2.2 GB and
+runs after it), 10,091 J per 1,000 passages indexed. The paired test does
+not separate it from the Qwen3-Reranker pipeline, which has the same peak,
+so the row states the tie and keeps bge-reranker-v2-m3. For a stock that
+is large or changes daily, bge-m3 or e5-large (3 GB, about 27 times faster
+indexing, 0.06 to 0.08 lower) is the practical choice; a reranker on top of
+one of them was not measured.
 
 ## Limits
 
@@ -73,6 +108,5 @@ practical choice; that is advice, not a measured equivalence.
 - Exposure: bge-m3 and multilingual-e5 list MIRACL train in their
   fine-tuning data; the dev queries are not in train, but the corpus is the
   same German Wikipedia. Qwen3-Embedding's training data is not itemised.
-- Rerankers on top of `qwen3-emb-8b` (the best embedder, chosen after the
-  fact as the plan says) were queued on 2026-10-10 and are reported
-  separately.
+- Rerankers were run on top of `qwen3-emb-8b` only, the best embedder
+  chosen after the fact as the plan says.
