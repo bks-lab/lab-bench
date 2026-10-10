@@ -507,7 +507,9 @@ def score_c7():
                       "prompt_tokens_median": float(np.median([r["prompt_eval_count"] for r in rr if r["prompt_eval_count"]])),
                       "length_off": sum(1 for r in rr if r["length_off"]), "errors": sum(1 for r in rr if r["error"]),
                       "vram_peak_gb": round((pk - idle) / 1024, 2), "vram_peak_total_gb": round(pk / 1024, 2),
-                      "offloaded": any(offloaded_ps(s.get("ps")) for s in secs) or pk >= CARD_MIB - 512,
+                      "layers_on_gpu": (meta.get("calibration", {}).get(str(L)) or {}).get("layers_on_gpu"),
+                      "offloaded": any(offloaded_ps(s.get("ps")) for s in secs) or pk >= CARD_MIB - 512
+                                   or bool((lambda g: g and g[0] < g[1])((meta.get("calibration", {}).get(str(L)) or {}).get("layers_on_gpu"))),
                       "energy_j_per_prompt": e / len(rr)}
         res[a] = {"finished": bool(per) and (meta.get("gate") or {}).get("passed", True) and len(per) == len(meta["lengths"]),
                   "partial": bool(per), "meta": meta, "status": status, "per": per, "gate": meta.get("gate")}
@@ -538,7 +540,8 @@ def score_c7():
                                         "ttft_s_median": r3(p["ttft_s_median"]), "ttft_ci95": [r3(x) for x in p["ttft_ci95"]] if p["ttft_ci95"] else None,
                                         "prompt_tokens_median": p["prompt_tokens_median"], "length_off": p["length_off"], "errors": p["errors"],
                                         "vram_peak_gb": p["vram_peak_gb"], "vram_peak_total_gb": p["vram_peak_total_gb"],
-                                        "offloaded": p["offloaded"], "energy_j_per_prompt": round(p["energy_j_per_prompt"])}
+                                        "offloaded": p["offloaded"], "layers_on_gpu": p["layers_on_gpu"],
+                                        "energy_j_per_prompt": round(p["energy_j_per_prompt"])}
                                 for L, p in sorted(r["per"].items())}
             d["longest_length_at_90"] = r["longest_90"]
             top_len = max(r["per"])
@@ -665,10 +668,19 @@ def score_c8():
             else:
                 d["j_per_1000_gen_tokens"] = float(np.mean([x["energy_j"] / x["generated"] * 1000 for x in reps if x["generated"]]))
             per[f"{wl}@{lv}"] = d
-        lv_off = {lv["level"]: offloaded_ps(lv.get("ps")) for lv in meta.get("levels_detail", [])}
+        # offloaded per level: the layer count of the private llama-server (meta from the runner,
+        # or layers.json written by the import from the job's logs); /api/ps cannot show it
+        lay_file = ROOT / "results" / "c8" / sc.arm_dir(a) / "layers.json"
+        lay = json.load(open(lay_file, encoding="utf-8"))["layers_on_gpu"] if lay_file.exists() else {}
+        lv_off, lv_layers = {}, {}
+        for lv in meta.get("levels_detail", []):
+            got = lv.get("layers_on_gpu") or lay.get(str(lv["level"]))
+            lv_layers[lv["level"]] = got
+            lv_off[lv["level"]] = bool(got and got[0] < got[1]) or offloaded_ps(lv.get("ps"))
         for k, d in per.items():
             lvl = int(k.split("@")[1])
             d["offloaded"] = bool(lv_off.get(lvl)) or d["peak_vram_total_gb"] * 1024 >= CARD_MIB - 512
+            d["layers_on_gpu"] = lv_layers.get(lvl)
             base = per.get(f"{k.split('@')[0]}@1")
             d["scaling_vs_1"] = d["agg_gen_tok_s_mean"] / base["agg_gen_tok_s_mean"] if base and base["agg_gen_tok_s_mean"] and k.split("@")[0] != "decide" else (
                 d["decisions_per_h_mean"] / base["decisions_per_h_mean"] if base and k.startswith("decide") else None)
@@ -741,6 +753,11 @@ def c8_md(s):
             c16 = c.get(f"{wl}@16", {})
             en = (f"{c16.get('j_per_1000_decisions', 0):.0f}" if wl == "decide" else f"{c[f'{wl}@1']['j_per_1000_gen_tokens']:.0f} | {c16.get('j_per_1000_gen_tokens', 0):.0f}")
             L.append(f"| {x['arm']} | {x['engine']} | {x.get('quant') or ''} | {cell(1)} | {cell(4)} | {cell(8)} | {cell(16)} | {f3(c16.get('scaling_vs_1'))} | {en} | {c16.get('peak_vram_gb', '')} | {'yes' if c16.get('offloaded') else 'no'} |")
+    L += ["", "## Layers on the GPU per level (llama-server log; fewer than all = split with the CPU)", "", "| arm | 1 | 4 | 8 | 16 |", "|---|---|---|---|---|"]
+    for x in s["arms"]:
+        c = x.get("configurations") or {}
+        if "chat-short@1" in c and x["engine"] == "ollama":
+            L.append(f"| {x['arm']} | " + " | ".join("/".join(str(int(v)) for v in (c.get(f"chat-short@{lv}", {}).get("layers_on_gpu") or [])) or "n/a" for lv in (1, 4, 8, 16)) + " |")
     L += ["", "## Per request at concurrency 1 (medians)", "", "| arm | chat-short gen tok/s | 95 % CI | chat-long gen tok/s | chat-long prompt tok/s | TTFT p50 chat-short s | TTFT p50 chat-long s | TTFT p95 chat-long s at 16 | tokens per answer (chat-short) |", "|---|---|---|---|---|---|---|---|---|"]
     for x in s["arms"]:
         c = x.get("configurations") or {}

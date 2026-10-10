@@ -293,6 +293,19 @@ def do_import(queue):
                 for r in rows:
                     f.write(json.dumps(r, ensure_ascii=False) + "\n")
         wr_json(out / "queue-status.json", scrub(status))
+        # C7, C8: layers on the GPU from the private llama-server logs ("offloaded X/Y layers to GPU");
+        # /api/ps does not show a split model under Ollama 0.35 (plan/c8.md, notes of 2026-10-11)
+        logs = sorted(glob.glob(os.path.join(d, "ollama-private*.log")))
+        if test in ("c7", "c8") and logs:
+            sys.path.insert(0, str(ROOT / "bench" / "lib"))
+            import ollama as _ol  # noqa: PLC0415
+            lay = {}
+            for lp in logs:
+                m = re.search(r"ollama-private-?(\d*)\.log$", lp)
+                got = _ol.layers_on_gpu(lp)
+                if got:
+                    lay[m.group(1) or "all"] = list(got)
+            wr_json(out / "layers.json", {"source": "llama-server log of the job's private ollama serve, last 'offloaded X/Y layers to GPU' line of the language model", "layers_on_gpu": lay})
         (ROOT / "results" / test / "gpu").mkdir(exist_ok=True)
         shutil.copyfile(os.path.join(d, "gpu.csv"), ROOT / "results" / test / "gpu" / f"{ad}.csv")
         n += 1

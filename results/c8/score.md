@@ -8,29 +8,65 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | arm | tokens/s per repetition | CV | passed |
 |---|---|---|---|
 | granite4-3b | 238.4, 238.6, 237.7 | 0.19 % | yes |
+| qwen3-8b | 141.1, 141.1, 141.1 | 0.01 % | yes |
+| gemma4-12b | 147.5, 147.9, 147.7 | 0.13 % | yes |
+| winnow-12b | 58.8, 58.7, 58.6 | 0.17 % | yes |
+| qwen3-14b | 85.7, 85.6, 85.6 | 0.04 % | yes |
+| gpt-oss-20b | 173.8, 173.2, 173.6 | 0.16 % | yes |
 
 ## chat-short: aggregate generation tokens/s by concurrency (mean of 3, range)
 
 | arm | engine | quant | 1 | 4 | 8 | 16 | scaling 16 vs 1 | J per 1,000 tokens at 1 | J per 1,000 tokens at 16 | peak VRAM GB at 16 | offloaded at 16 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | granite4-3b | ollama | Q4_K_M | 238.2 (237.7 to 238.6) | 711.5 (710.0 to 712.8) | 977.5 (975.8 to 979.1) | 1378.2 (1367.4 to 1391.4) | 5.785 | 1116 | 165 | 8.88 | no |
+| qwen3-8b | ollama | Q4_K_M | 141.1 (141.1 to 141.1) | 435.8 (435.1 to 436.1) | 648.1 (645.5 to 650.2) | 875.8 (868.5 to 880.8) | 6.208 | 2278 | 305 | 16.4 | no |
+| gemma4-12b | ollama | Q4_K_M | 147.7 (147.5 to 147.9) | 300.1 (296.6 to 302.7) | 397.0 (390.8 to 400.8) | 146.2 (145.4 to 147.2) | 0.990 | 2309 | 858 | 22.27 | yes |
+| winnow-12b | ollama | Q8_0 | 58.7 (58.6 to 58.8) | 184.9 (184.6 to 185.4) | 286.8 (284.4 to 288.5) | 122.7 (121.8 to 123.7) | 2.090 | 4758 | 746 | 21.77 | yes |
+| qwen3-14b | ollama | Q4_K_M | 85.6 (85.6 to 85.7) | 276.9 (276.5 to 277.3) | 421.3 (420.2 to 422.2) | 564.0 (557.3 to 567.8) | 6.587 | 3990 | 546 | 21.27 | no |
+| gpt-oss-20b | ollama | MXFP4 | 173.5 (173.2 to 173.8) | 387.2 (386.3 to 388.0) | 541.4 (540.3 to 543.1) | 737.6 (736.3 to 738.3) | 4.250 | 1657 | 393 | 14.69 | no |
 
 ## chat-long: aggregate generation tokens/s by concurrency (mean of 3, range)
 
 | arm | engine | quant | 1 | 4 | 8 | 16 | scaling 16 vs 1 | J per 1,000 tokens at 1 | J per 1,000 tokens at 16 | peak VRAM GB at 16 | offloaded at 16 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | granite4-3b | ollama | Q4_K_M | 186.0 (185.7 to 186.3) | 346.4 (337.5 to 352.0) | 450.7 (433.7 to 459.9) | 500.8 (473.0 to 514.7) | 2.692 | 1640 | 610 | 8.88 | no |
+| qwen3-8b | ollama | Q4_K_M | 112.3 (112.0 to 112.5) | 233.9 (233.7 to 233.9) | 292.2 (292.1 to 292.3) | 325.3 (325.2 to 325.4) | 2.898 | 3089 | 1070 | 16.4 | no |
+| gemma4-12b | ollama | Q4_K_M | 104.1 (104.0 to 104.2) | 153.0 (151.5 to 154.1) | 171.7 (171.1 to 172.4) | 85.8 (84.8 to 86.9) | 0.824 | 3336 | 2120 | 22.29 | yes |
+| winnow-12b | ollama | Q8_0 | 50.7 (50.7 to 50.7) | 116.6 (116.6 to 116.7) | 147.6 (147.5 to 147.7) | 73.7 (73.5 to 73.7) | 1.453 | 5824 | 2127 | 21.77 | yes |
+| qwen3-14b | ollama | Q4_K_M | 67.7 (67.7 to 67.7) | 147.1 (147.1 to 147.2) | 182.5 (182.4 to 182.5) | 194.1 (194.0 to 194.3) | 2.868 | 5417 | 1954 | 21.27 | no |
+| gpt-oss-20b | ollama | MXFP4 | 141.2 (141.0 to 141.3) | 260.0 (259.5 to 260.3) | 320.2 (320.0 to 320.5) | 369.9 (369.2 to 370.8) | 2.620 | 2199 | 941 | 14.69 | no |
 
 ## decide: decisions per hour by concurrency (mean of 3, range)
 
 | arm | engine | quant | 1 | 4 | 8 | 16 | scaling 16 vs 1 | J per 1,000 decisions at 16 | peak VRAM GB at 16 | offloaded at 16 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | granite4-3b | ollama | Q4_K_M | 104527 (98165 to 111359) | 248621 (242690 to 252726) | 255897 (250850 to 262923) | 260731 (253941 to 273059) | 2.494 | 3169 | 8.88 | no |
+| qwen3-8b | ollama | Q4_K_M | 94942 (92898 to 96194) | 192472 (191672 to 192952) | 196007 (195393 to 196979) | 190414 (189879 to 190955) | 2.006 | 5981 | 16.4 | no |
+| gemma4-12b | ollama | Q4_K_M | 50597 (50248 to 50784) | 68450 (66552 to 71818) | 75063 (74267 to 76226) | 35463 (35240 to 35592) | 0.701 | 17027 | 22.29 | yes |
+| winnow-12b | ollama | Q8_0 | 49159 (48834 to 49356) | 61922 (61802 to 62143) | 69112 (68707 to 69870) | 30595 (30428 to 30840) | 0.622 | 18755 | 21.78 | yes |
+| qwen3-14b | ollama | Q4_K_M | 81528 (80626 to 82572) | 125473 (124782 to 126162) | 124959 (123717 to 125809) | 114981 (114919 to 115067) | 1.410 | 11491 | 21.27 | no |
+| gpt-oss-20b | ollama | MXFP4 | 60039 (59958 to 60121) | 90415 (90240 to 90644) | 117041 (115734 to 118287) | 120469 (117231 to 122477) | 2.006 | 10760 | 14.69 | no |
+
+## Layers on the GPU per level (llama-server log; fewer than all = split with the CPU)
+
+| arm | 1 | 4 | 8 | 16 |
+|---|---|---|---|---|
+| granite4-3b | 41/41 | 41/41 | 41/41 | 41/41 |
+| qwen3-8b | 37/37 | 37/37 | 37/37 | 37/37 |
+| gemma4-12b | 49/49 | 49/49 | 49/49 | 44/49 |
+| winnow-12b | 49/49 | 49/49 | 49/49 | 44/49 |
+| qwen3-14b | 41/41 | 41/41 | 41/41 | 41/41 |
+| gpt-oss-20b | 25/25 | 25/25 | 25/25 | 25/25 |
 
 ## Per request at concurrency 1 (medians)
 
 | arm | chat-short gen tok/s | 95 % CI | chat-long gen tok/s | chat-long prompt tok/s | TTFT p50 chat-short s | TTFT p50 chat-long s | TTFT p95 chat-long s at 16 | tokens per answer (chat-short) |
 |---|---|---|---|---|---|---|---|---|
 | granite4-3b | 249.072 | [248.5, 251.3] | 227.745 | 19326.745 | 0.050 | 0.251 | 3.288 | 256.000 |
+| qwen3-8b | 146.482 | [146.2, 146.8] | 135.100 | 11570.541 | 0.069 | 0.388 | 5.583 | 256.000 |
+| gemma4-12b | 162.124 | [159.7, 163.9] | 153.775 | 5504.355 | 0.148 | 0.789 | 19.194 | 256.000 |
+| winnow-12b | 60.815 | [60.8, 60.8] | 58.842 | 6180.734 | 0.205 | 0.747 | 21.575 | 256.000 |
+| qwen3-14b | 88.688 | [88.6, 88.8] | 82.913 | 6114.947 | 0.105 | 0.693 | 11.108 | 256.000 |
+| gpt-oss-20b | 183.877 | [183.4, 184.2] | 178.018 | 13317.847 | 0.101 | 0.390 | 5.569 | 256.000 |
 
 Energy is GPU only (sum of 1 s power samples in each timed section). Peak VRAM is nvidia-smi memory.used minus the idle value before the job. vLLM rows run a different 4-bit build (AWQ) and a different engine; they compare engine plus quantisation, never engine alone (plan/c8.md).

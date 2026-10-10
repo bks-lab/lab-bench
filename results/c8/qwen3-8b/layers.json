@@ -1,0 +1,21 @@
+{
+ "source": "llama-server log of the job's private ollama serve, last 'offloaded X/Y layers to GPU' line of the language model",
+ "layers_on_gpu": {
+  "1": [
+   37,
+   37
+  ],
+  "16": [
+   37,
+   37
+  ],
+  "4": [
+   37,
+   37
+  ],
+  "8": [
+   37,
+   37
+  ]
+ }
+}

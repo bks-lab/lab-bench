@@ -1,0 +1,985 @@
+{
+ "test": "C8",
+ "arm": "qwen3-8b",
+ "ollama_tag": "qwen3:8b",
+ "template_decide": "chatml",
+ "levels": [
+  1,
+  4,
+  8,
+  16
+ ],
+ "reps": 3,
+ "workloads": [
+  "chat-short",
+  "chat-long",
+  "decide"
+ ],
+ "num_ctx": 5120,
+ "num_predict": 256,
+ "limit": 0,
+ "mock": false,
+ "job_id": "20261010-161118-c8-qwen3-8b",
+ "inputs": {
+  "chat.jsonl": "e150f0886ae5117ad1dfe9475dd3dea9e71b34b950ddbfde21143b2392ad42f6",
+  "decide.jsonl": "e024ec15ed0a4d48f98180b346dcf8c6cd29c2743bd9e18c213eb97907ec1d17"
+ },
+ "calibration": {
+  "chat-short": {
+   "target_tokens": 512,
+   "overhead_tokens": 61,
+   "chars_per_token": 3.46119733924612,
+   "chars": 1561,
+   "calls": [
+    {
+     "chars": 1353,
+     "tokens": 450
+    },
+    {
+     "chars": 1568,
+     "tokens": 514
+    },
+    {
+     "chars": 1561,
+     "tokens": 512
+    }
+   ]
+  },
+  "chat-long": {
+   "target_tokens": 4096,
+   "overhead_tokens": 61,
+   "chars_per_token": 3.3833002973240833,
+   "chars": 13651,
+   "calls": [
+    {
+     "chars": 12105,
+     "tokens": 3635
+    },
+    {
+     "chars": 13666,
+     "tokens": 4099
+    },
+    {
+     "chars": 13655,
+     "tokens": 4097
+    }
+   ]
+  }
+ },
+ "levels_detail": [
+  {
+   "level": 1,
+   "env": {
+    "OLLAMA_NUM_PARALLEL": "1",
+    "OLLAMA_MAX_LOADED_MODELS": "1",
+    "LLAMA_ARG_CACHE_RAM": "0"
+   },
+   "start": "2026-10-10T18:45:55.367+02:00",
+   "load_s": 3.86,
+   "ps": [
+    {
+     "name": "qwen3:8b",
+     "size": 5836164300,
+     "size_vram": 5836164300,
+     "context_length": 5120
+    }
+   ],
+   "end": "2026-10-10T19:01:26.809+02:00"
+  },
+  {
+   "level": 4,
+   "env": {
+    "OLLAMA_NUM_PARALLEL": "4",
+    "OLLAMA_MAX_LOADED_MODELS": "1",
+    "LLAMA_ARG_CACHE_RAM": "0"
+   },
+   "start": "2026-10-10T19:01:26.928+02:00",
+   "load_s": 2.12,
+   "ps": [
+    {
+     "name": "qwen3:8b",
+     "size": 8101088460,
+     "size_vram": 8101088460,
+     "context_length": 5120
+    }
+   ],
+   "end": "2026-10-10T19:08:14.469+02:00"
+  },
+  {
+   "level": 8,
+   "env": {
+    "OLLAMA_NUM_PARALLEL": "8",
+    "OLLAMA_MAX_LOADED_MODELS": "1",
+    "LLAMA_ARG_CACHE_RAM": "0"
+   },
+   "start": "2026-10-10T19:08:14.596+02:00",
+   "load_s": 2.13,
+   "ps": [
+    {
+     "name": "qwen3:8b",
+     "size": 11332820664,
+     "size_vram": 11332820664,
+     "context_length": 5120
+    }
+   ],
+   "end": "2026-10-10T19:13:50.432+02:00"
+  },
+  {
+   "level": 16,
+   "env": {
+    "OLLAMA_NUM_PARALLEL": "16",
+    "OLLAMA_MAX_LOADED_MODELS": "1",
+    "LLAMA_ARG_CACHE_RAM": "0"
+   },
+   "start": "2026-10-10T19:13:50.559+02:00",
+   "load_s": 2.37,
+   "ps": [
+    {
+     "name": "qwen3:8b",
+     "size": 17160785100,
+     "size_vram": 17160785100,
+     "context_length": 5120
+    }
+   ],
+   "end": "2026-10-10T19:18:50.485+02:00"
+  }
+ ],
+ "sections": [
+  {
+   "name": "chat-short@1#1",
+   "workload": "chat-short",
+   "level": 1,
+   "rep": 1,
+   "requests": 64,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 7200.0,
+    "power_w": 58.02,
+    "temp_c": 44.0,
+    "clock_mhz": 2565.0
+   },
+   "start": "2026-10-10T18:46:14.590+02:00",
+   "end": "2026-10-10T18:48:10.736+02:00",
+   "wall_s": 116.15,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 141.05875588959546,
+   "requests_per_h": 1983.638754697436
+  },
+  {
+   "name": "chat-short@1#2",
+   "workload": "chat-short",
+   "level": 1,
+   "rep": 2,
+   "requests": 64,
+   "gpu_before": {
+    "util": 2.0,
+    "mem_mib": 7202.0,
+    "power_w": 39.39,
+    "temp_c": 49.0,
+    "clock_mhz": 375.0
+   },
+   "start": "2026-10-10T18:48:21.352+02:00",
+   "end": "2026-10-10T18:50:17.476+02:00",
+   "wall_s": 116.128,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 141.08574847257918,
+   "requests_per_h": 1984.0183378956447
+  },
+  {
+   "name": "chat-short@1#3",
+   "workload": "chat-short",
+   "level": 1,
+   "rep": 3,
+   "requests": 64,
+   "gpu_before": {
+    "util": 3.0,
+    "mem_mib": 7202.0,
+    "power_w": 52.11,
+    "temp_c": 50.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T18:50:28.005+02:00",
+   "end": "2026-10-10T18:52:24.140+02:00",
+   "wall_s": 116.138,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 141.0730752399279,
+   "requests_per_h": 1983.8401205614862
+  },
+  {
+   "name": "chat-long@1#1",
+   "workload": "chat-long",
+   "level": 1,
+   "rep": 1,
+   "requests": 64,
+   "gpu_before": {
+    "util": 5.0,
+    "mem_mib": 7202.0,
+    "power_w": 32.19,
+    "temp_c": 50.0,
+    "clock_mhz": 345.0
+   },
+   "start": "2026-10-10T18:52:36.671+02:00",
+   "end": "2026-10-10T18:55:03.010+02:00",
+   "wall_s": 146.344,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 111.95541006252839,
+   "requests_per_h": 1574.3729540043055
+  },
+  {
+   "name": "chat-long@1#2",
+   "workload": "chat-long",
+   "level": 1,
+   "rep": 2,
+   "requests": 64,
+   "gpu_before": {
+    "util": 2.0,
+    "mem_mib": 7206.0,
+    "power_w": 52.98,
+    "temp_c": 50.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T18:55:15.587+02:00",
+   "end": "2026-10-10T18:57:41.236+02:00",
+   "wall_s": 145.654,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 112.48602359097278,
+   "requests_per_h": 1581.8347067480547
+  },
+  {
+   "name": "chat-long@1#3",
+   "workload": "chat-long",
+   "level": 1,
+   "rep": 3,
+   "requests": 64,
+   "gpu_before": {
+    "util": 2.0,
+    "mem_mib": 7206.0,
+    "power_w": 39.53,
+    "temp_c": 50.0,
+    "clock_mhz": 345.0
+   },
+   "start": "2026-10-10T18:57:53.741+02:00",
+   "end": "2026-10-10T19:00:19.545+02:00",
+   "wall_s": 145.808,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 112.36708294832628,
+   "requests_per_h": 1580.1621039608383
+  },
+  {
+   "name": "decide@1#1",
+   "workload": "decide",
+   "level": 1,
+   "rep": 1,
+   "requests": 500,
+   "gpu_before": {
+    "util": 3.0,
+    "mem_mib": 7206.0,
+    "power_w": 50.01,
+    "temp_c": 50.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:00:23.028+02:00",
+   "end": "2026-10-10T19:00:41.830+02:00",
+   "wall_s": 18.802,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 26.59279259794487,
+   "requests_per_h": 95734.05335260154
+  },
+  {
+   "name": "decide@1#2",
+   "workload": "decide",
+   "level": 1,
+   "rep": 2,
+   "requests": 500,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 7210.0,
+    "power_w": 36.16,
+    "temp_c": 47.0,
+    "clock_mhz": 435.0
+   },
+   "start": "2026-10-10T19:00:45.260+02:00",
+   "end": "2026-10-10T19:01:03.970+02:00",
+   "wall_s": 18.712,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 26.72063579551546,
+   "requests_per_h": 96194.28886385565
+  },
+  {
+   "name": "decide@1#3",
+   "workload": "decide",
+   "level": 1,
+   "rep": 3,
+   "requests": 500,
+   "gpu_before": {
+    "util": 3.0,
+    "mem_mib": 7210.0,
+    "power_w": 37.61,
+    "temp_c": 46.0,
+    "clock_mhz": 375.0
+   },
+   "start": "2026-10-10T19:01:07.430+02:00",
+   "end": "2026-10-10T19:01:26.805+02:00",
+   "wall_s": 19.376,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 25.8050956300704,
+   "requests_per_h": 92898.34426825344
+  },
+  {
+   "name": "chat-short@4#1",
+   "workload": "chat-short",
+   "level": 4,
+   "rep": 1,
+   "requests": 64,
+   "gpu_before": {
+    "util": 0.0,
+    "mem_mib": 9330.0,
+    "power_w": 58.42,
+    "temp_c": 46.0,
+    "clock_mhz": 2565.0
+   },
+   "start": "2026-10-10T19:01:38.723+02:00",
+   "end": "2026-10-10T19:02:16.377+02:00",
+   "wall_s": 37.656,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 435.09717178609407,
+   "requests_per_h": 6118.553978241948
+  },
+  {
+   "name": "chat-short@4#2",
+   "workload": "chat-short",
+   "level": 4,
+   "rep": 2,
+   "requests": 64,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 9366.0,
+    "power_w": 41.71,
+    "temp_c": 49.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:02:22.074+02:00",
+   "end": "2026-10-10T19:02:59.641+02:00",
+   "wall_s": 37.568,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 436.1112044813681,
+   "requests_per_h": 6132.813813019238
+  },
+  {
+   "name": "chat-short@4#3",
+   "workload": "chat-short",
+   "level": 4,
+   "rep": 3,
+   "requests": 64,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 9366.0,
+    "power_w": 53.04,
+    "temp_c": 50.0,
+    "clock_mhz": 435.0
+   },
+   "start": "2026-10-10T19:03:05.427+02:00",
+   "end": "2026-10-10T19:03:42.991+02:00",
+   "wall_s": 37.566,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 436.1417380258254,
+   "requests_per_h": 6133.24319098817
+  },
+  {
+   "name": "chat-long@4#1",
+   "workload": "chat-long",
+   "level": 4,
+   "rep": 1,
+   "requests": 64,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 9366.0,
+    "power_w": 44.65,
+    "temp_c": 50.0,
+    "clock_mhz": 480.0
+   },
+   "start": "2026-10-10T19:03:50.846+02:00",
+   "end": "2026-10-10T19:05:00.951+02:00",
+   "wall_s": 70.106,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 233.7027146618671,
+   "requests_per_h": 3286.444424932506
+  },
+  {
+   "name": "chat-long@4#2",
+   "workload": "chat-long",
+   "level": 4,
+   "rep": 2,
+   "requests": 64,
+   "gpu_before": {
+    "util": 3.0,
+    "mem_mib": 9366.0,
+    "power_w": 40.6,
+    "temp_c": 50.0,
+    "clock_mhz": 450.0
+   },
+   "start": "2026-10-10T19:05:08.477+02:00",
+   "end": "2026-10-10T19:06:18.508+02:00",
+   "wall_s": 70.033,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 233.94604121380326,
+   "requests_per_h": 3289.866204569108
+  },
+  {
+   "name": "chat-long@4#3",
+   "workload": "chat-long",
+   "level": 4,
+   "rep": 3,
+   "requests": 64,
+   "gpu_before": {
+    "util": 4.0,
+    "mem_mib": 9366.0,
+    "power_w": 44.54,
+    "temp_c": 50.0,
+    "clock_mhz": 420.0
+   },
+   "start": "2026-10-10T19:06:26.099+02:00",
+   "end": "2026-10-10T19:07:36.131+02:00",
+   "wall_s": 70.034,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 233.94314202987047,
+   "requests_per_h": 3289.8254347950533
+  },
+  {
+   "name": "decide@4#1",
+   "workload": "decide",
+   "level": 4,
+   "rep": 1,
+   "requests": 500,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 9366.0,
+    "power_w": 50.07,
+    "temp_c": 50.0,
+    "clock_mhz": 540.0
+   },
+   "start": "2026-10-10T19:07:39.572+02:00",
+   "end": "2026-10-10T19:07:48.963+02:00",
+   "wall_s": 9.391,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 53.242171944601786,
+   "requests_per_h": 191671.81900056644
+  },
+  {
+   "name": "decide@4#2",
+   "workload": "decide",
+   "level": 4,
+   "rep": 2,
+   "requests": 500,
+   "gpu_before": {
+    "util": 2.0,
+    "mem_mib": 9366.0,
+    "power_w": 43.69,
+    "temp_c": 49.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:07:52.403+02:00",
+   "end": "2026-10-10T19:08:01.740+02:00",
+   "wall_s": 9.336,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 53.55370325181947,
+   "requests_per_h": 192793.3317065501
+  },
+  {
+   "name": "decide@4#3",
+   "workload": "decide",
+   "level": 4,
+   "rep": 3,
+   "requests": 500,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 9366.0,
+    "power_w": 37.08,
+    "temp_c": 49.0,
+    "clock_mhz": 465.0
+   },
+   "start": "2026-10-10T19:08:05.137+02:00",
+   "end": "2026-10-10T19:08:14.465+02:00",
+   "wall_s": 9.329,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 53.59769603658693,
+   "requests_per_h": 192951.70573171295
+  },
+  {
+   "name": "chat-short@8#1",
+   "workload": "chat-short",
+   "level": 8,
+   "rep": 1,
+   "requests": 64,
+   "gpu_before": {
+    "util": 0.0,
+    "mem_mib": 12412.0,
+    "power_w": 61.41,
+    "temp_c": 48.0,
+    "clock_mhz": 2565.0
+   },
+   "start": "2026-10-10T19:08:26.275+02:00",
+   "end": "2026-10-10T19:08:51.533+02:00",
+   "wall_s": 25.258,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 648.6573252620925,
+   "requests_per_h": 9121.743636498177
+  },
+  {
+   "name": "chat-short@8#2",
+   "workload": "chat-short",
+   "level": 8,
+   "rep": 2,
+   "requests": 64,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 12460.0,
+    "power_w": 49.58,
+    "temp_c": 50.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:08:57.249+02:00",
+   "end": "2026-10-10T19:09:22.629+02:00",
+   "wall_s": 25.381,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 645.5337218355876,
+   "requests_per_h": 9077.817963312951
+  },
+  {
+   "name": "chat-short@8#3",
+   "workload": "chat-short",
+   "level": 8,
+   "rep": 3,
+   "requests": 64,
+   "gpu_before": {
+    "util": 3.0,
+    "mem_mib": 12460.0,
+    "power_w": 49.68,
+    "temp_c": 50.0,
+    "clock_mhz": 420.0
+   },
+   "start": "2026-10-10T19:09:31.131+02:00",
+   "end": "2026-10-10T19:09:56.327+02:00",
+   "wall_s": 25.197,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 650.2288129556749,
+   "requests_per_h": 9143.842682189179
+  },
+  {
+   "name": "chat-long@8#1",
+   "workload": "chat-long",
+   "level": 8,
+   "rep": 1,
+   "requests": 64,
+   "gpu_before": {
+    "util": 2.0,
+    "mem_mib": 12460.0,
+    "power_w": 43.45,
+    "temp_c": 51.0,
+    "clock_mhz": 375.0
+   },
+   "start": "2026-10-10T19:10:04.095+02:00",
+   "end": "2026-10-10T19:11:00.153+02:00",
+   "wall_s": 56.06,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 292.26060367857656,
+   "requests_per_h": 4109.914739229983
+  },
+  {
+   "name": "chat-long@8#2",
+   "workload": "chat-long",
+   "level": 8,
+   "rep": 2,
+   "requests": 64,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 12460.0,
+    "power_w": 51.85,
+    "temp_c": 51.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:11:10.343+02:00",
+   "end": "2026-10-10T19:12:06.405+02:00",
+   "wall_s": 56.063,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 292.2411074039326,
+   "requests_per_h": 4109.640572867802
+  },
+  {
+   "name": "chat-long@8#3",
+   "workload": "chat-long",
+   "level": 8,
+   "rep": 3,
+   "requests": 64,
+   "gpu_before": {
+    "util": 3.0,
+    "mem_mib": 12460.0,
+    "power_w": 41.2,
+    "temp_c": 50.0,
+    "clock_mhz": 420.0
+   },
+   "start": "2026-10-10T19:12:16.539+02:00",
+   "end": "2026-10-10T19:13:12.634+02:00",
+   "wall_s": 56.097,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 292.06656751827046,
+   "requests_per_h": 4107.186105725678
+  },
+  {
+   "name": "decide@8#1",
+   "workload": "decide",
+   "level": 8,
+   "rep": 1,
+   "requests": 500,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 12460.0,
+    "power_w": 48.94,
+    "temp_c": 51.0,
+    "clock_mhz": 540.0
+   },
+   "start": "2026-10-10T19:13:16.067+02:00",
+   "end": "2026-10-10T19:13:25.279+02:00",
+   "wall_s": 9.212,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 54.275766747230385,
+   "requests_per_h": 195392.7602900294
+  },
+  {
+   "name": "decide@8#2",
+   "workload": "decide",
+   "level": 8,
+   "rep": 2,
+   "requests": 500,
+   "gpu_before": {
+    "util": 3.0,
+    "mem_mib": 12460.0,
+    "power_w": 37.95,
+    "temp_c": 49.0,
+    "clock_mhz": 375.0
+   },
+   "start": "2026-10-10T19:13:28.691+02:00",
+   "end": "2026-10-10T19:13:37.829+02:00",
+   "wall_s": 9.138,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 54.71632327670284,
+   "requests_per_h": 196978.76379613022
+  },
+  {
+   "name": "decide@8#3",
+   "workload": "decide",
+   "level": 8,
+   "rep": 3,
+   "requests": 500,
+   "gpu_before": {
+    "util": 2.0,
+    "mem_mib": 12460.0,
+    "power_w": 38.6,
+    "temp_c": 49.0,
+    "clock_mhz": 450.0
+   },
+   "start": "2026-10-10T19:13:41.229+02:00",
+   "end": "2026-10-10T19:13:50.429+02:00",
+   "wall_s": 9.2,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 54.34721349942408,
+   "requests_per_h": 195649.9685979267
+  },
+  {
+   "name": "chat-short@16#1",
+   "workload": "chat-short",
+   "level": 16,
+   "rep": 1,
+   "requests": 64,
+   "gpu_before": {
+    "util": 0.0,
+    "mem_mib": 17970.0,
+    "power_w": 62.36,
+    "temp_c": 48.0,
+    "clock_mhz": 2565.0
+   },
+   "start": "2026-10-10T19:14:02.508+02:00",
+   "end": "2026-10-10T19:14:21.371+02:00",
+   "wall_s": 18.864,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 868.5483415194143,
+   "requests_per_h": 12213.961052616763
+  },
+  {
+   "name": "chat-short@16#2",
+   "workload": "chat-short",
+   "level": 16,
+   "rep": 2,
+   "requests": 64,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 18006.0,
+    "power_w": 36.52,
+    "temp_c": 47.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:14:29.976+02:00",
+   "end": "2026-10-10T19:14:48.577+02:00",
+   "wall_s": 18.602,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 880.764192814565,
+   "requests_per_h": 12385.74646145482
+  },
+  {
+   "name": "chat-short@16#3",
+   "workload": "chat-short",
+   "level": 16,
+   "rep": 3,
+   "requests": 64,
+   "gpu_before": {
+    "util": 3.0,
+    "mem_mib": 18006.0,
+    "power_w": 44.94,
+    "temp_c": 47.0,
+    "clock_mhz": 465.0
+   },
+   "start": "2026-10-10T19:14:54.249+02:00",
+   "end": "2026-10-10T19:15:12.907+02:00",
+   "wall_s": 18.659,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 33354,
+   "agg_gen_tok_s": 878.0678601208425,
+   "requests_per_h": 12347.829282949348
+  },
+  {
+   "name": "chat-long@16#1",
+   "workload": "chat-long",
+   "level": 16,
+   "rep": 1,
+   "requests": 64,
+   "gpu_before": {
+    "util": 4.0,
+    "mem_mib": 18006.0,
+    "power_w": 36.77,
+    "temp_c": 47.0,
+    "clock_mhz": 375.0
+   },
+   "start": "2026-10-10T19:15:20.684+02:00",
+   "end": "2026-10-10T19:16:11.037+02:00",
+   "wall_s": 50.355,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 325.37288886896516,
+   "requests_per_h": 4575.5562497198225
+  },
+  {
+   "name": "chat-long@16#2",
+   "workload": "chat-long",
+   "level": 16,
+   "rep": 2,
+   "requests": 64,
+   "gpu_before": {
+    "util": 2.0,
+    "mem_mib": 18006.0,
+    "power_w": 47.59,
+    "temp_c": 48.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:16:21.143+02:00",
+   "end": "2026-10-10T19:17:11.522+02:00",
+   "wall_s": 50.38,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 325.2078066769431,
+   "requests_per_h": 4573.2347813945125
+  },
+  {
+   "name": "chat-long@16#3",
+   "workload": "chat-long",
+   "level": 16,
+   "rep": 3,
+   "requests": 64,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 18006.0,
+    "power_w": 44.2,
+    "temp_c": 48.0,
+    "clock_mhz": 450.0
+   },
+   "start": "2026-10-10T19:17:21.539+02:00",
+   "end": "2026-10-10T19:18:11.892+02:00",
+   "wall_s": 50.355,
+   "errors": 0,
+   "generated_tokens": 16384,
+   "prompt_tokens": 258438,
+   "agg_gen_tok_s": 325.37142919073295,
+   "requests_per_h": 4575.535722994682
+  },
+  {
+   "name": "decide@16#1",
+   "workload": "decide",
+   "level": 16,
+   "rep": 1,
+   "requests": 500,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 18006.0,
+    "power_w": 40.23,
+    "temp_c": 48.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:18:15.292+02:00",
+   "end": "2026-10-10T19:18:24.718+02:00",
+   "wall_s": 9.426,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 53.043066397532435,
+   "requests_per_h": 190955.03903111676
+  },
+  {
+   "name": "decide@16#2",
+   "workload": "decide",
+   "level": 16,
+   "rep": 2,
+   "requests": 500,
+   "gpu_before": {
+    "util": 1.0,
+    "mem_mib": 18006.0,
+    "power_w": 44.23,
+    "temp_c": 49.0,
+    "clock_mhz": 525.0
+   },
+   "start": "2026-10-10T19:18:28.084+02:00",
+   "end": "2026-10-10T19:18:37.563+02:00",
+   "wall_s": 9.48,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 52.74423675062663,
+   "requests_per_h": 189879.25230225586
+  },
+  {
+   "name": "decide@16#3",
+   "workload": "decide",
+   "level": 16,
+   "rep": 3,
+   "requests": 500,
+   "gpu_before": {
+    "util": 2.0,
+    "mem_mib": 18006.0,
+    "power_w": 43.34,
+    "temp_c": 48.0,
+    "clock_mhz": 405.0
+   },
+   "start": "2026-10-10T19:18:41.028+02:00",
+   "end": "2026-10-10T19:18:50.481+02:00",
+   "wall_s": 9.453,
+   "errors": 0,
+   "generated_tokens": 500,
+   "prompt_tokens": 68323,
+   "agg_gen_tok_s": 52.89069435617446,
+   "requests_per_h": 190406.49968222805
+  }
+ ],
+ "started": "2026-10-10T18:45:55.356+02:00",
+ "model": {
+  "tag": "qwen3:8b",
+  "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "size": 5225388164,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3",
+   "families": [
+    "qwen3"
+   ],
+   "parameter_size": "8.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 40960,
+   "embedding_length": 4096
+  },
+  "blobs": [
+   "a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f"
+  ],
+  "capabilities": [
+   "completion",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 40960,
+  "template_sha256": "ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4"
+ },
+ "think": false,
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "gate": {
+  "rule": "chat-short at concurrency 1, three repetitions, CV of aggregate generation tokens/s <= 5 %",
+  "values": [
+   141.05875588959546,
+   141.08574847257918,
+   141.0730752399279
+  ],
+  "cv": 9.572845126410156e-05,
+  "passed": true
+ },
+ "finished": "2026-10-10T19:18:50.625+02:00"
+}
