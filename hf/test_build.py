@@ -72,3 +72,18 @@ def test_cli_refuses_a_dirty_or_unknown_commit(tmp_path):
     p = subprocess.run([sys.executable, str(ROOT / "hf/build.py"), "--out", str(tmp_path),
                         "--commit", "not-a-sha"], capture_output=True, text=True)
     assert p.returncode != 0
+
+
+def test_every_column_has_one_type_for_the_hub_viewer(out):
+    """The Hub's dataset viewer builds an Arrow schema per column; a column
+    that mixes numbers and strings (p values like 0.11 and "<0.001") fails."""
+    for name in ("data/toolmap.jsonl", "data/capabilities.jsonl"):
+        kinds = {}
+        for r in rows(out / name):
+            for k, v in r.items():
+                if v is None:
+                    continue
+                t = "number" if isinstance(v, (int, float)) and not isinstance(v, bool) else type(v).__name__
+                kinds.setdefault(k, set()).add(t)
+        mixed = {k: v for k, v in kinds.items() if len(v) > 1}
+        assert not mixed, f"{name}: {mixed}"
