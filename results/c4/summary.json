@@ -1,0 +1,166 @@
+{
+ "schema": "jev-match-bench capability summary v1",
+ "test": "C4",
+ "design": "plan/c4.md",
+ "report": "results/c4/findings.md",
+ "best_by_fc_ast_accuracy": "qwen3-14b",
+ "gate": {
+  "arm": "qwen3-14b",
+  "mode": "fc",
+  "simple_python": 93.5,
+  "multiple": 94.0,
+  "reference": {
+   "simple_python": 95.25,
+   "multiple": 93.0
+  },
+  "tolerance_points": 5,
+  "passed": true,
+  "source": "https://gorilla.cs.berkeley.edu/data_non_live.csv, Qwen3-14B (FC), read 2026-10-09"
+ },
+ "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
+ "generator": "bench/score-cap.py",
+ "arms": [
+  {
+   "arm": "qwen3-14b",
+   "model": "qwen3:14b (Qwen/Qwen3-14B)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "ollama_digest": "bdbd181c33f2",
+   "quant": "Q4_K_M",
+   "params_b": 14.8,
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live (1,000 items), fc mode (native tool calling)",
+    "value": 0.919,
+    "ci95": [
+     0.901,
+     0.935
+    ],
+    "prompt_mode": 0.946,
+    "prompt_mode_ci95": [
+     0.931,
+     0.959
+    ],
+    "per_category_fc": {
+     "simple_python": 0.935,
+     "multiple": 0.94,
+     "parallel": 0.9,
+     "parallel_multiple": 0.885
+    },
+    "per_category_prompt": {
+     "simple_python": 0.9675,
+     "multiple": 0.95,
+     "parallel": 0.915,
+     "parallel_multiple": 0.93
+    },
+    "unparseable_fc": 0.002,
+    "unparseable_prompt": 0.0,
+    "fc_vs_prompt": {
+     "a_only": 19,
+     "b_only": 46,
+     "p": 0.0011
+    },
+    "schema_validity_free": 0.81,
+    "schema_validity_free_ci95": [
+     0.7783,
+     0.8417
+    ],
+    "schema_validity_constrained": 0.9071,
+    "schema_validity_constrained_ci95": [
+     0.8834,
+     0.9291
+    ],
+    "constrained_coverage": 0.9867,
+    "constrained_vs_free": {
+     "a_only": 74,
+     "b_only": 17,
+     "p": 0.0,
+     "schemas": 592,
+     "free_on_same": 0.8108,
+     "constrained": 0.9071,
+     "coverage": 0.9867
+    },
+    "per_subset_free": {
+     "Github_easy": 0.96,
+     "Github_hard": 0.61,
+     "Github_medium": 0.88,
+     "Glaiveai2K": 0.94,
+     "JsonSchemaStore": 0.71,
+     "Kubernetes": 0.76
+    },
+    "per_subset_constrained": {
+     "Github_easy": 0.98,
+     "Github_hard": 0.8283,
+     "Github_medium": 0.899,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.7979,
+     "Kubernetes": 0.96
+    }
+   },
+   "speed": {
+    "fc": {
+     "ms_median": 606.5,
+     "ms_median_ci95": [
+      587.0,
+      631.1
+     ],
+     "out_tok_s": 87.3453,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "prompt": {
+     "ms_median": 446.8,
+     "ms_median_ci95": [
+      429.0,
+      465.7513
+     ],
+     "out_tok_s": 81.5184,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "free": {
+     "ms_median": 1499.4,
+     "ms_median_ci95": [
+      1301.3375,
+      1752.525
+     ],
+     "out_tok_s": 80.9905,
+     "failed_calls": 0,
+     "capped": 12,
+     "truncated_prompts": 0
+    },
+    "constrained": {
+     "ms_median": 1294.0,
+     "ms_median_ci95": [
+      1131.2,
+      1422.1825
+     ],
+     "out_tok_s": 84.0303,
+     "failed_calls": 8,
+     "capped": 15,
+     "truncated_prompts": 0
+    },
+    "slowdown_constrained_over_free": 0.863
+   },
+   "energy": {
+    "fc": {
+     "j_per_1000_items": 288452
+    },
+    "prompt": {
+     "j_per_1000_items": 190586
+    },
+    "free": {
+     "j_per_1000_items": 1533786
+    },
+    "constrained": {
+     "j_per_1000_items": 1337693
+    }
+   },
+   "vram_peak_gb": 10.31,
+   "vram_peak_total_gb": 11.48,
+   "fits_24gb": true
+  }
+ ]
+}

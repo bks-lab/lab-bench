@@ -327,7 +327,7 @@ def c4_md(s):
             q = x["quality"]; cv = q["constrained_vs_free"] or {}
             L.append(f"| {x['arm']} | {f3(q['schema_validity_free'])} | {cis(q['schema_validity_free_ci95']) if q['schema_validity_free_ci95'] else ''} | {f3(q['schema_validity_constrained'])} | "
                      f"{cis(q['schema_validity_constrained_ci95']) if q['schema_validity_constrained_ci95'] else ''} | {f3(q['constrained_coverage'])} | {f3(cv.get('free_on_same'))} | "
-                     f"{cv.get('p', '')} | {f3(x['speed'].get('slowdown_constrained_over_free'))} |")
+                     f"{f3(cv.get('p'))} | {f3(x['speed'].get('slowdown_constrained_over_free'))} |")
     L += ["", "## Part B per subset (free / constrained)", ""]
     subs = None
     for x in s["arms"]:
@@ -541,6 +541,12 @@ def score_c7():
                                         "offloaded": p["offloaded"], "energy_j_per_prompt": round(p["energy_j_per_prompt"])}
                                 for L, p in sorted(r["per"].items())}
             d["longest_length_at_90"] = r["longest_90"]
+            top_len = max(r["per"])
+            pt = r["per"][top_len]
+            d["vram_peak_gb"], d["vram_peak_total_gb"] = pt["vram_peak_gb"], pt["vram_peak_total_gb"]
+            d["fits_24gb"] = "offloaded" if pt["offloaded"] else True
+            d["speed"] = {"length": top_len, "prompt_processing_s_median": r3(pt["ttft_s_median"]),
+                          "note": "at the longest length the arm reached; Ollama prompt evaluation time per call"}
             if 32768 in r["per"]:
                 d["quality"] = {"metric": "accuracy at 32k tokens, 180 prompts (3 tasks x 3 depths x 20)", "value": r3(r["per"][32768]["acc"]),
                                 "ci95": [r3(x) for x in r["per"][32768]["acc_ci95"]],
@@ -595,6 +601,10 @@ def c7_md(s):
         if p:
             L.append(f"| {x['arm']} | " + " | ".join(f"{p['per_task'].get(t, 0):.2f}" for t in ("single", "multikey", "multivalue")) + " | "
                      + " | ".join(f"{p['per_depth'].get(d, 0):.2f}" for d in ("0.1", "0.5", "0.9")) + " |")
+    L += ["", "## Machine at the longest length", "", "| arm | length | prompt processing s (median) | peak VRAM GB (over idle) | fits on 24 GB |", "|---|---|---|---|---|"]
+    for x in s["arms"]:
+        if x.get("speed"):
+            L.append(f"| {x['arm']} | {x['speed']['length']} | {f3(x['speed']['prompt_processing_s_median'])} | {x['vram_peak_gb']:.2f} | {'yes' if x['fits_24gb'] is True else x['fits_24gb']} |")
     L += ["", "## Machine per length", "",
           "| arm | length | prompt tokens (median) | prompt processing s (median) | peak VRAM GB (over idle) | peak VRAM GB (total) | offloaded | J per prompt | prompts off target |",
           "|---|---|---|---|---|---|---|---|---|"]
