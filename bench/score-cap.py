@@ -876,7 +876,8 @@ def main():
             caps.append(row)
     wr_json(ROOT / "results" / "capabilities.json", {"schema": "jev-match-bench capability map v1", "columns": "plan/ROADMAP.md, section Capability map for the website", **common, "rows": caps})
     for c in caps:
-        print(c["id"], c["best_local_model"], c["quality"]["value"], c["quality"]["ci95"], "tie" if c["tie"] else "", "smallest:", c["smallest_within_interval"]["arm"])
+        print(c["id"], c["best_local_model"], c["quality"]["value"], c["quality"]["ci95"], "tie" if c["tie"] else "",
+              "smallest:", (c["smallest_within_interval"] or {}).get("arm"))
 
 
 if __name__ == "__main__":

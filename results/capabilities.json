@@ -215,6 +215,49 @@
     "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
    },
    "unfinished": []
+  },
+  {
+   "id": "C8",
+   "capability": "Throughput and energy per model size",
+   "design": "plan/c8.md",
+   "report": "results/c8/findings.md",
+   "best_local_model": "granite4-3b",
+   "best_by_value": "granite4-3b",
+   "tie": null,
+   "licence_class": "open source",
+   "quality": {
+    "metric": "none (throughput test); headline: most one-token decisions per hour at 16 parallel clients among arms that stay on the card",
+    "value": null,
+    "ci95": null
+   },
+   "speed": {
+    "unit": "decisions per hour at 16 parallel clients (route1 one-token method)",
+    "value": 260731,
+    "chat_short_tok_s_at_1": 238.2118,
+    "chat_short_tok_s_at_16": 1378.1723
+   },
+   "vram_peak_gb": 8.88,
+   "energy": {
+    "unit": "GPU joules per 1,000 decisions at 16 parallel clients",
+    "value": 3169
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": null,
+   "series": [
+    {
+     "arm": "granite4-3b",
+     "engine": "ollama",
+     "params_b": 3.4,
+     "chat_short_tok_s_at_1": 238.2118,
+     "chat_short_tok_s_at_16": 1378.1723,
+     "decisions_per_h_at_1": 104527,
+     "decisions_per_h_at_16": 260731,
+     "j_per_1000_tokens_at_16": 165,
+     "peak_vram_gb": 8.88,
+     "offloaded_at_16": false
+    }
+   ],
+   "unfinished": []
   }
  ]
 }
