@@ -1,0 +1,51 @@
+name: hf-sync
+
+# Keeps the Hugging Face datasets and Spaces of bks-lab in step with main:
+# every push to main that touches results, references, the C3 cases or hf/
+# rebuilds them and uploads (hf/publish.sh). Without the repository secret
+# HF_TOKEN the job only reports that it skipped.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "results/**"
+      - "reference/c3/**"
+      - "cases/c3/**"
+      - "hf/**"
+      - ".github/workflows/hf-sync.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hf-sync
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - name: secret present?
+        id: gate
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "::notice::HF_TOKEN is not set, nothing published"
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'true'
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.go == 'true'
+        with:
+          python-version: "3.12"
+      - name: publish
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          python -m pip install --quiet "huggingface_hub>=1.0" pytest
+          python -m pytest -q hf/test_build.py hf/c3/test_c3_build.py
+          bash hf/publish.sh
