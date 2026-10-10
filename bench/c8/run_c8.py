@@ -214,7 +214,10 @@ def main():
 
     try:
         for level in levels:
-            env = {"OLLAMA_NUM_PARALLEL": level, "OLLAMA_MAX_LOADED_MODELS": 1,
+            # LLAMA_ARG_CACHE_RAM=0: the llama-server under Ollama 0.35 keeps up to 8 GiB of earlier
+            # prompts in host memory and restores them; the second and third repetition would then
+            # skip prompt processing that the first did (dry run of 2026-10-10). Off, so repetitions are alike.
+            env = {"OLLAMA_NUM_PARALLEL": level, "OLLAMA_MAX_LOADED_MODELS": 1, "LLAMA_ARG_CACHE_RAM": 0,
                    "OLLAMA_MODELS": os.environ.get("OLLAMA_MODELS", r"D:\ollama\models")}
             lv = {"level": level, "env": {k: str(v) for k, v in env.items() if k != "OLLAMA_MODELS"}, "start": ol.now()}
             srv = None
