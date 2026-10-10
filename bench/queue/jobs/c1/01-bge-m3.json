@@ -1,0 +1,34 @@
+{
+  "test": "C1",
+  "arm": "bge-m3",
+  "gpu": true,
+  "cwd": "{src}",
+  "cmd": [
+    "{py}",
+    "bench/c1/run_c1.py",
+    "--arm",
+    "bge-m3",
+    "--data",
+    "{data}\\c1",
+    "--out",
+    "{out}",
+    "--gate",
+    "0.5759",
+    "--tol",
+    "0.015"
+  ],
+  "env": {
+    "HF_HOME": "{hf}",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "timeout_min": 60,
+  "expected_gpu_min": 10,
+  "outputs": [
+    "{out}\\result.jsonl",
+    "{out}\\meta.json"
+  ],
+  "after_ok": [],
+  "requested_by": "c1c2-agent"
+}

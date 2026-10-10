@@ -1,0 +1,34 @@
+{
+  "test": "C2",
+  "arm": "whisper-large-v3-turbo",
+  "gpu": true,
+  "cwd": "{src}",
+  "cmd": [
+    "{py}",
+    "bench/c2/run_c2.py",
+    "--arm",
+    "whisper-large-v3-turbo",
+    "--data",
+    "{data}\\c2",
+    "--models",
+    "{data}\\c2\\models",
+    "--out",
+    "{out}"
+  ],
+  "env": {
+    "HF_HOME": "{hf}",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "timeout_min": 90,
+  "expected_gpu_min": 15,
+  "outputs": [
+    "{out}\\result.jsonl",
+    "{out}\\meta.json"
+  ],
+  "after_ok": [
+    "C2-canary-1b-v2"
+  ],
+  "requested_by": "c1c2-agent"
+}

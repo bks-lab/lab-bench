@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!-- Scheduled task "bench-queue": mirrors ollama-serve (InteractiveToken, runs in
+     the session of the PC user), plus a logon trigger so it comes back after a
+     reboot, no run time limit, no idle or battery stop, restart on failure.
+     Template: bench/queue/install.sh fills @USER_SID@, @PYTHONW@ and @ROOT@
+     from bench/local.env and the PC, so no account name or path of one
+     machine is committed. -->
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Description>lab-bench PC job queue runner (@ROOT@). One GPU job at a time.</Description>
+    <URI>\bench-queue</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <UserId>@USER_SID@</UserId>
+      <LogonType>InteractiveToken</LogonType>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <ExecutionTimeLimit>PT0S</ExecutionTimeLimit>
+    <IdleSettings>
+      <StopOnIdleEnd>false</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+    <RestartOnFailure>
+      <Interval>PT5M</Interval>
+      <Count>3</Count>
+    </RestartOnFailure>
+  </Settings>
+  <Triggers>
+    <LogonTrigger>
+      <UserId>@USER_SID@</UserId>
+      <Delay>PT1M</Delay>
+    </LogonTrigger>
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>@PYTHONW@</Command>
+      <Arguments>@ROOT@\runner.py run</Arguments>
+      <WorkingDirectory>@ROOT@</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

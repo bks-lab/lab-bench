@@ -1,0 +1,33 @@
+{
+  "test": "C1",
+  "arm": "bm25",
+  "gpu": false,
+  "cwd": "{src}",
+  "cmd": [
+    "{py}",
+    "bench/c1/run_c1.py",
+    "--arm",
+    "bm25",
+    "--data",
+    "{data}\\c1",
+    "--out",
+    "{out}"
+  ],
+  "env": {
+    "HF_HOME": "{hf}",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "timeout_min": 60,
+  "expected_gpu_min": 0,
+  "outputs": [
+    "{out}\\result.jsonl",
+    "{out}\\meta.json"
+  ],
+  "after_ok": [
+    "C1-bge-m3"
+  ],
+  "requested_by": "c1c2-agent",
+  "note": "CPU only baseline; queued after the gate so it never runs on a broken pipeline."
+}

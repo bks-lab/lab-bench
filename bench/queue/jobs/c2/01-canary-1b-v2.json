@@ -1,0 +1,36 @@
+{
+  "test": "C2",
+  "arm": "canary-1b-v2",
+  "gpu": true,
+  "cwd": "{src}",
+  "cmd": [
+    "D:\\bench-cap\\.venv-nemo\\Scripts\\python.exe",
+    "bench/c2/run_c2.py",
+    "--arm",
+    "canary-1b-v2",
+    "--data",
+    "{data}\\c2",
+    "--models",
+    "{data}\\c2\\models",
+    "--out",
+    "{out}",
+    "--gate",
+    "4.40",
+    "--tol",
+    "1.5"
+  ],
+  "env": {
+    "HF_HOME": "{hf}",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "timeout_min": 90,
+  "expected_gpu_min": 20,
+  "outputs": [
+    "{out}\\result.jsonl",
+    "{out}\\meta.json"
+  ],
+  "after_ok": [],
+  "requested_by": "c1c2-agent"
+}

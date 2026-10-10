@@ -2,27 +2,23 @@
 
 A repeatable test bench for the CV-to-posting match: does an open model, run
 locally or hosted in the EU, answer the match questions as well as Jev?
+Since then it grew into BKS-Lab's general bench for local models: tool
+families compared per task (tool map) and capability tests C1 to C9
+(retrieval, speech, invoice extraction and more, see
+[plan/ROADMAP.md](plan/ROADMAP.md)).
 
-## Notice: public export, Jev outputs under their own terms
+This is the one working repository of the bench: tests are designed, run,
+scored and published here. Until 2026-10-10 the work happened in a private
+repository (bks-lab/jev-match-bench, now archived as provenance history)
+and this repository received export commits; see
+[Repository history and leak scan](#repository-history-and-leak-scan).
 
-This repository is the public export of BKS-Lab's private bench
-(source commit `c7a68fba232e`). It carries the cases, requests, references,
-reports and the result rows of every arm.
-
-- Jev's per-question outputs (the result rows under `results/*/jev/`) are
-  published with TypeSafe's permission of 2026-10-10
-  ([record](docs/permissions/2026-10-10-typesafe-jev-outputs.md)), for
-  reproducing the measurements only. They must not be used to train or
-  distil models or to build a product that competes with TypeSafe. Use is
-  subject to TypeSafe's
-  [Acceptable Use Policy](https://typesafe.ai/legal/acceptable-use-policy)
-  and [Master Customer Agreement](https://typesafe.ai/legal/mca), section
-  2.3(b). Neither the MIT nor the CC BY 4.0 licence of this repository
-  covers them, see [LICENSE-JEV-OUTPUTS](LICENSE-JEV-OUTPUTS).
-- Not exported: the export tooling and every file not yet on the export
-  path list (each export commit lists them).
-- The scripts still run Jev with your own key (`TYPESAFE_API_KEY`, see
-  `bench/run-jev.mjs`).
+Jev's per-question outputs (the result rows under `results/*/jev/`) are
+published with TypeSafe's permission of 2026-10-10
+([record](docs/permissions/2026-10-10-typesafe-jev-outputs.md)), for
+reproducing the measurements only, and are not covered by the MIT or the
+CC BY 4.0 licence of this repository, see [Licence](#licence) and
+[LICENSE-JEV-OUTPUTS](LICENSE-JEV-OUTPUTS).
 
 ## Why
 
@@ -302,31 +298,85 @@ two more model judges) and the first judge `claude-a`, pv1 en against a
 single model judge `claude-c`. route1 and ex1 against the gold labels of the
 public datasets. No human reference sample yet.
 
-## Public export
+## Repository history and leak scan
 
-The bench has two homes: this private working repository and the public
-repository [bks-lab/lab-bench](https://github.com/bks-lab/lab-bench). Since
-2026-10-10 the public one also carries Jev's per-question outputs (the
-result rows under `results/*/jev/`): TypeSafe permitted publishing them,
-see [docs/permissions/2026-10-10-typesafe-jev-outputs.md](docs/permissions/2026-10-10-typesafe-jev-outputs.md).
-The public copy is made by `bench/export-public.sh`, which:
+The bench used to have two homes: a private working repository
+(bks-lab/jev-match-bench) and this public one, filled by export commits
+that copied an allow-listed part of the private tree. The split existed
+because Jev's per-question outputs could not be published. TypeSafe
+permitted that on 2026-10-10, so the split was dropped the same day: the
+full working tree (code, plans, queue tooling, results) was added here as
+one commit on top of the last export, naming its source commit, and the
+private repository was archived. Its history stays there, unchanged, so a
+jev-match-bench commit id cited elsewhere (for example on bks-lab.com)
+still resolves for BKS-Lab; every export commit in this repository names
+the private commit it was made from. The `schema` strings inside the
+generated JSON files (`jev-match-bench toolmap v2`, `jev-match-bench
+capability summary v1` and so on) keep the old name on purpose: they are
+format identifiers that readers check, not the repository name.
 
-- copies only the paths listed in `bench/export-allow.json`, so a new kind
-  of file stays private until someone allows it,
-- reduces every Jev row to the fields listed under `jevRows` in
-  `bench/export-allow.json`, so a request id, header or account field is
-  dropped instead of published,
-- runs `bench/leak-scan.mjs`, which parses every structured file and does
-  not reuse the selection rules,
-- makes one commit with the GitHub noreply address.
+What used to be the export's job is now a check on every push and pull
+request (`.github/workflows/ci.yml`):
 
-Refresh after a merge to main (run in the private repository):
+- `node bench/leak-scan.mjs` scans every tracked file with its
+  configuration `bench/leak-scan.json`: a positive list of paths (a new
+  kind of file fails until someone adds it with a reason), host, account,
+  tailnet and keychain names of the lab machines, kept in the configuration
+  only as SHA-256 hashes so the scan does not publish what it guards,
+  patterns for private IP ranges, home paths, mail addresses, Windows SIDs
+  and API key shapes, the Jev rule (Jev rows carry only the fields of
+  `jevRows.fields`) and the notices (LICENSE-JEV-OUTPUTS at the root, a
+  `NOTICE.md` next to every set of Jev rows). Run it before you push.
+  Further words for your own machine go into `LEAK_SCAN_TERMS` in
+  `bench/local.env`; `node bench/leak-scan.mjs --hash <word>` prints the
+  line to add one to the committed list.
+- the queue runner tests, a syntax check of every script, the
+  reproducibility of `results/toolmap.json` from the committed rows, and
+  the independent recomputes `bench/check-cap.py` (C2, C3; C1 needs qrels
+  that are not committed) and `bench/check-t12.py`.
+
+## Local settings and inputs outside git
+
+Nothing machine-specific is committed. The queue scripts read the ssh
+target of the GPU PC and its Python path from the environment or from
+`bench/local.env` (gitignored; copy `bench/local.env.example`). The
+scheduled task on the PC is a template that `bench/queue/install.sh`
+fills with the account SID it reads over ssh. Job templates use
+placeholders (`{py}`, `{data}`, `{hf}`, `{out}`) that the runner fills
+from its own defaults and `config.json` on the PC.
+
+Inputs that are not committed, and how to get them:
+
+- C1 texts and qrels (MIRACL is ShareAlike and large):
+  `cases/c1/fetch.py`, hash-checked against `cases/c1/manifest.json`.
+- C2 audio (FLEURS): `cases/c2/fetch.py`, hash-checked against
+  `cases/c2/manifest.json`.
+- C5 texts and the T3 train split: see `plan/c5.md` and `plan/t3.md`.
+- Model weights: `bench/c1/prefetch.py`, `bench/c2/prefetch.py` (pinned
+  revisions into `HF_HOME`) and the Ollama tags with digests in each plan.
+- Anything with personal data, or anything a plan marks as not
+  redistributable, goes under `private/` (gitignored) or `.cache/`, never
+  into `cases/`. The planned C9 set is synthetic (Gretel, Apache-2.0) and
+  will be committed under `cases/c9/` as `plan/c9.md` says.
+
+## PC job queue
+
+GPU jobs run one at a time on one workstation from a queue folder
+(`D:\jmb-queue`, the name predates the rename and is kept so the
+scheduled task `bench-queue` keeps working). The runner
+(`bench/queue/runner.py`, spec in [plan/ROADMAP.md](plan/ROADMAP.md))
+takes job files in name order; agents only enqueue and fetch:
 
 ```bash
-gh repo clone bks-lab/lab-bench /tmp/lab-bench
-bench/export-public.sh --ref main --into /tmp/lab-bench
-git -C /tmp/lab-bench push origin main
+bench/queue/status.sh                                # running job, queue, last ten results
+bench/queue/enqueue.sh bench/queue/jobs/selftest.json   # uploads origin/main as src/<sha>.tar, then the job
+bench/queue/fetch.sh <job id>                         # out dir, log and status into .cache/queue/<id>/
+bench/queue/hold.sh set <name> "<reason>"             # keep GPU jobs back
+bench/queue/install.sh --update                       # new runner.py; only when the queue is idle
 ```
+
+Every job runs the commit it names (`repo_ref`), extracted from a
+`git archive` of this repository, so the PC needs no clone.
 
 ## Local runs
 

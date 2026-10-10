@@ -1,0 +1,32 @@
+{
+  "test": "C1",
+  "arm": "qwen3-emb-0.6b",
+  "gpu": true,
+  "cwd": "{src}",
+  "cmd": [
+    "{py}",
+    "bench/c1/run_c1.py",
+    "--arm",
+    "qwen3-emb-0.6b",
+    "--data",
+    "{data}\\c1",
+    "--out",
+    "{out}"
+  ],
+  "env": {
+    "HF_HOME": "{hf}",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "timeout_min": 60,
+  "expected_gpu_min": 12,
+  "outputs": [
+    "{out}\\result.jsonl",
+    "{out}\\meta.json"
+  ],
+  "after_ok": [
+    "C1-bge-m3"
+  ],
+  "requested_by": "c1c2-agent"
+}

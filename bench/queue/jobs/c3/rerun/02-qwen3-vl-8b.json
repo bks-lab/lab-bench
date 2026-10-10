@@ -1,0 +1,29 @@
+{
+  "test": "C3",
+  "arm": "qwen3-vl-8b",
+  "gpu": true,
+  "cwd": "{src}",
+  "cmd": [
+    "{py}",
+    "bench/c3/run_c3.py",
+    "--arm",
+    "qwen3-vl-8b",
+    "--data",
+    "{data}\\c3",
+    "--out",
+    "{out}"
+  ],
+  "env": {
+    "HF_HOME": "{hf}",
+    "PYTHONUTF8": "1"
+  },
+  "timeout_min": 180,
+  "expected_gpu_min": 100,
+  "outputs": [
+    "{out}\\result.jsonl",
+    "{out}\\meta.json"
+  ],
+  "after_ok": [],
+  "requested_by": "c-scoring-agent",
+  "note": "Rerun of 2026-10-10: same code and settings as 02-qwen3-vl-8b.json, queue timeout 180 min instead of 60 (plan/c3.md, section of 2026-10-10)."
+}
