@@ -1,0 +1,136 @@
+{
+ "schema": "jev-match-bench capability map v1",
+ "columns": "plan/ROADMAP.md, section Capability map for the website",
+ "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
+ "generator": "bench/score-cap.py",
+ "rows": [
+  {
+   "id": "C1",
+   "capability": "German retrieval for RAG (embedder)",
+   "design": "plan/c1.md",
+   "report": "results/c1/findings.md",
+   "best_local_model": "qwen3-emb-8b",
+   "best_by_value": "qwen3-emb-8b",
+   "tie": null,
+   "licence_class": "open source",
+   "quality": {
+    "metric": "nDCG@10 on MIRACL de dev",
+    "value": 0.6127,
+    "ci95": [
+     0.5758,
+     0.6511
+    ],
+    "baseline": "BM25",
+    "baseline_value": 0.1991,
+    "reference": "MTEB bge-m3 0.5759 (sanity gate)",
+    "reference_ours": 0.5767
+   },
+   "speed": {
+    "unit": "ms per query (batch 1, encode plus exact search over 71,277 passages)",
+    "value": 53.653,
+    "index_passages_per_s": 43.9493
+   },
+   "vram_peak_gb": 21.83,
+   "energy": {
+    "unit": "GPU joules per 1,000 passages indexed",
+    "value": 10090.5953
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "qwen3-emb-8b",
+    "value": 0.6127,
+    "vram_peak_gb": 21.83,
+    "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
+   }
+  },
+  {
+   "id": "C2",
+   "capability": "German speech to text",
+   "design": "plan/c2.md",
+   "report": "results/c2/findings.md",
+   "best_local_model": "whisper-large-v3",
+   "best_by_value": "canary-1b-v2",
+   "tie": {
+    "top_by_value": "canary-1b-v2",
+    "next": "whisper-large-v3",
+    "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown"
+   },
+   "licence_class": "open source",
+   "quality": {
+    "metric": "WER percent, FLEURS de_de test (lower is better)",
+    "value": 4.7,
+    "ci95": [
+     3.95,
+     5.5
+    ],
+    "baseline": "whisper-large-v3 (anchor)",
+    "baseline_value": 4.7,
+    "reference": "canary-1b-v2 card 4.40 (sanity gate)",
+    "reference_ours": 4.52
+   },
+   "speed": {
+    "unit": "real-time factor, median at batch 1 (seconds of compute per second of audio)",
+    "value": 0.0467,
+    "audio_h_per_wall_h_batch16": 94.2
+   },
+   "vram_peak_gb": 8.88,
+   "energy": {
+    "unit": "GPU joules per audio hour (batch 1)",
+    "value": 22235
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "whisper-large-v3",
+    "value": 4.7,
+    "vram_peak_gb": 8.88,
+    "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
+   }
+  },
+  {
+   "id": "C3",
+   "capability": "Invoice fields from page images",
+   "design": "plan/c3.md",
+   "report": "results/c3/findings.md",
+   "best_local_model": "gemma4-12b",
+   "best_by_value": "gemma4-26b",
+   "tie": {
+    "top_by_value": "gemma4-26b",
+    "next": "gemma4-12b",
+    "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown"
+   },
+   "licence_class": "open source",
+   "quality": {
+    "metric": "field accuracy over 408 cells (34 invoices x 12 fields)",
+    "value": 0.9779,
+    "ci95": [
+     0.9632,
+     0.9902
+    ],
+    "baseline": "regex over the PDF text layer",
+    "baseline_value": 0.2696,
+    "reference": "none published; internal render check 391 of 391 (sanity gate)"
+   },
+   "speed": {
+    "unit": "seconds per invoice, median (2 to 9 pages)",
+    "value": 2.0979,
+    "s_per_page": 0.6859
+   },
+   "vram_peak_gb": 9.79,
+   "energy": {
+    "unit": "GPU joules per invoice",
+    "value": 614
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "gemma4-12b",
+    "value": 0.9779,
+    "vram_peak_gb": 9.79,
+    "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
+   },
+   "unfinished": [
+    "qwen3-vl-8b",
+    "qwen3-vl-32b"
+   ]
+  }
+ ]
+}

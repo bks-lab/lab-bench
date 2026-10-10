@@ -1,0 +1,17 @@
+{"id": "01.01a", "arm": "qwen3-vl-32b", "n_correct": 11, "seconds_model": 516.911214599997, "error": null, "source": "job log line, no prediction"}
+{"id": "01.02a", "arm": "qwen3-vl-32b", "n_correct": 10, "seconds_model": 458.07290840000496, "error": null, "source": "job log line, no prediction"}
+{"id": "01.03a", "arm": "qwen3-vl-32b", "n_correct": 11, "seconds_model": 593.2463769000024, "error": null, "source": "job log line, no prediction"}
+{"id": "01.04a", "arm": "qwen3-vl-32b", "n_correct": 10, "seconds_model": 454.71293350000633, "error": null, "source": "job log line, no prediction"}
+{"id": "01.05a", "arm": "qwen3-vl-32b", "n_correct": 9, "seconds_model": 493.73242869999376, "error": null, "source": "job log line, no prediction"}
+{"id": "01.06a", "arm": "qwen3-vl-32b", "n_correct": 12, "seconds_model": 455.65626360001625, "error": null, "source": "job log line, no prediction"}
+{"id": "01.07a", "arm": "qwen3-vl-32b", "n_correct": 12, "seconds_model": 339.30728830001317, "error": null, "source": "job log line, no prediction"}
+{"id": "01.08a", "arm": "qwen3-vl-32b", "n_correct": 12, "seconds_model": 389.01907989999745, "error": null, "source": "job log line, no prediction"}
+{"id": "01.09a", "arm": "qwen3-vl-32b", "n_correct": 11, "seconds_model": 702.3509122999967, "error": null, "source": "job log line, no prediction"}
+{"id": "01.10a", "arm": "qwen3-vl-32b", "n_correct": 11, "seconds_model": 412.30771709998953, "error": null, "source": "job log line, no prediction"}
+{"id": "01.11a", "arm": "qwen3-vl-32b", "n_correct": 11, "seconds_model": 704.0510669000214, "error": null, "source": "job log line, no prediction"}
+{"id": "01.12a", "arm": "qwen3-vl-32b", "n_correct": 10, "seconds_model": 396.0362827999925, "error": null, "source": "job log line, no prediction"}
+{"id": "01.13a", "arm": "qwen3-vl-32b", "n_correct": 8, "seconds_model": 717.2033694999991, "error": null, "source": "job log line, no prediction"}
+{"id": "01.14a", "arm": "qwen3-vl-32b", "n_correct": 12, "seconds_model": 500.995846899983, "error": null, "source": "job log line, no prediction"}
+{"id": "01.15a", "arm": "qwen3-vl-32b", "n_correct": 12, "seconds_model": 614.0906184999913, "error": null, "source": "job log line, no prediction"}
+{"id": "01.17a", "arm": "qwen3-vl-32b", "n_correct": 11, "seconds_model": 647.5910554000002, "error": null, "source": "job log line, no prediction"}
+{"id": "01.18a", "arm": "qwen3-vl-32b", "n_correct": 11, "seconds_model": 459.2025360999978, "error": null, "source": "job log line, no prediction"}

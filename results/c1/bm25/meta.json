@@ -1,0 +1,110 @@
+{
+ "test": "C1",
+ "arm": "bm25",
+ "started": "2026-10-09T22:16:24.780+02:00",
+ "device": "cuda",
+ "probe": false,
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.19.0",
+  "sentence-transformers": "6.1.0",
+  "pytrec-eval-terrier": "0.5.10",
+  "bm25s": "0.3.13",
+  "PyStemmer": "3.1.0",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "torch_cuda": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4090"
+ },
+ "data_manifest": "cases/c1/manifest.json",
+ "arm_config": {
+  "k1": 0.9,
+  "b": 0.4,
+  "stemmer": "german (PyStemmer, Snowball)",
+  "stopwords": null,
+  "library": "bm25s"
+ },
+ "summary": {
+  "miracl": {
+   "ndcg10": 0.19913076587540723,
+   "ndcg10_ci95": [
+    0.16804942688960087,
+    0.23169120345689392
+   ],
+   "recall100": 0.6602706219099662,
+   "recall100_ci95": [
+    0.6200309653916212,
+    0.7036872885766328
+   ],
+   "mrr10": 0.25261514441842314,
+   "mrr10_ci95": [
+    0.20800191907364038,
+    0.296117681498829
+   ],
+   "queries": 305,
+   "passages": 71277,
+   "index_seconds": 3.8476,
+   "query_ms_median": 0.3387999895494431
+  },
+  "germandpr": {
+   "ndcg10": 0.5110683776151898,
+   "ndcg10_ci95": [
+    0.48991364515071667,
+    0.5314377423905107
+   ],
+   "recall100": 0.975609756097561,
+   "recall100_ci95": [
+    0.9658536585365853,
+    0.984390243902439
+   ],
+   "mrr10": 0.41367208672086725,
+   "mrr10_ci95": [
+    0.39094281842818424,
+    0.4362582075106466
+   ],
+   "queries": 1025,
+   "passages": 2876,
+   "index_seconds": 0.3667,
+   "query_ms_median": 0.09840000711847097
+  }
+ },
+ "sections": [
+  {
+   "name": "index",
+   "start": "2026-10-09T22:16:25.417+02:00",
+   "set": "miracl",
+   "passages": 71277,
+   "seconds": 3.8476,
+   "end": "2026-10-09T22:16:29.264+02:00"
+  },
+  {
+   "name": "queries_batch1",
+   "start": "2026-10-09T22:16:29.264+02:00",
+   "set": "miracl",
+   "queries": 305,
+   "seconds": 0.1753,
+   "end": "2026-10-09T22:16:29.439+02:00"
+  },
+  {
+   "name": "index",
+   "start": "2026-10-09T22:16:29.525+02:00",
+   "set": "germandpr",
+   "passages": 2876,
+   "seconds": 0.3667,
+   "end": "2026-10-09T22:16:29.892+02:00"
+  },
+  {
+   "name": "queries_batch1",
+   "start": "2026-10-09T22:16:29.892+02:00",
+   "set": "germandpr",
+   "queries": 1025,
+   "seconds": 0.1243,
+   "end": "2026-10-09T22:16:30.017+02:00"
+  }
+ ],
+ "finished": "2026-10-09T22:16:30.227+02:00",
+ "gate": null
+}

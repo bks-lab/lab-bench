@@ -1,0 +1,67 @@
+{
+ "test": "C3",
+ "arm": "mistral-small-3.2",
+ "kind": "vision",
+ "ollama_tag": "mistral-small3.2:24b",
+ "num_ctx": 32768,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 32768
+ },
+ "job_id": "20261009-172131-c3-mistral-small-3.2",
+ "mock": false,
+ "model": {
+  "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+  "size": 15177384862,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "mistral3",
+   "families": [
+    "mistral3"
+   ],
+   "parameter_size": "24.0B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 131072,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools"
+  ]
+ },
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "d89f4ee9d5fa1d288987a0a0a1f097f4ee8f5d0d6cf82ac3575f619fd907c0fc",
+  "gold_sha256": "4bdef09c21b34e8b5c6ba4455604782bf09ccb122448aed870c705162571cfad",
+  "method_sha256": "611890b58ed9bbb74c4ed5a3732036db2b91d9d8ff94e25cb02ce89e586a977a"
+ },
+ "started": "2026-10-10T00:04:38.621+02:00",
+ "think": "not supported by the model",
+ "warmup_start": "2026-10-10T00:04:38.621+02:00",
+ "timed_start": "2026-10-10T00:05:09.638+02:00",
+ "timed_end": "2026-10-10T00:07:51.443+02:00",
+ "summary": {
+  "invoices": 34,
+  "cells": 408,
+  "field_accuracy": 0.9093137254901961,
+  "money_accuracy": 0.9411764705882353,
+  "iban_accuracy": 0.9117647058823529,
+  "all12": 10,
+  "errors": 0,
+  "truncated": 0,
+  "median_s_per_invoice": 4.634301550002419,
+  "median_s_per_page": 1.49487201666246,
+  "pages": 118
+ },
+ "finished": "2026-10-10T00:07:51.454+02:00"
+}

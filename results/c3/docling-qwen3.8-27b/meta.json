@@ -1,0 +1,99 @@
+{
+ "test": "C3",
+ "arm": "docling+qwen3.8-27b",
+ "kind": "docling",
+ "ollama_tag": "qwen3.8:27b",
+ "num_ctx": 32768,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 32768
+ },
+ "job_id": "20261009-172137-c3-docling+qwen3.8-27b",
+ "mock": false,
+ "model": {
+  "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+  "size": 17741872154,
+  "details": {
+   "parent_model": "qwen3.8:27b-q4_K_M",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "27.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d",
+   "ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools",
+   "thinking"
+  ]
+ },
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "ollama": "0.35.0",
+  "docling": "2.136.0",
+  "docling-core": "2.101.1",
+  "docling-ibm-models": "4.0.3",
+  "easyocr": "1.7.2",
+  "rapidocr": "3.10.0",
+  "torch": "2.11.0+cu128",
+  "onnxruntime": "1.31.0",
+  "torch_cuda_available": true
+ },
+ "inputs": {
+  "manifest_sha256": "d89f4ee9d5fa1d288987a0a0a1f097f4ee8f5d0d6cf82ac3575f619fd907c0fc",
+  "gold_sha256": "4bdef09c21b34e8b5c6ba4455604782bf09ccb122448aed870c705162571cfad",
+  "method_sha256": "611890b58ed9bbb74c4ed5a3732036db2b91d9d8ff94e25cb02ce89e586a977a"
+ },
+ "started": "2026-10-10T03:19:46.370+02:00",
+ "think": false,
+ "docling_init_start": "2026-10-10T03:19:46.370+02:00",
+ "docling_init_s": 2.5124320999893826,
+ "docling_ocr": {
+  "engine": "easyocr",
+  "options": {
+   "mode": "default",
+   "lang": [
+    "en",
+    "es",
+    "fr",
+    "de"
+   ],
+   "scale": 3.0,
+   "use_gpu": null,
+   "confidence_threshold": 0.5,
+   "model_storage_directory": null,
+   "recog_network": "standard",
+   "download_enabled": true,
+   "suppress_mps_warnings": true,
+   "force_full_page_ocr": false
+  }
+ },
+ "warmup_start": "2026-10-10T03:19:48.882+02:00",
+ "timed_start": "2026-10-10T03:21:20.781+02:00",
+ "timed_end": "2026-10-10T03:36:55.510+02:00",
+ "summary": {
+  "invoices": 34,
+  "cells": 408,
+  "field_accuracy": 0.5906862745098039,
+  "money_accuracy": 0.0,
+  "iban_accuracy": 0.7647058823529411,
+  "all12": 0,
+  "errors": 0,
+  "truncated": 0,
+  "median_s_per_invoice": 26.146489499980817,
+  "median_s_per_page": 8.575187537495367,
+  "pages": 118
+ },
+ "finished": "2026-10-10T03:36:55.522+02:00"
+}

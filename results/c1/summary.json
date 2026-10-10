@@ -1,0 +1,554 @@
+{
+ "schema": "jev-match-bench capability summary v1",
+ "test": "C1",
+ "design": "plan/c1.md",
+ "report": "results/c1/findings.md",
+ "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
+ "generator": "bench/score-cap.py",
+ "best_by_ndcg10": "qwen3-emb-8b",
+ "gates": {
+  "bge-m3": {
+   "reference": 0.5759,
+   "tolerance": 0.015,
+   "value": 0.5766730949554998,
+   "passed": true,
+   "set": "miracl",
+   "metric": "ndcg10"
+  },
+  "e5-large": {
+   "reference": 0.829,
+   "tolerance": 0.015,
+   "value": 0.828382920585719,
+   "passed": true,
+   "set": "germandpr",
+   "metric": "ndcg10"
+  }
+ },
+ "arms": [
+  {
+   "arm": "qwen3-emb-8b",
+   "model": "Qwen/Qwen3-Embedding-8B",
+   "revision": "1d8ad4ca9b3dd8059ad90a75d4983776a23d44af",
+   "params_m": 7567,
+   "params_source": "safetensors header",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "baseline": false,
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.6127,
+    "ci95": [
+     0.5758,
+     0.6511
+    ],
+    "skill_vs_bm25": 0.5164,
+    "recall100": 0.98,
+    "recall100_ci95": [
+     0.9672,
+     0.9907
+    ],
+    "mrr10": 0.676,
+    "mrr10_ci95": [
+     0.6335,
+     0.7226
+    ],
+    "germandpr_ndcg10": 0.8411,
+    "germandpr_ndcg10_ci95": [
+     0.8265,
+     0.8557
+    ],
+    "germandpr_recall100": 1.0,
+    "germandpr_mrr10": 0.7914
+   },
+   "speed": {
+    "index_passages_per_s": 43.9493,
+    "index_seconds_71277": 1621.8,
+    "query_ms_median": 53.653,
+    "query_ms_median_ci95": [
+     53.401,
+     53.922
+    ],
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 719227.36,
+    "index_j_per_1000_passages": 10090.5953,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 21.83,
+   "vram_peak_index_gb": 21.83,
+   "vram_peak_total_gb": 23.49,
+   "fits_24gb": true,
+   "truncated_passages": 1295
+  },
+  {
+   "arm": "nomic-v2-moe",
+   "model": "nomic-ai/nomic-embed-text-v2-moe",
+   "revision": "1066b6599d099fbb93dfcb64f9c37a7c9e503e85",
+   "params_m": 475,
+   "params_source": "safetensors header (all experts; the card gives 305M active)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "baseline": false,
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.5816,
+    "ci95": [
+     0.543,
+     0.6195
+    ],
+    "skill_vs_bm25": 0.4776,
+    "recall100": 0.9738,
+    "recall100_ci95": [
+     0.9592,
+     0.9857
+    ],
+    "mrr10": 0.6519,
+    "mrr10_ci95": [
+     0.6078,
+     0.6985
+    ],
+    "germandpr_ndcg10": 0.8155,
+    "germandpr_ndcg10_ci95": [
+     0.7992,
+     0.8296
+    ],
+    "germandpr_recall100": 1.0,
+    "germandpr_mrr10": 0.7594,
+    "vs_best": {
+     "best": "qwen3-emb-8b",
+     "diff": 0.0311,
+     "diff_ci95": [
+      0.0047,
+      0.0581
+     ],
+     "p": 0.016,
+     "intervals_overlap": true,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "index_passages_per_s": 840.0453,
+    "index_seconds_71277": 84.849,
+    "query_ms_median": 28.239,
+    "query_ms_median_ci95": [
+     28.169,
+     28.313
+    ],
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 16554.97,
+    "index_j_per_1000_passages": 232.2624,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 2.57,
+   "vram_peak_index_gb": 2.36,
+   "vram_peak_total_gb": 4.22,
+   "fits_24gb": true,
+   "truncated_passages": 554
+  },
+  {
+   "arm": "bge-m3",
+   "model": "BAAI/bge-m3",
+   "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+   "params_m": 568,
+   "params_source": "model card (weights are pytorch_model.bin, not counted)",
+   "licence": "MIT",
+   "licence_class": "open source",
+   "baseline": false,
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.5767,
+    "ci95": [
+     0.5398,
+     0.6156
+    ],
+    "skill_vs_bm25": 0.4714,
+    "recall100": 0.963,
+    "recall100_ci95": [
+     0.9445,
+     0.9794
+    ],
+    "mrr10": 0.6534,
+    "mrr10_ci95": [
+     0.6062,
+     0.7015
+    ],
+    "germandpr_ndcg10": 0.8257,
+    "germandpr_ndcg10_ci95": [
+     0.8095,
+     0.8409
+    ],
+    "germandpr_recall100": 1.0,
+    "germandpr_mrr10": 0.7735,
+    "vs_best": {
+     "best": "qwen3-emb-8b",
+     "diff": 0.0361,
+     "diff_ci95": [
+      0.0115,
+      0.0598
+     ],
+     "p": 0.006,
+     "intervals_overlap": true,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "index_passages_per_s": 1189.4289,
+    "index_seconds_71277": 59.9254,
+    "query_ms_median": 15.098,
+    "query_ms_median_ci95": [
+     14.559,
+     15.6377
+    ],
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 25764.63,
+    "index_j_per_1000_passages": 361.4719,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 3.02,
+   "vram_peak_index_gb": 2.74,
+   "vram_peak_total_gb": 4.67,
+   "fits_24gb": true,
+   "truncated_passages": 537
+  },
+  {
+   "arm": "e5-large",
+   "model": "intfloat/multilingual-e5-large",
+   "revision": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+   "params_m": 560,
+   "params_source": "safetensors header",
+   "licence": "MIT",
+   "licence_class": "open source",
+   "baseline": false,
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.5644,
+    "ci95": [
+     0.5266,
+     0.6029
+    ],
+    "skill_vs_bm25": 0.4561,
+    "recall100": 0.9489,
+    "recall100_ci95": [
+     0.9286,
+     0.9669
+    ],
+    "mrr10": 0.6414,
+    "mrr10_ci95": [
+     0.5957,
+     0.6882
+    ],
+    "germandpr_ndcg10": 0.8284,
+    "germandpr_ndcg10_ci95": [
+     0.8138,
+     0.843
+    ],
+    "germandpr_recall100": 1.0,
+    "germandpr_mrr10": 0.7762,
+    "vs_best": {
+     "best": "qwen3-emb-8b",
+     "diff": 0.0483,
+     "diff_ci95": [
+      0.0244,
+      0.072
+     ],
+     "p": 0.0,
+     "intervals_overlap": true,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "index_passages_per_s": 1194.2457,
+    "index_seconds_71277": 59.6837,
+    "query_ms_median": 12.464,
+    "query_ms_median_ci95": [
+     12.42,
+     12.607
+    ],
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 25926.83,
+    "index_j_per_1000_passages": 363.7475,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 3.0,
+   "vram_peak_index_gb": 2.72,
+   "vram_peak_total_gb": 4.66,
+   "fits_24gb": true,
+   "truncated_passages": 546
+  },
+  {
+   "arm": "qwen3-emb-0.6b",
+   "model": "Qwen/Qwen3-Embedding-0.6B",
+   "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+   "params_m": 596,
+   "params_source": "safetensors header",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "baseline": false,
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.5461,
+    "ci95": [
+     0.5098,
+     0.5833
+    ],
+    "skill_vs_bm25": 0.4333,
+    "recall100": 0.9653,
+    "recall100_ci95": [
+     0.949,
+     0.9811
+    ],
+    "mrr10": 0.6176,
+    "mrr10_ci95": [
+     0.5726,
+     0.6663
+    ],
+    "germandpr_ndcg10": 0.795,
+    "germandpr_ndcg10_ci95": [
+     0.7784,
+     0.8112
+    ],
+    "germandpr_recall100": 0.999,
+    "germandpr_mrr10": 0.736,
+    "vs_best": {
+     "best": "qwen3-emb-8b",
+     "diff": 0.0666,
+     "diff_ci95": [
+      0.0395,
+      0.0927
+     ],
+     "p": 0.0,
+     "intervals_overlap": true,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "index_passages_per_s": 335.0757,
+    "index_seconds_71277": 212.7191,
+    "query_ms_median": 39.547,
+    "query_ms_median_ci95": [
+     39.41,
+     39.647
+    ],
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 80016.39,
+    "index_j_per_1000_passages": 1122.6116,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 9.3,
+   "vram_peak_index_gb": 9.24,
+   "vram_peak_total_gb": 10.96,
+   "fits_24gb": true,
+   "truncated_passages": 1295
+  },
+  {
+   "arm": "gte-multi",
+   "model": "Alibaba-NLP/gte-multilingual-base",
+   "revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+   "params_m": 305,
+   "params_source": "safetensors header",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "baseline": false,
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.5115,
+    "ci95": [
+     0.4726,
+     0.5519
+    ],
+    "skill_vs_bm25": 0.39,
+    "recall100": 0.9618,
+    "recall100_ci95": [
+     0.9458,
+     0.9765
+    ],
+    "mrr10": 0.5784,
+    "mrr10_ci95": [
+     0.5337,
+     0.63
+    ],
+    "germandpr_ndcg10": 0.7972,
+    "germandpr_ndcg10_ci95": [
+     0.7813,
+     0.8124
+    ],
+    "germandpr_recall100": 0.9941,
+    "germandpr_mrr10": 0.7383,
+    "vs_best": {
+     "best": "qwen3-emb-8b",
+     "diff": 0.1013,
+     "diff_ci95": [
+      0.0754,
+      0.1275
+     ],
+     "p": 0.0,
+     "intervals_overlap": false,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "index_passages_per_s": 2376.7636,
+    "index_seconds_71277": 29.9891,
+    "query_ms_median": 8.844,
+    "query_ms_median_ci95": [
+     8.732,
+     9.106
+    ],
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 12317.95,
+    "index_j_per_1000_passages": 172.818,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 2.44,
+   "vram_peak_index_gb": 2.43,
+   "vram_peak_total_gb": 4.1,
+   "fits_24gb": true,
+   "truncated_passages": 537
+  },
+  {
+   "arm": "e5-large-instruct",
+   "model": "intfloat/multilingual-e5-large-instruct",
+   "revision": "274baa43b0e13e37fafa6428dbc7938e62e5c439",
+   "params_m": 560,
+   "params_source": "safetensors header",
+   "licence": "MIT",
+   "licence_class": "open source",
+   "baseline": false,
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.5099,
+    "ci95": [
+     0.4741,
+     0.55
+    ],
+    "skill_vs_bm25": 0.388,
+    "recall100": 0.9528,
+    "recall100_ci95": [
+     0.9337,
+     0.9696
+    ],
+    "mrr10": 0.6001,
+    "mrr10_ci95": [
+     0.5551,
+     0.651
+    ],
+    "germandpr_ndcg10": 0.8053,
+    "germandpr_ndcg10_ci95": [
+     0.7892,
+     0.821
+    ],
+    "germandpr_recall100": 0.998,
+    "germandpr_mrr10": 0.7493,
+    "vs_best": {
+     "best": "qwen3-emb-8b",
+     "diff": 0.1029,
+     "diff_ci95": [
+      0.0739,
+      0.1311
+     ],
+     "p": 0.0,
+     "intervals_overlap": false,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "index_passages_per_s": 1203.5053,
+    "index_seconds_71277": 59.2245,
+    "query_ms_median": 13.407,
+    "query_ms_median_ci95": [
+     13.376,
+     13.44
+    ],
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 25608.04,
+    "index_j_per_1000_passages": 359.2749,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 3.0,
+   "vram_peak_index_gb": 2.72,
+   "vram_peak_total_gb": 4.66,
+   "fits_24gb": true,
+   "truncated_passages": 537
+  },
+  {
+   "arm": "bm25",
+   "model": "BM25 (bm25s, German Snowball stemmer, k1 0.9, b 0.4)",
+   "revision": null,
+   "params_m": 0,
+   "params_source": "no model",
+   "licence": "MIT",
+   "licence_class": "open source",
+   "baseline": true,
+   "quality": {
+    "metric": "nDCG@10, MIRACL de dev (hard negatives), 305 queries",
+    "value": 0.1991,
+    "ci95": [
+     0.168,
+     0.2317
+    ],
+    "skill_vs_bm25": 0.0,
+    "recall100": 0.6603,
+    "recall100_ci95": [
+     0.62,
+     0.7037
+    ],
+    "mrr10": 0.2526,
+    "mrr10_ci95": [
+     0.208,
+     0.2961
+    ],
+    "germandpr_ndcg10": 0.5111,
+    "germandpr_ndcg10_ci95": [
+     0.4899,
+     0.5314
+    ],
+    "germandpr_recall100": 0.9756,
+    "germandpr_mrr10": 0.4137,
+    "vs_best": {
+     "best": "qwen3-emb-8b",
+     "diff": 0.4136,
+     "diff_ci95": [
+      0.3688,
+      0.4593
+     ],
+     "p": 0.0,
+     "intervals_overlap": false,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "index_passages_per_s": 18525.0546,
+    "index_seconds_71277": 3.8476,
+    "query_ms_median": 0.339,
+    "query_ms_median_ci95": [
+     0.326,
+     0.356
+    ],
+    "note": "indexing batch 64 (fp16 for the GPU models), query = encode plus exact search at batch 1; BM25 runs on the CPU"
+   },
+   "energy": {
+    "index_j": 59.67,
+    "index_j_per_1000_passages": 0.8372,
+    "note": "GPU only, sum of 1 s power samples during the MIRACL index section"
+   },
+   "vram_peak_gb": 0.0,
+   "vram_peak_index_gb": 0.0,
+   "vram_peak_total_gb": 0.61,
+   "fits_24gb": true,
+   "truncated_passages": null
+  }
+ ]
+}

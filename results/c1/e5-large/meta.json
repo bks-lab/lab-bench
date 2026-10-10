@@ -1,0 +1,141 @@
+{
+ "test": "C1",
+ "arm": "e5-large",
+ "started": "2026-10-09T21:27:26.096+02:00",
+ "device": "cuda",
+ "probe": false,
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.19.0",
+  "sentence-transformers": "6.1.0",
+  "pytrec-eval-terrier": "0.5.10",
+  "bm25s": "0.3.13",
+  "PyStemmer": "3.1.0",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "torch_cuda": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4090"
+ },
+ "data_manifest": "cases/c1/manifest.json",
+ "arm_config": {
+  "repaired_buffers": [],
+  "model": "intfloat/multilingual-e5-large",
+  "revision": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+  "query_prefix": "query: ",
+  "doc_prefix": "passage: ",
+  "max_seq_length": 512,
+  "dtype": "torch.float16",
+  "index_batch": 64,
+  "query_batch": 1
+ },
+ "summary": {
+  "miracl": {
+   "ndcg10": 0.5643852394193036,
+   "ndcg10_ci95": [
+    0.5266372967839981,
+    0.6028993784995882
+   ],
+   "recall100": 0.9489149102263856,
+   "recall100_ci95": [
+    0.9285788446526151,
+    0.9669494535519125
+   ],
+   "mrr10": 0.641399947957325,
+   "mrr10_ci95": [
+    0.5957486664064532,
+    0.6881666341399949
+   ],
+   "queries": 305,
+   "passages": 71277,
+   "truncated_passages": 546,
+   "index_seconds": 59.6837,
+   "passages_per_s": 1194.2456650643308,
+   "query_ms_median": 12.463699997169897,
+   "query_ms_median_ci95": [
+    12.419699996826239,
+    12.607099997694604
+   ],
+   "peak_vram_gb_torch": 1.955595264
+  },
+  "germandpr": {
+   "ndcg10": 0.828382920585719,
+   "ndcg10_ci95": [
+    0.8137763680147566,
+    0.8429865826777994
+   ],
+   "recall100": 1.0,
+   "recall100_ci95": [
+    1.0,
+    1.0
+   ],
+   "mrr10": 0.7761931862175765,
+   "mrr10_ci95": [
+    0.7573553232675184,
+    0.7942358013937282
+   ],
+   "queries": 1025,
+   "passages": 2876,
+   "truncated_passages": 309,
+   "index_seconds": 5.6615,
+   "passages_per_s": 507.9925814713415,
+   "query_ms_median": 12.29280000552535,
+   "query_ms_median_ci95": [
+    12.266000005183741,
+    12.310799997067079
+   ],
+   "peak_vram_gb_torch": 1.954835968
+  }
+ },
+ "sections": [
+  {
+   "name": "model_load",
+   "start": "2026-10-09T21:27:30.371+02:00",
+   "seconds": 3.0554,
+   "end": "2026-10-09T21:27:33.426+02:00"
+  },
+  {
+   "name": "index",
+   "start": "2026-10-09T21:27:39.993+02:00",
+   "set": "miracl",
+   "passages": 71277,
+   "seconds": 59.6837,
+   "end": "2026-10-09T21:28:39.675+02:00"
+  },
+  {
+   "name": "queries_batch1",
+   "start": "2026-10-09T21:28:39.764+02:00",
+   "set": "miracl",
+   "queries": 305,
+   "seconds": 3.9678,
+   "end": "2026-10-09T21:28:43.732+02:00"
+  },
+  {
+   "name": "index",
+   "start": "2026-10-09T21:28:44.314+02:00",
+   "set": "germandpr",
+   "passages": 2876,
+   "seconds": 5.6615,
+   "end": "2026-10-09T21:28:49.976+02:00"
+  },
+  {
+   "name": "queries_batch1",
+   "start": "2026-10-09T21:28:50.018+02:00",
+   "set": "germandpr",
+   "queries": 1025,
+   "seconds": 12.6774,
+   "end": "2026-10-09T21:29:02.695+02:00"
+  }
+ ],
+ "finished": "2026-10-09T21:29:02.996+02:00",
+ "gate": {
+  "reference": 0.829,
+  "tolerance": 0.015,
+  "value": 0.828382920585719,
+  "passed": true,
+  "set": "germandpr",
+  "metric": "ndcg10"
+ }
+}

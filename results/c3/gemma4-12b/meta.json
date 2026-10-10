@@ -1,0 +1,71 @@
+{
+ "test": "C3",
+ "arm": "gemma4-12b",
+ "kind": "vision",
+ "ollama_tag": "gemma4:12b",
+ "num_ctx": 32768,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 32768
+ },
+ "job_id": "20261009-172129-c3-gemma4-12b",
+ "mock": false,
+ "model": {
+  "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+  "size": 8021618941,
+  "details": {
+   "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "blobs": [
+   "bb722270d54346adc198f213851dbe0207e87c3ecf2a0aff4d92262726215391",
+   "7008a656050bed18f6741406a631e83fa75ee1a02308f2e4f40d978cfbb3ce4b",
+   "0cb0cd0a5c499d92942caa22fe5abb98f6e8874868d590e2b094ece4ac8e6d28"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "audio",
+   "tools",
+   "thinking"
+  ]
+ },
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "d89f4ee9d5fa1d288987a0a0a1f097f4ee8f5d0d6cf82ac3575f619fd907c0fc",
+  "gold_sha256": "4bdef09c21b34e8b5c6ba4455604782bf09ccb122448aed870c705162571cfad",
+  "method_sha256": "611890b58ed9bbb74c4ed5a3732036db2b91d9d8ff94e25cb02ce89e586a977a"
+ },
+ "started": "2026-10-10T00:02:02.828+02:00",
+ "think": false,
+ "warmup_start": "2026-10-10T00:02:02.828+02:00",
+ "timed_start": "2026-10-10T00:02:20.946+02:00",
+ "timed_end": "2026-10-10T00:03:36.162+02:00",
+ "summary": {
+  "invoices": 34,
+  "cells": 408,
+  "field_accuracy": 0.9779411764705882,
+  "money_accuracy": 0.9926470588235294,
+  "iban_accuracy": 0.9117647058823529,
+  "all12": 26,
+  "errors": 0,
+  "truncated": 0,
+  "median_s_per_invoice": 2.0979002499952912,
+  "median_s_per_page": 0.6859033166692825,
+  "pages": 118
+ },
+ "finished": "2026-10-10T00:03:36.173+02:00"
+}

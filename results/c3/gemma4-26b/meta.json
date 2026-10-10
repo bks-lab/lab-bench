@@ -1,0 +1,70 @@
+{
+ "test": "C3",
+ "arm": "gemma4-26b",
+ "kind": "vision",
+ "ollama_tag": "gemma4:26b",
+ "num_ctx": 32768,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 32768
+ },
+ "job_id": "20261009-172132-c3-gemma4-26b",
+ "mock": false,
+ "model": {
+  "digest": "001e5dafc3c77684c2307ebc6ab8e336e10c9b18eca52acf547d72fc83c3ca8c",
+  "size": 18731025629,
+  "details": {
+   "parent_model": "c4-targeted-20260929-26b/model-q4_K_M.gguf",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "25.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 2816
+  },
+  "blobs": [
+   "a8bdd07a49b895083bb1420bb895ad9ab3e3b8f7d5cc42c7582ca0fa765eede2",
+   "491f38afe0eb215a819c085110255fcebd6c68b4cc8e0f29168324ef3f913e32",
+   "7e78b02d928be76d0db72d23ba011aeae7fcdd9488358fd83741a8fd10b8556d"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools",
+   "thinking"
+  ]
+ },
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "d89f4ee9d5fa1d288987a0a0a1f097f4ee8f5d0d6cf82ac3575f619fd907c0fc",
+  "gold_sha256": "4bdef09c21b34e8b5c6ba4455604782bf09ccb122448aed870c705162571cfad",
+  "method_sha256": "611890b58ed9bbb74c4ed5a3732036db2b91d9d8ff94e25cb02ce89e586a977a"
+ },
+ "started": "2026-10-10T00:08:54.552+02:00",
+ "think": false,
+ "warmup_start": "2026-10-10T00:08:54.552+02:00",
+ "timed_start": "2026-10-10T00:09:25.971+02:00",
+ "timed_end": "2026-10-10T00:11:36.499+02:00",
+ "summary": {
+  "invoices": 34,
+  "cells": 408,
+  "field_accuracy": 0.9803921568627451,
+  "money_accuracy": 0.9926470588235294,
+  "iban_accuracy": 0.9117647058823529,
+  "all12": 26,
+  "errors": 0,
+  "truncated": 0,
+  "median_s_per_invoice": 3.6416036500013433,
+  "median_s_per_page": 1.190054349999021,
+  "pages": 118
+ },
+ "finished": "2026-10-10T00:11:36.510+02:00"
+}

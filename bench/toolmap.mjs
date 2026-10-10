@@ -538,13 +538,40 @@ for (const pv of ['route1', 'pv1']) {
 }
 rows.push(...autoRows);
 
+// ---------------------------------------------------------------- capability rows (C1 to C9, plan/ROADMAP.md)
+
+/**
+ * One row per capability from the register (plan/toolmap-plan.yaml,
+ * `capabilities`), with one cell `local`: measured when
+ * results/capabilities.json (bench/score-cap.py) has the row, otherwise
+ * planned with its design. The cell takes the capability map columns of
+ * plan/ROADMAP.md as the scorer wrote them; nothing is recomputed here.
+ */
+const CAPS = 'results/capabilities.json';
+const capMeasured = fs.existsSync(abs(CAPS)) ? JSON.parse(rd(CAPS)).rows : [];
+const capabilities = [];
+for (const c of plan.capabilities || []) {
+  const plannedCell = registerCell(`${PLAN} capabilities.${c.id}`, { state: 'planned', plan: c.plan });
+  const m = capMeasured.find(r => r.id === c.id);
+  if (m && m.design !== c.plan) fail(`${CAPS} ${c.id}: design ${m.design} differs from the register (${c.plan})`);
+  const local = m ? {
+    state: 'measured', best_arm: m.best_local_model, best_by_value: m.best_by_value, tie: m.tie,
+    licence_class: m.licence_class, quality: m.quality, speed: m.speed, vram_peak_gb: m.vram_peak_gb,
+    energy: m.energy, fits_24gb: m.fits_24gb, smallest_within_interval: m.smallest_within_interval,
+    ...(m.unfinished?.length ? { unfinished_arms: m.unfinished } : {}),
+    source_report: m.report, summary: `results/${c.id.toLowerCase()}/summary.json`,
+  } : plannedCell;
+  capabilities.push({ id: c.id, kind: 'capability', task: c.capability, metric: c.metric, plan: c.plan, cells: { local } });
+}
+for (const r of capMeasured) if (!capabilities.some(c => c.id === r.id)) fail(`${CAPS}: row ${r.id} is not in the register ${PLAN}`);
+
 // ---------------------------------------------------------------- write
 
 const out = {
   schema: 'jev-match-bench toolmap v2',
   generated: new Date().toISOString().slice(0, 10),
-  generated_from: ['results/route1/score.md', 'results/ex1/score.md', 'results/pv1/score-de-adjudicated.md', 'results/pv1/score-en.md', 'reference/pv1/adjudicated-a.de.jsonl', 'reference/pv1/claude-c.en.jsonl', 'result rows for versions, dates and Jev tokens', PLAN, 'results/route1/automation.json', 'results/pv1/automation.json'],
-  findings: { route1: 'results/route1/findings.md', ex1: 'results/ex1/findings.md', pv1: 'results/pv1/gliner.md', automation: 'results/automation-findings.md' },
+  generated_from: ['results/route1/score.md', 'results/ex1/score.md', 'results/pv1/score-de-adjudicated.md', 'results/pv1/score-en.md', 'reference/pv1/adjudicated-a.de.jsonl', 'reference/pv1/claude-c.en.jsonl', 'result rows for versions, dates and Jev tokens', PLAN, 'results/route1/automation.json', 'results/pv1/automation.json', CAPS],
+  findings: { route1: 'results/route1/findings.md', ex1: 'results/ex1/findings.md', pv1: 'results/pv1/gliner.md', automation: 'results/automation-findings.md', ...Object.fromEntries(capabilities.filter(c => c.cells.local.state === 'measured').map(c => [c.id.toLowerCase(), c.cells.local.source_report])) },
   note: 'Each cell is one task and one tool family. "best_arm" is the arm of that family with the highest value on the same test data the value is measured on, so it is chosen after the fact and flatters the families with many arms (GLiNER has up to six arms in route1 and nine in pv1, the local family has one arm in route1 and ex1 and four in pv1). Cells are per task: a family that is best on one task says nothing about another. All numbers are run 1, one run per arm. For German rows, English-only GLiNER models (GLiNER2.5-Decide, GLiNER2.5-Decide-1B) are not eligible as best arm, in route1 and pv1 alike; their best value is listed as english_model_extra. pv1 rows: baseline computed from the reference with the rule of results/pv1/gliner.md, run dates 2026-10-01 (Jev, local) and 2026-10-08 (GLiNER). skill = (value - baseline) / (100 - baseline). p50 values in route1 rows are per question group (the p50 ms column of results/route1/score.md); the Speed table of results/route1/findings.md gives medians per source and language, so the two can differ by a few ms. Latencies are not one clock: Jev is an HTTP round trip to api.typesafe.ai, the local LLM an HTTP call over the LAN, GLiNER GPU time in-process. Local cost (hardware, power) was not estimated. Tests: route1 and pv1 cells carry top_family (the family with the highest value in the row) and mcnemar_vs_top_p, an exact two-sided McNemar between this family\'s best arm and the top family\'s best arm on the same items (unanswered counts as wrong); route1 and pv1 cells other than Jev also carry mcnemar_vs_jev_p. Both compared arms are picked after the fact as the best of their family, and no p value is corrected for that or for the number of tests, so p >= 0.05 means the difference is not established, not that the two are level. ex1 cells have no test; their skill is F1 against a baseline F1 of 0, exact_frame_skill compares whole frames against extracting nothing.',
   classic_note: 'The classic family (plan/t3.md) is a trained classifier: multilingual-e5-base sentence embeddings plus logistic regression, fitted on the MASSIVE 1.1 train split of the same locale. The other three families get no training data. top_family and mcnemar_vs_top_p are therefore computed among jev, gliner and local-llm only; a classic cell carries top_family (that zero-shot top), its own mcnemar_vs_top_p against it, and mcnemar_vs_jev_p. Its two arms are classic-e5-lr (full train split) and classic-e5-lr-10shot (10 rows per class); best_arm is chosen as for every family.',
   ...(rows.some(r => r.local_size_classes) ? { local_series_note: 'T12 (plan/t12.md): route1 and ex1 rows carry local_size_classes, one column per size class, each the one Qwen3 model named for that class before any T12 run (small qwen3-4b, medium qwen3-14b, large qwen3-32b, moe qwen3-30b-a3b). They are not best-of picks. The local-llm family cell stays restricted to winnow-12b in route1 and ex1, so no existing cell changed. Every other local model of the series is reported only in results/t12-findings.md. local_size_contrast is the one preregistered test per route1 row (large against small).' } : {}),
@@ -557,7 +584,10 @@ const out = {
   },
   tools: plan.tools,
   rows,
+  capabilities_note: 'Capability rows (plan/ROADMAP.md, C1 to C9) ask what one RTX 4090 does on its own with open models; they compare no tool families, so they are listed apart from rows, each with one cell `local`. A measured cell is the capability map row of results/capabilities.json (bench/score-cap.py): best_arm by the primary metric, or, when the paired test does not separate it from the next model, the one with less peak VRAM (best_by_value and tie then name both). smallest_within_interval is the arm with the least peak VRAM among those the paired test does not separate from the best. Per-arm numbers: the summary.json of each test.',
+  capabilities,
 };
 fs.writeFileSync(abs(OUT), JSON.stringify(out, null, 1) + '\n');
+for (const c of out.capabilities) console.log(c.id.padEnd(22), c.cells.local.state === 'measured' ? `local:${c.cells.local.best_arm} ${c.cells.local.quality.value}` : `local:${c.cells.local.state}`);
 for (const r of out.rows) console.log(r.id.padEnd(22), Object.entries(r.cells).map(([f, c]) => c.state === 'measured' ? `${f}:${c.best_arm} ${c.value} (b ${c.baseline}, s ${c.skill})${c.tied_with.length ? ' tie ' + c.tied_with : ''}` : `${f}:${c.state}`).join(' | '));
 console.log(`wrote ${OUT}`);

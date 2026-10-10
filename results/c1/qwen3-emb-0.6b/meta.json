@@ -1,0 +1,134 @@
+{
+ "test": "C1",
+ "arm": "qwen3-emb-0.6b",
+ "started": "2026-10-09T21:38:27.137+02:00",
+ "device": "cuda",
+ "probe": false,
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.19.0",
+  "sentence-transformers": "6.1.0",
+  "pytrec-eval-terrier": "0.5.10",
+  "bm25s": "0.3.13",
+  "PyStemmer": "3.1.0",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "torch_cuda": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4090"
+ },
+ "data_manifest": "cases/c1/manifest.json",
+ "arm_config": {
+  "repaired_buffers": [],
+  "model": "Qwen/Qwen3-Embedding-0.6B",
+  "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "query_prefix": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:",
+  "doc_prefix": "",
+  "max_seq_length": 512,
+  "dtype": "torch.float16",
+  "index_batch": 64,
+  "query_batch": 1
+ },
+ "summary": {
+  "miracl": {
+   "ndcg10": 0.5461427926825142,
+   "ndcg10_ci95": [
+    0.5097571586042564,
+    0.5833208912827957
+   ],
+   "recall100": 0.9653447827218319,
+   "recall100_ci95": [
+    0.9490386416861828,
+    0.9810765027322405
+   ],
+   "mrr10": 0.6175696070778038,
+   "mrr10_ci95": [
+    0.5725981654957064,
+    0.6663118332032265
+   ],
+   "queries": 305,
+   "passages": 71277,
+   "truncated_passages": 1295,
+   "index_seconds": 212.7191,
+   "passages_per_s": 335.07569372002797,
+   "query_ms_median": 39.54660000454169,
+   "query_ms_median_ci95": [
+    39.40950000833254,
+    39.647199999308214
+   ],
+   "peak_vram_gb_torch": 9.123395072
+  },
+  "germandpr": {
+   "ndcg10": 0.7949990638568772,
+   "ndcg10_ci95": [
+    0.7783612445494639,
+    0.811189214671933
+   ],
+   "recall100": 0.9990243902439024,
+   "recall100_ci95": [
+    0.9970731707317073,
+    1.0
+   ],
+   "mrr10": 0.7360305845915602,
+   "mrr10_ci95": [
+    0.7152682830042587,
+    0.7557275454897406
+   ],
+   "queries": 1025,
+   "passages": 2876,
+   "truncated_passages": 607,
+   "index_seconds": 21.7771,
+   "passages_per_s": 132.06533468643667,
+   "query_ms_median": 38.27839999576099,
+   "query_ms_median_ci95": [
+    38.23099749861285,
+    38.325500005157664
+   ],
+   "peak_vram_gb_torch": 9.122766848
+  }
+ },
+ "sections": [
+  {
+   "name": "model_load",
+   "start": "2026-10-09T21:38:31.351+02:00",
+   "seconds": 1.5286,
+   "end": "2026-10-09T21:38:32.880+02:00"
+  },
+  {
+   "name": "index",
+   "start": "2026-10-09T21:38:40.454+02:00",
+   "set": "miracl",
+   "passages": 71277,
+   "seconds": 212.7191,
+   "end": "2026-10-09T21:42:13.167+02:00"
+  },
+  {
+   "name": "queries_batch1",
+   "start": "2026-10-09T21:42:13.306+02:00",
+   "set": "miracl",
+   "queries": 305,
+   "seconds": 12.7399,
+   "end": "2026-10-09T21:42:26.046+02:00"
+  },
+  {
+   "name": "index",
+   "start": "2026-10-09T21:42:28.016+02:00",
+   "set": "germandpr",
+   "passages": 2876,
+   "seconds": 21.7771,
+   "end": "2026-10-09T21:42:49.793+02:00"
+  },
+  {
+   "name": "queries_batch1",
+   "start": "2026-10-09T21:42:49.912+02:00",
+   "set": "germandpr",
+   "queries": 1025,
+   "seconds": 39.5596,
+   "end": "2026-10-09T21:43:29.471+02:00"
+  }
+ ],
+ "finished": "2026-10-09T21:43:29.845+02:00",
+ "gate": null
+}

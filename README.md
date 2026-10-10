@@ -6,7 +6,7 @@ locally or hosted in the EU, answer the match questions as well as Jev?
 ## Notice: public export, Jev outputs under their own terms
 
 This repository is the public export of BKS-Lab's private bench
-(source commit `36d699ed8ff5`). It carries the cases, requests, references,
+(source commit `c7a68fba232e`). It carries the cases, requests, references,
 reports and the result rows of every arm.
 
 - Jev's per-question outputs (the result rows under `results/*/jev/`) are
@@ -76,7 +76,7 @@ The full route1 and ex1 run is one command per machine:
 `bench/run-route-ex.sh` (Jev and Ollama) and `bench/run-route-ex.bat`
 (GLiNER on the GPU machine).
 
-A second family is planned and preregistered, but not yet run:
+A second family is preregistered and partly run:
 **capabilities of a local workstation**, C1 to C9. These tests do not
 compare against Jev. They ask what one in-house PC (RTX 4090, 24 GB) with
 open models does on German business tasks: retrieval for RAG, speech to
@@ -89,6 +89,24 @@ before other models are scored. Designs: [plan/c0-common.md](plan/c0-common.md)
 and `plan/c1.md` to `plan/c9.md`; data, licences, run order and GPU hours:
 [plan/ROADMAP.md](plan/ROADMAP.md).
 
+Measured so far (one RTX 4090, all sanity gates passed):
+
+- **C1 retrieval:** Qwen3-Embedding-8B is best on MIRACL de (nDCG@10 0.613,
+  95 % CI 0.576 to 0.651) and separated from every other embedder, but
+  indexes 44 passages per second; bge-m3, e5-large and nomic-v2-moe reach
+  0.56 to 0.58 at 840 to 1,200 per second and 3 GB.
+  [findings.md](results/c1/findings.md)
+- **C2 speech to text:** canary-1b-v2 (WER 4.52 %) and whisper-large-v3
+  (4.70 %) are not separated on FLEURS de; parakeet-v3 (5.16 %) runs 182 times
+  faster than real time. [findings.md](results/c2/findings.md)
+- **C3 invoice fields from page images:** gemma4-12b and gemma4-26b read
+  399 and 400 of 408 cells (0.978 and 0.980, not separated) at 2 to 4 s per
+  invoice; OCR plus a text model is worse; the two Qwen3-VL arms did not
+  finish within their time budget. [findings.md](results/c3/findings.md)
+- Capability map: [results/capabilities.json](results/capabilities.json),
+  per-arm chart data in `results/c1/summary.json` to
+  `results/c3/summary.json`.
+
 ## Tool map
 
 `results/toolmap.json` is the machine-readable summary: one row per task,
@@ -97,6 +115,11 @@ bench/toolmap.mjs` rebuilds it from the score reports, the pv1 references,
 the result rows and the register `plan/toolmap-plan.yaml`. It recounts the
 route1 and pv1 accuracies from the rows and stops if they differ from the
 reports.
+
+The capability tests C1 to C9 compare no tool families, so they sit apart,
+under `capabilities`: one row per test with a single cell `local`, measured
+from `results/capabilities.json` (written by `bench/score-cap.py`) or
+planned with its design.
 
 route1 and pv1 cells carry `top_family` (the family with the highest value in
 that row) and `mcnemar_vs_top_p`: an exact paired McNemar between the cell's

@@ -1,0 +1,406 @@
+{
+ "schema": "jev-match-bench capability summary v1",
+ "test": "C2",
+ "design": "plan/c2.md",
+ "report": "results/c2/findings.md",
+ "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
+ "generator": "bench/score-cap.py",
+ "best_by_wer": "canary-1b-v2",
+ "gate": {
+  "reference": 4.4,
+  "tolerance": 1.5,
+  "value": 4.521404521404522,
+  "passed": true,
+  "metric": "wer_percent"
+ },
+ "arms": [
+  {
+   "arm": "canary-1b-v2",
+   "model": "nvidia/canary-1b-v2",
+   "revision": "d455706339a6b32e1aa40f82c713a482a0c938e2",
+   "runtime": "nemo",
+   "dtype": "float32",
+   "params_m": 979,
+   "params_source": "safetensors header",
+   "licence": "CC BY 4.0",
+   "licence_class": "open source (CC BY)",
+   "quality": {
+    "metric": "corpus WER in percent, FLEURS de_de test, 862 utterances, fixed normaliser bench/lib/norm_de.py",
+    "value": 4.52,
+    "ci95": [
+     3.95,
+     5.16
+    ],
+    "cer": 1.5,
+    "cer_ci95": [
+     1.26,
+     1.76
+    ],
+    "wer_num2words_sensitivity": 4.3,
+    "wer_utterances_le_30s": 4.58,
+    "wer_utterances_gt_30s": 3.24,
+    "utterances_gt_30s": 21,
+    "vs_anchor": {
+     "anchor": "whisper-large-v3",
+     "diff_points": -0.18,
+     "diff_ci95_points": [
+      -0.94,
+      0.44
+     ],
+     "p": 0.622
+    }
+   },
+   "speed": {
+    "rtf_median_batch1": 0.0459,
+    "rtf_median_ci95": [
+     0.0439,
+     0.0492
+    ],
+    "rtf_pooled_batch1": 0.0445,
+    "x_realtime_batch1_pooled": 22.5,
+    "audio_h_per_wall_h_batch16": 144.9
+   },
+   "energy": {
+    "j_per_audio_h_batch1": 11322,
+    "batch1_j": 35694,
+    "batch16_j": 26726,
+    "note": "GPU only, sum of 1 s power samples during the timed section"
+   },
+   "vram_peak_gb": 22.94,
+   "vram_peak_total_gb": 23.55,
+   "vram_peak_torch_gb": 11.5769,
+   "fits_24gb": true
+  },
+  {
+   "arm": "whisper-large-v3",
+   "model": "openai/whisper-large-v3 (Systran/faster-whisper-large-v3)",
+   "revision": "edaa852ec7e145841d8ffdb056a99866b5f0a478",
+   "runtime": "faster-whisper",
+   "dtype": "float16",
+   "params_m": 1550,
+   "params_source": "model card",
+   "licence": "Apache-2.0 weights, MIT conversion",
+   "licence_class": "open source",
+   "quality": {
+    "metric": "corpus WER in percent, FLEURS de_de test, 862 utterances, fixed normaliser bench/lib/norm_de.py",
+    "value": 4.7,
+    "ci95": [
+     3.95,
+     5.5
+    ],
+    "cer": 2.02,
+    "cer_ci95": [
+     1.48,
+     2.69
+    ],
+    "wer_num2words_sensitivity": 4.59,
+    "wer_utterances_le_30s": 4.13,
+    "wer_utterances_gt_30s": 17.58,
+    "utterances_gt_30s": 21,
+    "vs_best": {
+     "best": "canary-1b-v2",
+     "intervals_overlap": true,
+     "difference_shown": false,
+     "diff_points": 0.18,
+     "diff_ci95_points": [
+      -0.44,
+      0.94
+     ],
+     "p": 0.622
+    }
+   },
+   "speed": {
+    "rtf_median_batch1": 0.0467,
+    "rtf_median_ci95": [
+     0.0456,
+     0.0479
+    ],
+    "rtf_pooled_batch1": 0.0437,
+    "x_realtime_batch1_pooled": 22.9,
+    "audio_h_per_wall_h_batch16": 94.2
+   },
+   "energy": {
+    "j_per_audio_h_batch1": 22235,
+    "batch1_j": 70099,
+    "batch16_j": 28527,
+    "note": "GPU only, sum of 1 s power samples during the timed section"
+   },
+   "vram_peak_gb": 8.88,
+   "vram_peak_total_gb": 9.53,
+   "vram_peak_torch_gb": null,
+   "fits_24gb": true
+  },
+  {
+   "arm": "parakeet-v3",
+   "model": "nvidia/parakeet-tdt-0.6b-v3",
+   "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b",
+   "runtime": "nemo",
+   "dtype": "float32",
+   "params_m": 627,
+   "params_source": "safetensors header",
+   "licence": "CC BY 4.0",
+   "licence_class": "open source (CC BY)",
+   "quality": {
+    "metric": "corpus WER in percent, FLEURS de_de test, 862 utterances, fixed normaliser bench/lib/norm_de.py",
+    "value": 5.16,
+    "ci95": [
+     4.56,
+     5.75
+    ],
+    "cer": 1.51,
+    "cer_ci95": [
+     1.31,
+     1.74
+    ],
+    "wer_num2words_sensitivity": 5.04,
+    "wer_utterances_le_30s": 5.18,
+    "wer_utterances_gt_30s": 4.86,
+    "utterances_gt_30s": 21,
+    "vs_best": {
+     "best": "canary-1b-v2",
+     "intervals_overlap": true,
+     "difference_shown": true,
+     "diff_points": 0.64,
+     "diff_ci95_points": [
+      0.2,
+      1.05
+     ],
+     "p": 0.004
+    },
+    "vs_anchor": {
+     "anchor": "whisper-large-v3",
+     "diff_points": 0.46,
+     "diff_ci95_points": [
+      -0.24,
+      1.11
+     ],
+     "p": 0.184
+    }
+   },
+   "speed": {
+    "rtf_median_batch1": 0.0062,
+    "rtf_median_ci95": [
+     0.006,
+     0.0064
+    ],
+    "rtf_pooled_batch1": 0.0055,
+    "x_realtime_batch1_pooled": 181.9,
+    "audio_h_per_wall_h_batch16": 593.3
+   },
+   "energy": {
+    "j_per_audio_h_batch1": 2153,
+    "batch1_j": 6787,
+    "batch16_j": 6401,
+    "note": "GPU only, sum of 1 s power samples during the timed section"
+   },
+   "vram_peak_gb": 16.26,
+   "vram_peak_total_gb": 16.91,
+   "vram_peak_torch_gb": 7.9152,
+   "fits_24gb": true
+  },
+  {
+   "arm": "whisper-large-v3-turbo",
+   "model": "openai/whisper-large-v3-turbo (deepdml/faster-whisper-large-v3-turbo-ct2)",
+   "revision": "4df90f75321148c3a29a9e2351b7ddf8f5b115a8",
+   "runtime": "faster-whisper",
+   "dtype": "float16",
+   "params_m": 809,
+   "params_source": "model card",
+   "licence": "MIT",
+   "licence_class": "open source",
+   "quality": {
+    "metric": "corpus WER in percent, FLEURS de_de test, 862 utterances, fixed normaliser bench/lib/norm_de.py",
+    "value": 5.63,
+    "ci95": [
+     4.55,
+     6.88
+    ],
+    "cer": 2.37,
+    "cer_ci95": [
+     1.58,
+     3.34
+    ],
+    "wer_num2words_sensitivity": 5.55,
+    "wer_utterances_le_30s": 4.43,
+    "wer_utterances_gt_30s": 32.29,
+    "utterances_gt_30s": 21,
+    "vs_best": {
+     "best": "canary-1b-v2",
+     "intervals_overlap": true,
+     "difference_shown": true,
+     "diff_points": 1.11,
+     "diff_ci95_points": [
+      0.13,
+      2.31
+     ],
+     "p": 0.026
+    },
+    "vs_anchor": {
+     "anchor": "whisper-large-v3",
+     "diff_points": 0.92,
+     "diff_ci95_points": [
+      0.06,
+      1.97
+     ],
+     "p": 0.03
+    }
+   },
+   "speed": {
+    "rtf_median_batch1": 0.0146,
+    "rtf_median_ci95": [
+     0.0141,
+     0.015
+    ],
+    "rtf_pooled_batch1": 0.0145,
+    "x_realtime_batch1_pooled": 68.9,
+    "audio_h_per_wall_h_batch16": 140.0
+   },
+   "energy": {
+    "j_per_audio_h_batch1": 8706,
+    "batch1_j": 27446,
+    "batch16_j": 19011,
+    "note": "GPU only, sum of 1 s power samples during the timed section"
+   },
+   "vram_peak_gb": 4.5,
+   "vram_peak_total_gb": 5.16,
+   "vram_peak_torch_gb": null,
+   "fits_24gb": true
+  },
+  {
+   "arm": "whisper-turbo-de",
+   "model": "primeline/whisper-large-v3-turbo-german",
+   "revision": "9e7012dad9247f07553aac8a99c4d50ad7c3d36d",
+   "runtime": "faster-whisper",
+   "dtype": "float16",
+   "params_m": 809,
+   "params_source": "safetensors header",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "quality": {
+    "metric": "corpus WER in percent, FLEURS de_de test, 862 utterances, fixed normaliser bench/lib/norm_de.py",
+    "value": 5.85,
+    "ci95": [
+     5.2,
+     6.51
+    ],
+    "cer": 2.14,
+    "cer_ci95": [
+     1.8,
+     2.5
+    ],
+    "wer_num2words_sensitivity": 5.6,
+    "wer_utterances_le_30s": 5.72,
+    "wer_utterances_gt_30s": 8.85,
+    "utterances_gt_30s": 21,
+    "vs_best": {
+     "best": "canary-1b-v2",
+     "intervals_overlap": false,
+     "difference_shown": true,
+     "diff_points": 1.33,
+     "diff_ci95_points": [
+      0.85,
+      1.79
+     ],
+     "p": 0.0
+    },
+    "vs_anchor": {
+     "anchor": "whisper-large-v3",
+     "diff_points": 1.15,
+     "diff_ci95_points": [
+      0.51,
+      1.73
+     ],
+     "p": 0.0
+    }
+   },
+   "speed": {
+    "rtf_median_batch1": 0.016,
+    "rtf_median_ci95": [
+     0.0154,
+     0.0166
+    ],
+    "rtf_pooled_batch1": 0.0156,
+    "x_realtime_batch1_pooled": 64.3,
+    "audio_h_per_wall_h_batch16": 158.5
+   },
+   "energy": {
+    "j_per_audio_h_batch1": 8815,
+    "batch1_j": 27791,
+    "batch16_j": 17721,
+    "note": "GPU only, sum of 1 s power samples during the timed section"
+   },
+   "vram_peak_gb": 4.53,
+   "vram_peak_total_gb": 5.18,
+   "vram_peak_torch_gb": null,
+   "fits_24gb": true
+  },
+  {
+   "arm": "distil-whisper-de",
+   "model": "primeline/distil-whisper-large-v3-german",
+   "revision": "95779fc83382d3749b20c5992299e75e0c269346",
+   "runtime": "faster-whisper",
+   "dtype": "float16",
+   "params_m": 756,
+   "params_source": "safetensors header",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "quality": {
+    "metric": "corpus WER in percent, FLEURS de_de test, 862 utterances, fixed normaliser bench/lib/norm_de.py",
+    "value": 13.32,
+    "ci95": [
+     11.83,
+     14.94
+    ],
+    "cer": 7.38,
+    "cer_ci95": [
+     6.16,
+     8.71
+    ],
+    "wer_num2words_sensitivity": 12.61,
+    "wer_utterances_le_30s": 11.04,
+    "wer_utterances_gt_30s": 64.09,
+    "utterances_gt_30s": 21,
+    "vs_best": {
+     "best": "canary-1b-v2",
+     "intervals_overlap": false,
+     "difference_shown": true,
+     "diff_points": 8.8,
+     "diff_ci95_points": [
+      7.44,
+      10.41
+     ],
+     "p": 0.0
+    },
+    "vs_anchor": {
+     "anchor": "whisper-large-v3",
+     "diff_points": 8.62,
+     "diff_ci95_points": [
+      7.22,
+      10.26
+     ],
+     "p": 0.0
+    }
+   },
+   "speed": {
+    "rtf_median_batch1": 0.0112,
+    "rtf_median_ci95": [
+     0.0109,
+     0.0116
+    ],
+    "rtf_pooled_batch1": 0.0111,
+    "x_realtime_batch1_pooled": 90.4,
+    "audio_h_per_wall_h_batch16": 162.4
+   },
+   "energy": {
+    "j_per_audio_h_batch1": 7285,
+    "batch1_j": 22965,
+    "batch16_j": 17202,
+    "note": "GPU only, sum of 1 s power samples during the timed section"
+   },
+   "vram_peak_gb": 4.38,
+   "vram_peak_total_gb": 5.06,
+   "vram_peak_torch_gb": null,
+   "fits_24gb": true
+  }
+ ]
+}

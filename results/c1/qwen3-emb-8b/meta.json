@@ -1,0 +1,134 @@
+{
+ "test": "C1",
+ "arm": "qwen3-emb-8b",
+ "started": "2026-10-09T21:44:34.954+02:00",
+ "device": "cuda",
+ "probe": false,
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.19.0",
+  "sentence-transformers": "6.1.0",
+  "pytrec-eval-terrier": "0.5.10",
+  "bm25s": "0.3.13",
+  "PyStemmer": "3.1.0",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "torch_cuda": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4090"
+ },
+ "data_manifest": "cases/c1/manifest.json",
+ "arm_config": {
+  "repaired_buffers": [],
+  "model": "Qwen/Qwen3-Embedding-8B",
+  "revision": "1d8ad4ca9b3dd8059ad90a75d4983776a23d44af",
+  "query_prefix": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:",
+  "doc_prefix": "",
+  "max_seq_length": 512,
+  "dtype": "torch.float16",
+  "index_batch": 32,
+  "query_batch": 1
+ },
+ "summary": {
+  "miracl": {
+   "ndcg10": 0.6127272744109797,
+   "ndcg10_ci95": [
+    0.575772650967065,
+    0.6511081572991693
+   ],
+   "recall100": 0.9800130106687482,
+   "recall100_ci95": [
+    0.9672492193598751,
+    0.9907005594587562
+   ],
+   "mrr10": 0.67604085349987,
+   "mrr10_ci95": [
+    0.6334834764506896,
+    0.7226019385896436
+   ],
+   "queries": 305,
+   "passages": 71277,
+   "truncated_passages": 1295,
+   "index_seconds": 1621.8,
+   "passages_per_s": 43.94931557528672,
+   "query_ms_median": 53.65299999539275,
+   "query_ms_median_ci95": [
+    53.40099999739323,
+    53.92180000490043
+   ],
+   "peak_vram_gb_torch": 21.86319616
+  },
+  "germandpr": {
+   "ndcg10": 0.8410744878289456,
+   "ndcg10_ci95": [
+    0.8265344468509096,
+    0.8557118127732155
+   ],
+   "recall100": 1.0,
+   "recall100_ci95": [
+    1.0,
+    1.0
+   ],
+   "mrr10": 0.7914243128145567,
+   "mrr10_ci95": [
+    0.7727741966705381,
+    0.8101459252806814
+   ],
+   "queries": 1025,
+   "passages": 2876,
+   "truncated_passages": 607,
+   "index_seconds": 177.1117,
+   "passages_per_s": 16.238339985444213,
+   "query_ms_median": 52.019700000528246,
+   "query_ms_median_ci95": [
+    51.9196999957785,
+    52.21889500317047
+   ],
+   "peak_vram_gb_torch": 21.859303424
+  }
+ },
+ "sections": [
+  {
+   "name": "model_load",
+   "start": "2026-10-09T21:44:39.203+02:00",
+   "seconds": 17.813,
+   "end": "2026-10-09T21:44:57.016+02:00"
+  },
+  {
+   "name": "index",
+   "start": "2026-10-09T21:45:04.297+02:00",
+   "set": "miracl",
+   "passages": 71277,
+   "seconds": 1621.8,
+   "end": "2026-10-09T22:12:06.064+02:00"
+  },
+  {
+   "name": "queries_batch1",
+   "start": "2026-10-09T22:12:07.111+02:00",
+   "set": "miracl",
+   "queries": 305,
+   "seconds": 16.7798,
+   "end": "2026-10-09T22:12:23.891+02:00"
+  },
+  {
+   "name": "index",
+   "start": "2026-10-09T22:12:26.212+02:00",
+   "set": "germandpr",
+   "passages": 2876,
+   "seconds": 177.1117,
+   "end": "2026-10-09T22:15:23.320+02:00"
+  },
+  {
+   "name": "queries_batch1",
+   "start": "2026-10-09T22:15:23.480+02:00",
+   "set": "germandpr",
+   "queries": 1025,
+   "seconds": 54.0532,
+   "end": "2026-10-09T22:16:17.533+02:00"
+  }
+ ],
+ "finished": "2026-10-09T22:16:17.939+02:00",
+ "gate": null
+}

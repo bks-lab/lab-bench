@@ -1,0 +1,39 @@
+{
+ "start": "2026-10-10T00:02:01+02:00",
+ "end": "2026-10-10T00:03:36+02:00",
+ "exit_code": 0,
+ "reason": "",
+ "expected_gpu_min": 20,
+ "gpu": {
+  "samples": 94,
+  "first": "2026/10/10 00:02:02.591",
+  "last": "2026/10/10 00:03:36.418",
+  "idle_mem_mib": 699.0,
+  "peak_mem_mib": 10723.0,
+  "peak_over_idle_mib": 10024.0,
+  "energy_j": 23404.7,
+  "mean_power_w": 249.0,
+  "gpu_min": 1.57,
+  "note": "GPU only, whole job incl. model load; 1 s samples"
+ },
+ "machine": {
+  "label": "local-rtx4090",
+  "recorded_at": "2026-10-10T00:02:02+02:00",
+  "gpu_query": "name,driver_version,power.limit,clocks.gr,clocks.mem,memory.total (clocks at job start)",
+  "gpu": "NVIDIA GeForce RTX 4090, 617.42, 450.00 W, 210 MHz, 405 MHz, 24564 MiB",
+  "cuda_version": "13.4",
+  "os": "Windows 11 10.0.26300",
+  "cpu": "AMD Ryzen 9 7900 12-Core Processor",
+  "ram_gb": 127.2,
+  "ollama_version": "0.35.0",
+  "job_python": "3.12.10",
+  "runner_python": "3.12.10"
+ },
+ "id": "20261009-172129-c3-gemma4-12b",
+ "key": "C3-gemma4-12b",
+ "test": "C3",
+ "arm": "gemma4-12b",
+ "ok": true,
+ "repo_ref": "ea3a644b105195ac49f30d494c739b1a094123e0",
+ "requested_by": "c3-agent"
+}

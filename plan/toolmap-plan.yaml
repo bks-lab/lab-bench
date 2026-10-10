@@ -143,3 +143,47 @@ rows:
           no labelled training data; the 34 invoices are the test set
           (plan/t3.md)
         plan: plan/t3.md
+
+# Capability rows (plan/ROADMAP.md, family C1 to C9): what one RTX 4090 does
+# on its own with open models. They are not tool-family comparisons, so they
+# sit in their own list (`capabilities` in results/toolmap.json) with one
+# cell, `local` (best local model by the roadmap rule). A row is measured
+# when results/capabilities.json, written by bench/score-cap.py, has it;
+# until then it is planned and points to its dated design.
+capabilities:
+  - id: C1
+    capability: "German retrieval for RAG (embedders, then rerankers)"
+    metric: "nDCG@10 on MIRACL de dev"
+    plan: plan/c1.md
+  - id: C2
+    capability: "German speech to text"
+    metric: "WER on FLEURS de_de test (lower is better)"
+    plan: plan/c2.md
+  - id: C3
+    capability: "invoice fields from rendered e-invoices (also T8)"
+    metric: "field exact match over 408 cells"
+    plan: plan/c3.md
+  - id: C4
+    capability: "structured output and tool calling"
+    metric: "AST accuracy and schema validity"
+    plan: plan/c4.md
+  - id: C5
+    capability: "translation German to English and English to German"
+    metric: "chrF++ on FLORES+ devtest"
+    plan: plan/c5.md
+  - id: C6
+    capability: "German reading comprehension"
+    metric: "F1 on GermanQuAD test"
+    plan: plan/c6.md
+  - id: C7
+    capability: "long context from 4k to 32k tokens"
+    metric: "accuracy per context length"
+    plan: plan/c7.md
+  - id: C8
+    capability: "throughput and energy per model size"
+    metric: "tokens per second and joules per 1,000 tokens"
+    plan: plan/c8.md
+  - id: C9
+    capability: "personal data detection in German text (also T7)"
+    metric: "span F1 and recall"
+    plan: plan/c9.md

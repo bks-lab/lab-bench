@@ -1,0 +1,88 @@
+{
+ "test": "C2",
+ "arm": "whisper-large-v3-turbo",
+ "started": "2026-10-09T22:43:32.742+02:00",
+ "device": "cuda",
+ "probe": false,
+ "versions": {
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.11.0+cu128",
+  "torchaudio": "2.11.0+cu128",
+  "faster-whisper": "1.2.1",
+  "ctranslate2": "4.8.2",
+  "jiwer": "4.0.0",
+  "num2words": "0.5.14",
+  "nemo_toolkit": null,
+  "numpy": "2.5.3",
+  "torch_cuda": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4090"
+ },
+ "data": {
+  "repo": "google/fleurs",
+  "config": "de_de",
+  "split": "test",
+  "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd"
+ },
+ "arm_config": {
+  "model": "deepdml/faster-whisper-large-v3-turbo-ct2",
+  "revision": "4df90f75321148c3a29a9e2351b7ddf8f5b115a8",
+  "runtime": "faster-whisper",
+  "compute_type": "float16",
+  "beam": 5,
+  "language": "de",
+  "vad": false,
+  "batch_pass": 16
+ },
+ "summary": {
+  "wer": 0.05627705627705628,
+  "wer_ci95": [
+   0.045480982200044005,
+   0.06876025297871106
+  ],
+  "cer": 0.02372101395399798,
+  "wer_num2words": 0.05551399871767472,
+  "utterances_with_digits": 180,
+  "share_with_digits": 0.2088167053364269,
+  "utterances": 862,
+  "sentences": 347,
+  "audio_hours": 3.1525833333333333,
+  "rtf_median": 0.014594401960208666,
+  "rtf_median_ci95": [
+   0.014110950468466502,
+   0.015081021070847151
+  ],
+  "rtf_pooled": 0.014518268880023784,
+  "peak_vram_gb_torch": 0.0,
+  "utterances_over_30s": 21,
+  "batch16_audio_h_per_wall_h": 139.97259574531063,
+  "batch16_wer_unscored_check": 0.050024050024050026
+ },
+ "gate": null,
+ "sections": [
+  {
+   "name": "model_load",
+   "start": "2026-10-09T22:43:32.767+02:00",
+   "seconds": 1.5759,
+   "end": "2026-10-09T22:43:34.343+02:00"
+  },
+  {
+   "name": "batch1",
+   "start": "2026-10-09T22:43:35.091+02:00",
+   "utterances": 862,
+   "audio_s": 11349.3,
+   "seconds": 164.7728,
+   "end": "2026-10-09T22:46:19.860+02:00"
+  },
+  {
+   "name": "batch16",
+   "start": "2026-10-09T22:46:19.861+02:00",
+   "utterances": 862,
+   "audio_s": 11349.3,
+   "seconds": 81.0823,
+   "end": "2026-10-09T22:47:40.942+02:00"
+  }
+ ],
+ "finished": "2026-10-09T22:47:41.502+02:00"
+}

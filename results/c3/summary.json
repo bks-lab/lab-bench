@@ -1,0 +1,524 @@
+{
+ "schema": "jev-match-bench capability summary v1",
+ "test": "C3",
+ "design": "plan/c3.md",
+ "report": "results/c3/findings.md",
+ "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
+ "generator": "bench/score-cap.py",
+ "best_by_field_accuracy": "gemma4-26b",
+ "regex_baseline": 0.2696,
+ "arms": [
+  {
+   "arm": "gemma4-26b",
+   "model": "gemma4:26b (google/gemma-4-26B-A4B-it)",
+   "kind": "vision",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "reference_arm": false,
+   "finished": true,
+   "ollama_digest": "001e5dafc3c7",
+   "quant": "Q4_K_M",
+   "params_b": 25.2,
+   "params_source": "Ollama parameter_size",
+   "quality": {
+    "metric": "field accuracy, exact match after normalisation, 34 invoices x 12 fields = 408 cells",
+    "value": 0.9804,
+    "ci95": [
+     0.9681,
+     0.9902
+    ],
+    "skill_vs_regex": 0.9732,
+    "money_accuracy": 0.9926,
+    "money_ci95": [
+     0.9779,
+     1.0
+    ],
+    "iban_accuracy": 0.9118,
+    "iban_ci95": [
+     0.8235,
+     1.0
+    ],
+    "all12_invoices": 26,
+    "per_field": {
+     "invoice_number": 0.9412,
+     "issue_date": 1.0,
+     "due_date": 1.0,
+     "seller_name": 1.0,
+     "seller_vat_id": 0.9412,
+     "buyer_name": 1.0,
+     "iban": 0.9118,
+     "net_total": 0.9706,
+     "vat_total": 1.0,
+     "gross_total": 1.0,
+     "amount_due": 1.0,
+     "currency": 1.0
+    },
+    "money_fields_always_null": false,
+    "failed_calls": 0,
+    "truncated_calls": 0
+   },
+   "speed": {
+    "s_per_invoice_median": 3.6416,
+    "s_per_invoice_median_ci95": [
+     3.5473,
+     3.7118
+    ],
+    "s_per_page_median": 1.1901,
+    "timed_invoices": 34,
+    "note": "model call (plus docling OCR in the docling arms) per invoice, one call at a time; the first three docling invoices have their OCR time in the warm-up and are left out of the docling medians"
+   },
+   "energy": {
+    "j_per_invoice": 1378,
+    "note": "GPU only, timed pass energy divided by 34"
+   },
+   "vram_peak_gb": 19.81,
+   "vram_peak_total_gb": 20.49,
+   "fits_24gb": true,
+   "fits_rule": "Ollama arms: 'offloaded' when nvidia-smi memory.used reached the card (peak within 0.5 GB of 24,564 MiB): Ollama fills the card only when it splits a model between GPU and CPU; the GPU power and per-call time of those arms confirm it (results/c3/findings.md). Torch and CTranslate2 arms cannot offload, so a finished run fits."
+  },
+  {
+   "arm": "gemma4-12b",
+   "model": "gemma4:12b (google/gemma-4-12B-it)",
+   "kind": "vision",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "reference_arm": false,
+   "finished": true,
+   "ollama_digest": "6114515d63c1",
+   "quant": "Q4_K_M",
+   "params_b": 11.9,
+   "params_source": "Ollama parameter_size",
+   "quality": {
+    "metric": "field accuracy, exact match after normalisation, 34 invoices x 12 fields = 408 cells",
+    "value": 0.9779,
+    "ci95": [
+     0.9632,
+     0.9902
+    ],
+    "skill_vs_regex": 0.9698,
+    "money_accuracy": 0.9926,
+    "money_ci95": [
+     0.9779,
+     1.0
+    ],
+    "iban_accuracy": 0.9118,
+    "iban_ci95": [
+     0.8235,
+     1.0
+    ],
+    "all12_invoices": 26,
+    "per_field": {
+     "invoice_number": 1.0,
+     "issue_date": 1.0,
+     "due_date": 1.0,
+     "seller_name": 1.0,
+     "seller_vat_id": 0.8529,
+     "buyer_name": 1.0,
+     "iban": 0.9118,
+     "net_total": 0.9706,
+     "vat_total": 1.0,
+     "gross_total": 1.0,
+     "amount_due": 1.0,
+     "currency": 1.0
+    },
+    "money_fields_always_null": false,
+    "failed_calls": 0,
+    "truncated_calls": 0,
+    "vs_best": {
+     "best": "gemma4-26b",
+     "diff": 0.0025,
+     "diff_ci95": [
+      -0.0123,
+      0.0172
+     ],
+     "p": 0.856,
+     "difference_shown": false
+    }
+   },
+   "speed": {
+    "s_per_invoice_median": 2.0979,
+    "s_per_invoice_median_ci95": [
+     2.0295,
+     2.1607
+    ],
+    "s_per_page_median": 0.6859,
+    "timed_invoices": 34,
+    "note": "model call (plus docling OCR in the docling arms) per invoice, one call at a time; the first three docling invoices have their OCR time in the warm-up and are left out of the docling medians"
+   },
+   "energy": {
+    "j_per_invoice": 614,
+    "note": "GPU only, timed pass energy divided by 34"
+   },
+   "vram_peak_gb": 9.79,
+   "vram_peak_total_gb": 10.47,
+   "fits_24gb": true,
+   "fits_rule": "Ollama arms: 'offloaded' when nvidia-smi memory.used reached the card (peak within 0.5 GB of 24,564 MiB): Ollama fills the card only when it splits a model between GPU and CPU; the GPU power and per-call time of those arms confirm it (results/c3/findings.md). Torch and CTranslate2 arms cannot offload, so a finished run fits."
+  },
+  {
+   "arm": "mistral-small-3.2",
+   "model": "mistral-small3.2:24b (mistralai/Mistral-Small-3.2-24B-Instruct-2506)",
+   "kind": "vision",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "reference_arm": false,
+   "finished": true,
+   "ollama_digest": "5a408ab55df5",
+   "quant": "Q4_K_M",
+   "params_b": 24.0,
+   "params_source": "Ollama parameter_size",
+   "quality": {
+    "metric": "field accuracy, exact match after normalisation, 34 invoices x 12 fields = 408 cells",
+    "value": 0.9093,
+    "ci95": [
+     0.8799,
+     0.9363
+    ],
+    "skill_vs_regex": 0.8758,
+    "money_accuracy": 0.9412,
+    "money_ci95": [
+     0.875,
+     0.9926
+    ],
+    "iban_accuracy": 0.9118,
+    "iban_ci95": [
+     0.8235,
+     1.0
+    ],
+    "all12_invoices": 10,
+    "per_field": {
+     "invoice_number": 0.8824,
+     "issue_date": 0.9412,
+     "due_date": 0.7353,
+     "seller_name": 1.0,
+     "seller_vat_id": 0.6765,
+     "buyer_name": 1.0,
+     "iban": 0.9118,
+     "net_total": 0.9118,
+     "vat_total": 0.9706,
+     "gross_total": 0.9706,
+     "amount_due": 0.9118,
+     "currency": 1.0
+    },
+    "money_fields_always_null": false,
+    "failed_calls": 0,
+    "truncated_calls": 0,
+    "vs_best": {
+     "best": "gemma4-26b",
+     "diff": 0.0711,
+     "diff_ci95": [
+      0.0441,
+      0.1029
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "s_per_invoice_median": 4.6343,
+    "s_per_invoice_median_ci95": [
+     4.4175,
+     4.8064
+    ],
+    "s_per_page_median": 1.4949,
+    "timed_invoices": 34,
+    "note": "model call (plus docling OCR in the docling arms) per invoice, one call at a time; the first three docling invoices have their OCR time in the warm-up and are left out of the docling medians"
+   },
+   "energy": {
+    "j_per_invoice": 1704,
+    "note": "GPU only, timed pass energy divided by 34"
+   },
+   "vram_peak_gb": 19.74,
+   "vram_peak_total_gb": 20.42,
+   "fits_24gb": true,
+   "fits_rule": "Ollama arms: 'offloaded' when nvidia-smi memory.used reached the card (peak within 0.5 GB of 24,564 MiB): Ollama fills the card only when it splits a model between GPU and CPU; the GPU power and per-call time of those arms confirm it (results/c3/findings.md). Torch and CTranslate2 arms cannot offload, so a finished run fits."
+  },
+  {
+   "arm": "docling+gemma4-12b",
+   "model": "docling EasyOCR + gemma4:12b",
+   "kind": "ocr+text",
+   "licence": "MIT (docling), Apache-2.0 (EasyOCR, model)",
+   "licence_class": "open source",
+   "reference_arm": false,
+   "finished": true,
+   "ollama_digest": "6114515d63c1",
+   "quant": "Q4_K_M",
+   "params_b": 11.9,
+   "params_source": "Ollama parameter_size",
+   "quality": {
+    "metric": "field accuracy, exact match after normalisation, 34 invoices x 12 fields = 408 cells",
+    "value": 0.875,
+    "ci95": [
+     0.8382,
+     0.9069
+    ],
+    "skill_vs_regex": 0.8289,
+    "money_accuracy": 0.9044,
+    "money_ci95": [
+     0.8088,
+     0.9779
+    ],
+    "iban_accuracy": 0.7059,
+    "iban_ci95": [
+     0.5588,
+     0.8529
+    ],
+    "all12_invoices": 5,
+    "per_field": {
+     "invoice_number": 0.6176,
+     "issue_date": 1.0,
+     "due_date": 0.9118,
+     "seller_name": 0.9412,
+     "seller_vat_id": 0.7059,
+     "buyer_name": 1.0,
+     "iban": 0.7059,
+     "net_total": 0.8235,
+     "vat_total": 0.9412,
+     "gross_total": 0.9118,
+     "amount_due": 0.9412,
+     "currency": 1.0
+    },
+    "money_fields_always_null": false,
+    "failed_calls": 0,
+    "truncated_calls": 0,
+    "vs_best": {
+     "best": "gemma4-26b",
+     "diff": 0.1054,
+     "diff_ci95": [
+      0.0735,
+      0.1446
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "s_per_invoice_median": 6.5046,
+    "s_per_invoice_median_ci95": [
+     6.0997,
+     8.3769
+    ],
+    "s_per_page_median": 2.1682,
+    "timed_invoices": 31,
+    "note": "model call (plus docling OCR in the docling arms) per invoice, one call at a time; the first three docling invoices have their OCR time in the warm-up and are left out of the docling medians"
+   },
+   "energy": {
+    "j_per_invoice": 786,
+    "note": "GPU only, timed pass energy divided by 34"
+   },
+   "vram_peak_gb": 18.74,
+   "vram_peak_total_gb": 19.45,
+   "fits_24gb": true,
+   "fits_rule": "Ollama arms: 'offloaded' when nvidia-smi memory.used reached the card (peak within 0.5 GB of 24,564 MiB): Ollama fills the card only when it splits a model between GPU and CPU; the GPU power and per-call time of those arms confirm it (results/c3/findings.md). Torch and CTranslate2 arms cannot offload, so a finished run fits."
+  },
+  {
+   "arm": "docling+qwen3.8-27b",
+   "model": "docling EasyOCR + qwen3.8:27b",
+   "kind": "ocr+text",
+   "licence": "MIT (docling), Apache-2.0 (EasyOCR, model)",
+   "licence_class": "open source",
+   "reference_arm": false,
+   "finished": true,
+   "ollama_digest": "aaee06c39dcf",
+   "quant": "Q4_K_M",
+   "params_b": 27.3,
+   "params_source": "Ollama parameter_size",
+   "quality": {
+    "metric": "field accuracy, exact match after normalisation, 34 invoices x 12 fields = 408 cells",
+    "value": 0.5907,
+    "ci95": [
+     0.5613,
+     0.6176
+    ],
+    "skill_vs_regex": 0.4396,
+    "money_accuracy": 0.0,
+    "money_ci95": [
+     0.0,
+     0.0
+    ],
+    "iban_accuracy": 0.7647,
+    "iban_ci95": [
+     0.6176,
+     0.8824
+    ],
+    "all12_invoices": 0,
+    "per_field": {
+     "invoice_number": 0.6765,
+     "issue_date": 1.0,
+     "due_date": 0.9118,
+     "seller_name": 0.8824,
+     "seller_vat_id": 0.9118,
+     "buyer_name": 0.9412,
+     "iban": 0.7647,
+     "net_total": 0.0,
+     "vat_total": 0.0,
+     "gross_total": 0.0,
+     "amount_due": 0.0,
+     "currency": 1.0
+    },
+    "money_fields_always_null": true,
+    "failed_calls": 0,
+    "truncated_calls": 0,
+    "vs_best": {
+     "best": "gemma4-26b",
+     "diff": 0.3897,
+     "diff_ci95": [
+      0.3627,
+      0.4191
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "s_per_invoice_median": 26.1465,
+    "s_per_invoice_median_ci95": [
+     23.8748,
+     30.462
+    ],
+    "s_per_page_median": 8.7155,
+    "timed_invoices": 31,
+    "note": "model call (plus docling OCR in the docling arms) per invoice, one call at a time; the first three docling invoices have their OCR time in the warm-up and are left out of the docling medians"
+   },
+   "energy": {
+    "j_per_invoice": 2805,
+    "note": "GPU only, timed pass energy divided by 34"
+   },
+   "vram_peak_gb": 22.83,
+   "vram_peak_total_gb": 23.54,
+   "fits_24gb": "offloaded",
+   "fits_rule": "Ollama arms: 'offloaded' when nvidia-smi memory.used reached the card (peak within 0.5 GB of 24,564 MiB): Ollama fills the card only when it splits a model between GPU and CPU; the GPU power and per-call time of those arms confirm it (results/c3/findings.md). Torch and CTranslate2 arms cannot offload, so a finished run fits."
+  },
+  {
+   "arm": "pdftext+qwen3.8-27b",
+   "model": "pdftotext text layer + qwen3.8:27b (reference arm, not a scan)",
+   "kind": "text layer",
+   "licence": "Apache-2.0 (model)",
+   "licence_class": "open source",
+   "reference_arm": true,
+   "finished": true,
+   "ollama_digest": "aaee06c39dcf",
+   "quant": "Q4_K_M",
+   "params_b": 27.3,
+   "params_source": "Ollama parameter_size",
+   "quality": {
+    "metric": "field accuracy, exact match after normalisation, 34 invoices x 12 fields = 408 cells",
+    "value": 0.6569,
+    "ci95": [
+     0.6471,
+     0.6642
+    ],
+    "skill_vs_regex": 0.5302,
+    "money_accuracy": 0.0,
+    "money_ci95": [
+     0.0,
+     0.0
+    ],
+    "iban_accuracy": 0.9118,
+    "iban_ci95": [
+     0.8235,
+     1.0
+    ],
+    "all12_invoices": 0,
+    "per_field": {
+     "invoice_number": 1.0,
+     "issue_date": 1.0,
+     "due_date": 0.9706,
+     "seller_name": 1.0,
+     "seller_vat_id": 1.0,
+     "buyer_name": 1.0,
+     "iban": 0.9118,
+     "net_total": 0.0,
+     "vat_total": 0.0,
+     "gross_total": 0.0,
+     "amount_due": 0.0,
+     "currency": 1.0
+    },
+    "money_fields_always_null": true,
+    "failed_calls": 0,
+    "truncated_calls": 0,
+    "vs_best": {
+     "best": "gemma4-26b",
+     "diff": 0.3235,
+     "diff_ci95": [
+      0.3137,
+      0.3333
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "s_per_invoice_median": 2.0818,
+    "s_per_invoice_median_ci95": [
+     2.0546,
+     2.1952
+    ],
+    "s_per_page_median": 0.6881,
+    "timed_invoices": 34,
+    "note": "model call (plus docling OCR in the docling arms) per invoice, one call at a time; the first three docling invoices have their OCR time in the warm-up and are left out of the docling medians"
+   },
+   "energy": {
+    "j_per_invoice": 790,
+    "note": "GPU only, timed pass energy divided by 34"
+   },
+   "vram_peak_gb": 19.65,
+   "vram_peak_total_gb": 20.34,
+   "fits_24gb": true,
+   "fits_rule": "Ollama arms: 'offloaded' when nvidia-smi memory.used reached the card (peak within 0.5 GB of 24,564 MiB): Ollama fills the card only when it splits a model between GPU and CPU; the GPU power and per-call time of those arms confirm it (results/c3/findings.md). Torch and CTranslate2 arms cannot offload, so a finished run fits."
+  },
+  {
+   "arm": "qwen3-vl-8b",
+   "model": "qwen3-vl:8b (Qwen/Qwen3-VL-8B-Instruct)",
+   "kind": "vision",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "reference_arm": false,
+   "finished": false,
+   "params_b": 8,
+   "params_source": "Ollama tag (nominal)",
+   "quality": null,
+   "unfinished": {
+    "reason": "timeout after 60 min, killed",
+    "timeout_min": 59,
+    "invoices_logged": 17,
+    "cells_right_logged": 116,
+    "cells_logged": 204,
+    "failed_calls_logged": 3,
+    "s_per_invoice_median_logged": 39.3644,
+    "mean_power_w": 357.1,
+    "note": "descriptive only, from the job log; not scored (plan/c3.md scores all 34 invoices)"
+   },
+   "vram_peak_gb": 11.91,
+   "vram_peak_total_gb": 12.59,
+   "fits_24gb": true,
+   "fits_rule": "Ollama arms: 'offloaded' when nvidia-smi memory.used reached the card (peak within 0.5 GB of 24,564 MiB): Ollama fills the card only when it splits a model between GPU and CPU; the GPU power and per-call time of those arms confirm it (results/c3/findings.md). Torch and CTranslate2 arms cannot offload, so a finished run fits."
+  },
+  {
+   "arm": "qwen3-vl-32b",
+   "model": "qwen3-vl:32b (Qwen/Qwen3-VL-32B-Instruct)",
+   "kind": "vision",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "reference_arm": false,
+   "finished": false,
+   "params_b": 32,
+   "params_source": "Ollama tag (nominal)",
+   "quality": null,
+   "unfinished": {
+    "reason": "timeout after 180 min, killed",
+    "timeout_min": 179,
+    "invoices_logged": 17,
+    "cells_right_logged": 184,
+    "cells_logged": 204,
+    "failed_calls_logged": 0,
+    "s_per_invoice_median_logged": 493.7324,
+    "mean_power_w": 59.3,
+    "note": "descriptive only, from the job log; not scored (plan/c3.md scores all 34 invoices)"
+   },
+   "vram_peak_gb": 22.84,
+   "vram_peak_total_gb": 23.52,
+   "fits_24gb": "offloaded",
+   "fits_rule": "Ollama arms: 'offloaded' when nvidia-smi memory.used reached the card (peak within 0.5 GB of 24,564 MiB): Ollama fills the card only when it splits a model between GPU and CPU; the GPU power and per-call time of those arms confirm it (results/c3/findings.md). Torch and CTranslate2 arms cannot offload, so a finished run fits."
+  }
+ ]
+}
