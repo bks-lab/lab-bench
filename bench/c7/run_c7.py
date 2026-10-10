@@ -15,9 +15,11 @@ recorded in `length_retries`, and a prompt still outside is flagged
 Order: the 60 `single` prompts at 4k first. Below 95 % right there, the run
 stops with exit 3 before any long prompt (sanity gate of plan/c7.md).
 
---kv q8_0 starts a private `ollama serve` on port 11435 with
-OLLAMA_KV_CACHE_TYPE=q8_0 and flash attention on (q8_0 needs it); f16 uses
-the workstation's Ollama service as it is (its default cache type is f16).
+Every pass runs in a private `ollama serve` on port 11435 (one request at a
+time, host prompt cache off); --kv q8_0 adds OLLAMA_KV_CACHE_TYPE=q8_0 and
+flash attention (q8_0 needs it). After each calibration the runner reads the
+server log's "offloaded X/Y layers to GPU" line: below Y the model is split
+between GPU and CPU at that length.
 """
 import argparse
 import importlib.util
@@ -76,17 +78,24 @@ def main():
 
     server = None
     url = None
-    if a.kv == "q8_0" and not a.mock:
-        server = ol.PrivateServer(11435, {"OLLAMA_KV_CACHE_TYPE": "q8_0", "OLLAMA_FLASH_ATTENTION": "1",
-                                          "OLLAMA_NUM_PARALLEL": "1", "OLLAMA_MAX_LOADED_MODELS": "1",
-                                          "OLLAMA_MODELS": os.environ.get("OLLAMA_MODELS", r"D:\ollama\models")},
-                                  os.path.join(a.out, "ollama-private.log")).__enter__()
+    log_path = os.path.join(a.out, "ollama-private.log")
+    if not a.mock:
+        # Every pass runs in a private `ollama serve` (port 11435): one request at a time, no host
+        # prompt cache (the calibration calls would otherwise feed the first prompts), and a log
+        # whose "offloaded X/Y layers" line tells whether the model stayed on the card
+        # (plan/c7.md, notes of 2026-10-11). f16 is the default cache type; q8_0 needs flash attention.
+        env = {"OLLAMA_NUM_PARALLEL": "1", "OLLAMA_MAX_LOADED_MODELS": "1", "LLAMA_ARG_CACHE_RAM": "0",
+               "OLLAMA_MODELS": os.environ.get("OLLAMA_MODELS", r"D:\ollama\models")}
+        if a.kv == "q8_0":
+            env.update({"OLLAMA_KV_CACHE_TYPE": "q8_0", "OLLAMA_FLASH_ATTENTION": "1"})
+        server = ol.PrivateServer(11435, env, log_path).__enter__()
         url = server.url
     info = None if a.mock else ol.model_info(tag, url=url)
     think_field = None if a.mock else ol.think_setting(info, think)
     meta = {"test": "C7", "arm": a.arm, "ollama_tag": tag, "kv_cache": a.kv, "lengths": lengths,
             "num_predict": NUM_PREDICT, "aim": AIM, "think": think_field if think_field is not None else "not supported by the model",
-            "server": "private ollama serve, port 11435, OLLAMA_KV_CACHE_TYPE=q8_0, OLLAMA_FLASH_ATTENTION=1" if server else "workstation Ollama service (defaults: f16 cache, flash attention as Ollama decides for the GPU)",
+            "server": ("private ollama serve, port 11435, OLLAMA_NUM_PARALLEL=1, LLAMA_ARG_CACHE_RAM=0"
+                       + (", OLLAMA_KV_CACHE_TYPE=q8_0, OLLAMA_FLASH_ATTENTION=1" if a.kv == "q8_0" else ", f16 cache and flash attention as Ollama decides")),
             "model": info, "versions": {"python": sys.version.split()[0], "ollama": None if a.mock else ol.version(url)},
             "env_seen": {k: os.environ.get(k) for k in ("OLLAMA_FLASH_ATTENTION", "OLLAMA_KV_CACHE_TYPE", "OLLAMA_NUM_PARALLEL")},
             "inputs": {"trials_sha256": man["trials_sha256"]}, "job_id": os.environ.get("JMB_JOB_ID"),
@@ -143,6 +152,7 @@ def main():
         for L, tl, part in plan:
             if L not in chars_for:
                 chars_for[L], meta["calibration"][str(L)] = calibrate(L)
+                meta["calibration"][str(L)]["layers_on_gpu"] = None if a.mock else ol.layers_on_gpu(log_path)
             sec = {"name": f"{L}-{part}", "length": L, "prompts": len(tl), "start": ol.now()}
             right = 0
             for n, t in enumerate(tl):
