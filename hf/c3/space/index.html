@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XRechnung invoice fields</title>
+<style>
+  :root {
+    --primary: #0F2A4A; --secondary: #2D5B8F; --accent-subtle: #E6F0FA;
+    --surface: #FAF7F3; --raised: #FFFFFF; --muted: #F1F5F9;
+    --text: #1A2433; --text-muted: #475569; --text-faint: #94A3B8;
+    --border: #E2E8F0; --success: #2D7A5F; --danger: #A33B36; --danger-subtle: #F8E7E6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary: #E7EAEE; --secondary: #5690D2; --accent-subtle: #182A40;
+      --surface: #101419; --raised: #191E24; --muted: #20252C;
+      --text: #E7EAEE; --text-muted: #A8B1BD; --text-faint: #647287;
+      --border: #333E4C; --success: #43A37B; --danger: #CE6964; --danger-subtle: #3A2222;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--text);
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1400px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { color: var(--primary); font-size: 26px; margin: 0 0 8px; }
+  p { color: var(--text-muted); max-width: 80ch; }
+  a { color: var(--secondary); }
+  .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+  select, button { font: inherit; padding: 4px 8px; background: var(--raised); color: var(--text);
+                   border: 1px solid var(--border); border-radius: 4px; }
+  .grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  .pages { background: var(--raised); border: 1px solid var(--border); border-radius: 8px; padding: 8px; }
+  .pages img { width: 100%; display: block; border: 1px solid var(--border); margin-bottom: 8px; background: #fff; }
+  .card { background: var(--raised); border: 1px solid var(--border); border-radius: 8px; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--text-muted); background: var(--muted); font-weight: 600; white-space: nowrap; }
+  td.gold { font-weight: 600; }
+  td.wrong { background: var(--danger-subtle); color: var(--danger); }
+  td.null { color: var(--text-faint); font-style: italic; }
+  tfoot td { font-weight: 600; color: var(--text-muted); }
+  .small { color: var(--text-faint); font-size: 12px; }
+  footer { margin-top: 40px; color: var(--text-faint); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>XRechnung invoice fields</h1>
+  <p>What open models read from invoice page images, recorded in our runs on one RTX 4090.
+     Nothing runs here and nothing you do is sent anywhere: the page shows stored outputs.
+     Red marks a field the model got wrong. The last column reads the PDF text layer
+     instead of the image and is there for comparison only. Data:
+     <a href="https://huggingface.co/datasets/bks-lab/xrechnung-invoice-fields">bks-lab/xrechnung-invoice-fields</a>,
+     method and findings in <a href="https://github.com/bks-lab/lab-bench">bks-lab/lab-bench</a> (test C3).</p>
+
+  <div class="controls">
+    <button id="prev" aria-label="previous invoice">&larr;</button>
+    <label>Invoice <select id="inv"></select></label>
+    <button id="next" aria-label="next invoice">&rarr;</button>
+    <label><input type="checkbox" id="hard"> only invoices the best model got wrong</label>
+  </div>
+
+  <div class="grid">
+    <div class="pages" id="pages"></div>
+    <div class="card"><table id="t"><thead></thead><tbody></tbody><tfoot></tfoot></table></div>
+  </div>
+
+  <footer>
+    <p>Invoices from the KoSIT XRechnung test suite, rendered with the KoSIT XRechnung
+       visualisation, both Apache-2.0. Names and numbers are the test suite's placeholders.
+       Run by <a href="https://bks-lab.com/en/souveraene-ki/">BKS-Lab</a>.</p>
+  </footer>
+</main>
+<script>
+const DS = "https://huggingface.co/datasets/bks-lab/xrechnung-invoice-fields/resolve/main/";
+const FIELDS = ["invoice_number", "issue_date", "due_date", "seller_name", "seller_vat_id", "buyer_name",
+                "iban", "net_total", "vat_total", "gross_total", "amount_due", "currency"];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const jsonl = t => t.split("\n").filter(Boolean).map(l => JSON.parse(l));
+let invoices = [], preds = [], arms = [], kinds = {};
+
+function list() {
+  const hard = document.getElementById("hard").checked;
+  return invoices.filter(i => !hard || preds.some(p => p.invoice_id === i.id && p.arm === arms[0] && p.n_correct < FIELDS.length));
+}
+
+function fillSelect(keep) {
+  const sel = document.getElementById("inv");
+  const l = list();
+  sel.innerHTML = l.map(i => {
+    const all = preds.filter(p => p.invoice_id === i.id && p.n_correct === FIELDS.length).length;
+    return `<option value="${esc(i.id)}">${esc(i.id)} (${i.pages} p., ${all} of ${arms.length} models all right)</option>`;
+  }).join("");
+  if (keep && l.some(i => i.id === keep)) sel.value = keep;
+  show();
+}
+
+function show() {
+  const id = document.getElementById("inv").value;
+  const inv = invoices.find(i => i.id === id);
+  if (!inv) { document.getElementById("pages").innerHTML = ""; return; }
+  document.getElementById("pages").innerHTML = Array.from({length: inv.pages}, (_, k) =>
+    `<img loading="lazy" alt="page ${k + 1} of invoice ${esc(id)}" src="${DS}pages/${encodeURIComponent(id)}-${k + 1}.png">`).join("");
+  const row = Object.fromEntries(preds.filter(p => p.invoice_id === id).map(p => [p.arm, p]));
+  document.querySelector("#t thead").innerHTML = "<tr><th>Field</th><th>Gold</th>" +
+    arms.map(a => `<th>${esc(a)}<div class="small">${esc(kinds[a])}</div></th>`).join("") + "</tr>";
+  document.querySelector("#t tbody").innerHTML = FIELDS.map(f => {
+    const g = inv.gold[f];
+    const cells = arms.map(a => {
+      const p = row[a];
+      if (!p) return "<td></td>";
+      const v = p.pred[f];
+      const cls = p.correct[f] ? (v == null ? "null" : "") : "wrong";
+      return `<td class="${cls}">${v == null ? "null" : esc(v)}</td>`;
+    }).join("");
+    return `<tr><td class="small">${f}</td><td class="gold ${g == null ? "null" : ""}">${g == null ? "null" : esc(g)}</td>${cells}</tr>`;
+  }).join("");
+  document.querySelector("#t tfoot").innerHTML = "<tr><td>right</td><td></td>" + arms.map(a =>
+    `<td>${row[a] ? row[a].n_correct + " / " + FIELDS.length : ""}<div class="small">${row[a]?.seconds_model != null ? row[a].seconds_model.toFixed(1) + " s" : ""}</div></td>`).join("") + "</tr>";
+}
+
+function step(d) {
+  const sel = document.getElementById("inv");
+  const i = sel.selectedIndex + d;
+  if (i >= 0 && i < sel.options.length) { sel.selectedIndex = i; show(); }
+}
+
+(async () => {
+  try {
+    const [a, b] = await Promise.all(["data/invoices.jsonl", "data/predictions.jsonl"].map(async u => {
+      const r = await fetch(u); if (!r.ok) throw new Error(u + ": " + r.status); return jsonl(await r.text());
+    }));
+    invoices = a; preds = b;
+    const acc = {};
+    for (const p of preds) (acc[p.arm] ??= [0, 0]), acc[p.arm][0] += p.n_correct, acc[p.arm][1] += FIELDS.length;
+    for (const p of preds) kinds[p.arm] = p.reference_arm ? "PDF text layer, reference" : p.kind;
+    const ref = a => preds.some(p => p.arm === a && p.reference_arm);
+    arms = Object.keys(acc).sort((x, y) => (ref(x) - ref(y)) || (acc[y][0] / acc[y][1] - acc[x][0] / acc[x][1]));
+    document.getElementById("inv").onchange = show;
+    document.getElementById("hard").onchange = () => fillSelect(document.getElementById("inv").value);
+    document.getElementById("prev").onclick = () => step(-1);
+    document.getElementById("next").onclick = () => step(1);
+    fillSelect();
+  } catch (e) {
+    document.querySelector("main").insertAdjacentHTML("beforeend", `<p>Could not load the data: ${esc(e.message)}</p>`);
+  }
+})();
+</script>
+</body>
+</html>

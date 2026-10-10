@@ -161,8 +161,8 @@
         "reason": "CI: leak scan and tests"
       },
       {
-        "path": "^hf/(build|test_build)\\.py$|^hf/CARD\\.md$|^hf/space/(index\\.html|README\\.md)$",
-        "reason": "export of the aggregated tables to the Hugging Face dataset bks-lab/lab-bench-results, its card, and the static Space bks-lab/lab-bench"
+        "path": "^hf/(build|test_build)\\.py$|^hf/CARD\\.md$|^hf/publish\\.sh$|^hf/space/(index\\.html|README\\.md)$|^hf/c3/(build|test_c3_build)\\.py$|^hf/c3/CARD\\.md$|^hf/c3/space/(index\\.html|README\\.md)$",
+        "reason": "export to the Hugging Face datasets bks-lab/lab-bench-results and bks-lab/xrechnung-invoice-fields, their cards, the two static Spaces and the upload script"
       }
     ]
   },

@@ -39,11 +39,11 @@ jobs:
         run: |
           for f in bench/*.mjs bench/lib/*.mjs; do node --check "$f"; done
           python -m py_compile bench/*.py bench/lib/*.py bench/c*/*.py bench/queue/*.py cases/*/fetch.py
-          for f in bench/*.sh bench/queue/*.sh bench/c*/*.sh; do bash -n "$f"; done
+          for f in bench/*.sh bench/queue/*.sh bench/c*/*.sh hf/*.sh; do bash -n "$f"; done
       - name: queue runner tests
         run: python -m pytest -q bench/queue/test_runner.py
       - name: Hugging Face export (aggregates only, no Jev rows)
-        run: python -m pytest -q hf/test_build.py
+        run: python -m pytest -q hf/test_build.py hf/c3/test_c3_build.py
       - name: tool map is reproducible from the committed rows
         run: |
           node bench/toolmap.mjs > /dev/null
