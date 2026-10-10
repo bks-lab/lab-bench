@@ -11,7 +11,9 @@ with --max-num-seqs = the level and --max-model-len 4608, and is stopped
 after the level. Chat requests go to /v1/chat/completions (streamed, usage
 included, thinking off through the chat template's `enable_thinking`),
 decide requests to /v1/completions with the same raw prompt as the Ollama arm
-(max_tokens 1, top 20 logprobs). vLLM reports no prompt and generation
+(max_tokens 1, top 20 logprobs). Prefix caching is off: with it, the second
+and third repetition of a configuration would find every prompt of the first
+in the cache, which the Ollama arms (one cached prompt per slot) cannot. vLLM reports no prompt and generation
 durations per request: generation time is the client's time from the first
 to the last streamed token.
 """
@@ -66,7 +68,7 @@ class VllmServer:
         # and the WSL Ubuntu has no CUDA toolkit; vLLM's PyTorch sampler takes its place (temperature 0 is greedy either way)
         cmd = (f"export PATH={LINUX_PATH}; export VLLM_USE_FLASHINFER_SAMPLER=0; HF_HUB_OFFLINE=1 timeout 4h {VENV}/bin/vllm serve {self.repo} --revision {self.rev} "
                f"--served-model-name m --max-num-seqs {self.level} --max-model-len {base.NUM_CTX} "
-               f"--gpu-memory-utilization 0.85 --seed 1 --port {PORT} --host 127.0.0.1")
+               f"--gpu-memory-utilization 0.85 --seed 1 --no-enable-prefix-caching --port {PORT} --host 127.0.0.1")
         self.log = open(self.log_path, "a", encoding="utf-8")
         self.log.write(f"# {ol.now()} {cmd}\n")
         self.log.flush()
