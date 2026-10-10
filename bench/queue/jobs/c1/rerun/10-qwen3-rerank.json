@@ -1,0 +1,35 @@
+{
+  "test": "C1",
+  "arm": "+qwen3-rerank",
+  "gpu": true,
+  "cwd": "{src}",
+  "cmd": [
+    "{py}",
+    "bench/c1/run_c1.py",
+    "--arm",
+    "+qwen3-rerank",
+    "--data",
+    "{data}\\c1",
+    "--out",
+    "{out}",
+    "--base-run",
+    "{out:C1-qwen3-emb-8b}"
+  ],
+  "env": {
+    "HF_HOME": "{hf}",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "timeout_min": 60,
+  "expected_gpu_min": 10,
+  "outputs": [
+    "{out}\\result.jsonl",
+    "{out}\\meta.json"
+  ],
+  "after_ok": [
+    "C1-qwen3-emb-8b"
+  ],
+  "requested_by": "lab-bench-consolidation",
+  "note": "Rerun of 2026-10-10: the first run hit its 60 min timeout because the forward pass computed the LM head over every position; run_c1.py now keeps only the last position (logits_to_keep=1), which gives the same scores. Same model, revision, prompt, max length and base run."
+}
