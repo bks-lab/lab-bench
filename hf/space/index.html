@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lab-bench results</title>
+<style>
+  :root {
+    --primary: #0F2A4A; --secondary: #2D5B8F; --accent: #5FA0D9; --accent-subtle: #E6F0FA;
+    --surface: #FAF7F3; --raised: #FFFFFF; --muted: #F1F5F9;
+    --text: #1A2433; --text-muted: #475569; --text-faint: #94A3B8;
+    --border: #E2E8F0; --success: #2D7A5F; --warning: #B4762A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary: #E7EAEE; --secondary: #5690D2; --accent-subtle: #182A40;
+      --surface: #101419; --raised: #191E24; --muted: #20252C;
+      --text: #E7EAEE; --text-muted: #A8B1BD; --text-faint: #647287;
+      --border: #333E4C; --success: #43A37B; --warning: #D29E56;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--text);
+         font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { color: var(--primary); font-size: 28px; margin: 0 0 8px; }
+  h2 { color: var(--primary); font-size: 20px; margin: 40px 0 8px; }
+  p { color: var(--text-muted); max-width: 72ch; }
+  a { color: var(--secondary); }
+  .card { background: var(--raised); border: 1px solid var(--border); border-radius: 8px;
+          overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border);
+           vertical-align: top; }
+  th { color: var(--text-muted); font-weight: 600; background: var(--muted); white-space: nowrap; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .small { color: var(--text-faint); font-size: 12px; }
+  .top { color: var(--success); font-weight: 600; }
+  .state { color: var(--text-faint); font-style: italic; }
+  .chip { display: inline-block; background: var(--accent-subtle); color: var(--text);
+          border-radius: 4px; padding: 0 6px; font-size: 12px; }
+  select { font: inherit; padding: 4px 8px; background: var(--raised); color: var(--text);
+           border: 1px solid var(--border); border-radius: 4px; }
+  footer { margin-top: 48px; color: var(--text-faint); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>lab-bench results</h1>
+  <p>What open models do on hardware we control: one RTX 4090 with 24 GB.
+     BKS-Lab measures this before we recommend a local model to a customer.
+     Each number links to its report, where the method and the limits are written down.
+     Data: <a href="https://huggingface.co/datasets/bks-lab/lab-bench-results">bks-lab/lab-bench-results</a>,
+     code and raw rows: <a href="https://github.com/bks-lab/lab-bench">github.com/bks-lab/lab-bench</a>.</p>
+
+  <h2>Capabilities of the machine</h2>
+  <p>Best local model per capability. Where two models are not separated by the paired
+     test, the one with less peak VRAM is shown.</p>
+  <div class="card"><table id="cap"><thead><tr>
+    <th>Capability</th><th>Best local model</th><th>Quality</th><th>Baseline</th>
+    <th>Speed</th><th>Peak VRAM</th><th>Report</th></tr></thead><tbody></tbody></table></div>
+
+  <h2>Tool families per task</h2>
+  <p>A hosted decision API (TypeSafe Jev), GLiNER encoders, open LLMs through Ollama and a
+     classic trained classifier on the same tasks. The best arm of each family is picked
+     after the fact on the same data. A cell says nothing about another task.
+     The classic family is trained on the train split of the same dataset, the other three
+     get no training data. Green marks the best of those three zero-shot families only.</p>
+  <p><label>Task kind <select id="kind"></select></label></p>
+  <div class="card"><table id="tm"><thead></thead><tbody></tbody></table></div>
+
+  <footer>
+    <p>Run by <a href="https://bks-lab.com/en/souveraene-ki/">BKS-Lab</a>, Cologne.
+       Tables CC BY 4.0. Jev's per-question outputs are not part of this Space or the dataset,
+       see <a href="https://github.com/bks-lab/lab-bench/blob/main/LICENSE-JEV-OUTPUTS">LICENSE-JEV-OUTPUTS</a>.</p>
+    <p id="build" class="small"></p>
+  </footer>
+</main>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = v => v == null ? "" : (Math.abs(v) < 1 && v !== 0 ? v.toFixed(3) : (+v.toFixed(2)).toString());
+const jsonl = t => t.split("\n").filter(Boolean).map(l => JSON.parse(l));
+
+async function load(path) {
+  const r = await fetch(path);
+  if (!r.ok) throw new Error(path + ": " + r.status);
+  return jsonl(await r.text());
+}
+
+function renderCap(rows) {
+  document.querySelector("#cap tbody").innerHTML = rows.map(r => `<tr>
+    <td><b>${esc(r.id)}</b> ${esc(r.capability)}</td>
+    <td>${esc(r.best_local_model)} <span class="chip">${esc(r.licence_class)}</span></td>
+    <td class="num">${fmt(r.value)}<div class="small">[${fmt(r.ci95_low)}, ${fmt(r.ci95_high)}] ${esc(r.metric)}</div></td>
+    <td class="num">${fmt(r.baseline_value)}<div class="small">${esc(r.baseline)}</div></td>
+    <td class="num">${fmt(r.speed_value)}<div class="small">${esc(r.speed_unit)}</div></td>
+    <td class="num">${fmt(r.vram_peak_gb)} GB</td>
+    <td><a href="${esc(r.report_url)}">findings</a></td></tr>`).join("");
+}
+
+function renderTm(rows, kind) {
+  const fams = [...new Set(rows.map(r => r.family))];
+  const label = Object.fromEntries(rows.map(r => [r.family, r.family_label]));
+  const tasks = [...new Map(rows.filter(r => r.kind === kind).map(r => [r.task_id, r])).values()];
+  document.querySelector("#tm thead").innerHTML = "<tr><th>Task</th><th>Metric</th>" +
+    fams.map(f => `<th title="${esc(label[f])}">${esc(f === "classic" ? "classic (trained)" : f)}</th>`).join("") + "</tr>";
+  document.querySelector("#tm tbody").innerHTML = tasks.map(t => {
+    const cells = fams.map(f => {
+      const c = rows.find(r => r.task_id === t.task_id && r.family === f);
+      if (!c) return "<td></td>";
+      if (c.state !== "measured") return `<td class="state" title="${esc(c.reason)}">${esc(c.state.replace("_", " "))}</td>`;
+      const cls = c.top_family === f ? "num top" : "num";
+      const p = c.mcnemar_vs_top_p && c.top_family !== f ? `<div class="small">p vs top ${esc(c.mcnemar_vs_top_p)}</div>` : "";
+      return `<td class="${cls}"><a href="${esc(c.report_url)}">${fmt(c.value)}</a><div class="small">${esc(c.best_arm)}</div>${p}</td>`;
+    }).join("");
+    return `<tr><td>${esc(t.task)} <span class="chip">${esc(t.lang)}</span></td><td class="small">${esc(t.metric)}</td>${cells}</tr>`;
+  }).join("");
+}
+
+(async () => {
+  try {
+    const [cap, tm] = await Promise.all([load("data/capabilities.jsonl"), load("data/toolmap.jsonl")]);
+    renderCap(cap);
+    const kinds = [...new Set(tm.map(r => r.kind))];
+    const sel = document.getElementById("kind");
+    sel.innerHTML = kinds.map(k => `<option>${esc(k)}</option>`).join("");
+    sel.onchange = () => renderTm(tm, sel.value);
+    renderTm(tm, kinds[0]);
+    const m = (cap[0]?.report_url || "").match(/blob\/([0-9a-f]{40})\//);
+    if (m) document.getElementById("build").textContent = "Built from lab-bench commit " + m[1];
+  } catch (e) {
+    document.querySelector("main").insertAdjacentHTML("beforeend", `<p>Could not load the tables: ${esc(e.message)}</p>`);
+  }
+})();
+</script>
+</body>
+</html>
