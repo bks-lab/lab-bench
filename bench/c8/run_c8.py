@@ -53,7 +53,7 @@ ARMS = {
     "gemma4-26b": ("gemma4:26b", False, "gemma4"),
     "qwen3.8-27b": ("qwen3.8:27b", False, "chatml"),
 }
-NUM_CTX = 4608          # chat-long: 4,096 prompt + 256 generated + template, per parallel slot
+NUM_CTX = 5120          # chat-long: 4,096 prompt (single prompts up to about 4,400) + 256 generated, per parallel slot
 NUM_PREDICT = 256
 PORT = 11436
 CV_MAX = 0.05
