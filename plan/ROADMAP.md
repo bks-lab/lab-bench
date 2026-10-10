@@ -134,8 +134,8 @@ One runner on the PC processes job files in order; agents only enqueue.
 - Folder `D:\jmb-queue\` with `incoming\`, `running\`, `done\`, `failed\`,
   `logs\` and a `PAUSE` file switch.
 - A job is one JSON file `incoming\<yyyymmdd-hhmmss>-<test>-<arm>.json`:
-  `id`, `test` (C1 to C9, T-numbers), `repo_ref` (commit of jev-match-bench
-  to run), `cwd`, `cmd` (argument list, no shell string), `env`,
+  `id`, `test` (C1 to C9, T-numbers), `repo_ref` (commit of the bench repository,
+  bks-lab/lab-bench since 2026-10-10, to run), `cwd`, `cmd` (argument list, no shell string), `env`,
   `timeout_min`, `expected_gpu_min`, `outputs` (paths the job must create),
   `requested_by`. Agents copy the file in over SSH and do nothing else on
   the PC.
@@ -179,3 +179,15 @@ Home ground of the local family, restated for that focus:
 
 A local model that loses on these tests loses on its own ground and is
 reported as such.
+
+## Change 2026-10-10: one public repository
+
+TypeSafe permitted publishing Jev's per-question outputs on 2026-10-10
+(`docs/permissions/2026-10-10-typesafe-jev-outputs.md`), which removed the
+only reason for a private working repository next to a public export. From
+that day on every test in this roadmap is designed, run, scored and
+published in bks-lab/lab-bench. bks-lab/jev-match-bench is archived as
+private provenance history; the export script is gone, and its leak scan
+runs in CI on every push and pull request (README, "Repository history and
+leak scan"). Job files name lab-bench commits in `repo_ref`; the queue
+folder on the PC keeps its name.

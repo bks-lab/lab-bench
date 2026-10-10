@@ -1,0 +1,52 @@
+name: ci
+
+# Every push and pull request: the leak scan (nothing private reaches this
+# public repository) and every check that runs without a GPU.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  leak-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: leak scan (bench/leak-scan.mjs, config bench/leak-scan.json)
+        run: node bench/leak-scan.mjs
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      - run: python -m pip install --quiet pytest pyarrow
+      - name: syntax of every bench script
+        run: |
+          for f in bench/*.mjs bench/lib/*.mjs; do node --check "$f"; done
+          python -m py_compile bench/*.py bench/lib/*.py bench/c*/*.py bench/queue/*.py cases/*/fetch.py
+          for f in bench/*.sh bench/queue/*.sh bench/c*/*.sh; do bash -n "$f"; done
+      - name: queue runner tests
+        run: python -m pytest -q bench/queue/test_runner.py
+      - name: tool map is reproducible from the committed rows
+        run: |
+          node bench/toolmap.mjs > /dev/null
+          git diff --exit-code results/toolmap.json
+      - name: independent recompute of C2 and C3 (C1 needs qrels that are not committed)
+        run: python -I bench/check-cap.py
+      - name: independent recompute of T12
+        run: python -I bench/check-t12.py

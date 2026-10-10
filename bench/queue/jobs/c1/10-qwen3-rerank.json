@@ -1,0 +1,35 @@
+{
+  "test": "C1",
+  "arm": "+qwen3-rerank",
+  "gpu": true,
+  "cwd": "{src}",
+  "cmd": [
+    "{py}",
+    "bench/c1/run_c1.py",
+    "--arm",
+    "+qwen3-rerank",
+    "--data",
+    "{data}\\c1",
+    "--out",
+    "{out}",
+    "--base-run",
+    "{out:C1-qwen3-emb-8b}"
+  ],
+  "env": {
+    "HF_HOME": "{hf}",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "timeout_min": 60,
+  "expected_gpu_min": 10,
+  "outputs": [
+    "{out}\\result.jsonl",
+    "{out}\\meta.json"
+  ],
+  "after_ok": [
+    "C1-qwen3-emb-8b"
+  ],
+  "requested_by": "c-scoring-agent",
+  "note": "Base embedder qwen3-emb-8b: best nDCG@10 on MIRACL de among the C1 embedders (0.613), chosen after the fact as plan/c1.md says."
+}

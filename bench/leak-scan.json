@@ -1,0 +1,249 @@
+{
+  "comment": "Configuration of bench/leak-scan.mjs, which CI runs on every push and pull request. Every entry needs a reason. Nothing here names a private value: private words are listed by the SHA-256 of their lower-case form (add one with: node bench/leak-scan.mjs --hash <word>).",
+  "terms": {
+    "comment": "Words that must never appear as a token anywhere in the repository (host, account, tailnet and keychain names of the lab machines). Matched by hash, case-insensitive, on every token and every part of a token split at '-', '_' and '.'. No allow entry can lift a term hit.",
+    "sha256": [
+      {
+        "sha256": "3575946f89b39efe944d770613a7d7cd50ea146bed2b7a6165716de9e047d09b",
+        "reason": "host name of a lab machine"
+      },
+      {
+        "sha256": "3faeb27fba7159578705ee698f74e5bcf3b9c48c1160f0baaa73557febb126e5",
+        "reason": "host name of a lab machine"
+      },
+      {
+        "sha256": "5d47ec79f3b591160d8d1831da812551cbcccd0c2bc771129902c1bdbce19568",
+        "reason": "host name of a lab machine"
+      },
+      {
+        "sha256": "4535c05c615edb781ef9e977b52109b4fae35e3af5df673a873a1f21b09ba1af",
+        "reason": "host name of a lab machine"
+      },
+      {
+        "sha256": "bd410e1f899df996f123f8d46fe49f229eeb8e9a6358e051ab32dfb5534d58dd",
+        "reason": "account name on a lab machine"
+      },
+      {
+        "sha256": "054ad5d53bc21669ca24a23bb6caf9969a6e4ada91def3d171a047bf121b8736",
+        "reason": "account name on a lab machine"
+      },
+      {
+        "sha256": "09daee8634eac9d51891ae4263b6602a40ee0660c5cb20c64f18186f8453760f",
+        "reason": "account name"
+      },
+      {
+        "sha256": "f96d0f299931c568e767c8c9231d078ffb8c8ef0afdc3d7acb9f96f1ff797762",
+        "reason": "tailnet name"
+      },
+      {
+        "sha256": "cc31e9afc1e6559b2a688d657081b4352e95e8b8e09802d2baa78d51710957c8",
+        "reason": "tailnet name"
+      },
+      {
+        "sha256": "2437b73b2366a11faadd2a9329d39e66ac62c5a139e7704695d75c8de3ce9a2d",
+        "reason": "keychain service name of the API key"
+      }
+    ]
+  },
+  "paths": {
+    "comment": "Positive list of repository paths (JavaScript regex). A file that no entry matches fails the scan, so a new kind of file (raw PC output, a private input, a local settings file) is noticed in review before it is published.",
+    "include": [
+      {
+        "path": "^(README\\.md|LICENSE|LICENSE-DATA|LICENSE-JEV-OUTPUTS|package\\.json|package-lock\\.json|\\.gitattributes|\\.gitignore)$",
+        "reason": "repo root: description, licences, the usage notice of the Jev outputs, dependencies"
+      },
+      {
+        "path": "^LICENSES/[A-Za-z0-9.-]+\\.txt$",
+        "reason": "licence texts"
+      },
+      {
+        "path": "^bench/(lib/)?[a-z0-9_-]+\\.(mjs|ts|py|html|sh|bat)$",
+        "reason": "bench scripts and the leak scan"
+      },
+      {
+        "path": "^cases/[a-z0-9]+/([a-z0-9]+/)?[A-Za-z0-9._-]+\\.(jsonl|json|yaml|md|txt)$",
+        "reason": "frozen cases"
+      },
+      {
+        "path": "^cases/[a-z0-9]+/LICENSE$",
+        "reason": "licence of third-party cases"
+      },
+      {
+        "path": "^reference/[a-z0-9]+/[A-Za-z0-9._-]+\\.(jsonl|json|md)$",
+        "reason": "references and judge notes"
+      },
+      {
+        "path": "^requests/[a-z0-9]+/requests\\.jsonl$",
+        "reason": "the request bodies every arm is asked"
+      },
+      {
+        "path": "^results/[a-z0-9]+/[a-z0-9-]+\\.md$",
+        "reason": "aggregated reports and findings"
+      },
+      {
+        "path": "^results/toolmap\\.json$",
+        "reason": "aggregated tool map"
+      },
+      {
+        "path": "^results/[a-z0-9]+/[a-z0-9.-]+/(checks/)?[0-9]{4}-[0-9]{2}-[0-9]{2}-run[0-9]+(-[A-Za-z0-9.-]+)*\\.jsonl$",
+        "reason": "result rows of every arm, Jev included since TypeSafe's permission of 2026-10-10 (docs/permissions/2026-10-10-typesafe-jev-outputs.md); Jev rows may carry only jevRows.fields (scan check 5)"
+      },
+      {
+        "path": "^results/[a-z0-9]+/jev/NOTICE\\.md$",
+        "reason": "usage notice next to the Jev rows (no training, no distillation, no competing product; AUP and MCA)"
+      },
+      {
+        "path": "^plan/[A-Za-z0-9._-]+\\.(md|yaml)$",
+        "reason": "committed test designs and the tool map register"
+      },
+      {
+        "path": "^results/[a-z0-9-]+\\.md$",
+        "reason": "cross-family findings at the results root, aggregated"
+      },
+      {
+        "path": "^results/[a-z0-9]+/automation\\.json$",
+        "reason": "T1 automation rate and calibration per arm and set, aggregated over items"
+      },
+      {
+        "path": "^results/[a-z0-9]+/automation-curves\\.json$",
+        "reason": "T1 selective-prediction curves per arm on the pooled set: coverage and accuracy per coverage grid point, automatable share per target accuracy; aggregated over items"
+      },
+      {
+        "path": "^results/t12/(templates/)?[a-z0-9.-]+\\.(json|md|txt)$",
+        "reason": "T12 local series: machine measurements per model (VRAM, load time, wall time), probe summary and the chat templates copied from Ollama; no per-item answer"
+      },
+      {
+        "path": "^docs/permissions/[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+\\.md$",
+        "reason": "dated permission records, written without e-mail addresses (the leak scan checks)"
+      },
+      {
+        "path": "^results/c[123]/(summary\\.json|gpu/[a-z0-9.-]+\\.csv|[a-z0-9.-]+/(meta|queue-status)\\.json)$",
+        "reason": "capability tests C1 to C3: chart-ready summary per test, the 1 s nvidia-smi log per arm, and per arm the runner meta and queue status (versions, settings, timings, GPU totals; PC paths and host name removed by bench/score-cap.py)"
+      },
+      {
+        "path": "^results/capabilities\\.json$",
+        "reason": "capability map (plan/ROADMAP.md): one aggregated row per measured capability test"
+      },
+      {
+        "path": "^bench/c[0-9]+/([a-z0-9_]+\\.(py|sh)|README\\.md)$",
+        "reason": "runners, data preparation, field scoring and PC notes of the capability tests"
+      },
+      {
+        "path": "^bench/(leak-scan\\.json|local\\.env\\.example)$",
+        "reason": "leak scan configuration (hashes only) and the template of the gitignored bench/local.env"
+      },
+      {
+        "path": "^bench/queue/([a-z0-9_-]+\\.(sh|py)|bench-queue\\.task\\.xml)$",
+        "reason": "PC job queue: Mac-side scripts, runner, its tests and the scheduled task template (no account, SID or path of one machine)"
+      },
+      {
+        "path": "^bench/queue/jobs/([a-z0-9]+/)*[a-z0-9_.+-]+\\.json$",
+        "reason": "PC job templates (placeholders for every machine path)"
+      },
+      {
+        "path": "^cases/[a-z0-9]+/fetch\\.py$",
+        "reason": "pinned download scripts for inputs that are not committed"
+      },
+      {
+        "path": "^cases/c2/utterances\\.tsv$",
+        "reason": "C2: FLEURS utterance ids, durations and audio hashes (CC BY 4.0), no audio"
+      },
+      {
+        "path": "^cases/c3/(LICENSE-[A-Za-z0-9.-]+(\\.txt)?|(pdf|png|xml|text)/[0-9]{2}\\.[0-9]{2}a(-[0-9]+)?\\.(pdf|png|xml|txt))$",
+        "reason": "C3: KoSIT XRechnung test suite invoices (Apache-2.0), their PDF and page renderings and the licences copied with them"
+      },
+      {
+        "path": "^results/c[0-9]+/[a-z0-9.-]+/result\\.jsonl$",
+        "reason": "result rows of a capability-test arm without a run date (the regex baseline of C3)"
+      },
+      {
+        "path": "^\\.github/workflows/[a-z0-9-]+\\.yml$",
+        "reason": "CI: leak scan and tests"
+      }
+    ]
+  },
+  "leaks": [
+    {
+      "pattern": "mail",
+      "path": "^(cases/(route1|ex1)/|requests/route1/|reference/ex1/|results/(route1|ex1)/[^/]+/)[^/]+\\.jsonl$",
+      "match": "^gmail$",
+      "reason": "MASSIVE utterances (CC BY 4.0, Amazon) mention Gmail as an app and in dictated mail addresses such as 'joseph at gmail dot com'; dataset text and model outputs over it, no real address"
+    },
+    {
+      "pattern": "address",
+      "path": "^(cases/c3/(text|xml)/|results/c3/[^/]+/[^/]+\\.jsonl$|cases/route1/fastdec-en\\.jsonl$|requests/route1/requests\\.jsonl$|results/ex1/[^/]+/[^/]+\\.jsonl$)",
+      "reason": "dataset text with made-up or test addresses: KoSIT XRechnung test suite invoices (seller@email.de, test.de) and the C3 result rows over them (docling OCR text, model answers), fastino/fast-decisions synthetic mails (mostly .example domains, Apache-2.0) and ex1 model outputs over MASSIVE; no address of a real correspondent. Everywhere else, including docs/permissions/, any address fails"
+    },
+    {
+      "pattern": "mail",
+      "path": "^bench/leak-scan\\.(mjs|json)$",
+      "reason": "the scanner's own mail-domain pattern and the notes of its allow entries"
+    },
+    {
+      "pattern": "address",
+      "path": "^bench/leak-scan\\.json$",
+      "match": "^seller@email\\.de$",
+      "reason": "allow note naming the KoSIT test address"
+    }
+  ],
+  "structured": [
+    {
+      "path": "^results/toolmap\\.json$",
+      "reason": "aggregated per task: one Jev cell per row with accuracy, baseline, version and cost, no per-item answer"
+    },
+    {
+      "path": "^plan/toolmap-plan\\.yaml$",
+      "reason": "tool register: maker, licence and sources of Jev, no answer"
+    },
+    {
+      "path": "^package\\.json$",
+      "at": "^\\$\\.scripts\\.run:jev$",
+      "reason": "npm script name that starts the Jev arm, no answer"
+    },
+    {
+      "path": "^results/(route1|pv1)/automation\\.json$",
+      "reason": "T1 aggregates per arm and item set: accuracy, automation rate, threshold, ECE, Brier and 10 reliability bins; no per-item answer"
+    },
+    {
+      "path": "^results/(route1|pv1)/automation-curves\\.json$",
+      "reason": "T1 curves per arm on the pooled set: coverage, accuracy, threshold and item counts per grid point; no per-item answer"
+    },
+    {
+      "path": "^results/[a-z0-9]+/jev/[^/]+\\.jsonl$",
+      "at": "^line [0-9]+\\.(arm|arm_version|host)$",
+      "reason": "Jev result rows, published with TypeSafe's permission of 2026-10-10; arm, version and host name Jev by design"
+    }
+  ],
+  "jevRows": {
+    "comment": "Jev result rows (results/<family>/jev/*.jsonl) are public since TypeSafe's permission of 2026-10-10. The export keeps only these fields of every row and drops any other one; the leak scan fails on a Jev row with a field outside this list. A new field (request id, header, account, raw response) therefore stays private until someone adds it here on purpose.",
+    "path": "^results/[a-z0-9]+/jev/[^/]+\\.jsonl$",
+    "fields": [
+      "pv",
+      "unit",
+      "pair",
+      "posting",
+      "cv",
+      "line",
+      "question",
+      "qtype",
+      "lang",
+      "arm",
+      "arm_version",
+      "host",
+      "run",
+      "shuffled",
+      "latency_ms",
+      "tokens_in",
+      "tokens_out",
+      "cost_usd",
+      "ts",
+      "call_scope",
+      "attempts",
+      "options",
+      "probs",
+      "choice",
+      "expected",
+      "error"
+    ]
+  }
+}

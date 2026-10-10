@@ -2,7 +2,9 @@ node_modules/
 .cache/
 *.log
 .DS_Store
-.cache/
 *-smoke*.jsonl
 *-smoke.md
 __pycache__/
+# machine-specific settings and private inputs, never committed (README, "Local settings")
+bench/local.env
+private/

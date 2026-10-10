@@ -57,3 +57,28 @@ Exceptions:
    Multi-label tasks were removed. The same applies to the fastdec gold
    rows in reference/route1/, to the texts repeated in requests/route1/,
    and to the label names in results/route1/ (fastdec lines).
+
+6. cases/c2/utterances.tsv and the reference transcripts (field "ref") in
+   results/c2/ come from FLEURS (google/fleurs, config de_de, split test,
+   revision 70bb2e84b976b7e960aa89f1c648e09c59f894dd), Copyright Google,
+   licensed under CC BY 4.0. Attribution: Conneau et al., "FLEURS:
+   Few-shot Learning Evaluation of Universal Representations of Speech",
+   2022, arXiv:2205.12446. The audio is not committed; cases/c2/fetch.py
+   downloads it and checks the hashes in cases/c2/manifest.json.
+
+7. cases/c3/xml/ holds test invoices of the KoSIT XRechnung test suite
+   (https://github.com/itplr-kosit/xrechnung-testsuite, commit
+   1ce1dafffd035e5ce59a7ab0d3bf44ac14af16c9), and cases/c3/pdf/, png/ and
+   text/ were rendered from them with the KoSIT XRechnung visualisation
+   (https://github.com/itplr-kosit/xrechnung-visualization, tag
+   v2026-08-31). Both are licensed under the Apache License 2.0; the
+   licence files are copied in cases/c3/. The same applies to the C3 gold
+   rows in reference/c3/ and to the invoice text repeated in results/c3/.
+   The PDFs embed subsets of Source Serif Pro, licensed under the SIL Open
+   Font License 1.1 (cases/c3/LICENSE-SourceSerifPro-OFL.txt).
+
+8. results/c1/ holds only query and passage ids, scores and timings for
+   MIRACL (mteb/MIRACLRetrievalHardNegatives, CC BY-SA 4.0) and GermanDPR
+   (mteb/GermanDPR, CC BY 4.0). No query or passage text is committed;
+   cases/c1/fetch.py downloads the sets and checks the hashes in
+   cases/c1/manifest.json.

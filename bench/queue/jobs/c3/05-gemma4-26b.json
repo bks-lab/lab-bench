@@ -1,0 +1,28 @@
+{
+ "test": "C3",
+ "arm": "gemma4-26b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c3/run_c3.py",
+  "--arm",
+  "gemma4-26b",
+  "--data",
+  "{data}\\c3",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "HF_HOME": "{hf}",
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 75,
+ "expected_gpu_min": 25,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "c3-agent"
+}

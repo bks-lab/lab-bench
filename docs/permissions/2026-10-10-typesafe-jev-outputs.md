@@ -47,3 +47,12 @@ E-mail addresses of both sides are left out of this record on purpose.
   `NOTICE.md` in every `results/*/jev/` directory. The CC BY 4.0 grant of
   [LICENSE-DATA](../../LICENSE-DATA) does not cover these rows.
 - This record itself is public, without e-mail addresses.
+
+## Follow-up, same day
+
+With the outputs publishable, the private working repository and the
+export were no longer needed. The bench now lives in bks-lab/lab-bench
+only (README, "Repository history and leak scan"). The rules above did not
+change: the Jev row fields, the notices and the scan are now in
+`bench/leak-scan.json` and run in CI on every push and pull request,
+instead of `bench/export-allow.json` and the export script.
