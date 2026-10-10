@@ -12,29 +12,34 @@ qwen3-14b in fc mode: simple_python 93.50 % (leaderboard 95.25), multiple 94.00 
 | arm | params (B) | fc | 95 % CI | prompt | 95 % CI | fc vs prompt p | diff to best (fc) | p | difference shown | unparseable fc | unparseable prompt |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | qwen3-14b | 14.8 | 0.919 | [0.901, 0.935] | 0.946 | [0.931, 0.959] | 0.001 | best | | | 0.002 | 0.000 |
+| qwen3-8b | 8.2 | 0.892 | [0.872, 0.911] | 0.920 | [0.902, 0.936] | 0.005 | -0.027 | 0.010 | yes | 0.004 | 0.005 |
 
 ## Part A per category (fc / prompt)
 
 | arm | simple_python | multiple | parallel | parallel_multiple |
 |---|---|---|---|---|
 | qwen3-14b | 0.935 / 0.968 | 0.940 / 0.950 | 0.900 / 0.915 | 0.885 / 0.930 |
+| qwen3-8b | 0.940 / 0.932 | 0.920 / 0.925 | 0.820 / 0.910 | 0.840 / 0.900 |
 
 ## Part B: JSONSchemaBench, schema validity (600 schemas)
 
 | arm | free | 95 % CI | constrained | 95 % CI | coverage of constrained | free on the same schemas | constrained vs free p | slowdown constrained/free |
 |---|---|---|---|---|---|---|---|---|
-| qwen3-14b | 0.810 | [0.778, 0.842] | 0.907 | [0.883, 0.929] | 0.987 | 0.811 | 0.0 | 0.863 |
+| qwen3-14b | 0.810 | [0.778, 0.842] | 0.907 | [0.883, 0.929] | 0.987 | 0.811 | 0.000 | 0.863 |
+| qwen3-8b | 0.762 | [0.725, 0.795] | 0.907 | [0.883, 0.929] | 0.987 | 0.765 | 0.000 | 0.805 |
 
 ## Part B per subset (free / constrained)
 
 | arm | Github_easy | Github_hard | Github_medium | Glaiveai2K | JsonSchemaStore | Kubernetes |
 |---|---|---|---|---|---|---|
 | qwen3-14b | 0.96 / 0.98 | 0.61 / 0.83 | 0.88 / 0.90 | 0.94 / 0.97 | 0.71 / 0.80 | 0.76 / 0.96 |
+| qwen3-8b | 0.93 / 0.97 | 0.52 / 0.84 | 0.81 / 0.92 | 0.97 / 0.96 | 0.55 / 0.76 | 0.79 / 0.99 |
 
 ## Machine
 
 | arm | ms per item fc (median) | 95 % CI | ms prompt | ms free | ms constrained | output tok/s fc | J per 1,000 items fc | peak VRAM GB (over idle) | peak VRAM GB (total) | capped answers (A/B) | truncated prompts (B) | fits on 24 GB |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | qwen3-14b | 606 | [587, 631] | 447 | 1499 | 1294 | 87.3 | 288452 | 10.31 | 11.48 | 0/27 | 0 | yes |
+| qwen3-8b | 374 | [363, 398] | 261 | 1036 | 834 | 148.1 | 161298 | 6.31 | 7.47 | 0/21 | 0 | yes |
 
 Peak VRAM from nvidia-smi over the whole job; energy is GPU only, the timed section of a mode divided by its items.

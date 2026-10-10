@@ -1,0 +1,393 @@
+{
+ "schema": "jev-match-bench capability summary v1",
+ "test": "C6",
+ "design": "plan/c6.md",
+ "report": "results/c6/findings.md",
+ "best_by_f1": "gelectra-large",
+ "gate": {
+  "reference_f1": 88.1,
+  "tolerance": 2.0,
+  "value": 87.09694731948984,
+  "questions": 2204,
+  "passed": true
+ },
+ "baseline": {
+  "f1": 0.2213,
+  "f1_ci95": [
+   0.2037,
+   0.2387
+  ],
+  "rule": "results/c6/method.md, lexical baseline"
+ },
+ "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
+ "generator": "bench/score-cap.py",
+ "arms": [
+  {
+   "arm": "gelectra-large",
+   "model": "deepset/gelectra-large-germanquad (trained reader)",
+   "licence": "MIT",
+   "licence_class": "open source",
+   "finished": true,
+   "trained_reader": true,
+   "params_b": 0.335,
+   "params_source": "model card (ELECTRA large)",
+   "quality": {
+    "metric": "F1 (SQuAD v1.1), GermanQuAD test sample, 1,000 questions",
+    "value": 0.8721,
+    "ci95": [
+     0.8551,
+     0.8883
+    ],
+    "em": 0.719,
+    "em_ci95": [
+     0.692,
+     0.746
+    ],
+    "f1_german_articles": 0.8744,
+    "span_faithfulness": 1.0,
+    "keine_antwort": 0,
+    "failed_or_unparsed": 0,
+    "skill_vs_baseline": 0.8358
+   },
+   "speed": {
+    "ms_per_question_median": 27.5,
+    "ms_ci95": [
+     27.1,
+     27.7
+    ],
+    "note": "one question per call; the reader answers all 2,204 test questions, the median is over the 1,000 of the sample"
+   },
+   "energy": {
+    "j_per_1000_questions": 10638,
+    "note": "GPU only, timed section divided by its questions"
+   },
+   "vram_peak_gb": 1.73,
+   "vram_peak_total_gb": 2.92,
+   "fits_24gb": true
+  },
+  {
+   "arm": "gemma4-12b",
+   "model": "gemma4:12b (google/gemma-4-12B-it)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "trained_reader": false,
+   "ollama_digest": "6114515d63c1",
+   "quant": "Q4_K_M",
+   "params_b": 11.9,
+   "quality": {
+    "metric": "F1 (SQuAD v1.1), GermanQuAD test sample, 1,000 questions",
+    "value": 0.8491,
+    "ci95": [
+     0.8323,
+     0.8663
+    ],
+    "em": 0.656,
+    "em_ci95": [
+     0.627,
+     0.684
+    ],
+    "f1_german_articles": 0.8528,
+    "span_faithfulness": 0.91,
+    "keine_antwort": 27,
+    "failed_or_unparsed": 0,
+    "skill_vs_baseline": 0.8062,
+    "vs_best": {
+     "best": "gelectra-large",
+     "diff": 0.023,
+     "diff_ci95": [
+      0.0031,
+      0.0426
+     ],
+     "p": 0.024,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "ms_per_question_median": 302.1,
+    "ms_ci95": [
+     296.0975,
+     310.35
+    ],
+    "note": "one question per call; the reader answers all 2,204 test questions, the median is over the 1,000 of the sample"
+   },
+   "energy": {
+    "j_per_1000_questions": 78917,
+    "note": "GPU only, timed section divided by its questions"
+   },
+   "vram_peak_gb": 9.19,
+   "vram_peak_total_gb": 10.38,
+   "fits_24gb": true
+  },
+  {
+   "arm": "winnow-12b",
+   "model": "hf.co/EldanRing/Winnow-12B:Q8_0 (Gemma 4 12B fine-tune)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "trained_reader": false,
+   "ollama_digest": "b5bedb246945",
+   "quant": "Q8_0",
+   "params_b": 11.9,
+   "quality": {
+    "metric": "F1 (SQuAD v1.1), GermanQuAD test sample, 1,000 questions",
+    "value": 0.8484,
+    "ci95": [
+     0.8317,
+     0.8658
+    ],
+    "em": 0.652,
+    "em_ci95": [
+     0.623,
+     0.681
+    ],
+    "f1_german_articles": 0.8514,
+    "span_faithfulness": 0.914,
+    "keine_antwort": 26,
+    "failed_or_unparsed": 0,
+    "skill_vs_baseline": 0.8053,
+    "vs_best": {
+     "best": "gelectra-large",
+     "diff": 0.0237,
+     "diff_ci95": [
+      0.0036,
+      0.0445
+     ],
+     "p": 0.026,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "ms_per_question_median": 448.3,
+    "ms_ci95": [
+     435.5,
+     463.9
+    ],
+    "note": "one question per call; the reader answers all 2,204 test questions, the median is over the 1,000 of the sample"
+   },
+   "energy": {
+    "j_per_1000_questions": 127326,
+    "note": "GPU only, timed section divided by its questions"
+   },
+   "vram_peak_gb": 13.54,
+   "vram_peak_total_gb": 14.73,
+   "fits_24gb": true
+  },
+  {
+   "arm": "mistral-small-3.2",
+   "model": "mistral-small3.2:24b (mistralai/Mistral-Small-3.2-24B-Instruct-2506)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "trained_reader": false,
+   "ollama_digest": "5a408ab55df5",
+   "quant": "Q4_K_M",
+   "params_b": 24.0,
+   "quality": {
+    "metric": "F1 (SQuAD v1.1), GermanQuAD test sample, 1,000 questions",
+    "value": 0.8007,
+    "ci95": [
+     0.7825,
+     0.8192
+    ],
+    "em": 0.549,
+    "em_ci95": [
+     0.516,
+     0.581
+    ],
+    "f1_german_articles": 0.8043,
+    "span_faithfulness": 0.901,
+    "keine_antwort": 15,
+    "failed_or_unparsed": 0,
+    "skill_vs_baseline": 0.7441,
+    "vs_best": {
+     "best": "gelectra-large",
+     "diff": 0.0714,
+     "diff_ci95": [
+      0.048,
+      0.0939
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "ms_per_question_median": 416.4,
+    "ms_ci95": [
+     400.3975,
+     437.815
+    ],
+    "note": "one question per call; the reader answers all 2,204 test questions, the median is over the 1,000 of the sample"
+   },
+   "energy": {
+    "j_per_1000_questions": 172839,
+    "note": "GPU only, timed section divided by its questions"
+   },
+   "vram_peak_gb": 15.97,
+   "vram_peak_total_gb": 17.16,
+   "fits_24gb": true
+  },
+  {
+   "arm": "gemma4-26b",
+   "model": "gemma4:26b (google/gemma-4-26B-A4B-it)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "trained_reader": false,
+   "ollama_digest": "001e5dafc3c7",
+   "quant": "Q4_K_M",
+   "params_b": 25.2,
+   "quality": {
+    "metric": "F1 (SQuAD v1.1), GermanQuAD test sample, 1,000 questions",
+    "value": 0.7779,
+    "ci95": [
+     0.7591,
+     0.7979
+    ],
+    "em": 0.525,
+    "em_ci95": [
+     0.494,
+     0.556
+    ],
+    "f1_german_articles": 0.7815,
+    "span_faithfulness": 0.914,
+    "keine_antwort": 25,
+    "failed_or_unparsed": 0,
+    "skill_vs_baseline": 0.7147,
+    "vs_best": {
+     "best": "gelectra-large",
+     "diff": 0.0942,
+     "diff_ci95": [
+      0.0703,
+      0.1172
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "ms_per_question_median": 264.2,
+    "ms_ci95": [
+     257.995,
+     268.5013
+    ],
+    "note": "one question per call; the reader answers all 2,204 test questions, the median is over the 1,000 of the sample"
+   },
+   "energy": {
+    "j_per_1000_questions": 54124,
+    "note": "GPU only, timed section divided by its questions"
+   },
+   "vram_peak_gb": 18.99,
+   "vram_peak_total_gb": 20.18,
+   "fits_24gb": true
+  },
+  {
+   "arm": "qwen3.8-27b",
+   "model": "qwen3.8:27b (Qwen/Qwen3.8-27B)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "trained_reader": false,
+   "ollama_digest": "aaee06c39dcf",
+   "quant": "Q4_K_M",
+   "params_b": 27.3,
+   "quality": {
+    "metric": "F1 (SQuAD v1.1), GermanQuAD test sample, 1,000 questions",
+    "value": 0.7506,
+    "ci95": [
+     0.7287,
+     0.7723
+    ],
+    "em": 0.541,
+    "em_ci95": [
+     0.509,
+     0.572
+    ],
+    "f1_german_articles": 0.7539,
+    "span_faithfulness": 0.838,
+    "keine_antwort": 104,
+    "failed_or_unparsed": 0,
+    "skill_vs_baseline": 0.6797,
+    "vs_best": {
+     "best": "gelectra-large",
+     "diff": 0.1215,
+     "diff_ci95": [
+      0.0973,
+      0.1468
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "ms_per_question_median": 540.95,
+    "ms_ci95": [
+     526.7,
+     554.8012
+    ],
+    "note": "one question per call; the reader answers all 2,204 test questions, the median is over the 1,000 of the sample"
+   },
+   "energy": {
+    "j_per_1000_questions": 168959,
+    "note": "GPU only, timed section divided by its questions"
+   },
+   "vram_peak_gb": 18.06,
+   "vram_peak_total_gb": 19.24,
+   "fits_24gb": true
+  },
+  {
+   "arm": "qwen3-8b",
+   "model": "qwen3:8b (Qwen/Qwen3-8B)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "trained_reader": false,
+   "ollama_digest": "500a1f067a9f",
+   "quant": "Q4_K_M",
+   "params_b": 8.2,
+   "quality": {
+    "metric": "F1 (SQuAD v1.1), GermanQuAD test sample, 1,000 questions",
+    "value": 0.6758,
+    "ci95": [
+     0.6545,
+     0.6962
+    ],
+    "em": 0.345,
+    "em_ci95": [
+     0.315,
+     0.375
+    ],
+    "f1_german_articles": 0.6832,
+    "span_faithfulness": 0.861,
+    "keine_antwort": 1,
+    "failed_or_unparsed": 0,
+    "skill_vs_baseline": 0.5836,
+    "vs_best": {
+     "best": "gelectra-large",
+     "diff": 0.1963,
+     "diff_ci95": [
+      0.1726,
+      0.2217
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "ms_per_question_median": 248.45,
+    "ms_ci95": [
+     236.8,
+     256.6513
+    ],
+    "note": "one question per call; the reader answers all 2,204 test questions, the median is over the 1,000 of the sample"
+   },
+   "energy": {
+    "j_per_1000_questions": 81468,
+    "note": "GPU only, timed section divided by its questions"
+   },
+   "vram_peak_gb": 6.28,
+   "vram_peak_total_gb": 7.47,
+   "fits_24gb": true
+  }
+ ]
+}

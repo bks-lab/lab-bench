@@ -161,6 +161,158 @@
    "vram_peak_gb": 10.31,
    "vram_peak_total_gb": 11.48,
    "fits_24gb": true
+  },
+  {
+   "arm": "qwen3-8b",
+   "model": "qwen3:8b (Qwen/Qwen3-8B)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "ollama_digest": "500a1f067a9f",
+   "quant": "Q4_K_M",
+   "params_b": 8.2,
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live (1,000 items), fc mode (native tool calling)",
+    "value": 0.892,
+    "ci95": [
+     0.872,
+     0.911
+    ],
+    "prompt_mode": 0.92,
+    "prompt_mode_ci95": [
+     0.902,
+     0.936
+    ],
+    "per_category_fc": {
+     "simple_python": 0.94,
+     "multiple": 0.92,
+     "parallel": 0.82,
+     "parallel_multiple": 0.84
+    },
+    "per_category_prompt": {
+     "simple_python": 0.9325,
+     "multiple": 0.925,
+     "parallel": 0.91,
+     "parallel_multiple": 0.9
+    },
+    "unparseable_fc": 0.004,
+    "unparseable_prompt": 0.005,
+    "fc_vs_prompt": {
+     "a_only": 32,
+     "b_only": 60,
+     "p": 0.0046
+    },
+    "schema_validity_free": 0.7617,
+    "schema_validity_free_ci95": [
+     0.725,
+     0.795
+    ],
+    "schema_validity_constrained": 0.9071,
+    "schema_validity_constrained_ci95": [
+     0.8834,
+     0.9291
+    ],
+    "constrained_coverage": 0.9867,
+    "constrained_vs_free": {
+     "a_only": 93,
+     "b_only": 9,
+     "p": 0.0,
+     "schemas": 592,
+     "free_on_same": 0.7652,
+     "constrained": 0.9071,
+     "coverage": 0.9867
+    },
+    "per_subset_free": {
+     "Github_easy": 0.93,
+     "Github_hard": 0.52,
+     "Github_medium": 0.81,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.55,
+     "Kubernetes": 0.79
+    },
+    "per_subset_constrained": {
+     "Github_easy": 0.97,
+     "Github_hard": 0.8384,
+     "Github_medium": 0.9192,
+     "Glaiveai2K": 0.96,
+     "JsonSchemaStore": 0.7553,
+     "Kubernetes": 0.99
+    },
+    "vs_best": {
+     "best": "qwen3-14b",
+     "diff": 0.027,
+     "diff_ci95": [
+      0.008,
+      0.046
+     ],
+     "p": 0.01,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "fc": {
+     "ms_median": 374.1,
+     "ms_median_ci95": [
+      362.55,
+      397.9
+     ],
+     "out_tok_s": 148.1302,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "prompt": {
+     "ms_median": 261.35,
+     "ms_median_ci95": [
+      251.0975,
+      267.45
+     ],
+     "out_tok_s": 147.8703,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "free": {
+     "ms_median": 1035.85,
+     "ms_median_ci95": [
+      874.4088,
+      1193.9
+     ],
+     "out_tok_s": 139.1384,
+     "failed_calls": 2,
+     "capped": 10,
+     "truncated_prompts": 0
+    },
+    "constrained": {
+     "ms_median": 834.4,
+     "ms_median_ci95": [
+      724.3,
+      1010.1
+     ],
+     "out_tok_s": 135.679,
+     "failed_calls": 9,
+     "capped": 11,
+     "truncated_prompts": 0
+    },
+    "slowdown_constrained_over_free": 0.8055
+   },
+   "energy": {
+    "fc": {
+     "j_per_1000_items": 161298
+    },
+    "prompt": {
+     "j_per_1000_items": 101466
+    },
+    "free": {
+     "j_per_1000_items": 929370
+    },
+    "constrained": {
+     "j_per_1000_items": 797075
+    }
+   },
+   "vram_peak_gb": 6.31,
+   "vram_peak_total_gb": 7.47,
+   "fits_24gb": true
   }
  ]
 }

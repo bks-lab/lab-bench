@@ -552,8 +552,8 @@ def score_c7():
                                 "ci95": [r3(x) for x in r["per"][32768]["acc_ci95"]],
                                 **({"vs_best": {"best": best, "diff": r3(r["vs_best"]["diff"]), "diff_ci95": [r3(x) for x in r["vs_best"]["diff_ci95"]],
                                                 "p": round(r["vs_best"]["p"], 3), "difference_shown": r["vs_best"]["difference_shown"]}} if "vs_best" in r else {})}
-        else:
-            d["unfinished"] = {"reason": r["status"].get("reason")}
+        if not r["finished"]:
+            d["unfinished"] = {"reason": r["status"].get("reason") or ("sanity gate failed: single at 4k below 95 %" if (r.get("gate") or {}).get("passed") is False else None)}
         arms_out.append(d)
     by = {x["arm"]: x for x in arms_out}
     summary = {"test": "C7", "design": "plan/c7.md", "report": "results/c7/findings.md", "best_by_accuracy_32k": top, "arms": arms_out}
@@ -592,7 +592,7 @@ def c7_md(s):
         pl = x.get("per_length") or {}
         q = x.get("quality") or {}; v = q.get("vs_best")
         cell = lambda L_: f"{pl[L_]['accuracy']:.3f}" if L_ in pl else ""  # noqa: E731
-        L.append(f"| {x['arm']} | {x['kv_cache']} | {cell('4096')} | {cell('16384')} | {cell('32768')} | {cis(pl['32768']['ci95']) if '32768' in pl else ''} | "
+        L.append(f"| {x['arm']} | {x['kv_cache']} | {cell('4096')} | {cell('16384')} | {cell('32768') if '32768' in pl else 'not finished'} | {cis(pl['32768']['ci95']) if '32768' in pl else ''} | "
                  + ((f"{-v['diff']:+.3f} | {v['p']:.3f} | {'yes' if v['difference_shown'] else 'no'} |" if v else ("best | | |" if '32768' in pl and x['kv_cache'] == 'f16' else "| | |")))
                  + f" {x.get('longest_length_at_90') or ''} |")
     L += ["", "## Per task and depth at 32k (descriptive)", "", "| arm | single | multikey | multivalue | depth 10 % | depth 50 % | depth 90 % |", "|---|---|---|---|---|---|---|"]
