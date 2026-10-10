@@ -85,8 +85,11 @@ def main():
     ap.add_argument("--warmup", type=int, default=3)
     ap.add_argument("--gate", type=float, default=None)
     ap.add_argument("--tol", type=float, default=2.0)
+    ap.add_argument("--max-answer-len", type=int, default=READER["max_answer_len"],
+                    help="reader only: longest answer in tokens (30 in the design; see plan/c6.md, notes of 2026-10-10)")
     ap.add_argument("--mock", action="store_true")
     a = ap.parse_args()
+    READER["max_answer_len"] = a.max_answer_len
     os.makedirs(a.out, exist_ok=True)
     man = json.load(open(os.path.join(a.repo, "cases", "c6", "manifest.json"), encoding="utf-8"))
     sp = os.path.join(a.repo, "cases", "c6", "sample.jsonl")

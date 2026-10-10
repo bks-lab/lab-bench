@@ -11,7 +11,9 @@ with --max-num-seqs = the level and --max-model-len 4608, and is stopped
 after the level. Chat requests go to /v1/chat/completions (streamed, usage
 included, thinking off through the chat template's `enable_thinking`),
 decide requests to /v1/completions with the same raw prompt as the Ollama arm
-(max_tokens 1, top 20 logprobs). vLLM reports no prompt and generation
+(max_tokens 1, top 20 logprobs). Prefix caching is off: with it, the second
+and third repetition of a configuration would find every prompt of the first
+in the cache, which the Ollama arms (one cached prompt per slot) cannot. vLLM reports no prompt and generation
 durations per request: generation time is the client's time from the first
 to the last streamed token.
 """
@@ -62,9 +64,11 @@ class VllmServer:
 
     def __enter__(self):
         wsl("pkill -f 'vllm serve' || true")
-        cmd = (f"export PATH={LINUX_PATH}; HF_HUB_OFFLINE=1 timeout 4h {VENV}/bin/vllm serve {self.repo} --revision {self.rev} "
+        # VLLM_USE_FLASHINFER_SAMPLER=0: FlashInfer builds its sampling kernel with nvcc at start-up,
+        # and the WSL Ubuntu has no CUDA toolkit; vLLM's PyTorch sampler takes its place (temperature 0 is greedy either way)
+        cmd = (f"export PATH={LINUX_PATH}; export VLLM_USE_FLASHINFER_SAMPLER=0; HF_HUB_OFFLINE=1 timeout 4h {VENV}/bin/vllm serve {self.repo} --revision {self.rev} "
                f"--served-model-name m --max-num-seqs {self.level} --max-model-len {base.NUM_CTX} "
-               f"--gpu-memory-utilization 0.85 --seed 1 --port {PORT} --host 127.0.0.1")
+               f"--gpu-memory-utilization 0.85 --seed 1 --no-enable-prefix-caching --port {PORT} --host 127.0.0.1")
         self.log = open(self.log_path, "a", encoding="utf-8")
         self.log.write(f"# {ol.now()} {cmd}\n")
         self.log.flush()
@@ -94,7 +98,7 @@ class VllmServer:
 
 
 def stream_chat(body, timeout=900):
-    req = urllib.request.Request(URL + "/v1/chat/completions", data=json.dumps({**body, "stream": True}).encode(),
+    req = urllib.request.Request(URL + "/v1/chat/completions", data=json.dumps({**body, "stream": True, "stream_options": {"include_usage": True}}).encode(),
                                  headers={"Content-Type": "application/json"})
     t0 = time.perf_counter()
     first = last_tok = None
@@ -169,7 +173,7 @@ def main():
 
     def chat_body(text, max_tokens=base.NUM_PREDICT):
         return {"model": "m", "messages": [{"role": "user", "content": gen.INSTRUCTION.format(text=text)}],
-                "max_tokens": max_tokens, "temperature": 0, "seed": 1, "stream_options": {"include_usage": True},
+                "max_tokens": max_tokens, "temperature": 0, "seed": 1,
                 "chat_template_kwargs": {"enable_thinking": False}}
 
     def one_chat(item, w, level, rep):
