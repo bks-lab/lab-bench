@@ -62,7 +62,9 @@ class VllmServer:
 
     def __enter__(self):
         wsl("pkill -f 'vllm serve' || true")
-        cmd = (f"export PATH={LINUX_PATH}; HF_HUB_OFFLINE=1 timeout 4h {VENV}/bin/vllm serve {self.repo} --revision {self.rev} "
+        # VLLM_USE_FLASHINFER_SAMPLER=0: FlashInfer builds its sampling kernel with nvcc at start-up,
+        # and the WSL Ubuntu has no CUDA toolkit; vLLM's PyTorch sampler takes its place (temperature 0 is greedy either way)
+        cmd = (f"export PATH={LINUX_PATH}; export VLLM_USE_FLASHINFER_SAMPLER=0; HF_HUB_OFFLINE=1 timeout 4h {VENV}/bin/vllm serve {self.repo} --revision {self.rev} "
                f"--served-model-name m --max-num-seqs {self.level} --max-model-len {base.NUM_CTX} "
                f"--gpu-memory-utilization 0.85 --seed 1 --port {PORT} --host 127.0.0.1")
         self.log = open(self.log_path, "a", encoding="utf-8")
