@@ -159,6 +159,10 @@
       {
         "path": "^\\.github/workflows/[a-z0-9-]+\\.yml$",
         "reason": "CI: leak scan and tests"
+      },
+      {
+        "path": "^hf/(build|test_build)\\.py$|^hf/CARD\\.md$|^hf/space/(index\\.html|README\\.md)$",
+        "reason": "export of the aggregated tables to the Hugging Face dataset bks-lab/lab-bench-results, its card, and the static Space bks-lab/lab-bench"
       }
     ]
   },
