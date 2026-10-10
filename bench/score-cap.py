@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Scores the capability tests C1 (retrieval), C2 (speech to text) and C3
 (invoice fields) exactly as preregistered in plan/c0-common.md, plan/c1.md,
-plan/c2.md and plan/c3.md.
+plan/c2.md and plan/c3.md, and through bench/cap_c4c8.py the tests C4
+(structured output), C6 (reading comprehension), C7 (long context) and C8
+(throughput) as preregistered in their plans. C4 needs the per-item verdicts
+of bench/c4/check_ast.py next to its rows.
 
     uv run --with numpy python bench/score-cap.py import --queue .cache/queue
     uv run --with numpy python bench/score-cap.py score
@@ -40,6 +43,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "bench" / "c3"))
+sys.path.insert(0, str(ROOT / "bench"))
 from fields import FIELDS, MONEY, score_row  # noqa: E402
 
 SEED = 20261009
@@ -244,14 +248,20 @@ def scrub(o):
 
 def do_import(queue):
     n = 0
-    for d in sorted(glob.glob(os.path.join(queue, "*-c[123]-*"))):
+    arms_all = dict(ARMS)
+    try:
+        import cap_c4c8  # noqa: PLC0415
+        arms_all.update(cap_c4c8.ARMS)
+    except ImportError:
+        pass
+    for d in sorted(glob.glob(os.path.join(queue, "*-c[1-9]-*"))):
         jid = os.path.basename(d)
         st_files = glob.glob(os.path.join(d, "*.status.json"))
         if not st_files:
             continue
         status = json.load(open(st_files[0], encoding="utf-8"))
         test, arm = status["test"].lower(), status["arm"]
-        if arm not in ARMS[test]:
+        if arm not in arms_all.get(test, {}):
             print(f"skip {jid}: arm {arm} not in the plan", file=sys.stderr)
             continue
         ad = arm_dir(arm)
@@ -266,6 +276,10 @@ def do_import(queue):
             shutil.copyfile(os.path.join(d, "result.jsonl"), out / f"{date}-run1.jsonl")
             if os.path.exists(os.path.join(d, "ocr.jsonl")):
                 shutil.copyfile(os.path.join(d, "ocr.jsonl"), out / f"{date}-run1-ocr.jsonl")
+        elif test != "c3":
+            # no meta: a job that stopped early; keep its rows (the C4 to C8 runners write them as they go)
+            if os.path.exists(os.path.join(d, "result.jsonl")):
+                shutil.copyfile(os.path.join(d, "result.jsonl"), out / f"{date}-run1-unfinished.jsonl")
         else:
             # unfinished: per-invoice lines of the job log (id, correct cells, seconds, error)
             rows = []
@@ -849,6 +863,17 @@ def main():
                                                        "best_by_field_accuracy": c3[1], "regex_baseline": r3(c3[3]), "arms": o3})
     write_c1(c1, o1); write_c2(c2, o2); write_c3(c3, o3)
     caps = capability_rows(c1, c2, c3)
+    sys.path.insert(0, str(ROOT / "bench"))
+    import cap_c4c8  # noqa: PLC0415
+    for test, fn in (("c4", cap_c4c8.score_c4), ("c6", cap_c4c8.score_c6), ("c7", cap_c4c8.score_c7), ("c8", cap_c4c8.score_c8)):
+        got = fn()
+        if got is None:
+            continue
+        summ, md, row = got
+        wr_json(ROOT / "results" / test / "summary.json", {"schema": "jev-match-bench capability summary v1", **{k: v for k, v in summ.items() if k != "arms"}, **common, "arms": summ["arms"]})
+        (ROOT / "results" / test / "score.md").write_text(md, encoding="utf-8")
+        if row is not None:
+            caps.append(row)
     wr_json(ROOT / "results" / "capabilities.json", {"schema": "jev-match-bench capability map v1", "columns": "plan/ROADMAP.md, section Capability map for the website", **common, "rows": caps})
     for c in caps:
         print(c["id"], c["best_local_model"], c["quality"]["value"], c["quality"]["ci95"], "tie" if c["tie"] else "", "smallest:", c["smallest_within_interval"]["arm"])

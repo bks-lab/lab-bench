@@ -1,0 +1,36 @@
+{
+ "test": "C6",
+ "arm": "gelectra-large",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c6/run_c6.py",
+  "--arm",
+  "gelectra-large",
+  "--data",
+  "{data}\\c6",
+  "--out",
+  "{out}",
+  "--gate",
+  "88.1",
+  "--tol",
+  "2"
+ ],
+ "env": {
+  "PYTHONUTF8": "1",
+  "HF_HOME": "{hf}",
+  "HF_HUB_OFFLINE": "1",
+  "TRANSFORMERS_OFFLINE": "1",
+  "PYTHONPATH": "D:\\bench-cap\\tf4"
+ },
+ "timeout_min": 30,
+ "expected_gpu_min": 5,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "c4c8-agent",
+ "note": "transformers 4.57.6 in front (PYTHONPATH tf4): transformers 5 has no question-answering pipeline (plan/c6.md, preparation notes)"
+}

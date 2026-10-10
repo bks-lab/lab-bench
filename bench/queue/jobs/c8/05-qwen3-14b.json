@@ -1,0 +1,29 @@
+{
+ "test": "C8",
+ "arm": "qwen3-14b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c8/run_c8.py",
+  "--arm",
+  "qwen3-14b",
+  "--data",
+  "{data}\\c6",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1",
+  "OLLAMA_MODELS": "D:\\ollama\\models"
+ },
+ "timeout_min": 165,
+ "expected_gpu_min": 55,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "c4c8-agent",
+ "note": "private ollama serve per concurrency level on port 11436; exit 3 = repeat gate failed, exit 4 = foreign GPU load (plan/c8.md)"
+}

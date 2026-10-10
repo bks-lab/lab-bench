@@ -1,0 +1,27 @@
+{
+ "test": "C4",
+ "arm": "granite4-3b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c4/run_c4.py",
+  "--arm",
+  "granite4-3b",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 90,
+ "expected_gpu_min": 20,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [
+  "C4-qwen3-14b"
+ ],
+ "requested_by": "c4c8-agent"
+}

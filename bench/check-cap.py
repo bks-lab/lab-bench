@@ -192,11 +192,148 @@ def c3():
         check(f"C3 {arm} field accuracy ({right} of {total})", right / total, a["quality"]["value"], 0.0005)
 
 
+# ---------------------------------------------------------------- C4 to C8
+# Each block runs only when results/<cN>/summary.json exists.
+
+
+def have(test):
+    return (ROOT / f"results/{test}/summary.json").exists()
+
+
+def c4():
+    """Part A: the totals of the per-item verdicts of BFCL's checker (the check itself
+    needs the gorilla checkout). Part B: parse and validate every answer here with
+    jsonschema directly, without bench/c4/check_ast.py."""
+    if not have("c4"):
+        return
+    import jsonschema
+    from jsonschema import validators
+    schemas = {json.loads(l)["id"]: json.loads(json.loads(l)["schema"]) for l in open(ROOT / "cases/c4/schemas.jsonl", encoding="utf-8")}
+
+    def first_json(t):
+        t = (t or "").strip()
+        cands = [t]
+        m = re.search(r"```(?:json|JSON)?\s*\n(.*?)\n?```", t, re.S)
+        if m:
+            cands.append(m.group(1))
+        i, j = t.find("{"), t.rfind("}")
+        if i >= 0 and j > i:
+            cands.append(t[i:j + 1])
+        for c in cands:
+            try:
+                return json.loads(c), True
+            except Exception:
+                pass
+        return None, False
+
+    for a in summary("c4")["arms"]:
+        if not a["finished"]:
+            continue
+        ver = rows("c4", a["arm"], "-verdicts")
+        fc = [v["valid"] for v in ver if v["mode"] == "fc"]
+        check(f"C4 {a['arm']} fc AST accuracy (verdicts)", sum(fc) / len(fc), a["quality"]["value"], 0.0005)
+        raw = rows("c4", a["arm"])
+        for mode, key in (("free", "schema_validity_free"), ("constrained", "schema_validity_constrained")):
+            ok = n = 0
+            for r in raw:
+                if r["mode"] != mode:
+                    continue
+                if mode == "constrained" and r.get("error") and re.search(r"format|schema|grammar", r["error"], re.I):
+                    continue  # not constrainable, scored in free mode only
+                n += 1
+                if r.get("error"):
+                    continue
+                val, parsed = first_json(r.get("content"))
+                if not parsed:
+                    continue
+                sch = schemas[r["id"]]
+                cls = validators.validator_for(sch, default=jsonschema.Draft202012Validator)
+                ok += cls(sch).is_valid(val)
+            check(f"C4 {a['arm']} {mode} schema validity ({ok} of {n})", ok / n, a["quality"][key], 0.0005)
+
+
+def squad_norm(s, arts=r"\b(a|an|the)\b"):
+    s = "".join(ch for ch in s.lower() if ch not in set('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'))
+    return " ".join(re.sub(arts, " ", s).split())
+
+
+def f1_one(p, g):
+    from collections import Counter
+    pt, gt = squad_norm(p).split(), squad_norm(g).split()
+    same = sum((Counter(pt) & Counter(gt)).values())
+    if not same:
+        return 0.0
+    pr, rc = same / len(pt), same / len(gt)
+    return 2 * pr * rc / (pr + rc)
+
+
+def c6():
+    if not have("c6"):
+        return
+    sample = {json.loads(l)["id"]: json.loads(l) for l in open(ROOT / "cases/c6/sample.jsonl", encoding="utf-8")}
+    for a in summary("c6")["arms"]:
+        if not a["finished"]:
+            continue
+        rr = {r["id"]: r for r in rows("c6", a["arm"])}
+        f = [max(f1_one(rr[i]["answer"] or "", g) for g in sample[i]["answers"]) for i in sample]
+        check(f"C6 {a['arm']} F1 on {len(f)} questions", sum(f) / len(f), a["quality"]["value"], 0.0005)
+
+
+def c7():
+    if not have("c7"):
+        return
+    trials = {json.loads(l)["id"]: json.loads(l) for l in open(ROOT / "cases/c7/trials.jsonl", encoding="utf-8")}
+    for a in summary("c7")["arms"]:
+        if not a.get("per_length"):
+            continue
+        rr = rows("c7", a["arm"].replace("+", "-"))
+        for L, p in a["per_length"].items():
+            got = []
+            for r in rr:
+                if str(r["length"]) != L:
+                    continue
+                codes = set(re.findall(r"(?<!\d)\d{7}(?!\d)", r.get("answer") or ""))
+                t = trials[r["id"]]
+                got.append((not r["error"]) and set(t["asked_codes"]) <= codes and not codes & set(t["other_codes"]))
+            check(f"C7 {a['arm']} accuracy at {L}", sum(got) / len(got), p["accuracy"], 0.0005)
+
+
+def c8():
+    """Aggregate rates from the rows and the section wall times: generated tokens of
+    the timed requests per configuration, divided by the summed wall time."""
+    if not have("c8"):
+        return
+    for a in summary("c8")["arms"]:
+        if not a.get("configurations"):
+            continue
+        meta = json.loads((ROOT / f"results/c8/{a['arm']}/meta.json").read_text(encoding="utf-8"))
+        rr = rows("c8", a["arm"])
+        for key in ("chat-short@1", "chat-short@16", "decide@16"):
+            if key not in a["configurations"]:
+                continue
+            wl, lv = key.split("@")
+            vals = []
+            for s in meta["sections"]:
+                if s["workload"] != wl or s["level"] != int(lv):
+                    continue
+                sel = [r for r in rr if r["workload"] == wl and r["level"] == int(lv) and r["rep"] == s["rep"] and not r["warmup"]]
+                if wl == "decide":
+                    vals.append(len(sel) / s["wall_s"] * 3600)
+                else:
+                    vals.append(sum(r["eval_count"] or 0 for r in sel if not r["error"]) / s["wall_s"])
+            rep = a["configurations"][key]["decisions_per_h_mean" if wl == "decide" else "agg_gen_tok_s_mean"]
+            check(f"C8 {a['arm']} {key} mean of 3", sum(vals) / len(vals), rep, 0.01 if wl != "decide" else 1.0)
+
+
 ap = argparse.ArgumentParser()
 ap.add_argument("--qrels", default=str(ROOT / ".cache" / "c1data"))
 a = ap.parse_args()
 c1(a.qrels)
 c2()
 c3()
+c4()
+c6()
+c7()
+c8()
 print(f"{sum(checks)} of {len(checks)} checks agree")
 sys.exit(0 if all(checks) else 1)

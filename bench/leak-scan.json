@@ -125,7 +125,7 @@
         "reason": "capability map (plan/ROADMAP.md): one aggregated row per measured capability test"
       },
       {
-        "path": "^bench/c[0-9]+/([a-z0-9_]+\\.(py|sh)|README\\.md)$",
+        "path": "^bench/c[0-9]+/([a-z0-9_-]+\\.(py|sh|mjs)|README\\.md)$",
         "reason": "runners, data preparation, field scoring and PC notes of the capability tests"
       },
       {
@@ -188,6 +188,26 @@
       "path": "^bench/leak-scan\\.json$",
       "match": "^seller@email\\.de$",
       "reason": "allow note naming the KoSIT test address"
+    },
+    {
+      "pattern": "address",
+      "path": "^(cases/c4/[a-z-]+\\.jsonl|results/c4/[^/]+/[^/]+\\.jsonl)$",
+      "reason": "BFCL (Apache-2.0) and JSONSchemaBench (MIT) test data and the C4 model answers over it: made-up addresses at example domains in prompts, answers and schema examples; no real correspondent"
+    },
+    {
+      "pattern": "home-path",
+      "path": "^(cases/c4/[a-z-]+\\.jsonl|results/c4/[^/]+/[^/]+\\.jsonl)$",
+      "reason": "BFCL and JSONSchemaBench test data and the C4 answers over it: placeholder home and dataset paths in prompts and schema descriptions"
+    },
+    {
+      "pattern": "host",
+      "path": "^(cases/c4/[a-z-]+\\.jsonl|results/c4/[^/]+/[^/]+\\.jsonl)$",
+      "reason": "JSONSchemaBench schema descriptions and examples with private-range example IP addresses and the C4 answers over them; no lab machine"
+    },
+    {
+      "pattern": "api-key",
+      "path": "^(cases/c4/[a-z-]+\\.jsonl|results/c4/[^/]+/[^/]+\\.jsonl)$",
+      "reason": "JSONSchemaBench schema descriptions that show the PEM frame of a private key around a placeholder word; no key material"
     }
   ],
   "structured": [

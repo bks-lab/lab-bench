@@ -1,0 +1,26 @@
+{
+ "test": "C4",
+ "arm": "qwen3-14b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c4/run_c4.py",
+  "--arm",
+  "qwen3-14b",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 120,
+ "expected_gpu_min": 40,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "c4c8-agent",
+ "note": "sanity arm, runs alone; the other arms are enqueued after its rows pass the gate on the Mac (plan/c4.md, preparation notes)"
+}
