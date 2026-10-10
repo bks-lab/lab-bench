@@ -173,7 +173,7 @@ tokens per decision are 448.5, 445.8 and 560.0, which gives USD 0.0188,
 median because the shorter intent calls pull it down.
 
 Per request: the `Jev cost` table of [score.md](score.md). Per decision: a
-script over `results/route1/jev/2026-10-09-run1.jsonl` (private, not part of this export) (`tokens_in` per
+script over `results/route1/jev/2026-10-09-run1.jsonl` (`tokens_in` per
 row). For comparison, a pv1 line (five questions over a CV) costs USD 0.074
 per 1,000 lines ([speed-cost.md](../pv1/speed-cost.md)). No call needed a
 retry (`attempts` is 1 on every row). The local arms have no cost line: the

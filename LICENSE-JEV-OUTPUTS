@@ -1,0 +1,32 @@
+Usage notice for the Jev outputs
+
+Files covered: every result row under results/*/jev/ (the per-question
+answers of TypeSafe Jev in the pv1 and route1 families, files
+results/<family>/jev/*.jsonl).
+
+These rows are outputs produced by TypeSafe Jev, a service of TypeSafe AI.
+They are published with TypeSafe's permission, given on 2026-10-10 (record:
+docs/permissions/2026-10-10-typesafe-jev-outputs.md).
+
+They are published for one purpose: reproducing and checking the
+measurements of this bench (scores, agreement, significance tests, the tool
+map).
+
+They must not be used
+  - to train or fine-tune a model,
+  - to distil a model, or
+  - to build a product that competes with TypeSafe.
+
+Use is subject to TypeSafe's Acceptable Use Policy
+(https://typesafe.ai/legal/acceptable-use-policy) and Master Customer
+Agreement (https://typesafe.ai/legal/mca), section 2.3(b).
+
+Neither the MIT licence in LICENSE nor the CC BY 4.0 licence in
+LICENSE-DATA applies to these rows. BKS-Lab grants no licence to them
+beyond what this notice describes.
+
+What the rows contain besides Jev's answer: the case ids, question ids and
+option lists of this bench, and run metadata (version, latency, token
+counts, timestamp). Option lists of route1 come from MASSIVE 1.1 (CC BY 4.0,
+Amazon) and fastino/fast-decisions (Apache-2.0, Fastino), see exceptions 4
+and 5 of LICENSE-DATA. No input text is repeated in the rows.

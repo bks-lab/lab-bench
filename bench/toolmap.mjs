@@ -90,7 +90,7 @@ const fail = msg => { console.error(`toolmap: ${msg}`); process.exit(1); };
 // ---------------------------------------------------------------- inputs
 
 for (const pv of ['route1', 'pv1']) {
-  if (!runRows(ROOT, pv, 'jev').length) fail(`no Jev result rows in results/${pv}/jev/. The map needs every arm's rows (versions, dates, tokens); a public export without Jev rows ships the committed results/toolmap.json instead.`);
+  if (!runRows(ROOT, pv, 'jev').length) fail(`no Jev result rows in results/${pv}/jev/. The map needs every arm's rows (versions, dates, tokens).`);
 }
 
 /** Markdown report -> { section title: [ {column: cell} ] } */

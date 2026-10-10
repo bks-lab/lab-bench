@@ -23,7 +23,14 @@ Exceptions:
 
 3. Model outputs in results/ were produced by the models named in each row
    (field arm_version). Their use may also be subject to the terms of the
-   respective model or service provider.
+   respective model or service provider. The outputs of TypeSafe Jev, that
+   is every file under results/*/jev/, are not covered by the CC BY 4.0
+   grant above at all. They are published with TypeSafe's permission of
+   2026-10-10 for reproducing the measurements only, must not be used to
+   train or distil models or to build a competing product, and are subject
+   to TypeSafe's Acceptable Use Policy
+   (https://typesafe.ai/legal/acceptable-use-policy) and Master Customer
+   Agreement (https://typesafe.ai/legal/mca). See LICENSE-JEV-OUTPUTS.
 
 4. cases/route1/massive-*.jsonl and cases/ex1/ are taken from MASSIVE 1.1,
    Copyright Amazon.com Inc. or its affiliates, licensed under CC BY 4.0

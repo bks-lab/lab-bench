@@ -48,7 +48,7 @@ const METRICS = {
 };
 
 if (!fs.existsSync(path.join(ROOT, 'results', PV, BASE))) {
-  // e.g. the public export, which ships no Jev rows: nothing to pair against
+  // e.g. a copy without the base arm's rows: nothing to pair against
   console.warn(`warning: no rows for the base arm ${BASE} in results/${PV}/, skipped. Choose another base with --base <arm>.`);
   process.exit(0);
 }

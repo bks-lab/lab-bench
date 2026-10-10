@@ -3,25 +3,26 @@
 A repeatable test bench for the CV-to-posting match: does an open model, run
 locally or hosted in the EU, answer the match questions as well as Jev?
 
-## Notice: no Jev raw answers
+## Notice: public export, Jev outputs under their own terms
 
 This repository is the public export of BKS-Lab's private bench
-(source commit `54f78b4f53fc`). It publishes evaluations only:
+(source commit `36d699ed8ff5`). It carries the cases, requests, references,
+reports and the result rows of every arm.
 
-- Jev's raw answers per question (the result rows under `results/*/jev/`)
-  are not published, and neither are per-case Jev values (the Jev columns of
-  the per-pair table in `results/pv1/report.md` are removed in this copy).
-  TypeSafe's Master Customer Agreement, section 2.3(b), governs the use of
-  Jev outputs, and TypeSafe has been asked whether the raw answers may be
-  published. Until then they stay private.
-- What is published about Jev is aggregated: the score reports, findings and
-  `results/toolmap.json`, computed from the full rows before the export.
-- The rows of every other arm (local LLMs, GLiNER), the cases, requests and
-  references are complete.
+- Jev's per-question outputs (the result rows under `results/*/jev/`) are
+  published with TypeSafe's permission of 2026-10-10
+  ([record](docs/permissions/2026-10-10-typesafe-jev-outputs.md)), for
+  reproducing the measurements only. They must not be used to train or
+  distil models or to build a product that competes with TypeSafe. Use is
+  subject to TypeSafe's
+  [Acceptable Use Policy](https://typesafe.ai/legal/acceptable-use-policy)
+  and [Master Customer Agreement](https://typesafe.ai/legal/mca), section
+  2.3(b). Neither the MIT nor the CC BY 4.0 licence of this repository
+  covers them, see [LICENSE-JEV-OUTPUTS](LICENSE-JEV-OUTPUTS).
+- Not exported: the export tooling and every file not yet on the export
+  path list (each export commit lists them).
 - The scripts still run Jev with your own key (`TYPESAFE_API_KEY`, see
-  `bench/run-jev.mjs`). The route1 and ex1 scorers skip a missing arm with a
-  warning. Anything that needs Jev rows (Jev's own accuracy, McNemar tests
-  against Jev, rebuilding the tool map) needs your own Jev run.
+  `bench/run-jev.mjs`).
 
 ## Why
 
@@ -280,16 +281,18 @@ public datasets. No human reference sample yet.
 
 ## Public export
 
-The bench has two homes. The private working repository keeps Jev's raw
-answers, because TypeSafe's Master Customer Agreement (section 2.3(b)) rules
-out using Output to train an imitating model, and TypeSafe has been asked
-whether they may be published. The public repository
-[bks-lab/lab-bench](https://github.com/bks-lab/lab-bench) carries everything
-else. It is made from the private one by `bench/export-public.sh`, which:
+The bench has two homes: this private working repository and the public
+repository [bks-lab/lab-bench](https://github.com/bks-lab/lab-bench). Since
+2026-10-10 the public one also carries Jev's per-question outputs (the
+result rows under `results/*/jev/`): TypeSafe permitted publishing them,
+see [docs/permissions/2026-10-10-typesafe-jev-outputs.md](docs/permissions/2026-10-10-typesafe-jev-outputs.md).
+The public copy is made by `bench/export-public.sh`, which:
 
 - copies only the paths listed in `bench/export-allow.json`, so a new kind
   of file stays private until someone allows it,
-- drops Jev columns from per-case tables,
+- reduces every Jev row to the fields listed under `jevRows` in
+  `bench/export-allow.json`, so a request id, header or account field is
+  dropped instead of published,
 - runs `bench/leak-scan.mjs`, which parses every structured file and does
   not reuse the selection rules,
 - makes one commit with the GitHub noreply address.
@@ -313,10 +316,21 @@ record it as `local-rtx4090` in the `host` field.
   [LICENSE](LICENSE).
 - Data (cases, requests, reference judgments and results under `cases/`,
   `requests/`, `reference/` and `results/`): CC BY 4.0, see
-  [LICENSE-DATA](LICENSE-DATA).
+  [LICENSE-DATA](LICENSE-DATA), except the Jev outputs below.
 - `bench/match.ts` is a vendored copy from
   [mboiman/mboiman.github.io](https://github.com/mboiman/mboiman.github.io)
   and stays under CC BY 4.0 with the source credit in its header.
+- Jev outputs (the result rows under `results/*/jev/`) are not covered by
+  the MIT or the CC BY 4.0 licence. They are outputs produced by TypeSafe
+  Jev, published with TypeSafe's permission of 2026-10-10
+  ([record](docs/permissions/2026-10-10-typesafe-jev-outputs.md)), for
+  reproducing the measurements only. They must not be used to train or
+  distil models or to build a product that competes with TypeSafe. Use is
+  subject to TypeSafe's
+  [Acceptable Use Policy](https://typesafe.ai/legal/acceptable-use-policy)
+  and [Master Customer Agreement](https://typesafe.ai/legal/mca), section
+  2.3(b). Full notice: [LICENSE-JEV-OUTPUTS](LICENSE-JEV-OUTPUTS), and a
+  `NOTICE.md` in every `results/*/jev/` directory.
 - Quotes from third-party sources inside the judges' notes (the `Sources:`
   parts with URLs) belong to their authors and are not covered by the
   CC BY 4.0 grant.
