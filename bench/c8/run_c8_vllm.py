@@ -96,7 +96,7 @@ class VllmServer:
 
 
 def stream_chat(body, timeout=900):
-    req = urllib.request.Request(URL + "/v1/chat/completions", data=json.dumps({**body, "stream": True}).encode(),
+    req = urllib.request.Request(URL + "/v1/chat/completions", data=json.dumps({**body, "stream": True, "stream_options": {"include_usage": True}}).encode(),
                                  headers={"Content-Type": "application/json"})
     t0 = time.perf_counter()
     first = last_tok = None
@@ -171,7 +171,7 @@ def main():
 
     def chat_body(text, max_tokens=base.NUM_PREDICT):
         return {"model": "m", "messages": [{"role": "user", "content": gen.INSTRUCTION.format(text=text)}],
-                "max_tokens": max_tokens, "temperature": 0, "seed": 1, "stream_options": {"include_usage": True},
+                "max_tokens": max_tokens, "temperature": 0, "seed": 1,
                 "chat_template_kwargs": {"enable_thinking": False}}
 
     def one_chat(item, w, level, rep):
