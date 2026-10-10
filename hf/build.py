@@ -27,6 +27,9 @@ TOOLMAP_FIELDS = [
     "mcnemar_vs_jev_p", "p50_ms_per_decision", "measured", "model_version",
     "reason", "report_url",
 ]
+# p values come as numbers (0.11) or bounds ("<0.001"); the Hub viewer needs
+# one type per column, so both are written as strings.
+P_VALUES = ("mcnemar_vs_top_p", "mcnemar_vs_jev_p")
 CELL_SCALARS = {
     "state", "best_arm", "arms_compared", "value", "baseline", "baseline_name",
     "skill", "n", "answered", "top_family", "mcnemar_vs_top_p",
@@ -49,6 +52,9 @@ def toolmap_rows(tm, commit):
             for k in CELL_SCALARS:
                 if k in cell:
                     out[k] = cell[k]
+            for k in P_VALUES:
+                if out[k] is not None:
+                    out[k] = str(out[k])
             out["report_url"] = url(commit, cell.get("source_report") or row.get("source_report"))
             extra = {k: v for k, v in cell.items() if k not in CELL_SCALARS and k != "source_report"}
             out["extra_json"] = json.dumps(extra, ensure_ascii=False, sort_keys=True)
