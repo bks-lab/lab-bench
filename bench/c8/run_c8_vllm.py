@@ -6,7 +6,7 @@ the Ollama runner, so bench/score-cap.py scores both alike.
   python bench/c8/run_c8_vllm.py --arm qwen3-14b --data D:\\bench-data\\c6 --out <dir> [--levels ...] [--limit N]
 
 Per level `vllm serve` starts in WSL (`wsl -d Ubuntu-24.04`, venv
-/root/vllm-venv, offline, inside `timeout` so it can never outlive the job)
+/root/vllm-venv2 on a uv-managed CPython, Linux-only PATH, offline, inside `timeout` so it can never outlive the job)
 with --max-num-seqs = the level and --max-model-len 4608, and is stopped
 after the level. Chat requests go to /v1/chat/completions (streamed, usage
 included, thinking off through the chat template's `enable_thinking`),
@@ -33,7 +33,10 @@ import run_c8 as base  # noqa: E402
 
 gen = base.gen
 DISTRO = "Ubuntu-24.04"
-VENV = "/root/vllm-venv"
+VENV = "/root/vllm-venv2"
+# Linux-only PATH: the Windows PATH that WSL appends carries a non-executable nvcc that torch's
+# inductor trips over, and the venv's Python is a uv-managed CPython with headers (triton builds a launcher).
+LINUX_PATH = f"{VENV}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib"
 PORT = 8000
 URL = f"http://127.0.0.1:{PORT}"
 # arm -> (repo, revision, quantisation, decide template)
@@ -59,7 +62,7 @@ class VllmServer:
 
     def __enter__(self):
         wsl("pkill -f 'vllm serve' || true")
-        cmd = (f"HF_HUB_OFFLINE=1 timeout 4h {VENV}/bin/vllm serve {self.repo} --revision {self.rev} "
+        cmd = (f"export PATH={LINUX_PATH}; HF_HUB_OFFLINE=1 timeout 4h {VENV}/bin/vllm serve {self.repo} --revision {self.rev} "
                f"--served-model-name m --max-num-seqs {self.level} --max-model-len {base.NUM_CTX} "
                f"--gpu-memory-utilization 0.85 --seed 1 --port {PORT} --host 127.0.0.1")
         self.log = open(self.log_path, "a", encoding="utf-8")

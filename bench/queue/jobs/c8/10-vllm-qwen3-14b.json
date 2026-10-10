@@ -24,5 +24,5 @@
  ],
  "after_ok": [],
  "requested_by": "c4c8-agent",
- "note": "vLLM 0.31.0 in WSL2 Ubuntu 24.04 (/root/vllm-venv), AWQ INT4 weights prefetched; vllm serve runs inside `timeout 4h` and is killed after each level"
+ "note": "vLLM 0.31.0 in WSL2 Ubuntu 24.04 (/root/vllm-venv2 on a uv-managed CPython), AWQ INT4 weights prefetched; vllm serve runs inside `timeout 4h` and is killed after each level"
 }
