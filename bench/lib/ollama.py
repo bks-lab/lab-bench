@@ -153,3 +153,22 @@ class PrivateServer:
         self.log.write(f"# {now()} stopped\n")
         self.log.close()
         return False
+
+
+def layers_on_gpu(log_path):
+    """Last "offloaded X/Y layers to GPU" line of a private server's log, as (X, Y), or None.
+
+    Ollama 0.35 runs models in llama-server, which fits the layers into free GPU
+    memory and keeps the rest on the CPU. /api/ps then still reports size_vram
+    equal to size, so the log line is the only reliable sign of a split."""
+    import re as _re  # noqa: PLC0415
+    try:
+        text = open(log_path, encoding="utf-8", errors="replace").read()
+    except OSError:
+        return None
+    hits = [(int(x), int(y)) for x, y in _re.findall(r"offloaded (\d+)/(\d+) layers to GPU", text)]
+    if not hits:
+        return None
+    # a multimodal model also loads its small projector; the language model has the most layers
+    most = max(y for _, y in hits)
+    return [h for h in hits if h[1] == most][-1]

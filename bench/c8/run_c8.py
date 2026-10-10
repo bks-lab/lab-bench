@@ -235,6 +235,7 @@ def main():
                     ol.call("/api/generate", {"model": tag, "prompt": "", "keep_alive": "30m",
                                               "options": {"num_ctx": NUM_CTX}}, url=url)
                     lv["load_s"] = round(time.perf_counter() - t0, 2)
+                    lv["layers_on_gpu"] = ol.layers_on_gpu(os.path.join(a.out, f"ollama-private-{level}.log"))
                 if not chars:
                     meta["calibration"] = calibrate(url)
                 lv["ps"] = ol.ps(url) if not a.mock else []
