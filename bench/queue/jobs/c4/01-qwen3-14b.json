@@ -14,8 +14,8 @@
  "env": {
   "PYTHONUTF8": "1"
  },
- "timeout_min": 120,
- "expected_gpu_min": 40,
+ "timeout_min": 275,
+ "expected_gpu_min": 110,
  "outputs": [
   "{out}\\result.jsonl",
   "{out}\\meta.json"
