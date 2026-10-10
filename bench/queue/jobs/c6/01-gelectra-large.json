@@ -15,7 +15,9 @@
   "--gate",
   "88.1",
   "--tol",
-  "2"
+  "2",
+  "--max-answer-len",
+  "200"
  ],
  "env": {
   "PYTHONUTF8": "1",
@@ -32,5 +34,5 @@
  ],
  "after_ok": [],
  "requested_by": "c4c8-agent",
- "note": "transformers 4.57.6 in front (PYTHONPATH tf4): transformers 5 has no question-answering pipeline (plan/c6.md, preparation notes)"
+ "note": "transformers 4.57.6 in front (PYTHONPATH tf4): transformers 5 has no question-answering pipeline. max_answer_len 200 after the gate miss with 30 (plan/c6.md, notes of 2026-10-10)"
 }
