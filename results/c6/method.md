@@ -53,3 +53,9 @@ Sensitivity: the same with `der`, `die`, `das`, `ein`, `eine` removed
 instead. Span faithfulness: the answer, stripped of surrounding white
 space, occurs verbatim in the passage (an empty answer and `keine Antwort`
 do not).
+
+## 2026-10-10: reader answer cap
+
+The reader runs with `max_answer_len` 200 instead of 30, after the sanity
+gate missed with 30 (cause and check in `plan/c6.md`, notes of
+2026-10-10). Prompt, parsing and the LLM settings above are unchanged.
