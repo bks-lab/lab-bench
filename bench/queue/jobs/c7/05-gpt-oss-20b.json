@@ -1,0 +1,28 @@
+{
+ "test": "C7",
+ "arm": "gpt-oss-20b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c7/run_c7.py",
+  "--arm",
+  "gpt-oss-20b",
+  "--data",
+  "{data}\\c6",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 180,
+ "expected_gpu_min": 60,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "c4c8-agent",
+ "note": "exit 3 = the 4k single gate failed before any long prompt (plan/c7.md)"
+}

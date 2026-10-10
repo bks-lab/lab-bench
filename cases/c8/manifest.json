@@ -1,0 +1,36 @@
+{
+ "design": "plan/c8.md",
+ "generator": "bench/gen-c8.py",
+ "seed": 20261009,
+ "instruction": "Fasse den folgenden Text ausführlich auf Deutsch zusammen. Schreibe mindestens 600 Wörter, gehe auf jeden Abschnitt einzeln ein und lass kein Detail aus.\n\nText:\n{text}",
+ "chat": {
+  "workloads": {
+   "chat-short": 512,
+   "chat-long": 4096
+  },
+  "warmup": 4,
+  "timed": 64,
+  "passages": 474,
+  "source": {
+   "file": "deepset/germanquad plain_text/test/0000.parquet",
+   "sha256": "c154513e016e73e4e32b46b48010f24a435ad7b0e96cc3858cfc20c7d29649bc"
+  }
+ },
+ "decide": {
+  "source": "requests/route1/requests.jsonl, MASSIVE de, scenario question",
+  "timed": 500,
+  "warmup": 4,
+  "rule": "first 500 (then 4 warm-up) of default_rng(20261009).permutation(2974) over the de lines in file order",
+  "templates": [
+   "chatml",
+   "gemma4",
+   "mistral",
+   "granite",
+   "harmony"
+  ]
+ },
+ "files_sha256": {
+  "chat.jsonl": "e150f0886ae5117ad1dfe9475dd3dea9e71b34b950ddbfde21143b2392ad42f6",
+  "decide.jsonl": "e024ec15ed0a4d48f98180b346dcf8c6cd29c2743bd9e18c213eb97907ec1d17"
+ }
+}

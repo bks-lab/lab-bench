@@ -1,0 +1,28 @@
+{
+ "test": "C8",
+ "arm": "vllm-gemma4-12b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c8/run_c8_vllm.py",
+  "--arm",
+  "gemma4-12b",
+  "--data",
+  "{data}\\c6",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 180,
+ "expected_gpu_min": 60,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "c4c8-agent",
+ "note": "vLLM 0.31.0 in WSL2 Ubuntu 24.04 (/root/vllm-venv2 on a uv-managed CPython), AWQ INT4 weights prefetched; vllm serve runs inside `timeout 4h` and is killed after each level"
+}
