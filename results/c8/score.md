@@ -13,6 +13,9 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | winnow-12b | 58.8, 58.7, 58.6 | 0.17 % | yes |
 | qwen3-14b | 85.7, 85.6, 85.6 | 0.04 % | yes |
 | gpt-oss-20b | 173.8, 173.2, 173.6 | 0.16 % | yes |
+| mistral-small-3.2 | 54.9, 54.9, 54.9 | 0.02 % | yes |
+| gemma4-26b | 178.3, 178.3, 178.2 | 0.05 % | yes |
+| qwen3.8-27b | 73.3, 73.4, 73.4 | 0.08 % | yes |
 
 ## chat-short: aggregate generation tokens/s by concurrency (mean of 3, range)
 
@@ -24,6 +27,9 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | winnow-12b | ollama | Q8_0 | 58.7 (58.6 to 58.8) | 184.9 (184.6 to 185.4) | 286.8 (284.4 to 288.5) | 122.7 (121.8 to 123.7) | 2.090 | 4758 | 746 | 21.77 | yes |
 | qwen3-14b | ollama | Q4_K_M | 85.6 (85.6 to 85.7) | 276.9 (276.5 to 277.3) | 421.3 (420.2 to 422.2) | 564.0 (557.3 to 567.8) | 6.587 | 3990 | 546 | 21.27 | no |
 | gpt-oss-20b | ollama | MXFP4 | 173.5 (173.2 to 173.8) | 387.2 (386.3 to 388.0) | 541.4 (540.3 to 543.1) | 737.6 (736.3 to 738.3) | 4.250 | 1657 | 393 | 14.69 | no |
+| mistral-small-3.2 | ollama | Q4_K_M | 54.9 (54.9 to 54.9) | 161.0 (160.6 to 161.4) | 227.2 (226.0 to 227.9) | 44.2 (44.0 to 44.3) | 0.805 | 6607 | 1706 | 21.42 | yes |
+| gemma4-26b | ollama | Q4_K_M | 178.3 (178.2 to 178.3) | 333.3 (330.9 to 334.8) | 397.6 (394.2 to 400.2) | 231.9 (227.3 to 235.5) | 1.300 | 1417 | 662 | 22.32 | yes |
+| qwen3.8-27b | ollama | Q4_K_M | 73.4 (73.3 to 73.4) | 74.0 (73.9 to 74.0) | 73.7 (73.7 to 73.7) | 73.9 (73.9 to 73.9) | 1.007 | 5549 | 5551 | 18.1 | no |
 
 ## chat-long: aggregate generation tokens/s by concurrency (mean of 3, range)
 
@@ -35,6 +41,9 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | winnow-12b | ollama | Q8_0 | 50.7 (50.7 to 50.7) | 116.6 (116.6 to 116.7) | 147.6 (147.5 to 147.7) | 73.7 (73.5 to 73.7) | 1.453 | 5824 | 2127 | 21.77 | yes |
 | qwen3-14b | ollama | Q4_K_M | 67.7 (67.7 to 67.7) | 147.1 (147.1 to 147.2) | 182.5 (182.4 to 182.5) | 194.1 (194.0 to 194.3) | 2.868 | 5417 | 1954 | 21.27 | no |
 | gpt-oss-20b | ollama | MXFP4 | 141.2 (141.0 to 141.3) | 260.0 (259.5 to 260.3) | 320.2 (320.0 to 320.5) | 369.9 (369.2 to 370.8) | 2.620 | 2199 | 941 | 14.69 | no |
+| mistral-small-3.2 | ollama | Q4_K_M | 47.6 (47.5 to 47.6) | 104.4 (104.3 to 104.4) | 129.5 (129.4 to 129.6) | 27.8 (27.8 to 27.8) | 0.585 | 7903 | 3821 | 21.42 | yes |
+| gemma4-26b | ollama | Q4_K_M | 140.7 (140.6 to 140.8) | 200.2 (198.6 to 201.2) | 192.1 (190.9 to 192.9) | 97.1 (96.8 to 97.5) | 0.691 | 1927 | 1806 | 22.32 | yes |
+| qwen3.8-27b | ollama | Q4_K_M | 56.5 (56.5 to 56.5) | 56.8 (56.8 to 56.9) | 56.8 (56.7 to 56.8) | 56.9 (56.8 to 56.9) | 1.007 | 7323 | 7302 | 18.12 | no |
 
 ## decide: decisions per hour by concurrency (mean of 3, range)
 
@@ -46,17 +55,25 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | winnow-12b | ollama | Q8_0 | 49159 (48834 to 49356) | 61922 (61802 to 62143) | 69112 (68707 to 69870) | 30595 (30428 to 30840) | 0.622 | 18755 | 21.78 | yes |
 | qwen3-14b | ollama | Q4_K_M | 81528 (80626 to 82572) | 125473 (124782 to 126162) | 124959 (123717 to 125809) | 114981 (114919 to 115067) | 1.410 | 11491 | 21.27 | no |
 | gpt-oss-20b | ollama | MXFP4 | 60039 (59958 to 60121) | 90415 (90240 to 90644) | 117041 (115734 to 118287) | 120469 (117231 to 122477) | 2.006 | 10760 | 14.69 | no |
+| mistral-small-3.2 | ollama | Q4_K_M | 66797 (66626 to 67040) | 90423 (90230 to 90548) | 88760 (88197 to 89696) | 19345 (19290 to 19386) | 0.290 | 27482 | 21.44 | yes |
+| gemma4-26b | ollama | Q4_K_M | 52937 (52436 to 53230) | 83474 (82964 to 83860) | 76550 (76046 to 77415) | 31390 (31011 to 31854) | 0.593 | 17877 | 22.32 | yes |
+| qwen3.8-27b | ollama | Q4_K_M | 24182 (24162 to 24218) | 27133 (27105 to 27161) | 27124 (27078 to 27147) | 26816 (26793 to 26834) | 1.109 | 42248 | 18.12 | no |
 
-## Layers on the GPU per level (llama-server log; fewer than all = split with the CPU)
+## Layers on the GPU per level (llama-server log)
 
-| arm | 1 | 4 | 8 | 16 |
-|---|---|---|---|---|
-| granite4-3b | 41/41 | 41/41 | 41/41 | 41/41 |
-| qwen3-8b | 37/37 | 37/37 | 37/37 | 37/37 |
-| gemma4-12b | 49/49 | 49/49 | 49/49 | 44/49 |
-| winnow-12b | 49/49 | 49/49 | 49/49 | 44/49 |
-| qwen3-14b | 41/41 | 41/41 | 41/41 | 41/41 |
-| gpt-oss-20b | 25/25 | 25/25 | 25/25 | 25/25 |
+Fewer layers than the model has, or a fit that had to move weights to system memory (marked *), means the model ran split between GPU and CPU. Slots: parallel requests llama-server actually ran.
+
+| arm | 1 | 4 | 8 | 16 | slots at 16 |
+|---|---|---|---|---|---|
+| granite4-3b | 41/41 | 41/41 | 41/41 | 41/41 | 16 |
+| qwen3-8b | 37/37 | 37/37 | 37/37 | 37/37 | 16 |
+| gemma4-12b | 49/49 | 49/49 | 49/49 | 44/49 * | 16 |
+| winnow-12b | 49/49 | 49/49 | 49/49 | 44/49 * | 16 |
+| qwen3-14b | 41/41 | 41/41 | 41/41 | 41/41 | 16 |
+| gpt-oss-20b | 25/25 | 25/25 | 25/25 | 25/25 | 16 |
+| mistral-small-3.2 | 41/41 | 41/41 | 41/41 | 32/41 * | 16 |
+| gemma4-26b | 31/31 | 31/31 | 31/31 | 31/31 * | 16 |
+| qwen3.8-27b | 66/66 | 66/66 | 66/66 | 66/66 | 1 |
 
 ## Per request at concurrency 1 (medians)
 
@@ -68,5 +85,8 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | winnow-12b | 60.815 | [60.8, 60.8] | 58.842 | 6180.734 | 0.205 | 0.747 | 21.575 | 256.000 |
 | qwen3-14b | 88.688 | [88.6, 88.8] | 82.913 | 6114.947 | 0.105 | 0.693 | 11.108 | 256.000 |
 | gpt-oss-20b | 183.877 | [183.4, 184.2] | 178.018 | 13317.847 | 0.101 | 0.390 | 5.569 | 256.000 |
+| mistral-small-3.2 | 58.669 | [58.7, 58.7] | 57.260 | 4691.844 | 0.299 | 0.908 | 43.215 | 256.000 |
+| gemma4-26b | 194.267 | [191.7, 196.1] | 194.694 | 9031.569 | 0.113 | 0.498 | 38.721 | 256.000 |
+| qwen3.8-27b | 79.355 | [78.6, 79.9] | 89.637 | 2550.474 | 0.275 | 1.668 | 70.327 | 256.000 |
 
 Energy is GPU only (sum of 1 s power samples in each timed section). Peak VRAM is nvidia-smi memory.used minus the idle value before the job. vLLM rows run a different 4-bit build (AWQ) and a different engine; they compare engine plus quantisation, never engine alone (plan/c8.md).

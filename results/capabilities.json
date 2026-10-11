@@ -315,6 +315,42 @@
      "j_per_1000_tokens_at_16": 393,
      "peak_vram_gb": 14.69,
      "offloaded_at_16": false
+    },
+    {
+     "arm": "mistral-small-3.2",
+     "engine": "ollama",
+     "params_b": 24.0,
+     "chat_short_tok_s_at_1": 54.8948,
+     "chat_short_tok_s_at_16": 44.1717,
+     "decisions_per_h_at_1": 66797,
+     "decisions_per_h_at_16": 19345,
+     "j_per_1000_tokens_at_16": 1706,
+     "peak_vram_gb": 21.44,
+     "offloaded_at_16": true
+    },
+    {
+     "arm": "gemma4-26b",
+     "engine": "ollama",
+     "params_b": 25.2,
+     "chat_short_tok_s_at_1": 178.2764,
+     "chat_short_tok_s_at_16": 231.8524,
+     "decisions_per_h_at_1": 52937,
+     "decisions_per_h_at_16": 31390,
+     "j_per_1000_tokens_at_16": 662,
+     "peak_vram_gb": 22.32,
+     "offloaded_at_16": true
+    },
+    {
+     "arm": "qwen3.8-27b",
+     "engine": "ollama",
+     "params_b": 27.3,
+     "chat_short_tok_s_at_1": 73.3867,
+     "chat_short_tok_s_at_16": 73.897,
+     "decisions_per_h_at_1": 24182,
+     "decisions_per_h_at_16": 26816,
+     "j_per_1000_tokens_at_16": 5551,
+     "peak_vram_gb": 18.12,
+     "offloaded_at_16": false
     }
    ],
    "unfinished": []

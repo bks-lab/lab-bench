@@ -100,6 +100,12 @@ def offloaded_ps(ps_list):
     return False
 
 
+def load_layers(test, arm):
+    """Model loads of the job's private llama-server (layers.json, written by the import)."""
+    f = ROOT / "results" / test / sc.arm_dir(arm) / "layers.json"
+    return json.load(open(f, encoding="utf-8")).get("loads", {}) if f.exists() else {}
+
+
 def vram_job(status):
     g = status["gpu"]
     return round(g["peak_over_idle_mib"] / 1024, 2), round(g["peak_mem_mib"] / 1024, 2), g["idle_mem_mib"]
@@ -500,6 +506,8 @@ def score_c7():
             e = sum(sc.energy_j(gpu, s["start"], s["end"]) for s in secs)
             pk = max((sc.peak_mib(gpu, s["start"], s["end"]) or 0) for s in secs)
             ttft = [r["prompt_eval_s"] for r in rr if r["prompt_eval_s"]]
+            # the last load of the private server at this length's context (num_ctx = L + 512)
+            ld = ([x for x in sum(load_layers("c7", a).values(), []) if x.get("ctx") == L + 512] or [{}])[-1]
             per[L] = {"n": len(rr), "acc": float(np.mean(list(right.values()))), "acc_ci95": ci_mean(list(right.values())), "items": right,
                       "per_task": {t: float(np.mean([r["right"] for r in rr if r["task"] == t])) for t in ("single", "multikey", "multivalue") if any(r["task"] == t for r in rr)},
                       "per_depth": {str(d): float(np.mean([r["right"] for r in rr if r["depth"] == d])) for d in (0.1, 0.5, 0.9) if any(r["depth"] == d for r in rr)},
@@ -507,9 +515,10 @@ def score_c7():
                       "prompt_tokens_median": float(np.median([r["prompt_eval_count"] for r in rr if r["prompt_eval_count"]])),
                       "length_off": sum(1 for r in rr if r["length_off"]), "errors": sum(1 for r in rr if r["error"]),
                       "vram_peak_gb": round((pk - idle) / 1024, 2), "vram_peak_total_gb": round(pk / 1024, 2),
-                      "layers_on_gpu": (meta.get("calibration", {}).get(str(L)) or {}).get("layers_on_gpu"),
-                      "offloaded": any(offloaded_ps(s.get("ps")) for s in secs) or pk >= CARD_MIB - 512
-                                   or bool((lambda g: g and g[0] < g[1])((meta.get("calibration", {}).get(str(L)) or {}).get("layers_on_gpu"))),
+                      "layers_on_gpu": ld.get("layers_on_gpu") or (meta.get("calibration", {}).get(str(L)) or {}).get("layers_on_gpu"),
+                      "fit_reduced": bool(ld.get("fit_reduced")),
+                      "offloaded": any(offloaded_ps(s.get("ps")) for s in secs) or pk >= CARD_MIB - 512 or bool(ld.get("fit_reduced"))
+                                   or bool((lambda g: g and g[0] < g[1])(ld.get("layers_on_gpu") or (meta.get("calibration", {}).get(str(L)) or {}).get("layers_on_gpu"))),
                       "energy_j_per_prompt": e / len(rr)}
         res[a] = {"finished": bool(per) and (meta.get("gate") or {}).get("passed", True) and len(per) == len(meta["lengths"]),
                   "partial": bool(per), "meta": meta, "status": status, "per": per, "gate": meta.get("gate")}
@@ -670,17 +679,19 @@ def score_c8():
             per[f"{wl}@{lv}"] = d
         # offloaded per level: the layer count of the private llama-server (meta from the runner,
         # or layers.json written by the import from the job's logs); /api/ps cannot show it
-        lay_file = ROOT / "results" / "c8" / sc.arm_dir(a) / "layers.json"
-        lay = json.load(open(lay_file, encoding="utf-8"))["layers_on_gpu"] if lay_file.exists() else {}
-        lv_off, lv_layers = {}, {}
+        loads = load_layers("c8", a)
+        lv_off, lv_layers, lv_np = {}, {}, {}
         for lv in meta.get("levels_detail", []):
-            got = lv.get("layers_on_gpu") or lay.get(str(lv["level"]))
+            last = (loads.get(str(lv["level"])) or [{}])[-1]
+            got = last.get("layers_on_gpu") or lv.get("layers_on_gpu")
             lv_layers[lv["level"]] = got
-            lv_off[lv["level"]] = bool(got and got[0] < got[1]) or offloaded_ps(lv.get("ps"))
+            lv_np[lv["level"]] = last.get("np")
+            lv_off[lv["level"]] = bool(got and got[0] < got[1]) or bool(last.get("fit_reduced")) or offloaded_ps(lv.get("ps"))
         for k, d in per.items():
             lvl = int(k.split("@")[1])
             d["offloaded"] = bool(lv_off.get(lvl)) or d["peak_vram_total_gb"] * 1024 >= CARD_MIB - 512
             d["layers_on_gpu"] = lv_layers.get(lvl)
+            d["parallel_slots"] = lv_np.get(lvl)
             base = per.get(f"{k.split('@')[0]}@1")
             d["scaling_vs_1"] = d["agg_gen_tok_s_mean"] / base["agg_gen_tok_s_mean"] if base and base["agg_gen_tok_s_mean"] and k.split("@")[0] != "decide" else (
                 d["decisions_per_h_mean"] / base["decisions_per_h_mean"] if base and k.startswith("decide") else None)
@@ -753,11 +764,15 @@ def c8_md(s):
             c16 = c.get(f"{wl}@16", {})
             en = (f"{c16.get('j_per_1000_decisions', 0):.0f}" if wl == "decide" else f"{c[f'{wl}@1']['j_per_1000_gen_tokens']:.0f} | {c16.get('j_per_1000_gen_tokens', 0):.0f}")
             L.append(f"| {x['arm']} | {x['engine']} | {x.get('quant') or ''} | {cell(1)} | {cell(4)} | {cell(8)} | {cell(16)} | {f3(c16.get('scaling_vs_1'))} | {en} | {c16.get('peak_vram_gb', '')} | {'yes' if c16.get('offloaded') else 'no'} |")
-    L += ["", "## Layers on the GPU per level (llama-server log; fewer than all = split with the CPU)", "", "| arm | 1 | 4 | 8 | 16 |", "|---|---|---|---|---|"]
+    L += ["", "## Layers on the GPU per level (llama-server log)", "",
+          "Fewer layers than the model has, or a fit that had to move weights to system memory (marked *), means the model ran split between GPU and CPU. Slots: parallel requests llama-server actually ran.", "",
+          "| arm | 1 | 4 | 8 | 16 | slots at 16 |", "|---|---|---|---|---|---|"]
     for x in s["arms"]:
         c = x.get("configurations") or {}
         if "chat-short@1" in c and x["engine"] == "ollama":
-            L.append(f"| {x['arm']} | " + " | ".join("/".join(str(int(v)) for v in (c.get(f"chat-short@{lv}", {}).get("layers_on_gpu") or [])) or "n/a" for lv in (1, 4, 8, 16)) + " |")
+            cell = lambda lv: ("/".join(str(int(v)) for v in (c.get(f"chat-short@{lv}", {}).get("layers_on_gpu") or [])) or "n/a") + (" *" if c.get(f"chat-short@{lv}", {}).get("offloaded") else "")  # noqa: E731
+            sl = c.get("chat-short@16", {}).get("parallel_slots")
+            L.append(f"| {x['arm']} | " + " | ".join(cell(lv) for lv in (1, 4, 8, 16)) + f" | {int(sl) if sl else 'n/a'} |")
     L += ["", "## Per request at concurrency 1 (medians)", "", "| arm | chat-short gen tok/s | 95 % CI | chat-long gen tok/s | chat-long prompt tok/s | TTFT p50 chat-short s | TTFT p50 chat-long s | TTFT p95 chat-long s at 16 | tokens per answer (chat-short) |", "|---|---|---|---|---|---|---|---|---|"]
     for x in s["arms"]:
         c = x.get("configurations") or {}

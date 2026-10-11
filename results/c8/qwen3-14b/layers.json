@@ -1,21 +1,49 @@
 {
- "source": "llama-server log of the job's private ollama serve, last 'offloaded X/Y layers to GPU' line of the language model",
- "layers_on_gpu": {
+ "source": "llama-server lines in the logs of the job's private ollama serve, one entry per model load",
+ "loads": {
   "1": [
-   41,
-   41
+   {
+    "ctx": 5120,
+    "np": 1,
+    "layers_on_gpu": [
+     41,
+     41
+    ],
+    "fit_reduced": false
+   }
   ],
   "16": [
-   41,
-   41
+   {
+    "ctx": 81920,
+    "np": 16,
+    "layers_on_gpu": [
+     41,
+     41
+    ],
+    "fit_reduced": false
+   }
   ],
   "4": [
-   41,
-   41
+   {
+    "ctx": 20480,
+    "np": 4,
+    "layers_on_gpu": [
+     41,
+     41
+    ],
+    "fit_reduced": false
+   }
   ],
   "8": [
-   41,
-   41
+   {
+    "ctx": 40960,
+    "np": 8,
+    "layers_on_gpu": [
+     41,
+     41
+    ],
+    "fit_reduced": false
+   }
   ]
  }
 }
