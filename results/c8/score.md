@@ -16,6 +16,8 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | mistral-small-3.2 | 54.9, 54.9, 54.9 | 0.02 % | yes |
 | gemma4-26b | 178.3, 178.3, 178.2 | 0.05 % | yes |
 | qwen3.8-27b | 73.3, 73.4, 73.4 | 0.08 % | yes |
+| vllm-qwen3-14b | 79.8, 79.5, 79.5 | 0.23 % | yes |
+| vllm-gemma4-12b | 76.8, 76.7, 76.9 | 0.13 % | yes |
 
 ## chat-short: aggregate generation tokens/s by concurrency (mean of 3, range)
 
@@ -30,6 +32,8 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | mistral-small-3.2 | ollama | Q4_K_M | 54.9 (54.9 to 54.9) | 161.0 (160.6 to 161.4) | 227.2 (226.0 to 227.9) | 44.2 (44.0 to 44.3) | 0.805 | 6607 | 1706 | 21.42 | yes |
 | gemma4-26b | ollama | Q4_K_M | 178.3 (178.2 to 178.3) | 333.3 (330.9 to 334.8) | 397.6 (394.2 to 400.2) | 231.9 (227.3 to 235.5) | 1.300 | 1417 | 662 | 22.32 | yes |
 | qwen3.8-27b | ollama | Q4_K_M | 73.4 (73.3 to 73.4) | 74.0 (73.9 to 74.0) | 73.7 (73.7 to 73.7) | 73.9 (73.9 to 73.9) | 1.007 | 5549 | 5551 | 18.1 | no |
+| vllm-qwen3-14b | vllm | AWQ INT4 (official Qwen build) | 79.6 (79.5 to 79.8) | 284.4 (284.0 to 285.0) | 496.1 (495.4 to 496.5) | 789.5 (787.0 to 792.0) | 9.917 | 3394 | 411 | 19.69 | no |
+| vllm-gemma4-12b | vllm | AWQ INT4 (community build of google/gemma-4-12B-it) | 76.8 (76.7 to 76.9) | 267.5 (266.4 to 268.9) | 461.4 (458.1 to 463.0) | 708.8 (707.2 to 711.2) | 9.230 | 3374 | 430 | 20.92 | no |
 
 ## chat-long: aggregate generation tokens/s by concurrency (mean of 3, range)
 
@@ -44,6 +48,8 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | mistral-small-3.2 | ollama | Q4_K_M | 47.6 (47.5 to 47.6) | 104.4 (104.3 to 104.4) | 129.5 (129.4 to 129.6) | 27.8 (27.8 to 27.8) | 0.585 | 7903 | 3821 | 21.42 | yes |
 | gemma4-26b | ollama | Q4_K_M | 140.7 (140.6 to 140.8) | 200.2 (198.6 to 201.2) | 192.1 (190.9 to 192.9) | 97.1 (96.8 to 97.5) | 0.691 | 1927 | 1806 | 22.32 | yes |
 | qwen3.8-27b | ollama | Q4_K_M | 56.5 (56.5 to 56.5) | 56.8 (56.8 to 56.9) | 56.8 (56.7 to 56.8) | 56.9 (56.8 to 56.9) | 1.007 | 7323 | 7302 | 18.12 | no |
+| vllm-qwen3-14b | vllm | AWQ INT4 (official Qwen build) | 62.9 (62.7 to 63.0) | 148.4 (148.2 to 148.5) | 190.5 (189.9 to 190.8) | 205.2 (205.2 to 205.2) | 3.261 | 4709 | 1866 | 19.69 | no |
+| vllm-gemma4-12b | vllm | AWQ INT4 (community build of google/gemma-4-12B-it) | 62.5 (62.4 to 62.5) | 154.8 (154.4 to 155.1) | 205.1 (204.6 to 205.6) | 244.0 (243.5 to 244.4) | 3.906 | 4444 | 1469 | 20.92 | no |
 
 ## decide: decisions per hour by concurrency (mean of 3, range)
 
@@ -58,6 +64,8 @@ Aggregate rates are the mean of three repetitions with their range; per-request 
 | mistral-small-3.2 | ollama | Q4_K_M | 66797 (66626 to 67040) | 90423 (90230 to 90548) | 88760 (88197 to 89696) | 19345 (19290 to 19386) | 0.290 | 27482 | 21.44 | yes |
 | gemma4-26b | ollama | Q4_K_M | 52937 (52436 to 53230) | 83474 (82964 to 83860) | 76550 (76046 to 77415) | 31390 (31011 to 31854) | 0.593 | 17877 | 22.32 | yes |
 | qwen3.8-27b | ollama | Q4_K_M | 24182 (24162 to 24218) | 27133 (27105 to 27161) | 27124 (27078 to 27147) | 26816 (26793 to 26834) | 1.109 | 42248 | 18.12 | no |
+| vllm-qwen3-14b | vllm | AWQ INT4 (official Qwen build) | 69457 (69240 to 69592) | 109492 (107171 to 111467) | 129528 (128606 to 130206) | 138916 (138713 to 139045) | 2.000 | 10542 | 19.69 | no |
+| vllm-gemma4-12b | vllm | AWQ INT4 (community build of google/gemma-4-12B-it) | 66191 (65341 to 67593) | 117569 (111172 to 123678) | 140249 (137036 to 142050) | 156645 (154654 to 158287) | 2.367 | 8636 | 20.92 | no |
 
 ## Layers on the GPU per level (llama-server log)
 
@@ -88,5 +96,7 @@ Fewer layers than the model has, or a fit that had to move weights to system mem
 | mistral-small-3.2 | 58.669 | [58.7, 58.7] | 57.260 | 4691.844 | 0.299 | 0.908 | 43.215 | 256.000 |
 | gemma4-26b | 194.267 | [191.7, 196.1] | 194.694 | 9031.569 | 0.113 | 0.498 | 38.721 | 256.000 |
 | qwen3.8-27b | 79.355 | [78.6, 79.9] | 89.637 | 2550.474 | 0.275 | 1.668 | 70.327 | 256.000 |
+| vllm-qwen3-14b | 82.867 | [82.5, 83.2] | 78.285 |  | 0.122 | 0.788 | 10.321 | 256.000 |
+| vllm-gemma4-12b | 79.633 | [79.4, 80.0] | 76.800 |  | 0.114 | 0.749 | 9.721 | 256.000 |
 
 Energy is GPU only (sum of 1 s power samples in each timed section). Peak VRAM is nvidia-smi memory.used minus the idle value before the job. vLLM rows run a different 4-bit build (AWQ) and a different engine; they compare engine plus quantisation, never engine alone (plan/c8.md).
