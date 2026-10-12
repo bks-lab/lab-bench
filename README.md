@@ -72,7 +72,7 @@ The full route1 and ex1 run is one command per machine:
 `bench/run-route-ex.sh` (Jev and Ollama) and `bench/run-route-ex.bat`
 (GLiNER on the GPU machine).
 
-A second family is preregistered and partly run:
+A second family is preregistered and mostly run (seven of nine tests):
 **capabilities of a local workstation**, C1 to C9. These tests do not
 compare against Jev. They ask what one in-house PC (RTX 4090, 24 GB) with
 open models does on German business tasks: retrieval for RAG, speech to
@@ -85,7 +85,8 @@ before other models are scored. Designs: [plan/c0-common.md](plan/c0-common.md)
 and `plan/c1.md` to `plan/c9.md`; data, licences, run order and GPU hours:
 [plan/ROADMAP.md](plan/ROADMAP.md).
 
-Measured so far (one RTX 4090, all sanity gates passed):
+Measured so far (one RTX 4090, all sanity gates passed; C6 on its second
+run, see its findings):
 
 - **C1 retrieval:** Qwen3-Embedding-8B is best on MIRACL de (nDCG@10 0.613,
   95 % CI 0.576 to 0.651) and separated from every other embedder, but
@@ -99,9 +100,33 @@ Measured so far (one RTX 4090, all sanity gates passed):
   399 and 400 of 408 cells (0.978 and 0.980, not separated) at 2 to 4 s per
   invoice; OCR plus a text model is worse; the two Qwen3-VL arms did not
   finish within their time budget. [findings.md](results/c3/findings.md)
+- **C4 structured output and tool calling:** on BFCL v3 non-live (1,000
+  items) with native tool calling, qwen3-14b (0.919, 95 % CI 0.901 to 0.935,
+  10.3 GB) and qwen3.8-27b (0.906) are not separated; the capability map
+  shows qwen3-14b. Putting the functions in the prompt beats native tool
+  calling for five of the seven arms with both modes (qwen3-14b 0.946,
+  gemma4-26b 0.947). [findings.md](results/c4/findings.md)
+- **C6 German reading comprehension:** the trained reader GELECTRA-large
+  (F1 0.872, 1.7 GB, 28 ms per question) beats the best LLM, gemma4-12b
+  (0.849, p 0.024); gemma4-12b is the recommendation among the LLMs.
+  [findings.md](results/c6/findings.md)
+- **C7 long context:** at 32k tokens qwen3-14b, qwen3.8-27b and gpt-oss-20b
+  answer all 180 needle prompts; the Gemma and Mistral misses are prompts
+  that Ollama cut because `num_ctx` had no headroom, not lost needles.
+  Lengths above 32k were not tested. [findings.md](results/c7/findings.md)
+- **C8 throughput and energy:** at 16 parallel clients granite4-3b reaches
+  1,378 tokens per second and 260,731 decisions per hour at 165 J per 1,000
+  tokens; models whose 16 caches no longer fit next to the weights (for
+  example gemma4-12b: 397.0 tokens per second at 8 clients, 146.2 at 16)
+  fall back. [findings.md](results/c8/findings.md)
 - Capability map: [results/capabilities.json](results/capabilities.json),
   per-arm chart data in `results/c1/summary.json` to
-  `results/c3/summary.json`.
+  `results/c8/summary.json`.
+
+Not measured yet: **C5 translation** and **C9 personal data detection**.
+Both have a committed design ([plan/c5.md](plan/c5.md),
+[plan/c9.md](plan/c9.md)) and are `planned` in the tool map; C5 and C9
+are listed in the run order of [plan/ROADMAP.md](plan/ROADMAP.md).
 
 ## Tool map
 
