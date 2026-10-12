@@ -224,8 +224,17 @@ def main():
         ag, gq = audited_gold({d["id"]: d for d in docs}, labels, audit)
         sub = [d for d in docs if d["id"] in ag]
         out["audit"] = gq
-        out["audited"] = {arm: metrics(per_doc(sub, {k: set(v) for k, v in ag.items()}, rows[arm], types).sum(0), types)
-                          for arm in dirs}
+        agset = {k: set(v) for k, v in ag.items()}
+        amats = {arm: per_doc(sub, agset, rows[arm], types) for arm in dirs}
+        out["audited"] = {arm: metrics(m.sum(0), types) for arm, m in amats.items()}
+        aidx = [rng.integers(0, len(sub), len(sub)) for _ in range(B)]
+        aci, ast = boot(amats, types, aidx)
+        abest = max(out["audited"], key=lambda k: out["audited"][k]["f1"])
+        for arm, r in out["audited"].items():
+            r["ci"] = aci[arm]
+            dd = np.array(ast[abest]["f1"]) - np.array(ast[arm]["f1"])
+            r["paired_vs_best"] = {"best": abest, "diff": out["audited"][abest]["f1"] - r["f1"],
+                                   "ci": [float(np.percentile(dd, 2.5)), float(np.percentile(dd, 97.5))]}
     if a.json:
         json.dump(out, open(a.json, "w", encoding="utf-8"), indent=1)
     lines = ["# C9 score", "", f"{len(docs)} documents, spans after the boundary rule of `bench/c9/c9lib.py`. "
@@ -246,8 +255,12 @@ def main():
         gq = out["audit"]
         lines += ["", f"Gold audit: {gq['documents']} documents, gold precision {gq['gold_precision']:.3f}, "
                   f"gold recall {gq['gold_recall']:.3f}" + (" (gold noisy: numbers descriptive only)" if gq["gold_noisy"] else ""), ""]
-        for arm, r in out["audited"].items():
-            lines.append(f"- {arm}: F1 {r['f1']:.3f}, recall {r['recall']:.3f} on the audited gold")
+        lines += ["Audited gold, 40 documents (95 % bootstrap over documents, B 1,000, seed 20261009; paired difference to the best arm on these documents):", "",
+                  "| arm | span F1 | recall | precision | paired diff to best |", "|---|---|---|---|---|"]
+        for arm, r in sorted(out["audited"].items(), key=lambda kv: -kv[1]["f1"]):
+            c, pv = r["ci"], r["paired_vs_best"]
+            diff = "best" if pv["best"] == arm else f"{pv['diff']:.3f} [{pv['ci'][0]:.3f}, {pv['ci'][1]:.3f}]"
+            lines.append(f"| {arm} | {r['f1']:.3f} [{c['f1'][0]:.3f}, {c['f1'][1]:.3f}] | {r['recall']:.3f} [{c['recall'][0]:.3f}, {c['recall'][1]:.3f}] | {r['precision']:.3f} | {diff} |")
     text = "\n".join(lines) + "\n"
     if a.md:
         open(a.md, "w", encoding="utf-8").write(text)

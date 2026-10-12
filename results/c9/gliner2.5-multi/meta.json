@@ -1,0 +1,74 @@
+{
+ "test": "C9",
+ "arm": "gliner2.5-multi",
+ "job_id": "20261012-105834-c9-gliner2.5-multi",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "docs_sha256": "76fb93ef7ed74c26d3a99959e2ad79c3073a89a09aecb0ed61d2d42cea2a08a6",
+  "labels_sha256": "9cc1c754064c8c92ac79901610df8c79d7ce2216f27233213202df43de7dfcf0"
+ },
+ "boundary_rule": "c9lib.norm",
+ "sections": [
+  {
+   "name": "load",
+   "start": "2026-10-12T11:13:32.342+02:00",
+   "end": "2026-10-12T11:13:48.058+02:00",
+   "seconds": 15.716
+  },
+  {
+   "name": "warmup",
+   "start": "2026-10-12T11:13:48.058+02:00",
+   "end": "2026-10-12T11:13:48.506+02:00"
+  },
+  {
+   "name": "timed",
+   "start": "2026-10-12T11:13:48.506+02:00",
+   "items": 476,
+   "end": "2026-10-12T11:13:59.992+02:00"
+  }
+ ],
+ "started": "2026-10-12T11:13:32.342+02:00",
+ "model": {
+  "model": "fastino/gliner2.5-multi-v1",
+  "rev": "cf5593a5d45e3bbf204b9df621b13b1c0cf25ee3",
+  "lib": "gliner2",
+  "snapshot": "cf5593a5d45e3bbf204b9df621b13b1c0cf25ee3",
+  "threshold": 0.5,
+  "labels": [
+   "person name",
+   "Name einer Person",
+   "address",
+   "Adresse",
+   "email address",
+   "E-Mail-Adresse",
+   "phone number",
+   "Telefonnummer",
+   "bank account or card number",
+   "Konto- oder Kartennummer",
+   "personal identification number",
+   "Ausweis- oder Kennnummer",
+   "date of birth",
+   "Geburtsdatum"
+  ],
+  "chunk_words": 384,
+  "chunk_overlap": 50
+ },
+ "versions": {
+  "python": "3.12.10",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.19.0",
+  "gliner2": "2.0.0",
+  "cuda_available": true
+ },
+ "summary": {
+  "documents": 476,
+  "span_precision": 0.7138523761375126,
+  "span_recall": 0.40250855188141393,
+  "span_f1": 0.5147648559970835,
+  "email_recall": 0.8604651162790697,
+  "email_gold": 86,
+  "median_s": 0.02188344999990477
+ },
+ "finished": "2026-10-12T11:13:59.992+02:00"
+}

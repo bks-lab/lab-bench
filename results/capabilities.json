@@ -469,6 +469,62 @@
     }
    ],
    "unfinished": []
+  },
+  {
+   "id": "C9",
+   "capability": "personal data detection in German text",
+   "design": "plan/c9.md",
+   "report": "results/c9/findings.md",
+   "best_local_model": "gemma4-12b",
+   "best_by_value": "gemma4-12b",
+   "tie": {
+    "top_by_value": "gemma4-12b",
+    "next": "qwen3.8-27b",
+    "note": "the paired bootstrap on the 40 audited documents does not separate the two; the one with less peak VRAM is shown. On all 476 documents (original gold) the order is the other way round and equally not separated"
+   },
+   "licence_class": "open source",
+   "gold_noisy": true,
+   "quality": {
+    "metric": "span F1 on the audited gold of 40 documents (exact boundaries, type-agnostic); gold noisy, descriptive only",
+    "value": 0.8387,
+    "ci95": [
+     0.7059,
+     0.929
+    ],
+    "recall": 0.963,
+    "baseline": "regex (e-mail, IBAN, phone)",
+    "baseline_value": 0.15,
+    "reference": "none published for this German subset; internal sanity gate regex e-mail recall >= 0.95",
+    "reference_ours": 0.9651,
+    "original_gold_476_docs": {
+     "f1": 0.627,
+     "ci95": [
+      0.5927,
+      0.6604
+     ],
+     "recall": 0.6283,
+     "precision": 0.6258,
+     "mask_recall": 0.7581
+    },
+    "caveat": "Gold noisy: the 40-document gold audit was done by a language model (Claude Haiku 5.5, spot check of all non-ok verdicts by Claude Opus 5.5), not by a human as plan/c9.md requires; audited gold precision 0.685 is below 0.90, so all numbers are descriptive and make no ranking claim."
+   },
+   "speed": {
+    "unit": "median ms per document",
+    "value": 516.9
+   },
+   "vram_peak_gb": 9.19,
+   "energy": {
+    "unit": "GPU joules per 1,000 documents",
+    "value": 158520
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "gliner-pii-domains",
+    "value": 0.7385,
+    "vram_peak_gb": 1.97,
+    "rule": "smallest peak VRAM among the arms the paired bootstrap on the 40 audited documents does not separate from the best"
+   },
+   "unfinished": []
   }
  ]
 }

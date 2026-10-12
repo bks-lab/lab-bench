@@ -1,0 +1,382 @@
+{
+ "design": "plan/c9.md",
+ "form": "machine audit claude-haiku-5-5",
+ "auditor": "claude-haiku-5-5",
+ "docs_sha256": "76fb93ef7ed74c26d3a99959e2ad79c3073a89a09aecb0ed61d2d42cea2a08a6",
+ "audited_at": "2026-10-12T19:51:11+02:00",
+ "docs": {
+  "821": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "1736": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "1864": {
+   "seen": true,
+   "spans": {},
+   "missed": [
+    {
+     "text": "+49 123 456 7890",
+     "type": "phone"
+    }
+   ]
+  },
+  "3524": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "3585": {
+   "seen": true,
+   "spans": {
+    "2": {
+     "verdict": "wrong"
+    },
+    "3": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "4095": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "4579": {
+   "seen": true,
+   "spans": {
+    "0": {
+     "verdict": "wrong"
+    },
+    "1": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "5920": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "6515": {
+   "seen": true,
+   "spans": {
+    "1": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "8773": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "9654": {
+   "seen": true,
+   "spans": {
+    "0": {
+     "verdict": "wrong"
+    },
+    "2": {
+     "verdict": "wrong"
+    },
+    "3": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "10172": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "10445": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "10522": {
+   "seen": true,
+   "spans": {
+    "1": {
+     "verdict": "wrong"
+    },
+    "2": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "11097": {
+   "seen": true,
+   "spans": {
+    "2": {
+     "verdict": "wrong"
+    },
+    "3": {
+     "verdict": "wrong"
+    },
+    "4": {
+     "verdict": "wrong"
+    },
+    "5": {
+     "verdict": "wrong"
+    },
+    "6": {
+     "verdict": "wrong"
+    },
+    "7": {
+     "verdict": "wrong"
+    },
+    "8": {
+     "verdict": "wrong"
+    },
+    "9": {
+     "verdict": "wrong"
+    },
+    "10": {
+     "verdict": "wrong"
+    },
+    "11": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "11296": {
+   "seen": true,
+   "spans": {
+    "2": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "12266": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "12933": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "14448": {
+   "seen": true,
+   "spans": {
+    "1": {
+     "verdict": "boundary",
+     "text": "9 Acceso Aroa Almazán",
+     "type": "address"
+    }
+   },
+   "missed": []
+  },
+  "14558": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "14936": {
+   "seen": true,
+   "spans": {
+    "3": {
+     "verdict": "boundary",
+     "text": "Dr. Sabine Schmidt"
+    },
+    "8": {
+     "verdict": "boundary",
+     "text": "Dr. Sabine Schmidt"
+    }
+   },
+   "missed": []
+  },
+  "15469": {
+   "seen": true,
+   "spans": {},
+   "missed": [
+    {
+     "text": "DE89370400440532013000",
+     "type": "iban_account"
+    }
+   ]
+  },
+  "16062": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "16339": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "16409": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "17203": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "17542": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "20562": {
+   "seen": true,
+   "spans": {
+    "1": {
+     "verdict": "wrong"
+    },
+    "3": {
+     "verdict": "wrong"
+    },
+    "4": {
+     "verdict": "wrong"
+    },
+    "5": {
+     "verdict": "wrong"
+    },
+    "6": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "21460": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "21531": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "22596": {
+   "seen": true,
+   "spans": {
+    "0": {
+     "verdict": "wrong"
+    },
+    "1": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "23584": {
+   "seen": true,
+   "spans": {
+    "0": {
+     "verdict": "wrong"
+    },
+    "1": {
+     "verdict": "wrong"
+    },
+    "2": {
+     "verdict": "wrong"
+    },
+    "3": {
+     "verdict": "wrong"
+    },
+    "4": {
+     "verdict": "wrong"
+    },
+    "5": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "23654": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "24984": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "25031": {
+   "seen": true,
+   "spans": {
+    "6": {
+     "verdict": "wrong"
+    },
+    "7": {
+     "verdict": "wrong"
+    },
+    "8": {
+     "verdict": "wrong"
+    },
+    "9": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "25129": {
+   "seen": true,
+   "spans": {
+    "0": {
+     "verdict": "wrong"
+    },
+    "1": {
+     "verdict": "wrong"
+    },
+    "5": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  },
+  "25780": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "25948": {
+   "seen": true,
+   "spans": {},
+   "missed": []
+  },
+  "29105": {
+   "seen": true,
+   "spans": {
+    "1": {
+     "verdict": "boundary",
+     "text": "696 rue Picard",
+     "type": "address"
+    }
+   },
+   "missed": []
+  },
+  "29138": {
+   "seen": true,
+   "spans": {
+    "2": {
+     "verdict": "wrong"
+    },
+    "3": {
+     "verdict": "wrong"
+    }
+   },
+   "missed": []
+  }
+ }
+}

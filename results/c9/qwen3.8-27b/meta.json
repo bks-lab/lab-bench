@@ -1,0 +1,136 @@
+{
+ "test": "C9",
+ "arm": "qwen3.8-27b",
+ "job_id": "20261012-105838-c9-qwen3.8-27b",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "docs_sha256": "76fb93ef7ed74c26d3a99959e2ad79c3073a89a09aecb0ed61d2d42cea2a08a6",
+  "labels_sha256": "9cc1c754064c8c92ac79901610df8c79d7ce2216f27233213202df43de7dfcf0"
+ },
+ "boundary_rule": "c9lib.norm",
+ "sections": [
+  {
+   "name": "load",
+   "start": "2026-10-12T11:20:43.865+02:00",
+   "end": "2026-10-12T11:20:44.048+02:00",
+   "seconds": 0.183
+  },
+  {
+   "name": "warmup",
+   "start": "2026-10-12T11:20:44.049+02:00",
+   "end": "2026-10-12T11:21:00.106+02:00"
+  },
+  {
+   "name": "timed",
+   "start": "2026-10-12T11:21:00.106+02:00",
+   "items": 476,
+   "ps_before": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-12T11:30:37.103+02:00"
+  }
+ ],
+ "started": "2026-10-12T11:20:43.865+02:00",
+ "ollama_tag": "qwen3.8:27b",
+ "model": {
+  "tag": "qwen3.8:27b",
+  "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+  "size": 17741872154,
+  "details": {
+   "parent_model": "qwen3.8:27b-q4_K_M",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "27.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d",
+   "ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192,
+  "num_predict": 2048
+ },
+ "format": {
+  "type": "object",
+  "properties": {
+   "entities": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "text": {
+       "type": "string"
+      },
+      "type": {
+       "type": "string",
+       "enum": [
+        "person",
+        "address",
+        "email",
+        "phone",
+        "iban_account",
+        "id_number",
+        "date_of_birth"
+       ]
+      }
+     },
+     "required": [
+      "text",
+      "type"
+     ]
+    }
+   }
+  },
+  "required": [
+   "entities"
+  ]
+ },
+ "prompt": "Finde alle personenbezogenen Daten im folgenden Dokument. Erlaubte Typen:\n- person: Name einer natürlichen Person (Vor- und/oder Nachname)\n- address: Postanschrift oder Standort einer Person (Straße, Hausnummer, Ort, Koordinaten)\n- email: E-Mail-Adresse\n- phone: Telefon- oder Faxnummer\n- iban_account: IBAN, Kontonummer oder Kreditkartennummer\n- id_number: Kennnummer einer Person: Steuer-ID, Sozialversicherungsnummer, Kunden- oder Personalnummer, Pass- oder Führerscheinnummer, Benutzername, IP-Adresse\n- date_of_birth: Geburtsdatum\n\nGib jede Fundstelle genau so wieder, wie sie im Dokument steht (gleiche Schreibweise, keine Ergänzungen), mit ihrem Typ. Firmennamen, allgemeine Datumsangaben und Beträge sind keine personenbezogenen Daten. Antworte nur mit JSON der Form {\"entities\": [{\"text\": \"...\", \"type\": \"...\"}]}.\n\nDokument:\n{document}",
+ "think": false,
+ "offsets": "every non-overlapping exact occurrence of the returned text; not found = false positive",
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "summary": {
+  "documents": 476,
+  "span_precision": 0.6469235192639448,
+  "span_recall": 0.6413911060433295,
+  "span_f1": 0.6441454337245921,
+  "email_recall": 0.8953488372093024,
+  "email_gold": 86,
+  "median_s": 1.1418305499996677
+ },
+ "finished": "2026-10-12T11:30:37.107+02:00"
+}
