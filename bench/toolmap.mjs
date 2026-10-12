@@ -567,9 +567,27 @@ for (const r of capMeasured) if (!capabilities.some(c => c.id === r.id)) fail(`$
 
 // ---------------------------------------------------------------- write
 
+// `generated` must not depend on the day the script runs, or the CI check
+// that regenerates this file fails on every later day. It is the newest run
+// date of the inputs: the dates of the measured cells and the date prefix of
+// every result file (results/<test>/<arm>/<date>-run*.jsonl).
+const runDates = [];
+const collect = (o) => { if (o && typeof o === 'object') for (const [k, v] of Object.entries(o)) { if (k === 'measured' && /^\d{4}-\d{2}-\d{2}$/.test(v)) runDates.push(v); else collect(v); } };
+const resultsDir = abs('results');
+for (const t of fs.readdirSync(resultsDir, { withFileTypes: true })) {
+  if (!t.isDirectory()) continue;
+  for (const a of fs.readdirSync(path.join(resultsDir, t.name), { withFileTypes: true })) {
+    if (!a.isDirectory()) continue;
+    for (const f of fs.readdirSync(path.join(resultsDir, t.name, a.name))) { const m = /^(\d{4}-\d{2}-\d{2})-run/.exec(f); if (m) runDates.push(m[1]); }
+  }
+}
+collect(rows);
+collect(capabilities);
+const generatedDate = runDates.sort().pop();
+
 const out = {
   schema: 'jev-match-bench toolmap v2',
-  generated: new Date().toISOString().slice(0, 10),
+  generated: generatedDate,
   generated_from: ['results/route1/score.md', 'results/ex1/score.md', 'results/pv1/score-de-adjudicated.md', 'results/pv1/score-en.md', 'reference/pv1/adjudicated-a.de.jsonl', 'reference/pv1/claude-c.en.jsonl', 'result rows for versions, dates and Jev tokens', PLAN, 'results/route1/automation.json', 'results/pv1/automation.json', CAPS],
   findings: { route1: 'results/route1/findings.md', ex1: 'results/ex1/findings.md', pv1: 'results/pv1/gliner.md', automation: 'results/automation-findings.md', ...Object.fromEntries(capabilities.filter(c => c.cells.local.state === 'measured').map(c => [c.id.toLowerCase(), c.cells.local.source_report])) },
   note: 'Each cell is one task and one tool family. "best_arm" is the arm of that family with the highest value on the same test data the value is measured on, so it is chosen after the fact and flatters the families with many arms (GLiNER has up to six arms in route1 and nine in pv1, the local family has one arm in route1 and ex1 and four in pv1). Cells are per task: a family that is best on one task says nothing about another. All numbers are run 1, one run per arm. For German rows, English-only GLiNER models (GLiNER2.5-Decide, GLiNER2.5-Decide-1B) are not eligible as best arm, in route1 and pv1 alike; their best value is listed as english_model_extra. pv1 rows: baseline computed from the reference with the rule of results/pv1/gliner.md, run dates 2026-10-01 (Jev, local) and 2026-10-08 (GLiNER). skill = (value - baseline) / (100 - baseline). p50 values in route1 rows are per question group (the p50 ms column of results/route1/score.md); the Speed table of results/route1/findings.md gives medians per source and language, so the two can differ by a few ms. Latencies are not one clock: Jev is an HTTP round trip to api.typesafe.ai, the local LLM an HTTP call over the LAN, GLiNER GPU time in-process. Local cost (hardware, power) was not estimated. Tests: route1 and pv1 cells carry top_family (the family with the highest value in the row) and mcnemar_vs_top_p, an exact two-sided McNemar between this family\'s best arm and the top family\'s best arm on the same items (unanswered counts as wrong); route1 and pv1 cells other than Jev also carry mcnemar_vs_jev_p. Both compared arms are picked after the fact as the best of their family, and no p value is corrected for that or for the number of tests, so p >= 0.05 means the difference is not established, not that the two are level. ex1 cells have no test; their skill is F1 against a baseline F1 of 0, exact_frame_skill compares whole frames against extracting nothing.',
