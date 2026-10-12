@@ -6,6 +6,9 @@
  "best_by_audited_f1": "gemma4-12b",
  "gold_noisy": true,
  "caveat": "Gold noisy: the 40-document gold audit was done by a language model (Claude Haiku 5.5, spot check of all non-ok verdicts by Claude Opus 5.5), not by a human as plan/c9.md requires; audited gold precision 0.685 is below 0.90, so all numbers are descriptive and make no ranking claim.",
+ "documents": 476,
+ "audited_documents": 40,
+ "best_by_original_f1": "qwen3.8-27b",
  "gold_audit": {
   "form": "machine audit (claude-haiku-5-5), spot check of non-ok verdicts by claude-opus-5-5",
   "file": "results/c9/gold-audit.json",
@@ -33,6 +36,7 @@
  "arms": [
   {
    "arm": "gemma4-12b",
+   "baseline": false,
    "model": "gemma4:12b (google/gemma-4-12B-it)",
    "licence": "Apache-2.0",
    "licence_class": "open source",
@@ -41,29 +45,24 @@
    "finished": true,
    "quality": {
     "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
-    "value": 0.8387,
+    "value": 0.83871,
     "ci95": [
-     0.7059,
-     0.929
+     0.705858,
+     0.928965
     ],
-    "recall": 0.963,
-    "precision": 0.7429,
-    "paired_vs_best": {
-     "diff": 0.0,
-     "ci95": [
-      0.0,
-      0.0
-     ]
-    },
+    "recall": 0.962963,
+    "precision": 0.742857,
+    "vs_best": null,
     "original_gold_476_docs": {
-     "f1": 0.627,
+     "f1": 0.627027,
      "ci95": [
-      0.5927,
-      0.6604
+      0.592676,
+      0.660352
      ],
-     "recall": 0.6283,
-     "precision": 0.6258,
-     "mask_recall": 0.7581
+     "recall": 0.628278,
+     "precision": 0.625781,
+     "mask_recall": 0.758117,
+     "p_vs_best": 0.132
     }
    },
    "speed": {
@@ -80,6 +79,7 @@
   },
   {
    "arm": "qwen3.8-27b",
+   "baseline": false,
    "model": "qwen3.8:27b (Qwen/Qwen3.8-27B)",
    "licence": "Apache-2.0",
    "licence_class": "open source",
@@ -88,29 +88,33 @@
    "finished": true,
    "quality": {
     "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
-    "value": 0.8279,
+    "value": 0.827869,
     "ci95": [
-     0.7382,
-     0.9021
+     0.738153,
+     0.902119
     ],
-    "recall": 0.9352,
-    "precision": 0.7426,
-    "paired_vs_best": {
-     "diff": 0.0108,
+    "recall": 0.935185,
+    "precision": 0.742647,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.010841,
      "ci95": [
-      -0.1148,
-      0.112
-     ]
+      -0.114847,
+      0.112029
+     ],
+     "p": 0.786,
+     "difference_shown": false
     },
     "original_gold_476_docs": {
-     "f1": 0.6441,
+     "f1": 0.644145,
      "ci95": [
-      0.6155,
-      0.6718
+      0.615508,
+      0.671804
      ],
-     "recall": 0.6414,
-     "precision": 0.6469,
-     "mask_recall": 0.798
+     "recall": 0.641391,
+     "precision": 0.646924,
+     "mask_recall": 0.797994,
+     "p_vs_best": null
     }
    },
    "speed": {
@@ -127,6 +131,7 @@
   },
   {
    "arm": "gliner-pii-domains",
+   "baseline": false,
    "model": "E3-JSI/gliner-multi-pii-domains-v1",
    "licence": "Apache-2.0",
    "licence_class": "open source",
@@ -135,29 +140,33 @@
    "finished": true,
    "quality": {
     "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
-    "value": 0.7385,
+    "value": 0.738462,
     "ci95": [
-     0.6428,
-     0.8161
+     0.642808,
+     0.816098
     ],
-    "recall": 0.6667,
-    "precision": 0.8276,
-    "paired_vs_best": {
-     "diff": 0.1002,
+    "recall": 0.666667,
+    "precision": 0.827586,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.100248,
      "ci95": [
-      -0.0499,
-      0.239
-     ]
+      -0.049851,
+      0.239028
+     ],
+     "p": 0.19,
+     "difference_shown": false
     },
     "original_gold_476_docs": {
-     "f1": 0.5644,
+     "f1": 0.564408,
      "ci95": [
-      0.5317,
-      0.5946
+      0.53165,
+      0.594579
      ],
-     "recall": 0.4322,
-     "precision": 0.8133,
-     "mask_recall": 0.541
+     "recall": 0.432155,
+     "precision": 0.813305,
+     "mask_recall": 0.541016,
+     "p_vs_best": 0.0
     }
    },
    "speed": {
@@ -174,6 +183,7 @@
   },
   {
    "arm": "gliner2.5-multi",
+   "baseline": false,
    "model": "fastino/gliner2.5-multi-v1",
    "licence": "Apache-2.0",
    "licence_class": "open source",
@@ -182,29 +192,33 @@
    "finished": true,
    "quality": {
     "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
-    "value": 0.6486,
+    "value": 0.648649,
     "ci95": [
-     0.517,
-     0.7424
+     0.516994,
+     0.74238
     ],
-    "recall": 0.5556,
-    "precision": 0.7792,
-    "paired_vs_best": {
-     "diff": 0.1901,
+    "recall": 0.555556,
+    "precision": 0.779221,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.190061,
      "ci95": [
-      0.0469,
-      0.3447
-     ]
+      0.046938,
+      0.344662
+     ],
+     "p": 0.014,
+     "difference_shown": true
     },
     "original_gold_476_docs": {
-     "f1": 0.5148,
+     "f1": 0.514765,
      "ci95": [
-      0.4783,
-      0.5501
+      0.47827,
+      0.550135
      ],
-     "recall": 0.4025,
-     "precision": 0.7139,
-     "mask_recall": 0.5357
+     "recall": 0.402509,
+     "precision": 0.713852,
+     "mask_recall": 0.535713,
+     "p_vs_best": 0.0
     }
    },
    "speed": {
@@ -221,6 +235,7 @@
   },
   {
    "arm": "gliner-multi-pii",
+   "baseline": false,
    "model": "urchade/gliner_multi_pii-v1",
    "licence": "Apache-2.0",
    "licence_class": "open source",
@@ -229,29 +244,33 @@
    "finished": true,
    "quality": {
     "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
-    "value": 0.4444,
+    "value": 0.444444,
     "ci95": [
-     0.2819,
-     0.5963
+     0.281874,
+     0.596284
     ],
-    "recall": 0.3519,
-    "precision": 0.6032,
-    "paired_vs_best": {
-     "diff": 0.3943,
+    "recall": 0.351852,
+    "precision": 0.603175,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.394265,
      "ci95": [
-      0.1987,
-      0.5888
-     ]
+      0.198668,
+      0.588768
+     ],
+     "p": 0.0,
+     "difference_shown": true
     },
     "original_gold_476_docs": {
-     "f1": 0.427,
+     "f1": 0.426992,
      "ci95": [
-      0.3937,
-      0.4603
+      0.393683,
+      0.460252
      ],
-     "recall": 0.3193,
-     "precision": 0.6444,
-     "mask_recall": 0.4384
+     "recall": 0.31927,
+     "precision": 0.644419,
+     "mask_recall": 0.438416,
+     "p_vs_best": 0.0
     }
    },
    "speed": {
@@ -268,6 +287,7 @@
   },
   {
    "arm": "presidio",
+   "baseline": false,
    "model": "Microsoft Presidio 2.2.364 with spaCy de_core_news_lg",
    "licence": "MIT",
    "licence_class": "open source",
@@ -276,29 +296,33 @@
    "finished": true,
    "quality": {
     "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
-    "value": 0.3003,
+    "value": 0.300341,
     "ci95": [
-     0.2127,
-     0.3846
+     0.212747,
+     0.384621
     ],
-    "recall": 0.4074,
-    "precision": 0.2378,
-    "paired_vs_best": {
-     "diff": 0.5384,
+    "recall": 0.407407,
+    "precision": 0.237838,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.538368,
      "ci95": [
-      0.392,
-      0.6674
-     ]
+      0.392041,
+      0.667405
+     ],
+     "p": 0.0,
+     "difference_shown": true
     },
     "original_gold_476_docs": {
-     "f1": 0.2711,
+     "f1": 0.271062,
      "ci95": [
-      0.2486,
-      0.2953
+      0.248557,
+      0.295348
      ],
-     "recall": 0.3164,
-     "precision": 0.2371,
-     "mask_recall": 0.569
+     "recall": 0.31642,
+     "precision": 0.237078,
+     "mask_recall": 0.569029,
+     "p_vs_best": 0.0
     }
    },
    "speed": {
@@ -315,6 +339,7 @@
   },
   {
    "arm": "regex",
+   "baseline": true,
    "model": "regular expressions (e-mail, IBAN with checksum, German phone patterns)",
    "licence": "own code",
    "licence_class": "open source",
@@ -325,27 +350,31 @@
     "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
     "value": 0.15,
     "ci95": [
-     0.0253,
-     0.2743
+     0.025272,
+     0.274273
     ],
-    "recall": 0.0833,
+    "recall": 0.083333,
     "precision": 0.75,
-    "paired_vs_best": {
-     "diff": 0.6887,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.68871,
      "ci95": [
-      0.5277,
-      0.8356
-     ]
+      0.527666,
+      0.835556
+     ],
+     "p": 0.0,
+     "difference_shown": true
     },
     "original_gold_476_docs": {
-     "f1": 0.1355,
+     "f1": 0.135471,
      "ci95": [
-      0.0985,
-      0.1773
+      0.09852,
+      0.17727
      ],
-     "recall": 0.0747,
-     "precision": 0.7278,
-     "mask_recall": 0.1015
+     "recall": 0.074686,
+     "precision": 0.727778,
+     "mask_recall": 0.101547,
+     "p_vs_best": 0.0
     }
    },
    "speed": {

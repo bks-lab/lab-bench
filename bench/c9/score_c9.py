@@ -234,7 +234,8 @@ def main():
             r["ci"] = aci[arm]
             dd = np.array(ast[abest]["f1"]) - np.array(ast[arm]["f1"])
             r["paired_vs_best"] = {"best": abest, "diff": out["audited"][abest]["f1"] - r["f1"],
-                                   "ci": [float(np.percentile(dd, 2.5)), float(np.percentile(dd, 97.5))]}
+                                   "ci": [float(np.percentile(dd, 2.5)), float(np.percentile(dd, 97.5))],
+                                   "p": float(min(1.0, 2 * min((dd <= 0).mean(), (dd >= 0).mean()))) if arm != abest else None}
     if a.json:
         json.dump(out, open(a.json, "w", encoding="utf-8"), indent=1)
     lines = ["# C9 score", "", f"{len(docs)} documents, spans after the boundary rule of `bench/c9/c9lib.py`. "

@@ -139,7 +139,7 @@ run, see its findings):
   number is descriptive and there is no ranking claim. Span F1 on the audited
   gold: gemma4-12b 0.839 and qwen3.8-27b 0.828 (not separated; on all 476
   documents with the original gold 0.627 and 0.644), then gliner-pii-domains
-  0.739, gliner2.5-multi 0.649, gliner-multi-pii 0.444, Presidio 0.300, regex
+  0.738, gliner2.5-multi 0.649, gliner-multi-pii 0.444, Presidio 0.300, regex
   0.150. The capability map shows gemma4-12b (9.2 GB). A human audit is still
   open. [findings.md](results/c9/findings.md)
 

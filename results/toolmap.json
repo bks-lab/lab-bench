@@ -2980,25 +2980,26 @@
      "licence_class": "open source",
      "quality": {
       "metric": "span F1 on the audited gold of 40 documents (exact boundaries, type-agnostic); gold noisy, descriptive only",
-      "value": 0.8387,
+      "value": 0.83871,
       "ci95": [
-       0.7059,
-       0.929
+       0.705858,
+       0.928965
       ],
-      "recall": 0.963,
+      "recall": 0.962963,
       "baseline": "regex (e-mail, IBAN, phone)",
       "baseline_value": 0.15,
       "reference": "none published for this German subset; internal sanity gate regex e-mail recall >= 0.95",
-      "reference_ours": 0.9651,
+      "reference_ours": 0.965116,
       "original_gold_476_docs": {
-       "f1": 0.627,
+       "f1": 0.627027,
        "ci95": [
-        0.5927,
-        0.6604
+        0.592676,
+        0.660352
        ],
-       "recall": 0.6283,
-       "precision": 0.6258,
-       "mask_recall": 0.7581
+       "recall": 0.628278,
+       "precision": 0.625781,
+       "mask_recall": 0.758117,
+       "p_vs_best": 0.132
       },
       "caveat": "Gold noisy: the 40-document gold audit was done by a language model (Claude Haiku 5.5, spot check of all non-ok verdicts by Claude Opus 5.5), not by a human as plan/c9.md requires; audited gold precision 0.685 is below 0.90, so all numbers are descriptive and make no ranking claim."
      },
@@ -3014,7 +3015,7 @@
      "fits_24gb": true,
      "smallest_within_interval": {
       "arm": "gliner-pii-domains",
-      "value": 0.7385,
+      "value": 0.738462,
       "vram_peak_gb": 1.97,
       "rule": "smallest peak VRAM among the arms the paired bootstrap on the 40 audited documents does not separate from the best"
      },
