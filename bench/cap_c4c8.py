@@ -29,6 +29,7 @@ import squad  # noqa: E402
 
 r3, ci_mean, ci_median, paired_mean, overlap = sc.r3, sc.ci_mean, sc.ci_median, sc.paired_mean, sc.overlap
 CARD_MIB = 24564
+TRUNC_SHARE = 0.9  # C7: a recorded prompt length below this share of the target means Ollama cut the prompt
 LIC = {"licence": "Apache-2.0", "licence_class": "open source"}
 
 C4_ARMS = {
@@ -59,6 +60,11 @@ C8_ARMS = {**C8_BASE,
            "vllm-qwen3-14b": {"model": "vLLM, Qwen/Qwen3-14B-AWQ (AWQ INT4, official)", **LIC, "engine": "vllm"},
            "vllm-gemma4-12b": {"model": "vLLM, cyankiwi/gemma-4-12B-it-AWQ-INT4 (AWQ INT4, community build)", **LIC, "engine": "vllm"}}
 ARMS = {"c4": C4_ARMS, "c6": C6_ARMS, "c7": C7_ARMS, "c8": C8_ARMS}
+# Modes whose rows exist but are not a measurement of the model (plan/c4.md, note of 2026-10-12).
+C4_NOT_MEASURED = {
+    ("qwen3.8-27b", "prompt"): "741 of 1,000 calls failed with ConnectionRefused while the workstation's Ollama service was down "
+                               "on 2026-10-11 (items 0 to 740 of the mode); the retry re-ran fc only",
+}
 
 
 # ---------------------------------------------------------------- shared
@@ -180,6 +186,8 @@ def score_c4():
         for m, ids in (("fc", gold_ids), ("prompt", gold_ids), ("free", sch_ids), ("constrained", sch_ids)):
             if not all((m, i) in V for i in ids):
                 continue
+            if (a, m) in C4_NOT_MEASURED:
+                continue
             rr = [R[(m, i)] for i in ids]
             ms = [r["seconds"] * 1000 for r in rr if not r["error"]]
             ev = sum(r["eval_count"] or 0 for r in rr)
@@ -209,7 +217,8 @@ def score_c4():
                                          for s in sorted(set(subset.values())) if any(subset[i] == s for i in usable)},
                           "unparseable": float(np.mean([V[(m, i)].get("parsed") is False for i in usable])) if usable else None})
             modes[m] = d
-        res[a] = {"finished": True, "meta": meta, "status": status, "modes": modes}
+        res[a] = {"finished": True, "meta": meta, "status": status, "modes": modes,
+                  "not_measured": {m: why for (arm, m), why in C4_NOT_MEASURED.items() if arm == a}}
         if "fc" in modes and "prompt" in modes:
             res[a]["fc_vs_prompt"] = mcnemar([bool(x) for x in modes["fc"]["items_ok"]], [bool(x) for x in modes["prompt"]["items_ok"]])
         if "free" in modes and "constrained" in modes:
@@ -276,6 +285,16 @@ def score_c4():
             d["energy"] = {m: {"j_per_1000_items": round(md[m]["energy_j_per_1000"]) if md[m]["energy_j_per_1000"] is not None else None} for m in md}
             d["vram_peak_gb"], d["vram_peak_total_gb"] = vp, vt
             d["fits_24gb"] = "offloaded" if (any(md[m]["offloaded"] for m in md) or r["status"]["gpu"]["peak_mem_mib"] >= CARD_MIB - 512) else True
+            # peak per timed mode from the GPU log (a retry job adds its own samples)
+            idle = r["status"]["gpu"]["idle_mem_mib"]
+            secs = {s["name"]: s for s in r["meta"]["sections"]}
+            d["vram_peak_total_gb_by_mode"] = {m: round((sc.peak_mib(load("c4", a)[2], secs[m]["start"], secs[m]["end"]) or 0) / 1024, 2) for m in md if m in secs}
+            if r["not_measured"]:
+                d["not_measured"] = r["not_measured"]
+            if r["meta"].get("retry"):
+                rs = json.load(open(ROOT / "results" / "c4" / sc.arm_dir(a) / "queue-status-retry.json", encoding="utf-8"))["gpu"]
+                d["retry"] = {"modes": r["meta"]["retry"]["modes"], "job_id": r["meta"]["retry"]["job_id"],
+                              "vram_peak_gb": round(rs["peak_over_idle_mib"] / 1024, 2), "vram_peak_total_gb": round(rs["peak_mem_mib"] / 1024, 2)}
         else:
             d["unfinished"] = {"reason": r["status"].get("reason")}
         arms_out.append(d)
@@ -317,14 +336,14 @@ def c4_md(s):
             L.append(f"| {x['arm']} | | not finished | | | | | | | | | |")
             continue
         q = x["quality"]; v = q.get("vs_best")
-        L.append(f"| {x['arm']} | {x['params_b']} | {q['value']:.3f} | {cis(q['ci95'])} | {f3(q['prompt_mode'])} | {cis(q['prompt_mode_ci95']) if q['prompt_mode_ci95'] else ''} | "
-                 f"{q['fc_vs_prompt']['p']:.3f} | " + (f"{-v['diff']:+.3f} | {v['p']:.3f} | {'yes' if v['difference_shown'] else 'no'} |" if v else "best | | |")
+        L.append(f"| {x['arm']} | {x['params_b']} | {q['value']:.3f} | {cis(q['ci95'])} | {f3(q['prompt_mode']) or 'not measured'} | {cis(q['prompt_mode_ci95']) if q['prompt_mode_ci95'] else ''} | "
+                 f"{f3((q['fc_vs_prompt'] or {}).get('p'))} | " + (f"{-v['diff']:+.3f} | {v['p']:.3f} | {'yes' if v['difference_shown'] else 'no'} |" if v else "best | | |")
                  + f" {f3(q['unparseable_fc'])} | {f3(q['unparseable_prompt'])} |")
     L += ["", "## Part A per category (fc / prompt)", "", "| arm | simple_python | multiple | parallel | parallel_multiple |", "|---|---|---|---|---|"]
     for x in s["arms"]:
         if x["finished"]:
             q = x["quality"]
-            L.append(f"| {x['arm']} | " + " | ".join(f"{q['per_category_fc'][c]:.3f} / {q['per_category_prompt'][c]:.3f}" for c in ("simple_python", "multiple", "parallel", "parallel_multiple")) + " |")
+            L.append(f"| {x['arm']} | " + " | ".join(f"{q['per_category_fc'][c]:.3f} / " + (f"{q['per_category_prompt'][c]:.3f}" if q['per_category_prompt'] else "n/a") for c in ("simple_python", "multiple", "parallel", "parallel_multiple")) + " |")
     L += ["", "## Part B: JSONSchemaBench, schema validity (600 schemas)", "",
           "| arm | free | 95 % CI | constrained | 95 % CI | coverage of constrained | free on the same schemas | constrained vs free p | slowdown constrained/free |",
           "|---|---|---|---|---|---|---|---|---|"]
@@ -355,9 +374,21 @@ def c4_md(s):
             cap_a = sum(sp[m]["capped"] for m in ("fc", "prompt") if m in sp)
             cap_b = sum(sp[m]["capped"] for m in ("free", "constrained") if m in sp)
             tr = sum(sp[m]["truncated_prompts"] for m in ("free", "constrained") if m in sp)
-            L.append(f"| {x['arm']} | {fx(sp['fc']['ms_median'], 0)} | {cis(sp['fc']['ms_median_ci95'], 0) if sp['fc']['ms_median_ci95'] else ''} | {fx(sp['prompt']['ms_median'], 0)} | {fx(sp['free']['ms_median'], 0)} | {fx(sp['constrained']['ms_median'], 0)} | "
+            L.append(f"| {x['arm']} | {fx(sp['fc']['ms_median'], 0)} | {cis(sp['fc']['ms_median_ci95'], 0) if sp['fc']['ms_median_ci95'] else ''} | {fx(sp['prompt']['ms_median'], 0) if 'prompt' in sp else 'n/a'} | {fx(sp['free']['ms_median'], 0)} | {fx(sp['constrained']['ms_median'], 0)} | "
                      f"{fx(sp['fc']['out_tok_s'])} | {x['energy']['fc']['j_per_1000_items']} | {x['vram_peak_gb']:.2f} | {x['vram_peak_total_gb']:.2f} | {cap_a}/{cap_b} | {tr} | {'yes' if x['fits_24gb'] is True else x['fits_24gb']} |")
     L += ["", "Peak VRAM from nvidia-smi over the whole job; energy is GPU only, the timed section of a mode divided by its items.", ""]
+    nm = [(x["arm"], m, why) for x in s["arms"] for m, why in (x.get("not_measured") or {}).items()]
+    rt = [x for x in s["arms"] if x.get("retry")]
+    if nm or rt:
+        L += ["## Not measured and retried modes", ""]
+        for a, m, why in nm:
+            L.append(f"- {a}, {m} mode: not measured; {why}.")
+        for x in rt:
+            pk = x.get("vram_peak_total_gb_by_mode") or {}
+            L.append(f"- {x['arm']}: {', '.join(x['retry']['modes'])} from the retry job `{x['retry']['job_id']}` (peak VRAM {x['retry']['vram_peak_total_gb']:.2f} GB total, "
+                     f"{x['retry']['vram_peak_gb']:.2f} GB over idle); the other modes from the first job. Peak VRAM total per mode: "
+                     + ", ".join(f"{m} {v:.2f} GB" for m, v in pk.items()) + ".")
+        L.append("")
     return "\n".join(L)
 
 
@@ -514,6 +545,10 @@ def score_c7():
                       "ttft_s_median": float(np.median(ttft)) if ttft else None, "ttft_ci95": ci_median(ttft) if ttft else None,
                       "prompt_tokens_median": float(np.median([r["prompt_eval_count"] for r in rr if r["prompt_eval_count"]])),
                       "length_off": sum(1 for r in rr if r["length_off"]), "errors": sum(1 for r in rr if r["error"]),
+                      # a prompt longer than num_ctx is cut by Ollama to about half its tokens (the start goes, needles
+                      # at depth 10 % and 50 % with it); the row then records a prompt length far below the target
+                      "truncated": sum(1 for r in rr if (r["prompt_eval_count"] or 0) < TRUNC_SHARE * L),
+                      "acc_not_truncated": (lambda k: float(np.mean(k)) if k else None)([float(r["right"]) for r in rr if (r["prompt_eval_count"] or 0) >= TRUNC_SHARE * L]),
                       "vram_peak_gb": round((pk - idle) / 1024, 2), "vram_peak_total_gb": round(pk / 1024, 2),
                       "layers_on_gpu": ld.get("layers_on_gpu") or (meta.get("calibration", {}).get(str(L)) or {}).get("layers_on_gpu"),
                       "fit_reduced": bool(ld.get("fit_reduced")),
@@ -548,6 +583,7 @@ def score_c7():
                                         "per_task": {k: r3(v) for k, v in p["per_task"].items()}, "per_depth": {k: r3(v) for k, v in p["per_depth"].items()},
                                         "ttft_s_median": r3(p["ttft_s_median"]), "ttft_ci95": [r3(x) for x in p["ttft_ci95"]] if p["ttft_ci95"] else None,
                                         "prompt_tokens_median": p["prompt_tokens_median"], "length_off": p["length_off"], "errors": p["errors"],
+                                        "truncated_by_ollama": p["truncated"], "accuracy_not_truncated": r3(p["acc_not_truncated"]),
                                         "vram_peak_gb": p["vram_peak_gb"], "vram_peak_total_gb": p["vram_peak_total_gb"],
                                         "offloaded": p["offloaded"], "layers_on_gpu": p["layers_on_gpu"],
                                         "energy_j_per_prompt": round(p["energy_j_per_prompt"])}
@@ -607,6 +643,16 @@ def c7_md(s):
         L.append(f"| {x['arm']} | {x['kv_cache']} | {cell('4096')} | {cell('16384')} | {cell('32768') if '32768' in pl else 'not finished'} | {cis(pl['32768']['ci95']) if '32768' in pl else ''} | "
                  + ((f"{-v['diff']:+.3f} | {v['p']:.3f} | {'yes' if v['difference_shown'] else 'no'} |" if v else ("best | | |" if '32768' in pl and x['kv_cache'] == 'f16' else "| | |")))
                  + f" {x.get('longest_length_at_90') or ''} |")
+    L += ["", "## Prompts Ollama cut (descriptive)", "",
+          f"Rows whose recorded prompt length is below {int(TRUNC_SHARE * 100)} % of the target. They sit at 51 % to 56 % of it, the same on every attempt; every one with the asked needle at depth 10 % or 50 % is wrong, "
+          "and every single or multikey one with the needle at 90 % is right: the prompt tokenized longer than `num_ctx` (target plus 512) and Ollama dropped its start. "
+          "These prompts stay in the accuracy above (plan/c7.md: a prompt outside the band is flagged and scored). The table shows how many there are and the accuracy without them.", "",
+          "| arm | cut at 4k | cut at 16k | cut at 32k | accuracy without cut prompts 4k | 16k | 32k |", "|---|---|---|---|---|---|---|"]
+    for x in s["arms"]:
+        pl = x.get("per_length") or {}
+        if pl:
+            L.append(f"| {x['arm']} | " + " | ".join(str(pl[k]["truncated_by_ollama"]) if k in pl else "" for k in ("4096", "16384", "32768")) + " | "
+                     + " | ".join(f3(pl[k]["accuracy_not_truncated"]) if k in pl else "" for k in ("4096", "16384", "32768")) + " |")
     L += ["", "## Per task and depth at 32k (descriptive)", "", "| arm | single | multikey | multivalue | depth 10 % | depth 50 % | depth 90 % |", "|---|---|---|---|---|---|---|"]
     for x in s["arms"]:
         p = (x.get("per_length") or {}).get("32768")
