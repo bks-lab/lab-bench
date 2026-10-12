@@ -1,0 +1,29 @@
+{
+ "test": "C5",
+ "arm": "eurollm-9b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c5/run_c5.py",
+  "--arm",
+  "eurollm-9b",
+  "--data",
+  "{data}\\c5",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 60,
+ "expected_gpu_min": 20,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [
+  "C5-gate"
+ ],
+ "requested_by": "prep-agent"
+}

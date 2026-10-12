@@ -1,0 +1,36 @@
+{
+ "test": "T2",
+ "arm": "gliner2.5-multi-decide",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "D:\\gliner-bench\\.venv\\Scripts\\python.exe",
+  "bench/t2/run_route.py",
+  "--arm",
+  "gliner2.5-multi-decide",
+  "--gliner",
+  "fastino/GLiNER2.5-multi-Decide",
+  "--lang",
+  "de",
+  "--passes",
+  "plain,shuffled",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1",
+  "HF_HOME": "{hf}",
+  "HF_HUB_OFFLINE": "1",
+  "TRANSFORMERS_OFFLINE": "1"
+ },
+ "timeout_min": 20,
+ "expected_gpu_min": 3,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [
+  "T2-sanity-gliner2.5-multi-decide"
+ ],
+ "requested_by": "prep-agent"
+}

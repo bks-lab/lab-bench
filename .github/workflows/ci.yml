@@ -38,10 +38,12 @@ jobs:
       - name: syntax of every bench script
         run: |
           for f in bench/*.mjs bench/lib/*.mjs bench/c8/*.mjs; do node --check "$f"; done
-          python -m py_compile bench/*.py bench/lib/*.py bench/c*/*.py bench/queue/*.py cases/*/fetch.py
+          python -m py_compile bench/*.py bench/lib/*.py bench/c*/*.py bench/t*/*.py bench/queue/*.py cases/*/fetch.py
           for f in bench/*.sh bench/queue/*.sh bench/c*/*.sh hf/*.sh; do bash -n "$f"; done
       - name: queue runner tests
         run: python -m pytest -q bench/queue/test_runner.py
+      - name: Python port of the route1 call equals the Node code (T2, T9)
+        run: python -m pytest -q bench/t2/test_route_port.py
       - name: Hugging Face export (aggregates only, no Jev rows)
         run: python -m pytest -q hf/test_build.py hf/c3/test_c3_build.py
       - name: tool map is reproducible from the committed rows

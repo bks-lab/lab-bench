@@ -1,0 +1,39 @@
+{
+ "test": "T10",
+ "arm": "gliner2.5-multi-decide",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "D:\\gliner-bench\\.venv\\Scripts\\python.exe",
+  "bench/t10/run_t10.py",
+  "--arm",
+  "gliner2.5-multi-decide",
+  "--gliner",
+  "fastino/GLiNER2.5-multi-Decide",
+  "--batches",
+  "1,8,32,128",
+  "--repeats",
+  "3",
+  "--gate-ref",
+  "results/route1/gliner2.5-multi-decide/2026-10-09-run1.jsonl",
+  "--gate-min",
+  "0.99",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1",
+  "HF_HOME": "{hf}",
+  "HF_HUB_OFFLINE": "1",
+  "TRANSFORMERS_OFFLINE": "1"
+ },
+ "timeout_min": 40,
+ "expected_gpu_min": 10,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "prep-agent",
+ "note": "exit 3 = batch 1 disagrees with route1 run 1 (plan/t10.md)"
+}

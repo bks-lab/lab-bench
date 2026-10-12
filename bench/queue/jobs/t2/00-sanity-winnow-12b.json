@@ -1,0 +1,40 @@
+{
+ "test": "T2",
+ "arm": "sanity-winnow-12b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/t2/run_route.py",
+  "--arm",
+  "winnow-12b",
+  "--model",
+  "hf.co/EldanRing/Winnow-12B:Q8_0",
+  "--template",
+  "gemma4",
+  "--lang",
+  "de",
+  "--limit",
+  "250",
+  "--passes",
+  "plain",
+  "--gate-ref",
+  "results/route1/winnow-12b/2026-10-09-run1.jsonl",
+  "--gate-min",
+  "0.99",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 20,
+ "expected_gpu_min": 3,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "prep-agent",
+ "note": "sanity arm of T2 and T9: the Python port agrees with route1 run 1 (plan/t2.md)"
+}

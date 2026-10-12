@@ -1,0 +1,30 @@
+{
+ "test": "C9",
+ "arm": "presidio",
+ "gpu": false,
+ "cwd": "{src}",
+ "cmd": [
+  "D:\\bench-cap\\.venv-presidio\\Scripts\\python.exe",
+  "bench/c9/run_c9.py",
+  "--arm",
+  "presidio",
+  "--data",
+  "{data}\\c9",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 30,
+ "expected_gpu_min": 0,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [
+  "C9-regex"
+ ],
+ "requested_by": "prep-agent",
+ "note": "CPU arm, own venv (bench/c9/prep-pc.bat)"
+}

@@ -191,3 +191,13 @@ private provenance history; the export script is gone, and its leak scan
 runs in CI on every push and pull request (README, "Repository history and
 leak scan"). Job files name lab-bench commits in `repo_ref`; the queue
 folder on the PC keeps its name.
+
+## Change 2026-10-12: T2, T9 and T10 designed, short runs queued
+
+T2 (`plan/t2.md`), T9 (`plan/t9.md`) and T10 (`plan/t10.md`) have dated
+designs, committed before any of their runs. All three run on the
+workstation queue with the local arms; the Jev arms of T2 and T9 are
+prepared or named but run from the Mac only on Michael Boiman's go, since
+Jev is a hosted API. C5 and C9 have preparation notes in their files. On
+Michael Boiman's direction only short tests are queued now: C9, T10, T2, T9
+and C5 together are estimated at about 8.3 GPU hours.

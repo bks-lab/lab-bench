@@ -1,0 +1,44 @@
+{
+ "test": "C5",
+ "arm": "comet",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "D:\\bench-cap\\.venv-c5\\Scripts\\python.exe",
+  "bench/c5/comet_score.py",
+  "--data",
+  "{data}\\c5",
+  "--out",
+  "{out}",
+  "opus-mt={out:C5-opus-mt}",
+  "madlad-3b={out:C5-madlad-3b}",
+  "qwen3.8-27b={out:C5-qwen3.8-27b}",
+  "gemma4-12b={out:C5-gemma4-12b}",
+  "gemma4-26b={out:C5-gemma4-26b}",
+  "mistral-small-3.2={out:C5-mistral-small-3.2}",
+  "eurollm-9b={out:C5-eurollm-9b}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1",
+  "HF_HOME": "{hf}",
+  "HF_HUB_OFFLINE": "1",
+  "TRANSFORMERS_OFFLINE": "1"
+ },
+ "timeout_min": 60,
+ "expected_gpu_min": 12,
+ "outputs": [
+  "{out}\\comet.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [
+  "C5-opus-mt",
+  "C5-madlad-3b",
+  "C5-qwen3.8-27b",
+  "C5-gemma4-12b",
+  "C5-gemma4-26b",
+  "C5-mistral-small-3.2",
+  "C5-eurollm-9b"
+ ],
+ "requested_by": "prep-agent",
+ "note": "COMET wmt22-comet-da after all arms, plus the copy baseline"
+}
