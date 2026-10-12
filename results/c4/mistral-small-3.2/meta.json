@@ -1,0 +1,196 @@
+{
+ "test": "C4",
+ "arm": "mistral-small-3.2",
+ "ollama_tag": "mistral-small3.2:24b",
+ "num_ctx": 8192,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192
+ },
+ "num_predict": {
+  "fc": 1024,
+  "prompt": 1024,
+  "free": 4096,
+  "constrained": 4096
+ },
+ "think": "not supported by the model",
+ "modes": [
+  "fc",
+  "prompt",
+  "free",
+  "constrained"
+ ],
+ "limit": 0,
+ "mock": false,
+ "job_id": "20261010-140210-c4-mistral-small-3.2",
+ "model": {
+  "tag": "mistral-small3.2:24b",
+  "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+  "size": 15177384862,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "mistral3",
+   "families": [
+    "mistral3"
+   ],
+   "parameter_size": "24.0B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 131072,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools"
+  ],
+  "context_length": 131072,
+  "template_sha256": "706c4d1164f7f1bbce2a852f2bc9cfa66b98d24f79300b9034388e07fcda98c8"
+ },
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "9e82b7f3c867dedce3a9106e5f94d5c0738351074187a5b996dd0961034a2032",
+  "method_sha256": "0444e478a8b1fb0a964539f86bad9eef4f13b8d5cc6ae746369e893bae3e8929"
+ },
+ "sections": [
+  {
+   "name": "warmup_fc",
+   "start": "2026-10-11T09:07:24.244+02:00",
+   "end": "2026-10-11T09:07:36.463+02:00"
+  },
+  {
+   "name": "fc",
+   "items": 1000,
+   "start": "2026-10-11T09:07:36.463+02:00",
+   "ps_before": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 15833948487,
+     "size_vram": 15833948487,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 15833948487,
+     "size_vram": 15833948487,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T09:26:19.783+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_prompt",
+   "start": "2026-10-11T09:26:19.783+02:00",
+   "end": "2026-10-11T09:26:20.651+02:00"
+  },
+  {
+   "name": "prompt",
+   "items": 1000,
+   "start": "2026-10-11T09:26:20.651+02:00",
+   "ps_before": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 15833948487,
+     "size_vram": 15833948487,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 15833948487,
+     "size_vram": 15833948487,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T09:39:51.172+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_free",
+   "start": "2026-10-11T09:39:51.172+02:00",
+   "end": "2026-10-11T09:39:56.028+02:00"
+  },
+  {
+   "name": "free",
+   "items": 600,
+   "start": "2026-10-11T09:39:56.028+02:00",
+   "ps_before": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 15833948487,
+     "size_vram": 15833948487,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 15833948487,
+     "size_vram": 15833948487,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T10:37:14.387+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_constrained",
+   "start": "2026-10-11T10:37:14.387+02:00",
+   "end": "2026-10-11T10:37:17.437+02:00"
+  },
+  {
+   "name": "constrained",
+   "items": 600,
+   "start": "2026-10-11T10:37:17.437+02:00",
+   "ps_before": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 15833948487,
+     "size_vram": 15833948487,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 15833948487,
+     "size_vram": 15833948487,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T11:28:13.129+02:00",
+   "errors": 9
+  }
+ ],
+ "started": "2026-10-11T09:07:24.234+02:00",
+ "summary": {
+  "fc": {
+   "items": 1000,
+   "errors": 0
+  },
+  "prompt": {
+   "items": 1000,
+   "errors": 0
+  },
+  "free": {
+   "items": 600,
+   "errors": 0
+  },
+  "constrained": {
+   "items": 600,
+   "errors": 9
+  }
+ },
+ "finished": "2026-10-11T11:28:13.133+02:00"
+}

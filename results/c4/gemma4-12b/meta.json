@@ -1,0 +1,200 @@
+{
+ "test": "C4",
+ "arm": "gemma4-12b",
+ "ollama_tag": "gemma4:12b",
+ "num_ctx": 8192,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192
+ },
+ "num_predict": {
+  "fc": 1024,
+  "prompt": 1024,
+  "free": 4096,
+  "constrained": 4096
+ },
+ "think": false,
+ "modes": [
+  "fc",
+  "prompt",
+  "free",
+  "constrained"
+ ],
+ "limit": 0,
+ "mock": false,
+ "job_id": "20261010-140204-c4-gemma4-12b",
+ "model": {
+  "tag": "gemma4:12b",
+  "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+  "size": 8021618941,
+  "details": {
+   "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "blobs": [
+   "bb722270d54346adc198f213851dbe0207e87c3ecf2a0aff4d92262726215391",
+   "7008a656050bed18f6741406a631e83fa75ee1a02308f2e4f40d978cfbb3ce4b",
+   "0cb0cd0a5c499d92942caa22fe5abb98f6e8874868d590e2b094ece4ac8e6d28"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "audio",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "9e82b7f3c867dedce3a9106e5f94d5c0738351074187a5b996dd0961034a2032",
+  "method_sha256": "0444e478a8b1fb0a964539f86bad9eef4f13b8d5cc6ae746369e893bae3e8929"
+ },
+ "sections": [
+  {
+   "name": "warmup_fc",
+   "start": "2026-10-11T06:36:39.598+02:00",
+   "end": "2026-10-11T06:36:47.881+02:00"
+  },
+  {
+   "name": "fc",
+   "items": 1000,
+   "start": "2026-10-11T06:36:47.881+02:00",
+   "ps_before": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T06:42:49.905+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_prompt",
+   "start": "2026-10-11T06:42:49.905+02:00",
+   "end": "2026-10-11T06:42:50.563+02:00"
+  },
+  {
+   "name": "prompt",
+   "items": 1000,
+   "start": "2026-10-11T06:42:50.563+02:00",
+   "ps_before": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T06:50:11.528+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_free",
+   "start": "2026-10-11T06:50:11.528+02:00",
+   "end": "2026-10-11T06:50:13.535+02:00"
+  },
+  {
+   "name": "free",
+   "items": 600,
+   "start": "2026-10-11T06:50:13.535+02:00",
+   "ps_before": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T07:10:25.106+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_constrained",
+   "start": "2026-10-11T07:10:25.106+02:00",
+   "end": "2026-10-11T07:10:27.270+02:00"
+  },
+  {
+   "name": "constrained",
+   "items": 600,
+   "start": "2026-10-11T07:10:27.270+02:00",
+   "ps_before": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T07:30:58.405+02:00",
+   "errors": 9
+  }
+ ],
+ "started": "2026-10-11T06:36:39.588+02:00",
+ "summary": {
+  "fc": {
+   "items": 1000,
+   "errors": 0
+  },
+  "prompt": {
+   "items": 1000,
+   "errors": 0
+  },
+  "free": {
+   "items": 600,
+   "errors": 0
+  },
+  "constrained": {
+   "items": 600,
+   "errors": 9
+  }
+ },
+ "finished": "2026-10-11T07:30:58.423+02:00"
+}

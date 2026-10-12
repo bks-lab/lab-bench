@@ -1,0 +1,210 @@
+{
+ "test": "C4",
+ "arm": "qwen3.8-27b",
+ "ollama_tag": "qwen3.8:27b",
+ "num_ctx": 8192,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192
+ },
+ "num_predict": {
+  "fc": 1024,
+  "prompt": 1024,
+  "free": 4096,
+  "constrained": 4096
+ },
+ "think": false,
+ "modes": [
+  "fc",
+  "prompt",
+  "free",
+  "constrained"
+ ],
+ "limit": 0,
+ "mock": false,
+ "job_id": "20261010-140211-c4-qwen3.8-27b",
+ "model": {
+  "tag": "qwen3.8:27b",
+  "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+  "size": 17741872154,
+  "details": {
+   "parent_model": "qwen3.8:27b-q4_K_M",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "27.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d",
+   "ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "9e82b7f3c867dedce3a9106e5f94d5c0738351074187a5b996dd0961034a2032",
+  "method_sha256": "0444e478a8b1fb0a964539f86bad9eef4f13b8d5cc6ae746369e893bae3e8929"
+ },
+ "sections": [
+  {
+   "name": "warmup_fc",
+   "start": "2026-10-11T22:15:49.212+02:00",
+   "end": "2026-10-11T22:16:04.970+02:00",
+   "from_job": "retry"
+  },
+  {
+   "name": "fc",
+   "items": 1000,
+   "start": "2026-10-11T22:16:04.970+02:00",
+   "ps_before": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T22:34:01.153+02:00",
+   "errors": 1,
+   "from_job": "retry"
+  },
+  {
+   "name": "warmup_prompt",
+   "start": "2026-10-11T11:47:30.064+02:00",
+   "end": "2026-10-11T11:47:36.122+02:00"
+  },
+  {
+   "name": "prompt",
+   "items": 1000,
+   "start": "2026-10-11T11:47:36.122+02:00",
+   "ps_before": [
+    {
+     "error": "URLError(ConnectionRefusedError(10061, 'Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte', None, 10061, None))"
+    }
+   ],
+   "ps_during": [
+    {
+     "error": "URLError(ConnectionRefusedError(10061, 'Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte', None, 10061, None))"
+    }
+   ],
+   "end": "2026-10-11T12:20:14.089+02:00",
+   "errors": 741
+  },
+  {
+   "name": "warmup_free",
+   "start": "2026-10-11T12:20:14.089+02:00",
+   "end": "2026-10-11T12:20:16.966+02:00"
+  },
+  {
+   "name": "free",
+   "items": 600,
+   "start": "2026-10-11T12:20:16.966+02:00",
+   "ps_before": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T12:50:15.702+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_constrained",
+   "start": "2026-10-11T12:50:15.702+02:00",
+   "end": "2026-10-11T12:50:18.424+02:00"
+  },
+  {
+   "name": "constrained",
+   "items": 600,
+   "start": "2026-10-11T12:50:18.424+02:00",
+   "ps_before": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T13:44:04.322+02:00",
+   "errors": 8
+  }
+ ],
+ "started": "2026-10-11T11:29:17.324+02:00",
+ "summary": {
+  "fc": {
+   "items": 1000,
+   "errors": 109
+  },
+  "prompt": {
+   "items": 1000,
+   "errors": 741
+  },
+  "free": {
+   "items": 600,
+   "errors": 0
+  },
+  "constrained": {
+   "items": 600,
+   "errors": 8
+  }
+ },
+ "finished": "2026-10-11T13:44:04.343+02:00",
+ "retry": {
+  "job_id": "20261010-140212-c4-qwen3.8-27b-fc-retry",
+  "modes": [
+   "fc"
+  ],
+  "started": "2026-10-11T22:15:49.212+02:00",
+  "finished": "2026-10-11T22:34:01.157+02:00",
+  "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+  "summary": {
+   "fc": {
+    "items": 1000,
+    "errors": 1
+   }
+  },
+  "note": "rows and timed sections of these modes come from the retry job; the replaced rows are in *-run1-superseded.jsonl"
+ }
+}

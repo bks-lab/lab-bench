@@ -160,7 +160,155 @@
    },
    "vram_peak_gb": 10.31,
    "vram_peak_total_gb": 11.48,
-   "fits_24gb": true
+   "fits_24gb": true,
+   "vram_peak_total_gb_by_mode": {
+    "fc": 11.46,
+    "prompt": 11.47,
+    "free": 11.48,
+    "constrained": 11.35
+   }
+  },
+  {
+   "arm": "qwen3.8-27b",
+   "model": "qwen3.8:27b (Qwen/Qwen3.8-27B)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "ollama_digest": "aaee06c39dcf",
+   "quant": "Q4_K_M",
+   "params_b": 27.3,
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live (1,000 items), fc mode (native tool calling)",
+    "value": 0.906,
+    "ci95": [
+     0.888,
+     0.923
+    ],
+    "prompt_mode": null,
+    "prompt_mode_ci95": null,
+    "per_category_fc": {
+     "simple_python": 0.9675,
+     "multiple": 0.965,
+     "parallel": 0.82,
+     "parallel_multiple": 0.81
+    },
+    "per_category_prompt": null,
+    "unparseable_fc": 0.003,
+    "unparseable_prompt": null,
+    "fc_vs_prompt": null,
+    "schema_validity_free": 0.905,
+    "schema_validity_free_ci95": [
+     0.88,
+     0.93
+    ],
+    "schema_validity_constrained": 0.9341,
+    "schema_validity_constrained_ci95": [
+     0.9139,
+     0.9527
+    ],
+    "constrained_coverage": 0.9867,
+    "constrained_vs_free": {
+     "a_only": 35,
+     "b_only": 19,
+     "p": 0.0402,
+     "schemas": 592,
+     "free_on_same": 0.9071,
+     "constrained": 0.9341,
+     "coverage": 0.9867
+    },
+    "per_subset_free": {
+     "Github_easy": 0.99,
+     "Github_hard": 0.82,
+     "Github_medium": 0.91,
+     "Glaiveai2K": 0.98,
+     "JsonSchemaStore": 0.79,
+     "Kubernetes": 0.94
+    },
+    "per_subset_constrained": {
+     "Github_easy": 0.99,
+     "Github_hard": 0.9091,
+     "Github_medium": 0.9495,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.8191,
+     "Kubernetes": 0.96
+    },
+    "vs_best": {
+     "best": "qwen3-14b",
+     "diff": 0.013,
+     "diff_ci95": [
+      -0.008,
+      0.033
+     ],
+     "p": 0.222,
+     "difference_shown": false
+    }
+   },
+   "speed": {
+    "fc": {
+     "ms_median": 885.7,
+     "ms_median_ci95": [
+      864.3,
+      901.0
+     ],
+     "out_tok_s": 139.2659,
+     "failed_calls": 1,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "free": {
+     "ms_median": 1536.2,
+     "ms_median_ci95": [
+      1336.0437,
+      1708.0
+     ],
+     "out_tok_s": 112.6402,
+     "failed_calls": 0,
+     "capped": 4,
+     "truncated_prompts": 0
+    },
+    "constrained": {
+     "ms_median": 1476.4,
+     "ms_median_ci95": [
+      1340.945,
+      1616.7
+     ],
+     "out_tok_s": 54.5366,
+     "failed_calls": 8,
+     "capped": 12,
+     "truncated_prompts": 0
+    },
+    "slowdown_constrained_over_free": 0.9611
+   },
+   "energy": {
+    "fc": {
+     "j_per_1000_items": 377113
+    },
+    "free": {
+     "j_per_1000_items": 1091411
+    },
+    "constrained": {
+     "j_per_1000_items": 1194429
+    }
+   },
+   "vram_peak_gb": 22.32,
+   "vram_peak_total_gb": 23.55,
+   "fits_24gb": "offloaded",
+   "vram_peak_total_gb_by_mode": {
+    "fc": 19.87,
+    "free": 23.49,
+    "constrained": 23.55
+   },
+   "not_measured": {
+    "prompt": "741 of 1,000 calls failed with ConnectionRefused while the workstation's Ollama service was down on 2026-10-11 (items 0 to 740 of the mode); the retry re-ran fc only"
+   },
+   "retry": {
+    "modes": [
+     "fc"
+    ],
+    "job_id": "20261010-140212-c4-qwen3.8-27b-fc-retry",
+    "vram_peak_gb": 18.06,
+    "vram_peak_total_gb": 19.87
+   }
   },
   {
    "arm": "qwen3-8b",
@@ -312,7 +460,803 @@
    },
    "vram_peak_gb": 6.31,
    "vram_peak_total_gb": 7.47,
-   "fits_24gb": true
+   "fits_24gb": true,
+   "vram_peak_total_gb_by_mode": {
+    "fc": 7.44,
+    "prompt": 7.44,
+    "free": 7.45,
+    "constrained": 7.47
+   }
+  },
+  {
+   "arm": "gemma4-26b",
+   "model": "gemma4:26b (google/gemma-4-26B-A4B-it)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "ollama_digest": "001e5dafc3c7",
+   "quant": "Q4_K_M",
+   "params_b": 25.2,
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live (1,000 items), fc mode (native tool calling)",
+    "value": 0.881,
+    "ci95": [
+     0.861,
+     0.9
+    ],
+    "prompt_mode": 0.947,
+    "prompt_mode_ci95": [
+     0.932,
+     0.96
+    ],
+    "per_category_fc": {
+     "simple_python": 0.9375,
+     "multiple": 0.925,
+     "parallel": 0.8,
+     "parallel_multiple": 0.805
+    },
+    "per_category_prompt": {
+     "simple_python": 0.965,
+     "multiple": 0.93,
+     "parallel": 0.95,
+     "parallel_multiple": 0.925
+    },
+    "unparseable_fc": 0.005,
+    "unparseable_prompt": 0.007,
+    "fc_vs_prompt": {
+     "a_only": 12,
+     "b_only": 78,
+     "p": 0.0
+    },
+    "schema_validity_free": 0.8733,
+    "schema_validity_free_ci95": [
+     0.845,
+     0.8984
+    ],
+    "schema_validity_constrained": 0.9257,
+    "schema_validity_constrained_ci95": [
+     0.9054,
+     0.9459
+    ],
+    "constrained_coverage": 0.9867,
+    "constrained_vs_free": {
+     "a_only": 45,
+     "b_only": 15,
+     "p": 0.0001,
+     "schemas": 592,
+     "free_on_same": 0.875,
+     "constrained": 0.9257,
+     "coverage": 0.9867
+    },
+    "per_subset_free": {
+     "Github_easy": 0.97,
+     "Github_hard": 0.8,
+     "Github_medium": 0.93,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.75,
+     "Kubernetes": 0.82
+    },
+    "per_subset_constrained": {
+     "Github_easy": 0.99,
+     "Github_hard": 0.899,
+     "Github_medium": 0.9394,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.8298,
+     "Kubernetes": 0.92
+    },
+    "vs_best": {
+     "best": "qwen3-14b",
+     "diff": 0.038,
+     "diff_ci95": [
+      0.015,
+      0.061
+     ],
+     "p": 0.004,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "fc": {
+     "ms_median": 251.7,
+     "ms_median_ci95": [
+      246.6412,
+      257.4
+     ],
+     "out_tok_s": 276.5184,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "prompt": {
+     "ms_median": 293.8,
+     "ms_median_ci95": [
+      286.4,
+      300.9
+     ],
+     "out_tok_s": 279.3761,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "free": {
+     "ms_median": 838.5,
+     "ms_median_ci95": [
+      731.64,
+      984.85
+     ],
+     "out_tok_s": 257.657,
+     "failed_calls": 0,
+     "capped": 5,
+     "truncated_prompts": 0
+    },
+    "constrained": {
+     "ms_median": 801.7,
+     "ms_median_ci95": [
+      718.65,
+      915.85
+     ],
+     "out_tok_s": 240.9443,
+     "failed_calls": 10,
+     "capped": 11,
+     "truncated_prompts": 0
+    },
+    "slowdown_constrained_over_free": 0.9561
+   },
+   "energy": {
+    "fc": {
+     "j_per_1000_items": 70208
+    },
+    "prompt": {
+     "j_per_1000_items": 73655
+    },
+    "free": {
+     "j_per_1000_items": 349597
+    },
+    "constrained": {
+     "j_per_1000_items": 327859
+    }
+   },
+   "vram_peak_gb": 18.99,
+   "vram_peak_total_gb": 20.08,
+   "fits_24gb": true,
+   "vram_peak_total_gb_by_mode": {
+    "fc": 20.08,
+    "prompt": 20.08,
+    "free": 20.08,
+    "constrained": 20.08
+   }
+  },
+  {
+   "arm": "gemma4-12b",
+   "model": "gemma4:12b (google/gemma-4-12B-it)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "ollama_digest": "6114515d63c1",
+   "quant": "Q4_K_M",
+   "params_b": 11.9,
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live (1,000 items), fc mode (native tool calling)",
+    "value": 0.877,
+    "ci95": [
+     0.857,
+     0.897
+    ],
+    "prompt_mode": 0.913,
+    "prompt_mode_ci95": [
+     0.895,
+     0.931
+    ],
+    "per_category_fc": {
+     "simple_python": 0.93,
+     "multiple": 0.92,
+     "parallel": 0.785,
+     "parallel_multiple": 0.82
+    },
+    "per_category_prompt": {
+     "simple_python": 0.9125,
+     "multiple": 0.94,
+     "parallel": 0.89,
+     "parallel_multiple": 0.91
+    },
+    "unparseable_fc": 0.003,
+    "unparseable_prompt": 0.001,
+    "fc_vs_prompt": {
+     "a_only": 43,
+     "b_only": 79,
+     "p": 0.0014
+    },
+    "schema_validity_free": 0.805,
+    "schema_validity_free_ci95": [
+     0.7717,
+     0.8367
+    ],
+    "schema_validity_constrained": 0.897,
+    "schema_validity_constrained_ci95": [
+     0.8716,
+     0.9206
+    ],
+    "constrained_coverage": 0.9867,
+    "constrained_vs_free": {
+     "a_only": 71,
+     "b_only": 20,
+     "p": 0.0,
+     "schemas": 592,
+     "free_on_same": 0.8108,
+     "constrained": 0.897,
+     "coverage": 0.9867
+    },
+    "per_subset_free": {
+     "Github_easy": 0.94,
+     "Github_hard": 0.63,
+     "Github_medium": 0.87,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.62,
+     "Kubernetes": 0.8
+    },
+    "per_subset_constrained": {
+     "Github_easy": 0.96,
+     "Github_hard": 0.8384,
+     "Github_medium": 0.9091,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.7872,
+     "Kubernetes": 0.91
+    },
+    "vs_best": {
+     "best": "qwen3-14b",
+     "diff": 0.042,
+     "diff_ci95": [
+      0.02,
+      0.062
+     ],
+     "p": 0.002,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "fc": {
+     "ms_median": 300.1,
+     "ms_median_ci95": [
+      290.895,
+      311.2013
+     ],
+     "out_tok_s": 238.0973,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "prompt": {
+     "ms_median": 405.9,
+     "ms_median_ci95": [
+      395.2,
+      416.2
+     ],
+     "out_tok_s": 224.1726,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "free": {
+     "ms_median": 1033.05,
+     "ms_median_ci95": [
+      919.935,
+      1200.7025
+     ],
+     "out_tok_s": 214.5604,
+     "failed_calls": 0,
+     "capped": 16,
+     "truncated_prompts": 0
+    },
+    "constrained": {
+     "ms_median": 979.5,
+     "ms_median_ci95": [
+      901.8,
+      1100.7
+     ],
+     "out_tok_s": 203.962,
+     "failed_calls": 9,
+     "capped": 22,
+     "truncated_prompts": 0
+    },
+    "slowdown_constrained_over_free": 0.9482
+   },
+   "energy": {
+    "fc": {
+     "j_per_1000_items": 103827
+    },
+    "prompt": {
+     "j_per_1000_items": 119170
+    },
+    "free": {
+     "j_per_1000_items": 659436
+    },
+    "constrained": {
+     "j_per_1000_items": 637302
+    }
+   },
+   "vram_peak_gb": 9.2,
+   "vram_peak_total_gb": 10.29,
+   "fits_24gb": true,
+   "vram_peak_total_gb_by_mode": {
+    "fc": 10.29,
+    "prompt": 10.29,
+    "free": 10.29,
+    "constrained": 10.29
+   }
+  },
+  {
+   "arm": "granite4-3b",
+   "model": "granite4:micro, same weights as granite4:3b (ibm-granite/granite-4.0-micro)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "ollama_digest": "89962fcc7523",
+   "quant": "Q4_K_M",
+   "params_b": 3.4,
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live (1,000 items), fc mode (native tool calling)",
+    "value": 0.869,
+    "ci95": [
+     0.849,
+     0.889
+    ],
+    "prompt_mode": 0.77,
+    "prompt_mode_ci95": [
+     0.744,
+     0.796
+    ],
+    "per_category_fc": {
+     "simple_python": 0.885,
+     "multiple": 0.935,
+     "parallel": 0.835,
+     "parallel_multiple": 0.805
+    },
+    "per_category_prompt": {
+     "simple_python": 0.845,
+     "multiple": 0.79,
+     "parallel": 0.655,
+     "parallel_multiple": 0.715
+    },
+    "unparseable_fc": 0.0,
+    "unparseable_prompt": 0.113,
+    "fc_vs_prompt": {
+     "a_only": 172,
+     "b_only": 73,
+     "p": 0.0
+    },
+    "schema_validity_free": 0.7333,
+    "schema_validity_free_ci95": [
+     0.6967,
+     0.77
+    ],
+    "schema_validity_constrained": 0.8953,
+    "schema_validity_constrained_ci95": [
+     0.8716,
+     0.9206
+    ],
+    "constrained_coverage": 0.9867,
+    "constrained_vs_free": {
+     "a_only": 101,
+     "b_only": 10,
+     "p": 0.0,
+     "schemas": 592,
+     "free_on_same": 0.7416,
+     "constrained": 0.8953,
+     "coverage": 0.9867
+    },
+    "per_subset_free": {
+     "Github_easy": 0.86,
+     "Github_hard": 0.48,
+     "Github_medium": 0.76,
+     "Glaiveai2K": 0.94,
+     "JsonSchemaStore": 0.54,
+     "Kubernetes": 0.82
+    },
+    "per_subset_constrained": {
+     "Github_easy": 0.96,
+     "Github_hard": 0.8283,
+     "Github_medium": 0.8687,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.7447,
+     "Kubernetes": 0.99
+    },
+    "vs_best": {
+     "best": "qwen3-14b",
+     "diff": 0.05,
+     "diff_ci95": [
+      0.027,
+      0.073
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "fc": {
+     "ms_median": 222.65,
+     "ms_median_ci95": [
+      216.3,
+      232.5
+     ],
+     "out_tok_s": 250.5609,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "prompt": {
+     "ms_median": 159.75,
+     "ms_median_ci95": [
+      152.9,
+      167.75
+     ],
+     "out_tok_s": 248.3046,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "free": {
+     "ms_median": 533.55,
+     "ms_median_ci95": [
+      447.285,
+      636.8963
+     ],
+     "out_tok_s": 237.0613,
+     "failed_calls": 0,
+     "capped": 10,
+     "truncated_prompts": 0
+    },
+    "constrained": {
+     "ms_median": 449.7,
+     "ms_median_ci95": [
+      401.19,
+      527.405
+     ],
+     "out_tok_s": 228.6162,
+     "failed_calls": 8,
+     "capped": 6,
+     "truncated_prompts": 0
+    },
+    "slowdown_constrained_over_free": 0.8428
+   },
+   "energy": {
+    "fc": {
+     "j_per_1000_items": 75992
+    },
+    "prompt": {
+     "j_per_1000_items": 51966
+    },
+    "free": {
+     "j_per_1000_items": 403229
+    },
+    "constrained": {
+     "j_per_1000_items": 318523
+    }
+   },
+   "vram_peak_gb": 3.12,
+   "vram_peak_total_gb": 4.22,
+   "fits_24gb": true,
+   "vram_peak_total_gb_by_mode": {
+    "fc": 4.21,
+    "prompt": 4.21,
+    "free": 4.22,
+    "constrained": 4.22
+   }
+  },
+  {
+   "arm": "mistral-small-3.2",
+   "model": "mistral-small3.2:24b (mistralai/Mistral-Small-3.2-24B-Instruct-2506)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "ollama_digest": "5a408ab55df5",
+   "quant": "Q4_K_M",
+   "params_b": 24.0,
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live (1,000 items), fc mode (native tool calling)",
+    "value": 0.816,
+    "ci95": [
+     0.791,
+     0.84
+    ],
+    "prompt_mode": 0.934,
+    "prompt_mode_ci95": [
+     0.919,
+     0.949
+    ],
+    "per_category_fc": {
+     "simple_python": 0.83,
+     "multiple": 0.865,
+     "parallel": 0.81,
+     "parallel_multiple": 0.745
+    },
+    "per_category_prompt": {
+     "simple_python": 0.945,
+     "multiple": 0.945,
+     "parallel": 0.93,
+     "parallel_multiple": 0.905
+    },
+    "unparseable_fc": 0.05,
+    "unparseable_prompt": 0.003,
+    "fc_vs_prompt": {
+     "a_only": 8,
+     "b_only": 126,
+     "p": 0.0
+    },
+    "schema_validity_free": 0.8133,
+    "schema_validity_free_ci95": [
+     0.7783,
+     0.8417
+    ],
+    "schema_validity_constrained": 0.9274,
+    "schema_validity_constrained_ci95": [
+     0.9071,
+     0.9476
+    ],
+    "constrained_coverage": 0.9867,
+    "constrained_vs_free": {
+     "a_only": 81,
+     "b_only": 16,
+     "p": 0.0,
+     "schemas": 592,
+     "free_on_same": 0.8176,
+     "constrained": 0.9274,
+     "coverage": 0.9867
+    },
+    "per_subset_free": {
+     "Github_easy": 0.95,
+     "Github_hard": 0.67,
+     "Github_medium": 0.9,
+     "Glaiveai2K": 0.96,
+     "JsonSchemaStore": 0.63,
+     "Kubernetes": 0.77
+    },
+    "per_subset_constrained": {
+     "Github_easy": 0.99,
+     "Github_hard": 0.8687,
+     "Github_medium": 0.9495,
+     "Glaiveai2K": 0.98,
+     "JsonSchemaStore": 0.8085,
+     "Kubernetes": 0.96
+    },
+    "vs_best": {
+     "best": "qwen3-14b",
+     "diff": 0.103,
+     "diff_ci95": [
+      0.08,
+      0.129
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "fc": {
+     "ms_median": 725.9,
+     "ms_median_ci95": [
+      703.7713,
+      757.0962
+     ],
+     "out_tok_s": 59.5449,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "prompt": {
+     "ms_median": 611.85,
+     "ms_median_ci95": [
+      587.3937,
+      632.4
+     ],
+     "out_tok_s": 59.6582,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "free": {
+     "ms_median": 2793.55,
+     "ms_median_ci95": [
+      2308.1575,
+      3133.55
+     ],
+     "out_tok_s": 54.6771,
+     "failed_calls": 0,
+     "capped": 11,
+     "truncated_prompts": 0
+    },
+    "constrained": {
+     "ms_median": 2217.5,
+     "ms_median_ci95": [
+      1859.4,
+      2506.4
+     ],
+     "out_tok_s": 56.6392,
+     "failed_calls": 9,
+     "capped": 15,
+     "truncated_prompts": 0
+    },
+    "slowdown_constrained_over_free": 0.7938
+   },
+   "energy": {
+    "fc": {
+     "j_per_1000_items": 399689
+    },
+    "prompt": {
+     "j_per_1000_items": 287759
+    },
+    "free": {
+     "j_per_1000_items": 2011105
+    },
+    "constrained": {
+     "j_per_1000_items": 1800125
+    }
+   },
+   "vram_peak_gb": 16.2,
+   "vram_peak_total_gb": 17.3,
+   "fits_24gb": true,
+   "vram_peak_total_gb_by_mode": {
+    "fc": 17.05,
+    "prompt": 17.12,
+    "free": 17.3,
+    "constrained": 17.3
+   }
+  },
+  {
+   "arm": "gpt-oss-20b",
+   "model": "gpt-oss:20b (openai/gpt-oss-20b)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "finished": true,
+   "ollama_digest": "f38aa0c53da5",
+   "quant": "MXFP4",
+   "params_b": 20.9,
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live (1,000 items), fc mode (native tool calling)",
+    "value": 0.508,
+    "ci95": [
+     0.479,
+     0.539
+    ],
+    "prompt_mode": 0.012,
+    "prompt_mode_ci95": [
+     0.006,
+     0.019
+    ],
+    "per_category_fc": {
+     "simple_python": 0.8425,
+     "multiple": 0.855,
+     "parallel": 0.0,
+     "parallel_multiple": 0.0
+    },
+    "per_category_prompt": {
+     "simple_python": 0.0,
+     "multiple": 0.0,
+     "parallel": 0.025,
+     "parallel_multiple": 0.035
+    },
+    "unparseable_fc": 0.02,
+    "unparseable_prompt": 0.012,
+    "fc_vs_prompt": {
+     "a_only": 508,
+     "b_only": 12,
+     "p": 0.0
+    },
+    "schema_validity_free": 0.7933,
+    "schema_validity_free_ci95": [
+     0.7583,
+     0.825
+    ],
+    "schema_validity_constrained": 0.9003,
+    "schema_validity_constrained_ci95": [
+     0.875,
+     0.924
+    ],
+    "constrained_coverage": 0.9867,
+    "constrained_vs_free": {
+     "a_only": 76,
+     "b_only": 13,
+     "p": 0.0,
+     "schemas": 592,
+     "free_on_same": 0.7939,
+     "constrained": 0.9003,
+     "coverage": 0.9867
+    },
+    "per_subset_free": {
+     "Github_easy": 0.98,
+     "Github_hard": 0.52,
+     "Github_medium": 0.85,
+     "Glaiveai2K": 0.94,
+     "JsonSchemaStore": 0.64,
+     "Kubernetes": 0.83
+    },
+    "per_subset_constrained": {
+     "Github_easy": 0.99,
+     "Github_hard": 0.8586,
+     "Github_medium": 0.9495,
+     "Glaiveai2K": 0.97,
+     "JsonSchemaStore": 0.734,
+     "Kubernetes": 0.89
+    },
+    "vs_best": {
+     "best": "qwen3-14b",
+     "diff": 0.411,
+     "diff_ci95": [
+      0.38,
+      0.443
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    }
+   },
+   "speed": {
+    "fc": {
+     "ms_median": 333.6,
+     "ms_median_ci95": [
+      330.7,
+      336.8512
+     ],
+     "out_tok_s": 185.0642,
+     "failed_calls": 0,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "prompt": {
+     "ms_median": 373.2,
+     "ms_median_ci95": [
+      367.3,
+      379.8
+     ],
+     "out_tok_s": 184.2514,
+     "failed_calls": 3,
+     "capped": 0,
+     "truncated_prompts": 0
+    },
+    "free": {
+     "ms_median": 676.0,
+     "ms_median_ci95": [
+      611.4987,
+      763.9
+     ],
+     "out_tok_s": 178.102,
+     "failed_calls": 0,
+     "capped": 22,
+     "truncated_prompts": 0
+    },
+    "constrained": {
+     "ms_median": 668.2,
+     "ms_median_ci95": [
+      613.0337,
+      731.4688
+     ],
+     "out_tok_s": 171.1352,
+     "failed_calls": 8,
+     "capped": 32,
+     "truncated_prompts": 0
+    },
+    "slowdown_constrained_over_free": 0.9885
+   },
+   "energy": {
+    "fc": {
+     "j_per_1000_items": 108954
+    },
+    "prompt": {
+     "j_per_1000_items": 108675
+    },
+    "free": {
+     "j_per_1000_items": 551340
+    },
+    "constrained": {
+     "j_per_1000_items": 617495
+    }
+   },
+   "vram_peak_gb": 12.58,
+   "vram_peak_total_gb": 13.67,
+   "fits_24gb": true,
+   "vram_peak_total_gb_by_mode": {
+    "fc": 13.67,
+    "prompt": 13.67,
+    "free": 13.67,
+    "constrained": 13.67
+   }
   }
  ]
 }
