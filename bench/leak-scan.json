@@ -129,8 +129,8 @@
         "reason": "capability map (plan/ROADMAP.md): one aggregated row per measured capability test"
       },
       {
-        "path": "^bench/c[0-9]+/([a-z0-9_-]+\\.(py|sh|mjs)|README\\.md)$",
-        "reason": "runners, data preparation, field scoring and PC notes of the capability tests"
+        "path": "^bench/[ct][0-9]+/([a-z0-9_-]+\\.(py|sh|mjs|bat)|README\\.md)$",
+        "reason": "runners, data preparation, scoring and PC notes of the capability tests (C) and the T tests; .bat files are the CPU-only preparation steps on the workstation (no account or user path)"
       },
       {
         "path": "^bench/(leak-scan\\.json|local\\.env\\.example)$",
@@ -173,9 +173,9 @@
   "leaks": [
     {
       "pattern": "mail",
-      "path": "^(cases/(route1|ex1)/|requests/route1/|reference/ex1/|results/(route1|ex1)/[^/]+/)[^/]+\\.jsonl$",
+      "path": "^(cases/(route1|ex1|t9)/|requests/route1/|reference/ex1/|results/(route1|ex1|t2|t9|t10)/[^/]+/)[^/]+\\.jsonl$",
       "match": "^gmail$",
-      "reason": "MASSIVE utterances (CC BY 4.0, Amazon) mention Gmail as an app and in dictated mail addresses such as 'joseph at gmail dot com'; dataset text and model outputs over it, no real address"
+      "reason": "MASSIVE utterances (CC BY 4.0, Amazon) mention Gmail as an app and in dictated mail addresses such as 'joseph at gmail dot com'; dataset text and model outputs over it, no real address; cases/t9 holds perturbed copies of the same MASSIVE utterances"
     },
     {
       "pattern": "address",
@@ -212,6 +212,26 @@
       "pattern": "api-key",
       "path": "^(cases/c4/[a-z-]+\\.jsonl|results/c4/[^/]+/[^/]+\\.jsonl)$",
       "reason": "JSONSchemaBench schema descriptions that show the PEM frame of a private key around a placeholder word; no key material"
+    },
+    {
+      "pattern": "address",
+      "path": "^(cases/c9/docs\\.jsonl|results/c9/[^/]+/[^/]+\\.jsonl)$",
+      "reason": "Gretel synthetic_pii_finance_multilingual (Apache-2.0): LLM-generated German finance documents whose personal data is invented by design (the C9 test is to find it), and the C9 result rows over them: made-up mail addresses, mostly example.com and invented company domains"
+    },
+    {
+      "pattern": "api-key",
+      "path": "^(cases/c9/docs\\.jsonl|results/c9/[^/]+/[^/]+\\.jsonl)$",
+      "reason": "Gretel synthetic_pii_finance_multilingual (Apache-2.0): LLM-generated German finance documents whose personal data is invented by design (the C9 test is to find it), and the C9 result rows over them: invented API keys in provider formats (labelled api_key in the gold), not issued keys"
+    },
+    {
+      "pattern": "host",
+      "path": "^(cases/c9/docs\\.jsonl|results/c9/[^/]+/[^/]+\\.jsonl)$",
+      "reason": "Gretel synthetic_pii_finance_multilingual (Apache-2.0): LLM-generated German finance documents whose personal data is invented by design (the C9 test is to find it), and the C9 result rows over them: invented IP addresses (labelled ipv4 in the gold), no lab machine"
+    },
+    {
+      "pattern": "mail",
+      "path": "^(cases/c9/docs\\.jsonl|results/c9/[^/]+/[^/]+\\.jsonl)$",
+      "reason": "Gretel synthetic_pii_finance_multilingual (Apache-2.0): LLM-generated German finance documents whose personal data is invented by design (the C9 test is to find it), and the C9 result rows over them: the documents name Gmail as a mail provider"
     }
   ],
   "structured": [
@@ -240,6 +260,11 @@
       "path": "^results/[a-z0-9]+/jev/[^/]+\\.jsonl$",
       "at": "^line [0-9]+\\.(arm|arm_version|host)$",
       "reason": "Jev result rows, published with TypeSafe's permission of 2026-10-10; arm, version and host name Jev by design"
+    },
+    {
+      "path": "^cases/t9/requests\\.jsonl$",
+      "at": "^line [0-9]+\\.request\\.model$",
+      "reason": "perturbed copies of the route1 request bodies (requests/ is exempt for the same reason): the model field addresses Jev, it is a question, not an answer"
     }
   ],
   "jevRows": {

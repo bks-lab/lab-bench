@@ -1,0 +1,33 @@
+{
+ "test": "C9",
+ "arm": "gliner2.5-multi",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "D:\\gliner-bench\\.venv\\Scripts\\python.exe",
+  "bench/c9/run_c9.py",
+  "--arm",
+  "gliner2.5-multi",
+  "--data",
+  "{data}\\c9",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1",
+  "HF_HOME": "{hf}",
+  "HF_HUB_OFFLINE": "1",
+  "TRANSFORMERS_OFFLINE": "1"
+ },
+ "timeout_min": 30,
+ "expected_gpu_min": 5,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [
+  "C9-regex"
+ ],
+ "requested_by": "prep-agent",
+ "note": "gliner2 2.0.0 venv of the ex1 arm"
+}

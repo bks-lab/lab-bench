@@ -1,0 +1,35 @@
+{
+ "test": "T2",
+ "arm": "qwen3.8-27b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/t2/run_route.py",
+  "--arm",
+  "qwen3.8-27b",
+  "--model",
+  "qwen3.8:27b",
+  "--template",
+  "chatml",
+  "--lang",
+  "de",
+  "--passes",
+  "plain,shuffled",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 129,
+ "expected_gpu_min": 43,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [
+  "T2-sanity-winnow-12b"
+ ],
+ "requested_by": "prep-agent"
+}

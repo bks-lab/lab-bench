@@ -1,0 +1,30 @@
+{
+ "test": "C9",
+ "arm": "regex",
+ "gpu": false,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/c9/run_c9.py",
+  "--arm",
+  "regex",
+  "--data",
+  "{data}\\c9",
+  "--out",
+  "{out}",
+  "--gate",
+  "0.95"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 10,
+ "expected_gpu_min": 0,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [],
+ "requested_by": "prep-agent",
+ "note": "sanity arm: regex recall on gold email spans >= 0.95, else exit 3 (plan/c9.md, notes of 2026-10-12)"
+}

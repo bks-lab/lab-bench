@@ -1,0 +1,35 @@
+{
+ "test": "T2",
+ "arm": "gemma4-12b",
+ "gpu": true,
+ "cwd": "{src}",
+ "cmd": [
+  "{py}",
+  "bench/t2/run_route.py",
+  "--arm",
+  "gemma4-12b",
+  "--model",
+  "gemma4:12b",
+  "--template",
+  "gemma4",
+  "--lang",
+  "de",
+  "--passes",
+  "plain,shuffled",
+  "--out",
+  "{out}"
+ ],
+ "env": {
+  "PYTHONUTF8": "1"
+ },
+ "timeout_min": 51,
+ "expected_gpu_min": 17,
+ "outputs": [
+  "{out}\\result.jsonl",
+  "{out}\\meta.json"
+ ],
+ "after_ok": [
+  "T2-sanity-winnow-12b"
+ ],
+ "requested_by": "prep-agent"
+}

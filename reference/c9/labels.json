@@ -1,0 +1,76 @@
+{
+ "design": "plan/c9.md (Data, Candidates; notes of 2026-10-12)",
+ "comment": "Fixed before any C9 run. `map` sends every Gretel label of the train split to one of the seven bench types; `dropped` lists the labels that are not personal data in the DSGVO sense or are secrets rather than identifiers, with the reason. Dropped labels leave gold and predictions alike: a prediction is only scored if it carries one of the seven types.",
+ "types": ["person", "address", "email", "phone", "iban_account", "id_number", "date_of_birth"],
+ "map": {
+  "name": "person",
+  "first_name": "person",
+  "last_name": "person",
+  "street_address": "address",
+  "local_latlng": "address",
+  "email": "email",
+  "phone_number": "phone",
+  "iban": "iban_account",
+  "bban": "iban_account",
+  "credit_card_number": "iban_account",
+  "ssn": "id_number",
+  "customer_id": "id_number",
+  "employee_id": "id_number",
+  "passport_number": "id_number",
+  "driver_license_number": "id_number",
+  "user_name": "id_number",
+  "ipv4": "id_number",
+  "ipv6": "id_number",
+  "date_of_birth": "date_of_birth"
+ },
+ "dropped": {
+  "company": "a company, not a natural person",
+  "date": "a generic date (dates of birth have their own label)",
+  "time": "a time of day",
+  "date_time": "a generic timestamp",
+  "swift_bic_code": "identifies a bank, not a person",
+  "bank_routing_number": "identifies a bank, not a person",
+  "api_key": "a secret, not an identifier of a person",
+  "password": "a secret, not an identifier of a person",
+  "account_pin": "a secret, not an identifier of a person",
+  "credit_card_security_code": "a secret, not an identifier of a person"
+ },
+ "notes": {
+  "local_latlng": "geo coordinates of a place; location data of a person under Art. 4(1) DSGVO, counted as address",
+  "user_name, ipv4, ipv6": "online identifiers under Art. 4(1) DSGVO and recital 30, counted as id_number"
+ },
+ "gliner_labels": {
+  "person name": "person",
+  "Name einer Person": "person",
+  "address": "address",
+  "Adresse": "address",
+  "email address": "email",
+  "E-Mail-Adresse": "email",
+  "phone number": "phone",
+  "Telefonnummer": "phone",
+  "bank account or card number": "iban_account",
+  "Konto- oder Kartennummer": "iban_account",
+  "personal identification number": "id_number",
+  "Ausweis- oder Kennnummer": "id_number",
+  "date of birth": "date_of_birth",
+  "Geburtsdatum": "date_of_birth"
+ },
+ "llm_types": {
+  "person": "Name einer natürlichen Person (Vor- und/oder Nachname)",
+  "address": "Postanschrift oder Standort einer Person (Straße, Hausnummer, Ort, Koordinaten)",
+  "email": "E-Mail-Adresse",
+  "phone": "Telefon- oder Faxnummer",
+  "iban_account": "IBAN, Kontonummer oder Kreditkartennummer",
+  "id_number": "Kennnummer einer Person: Steuer-ID, Sozialversicherungsnummer, Kunden- oder Personalnummer, Pass- oder Führerscheinnummer, Benutzername, IP-Adresse",
+  "date_of_birth": "Geburtsdatum"
+ },
+ "presidio_entities": {
+  "PERSON": "person",
+  "LOCATION": "address",
+  "EMAIL_ADDRESS": "email",
+  "PHONE_NUMBER": "phone",
+  "IBAN_CODE": "iban_account",
+  "CREDIT_CARD": "iban_account",
+  "IP_ADDRESS": "id_number"
+ }
+}
