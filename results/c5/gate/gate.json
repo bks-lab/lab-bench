@@ -1,0 +1,21 @@
+{
+ "reference": {
+  "de-en": 66.7,
+  "en-de": 63.63
+ },
+ "tolerance": 1.5,
+ "sacrebleu": "2.6.0",
+ "directions": {
+  "de-en": {
+   "chrf": 66.66231043866316,
+   "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0",
+   "passed": true
+  },
+  "en-de": {
+   "chrf": 63.60484757450012,
+   "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0",
+   "passed": true
+  }
+ },
+ "passed": true
+}

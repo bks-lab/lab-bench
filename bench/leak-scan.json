@@ -125,6 +125,14 @@
         "reason": "capability tests C4 to C9: the same files as C1 to C3, plus the queue status of a retry job and the layer counts of every model load read from the job's llama-server log (layers.json); PC paths, host name and the Ollama build path removed by bench/score-cap.py"
       },
       {
+        "path": "^results/c5/(score\\.json|gate/gate\\.json)$",
+        "reason": "C5 scores per arm and direction (chrF++, BLEU, COMET, paired bootstrap) and the OPUS-MT sanity gate; numbers only, the FLORES+ sentences and the translations are gated, ShareAlike and stay out of the repository (plan/c5.md)"
+      },
+      {
+        "path": "^results/t(2|9|10)/(score\\.json|[a-z0-9.-]+/(meta|queue-status)\\.json)$",
+        "reason": "T2, T9 and T10: scores, and per arm the runner meta and queue status (versions, timings, GPU totals; PC paths and host name removed by bench/import-t.py); the result rows are the compact dated JSONL files already allowed above"
+      },
+      {
         "path": "^results/capabilities\\.json$",
         "reason": "capability map (plan/ROADMAP.md): one aggregated row per measured capability test"
       },

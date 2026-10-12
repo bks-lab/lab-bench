@@ -182,6 +182,49 @@
    "unfinished": []
   },
   {
+   "id": "C5",
+   "capability": "translation German to English and English to German",
+   "design": "plan/c5.md",
+   "report": "results/c5/findings.md",
+   "best_local_model": "gemma4-12b",
+   "best_by_value": "gemma4-26b",
+   "tie": {
+    "top_by_value": "gemma4-26b",
+    "next": "gemma4-12b",
+    "note": "the paired test does not separate the two in either direction; the one with less peak VRAM is shown"
+   },
+   "licence_class": "open source",
+   "quality": {
+    "metric": "chrF++ on FLORES+ devtest (mean of de-en and en-de, 0 to 100)",
+    "value": 66.5,
+    "ci95": [
+     65.69,
+     67.31
+    ],
+    "baseline": "source copied as the translation",
+    "baseline_value": 19.83,
+    "reference": "OPUS-MT leaderboard opus-2020-02-26 on flores101-devtest, plain chrF 66.70 de-en and 63.63 en-de (sanity gate, tolerance 1.5)",
+    "reference_ours": 65.13
+   },
+   "speed": {
+    "unit": "segments per second at batch 1",
+    "value": 4.19
+   },
+   "vram_peak_gb": 8.72,
+   "energy": {
+    "unit": "GPU joules per 1,000 segments",
+    "value": 73847
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "gemma4-12b",
+    "value": 66.5,
+    "vram_peak_gb": 8.72,
+    "rule": "smallest peak VRAM among the arms the paired test does not separate from the best (p >= 0.05 in both directions)"
+   },
+   "unfinished": []
+  },
+  {
    "id": "C6",
    "capability": "German reading comprehension (answer from a passage)",
    "design": "plan/c6.md",

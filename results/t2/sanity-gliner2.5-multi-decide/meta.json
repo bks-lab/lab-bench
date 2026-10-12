@@ -1,0 +1,39 @@
+{
+ "arm": "gliner2.5-multi-decide",
+ "job_id": "20261012-105822-t2-sanity-gliner2.5-multi-decide",
+ "requests": "requests/route1/requests.jsonl",
+ "lang": "de",
+ "limit": 250,
+ "passes": [
+  "plain"
+ ],
+ "shuffle_seed": 1002,
+ "n_requests": 250,
+ "mock": false,
+ "sections": [
+  {
+   "name": "timed-plain",
+   "start": "2026-10-12T11:01:50.492+02:00",
+   "end": "2026-10-12T11:01:58.440+02:00",
+   "items": 500,
+   "errors": 0,
+   "low_mass": 0,
+   "seconds": 7.9
+  }
+ ],
+ "started": "2026-10-12T11:01:34.319+02:00",
+ "requests_sha256": "3a78a8f48c141c3fb9b85505d501b173e8790988659eca2083ff75f4f82f342f",
+ "gliner": "fastino/GLiNER2.5-multi-Decide",
+ "revision": "e173bca1f0c4217d7a55b3b0c705d5ece8a0218d",
+ "mode": "prompt",
+ "load_s": 12.289692500000001,
+ "runtime": "gliner2 2.0.0, torch 2.11.0+cu128, cuda",
+ "gate": {
+  "rule": "plain-pass choices agree with results/route1/gliner2.5-multi-decide/2026-10-09-run1.jsonl",
+  "minimum": 0.99,
+  "value": 1.0,
+  "questions": 500,
+  "passed": true
+ },
+ "finished": "2026-10-12T11:01:58.440+02:00"
+}

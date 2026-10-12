@@ -1,0 +1,39 @@
+{
+ "start": "2026-10-12T11:31:38+02:00",
+ "end": "2026-10-12T11:38:37+02:00",
+ "exit_code": 0,
+ "reason": "",
+ "expected_gpu_min": 10,
+ "gpu": {
+  "samples": 414,
+  "first": "2026/10/12 11:31:39.688",
+  "last": "2026/10/12 11:38:36.855",
+  "idle_mem_mib": 1983.0,
+  "peak_mem_mib": 12597.0,
+  "peak_over_idle_mib": 10614.0,
+  "energy_j": 75981.4,
+  "mean_power_w": 183.5,
+  "gpu_min": 6.9,
+  "note": "GPU only, whole job incl. model load; 1 s samples"
+ },
+ "machine": {
+  "label": "local-rtx4090",
+  "recorded_at": "2026-10-12T11:31:39+02:00",
+  "gpu_query": "name,driver_version,power.limit,clocks.gr,clocks.mem,memory.total (clocks at job start)",
+  "gpu": "NVIDIA GeForce RTX 4090, 617.42, 450.00 W, 300 MHz, 810 MHz, 24564 MiB",
+  "cuda_version": "13.4",
+  "os": "Windows 11 10.0.26300",
+  "cpu": "AMD Ryzen 9 7900 12-Core Processor",
+  "ram_gb": 127.2,
+  "ollama_version": "0.35.0",
+  "job_python": "3.12.10",
+  "runner_python": "3.12.10"
+ },
+ "id": "20261012-105839-t10-gliner2.5-multi-decide",
+ "key": "T10-gliner2.5-multi-decide",
+ "test": "T10",
+ "arm": "gliner2.5-multi-decide",
+ "ok": true,
+ "repo_ref": "71cebd899ebafd0b44d5799e368ba833f8de8f8f",
+ "requested_by": "prep-agent"
+}

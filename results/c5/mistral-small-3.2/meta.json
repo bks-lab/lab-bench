@@ -1,0 +1,111 @@
+{
+ "test": "C5",
+ "arm": "mistral-small-3.2",
+ "job_id": "20261012-105903-c5-mistral-small-3.2",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "manifest_sha256": "253927c4dca3d761890919e193d9ea7a4cd034138827b356dc59032d814d5a0d",
+  "files": {
+   "deu_Latn": {
+    "file": "devtest/deu_Latn.jsonl",
+    "sha256": "d221bb2bd72b2ec433fd6b93d25045acbef3038eb0b61b7f6315ba1bb3585d6a"
+   },
+   "eng_Latn": {
+    "file": "devtest/eng_Latn.jsonl",
+    "sha256": "afa116a2ffb7de95aa320c11c229301d76a8108cba3125744c10304ffaa128bd"
+   }
+  }
+ },
+ "sections": [
+  {
+   "name": "warmup",
+   "start": "2026-10-12T15:43:53.265+02:00",
+   "end": "2026-10-12T15:44:06.667+02:00"
+  },
+  {
+   "name": "timed-de-en",
+   "start": "2026-10-12T15:44:06.667+02:00",
+   "items": 1012,
+   "batch": 1,
+   "ps_before": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 14581938257,
+     "size_vram": 14581938257,
+     "context_length": 2048
+    }
+   ],
+   "end": "2026-10-12T15:52:51.815+02:00"
+  },
+  {
+   "name": "timed-en-de",
+   "start": "2026-10-12T15:52:51.815+02:00",
+   "items": 1012,
+   "batch": 1,
+   "ps_before": [
+    {
+     "name": "mistral-small3.2:24b",
+     "size": 14581938257,
+     "size_vram": 14581938257,
+     "context_length": 2048
+    }
+   ],
+   "end": "2026-10-12T16:03:40.063+02:00"
+  }
+ ],
+ "started": "2026-10-12T15:43:53.122+02:00",
+ "ollama_tag": "mistral-small3.2:24b",
+ "model": {
+  "tag": "mistral-small3.2:24b",
+  "digest": "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b",
+  "size": 15177384862,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "mistral3",
+   "families": [
+    "mistral3"
+   ],
+   "parameter_size": "24.0B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 131072,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "41a5b0c36a28a3a0480ce2e4007d3a21e3298be70e2b9a103960581412997dca"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools"
+  ],
+  "context_length": 131072,
+  "template_sha256": "706c4d1164f7f1bbce2a852f2bc9cfa66b98d24f79300b9034388e07fcda98c8"
+ },
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 2048,
+  "num_predict": 512
+ },
+ "instruction": {
+  "de-en": "Translate the following German text into English. Output only the translation.",
+  "en-de": "Translate the following English text into German. Output only the translation."
+ },
+ "think": "not supported by the model",
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "summary": {
+  "segments": 2024,
+  "errors": 0,
+  "empty": 0,
+  "median_s": {
+   "de-en": 0.4941,
+   "en-de": 0.6197999999999999
+  }
+ },
+ "finished": "2026-10-12T16:03:40.086+02:00"
+}

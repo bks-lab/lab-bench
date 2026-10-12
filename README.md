@@ -119,14 +119,38 @@ run, see its findings):
   tokens; models whose 16 caches no longer fit next to the weights (for
   example gemma4-12b: 397.0 tokens per second at 8 clients, 146.2 at 16)
   fall back. [findings.md](results/c8/findings.md)
+- **C5 translation German and English:** on FLORES+ devtest (1,012 sentences
+  per direction) gemma4-26b (chrF++ 68.1 de to en, 65.5 en to de) and
+  gemma4-12b (67.9, 65.1) lead and are not separated (p 0.060 and 0.053); the
+  capability map shows gemma4-12b (8.7 GB). The dedicated opus-mt is 3 to 4
+  points behind but runs at 6 segments per second at batch 1 and 85 at batch
+  32 on 1.9 GB. The translations are not committed (gated, ShareAlike), only
+  the scores. [findings.md](results/c5/findings.md)
 - Capability map: [results/capabilities.json](results/capabilities.json),
   per-arm chart data in `results/c1/summary.json` to
-  `results/c8/summary.json`.
+  `results/c8/summary.json` (and `results/c5/summary.json`).
 
-Not measured yet: **C5 translation** and **C9 personal data detection**.
-Both have a committed design ([plan/c5.md](plan/c5.md),
-[plan/c9.md](plan/c9.md)) and are `planned` in the tool map; C5 and C9
-are listed in the run order of [plan/ROADMAP.md](plan/ROADMAP.md).
+Not measured yet: **C9 personal data detection**. It has a committed design
+([plan/c9.md](plan/c9.md)) and is `planned` in the tool map; it is listed in
+the run order of [plan/ROADMAP.md](plan/ROADMAP.md).
+
+### Short tests on route1 (T2, T9, T10)
+
+- **T2 stability under shuffled options:** when only the option order
+  changes, the local LLMs change 5.7 % (qwen3.8-27b), 7.8 % (winnow-12b) and
+  9.1 % (gemma4-12b) of their answers, mostly in the 18-option scenario
+  question (10 to 14 %); the same call on a later day gives identical choices
+  (0.0 % flips). GLiNER Decide flips 0 of 5,948 (read the caveat in the
+  report). [findings.md](results/t2/findings.md)
+- **T9 typos and colloquial wording:** typos cost every arm 3.0 to 4.2
+  points on MASSIVE de (all intervals exclude zero); missing umlauts and
+  colloquial contractions cost 1.8 points or less, and GLiNER flips the most
+  answers (18.2 % under typos). The perturbations are rule-based.
+  [findings.md](results/t9/findings.md)
+- **T10 throughput with batching:** GLiNER Decide goes from 69.8 decisions per
+  second at batch 1 to 399.5 at batch 8 (5.7 times, identical answers);
+  batches 32 and 128 are slower (380.6 and 354.4).
+  [findings.md](results/t10/findings.md)
 
 ## Tool map
 
@@ -204,6 +228,8 @@ cannot be fitted to the results. The first one is
 | `bench/run-local-extract.mjs`, `bench/run-gliner-extract.py` | ex1 arms: local LLM with JSON output, GLiNER2 entity extraction |
 | `bench/score-route.mjs`, `bench/score-extract.mjs` | route1 and ex1 scorers, reports in `results/route1/` and `results/ex1/` |
 | `bench/toolmap.mjs`, `plan/toolmap-plan.yaml` | tool map generator and its register, see Tool map |
+| `bench/c5/`, `bench/cap_c5.py` | C5 translation: runners, COMET, scorer on the Mac (`score_c5.py`) and the capability row; only scores are committed |
+| `bench/t2/`, `bench/t9/`, `bench/t10/`, `bench/import-t.py` | T2, T9, T10: runners and scorer; `import-t.py` keeps compact rows (line, question, pass, choice) in `results/t2/`, `results/t9/`, `results/t10/` |
 | `plan/` | dated test designs, committed before the run |
 | `bench/judge-server.mjs`, `bench/judge.html` | blind reference judgment: `node bench/judge-server.mjs`, then http://localhost:4350/ (English cases and labels) or http://localhost:4350/?lang=de (German). Listens on 127.0.0.1 only. Never shows a model answer, saves every item at once, resumes where you stopped |
 | `reference/<pv>/` | blind reference judgment, `<judge>.<lang>.jsonl`, judges and models in `judges.json`. pv1: claude-a and claude-b (de), claude-c (en), all `claude-opus-5-5`, 2026-10-01; sonnet-a, fable-a and adjudicated-a (de), 2026-10-02 |

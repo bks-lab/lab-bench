@@ -1,0 +1,109 @@
+{
+ "test": "C5",
+ "arm": "eurollm-9b",
+ "job_id": "20261012-105905-c5-eurollm-9b",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "manifest_sha256": "253927c4dca3d761890919e193d9ea7a4cd034138827b356dc59032d814d5a0d",
+  "files": {
+   "deu_Latn": {
+    "file": "devtest/deu_Latn.jsonl",
+    "sha256": "d221bb2bd72b2ec433fd6b93d25045acbef3038eb0b61b7f6315ba1bb3585d6a"
+   },
+   "eng_Latn": {
+    "file": "devtest/eng_Latn.jsonl",
+    "sha256": "afa116a2ffb7de95aa320c11c229301d76a8108cba3125744c10304ffaa128bd"
+   }
+  }
+ },
+ "sections": [
+  {
+   "name": "warmup",
+   "start": "2026-10-12T16:04:43.170+02:00",
+   "end": "2026-10-12T16:04:51.391+02:00"
+  },
+  {
+   "name": "timed-de-en",
+   "start": "2026-10-12T16:04:51.391+02:00",
+   "items": 1012,
+   "batch": 1,
+   "ps_before": [
+    {
+     "name": "hf.co/bartowski/EuroLLM-9B-Instruct-GGUF:Q8_0",
+     "size": 9623400611,
+     "size_vram": 9623400611,
+     "context_length": 2048
+    }
+   ],
+   "end": "2026-10-12T16:11:17.220+02:00"
+  },
+  {
+   "name": "timed-en-de",
+   "start": "2026-10-12T16:11:17.220+02:00",
+   "items": 1012,
+   "batch": 1,
+   "ps_before": [
+    {
+     "name": "hf.co/bartowski/EuroLLM-9B-Instruct-GGUF:Q8_0",
+     "size": 9623400611,
+     "size_vram": 9623400611,
+     "context_length": 2048
+    }
+   ],
+   "end": "2026-10-12T16:18:43.345+02:00"
+  }
+ ],
+ "started": "2026-10-12T16:04:43.097+02:00",
+ "ollama_tag": "hf.co/bartowski/EuroLLM-9B-Instruct-GGUF:Q8_0",
+ "model": {
+  "tag": "hf.co/bartowski/EuroLLM-9B-Instruct-GGUF:Q8_0",
+  "digest": "d46bb12c2d438723bdf472858b7270b2748659aa85f2c3cd168999d707fa5940",
+  "size": 9728450020,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "llama",
+   "families": [
+    "llama"
+   ],
+   "parameter_size": "9.15B",
+   "quantization_level": "Q8_0",
+   "context_length": 4096,
+   "embedding_length": 4096
+  },
+  "blobs": [
+   "5b6735847270c70eed9bb085856c3b4e5c6c74feff1e5fd270609ca8b83b85be"
+  ],
+  "capabilities": [
+   "completion"
+  ],
+  "context_length": 4096,
+  "template_sha256": "62fbfd9ed093d6e5ac83190c86eec5369317919f4b149598d2dbb38900e9faef"
+ },
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 2048,
+  "num_predict": 512
+ },
+ "instruction": {
+  "de-en": "Translate the following German text into English. Output only the translation.",
+  "en-de": "Translate the following English text into German. Output only the translation."
+ },
+ "think": "not supported by the model",
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "summary": {
+  "segments": 2024,
+  "errors": 0,
+  "empty": 0,
+  "median_s": {
+   "de-en": 0.3641,
+   "en-de": 0.42375
+  }
+ },
+ "finished": "2026-10-12T16:18:43.387+02:00"
+}

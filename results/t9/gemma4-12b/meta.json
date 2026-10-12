@@ -1,0 +1,64 @@
+{
+ "arm": "gemma4-12b",
+ "job_id": "20261012-105850-t9-gemma4-12b",
+ "requests": "cases/t9/requests.jsonl",
+ "lang": "de",
+ "limit": 0,
+ "passes": [
+  "plain"
+ ],
+ "shuffle_seed": 1002,
+ "n_requests": 4000,
+ "mock": false,
+ "sections": [
+  {
+   "name": "timed-plain",
+   "start": "2026-10-12T13:13:03.075+02:00",
+   "end": "2026-10-12T13:25:16.725+02:00",
+   "items": 8000,
+   "errors": 0,
+   "low_mass": 140,
+   "seconds": 733.7
+  }
+ ],
+ "started": "2026-10-12T13:13:03.012+02:00",
+ "requests_sha256": "91dab61b7c603d44c56b1f08038d5994c221d1a975b3016cbbfcea808aef8770",
+ "model": "gemma4:12b",
+ "template": "gemma4",
+ "prefix": "",
+ "num_ctx": 16384,
+ "model_info": {
+  "tag": "gemma4:12b",
+  "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+  "size": 8021618941,
+  "details": {
+   "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "blobs": [
+   "bb722270d54346adc198f213851dbe0207e87c3ecf2a0aff4d92262726215391",
+   "7008a656050bed18f6741406a631e83fa75ee1a02308f2e4f40d978cfbb3ce4b",
+   "0cb0cd0a5c499d92942caa22fe5abb98f6e8874868d590e2b094ece4ac8e6d28"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "audio",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "runtime": "ollama 0.35.0",
+ "system": "You classify a short text. Answer each multiple-choice question with the letter of exactly one option.",
+ "finished": "2026-10-12T13:25:16.741+02:00"
+}

@@ -1,0 +1,159 @@
+{
+ "test": "T10",
+ "arm": "gliner2.5-multi-decide",
+ "gliner": "fastino/GLiNER2.5-multi-Decide",
+ "revision": "e173bca1f0c4217d7a55b3b0c705d5ece8a0218d",
+ "job_id": "20261012-105839-t10-gliner2.5-multi-decide",
+ "runtime": "gliner2 2.0.0, torch 2.11.0+cu128, cuda",
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "questions": 5948,
+ "load_s": 12.585465500000282,
+ "max_len": null,
+ "passes": [
+  {
+   "batch": 1,
+   "repeat": 1,
+   "start": "2026-10-12T11:31:56.534+02:00",
+   "end": "2026-10-12T11:33:22.418+02:00",
+   "seconds": 85.884,
+   "decisions_per_s": 69.255958483778,
+   "peak_alloc_mib": 1145
+  },
+  {
+   "batch": 1,
+   "repeat": 2,
+   "start": "2026-10-12T11:33:22.611+02:00",
+   "end": "2026-10-12T11:34:47.445+02:00",
+   "seconds": 84.834,
+   "decisions_per_s": 70.1136908349481,
+   "peak_alloc_mib": 1145
+  },
+  {
+   "batch": 1,
+   "repeat": 3,
+   "start": "2026-10-12T11:34:47.461+02:00",
+   "end": "2026-10-12T11:36:12.512+02:00",
+   "seconds": 85.051,
+   "decisions_per_s": 69.9347873980407,
+   "peak_alloc_mib": 1145
+  },
+  {
+   "batch": 8,
+   "repeat": 1,
+   "start": "2026-10-12T11:36:12.547+02:00",
+   "end": "2026-10-12T11:36:27.439+02:00",
+   "seconds": 14.891,
+   "decisions_per_s": 399.42362123876296,
+   "peak_alloc_mib": 1387
+  },
+  {
+   "batch": 8,
+   "repeat": 2,
+   "start": "2026-10-12T11:36:27.637+02:00",
+   "end": "2026-10-12T11:36:42.520+02:00",
+   "seconds": 14.883,
+   "decisions_per_s": 399.6481295758544,
+   "peak_alloc_mib": 1387
+  },
+  {
+   "batch": 8,
+   "repeat": 3,
+   "start": "2026-10-12T11:36:42.547+02:00",
+   "end": "2026-10-12T11:36:57.435+02:00",
+   "seconds": 14.889,
+   "decisions_per_s": 399.4957139006033,
+   "peak_alloc_mib": 1387
+  },
+  {
+   "batch": 32,
+   "repeat": 1,
+   "start": "2026-10-12T11:36:57.551+02:00",
+   "end": "2026-10-12T11:37:13.273+02:00",
+   "seconds": 15.722,
+   "decisions_per_s": 378.324237215672,
+   "peak_alloc_mib": 2219
+  },
+  {
+   "batch": 32,
+   "repeat": 2,
+   "start": "2026-10-12T11:37:13.548+02:00",
+   "end": "2026-10-12T11:37:29.064+02:00",
+   "seconds": 15.515,
+   "decisions_per_s": 383.373777934854,
+   "peak_alloc_mib": 2219
+  },
+  {
+   "batch": 32,
+   "repeat": 3,
+   "start": "2026-10-12T11:37:29.169+02:00",
+   "end": "2026-10-12T11:37:44.823+02:00",
+   "seconds": 15.654,
+   "decisions_per_s": 379.96506071784626,
+   "peak_alloc_mib": 2219
+  },
+  {
+   "batch": 128,
+   "repeat": 1,
+   "start": "2026-10-12T11:37:45.263+02:00",
+   "end": "2026-10-12T11:38:02.114+02:00",
+   "seconds": 16.851,
+   "decisions_per_s": 352.98505628744124,
+   "peak_alloc_mib": 5547
+  },
+  {
+   "batch": 128,
+   "repeat": 2,
+   "start": "2026-10-12T11:38:02.697+02:00",
+   "end": "2026-10-12T11:38:19.380+02:00",
+   "seconds": 16.684,
+   "decisions_per_s": 356.51513029414946,
+   "peak_alloc_mib": 5547
+  },
+  {
+   "batch": 128,
+   "repeat": 3,
+   "start": "2026-10-12T11:38:19.782+02:00",
+   "end": "2026-10-12T11:38:36.594+02:00",
+   "seconds": 16.812,
+   "decisions_per_s": 353.8003883905076,
+   "peak_alloc_mib": 5547
+  }
+ ],
+ "started": "2026-10-12T11:31:56.453+02:00",
+ "agree_with_batch1": {
+  "1": 1.0,
+  "8": 1.0,
+  "32": 1.0,
+  "128": 1.0
+ },
+ "summary": {
+  "1": {
+   "decisions_per_s_mean": 69.7681455722556,
+   "min": 69.255958483778,
+   "max": 70.1136908349481
+  },
+  "8": {
+   "decisions_per_s_mean": 399.5224882384069,
+   "min": 399.42362123876296,
+   "max": 399.6481295758544
+  },
+  "32": {
+   "decisions_per_s_mean": 380.55435862279074,
+   "min": 378.324237215672,
+   "max": 383.373777934854
+  },
+  "128": {
+   "decisions_per_s_mean": 354.4335249906994,
+   "min": 352.98505628744124,
+   "max": 356.51513029414946
+  }
+ },
+ "gate": {
+  "rule": "batch 1 choices agree with results/route1/gliner2.5-multi-decide/2026-10-09-run1.jsonl",
+  "minimum": 0.99,
+  "value": 1.0,
+  "questions": 5948,
+  "passed": true
+ },
+ "finished": "2026-10-12T11:38:36.699+02:00"
+}

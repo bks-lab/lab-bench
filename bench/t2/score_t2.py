@@ -18,6 +18,7 @@ flip rate against clean, on all sampled utterances and on those the variant
 actually changed.
 """
 import argparse
+import glob
 import json
 import math
 import os
@@ -41,7 +42,12 @@ def gold():
 
 def rows_of(d):
     """result.jsonl of a queue out dir, or a run file (Jev: give run 1 and run 2 joined with a comma)."""
-    paths = d.split(",") if not os.path.isdir(d) else [os.path.join(d, "result.jsonl")]
+    if os.path.isdir(d):
+        # a queue out dir (result.jsonl) or results/<test>/<arm>/ (bench/import-t.py: <date>-run1.jsonl)
+        runs = sorted(glob.glob(os.path.join(d, "*-run1.jsonl")))
+        paths = [os.path.join(d, "result.jsonl")] if os.path.exists(os.path.join(d, "result.jsonl")) else runs[-1:]
+    else:
+        paths = d.split(",")
     return [json.loads(x) for p in paths for x in open(p, encoding="utf-8")]
 
 
