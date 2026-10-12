@@ -121,6 +121,10 @@
         "reason": "capability tests C1 to C3: chart-ready summary per test, the 1 s nvidia-smi log per arm, and per arm the runner meta and queue status (versions, settings, timings, GPU totals; PC paths and host name removed by bench/score-cap.py)"
       },
       {
+        "path": "^results/c[4-9]/(summary\\.json|gpu/[a-z0-9.-]+\\.csv|[a-z0-9.-]+/(meta|queue-status|queue-status-retry|layers)\\.json)$",
+        "reason": "capability tests C4 to C9: the same files as C1 to C3, plus the queue status of a retry job and the layer counts of every model load read from the job's llama-server log (layers.json); PC paths, host name and the Ollama build path removed by bench/score-cap.py"
+      },
+      {
         "path": "^results/capabilities\\.json$",
         "reason": "capability map (plan/ROADMAP.md): one aggregated row per measured capability test"
       },

@@ -944,7 +944,7 @@
   "digest": "89962fcc75239ac434cdebceb6b7e0669397f92eaef9c487774b718bc36a3e5f",
   "size": 2099521385,
   "details": {
-   "parent_model": "/Users/runner/.ollama/models/blobs/sha256-6c02683809a8dc4eb05c78d44bc63bcd707703b078998fa58829c858ab337bb0",
+   "parent_model": "<ollama>/models/blobs/sha256-6c02683809a8dc4eb05c78d44bc63bcd707703b078998fa58829c858ab337bb0",
    "format": "gguf",
    "family": "granite",
    "families": [

@@ -241,6 +241,9 @@ def scrub(o):
         return [scrub(v) for v in o]
     if isinstance(o, str) and re.match(r"^[A-Za-z]:\\", o):
         return "<PC path>"
+    if isinstance(o, str) and re.match(r"^/(Users|home)/[^/]+/\.ollama/", o):
+        # Ollama's /api/show parent_model: a blob path on the machine that built the library model
+        return re.sub(r"^/(Users|home)/[^/]+/\.ollama/", "<ollama>/", o)
     if isinstance(o, str):
         return re.sub(r"[A-Za-z]:\\[^\s,;\"']*", "<PC path>", o)
     return o
