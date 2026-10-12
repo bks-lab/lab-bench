@@ -1,0 +1,72 @@
+{
+ "arm": "winnow-12b",
+ "job_id": "20261012-105841-t2-winnow-12b",
+ "requests": "requests/route1/requests.jsonl",
+ "lang": "de",
+ "limit": 0,
+ "passes": [
+  "plain",
+  "shuffled"
+ ],
+ "shuffle_seed": 1002,
+ "n_requests": 2974,
+ "mock": false,
+ "sections": [
+  {
+   "name": "timed-plain",
+   "start": "2026-10-12T11:39:39.672+02:00",
+   "end": "2026-10-12T11:48:12.816+02:00",
+   "items": 5948,
+   "errors": 1,
+   "low_mass": 201,
+   "seconds": 513.1
+  },
+  {
+   "name": "timed-shuffled",
+   "start": "2026-10-12T11:48:12.816+02:00",
+   "end": "2026-10-12T11:57:01.515+02:00",
+   "items": 5948,
+   "errors": 1,
+   "low_mass": 196,
+   "seconds": 528.7
+  }
+ ],
+ "started": "2026-10-12T11:39:39.595+02:00",
+ "requests_sha256": "3a78a8f48c141c3fb9b85505d501b173e8790988659eca2083ff75f4f82f342f",
+ "model": "hf.co/EldanRing/Winnow-12B:Q8_0",
+ "template": "gemma4",
+ "prefix": "",
+ "num_ctx": 16384,
+ "model_info": {
+  "tag": "hf.co/EldanRing/Winnow-12B:Q8_0",
+  "digest": "b5bedb24694537069a766763f5b25f84afe40950f4dc8bf66263bdcd6b4883a1",
+  "size": 12844774778,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q8_0",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "blobs": [
+   "b710efc4c0d048ee61eed92c5fef5ce323a4d17e7c51f9f0533cc72ae50818ea",
+   "91f086971e56d7a7d8d39e271873fccdb49541bd259d6e02c401a4f1cb7a219e"
+  ],
+  "capabilities": [
+   "tools",
+   "completion",
+   "vision",
+   "audio"
+  ],
+  "context_length": 262144,
+  "template_sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+ },
+ "runtime": "ollama 0.35.0",
+ "system": "You classify a short text. Answer each multiple-choice question with the letter of exactly one option.",
+ "finished": "2026-10-12T11:57:01.536+02:00"
+}

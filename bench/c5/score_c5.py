@@ -83,7 +83,7 @@ def main():
     if a.md:
         open(a.md, "w", encoding="utf-8").write(text_md)
     if a.json:
-        json.dump(out, open(a.json, "w", encoding="utf-8"), indent=1)
+        json.dump(out, open(a.json, "w", encoding="utf-8"), indent=1, default=float)
     print(text_md)
 
 

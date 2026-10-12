@@ -1,0 +1,361 @@
+{
+ "schema": "jev-match-bench capability summary v1",
+ "test": "C5",
+ "design": "plan/c5.md",
+ "report": "results/c5/findings.md",
+ "best_by_chrf": "gemma4-26b",
+ "gate": {
+  "reference": {
+   "de-en": 66.7,
+   "en-de": 63.63
+  },
+  "tolerance": 1.5,
+  "sacrebleu": "2.6.0",
+  "directions": {
+   "de-en": {
+    "chrf": 66.66231043866316,
+    "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0",
+    "passed": true
+   },
+   "en-de": {
+    "chrf": 63.60484757450012,
+    "signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0",
+    "passed": true
+   }
+  },
+  "passed": true
+ },
+ "baseline": {
+  "chrf++": 19.83,
+  "rule": "source sentence copied as the translation"
+ },
+ "seed": "20261009",
+ "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
+ "generator": "bench/score-cap.py",
+ "arms": [
+  {
+   "arm": "gemma4-26b",
+   "model": "gemma4:26b (google/gemma-4-26B-A4B-it)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 26.0,
+   "dedicated_mt": false,
+   "finished": true,
+   "quality": {
+    "metric": "chrF++ on FLORES+ devtest, 1,012 sentences per direction",
+    "value": 66.82,
+    "ci95": [
+     66.04,
+     67.61
+    ],
+    "per_direction": {
+     "de-en": {
+      "chrf++": 68.1159,
+      "chrf++_ci": 0.734,
+      "chrf++_p_vs_best": null,
+      "bleu": 44.2744,
+      "comet": 0.8983,
+      "errors": 0
+     },
+     "en-de": {
+      "chrf++": 65.5306,
+      "chrf++_ci": 0.8359,
+      "chrf++_p_vs_best": null,
+      "bleu": 42.119,
+      "comet": 0.8918,
+      "errors": 0
+     }
+    }
+   },
+   "speed": {
+    "unit": "segments per second at batch 1",
+    "value": 4.89
+   },
+   "energy": {
+    "j_per_1000_segments": 47657,
+    "note": "GPU only, whole job (model load, both directions, and for dedicated MT the batch 32 pass) divided by 2,024 segments"
+   },
+   "vram_peak_gb": 18.54,
+   "vram_peak_total_gb": 20.51,
+   "fits_24gb": true
+  },
+  {
+   "arm": "gemma4-12b",
+   "model": "gemma4:12b (google/gemma-4-12B-it)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 12.0,
+   "dedicated_mt": false,
+   "finished": true,
+   "quality": {
+    "metric": "chrF++ on FLORES+ devtest, 1,012 sentences per direction",
+    "value": 66.5,
+    "ci95": [
+     65.69,
+     67.31
+    ],
+    "per_direction": {
+     "de-en": {
+      "chrf++": 67.8698,
+      "chrf++_ci": 0.7641,
+      "chrf++_p_vs_best": 0.0599,
+      "bleu": 43.8485,
+      "comet": 0.8976,
+      "errors": 0
+     },
+     "en-de": {
+      "chrf++": 65.1257,
+      "chrf++_ci": 0.8507,
+      "chrf++_p_vs_best": 0.0529,
+      "bleu": 41.7157,
+      "comet": 0.8884,
+      "errors": 1
+     }
+    }
+   },
+   "speed": {
+    "unit": "segments per second at batch 1",
+    "value": 4.19
+   },
+   "energy": {
+    "j_per_1000_segments": 73847,
+    "note": "GPU only, whole job (model load, both directions, and for dedicated MT the batch 32 pass) divided by 2,024 segments"
+   },
+   "vram_peak_gb": 8.72,
+   "vram_peak_total_gb": 10.7,
+   "fits_24gb": true
+  },
+  {
+   "arm": "eurollm-9b",
+   "model": "hf.co/bartowski/EuroLLM-9B-Instruct-GGUF:Q8_0 (utter-project/EuroLLM-9B-Instruct)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 9.0,
+   "dedicated_mt": false,
+   "finished": true,
+   "quality": {
+    "metric": "chrF++ on FLORES+ devtest, 1,012 sentences per direction",
+    "value": 66.02,
+    "ci95": [
+     65.2,
+     66.85
+    ],
+    "per_direction": {
+     "de-en": {
+      "chrf++": 67.2621,
+      "chrf++_ci": 0.7549,
+      "chrf++_p_vs_best": 0.001,
+      "bleu": 43.4748,
+      "comet": 0.8954,
+      "errors": 0
+     },
+     "en-de": {
+      "chrf++": 64.7832,
+      "chrf++_ci": 0.8951,
+      "chrf++_p_vs_best": 0.008,
+      "bleu": 41.4562,
+      "comet": 0.8871,
+      "errors": 0
+     }
+    }
+   },
+   "speed": {
+    "unit": "segments per second at batch 1",
+    "value": 2.45
+   },
+   "energy": {
+    "j_per_1000_segments": 111478,
+    "note": "GPU only, whole job (model load, both directions, and for dedicated MT the batch 32 pass) divided by 2,024 segments"
+   },
+   "vram_peak_gb": 9.35,
+   "vram_peak_total_gb": 11.33,
+   "fits_24gb": true
+  },
+  {
+   "arm": "madlad-3b",
+   "model": "google/madlad400-3b-mt",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 3.0,
+   "dedicated_mt": true,
+   "finished": true,
+   "quality": {
+    "metric": "chrF++ on FLORES+ devtest, 1,012 sentences per direction",
+    "value": 65.55,
+    "ci95": [
+     64.74,
+     66.36
+    ],
+    "per_direction": {
+     "de-en": {
+      "chrf++": 67.4657,
+      "chrf++_ci": 0.7542,
+      "chrf++_p_vs_best": 0.01,
+      "bleu": 44.9605,
+      "comet": 0.8941,
+      "errors": 0
+     },
+     "en-de": {
+      "chrf++": 63.6357,
+      "chrf++_ci": 0.8617,
+      "chrf++_p_vs_best": 0.001,
+      "bleu": 40.0181,
+      "comet": 0.8811,
+      "errors": 0
+     }
+    }
+   },
+   "speed": {
+    "unit": "segments per second at batch 1",
+    "value": 0.54,
+    "segments_per_s_batch32": 9.17
+   },
+   "energy": {
+    "j_per_1000_segments": 131375,
+    "note": "GPU only, whole job (model load, both directions, and for dedicated MT the batch 32 pass) divided by 2,024 segments"
+   },
+   "vram_peak_gb": 9.4,
+   "vram_peak_total_gb": 11.33,
+   "fits_24gb": true
+  },
+  {
+   "arm": "mistral-small-3.2",
+   "model": "mistral-small3.2:24b (mistralai/Mistral-Small-3.2-24B-Instruct-2506)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 24.0,
+   "dedicated_mt": false,
+   "finished": true,
+   "quality": {
+    "metric": "chrF++ on FLORES+ devtest, 1,012 sentences per direction",
+    "value": 65.54,
+    "ci95": [
+     64.73,
+     66.35
+    ],
+    "per_direction": {
+     "de-en": {
+      "chrf++": 67.5129,
+      "chrf++_ci": 0.781,
+      "chrf++_p_vs_best": 0.003,
+      "bleu": 43.7593,
+      "comet": 0.8967,
+      "errors": 0
+     },
+     "en-de": {
+      "chrf++": 63.5725,
+      "chrf++_ci": 0.8403,
+      "chrf++_p_vs_best": 0.001,
+      "bleu": 39.4692,
+      "comet": 0.8855,
+      "errors": 0
+     }
+    }
+   },
+   "speed": {
+    "unit": "segments per second at batch 1",
+    "value": 1.74
+   },
+   "energy": {
+    "j_per_1000_segments": 202047,
+    "note": "GPU only, whole job (model load, both directions, and for dedicated MT the batch 32 pass) divided by 2,024 segments"
+   },
+   "vram_peak_gb": 14.78,
+   "vram_peak_total_gb": 16.76,
+   "fits_24gb": true
+  },
+  {
+   "arm": "qwen3.8-27b",
+   "model": "qwen3.8:27b (Qwen/Qwen3.8-27B)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 27.0,
+   "dedicated_mt": false,
+   "finished": true,
+   "quality": {
+    "metric": "chrF++ on FLORES+ devtest, 1,012 sentences per direction",
+    "value": 64.62,
+    "ci95": [
+     63.82,
+     65.41
+    ],
+    "per_direction": {
+     "de-en": {
+      "chrf++": 66.7233,
+      "chrf++_ci": 0.7632,
+      "chrf++_p_vs_best": 0.001,
+      "bleu": 42.792,
+      "comet": 0.8979,
+      "errors": 0
+     },
+     "en-de": {
+      "chrf++": 62.5111,
+      "chrf++_ci": 0.8312,
+      "chrf++_p_vs_best": 0.001,
+      "bleu": 37.5936,
+      "comet": 0.8876,
+      "errors": 0
+     }
+    }
+   },
+   "speed": {
+    "unit": "segments per second at batch 1",
+    "value": 2.0
+   },
+   "energy": {
+    "j_per_1000_segments": 166659,
+    "note": "GPU only, whole job (model load, both directions, and for dedicated MT the batch 32 pass) divided by 2,024 segments"
+   },
+   "vram_peak_gb": 17.65,
+   "vram_peak_total_gb": 19.63,
+   "fits_24gb": true
+  },
+  {
+   "arm": "opus-mt",
+   "model": "Helsinki-NLP/opus-mt-de-en and opus-mt-en-de (MarianMT)",
+   "licence": "Apache-2.0 (de-en), CC BY 4.0 (en-de)",
+   "licence_class": "open source",
+   "params_b": 0.075,
+   "dedicated_mt": true,
+   "finished": true,
+   "quality": {
+    "metric": "chrF++ on FLORES+ devtest, 1,012 sentences per direction",
+    "value": 63.0,
+    "ci95": [
+     62.2,
+     63.8
+    ],
+    "per_direction": {
+     "de-en": {
+      "chrf++": 64.8682,
+      "chrf++_ci": 0.7581,
+      "chrf++_p_vs_best": 0.001,
+      "bleu": 40.5735,
+      "comet": 0.8827,
+      "errors": 0
+     },
+     "en-de": {
+      "chrf++": 61.1264,
+      "chrf++_ci": 0.84,
+      "chrf++_p_vs_best": 0.001,
+      "bleu": 36.061,
+      "comet": 0.847,
+      "errors": 0
+     }
+    }
+   },
+   "speed": {
+    "unit": "segments per second at batch 1",
+    "value": 5.99,
+    "segments_per_s_batch32": 84.42
+   },
+   "energy": {
+    "j_per_1000_segments": 14534,
+    "note": "GPU only, whole job (model load, both directions, and for dedicated MT the batch 32 pass) divided by 2,024 segments"
+   },
+   "vram_peak_gb": 1.94,
+   "vram_peak_total_gb": 3.88,
+   "fits_24gb": true
+  }
+ ]
+}

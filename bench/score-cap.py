@@ -264,6 +264,8 @@ def do_import(queue):
             continue
         status = json.load(open(st_files[0], encoding="utf-8"))
         test, arm = status["test"].lower(), status["arm"]
+        if test == "c5":
+            continue  # C5 rows are derivatives of gated text and stay out of the repository: bench/cap_c5.py
         if arm not in arms_all.get(test, {}):
             print(f"skip {jid}: arm {arm} not in the plan", file=sys.stderr)
             continue
@@ -317,6 +319,8 @@ def do_import(queue):
         shutil.copyfile(os.path.join(d, "gpu.csv"), ROOT / "results" / test / "gpu" / f"{ad}.csv")
         n += 1
         print(f"imported {jid} -> results/{test}/{ad}/")
+    import cap_c5  # noqa: PLC0415
+    n += cap_c5.import_c5(queue)
     print(f"{n} jobs imported")
 
 
@@ -938,7 +942,8 @@ def main():
     caps = capability_rows(c1, c2, c3)
     sys.path.insert(0, str(ROOT / "bench"))
     import cap_c4c8  # noqa: PLC0415
-    for test, fn in (("c4", cap_c4c8.score_c4), ("c6", cap_c4c8.score_c6), ("c7", cap_c4c8.score_c7), ("c8", cap_c4c8.score_c8)):
+    import cap_c5  # noqa: PLC0415
+    for test, fn in (("c4", cap_c4c8.score_c4), ("c5", cap_c5.score_c5), ("c6", cap_c4c8.score_c6), ("c7", cap_c4c8.score_c7), ("c8", cap_c4c8.score_c8)):
         got = fn()
         if got is None:
             continue

@@ -1,0 +1,39 @@
+{
+ "start": "2026-10-12T16:04:41+02:00",
+ "end": "2026-10-12T16:18:45+02:00",
+ "exit_code": 0,
+ "reason": "",
+ "expected_gpu_min": 20,
+ "gpu": {
+  "samples": 836,
+  "first": "2026/10/12 16:04:43.026",
+  "last": "2026/10/12 16:18:44.116",
+  "idle_mem_mib": 2025.0,
+  "peak_mem_mib": 11601.0,
+  "peak_over_idle_mib": 9576.0,
+  "energy_j": 225630.5,
+  "mean_power_w": 269.9,
+  "gpu_min": 13.93,
+  "note": "GPU only, whole job incl. model load; 1 s samples"
+ },
+ "machine": {
+  "label": "local-rtx4090",
+  "recorded_at": "2026-10-12T16:04:42+02:00",
+  "gpu_query": "name,driver_version,power.limit,clocks.gr,clocks.mem,memory.total (clocks at job start)",
+  "gpu": "NVIDIA GeForce RTX 4090, 617.42, 450.00 W, 210 MHz, 405 MHz, 24564 MiB",
+  "cuda_version": "13.4",
+  "os": "Windows 11 10.0.26300",
+  "cpu": "AMD Ryzen 9 7900 12-Core Processor",
+  "ram_gb": 127.2,
+  "ollama_version": "0.35.0",
+  "job_python": "3.12.10",
+  "runner_python": "3.12.10"
+ },
+ "id": "20261012-105905-c5-eurollm-9b",
+ "key": "C5-eurollm-9b",
+ "test": "C5",
+ "arm": "eurollm-9b",
+ "ok": true,
+ "repo_ref": "71cebd899ebafd0b44d5799e368ba833f8de8f8f",
+ "requested_by": "prep-agent"
+}

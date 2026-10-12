@@ -1,0 +1,62 @@
+{
+ "arm": "qwen3.8-27b",
+ "job_id": "20261012-105852-t9-qwen3.8-27b",
+ "requests": "cases/t9/requests.jsonl",
+ "lang": "de",
+ "limit": 0,
+ "passes": [
+  "plain"
+ ],
+ "shuffle_seed": 1002,
+ "n_requests": 4000,
+ "mock": false,
+ "sections": [
+  {
+   "name": "timed-plain",
+   "start": "2026-10-12T13:26:19.337+02:00",
+   "end": "2026-10-12T13:52:14.454+02:00",
+   "items": 8000,
+   "errors": 0,
+   "low_mass": 3,
+   "seconds": 1555.1
+  }
+ ],
+ "started": "2026-10-12T13:26:19.254+02:00",
+ "requests_sha256": "91dab61b7c603d44c56b1f08038d5994c221d1a975b3016cbbfcea808aef8770",
+ "model": "qwen3.8:27b",
+ "template": "chatml",
+ "prefix": "",
+ "num_ctx": 16384,
+ "model_info": {
+  "tag": "qwen3.8:27b",
+  "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+  "size": 17741872154,
+  "details": {
+   "parent_model": "qwen3.8:27b-q4_K_M",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "27.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d",
+   "ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "runtime": "ollama 0.35.0",
+ "system": "You classify a short text. Answer each multiple-choice question with the letter of exactly one option.",
+ "finished": "2026-10-12T13:52:14.460+02:00"
+}

@@ -1,0 +1,142 @@
+{
+ "winnow-12b": {
+  "typo": {
+   "acc": 0.7735,
+   "drop": 0.03,
+   "drop_ci": [
+    0.0194875,
+    0.0405
+   ],
+   "flip": 0.0865,
+   "drop_changed_only": 0.03009027081243731,
+   "changed": 997
+  },
+  "translit": {
+   "acc": 0.811,
+   "drop": -0.0075,
+   "drop_ci": [
+    -0.013,
+    -0.0025
+   ],
+   "flip": 0.02,
+   "drop_changed_only": -0.018564356435643563,
+   "changed": 404
+  },
+  "colloquial": {
+   "acc": 0.8055,
+   "drop": -0.002,
+   "drop_ci": [
+    -0.011,
+    0.005512499999999988
+   ],
+   "flip": 0.054,
+   "drop_changed_only": -0.002,
+   "changed": 1000
+  }
+ },
+ "gemma4-12b": {
+  "typo": {
+   "acc": 0.747,
+   "drop": 0.0425,
+   "drop_ci": [
+    0.03,
+    0.054
+   ],
+   "flip": 0.092,
+   "drop_changed_only": 0.04262788365095286,
+   "changed": 997
+  },
+  "translit": {
+   "acc": 0.7875,
+   "drop": 0.002,
+   "drop_ci": [
+    -0.0035,
+    0.007012499999999988
+   ],
+   "flip": 0.0195,
+   "drop_changed_only": 0.0037128712871287127,
+   "changed": 404
+  },
+  "colloquial": {
+   "acc": 0.775,
+   "drop": 0.0145,
+   "drop_ci": [
+    0.0034875000000000006,
+    0.026
+   ],
+   "flip": 0.0765,
+   "drop_changed_only": 0.0145,
+   "changed": 1000
+  }
+ },
+ "qwen3.8-27b": {
+  "typo": {
+   "acc": 0.783,
+   "drop": 0.0365,
+   "drop_ci": [
+    0.0264875,
+    0.047
+   ],
+   "flip": 0.0715,
+   "drop_changed_only": 0.0366098294884654,
+   "changed": 997
+  },
+  "translit": {
+   "acc": 0.8155,
+   "drop": 0.004,
+   "drop_ci": [
+    0.0005,
+    0.008012499999999988
+   ],
+   "flip": 0.0105,
+   "drop_changed_only": 0.009900990099009901,
+   "changed": 404
+  },
+  "colloquial": {
+   "acc": 0.8195,
+   "drop": 0.0,
+   "drop_ci": [
+    -0.008,
+    0.008012499999999988
+   ],
+   "flip": 0.047,
+   "drop_changed_only": 0.0,
+   "changed": 1000
+  }
+ },
+ "gliner2.5-multi-decide": {
+  "typo": {
+   "acc": 0.528,
+   "drop": 0.0345,
+   "drop_ci": [
+    0.0205,
+    0.04801249999999999
+   ],
+   "flip": 0.1825,
+   "drop_changed_only": 0.03460381143430291,
+   "changed": 997
+  },
+  "translit": {
+   "acc": 0.545,
+   "drop": 0.0175,
+   "drop_ci": [
+    0.0095,
+    0.025
+   ],
+   "flip": 0.0695,
+   "drop_changed_only": 0.043316831683168314,
+   "changed": 404
+  },
+  "colloquial": {
+   "acc": 0.556,
+   "drop": 0.0065,
+   "drop_ci": [
+    -0.002,
+    0.015
+   ],
+   "flip": 0.0725,
+   "drop_changed_only": 0.0065,
+   "changed": 1000
+  }
+ }
+}

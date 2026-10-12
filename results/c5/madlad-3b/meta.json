@@ -1,0 +1,178 @@
+{
+ "test": "C5",
+ "arm": "madlad-3b",
+ "job_id": "20261012-105855-c5-madlad-3b",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "manifest_sha256": "253927c4dca3d761890919e193d9ea7a4cd034138827b356dc59032d814d5a0d",
+  "files": {
+   "deu_Latn": {
+    "file": "devtest/deu_Latn.jsonl",
+    "sha256": "d221bb2bd72b2ec433fd6b93d25045acbef3038eb0b61b7f6315ba1bb3585d6a"
+   },
+   "eng_Latn": {
+    "file": "devtest/eng_Latn.jsonl",
+    "sha256": "afa116a2ffb7de95aa320c11c229301d76a8108cba3125744c10304ffaa128bd"
+   }
+  }
+ },
+ "sections": [
+  {
+   "name": "load-google/madlad400-3b-mt",
+   "start": "2026-10-12T13:58:07.923+02:00",
+   "end": "2026-10-12T13:58:31.414+02:00",
+   "seconds": 23.49
+  },
+  {
+   "name": "warmup-de-en",
+   "start": "2026-10-12T13:58:31.414+02:00",
+   "end": "2026-10-12T13:58:45.998+02:00"
+  },
+  {
+   "name": "timed-de-en",
+   "start": "2026-10-12T13:58:45.998+02:00",
+   "items": 1012,
+   "batch": 1,
+   "end": "2026-10-12T14:26:31.841+02:00"
+  },
+  {
+   "name": "batch32-de-en",
+   "start": "2026-10-12T14:26:31.841+02:00",
+   "items": 1012,
+   "batch": 32,
+   "seconds": 105.584,
+   "segments_per_s": 9.584785573571754,
+   "differs_from_batch1": 5,
+   "end": "2026-10-12T14:28:17.425+02:00"
+  },
+  {
+   "name": "warmup-en-de",
+   "start": "2026-10-12T14:28:17.425+02:00",
+   "end": "2026-10-12T14:28:24.535+02:00"
+  },
+  {
+   "name": "timed-en-de",
+   "start": "2026-10-12T14:28:24.535+02:00",
+   "items": 1012,
+   "batch": 1,
+   "end": "2026-10-12T15:04:26.887+02:00"
+  },
+  {
+   "name": "batch32-en-de",
+   "start": "2026-10-12T15:04:26.887+02:00",
+   "items": 1012,
+   "batch": 32,
+   "seconds": 115.696,
+   "segments_per_s": 8.747061264002213,
+   "differs_from_batch1": 5,
+   "end": "2026-10-12T15:06:22.583+02:00"
+  }
+ ],
+ "started": "2026-10-12T13:57:01.939+02:00",
+ "versions": {
+  "python": "3.12.10",
+  "torch": "2.11.0+cu128",
+  "transformers": "4.57.6",
+  "sentencepiece": "0.2.1",
+  "cuda_available": true
+ },
+ "mt": {
+  "de-en": {
+   "model": "google/madlad400-3b-mt",
+   "rev": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+  },
+  "en-de": {
+   "model": "google/madlad400-3b-mt",
+   "rev": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+  }
+ },
+ "mt_settings": {
+  "generation": "the model's generation_config (recorded below)",
+  "max_new_tokens": 512,
+  "dtype": "torch.float16",
+  "batch_timed": 1,
+  "batch_throughput": 32
+ },
+ "generation_config": {
+  "google/madlad400-3b-mt": {
+   "max_length": 20,
+   "max_new_tokens": null,
+   "min_length": 0,
+   "min_new_tokens": null,
+   "early_stopping": false,
+   "max_time": null,
+   "stop_strings": null,
+   "do_sample": false,
+   "num_beams": 1,
+   "use_cache": true,
+   "cache_implementation": null,
+   "cache_config": null,
+   "return_legacy_cache": null,
+   "prefill_chunk_size": null,
+   "temperature": 1.0,
+   "top_k": 50,
+   "top_p": 1.0,
+   "min_p": null,
+   "typical_p": 1.0,
+   "epsilon_cutoff": 0.0,
+   "eta_cutoff": 0.0,
+   "repetition_penalty": 1.0,
+   "encoder_repetition_penalty": 1.0,
+   "length_penalty": 1.0,
+   "no_repeat_ngram_size": 0,
+   "bad_words_ids": null,
+   "renormalize_logits": false,
+   "forced_bos_token_id": null,
+   "forced_eos_token_id": null,
+   "remove_invalid_values": false,
+   "exponential_decay_length_penalty": null,
+   "suppress_tokens": null,
+   "begin_suppress_tokens": null,
+   "sequence_bias": null,
+   "token_healing": false,
+   "guidance_scale": null,
+   "watermarking_config": null,
+   "num_return_sequences": 1,
+   "output_attentions": false,
+   "output_hidden_states": false,
+   "output_scores": false,
+   "output_logits": null,
+   "return_dict_in_generate": false,
+   "pad_token_id": 1,
+   "bos_token_id": null,
+   "eos_token_id": 2,
+   "encoder_no_repeat_ngram_size": 0,
+   "decoder_start_token_id": 0,
+   "is_assistant": false,
+   "num_assistant_tokens": 20,
+   "num_assistant_tokens_schedule": "constant",
+   "assistant_confidence_threshold": 0.4,
+   "prompt_lookup_num_tokens": null,
+   "max_matching_ngram_size": null,
+   "assistant_early_exit": null,
+   "assistant_lookbehind": 10,
+   "target_lookbehind": 10,
+   "disable_compile": false,
+   "low_memory": null,
+   "penalty_alpha": null,
+   "dola_layers": null,
+   "diversity_penalty": 0.0,
+   "num_beam_groups": 1,
+   "constraints": null,
+   "force_words_ids": null,
+   "_from_model_config": true,
+   "transformers_version": "4.57.6"
+  }
+ },
+ "summary": {
+  "segments": 2024,
+  "errors": 0,
+  "empty": 0,
+  "median_s": {
+   "de-en": 1.50605,
+   "en-de": 1.9088500000000002
+  }
+ },
+ "finished": "2026-10-12T15:06:22.603+02:00"
+}

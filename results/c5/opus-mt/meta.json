@@ -1,0 +1,261 @@
+{
+ "test": "C5",
+ "arm": "opus-mt",
+ "job_id": "20261012-105824-c5-opus-mt",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "manifest_sha256": "253927c4dca3d761890919e193d9ea7a4cd034138827b356dc59032d814d5a0d",
+  "files": {
+   "deu_Latn": {
+    "file": "devtest/deu_Latn.jsonl",
+    "sha256": "d221bb2bd72b2ec433fd6b93d25045acbef3038eb0b61b7f6315ba1bb3585d6a"
+   },
+   "eng_Latn": {
+    "file": "devtest/eng_Latn.jsonl",
+    "sha256": "afa116a2ffb7de95aa320c11c229301d76a8108cba3125744c10304ffaa128bd"
+   }
+  }
+ },
+ "sections": [
+  {
+   "name": "load-Helsinki-NLP/opus-mt-de-en",
+   "start": "2026-10-12T11:03:05.000+02:00",
+   "end": "2026-10-12T11:03:05.839+02:00",
+   "seconds": 0.84
+  },
+  {
+   "name": "warmup-de-en",
+   "start": "2026-10-12T11:03:05.839+02:00",
+   "end": "2026-10-12T11:03:06.730+02:00"
+  },
+  {
+   "name": "timed-de-en",
+   "start": "2026-10-12T11:03:06.730+02:00",
+   "items": 1012,
+   "batch": 1,
+   "end": "2026-10-12T11:05:51.246+02:00"
+  },
+  {
+   "name": "batch32-de-en",
+   "start": "2026-10-12T11:05:51.246+02:00",
+   "items": 1012,
+   "batch": 32,
+   "seconds": 11.824,
+   "segments_per_s": 85.58863328822734,
+   "differs_from_batch1": 0,
+   "end": "2026-10-12T11:06:03.070+02:00"
+  },
+  {
+   "name": "load-Helsinki-NLP/opus-mt-en-de",
+   "start": "2026-10-12T11:06:03.070+02:00",
+   "end": "2026-10-12T11:06:03.381+02:00",
+   "seconds": 0.31
+  },
+  {
+   "name": "warmup-en-de",
+   "start": "2026-10-12T11:06:03.381+02:00",
+   "end": "2026-10-12T11:06:04.074+02:00"
+  },
+  {
+   "name": "timed-en-de",
+   "start": "2026-10-12T11:06:04.074+02:00",
+   "items": 1012,
+   "batch": 1,
+   "end": "2026-10-12T11:08:57.870+02:00"
+  },
+  {
+   "name": "batch32-en-de",
+   "start": "2026-10-12T11:08:57.870+02:00",
+   "items": 1012,
+   "batch": 32,
+   "seconds": 12.156,
+   "segments_per_s": 83.25106943073379,
+   "differs_from_batch1": 0,
+   "end": "2026-10-12T11:09:10.026+02:00"
+  }
+ ],
+ "started": "2026-10-12T11:03:01.976+02:00",
+ "versions": {
+  "python": "3.12.10",
+  "torch": "2.11.0+cu128",
+  "transformers": "4.57.6",
+  "sentencepiece": "0.2.1",
+  "cuda_available": true
+ },
+ "mt": {
+  "de-en": {
+   "model": "Helsinki-NLP/opus-mt-de-en",
+   "rev": "1a922f3b32a8e809e17a47d4b32142d8105924e5"
+  },
+  "en-de": {
+   "model": "Helsinki-NLP/opus-mt-en-de",
+   "rev": "6183067f769a302e3861815543b9f312c71b0ca4"
+  }
+ },
+ "mt_settings": {
+  "generation": "the model's generation_config (recorded below)",
+  "max_new_tokens": 512,
+  "dtype": "torch.float32",
+  "batch_timed": 1,
+  "batch_throughput": 32
+ },
+ "generation_config": {
+  "Helsinki-NLP/opus-mt-de-en": {
+   "max_length": 512,
+   "max_new_tokens": null,
+   "min_length": 0,
+   "min_new_tokens": null,
+   "early_stopping": false,
+   "max_time": null,
+   "stop_strings": null,
+   "do_sample": false,
+   "num_beams": 4,
+   "use_cache": true,
+   "cache_implementation": null,
+   "cache_config": null,
+   "return_legacy_cache": null,
+   "prefill_chunk_size": null,
+   "temperature": 1.0,
+   "top_k": 50,
+   "top_p": 1.0,
+   "min_p": null,
+   "typical_p": 1.0,
+   "epsilon_cutoff": 0.0,
+   "eta_cutoff": 0.0,
+   "repetition_penalty": 1.0,
+   "encoder_repetition_penalty": 1.0,
+   "length_penalty": 1.0,
+   "no_repeat_ngram_size": 0,
+   "bad_words_ids": [
+    [
+     58100
+    ]
+   ],
+   "renormalize_logits": true,
+   "forced_bos_token_id": null,
+   "forced_eos_token_id": 0,
+   "remove_invalid_values": false,
+   "exponential_decay_length_penalty": null,
+   "suppress_tokens": null,
+   "begin_suppress_tokens": null,
+   "sequence_bias": null,
+   "token_healing": false,
+   "guidance_scale": null,
+   "watermarking_config": null,
+   "num_return_sequences": 1,
+   "output_attentions": false,
+   "output_hidden_states": false,
+   "output_scores": false,
+   "output_logits": null,
+   "return_dict_in_generate": false,
+   "pad_token_id": 58100,
+   "bos_token_id": 0,
+   "eos_token_id": 0,
+   "encoder_no_repeat_ngram_size": 0,
+   "decoder_start_token_id": 58100,
+   "is_assistant": false,
+   "num_assistant_tokens": 20,
+   "num_assistant_tokens_schedule": "constant",
+   "assistant_confidence_threshold": 0.4,
+   "prompt_lookup_num_tokens": null,
+   "max_matching_ngram_size": null,
+   "assistant_early_exit": null,
+   "assistant_lookbehind": 10,
+   "target_lookbehind": 10,
+   "disable_compile": false,
+   "low_memory": null,
+   "penalty_alpha": null,
+   "dola_layers": null,
+   "diversity_penalty": 0.0,
+   "num_beam_groups": 1,
+   "constraints": null,
+   "force_words_ids": null,
+   "_from_model_config": false,
+   "transformers_version": "4.57.6"
+  },
+  "Helsinki-NLP/opus-mt-en-de": {
+   "max_length": 512,
+   "max_new_tokens": null,
+   "min_length": 0,
+   "min_new_tokens": null,
+   "early_stopping": false,
+   "max_time": null,
+   "stop_strings": null,
+   "do_sample": false,
+   "num_beams": 4,
+   "use_cache": true,
+   "cache_implementation": null,
+   "cache_config": null,
+   "return_legacy_cache": null,
+   "prefill_chunk_size": null,
+   "temperature": 1.0,
+   "top_k": 50,
+   "top_p": 1.0,
+   "min_p": null,
+   "typical_p": 1.0,
+   "epsilon_cutoff": 0.0,
+   "eta_cutoff": 0.0,
+   "repetition_penalty": 1.0,
+   "encoder_repetition_penalty": 1.0,
+   "length_penalty": 1.0,
+   "no_repeat_ngram_size": 0,
+   "bad_words_ids": [
+    [
+     58100
+    ]
+   ],
+   "renormalize_logits": true,
+   "forced_bos_token_id": null,
+   "forced_eos_token_id": 0,
+   "remove_invalid_values": false,
+   "exponential_decay_length_penalty": null,
+   "suppress_tokens": null,
+   "begin_suppress_tokens": null,
+   "sequence_bias": null,
+   "token_healing": false,
+   "guidance_scale": null,
+   "watermarking_config": null,
+   "num_return_sequences": 1,
+   "output_attentions": false,
+   "output_hidden_states": false,
+   "output_scores": false,
+   "output_logits": null,
+   "return_dict_in_generate": false,
+   "pad_token_id": 58100,
+   "bos_token_id": 0,
+   "eos_token_id": 0,
+   "encoder_no_repeat_ngram_size": 0,
+   "decoder_start_token_id": 58100,
+   "is_assistant": false,
+   "num_assistant_tokens": 20,
+   "num_assistant_tokens_schedule": "constant",
+   "assistant_confidence_threshold": 0.4,
+   "prompt_lookup_num_tokens": null,
+   "max_matching_ngram_size": null,
+   "assistant_early_exit": null,
+   "assistant_lookbehind": 10,
+   "target_lookbehind": 10,
+   "disable_compile": false,
+   "low_memory": null,
+   "penalty_alpha": null,
+   "dola_layers": null,
+   "diversity_penalty": 0.0,
+   "num_beam_groups": 1,
+   "constraints": null,
+   "force_words_ids": null,
+   "_from_model_config": false,
+   "transformers_version": "4.57.6"
+  }
+ },
+ "summary": {
+  "segments": 2024,
+  "errors": 0,
+  "empty": 0,
+  "median_s": {
+   "de-en": 0.15710000000000002,
+   "en-de": 0.1646
+  }
+ },
+ "finished": "2026-10-12T11:09:10.041+02:00"
+}
