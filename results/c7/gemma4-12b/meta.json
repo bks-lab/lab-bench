@@ -1,0 +1,220 @@
+{
+ "test": "C7",
+ "arm": "gemma4-12b",
+ "ollama_tag": "gemma4:12b",
+ "kv_cache": "f16",
+ "lengths": [
+  4096,
+  16384,
+  32768
+ ],
+ "num_predict": 512,
+ "aim": 0.99,
+ "think": false,
+ "server": "private ollama serve, port 11435, OLLAMA_NUM_PARALLEL=1, LLAMA_ARG_CACHE_RAM=0, f16 cache and flash attention as Ollama decides",
+ "model": {
+  "tag": "gemma4:12b",
+  "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+  "size": 8021618941,
+  "details": {
+   "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "blobs": [
+   "bb722270d54346adc198f213851dbe0207e87c3ecf2a0aff4d92262726215391",
+   "7008a656050bed18f6741406a631e83fa75ee1a02308f2e4f40d978cfbb3ce4b",
+   "0cb0cd0a5c499d92942caa22fe5abb98f6e8874868d590e2b094ece4ac8e6d28"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "audio",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "env_seen": {
+  "OLLAMA_FLASH_ATTENTION": null,
+  "OLLAMA_KV_CACHE_TYPE": null,
+  "OLLAMA_NUM_PARALLEL": null
+ },
+ "inputs": {
+  "trials_sha256": "05d63ced3215c207d5dbbfeecd2e215cef4fe837a7fe4aa18dde9c51d0479d49"
+ },
+ "job_id": "20261010-231316-c7-gemma4-12b",
+ "calibration": {
+  "4096": {
+   "start": "2026-10-12T00:18:12.674+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 79,
+     "error": null
+    },
+    {
+     "chars": 10337,
+     "tokens": 2722,
+     "error": null
+    },
+    {
+     "chars": 15550,
+     "tokens": 4008,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 79,
+   "chars_per_token": 3.957750063629422,
+   "haystack_chars": 15736,
+   "end": "2026-10-12T00:18:22.441+02:00",
+   "layers_on_gpu": [
+    49,
+    49
+   ]
+  },
+  "16384": {
+   "start": "2026-10-12T00:22:29.667+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 79,
+     "error": null
+    },
+    {
+     "chars": 41967,
+     "tokens": 10554,
+     "error": null
+    },
+    {
+     "chars": 64667,
+     "tokens": 16171,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 79,
+   "chars_per_token": 4.0185806611981105,
+   "haystack_chars": 64864,
+   "end": "2026-10-12T00:22:39.790+02:00",
+   "layers_on_gpu": [
+    49,
+    49
+   ]
+  },
+  "32768": {
+   "start": "2026-10-12T00:35:05.286+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 79,
+     "error": null
+    },
+    {
+     "chars": 84139,
+     "tokens": 21479,
+     "error": null
+    },
+    {
+     "chars": 127235,
+     "tokens": 32227,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 79,
+   "chars_per_token": 3.9577889759860643,
+   "haystack_chars": 128079,
+   "end": "2026-10-12T00:35:20.987+02:00",
+   "layers_on_gpu": [
+    49,
+    49
+   ]
+  }
+ },
+ "sections": [
+  {
+   "name": "4096-gate",
+   "length": 4096,
+   "prompts": 60,
+   "start": "2026-10-12T00:18:22.456+02:00",
+   "ps": [
+    {
+     "name": "gemma4:12b",
+     "size": 1327623044,
+     "size_vram": 1327623044,
+     "context_length": 4608
+    }
+   ],
+   "end": "2026-10-12T00:19:42.089+02:00",
+   "right": 59
+  },
+  {
+   "name": "4096-rest",
+   "length": 4096,
+   "prompts": 120,
+   "start": "2026-10-12T00:19:42.099+02:00",
+   "ps": [
+    {
+     "name": "gemma4:12b",
+     "size": 1327623044,
+     "size_vram": 1327623044,
+     "context_length": 4608
+    }
+   ],
+   "end": "2026-10-12T00:22:29.667+02:00",
+   "right": 119
+  },
+  {
+   "name": "16384-all",
+   "length": 16384,
+   "prompts": 180,
+   "start": "2026-10-12T00:22:39.823+02:00",
+   "ps": [
+    {
+     "name": "gemma4:12b",
+     "size": 1352788868,
+     "size_vram": 1352788868,
+     "context_length": 16896
+    }
+   ],
+   "end": "2026-10-12T00:35:05.286+02:00",
+   "right": 167
+  },
+  {
+   "name": "32768-all",
+   "length": 32768,
+   "prompts": 180,
+   "start": "2026-10-12T00:35:21.043+02:00",
+   "ps": [
+    {
+     "name": "gemma4:12b",
+     "size": 1930564729,
+     "size_vram": 1930564729,
+     "context_length": 33280
+    }
+   ],
+   "end": "2026-10-12T01:07:44.107+02:00",
+   "right": 170
+  }
+ ],
+ "started": "2026-10-12T00:18:12.674+02:00",
+ "gate": {
+  "rule": "single at 4k, at least 95 % right (plan/c7.md)",
+  "right": 59,
+  "prompts": 60,
+  "share": 0.9833333333333333,
+  "passed": true
+ },
+ "finished": "2026-10-12T01:07:44.352+02:00"
+}

@@ -1,0 +1,216 @@
+{
+ "test": "C7",
+ "arm": "gpt-oss-20b",
+ "ollama_tag": "gpt-oss:20b",
+ "kv_cache": "f16",
+ "lengths": [
+  4096,
+  16384,
+  32768
+ ],
+ "num_predict": 512,
+ "aim": 0.99,
+ "think": "low",
+ "server": "private ollama serve, port 11435, OLLAMA_NUM_PARALLEL=1, LLAMA_ARG_CACHE_RAM=0, f16 cache and flash attention as Ollama decides",
+ "model": {
+  "tag": "gpt-oss:20b",
+  "digest": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+  "size": 13793441566,
+  "details": {
+   "parent_model": "dhiltgen/gpt-oss:20b-llamacpp",
+   "format": "gguf",
+   "family": "gpt-oss",
+   "families": [
+    "gpt-oss"
+   ],
+   "parameter_size": "20.9B",
+   "quantization_level": "MXFP4",
+   "context_length": 131072,
+   "embedding_length": 2880
+  },
+  "blobs": [
+   "8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716"
+  ],
+  "capabilities": [
+   "completion",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 131072,
+  "template_sha256": "fa6710a93d78da62641e192361344be7a8c0a1c3737f139cf89f20ce1626b99c"
+ },
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "env_seen": {
+  "OLLAMA_FLASH_ATTENTION": null,
+  "OLLAMA_KV_CACHE_TYPE": null,
+  "OLLAMA_NUM_PARALLEL": null
+ },
+ "inputs": {
+  "trials_sha256": "05d63ced3215c207d5dbbfeecd2e215cef4fe837a7fe4aa18dde9c51d0479d49"
+ },
+ "job_id": "20261010-231319-c7-gpt-oss-20b",
+ "calibration": {
+  "4096": {
+   "start": "2026-10-12T01:44:09.247+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 129,
+     "error": null
+    },
+    {
+     "chars": 10207,
+     "tokens": 2615,
+     "error": null
+    },
+    {
+     "chars": 16119,
+     "tokens": 4009,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 129,
+   "chars_per_token": 4.154381443298969,
+   "haystack_chars": 16310,
+   "end": "2026-10-12T01:44:19.616+02:00",
+   "layers_on_gpu": [
+    25,
+    25
+   ]
+  },
+  "16384": {
+   "start": "2026-10-12T01:46:52.705+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 129,
+     "error": null
+    },
+    {
+     "chars": 41837,
+     "tokens": 10088,
+     "error": null
+    },
+    {
+     "chars": 67597,
+     "tokens": 16305,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 129,
+   "chars_per_token": 4.178845202769535,
+   "haystack_chars": 67242,
+   "end": "2026-10-12T01:46:59.830+02:00",
+   "layers_on_gpu": [
+    25,
+    25
+   ]
+  },
+  "32768": {
+   "start": "2026-10-12T01:53:28.949+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 129,
+     "error": null
+    },
+    {
+     "chars": 84009,
+     "tokens": 20436,
+     "error": null
+    },
+    {
+     "chars": 133670,
+     "tokens": 32411,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 129,
+   "chars_per_token": 4.140697602379035,
+   "haystack_chars": 133791,
+   "end": "2026-10-12T01:53:38.699+02:00",
+   "layers_on_gpu": [
+    25,
+    25
+   ]
+  }
+ },
+ "sections": [
+  {
+   "name": "4096-gate",
+   "length": 4096,
+   "prompts": 60,
+   "start": "2026-10-12T01:44:19.632+02:00",
+   "ps": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12846859550,
+     "size_vram": 12846859550,
+     "context_length": 4608
+    }
+   ],
+   "end": "2026-10-12T01:45:06.105+02:00",
+   "right": 60
+  },
+  {
+   "name": "4096-rest",
+   "length": 4096,
+   "prompts": 120,
+   "start": "2026-10-12T01:45:06.105+02:00",
+   "ps": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12846859550,
+     "size_vram": 12846859550,
+     "context_length": 4608
+    }
+   ],
+   "end": "2026-10-12T01:46:52.705+02:00",
+   "right": 120
+  },
+  {
+   "name": "16384-all",
+   "length": 16384,
+   "prompts": 180,
+   "start": "2026-10-12T01:46:59.859+02:00",
+   "ps": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12872025374,
+     "size_vram": 12872025374,
+     "context_length": 16896
+    }
+   ],
+   "end": "2026-10-12T01:53:28.949+02:00",
+   "right": 179
+  },
+  {
+   "name": "32768-all",
+   "length": 32768,
+   "prompts": 180,
+   "start": "2026-10-12T01:53:38.744+02:00",
+   "ps": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12905579806,
+     "size_vram": 12905579806,
+     "context_length": 33280
+    }
+   ],
+   "end": "2026-10-12T02:08:09.817+02:00",
+   "right": 180
+  }
+ ],
+ "started": "2026-10-12T01:44:09.247+02:00",
+ "gate": {
+  "rule": "single at 4k, at least 95 % right (plan/c7.md)",
+  "right": 60,
+  "prompts": 60,
+  "share": 1.0,
+  "passed": true
+ },
+ "finished": "2026-10-12T02:08:09.930+02:00"
+}

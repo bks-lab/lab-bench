@@ -1,0 +1,218 @@
+{
+ "test": "C7",
+ "arm": "qwen3.8-27b",
+ "ollama_tag": "qwen3.8:27b",
+ "kv_cache": "f16",
+ "lengths": [
+  4096,
+  16384,
+  32768
+ ],
+ "num_predict": 512,
+ "aim": 0.99,
+ "think": false,
+ "server": "private ollama serve, port 11435, OLLAMA_NUM_PARALLEL=1, LLAMA_ARG_CACHE_RAM=0, f16 cache and flash attention as Ollama decides",
+ "model": {
+  "tag": "qwen3.8:27b",
+  "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+  "size": 17741872154,
+  "details": {
+   "parent_model": "qwen3.8:27b-q4_K_M",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "27.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d",
+   "ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "env_seen": {
+  "OLLAMA_FLASH_ATTENTION": null,
+  "OLLAMA_KV_CACHE_TYPE": null,
+  "OLLAMA_NUM_PARALLEL": null
+ },
+ "inputs": {
+  "trials_sha256": "05d63ced3215c207d5dbbfeecd2e215cef4fe837a7fe4aa18dde9c51d0479d49"
+ },
+ "job_id": "20261010-231323-c7-qwen3.8-27b",
+ "calibration": {
+  "4096": {
+   "start": "2026-10-12T03:16:26.390+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 76,
+     "error": null
+    },
+    {
+     "chars": 10345,
+     "tokens": 2738,
+     "error": null
+    },
+    {
+     "chars": 15463,
+     "tokens": 3981,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 76,
+   "chars_per_token": 3.959795134443022,
+   "haystack_chars": 15756,
+   "end": "2026-10-12T03:16:41.201+02:00",
+   "layers_on_gpu": [
+    66,
+    66
+   ]
+  },
+  "16384": {
+   "start": "2026-10-12T03:24:46.930+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 76,
+     "error": null
+    },
+    {
+     "chars": 41974,
+     "tokens": 10558,
+     "error": null
+    },
+    {
+     "chars": 64647,
+     "tokens": 16248,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 76,
+   "chars_per_token": 3.9974647538956223,
+   "haystack_chars": 64535,
+   "end": "2026-10-12T03:25:03.113+02:00",
+   "layers_on_gpu": [
+    66,
+    66
+   ]
+  },
+  "32768": {
+   "start": "2026-10-12T03:51:48.307+02:00",
+   "calls": [
+    {
+     "chars": 0,
+     "tokens": 76,
+     "error": null
+    },
+    {
+     "chars": 84147,
+     "tokens": 21599,
+     "error": null
+    },
+    {
+     "chars": 126532,
+     "tokens": 32102,
+     "error": null
+    }
+   ],
+   "overhead_tokens": 76,
+   "chars_per_token": 3.9509148816586523,
+   "haystack_chars": 127868,
+   "end": "2026-10-12T03:52:16.074+02:00",
+   "layers_on_gpu": [
+    66,
+    66
+   ]
+  }
+ },
+ "sections": [
+  {
+   "name": "4096-gate",
+   "length": 4096,
+   "prompts": 60,
+   "start": "2026-10-12T03:16:41.215+02:00",
+   "ps": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17413387057,
+     "size_vram": 17413387057,
+     "context_length": 4608
+    }
+   ],
+   "end": "2026-10-12T03:19:07.212+02:00",
+   "right": 60
+  },
+  {
+   "name": "4096-rest",
+   "length": 4096,
+   "prompts": 120,
+   "start": "2026-10-12T03:19:07.221+02:00",
+   "ps": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17413387057,
+     "size_vram": 17413387057,
+     "context_length": 4608
+    }
+   ],
+   "end": "2026-10-12T03:24:46.930+02:00",
+   "right": 120
+  },
+  {
+   "name": "16384-all",
+   "length": 16384,
+   "prompts": 180,
+   "start": "2026-10-12T03:25:03.140+02:00",
+   "ps": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17318480443,
+     "size_vram": 17318480443,
+     "context_length": 16896
+    }
+   ],
+   "end": "2026-10-12T03:51:48.307+02:00",
+   "right": 178
+  },
+  {
+   "name": "32768-all",
+   "length": 32768,
+   "prompts": 180,
+   "start": "2026-10-12T03:52:16.131+02:00",
+   "ps": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17402366523,
+     "size_vram": 17402366523,
+     "context_length": 33280
+    }
+   ],
+   "end": "2026-10-12T04:57:10.500+02:00",
+   "right": 180
+  }
+ ],
+ "started": "2026-10-12T03:16:26.390+02:00",
+ "gate": {
+  "rule": "single at 4k, at least 95 % right (plan/c7.md)",
+  "right": 60,
+  "prompts": 60,
+  "share": 1.0,
+  "passed": true
+ },
+ "finished": "2026-10-12T04:57:10.649+02:00"
+}
