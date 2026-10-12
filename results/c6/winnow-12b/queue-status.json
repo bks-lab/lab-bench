@@ -1,0 +1,39 @@
+{
+ "start": "2026-10-10T18:13:14+02:00",
+ "end": "2026-10-10T18:21:49+02:00",
+ "exit_code": 0,
+ "reason": "",
+ "expected_gpu_min": 12,
+ "gpu": {
+  "samples": 508,
+  "first": "2026/10/10 18:13:17.042",
+  "last": "2026/10/10 18:21:48.784",
+  "idle_mem_mib": 1216.0,
+  "peak_mem_mib": 15084.0,
+  "peak_over_idle_mib": 13868.0,
+  "energy_j": 128088.8,
+  "mean_power_w": 252.1,
+  "gpu_min": 8.47,
+  "note": "GPU only, whole job incl. model load; 1 s samples"
+ },
+ "machine": {
+  "label": "local-rtx4090",
+  "recorded_at": "2026-10-10T18:13:17+02:00",
+  "gpu_query": "name,driver_version,power.limit,clocks.gr,clocks.mem,memory.total (clocks at job start)",
+  "gpu": "NVIDIA GeForce RTX 4090, 617.42, 450.00 W, 210 MHz, 405 MHz, 24564 MiB",
+  "cuda_version": "13.4",
+  "os": "Windows 11 10.0.26300",
+  "cpu": "AMD Ryzen 9 7900 12-Core Processor",
+  "ram_gb": 127.2,
+  "ollama_version": "0.35.0",
+  "job_python": "3.12.10",
+  "runner_python": "3.12.10"
+ },
+ "id": "20261010-175328-c6-winnow-12b",
+ "key": "C6-winnow-12b",
+ "test": "C6",
+ "arm": "winnow-12b",
+ "ok": true,
+ "repo_ref": "a4e0ff89b18fedc941936bc1d588a7750a618f93",
+ "requested_by": "c4c8-agent"
+}

@@ -1,0 +1,59 @@
+{
+ "test": "C6",
+ "arm": "gelectra-large",
+ "job_id": "20261010-161105-c6-gelectra-large",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "sample_sha256": "9c95d6b7393238ae122d4bee221592c6e2ce00756d0e49ab1fb2e31a48198cc1",
+  "method_sha256": "342a18cd8477ceb9833f2ae7304b97c8222e4f0422ee3ac2669c694704a674ca",
+  "parquet_sha256": "c154513e016e73e4e32b46b48010f24a435ad7b0e96cc3858cfc20c7d29649bc"
+ },
+ "sections": [
+  {
+   "name": "load",
+   "start": "2026-10-10T17:18:36.651+02:00",
+   "end": "2026-10-10T17:18:37.503+02:00",
+   "seconds": 0.8517975000140723
+  },
+  {
+   "name": "warmup",
+   "start": "2026-10-10T17:18:37.503+02:00",
+   "end": "2026-10-10T17:18:37.642+02:00"
+  },
+  {
+   "name": "timed",
+   "items": 2204,
+   "start": "2026-10-10T17:18:37.642+02:00",
+   "end": "2026-10-10T17:19:50.224+02:00"
+  }
+ ],
+ "started": "2026-10-10T17:18:32.122+02:00",
+ "versions": {
+  "python": "3.12.10",
+  "transformers": "4.57.6",
+  "torch": "2.11.0+cu128",
+  "tokenizers": "0.22.2",
+  "cuda_available": true
+ },
+ "reader": {
+  "model": "deepset/gelectra-large-germanquad",
+  "rev": "c16378c846ebc75aa971101acd0192535fed9fed",
+  "max_answer_len": 200
+ },
+ "summary": {
+  "questions": 2204,
+  "f1": 87.09694731948984,
+  "em": 73.04900181488203,
+  "errors": 0,
+  "median_s": 0.0276
+ },
+ "gate": {
+  "reference_f1": 88.1,
+  "tolerance": 2.0,
+  "value": 87.09694731948984,
+  "questions": 2204,
+  "passed": true
+ },
+ "finished": "2026-10-10T17:19:50.226+02:00"
+}

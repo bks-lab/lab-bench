@@ -134,6 +134,298 @@
    "unfinished": [
     "qwen3-vl-32b"
    ]
+  },
+  {
+   "id": "C4",
+   "capability": "Structured output and tool calling",
+   "design": "plan/c4.md",
+   "report": "results/c4/findings.md",
+   "best_local_model": "qwen3-14b",
+   "best_by_value": "qwen3-14b",
+   "tie": {
+    "top_by_value": "qwen3-14b",
+    "next": "qwen3.8-27b",
+    "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown"
+   },
+   "licence_class": "open source",
+   "quality": {
+    "metric": "AST accuracy, BFCL v3 non-live, 1,000 items, native tool calling",
+    "value": 0.919,
+    "ci95": [
+     0.901,
+     0.935
+    ],
+    "schema_validity_constrained": 0.9071,
+    "schema_validity_free": 0.81,
+    "baseline": "prompt mode of the same model",
+    "baseline_value": 0.946,
+    "reference": "BFCL leaderboard Qwen3-14B (FC) simple 95.25 % (sanity gate)",
+    "reference_ours": 0.935
+   },
+   "speed": {
+    "unit": "ms per tool-calling item, median (one call at a time)",
+    "value": 606.5,
+    "out_tok_s": 87.3453
+   },
+   "vram_peak_gb": 10.31,
+   "energy": {
+    "unit": "GPU joules per 1,000 tool-calling items",
+    "value": 288452
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "qwen3-14b",
+    "value": 0.919,
+    "vram_peak_gb": 10.31,
+    "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
+   },
+   "unfinished": []
+  },
+  {
+   "id": "C6",
+   "capability": "German reading comprehension (answer from a passage)",
+   "design": "plan/c6.md",
+   "report": "results/c6/findings.md",
+   "best_local_model": "gelectra-large",
+   "best_by_value": "gelectra-large",
+   "tie": null,
+   "licence_class": "open source",
+   "quality": {
+    "metric": "F1 on 1,000 GermanQuAD test questions",
+    "value": 0.8721,
+    "ci95": [
+     0.8551,
+     0.8883
+    ],
+    "baseline": "best-overlap sentence of the passage",
+    "baseline_value": 0.2213,
+    "reference": "GELECTRA-large card F1 88.1 on the full test set (sanity gate)",
+    "reference_ours": 0.871
+   },
+   "speed": {
+    "unit": "ms per question, median",
+    "value": 27.5
+   },
+   "vram_peak_gb": 1.73,
+   "energy": {
+    "unit": "GPU joules per 1,000 questions",
+    "value": 10638
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "gelectra-large",
+    "value": 0.8721,
+    "vram_peak_gb": 1.73,
+    "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
+   },
+   "unfinished": []
+  },
+  {
+   "id": "C7",
+   "capability": "Long context, 4k to 32k tokens",
+   "design": "plan/c7.md",
+   "report": "results/c7/findings.md",
+   "best_local_model": "qwen3-14b",
+   "best_by_value": "qwen3-14b",
+   "tie": {
+    "top_by_value": "qwen3-14b",
+    "next": "qwen3.8-27b",
+    "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown"
+   },
+   "licence_class": "open source",
+   "quality": {
+    "metric": "needle accuracy at 32k tokens (180 prompts)",
+    "value": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "at_4k": 1.0,
+    "at_16k": 1.0,
+    "baseline": "the same model at 4k",
+    "baseline_value": 1.0,
+    "reference": "none published; internal check: 95 % on single at 4k (sanity gate)"
+   },
+   "speed": {
+    "unit": "seconds of prompt processing at 32k tokens, median",
+    "value": 8.0632
+   },
+   "vram_peak_gb": 13.97,
+   "energy": {
+    "unit": "GPU joules per 32k-token prompt",
+    "value": 6412
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "qwen3-8b",
+    "value": 0.9833,
+    "vram_peak_gb": 10.04,
+    "rule": "smallest peak VRAM at 32k among the arms the paired test does not separate from the best"
+   },
+   "unfinished": []
+  },
+  {
+   "id": "C8",
+   "capability": "Throughput and energy per model size",
+   "design": "plan/c8.md",
+   "report": "results/c8/findings.md",
+   "best_local_model": "granite4-3b",
+   "best_by_value": "granite4-3b",
+   "tie": null,
+   "licence_class": "open source",
+   "quality": {
+    "metric": "none (throughput test); headline: most one-token decisions per hour at 16 parallel clients among arms that stay on the card",
+    "value": null,
+    "ci95": null
+   },
+   "speed": {
+    "unit": "decisions per hour at 16 parallel clients (route1 one-token method)",
+    "value": 260731,
+    "chat_short_tok_s_at_1": 238.2118,
+    "chat_short_tok_s_at_16": 1378.1723
+   },
+   "vram_peak_gb": 8.88,
+   "energy": {
+    "unit": "GPU joules per 1,000 decisions at 16 parallel clients",
+    "value": 3169
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": null,
+   "series": [
+    {
+     "arm": "granite4-3b",
+     "engine": "ollama",
+     "params_b": 3.4,
+     "chat_short_tok_s_at_1": 238.2118,
+     "chat_short_tok_s_at_16": 1378.1723,
+     "decisions_per_h_at_1": 104527,
+     "decisions_per_h_at_16": 260731,
+     "j_per_1000_tokens_at_16": 165,
+     "peak_vram_gb": 8.88,
+     "offloaded_at_16": false
+    },
+    {
+     "arm": "qwen3-8b",
+     "engine": "ollama",
+     "params_b": 8.2,
+     "chat_short_tok_s_at_1": 141.0725,
+     "chat_short_tok_s_at_16": 875.7935,
+     "decisions_per_h_at_1": 94942,
+     "decisions_per_h_at_16": 190414,
+     "j_per_1000_tokens_at_16": 305,
+     "peak_vram_gb": 16.4,
+     "offloaded_at_16": false
+    },
+    {
+     "arm": "gemma4-12b",
+     "engine": "ollama",
+     "params_b": 11.9,
+     "chat_short_tok_s_at_1": 147.6865,
+     "chat_short_tok_s_at_16": 146.1792,
+     "decisions_per_h_at_1": 50597,
+     "decisions_per_h_at_16": 35463,
+     "j_per_1000_tokens_at_16": 858,
+     "peak_vram_gb": 22.29,
+     "offloaded_at_16": true
+    },
+    {
+     "arm": "winnow-12b",
+     "engine": "ollama",
+     "params_b": 11.9,
+     "chat_short_tok_s_at_1": 58.7091,
+     "chat_short_tok_s_at_16": 122.7235,
+     "decisions_per_h_at_1": 49159,
+     "decisions_per_h_at_16": 30595,
+     "j_per_1000_tokens_at_16": 746,
+     "peak_vram_gb": 21.78,
+     "offloaded_at_16": true
+    },
+    {
+     "arm": "qwen3-14b",
+     "engine": "ollama",
+     "params_b": 14.8,
+     "chat_short_tok_s_at_1": 85.6242,
+     "chat_short_tok_s_at_16": 563.9969,
+     "decisions_per_h_at_1": 81528,
+     "decisions_per_h_at_16": 114981,
+     "j_per_1000_tokens_at_16": 546,
+     "peak_vram_gb": 21.27,
+     "offloaded_at_16": false
+    },
+    {
+     "arm": "gpt-oss-20b",
+     "engine": "ollama",
+     "params_b": 20.9,
+     "chat_short_tok_s_at_1": 173.5315,
+     "chat_short_tok_s_at_16": 737.5773,
+     "decisions_per_h_at_1": 60039,
+     "decisions_per_h_at_16": 120469,
+     "j_per_1000_tokens_at_16": 393,
+     "peak_vram_gb": 14.69,
+     "offloaded_at_16": false
+    },
+    {
+     "arm": "mistral-small-3.2",
+     "engine": "ollama",
+     "params_b": 24.0,
+     "chat_short_tok_s_at_1": 54.8948,
+     "chat_short_tok_s_at_16": 44.1717,
+     "decisions_per_h_at_1": 66797,
+     "decisions_per_h_at_16": 19345,
+     "j_per_1000_tokens_at_16": 1706,
+     "peak_vram_gb": 21.44,
+     "offloaded_at_16": true
+    },
+    {
+     "arm": "gemma4-26b",
+     "engine": "ollama",
+     "params_b": 25.2,
+     "chat_short_tok_s_at_1": 178.2764,
+     "chat_short_tok_s_at_16": 231.8524,
+     "decisions_per_h_at_1": 52937,
+     "decisions_per_h_at_16": 31390,
+     "j_per_1000_tokens_at_16": 662,
+     "peak_vram_gb": 22.32,
+     "offloaded_at_16": true
+    },
+    {
+     "arm": "qwen3.8-27b",
+     "engine": "ollama",
+     "params_b": 27.3,
+     "chat_short_tok_s_at_1": 73.3867,
+     "chat_short_tok_s_at_16": 73.897,
+     "decisions_per_h_at_1": 24182,
+     "decisions_per_h_at_16": 26816,
+     "j_per_1000_tokens_at_16": 5551,
+     "peak_vram_gb": 18.12,
+     "offloaded_at_16": false
+    },
+    {
+     "arm": "vllm-qwen3-14b",
+     "engine": "vllm",
+     "params_b": null,
+     "chat_short_tok_s_at_1": 79.6109,
+     "chat_short_tok_s_at_16": 789.495,
+     "decisions_per_h_at_1": 69457,
+     "decisions_per_h_at_16": 138916,
+     "j_per_1000_tokens_at_16": 411,
+     "peak_vram_gb": 19.89,
+     "offloaded_at_16": false
+    },
+    {
+     "arm": "vllm-gemma4-12b",
+     "engine": "vllm",
+     "params_b": null,
+     "chat_short_tok_s_at_1": 76.8011,
+     "chat_short_tok_s_at_16": 708.8441,
+     "decisions_per_h_at_1": 66191,
+     "decisions_per_h_at_16": 156645,
+     "j_per_1000_tokens_at_16": 430,
+     "peak_vram_gb": 21.18,
+     "offloaded_at_16": false
+    }
+   ],
+   "unfinished": []
   }
  ]
 }

@@ -1,0 +1,196 @@
+{
+ "test": "C4",
+ "arm": "gpt-oss-20b",
+ "ollama_tag": "gpt-oss:20b",
+ "num_ctx": 8192,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192
+ },
+ "num_predict": {
+  "fc": 1024,
+  "prompt": 1024,
+  "free": 4096,
+  "constrained": 4096
+ },
+ "think": "low",
+ "modes": [
+  "fc",
+  "prompt",
+  "free",
+  "constrained"
+ ],
+ "limit": 0,
+ "mock": false,
+ "job_id": "20261010-140208-c4-gpt-oss-20b",
+ "model": {
+  "tag": "gpt-oss:20b",
+  "digest": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+  "size": 13793441566,
+  "details": {
+   "parent_model": "dhiltgen/gpt-oss:20b-llamacpp",
+   "format": "gguf",
+   "family": "gpt-oss",
+   "families": [
+    "gpt-oss"
+   ],
+   "parameter_size": "20.9B",
+   "quantization_level": "MXFP4",
+   "context_length": 131072,
+   "embedding_length": 2880
+  },
+  "blobs": [
+   "8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716"
+  ],
+  "capabilities": [
+   "completion",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 131072,
+  "template_sha256": "fa6710a93d78da62641e192361344be7a8c0a1c3737f139cf89f20ce1626b99c"
+ },
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "9e82b7f3c867dedce3a9106e5f94d5c0738351074187a5b996dd0961034a2032",
+  "method_sha256": "0444e478a8b1fb0a964539f86bad9eef4f13b8d5cc6ae746369e893bae3e8929"
+ },
+ "sections": [
+  {
+   "name": "warmup_fc",
+   "start": "2026-10-11T08:12:28.020+02:00",
+   "end": "2026-10-11T08:12:38.379+02:00"
+  },
+  {
+   "name": "fc",
+   "items": 1000,
+   "start": "2026-10-11T08:12:38.379+02:00",
+   "ps_before": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12854199582,
+     "size_vram": 12854199582,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12854199582,
+     "size_vram": 12854199582,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T08:19:03.451+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_prompt",
+   "start": "2026-10-11T08:19:03.451+02:00",
+   "end": "2026-10-11T08:19:04.316+02:00"
+  },
+  {
+   "name": "prompt",
+   "items": 1000,
+   "start": "2026-10-11T08:19:04.316+02:00",
+   "ps_before": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12854199582,
+     "size_vram": 12854199582,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12854199582,
+     "size_vram": 12854199582,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T08:25:31.420+02:00",
+   "errors": 3
+  },
+  {
+   "name": "warmup_free",
+   "start": "2026-10-11T08:25:31.420+02:00",
+   "end": "2026-10-11T08:25:32.738+02:00"
+  },
+  {
+   "name": "free",
+   "items": 600,
+   "start": "2026-10-11T08:25:32.738+02:00",
+   "ps_before": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12854199582,
+     "size_vram": 12854199582,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12854199582,
+     "size_vram": 12854199582,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T08:44:25.313+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_constrained",
+   "start": "2026-10-11T08:44:25.313+02:00",
+   "end": "2026-10-11T08:44:26.657+02:00"
+  },
+  {
+   "name": "constrained",
+   "items": 600,
+   "start": "2026-10-11T08:44:26.657+02:00",
+   "ps_before": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12854199582,
+     "size_vram": 12854199582,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gpt-oss:20b",
+     "size": 12854199582,
+     "size_vram": 12854199582,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T09:06:20.880+02:00",
+   "errors": 8
+  }
+ ],
+ "started": "2026-10-11T08:12:28.010+02:00",
+ "summary": {
+  "fc": {
+   "items": 1000,
+   "errors": 0
+  },
+  "prompt": {
+   "items": 1000,
+   "errors": 3
+  },
+  "free": {
+   "items": 600,
+   "errors": 0
+  },
+  "constrained": {
+   "items": 600,
+   "errors": 8
+  }
+ },
+ "finished": "2026-10-11T09:06:20.884+02:00"
+}

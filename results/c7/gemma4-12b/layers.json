@@ -1,0 +1,34 @@
+{
+ "source": "llama-server lines in the logs of the job's private ollama serve, one entry per model load",
+ "loads": {
+  "all": [
+   {
+    "ctx": 4608,
+    "np": 1,
+    "layers_on_gpu": [
+     49,
+     49
+    ],
+    "fit_reduced": false
+   },
+   {
+    "ctx": 16896,
+    "np": 1,
+    "layers_on_gpu": [
+     49,
+     49
+    ],
+    "fit_reduced": false
+   },
+   {
+    "ctx": 33280,
+    "np": 1,
+    "layers_on_gpu": [
+     49,
+     49
+    ],
+    "fit_reduced": false
+   }
+  ]
+ }
+}

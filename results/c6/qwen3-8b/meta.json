@@ -1,0 +1,99 @@
+{
+ "test": "C6",
+ "arm": "qwen3-8b",
+ "job_id": "20261010-161107-c6-qwen3-8b",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "sample_sha256": "9c95d6b7393238ae122d4bee221592c6e2ce00756d0e49ab1fb2e31a48198cc1",
+  "method_sha256": "342a18cd8477ceb9833f2ae7304b97c8222e4f0422ee3ac2669c694704a674ca"
+ },
+ "sections": [
+  {
+   "name": "warmup",
+   "start": "2026-10-10T17:20:53.996+02:00",
+   "end": "2026-10-10T17:20:57.112+02:00"
+  },
+  {
+   "name": "timed",
+   "items": 1000,
+   "start": "2026-10-10T17:20:57.112+02:00",
+   "ps_before": [
+    {
+     "name": "qwen3:8b",
+     "size": 6295440588,
+     "size_vram": 6295440588,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "qwen3:8b",
+     "size": 6295440588,
+     "size_vram": 6295440588,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-10T17:25:32.114+02:00"
+  }
+ ],
+ "started": "2026-10-10T17:20:53.900+02:00",
+ "ollama_tag": "qwen3:8b",
+ "model": {
+  "tag": "qwen3:8b",
+  "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "size": 5225388164,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3",
+   "families": [
+    "qwen3"
+   ],
+   "parameter_size": "8.2B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 40960,
+   "embedding_length": 4096
+  },
+  "blobs": [
+   "a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f"
+  ],
+  "capabilities": [
+   "completion",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 40960,
+  "template_sha256": "ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4"
+ },
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192,
+  "num_predict": 256
+ },
+ "format": {
+  "type": "object",
+  "properties": {
+   "answer": {
+    "type": "string"
+   }
+  },
+  "required": [
+   "answer"
+  ]
+ },
+ "think": false,
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "summary": {
+  "questions": 1000,
+  "f1": 67.57889604067492,
+  "em": 34.5,
+  "errors": 0,
+  "median_s": 0.24845
+ },
+ "finished": "2026-10-10T17:25:32.119+02:00"
+}

@@ -322,7 +322,8 @@ def c8():
                 else:
                     vals.append(sum(r["eval_count"] or 0 for r in sel if not r["error"]) / s["wall_s"])
             rep = a["configurations"][key]["decisions_per_h_mean" if wl == "decide" else "agg_gen_tok_s_mean"]
-            check(f"C8 {a['arm']} {key} mean of 3", sum(vals) / len(vals), rep, 0.01 if wl != "decide" else 1.0)
+            # meta.json keeps wall_s to the millisecond: at a 6 s section that alone moves a rate by up to 1e-4 of itself
+            check(f"C8 {a['arm']} {key} mean of 3", sum(vals) / len(vals), rep, max(0.01 if wl != "decide" else 1.0, 1e-4 * rep))
 
 
 ap = argparse.ArgumentParser()

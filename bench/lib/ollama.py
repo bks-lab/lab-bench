@@ -172,3 +172,29 @@ def layers_on_gpu(log_path):
     # a multimodal model also loads its small projector; the language model has the most layers
     most = max(y for _, y in hits)
     return [h for h in hits if h[1] == most][-1]
+
+
+def llama_loads(log_path):
+    """Every model load in a private server's log, in order: context size (-c), parallel
+    slots (-np), layers on the GPU and whether llama-server's fit had to move anything
+    to system memory ("cannot meet free memory target": whole layers, or for a
+    mixture-of-experts model parts of the expert weights, which the layer count misses)."""
+    import re as _re  # noqa: PLC0415
+    try:
+        text = open(log_path, encoding="utf-8", errors="replace").read()
+    except OSError:
+        return []
+    out = []
+    parts = _re.split(r'msg="starting llama-server"', text)
+    for seg in parts[1:]:
+        ctx = _re.search(r" -c (\d+)", seg)
+        npar = _re.search(r" -np (\d+)", seg)
+        hits = [(int(x), int(y)) for x, y in _re.findall(r"offloaded (\d+)/(\d+) layers to GPU", seg)]
+        lay = None
+        if hits:
+            most = max(y for _, y in hits)
+            lay = [h for h in hits if h[1] == most][-1]
+        out.append({"ctx": int(ctx.group(1)) if ctx else None, "np": int(npar.group(1)) if npar else None,
+                    "layers_on_gpu": list(lay) if lay else None,
+                    "fit_reduced": "cannot meet free memory target" in seg})
+    return out

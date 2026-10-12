@@ -1,0 +1,103 @@
+{
+ "test": "C6",
+ "arm": "gemma4-12b",
+ "job_id": "20261010-161109-c6-gemma4-12b",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "sample_sha256": "9c95d6b7393238ae122d4bee221592c6e2ce00756d0e49ab1fb2e31a48198cc1",
+  "method_sha256": "342a18cd8477ceb9833f2ae7304b97c8222e4f0422ee3ac2669c694704a674ca"
+ },
+ "sections": [
+  {
+   "name": "warmup",
+   "start": "2026-10-10T17:26:35.763+02:00",
+   "end": "2026-10-10T17:26:44.872+02:00"
+  },
+  {
+   "name": "timed",
+   "items": 1000,
+   "start": "2026-10-10T17:26:44.872+02:00",
+   "ps_before": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-10T17:32:08.897+02:00"
+  }
+ ],
+ "started": "2026-10-10T17:26:35.694+02:00",
+ "ollama_tag": "gemma4:12b",
+ "model": {
+  "tag": "gemma4:12b",
+  "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+  "size": 8021618941,
+  "details": {
+   "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "blobs": [
+   "bb722270d54346adc198f213851dbe0207e87c3ecf2a0aff4d92262726215391",
+   "7008a656050bed18f6741406a631e83fa75ee1a02308f2e4f40d978cfbb3ce4b",
+   "0cb0cd0a5c499d92942caa22fe5abb98f6e8874868d590e2b094ece4ac8e6d28"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "audio",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192,
+  "num_predict": 256
+ },
+ "format": {
+  "type": "object",
+  "properties": {
+   "answer": {
+    "type": "string"
+   }
+  },
+  "required": [
+   "answer"
+  ]
+ },
+ "think": false,
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "summary": {
+  "questions": 1000,
+  "f1": 84.91270255781733,
+  "em": 65.60000000000001,
+  "errors": 0,
+  "median_s": 0.30210000000000004
+ },
+ "finished": "2026-10-10T17:32:08.902+02:00"
+}

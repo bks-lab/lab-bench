@@ -241,6 +241,9 @@ def scrub(o):
         return [scrub(v) for v in o]
     if isinstance(o, str) and re.match(r"^[A-Za-z]:\\", o):
         return "<PC path>"
+    if isinstance(o, str) and re.match(r"^/(Users|home)/[^/]+/\.ollama/", o):
+        # Ollama's /api/show parent_model: a blob path on the machine that built the library model
+        return re.sub(r"^/(Users|home)/[^/]+/\.ollama/", "<ollama>/", o)
     if isinstance(o, str):
         return re.sub(r"[A-Za-z]:\\[^\s,;\"']*", "<PC path>", o)
     return o
@@ -268,6 +271,10 @@ def do_import(queue):
         out = ROOT / "results" / test / ad
         out.mkdir(parents=True, exist_ok=True)
         meta_p = os.path.join(d, "meta.json")
+        if jid.endswith("-retry") and os.path.exists(meta_p):
+            merge_retry(d, jid, test, ad, out, status)
+            n += 1
+            continue
         date = status["start"][:10]
         if os.path.exists(meta_p):
             meta = json.load(open(meta_p, encoding="utf-8"))
@@ -293,11 +300,77 @@ def do_import(queue):
                 for r in rows:
                     f.write(json.dumps(r, ensure_ascii=False) + "\n")
         wr_json(out / "queue-status.json", scrub(status))
+        # C7, C8: every model load of the job's private llama-server (context, parallel slots, layers
+        # on the GPU, whether the fit moved anything to system memory); /api/ps does not show a split
+        # model under Ollama 0.35 (plan/c8.md and plan/c7.md, notes of 2026-10-11)
+        logs = sorted(glob.glob(os.path.join(d, "ollama-private*.log")))
+        if test in ("c7", "c8") and logs:
+            sys.path.insert(0, str(ROOT / "bench" / "lib"))
+            import ollama as _ol  # noqa: PLC0415
+            loads = {}
+            for lp in logs:
+                m = re.search(r"ollama-private-?(\d*)\.log$", lp)
+                loads[m.group(1) or "all"] = _ol.llama_loads(lp)
+            wr_json(out / "layers.json", {"source": "llama-server lines in the logs of the job's private ollama serve, one entry per model load",
+                                          "loads": loads})
         (ROOT / "results" / test / "gpu").mkdir(exist_ok=True)
         shutil.copyfile(os.path.join(d, "gpu.csv"), ROOT / "results" / test / "gpu" / f"{ad}.csv")
         n += 1
         print(f"imported {jid} -> results/{test}/{ad}/")
     print(f"{n} jobs imported")
+
+
+def merge_retry(d, jid, test, ad, out, status):
+    """A job whose id ends in '-retry' re-ran some modes of an arm that is already imported
+    (its meta names the modes). Its rows and timed sections replace those of the same modes;
+    the replaced rows are kept as <date>-run1-superseded.jsonl, the retry's queue status as
+    queue-status-retry.json, and its GPU log is appended to the arm's (the two jobs do not
+    overlap in time, so every section still finds its own samples)."""
+    meta = json.load(open(os.path.join(d, "meta.json"), encoding="utf-8"))
+    modes = meta["modes"]
+    runs = sorted(out.glob("*-run1.jsonl"))
+    if not runs or not (out / "meta.json").exists():
+        raise SystemExit(f"{jid}: retry without an imported base run in {out}")
+    base_p = runs[-1]
+    base_meta = json.load(open(out / "meta.json", encoding="utf-8"))
+    if (base_meta.get("model") or {}).get("digest") != (meta.get("model") or {}).get("digest"):
+        raise SystemExit(f"{jid}: the retry ran other weights than the base run")
+    base = rd_jsonl(base_p)
+    new = {}
+    for r in rd_jsonl(os.path.join(d, "result.jsonl")):
+        new.setdefault(r["mode"], []).append(r)
+    with open(str(base_p).replace("-run1.jsonl", "-run1-superseded.jsonl"), "w", encoding="utf-8") as f:
+        for r in base:
+            if r["mode"] in modes:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    merged, done = [], set()
+    for r in base:
+        if r["mode"] in modes:
+            if r["mode"] not in done:
+                merged += new[r["mode"]]
+                done.add(r["mode"])
+        else:
+            merged.append(r)
+    with open(base_p, "w", encoding="utf-8") as f:
+        for r in merged:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    rs = {s["name"]: s for s in meta["sections"]}
+    secs = []
+    for s in base_meta["sections"]:
+        nm = s["name"].removeprefix("warmup_")
+        secs.append({**scrub(rs[s["name"]]), "from_job": "retry"} if nm in modes else s)
+    base_meta["sections"] = secs
+    base_meta["retry"] = scrub({"job_id": jid, "modes": modes, "started": meta.get("started"), "finished": meta.get("finished"),
+                                "digest": (meta.get("model") or {}).get("digest"), "summary": meta.get("summary"),
+                                "note": "rows and timed sections of these modes come from the retry job; the replaced rows are in *-run1-superseded.jsonl"})
+    wr_json(out / "meta.json", base_meta)
+    wr_json(out / "queue-status-retry.json", scrub(status))
+    g = ROOT / "results" / test / "gpu" / f"{ad}.csv"
+    with open(os.path.join(d, "gpu.csv"), "rb") as f:
+        extra = f.read().split(b"\n", 1)[1]  # without the header; bytes as written (CRLF)
+    with open(g, "ab") as f:
+        f.write(extra)
+    print(f"merged retry {jid} ({', '.join(modes)}) -> results/{test}/{ad}/")
 
 
 def latest_rows(test, arm, tag=""):
@@ -876,7 +949,8 @@ def main():
             caps.append(row)
     wr_json(ROOT / "results" / "capabilities.json", {"schema": "jev-match-bench capability map v1", "columns": "plan/ROADMAP.md, section Capability map for the website", **common, "rows": caps})
     for c in caps:
-        print(c["id"], c["best_local_model"], c["quality"]["value"], c["quality"]["ci95"], "tie" if c["tie"] else "", "smallest:", c["smallest_within_interval"]["arm"])
+        print(c["id"], c["best_local_model"], c["quality"]["value"], c["quality"]["ci95"], "tie" if c["tie"] else "",
+              "smallest:", (c["smallest_within_interval"] or {}).get("arm"))
 
 
 if __name__ == "__main__":

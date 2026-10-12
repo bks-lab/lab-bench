@@ -1,0 +1,101 @@
+{
+ "test": "C6",
+ "arm": "qwen3.8-27b",
+ "job_id": "20261010-161115-c6-qwen3.8-27b",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "sample_sha256": "9c95d6b7393238ae122d4bee221592c6e2ce00756d0e49ab1fb2e31a48198cc1",
+  "method_sha256": "342a18cd8477ceb9833f2ae7304b97c8222e4f0422ee3ac2669c694704a674ca"
+ },
+ "sections": [
+  {
+   "name": "warmup",
+   "start": "2026-10-10T18:02:20.313+02:00",
+   "end": "2026-10-10T18:02:34.319+02:00"
+  },
+  {
+   "name": "timed",
+   "items": 1000,
+   "start": "2026-10-10T18:02:34.319+02:00",
+   "ps_before": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "qwen3.8:27b",
+     "size": 17299081787,
+     "size_vram": 17299081787,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-10T18:12:12.804+02:00"
+  }
+ ],
+ "started": "2026-10-10T18:02:20.215+02:00",
+ "ollama_tag": "qwen3.8:27b",
+ "model": {
+  "tag": "qwen3.8:27b",
+  "digest": "aaee06c39dcf2437cde036998d960e1fc1494b8191be7cc9657d01e509097813",
+  "size": 17741872154,
+  "details": {
+   "parent_model": "qwen3.8:27b-q4_K_M",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "27.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5120
+  },
+  "blobs": [
+   "f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d",
+   "ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192,
+  "num_predict": 256
+ },
+ "format": {
+  "type": "object",
+  "properties": {
+   "answer": {
+    "type": "string"
+   }
+  },
+  "required": [
+   "answer"
+  ]
+ },
+ "think": false,
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "summary": {
+  "questions": 1000,
+  "f1": 75.05925196584087,
+  "em": 54.1,
+  "errors": 0,
+  "median_s": 0.54095
+ },
+ "finished": "2026-10-10T18:12:12.808+02:00"
+}

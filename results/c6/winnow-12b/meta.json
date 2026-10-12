@@ -1,0 +1,102 @@
+{
+ "test": "C6",
+ "arm": "winnow-12b",
+ "job_id": "20261010-175328-c6-winnow-12b",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "sample_sha256": "9c95d6b7393238ae122d4bee221592c6e2ce00756d0e49ab1fb2e31a48198cc1",
+  "method_sha256": "342a18cd8477ceb9833f2ae7304b97c8222e4f0422ee3ac2669c694704a674ca"
+ },
+ "sections": [
+  {
+   "name": "warmup",
+   "start": "2026-10-10T18:13:17.201+02:00",
+   "end": "2026-10-10T18:13:22.735+02:00"
+  },
+  {
+   "name": "timed",
+   "items": 1000,
+   "start": "2026-10-10T18:13:22.735+02:00",
+   "ps_before": [
+    {
+     "name": "hf.co/EldanRing/Winnow-12B:Q8_0",
+     "size": 13661215128,
+     "size_vram": 13661215128,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "hf.co/EldanRing/Winnow-12B:Q8_0",
+     "size": 13661215128,
+     "size_vram": 13661215128,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-10T18:21:47.337+02:00"
+  }
+ ],
+ "started": "2026-10-10T18:13:17.104+02:00",
+ "ollama_tag": "hf.co/EldanRing/Winnow-12B:Q8_0",
+ "model": {
+  "tag": "hf.co/EldanRing/Winnow-12B:Q8_0",
+  "digest": "b5bedb24694537069a766763f5b25f84afe40950f4dc8bf66263bdcd6b4883a1",
+  "size": 12844774778,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q8_0",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "blobs": [
+   "b710efc4c0d048ee61eed92c5fef5ce323a4d17e7c51f9f0533cc72ae50818ea",
+   "91f086971e56d7a7d8d39e271873fccdb49541bd259d6e02c401a4f1cb7a219e"
+  ],
+  "capabilities": [
+   "tools",
+   "completion",
+   "vision",
+   "audio"
+  ],
+  "context_length": 262144,
+  "template_sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+ },
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192,
+  "num_predict": 256
+ },
+ "format": {
+  "type": "object",
+  "properties": {
+   "answer": {
+    "type": "string"
+   }
+  },
+  "required": [
+   "answer"
+  ]
+ },
+ "raw_template": "gemma4",
+ "think": "not supported by the model",
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "summary": {
+  "questions": 1000,
+  "f1": 84.83832072788196,
+  "em": 65.2,
+  "errors": 0,
+  "median_s": 0.4483
+ },
+ "finished": "2026-10-10T18:21:47.362+02:00"
+}

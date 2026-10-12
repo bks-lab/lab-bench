@@ -1,0 +1,195 @@
+{
+ "test": "C4",
+ "arm": "granite4-3b",
+ "ollama_tag": "granite4:micro",
+ "num_ctx": 8192,
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192
+ },
+ "num_predict": {
+  "fc": 1024,
+  "prompt": 1024,
+  "free": 4096,
+  "constrained": 4096
+ },
+ "think": "not supported by the model",
+ "modes": [
+  "fc",
+  "prompt",
+  "free",
+  "constrained"
+ ],
+ "limit": 0,
+ "mock": false,
+ "job_id": "20261010-140203-c4-granite4-3b",
+ "model": {
+  "tag": "granite4:micro",
+  "digest": "89962fcc75239ac434cdebceb6b7e0669397f92eaef9c487774b718bc36a3e5f",
+  "size": 2099521385,
+  "details": {
+   "parent_model": "<ollama>/models/blobs/sha256-6c02683809a8dc4eb05c78d44bc63bcd707703b078998fa58829c858ab337bb0",
+   "format": "gguf",
+   "family": "granite",
+   "families": [
+    "granite"
+   ],
+   "parameter_size": "3.4B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 131072,
+   "embedding_length": 2560
+  },
+  "blobs": [
+   "6c02683809a8dc4eb05c78d44bc63bcd707703b078998fa58829c858ab337bb0"
+  ],
+  "capabilities": [
+   "completion",
+   "tools"
+  ],
+  "context_length": 131072,
+  "template_sha256": "0f6ec9740c765c3fb0dc38fe25f4d283c3bc1ede32b76f81c3a971daef20f76c"
+ },
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "inputs": {
+  "manifest_sha256": "9e82b7f3c867dedce3a9106e5f94d5c0738351074187a5b996dd0961034a2032",
+  "method_sha256": "0444e478a8b1fb0a964539f86bad9eef4f13b8d5cc6ae746369e893bae3e8929"
+ },
+ "sections": [
+  {
+   "name": "warmup_fc",
+   "start": "2026-10-11T06:00:37.568+02:00",
+   "end": "2026-10-11T06:00:40.848+02:00"
+  },
+  {
+   "name": "fc",
+   "items": 1000,
+   "start": "2026-10-11T06:00:40.848+02:00",
+   "ps_before": [
+    {
+     "name": "granite4:micro",
+     "size": 2915943054,
+     "size_vram": 2915943054,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "granite4:micro",
+     "size": 2915943054,
+     "size_vram": 2915943054,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T06:05:43.510+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_prompt",
+   "start": "2026-10-11T06:05:43.510+02:00",
+   "end": "2026-10-11T06:05:43.777+02:00"
+  },
+  {
+   "name": "prompt",
+   "items": 1000,
+   "start": "2026-10-11T06:05:43.777+02:00",
+   "ps_before": [
+    {
+     "name": "granite4:micro",
+     "size": 2915943054,
+     "size_vram": 2915943054,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "granite4:micro",
+     "size": 2915943054,
+     "size_vram": 2915943054,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T06:09:15.063+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_free",
+   "start": "2026-10-11T06:09:15.063+02:00",
+   "end": "2026-10-11T06:09:15.740+02:00"
+  },
+  {
+   "name": "free",
+   "items": 600,
+   "start": "2026-10-11T06:09:15.740+02:00",
+   "ps_before": [
+    {
+     "name": "granite4:micro",
+     "size": 2915943054,
+     "size_vram": 2915943054,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "granite4:micro",
+     "size": 2915943054,
+     "size_vram": 2915943054,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T06:23:42.038+02:00",
+   "errors": 0
+  },
+  {
+   "name": "warmup_constrained",
+   "start": "2026-10-11T06:23:42.038+02:00",
+   "end": "2026-10-11T06:23:42.702+02:00"
+  },
+  {
+   "name": "constrained",
+   "items": 600,
+   "start": "2026-10-11T06:23:42.702+02:00",
+   "ps_before": [
+    {
+     "name": "granite4:micro",
+     "size": 2915943054,
+     "size_vram": 2915943054,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "granite4:micro",
+     "size": 2915943054,
+     "size_vram": 2915943054,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-11T06:35:36.617+02:00",
+   "errors": 8
+  }
+ ],
+ "started": "2026-10-11T06:00:37.568+02:00",
+ "summary": {
+  "fc": {
+   "items": 1000,
+   "errors": 0
+  },
+  "prompt": {
+   "items": 1000,
+   "errors": 0
+  },
+  "free": {
+   "items": 600,
+   "errors": 0
+  },
+  "constrained": {
+   "items": 600,
+   "errors": 8
+  }
+ },
+ "finished": "2026-10-11T06:35:36.635+02:00"
+}
