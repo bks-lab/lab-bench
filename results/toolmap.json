@@ -26,7 +26,8 @@
   "c5": "results/c5/findings.md",
   "c6": "results/c6/findings.md",
   "c7": "results/c7/findings.md",
-  "c8": "results/c8/findings.md"
+  "c8": "results/c8/findings.md",
+  "c9": "results/c9/findings.md"
  },
  "note": "Each cell is one task and one tool family. \"best_arm\" is the arm of that family with the highest value on the same test data the value is measured on, so it is chosen after the fact and flatters the families with many arms (GLiNER has up to six arms in route1 and nine in pv1, the local family has one arm in route1 and ex1 and four in pv1). Cells are per task: a family that is best on one task says nothing about another. All numbers are run 1, one run per arm. For German rows, English-only GLiNER models (GLiNER2.5-Decide, GLiNER2.5-Decide-1B) are not eligible as best arm, in route1 and pv1 alike; their best value is listed as english_model_extra. pv1 rows: baseline computed from the reference with the rule of results/pv1/gliner.md, run dates 2026-10-01 (Jev, local) and 2026-10-08 (GLiNER). skill = (value - baseline) / (100 - baseline). p50 values in route1 rows are per question group (the p50 ms column of results/route1/score.md); the Speed table of results/route1/findings.md gives medians per source and language, so the two can differ by a few ms. Latencies are not one clock: Jev is an HTTP round trip to api.typesafe.ai, the local LLM an HTTP call over the LAN, GLiNER GPU time in-process. Local cost (hardware, power) was not estimated. Tests: route1 and pv1 cells carry top_family (the family with the highest value in the row) and mcnemar_vs_top_p, an exact two-sided McNemar between this family's best arm and the top family's best arm on the same items (unanswered counts as wrong); route1 and pv1 cells other than Jev also carry mcnemar_vs_jev_p. Both compared arms are picked after the fact as the best of their family, and no p value is corrected for that or for the number of tests, so p >= 0.05 means the difference is not established, not that the two are level. ex1 cells have no test; their skill is F1 against a baseline F1 of 0, exact_frame_skill compares whole frames against extracting nothing.",
  "classic_note": "The classic family (plan/t3.md) is a trained classifier: multilingual-e5-base sentence embeddings plus logistic regression, fitted on the MASSIVE 1.1 train split of the same locale. The other three families get no training data. top_family and mcnemar_vs_top_p are therefore computed among jev, gliner and local-llm only; a classic cell carries top_family (that zero-shot top), its own mcnemar_vs_top_p against it, and mcnemar_vs_jev_p. Its two arms are classic-e5-lr (full train split) and classic-e5-lr-10shot (10 rows per class); best_arm is chosen as for every family.",
@@ -2968,8 +2969,58 @@
    "plan": "plan/c9.md",
    "cells": {
     "local": {
-     "state": "planned",
-     "plan": "plan/c9.md"
+     "state": "measured",
+     "best_arm": "gemma4-12b",
+     "best_by_value": "gemma4-12b",
+     "tie": {
+      "top_by_value": "gemma4-12b",
+      "next": "qwen3.8-27b",
+      "note": "the paired bootstrap on the 40 audited documents does not separate the two; the one with less peak VRAM is shown. On all 476 documents (original gold) the order is the other way round and equally not separated"
+     },
+     "licence_class": "open source",
+     "quality": {
+      "metric": "span F1 on the audited gold of 40 documents (exact boundaries, type-agnostic); gold noisy, descriptive only",
+      "value": 0.83871,
+      "ci95": [
+       0.705858,
+       0.928965
+      ],
+      "recall": 0.962963,
+      "baseline": "regex (e-mail, IBAN, phone)",
+      "baseline_value": 0.15,
+      "reference": "none published for this German subset; internal sanity gate regex e-mail recall >= 0.95",
+      "reference_ours": 0.965116,
+      "original_gold_476_docs": {
+       "f1": 0.627027,
+       "ci95": [
+        0.592676,
+        0.660352
+       ],
+       "recall": 0.628278,
+       "precision": 0.625781,
+       "mask_recall": 0.758117,
+       "p_vs_best": 0.132
+      },
+      "caveat": "Gold noisy: the 40-document gold audit was done by a language model (Claude Haiku 5.5, spot check of all non-ok verdicts by Claude Opus 5.5), not by a human as plan/c9.md requires; audited gold precision 0.685 is below 0.90, so all numbers are descriptive and make no ranking claim."
+     },
+     "speed": {
+      "unit": "median ms per document",
+      "value": 516.9
+     },
+     "vram_peak_gb": 9.19,
+     "energy": {
+      "unit": "GPU joules per 1,000 documents",
+      "value": 158520
+     },
+     "fits_24gb": true,
+     "smallest_within_interval": {
+      "arm": "gliner-pii-domains",
+      "value": 0.738462,
+      "vram_peak_gb": 1.97,
+      "rule": "smallest peak VRAM among the arms the paired bootstrap on the 40 audited documents does not separate from the best"
+     },
+     "source_report": "results/c9/findings.md",
+     "summary": "results/c9/summary.json"
     }
    }
   }

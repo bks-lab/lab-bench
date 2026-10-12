@@ -1,0 +1,74 @@
+{
+ "test": "C9",
+ "arm": "gliner-multi-pii",
+ "job_id": "20261012-105830-c9-gliner-multi-pii",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "docs_sha256": "76fb93ef7ed74c26d3a99959e2ad79c3073a89a09aecb0ed61d2d42cea2a08a6",
+  "labels_sha256": "9cc1c754064c8c92ac79901610df8c79d7ce2216f27233213202df43de7dfcf0"
+ },
+ "boundary_rule": "c9lib.norm",
+ "sections": [
+  {
+   "name": "load",
+   "start": "2026-10-12T11:10:38.880+02:00",
+   "end": "2026-10-12T11:10:48.288+02:00",
+   "seconds": 9.409
+  },
+  {
+   "name": "warmup",
+   "start": "2026-10-12T11:10:48.288+02:00",
+   "end": "2026-10-12T11:10:48.747+02:00"
+  },
+  {
+   "name": "timed",
+   "start": "2026-10-12T11:10:48.747+02:00",
+   "items": 476,
+   "end": "2026-10-12T11:11:02.619+02:00"
+  }
+ ],
+ "started": "2026-10-12T11:10:38.880+02:00",
+ "model": {
+  "model": "urchade/gliner_multi_pii-v1",
+  "rev": "1fcf13e85f4eef5394e1fcd406cf2ca9ea82351d",
+  "lib": "gliner",
+  "snapshot": "1fcf13e85f4eef5394e1fcd406cf2ca9ea82351d",
+  "threshold": 0.5,
+  "labels": [
+   "person name",
+   "Name einer Person",
+   "address",
+   "Adresse",
+   "email address",
+   "E-Mail-Adresse",
+   "phone number",
+   "Telefonnummer",
+   "bank account or card number",
+   "Konto- oder Kartennummer",
+   "personal identification number",
+   "Ausweis- oder Kennnummer",
+   "date of birth",
+   "Geburtsdatum"
+  ],
+  "chunk_words": 384,
+  "chunk_overlap": 50
+ },
+ "versions": {
+  "python": "3.12.10",
+  "torch": "2.11.0+cu128",
+  "transformers": "4.57.6",
+  "gliner": "0.2.29",
+  "cuda_available": true
+ },
+ "summary": {
+  "documents": 476,
+  "span_precision": 0.6444188722669736,
+  "span_recall": 0.31927023945267957,
+  "span_f1": 0.4269919939001144,
+  "email_recall": 0.3372093023255814,
+  "email_gold": 86,
+  "median_s": 0.027947799999765266
+ },
+ "finished": "2026-10-12T11:11:02.619+02:00"
+}

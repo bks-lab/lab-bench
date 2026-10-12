@@ -1,0 +1,393 @@
+{
+ "schema": "jev-match-bench capability summary v1",
+ "test": "C9",
+ "design": "plan/c9.md",
+ "report": "results/c9/findings.md",
+ "best_by_audited_f1": "gemma4-12b",
+ "gold_noisy": true,
+ "caveat": "Gold noisy: the 40-document gold audit was done by a language model (Claude Haiku 5.5, spot check of all non-ok verdicts by Claude Opus 5.5), not by a human as plan/c9.md requires; audited gold precision 0.685 is below 0.90, so all numbers are descriptive and make no ranking claim.",
+ "documents": 476,
+ "audited_documents": 40,
+ "best_by_original_f1": "qwen3.8-27b",
+ "gold_audit": {
+  "form": "machine audit (claude-haiku-5-5), spot check of non-ok verdicts by claude-opus-5-5",
+  "file": "results/c9/gold-audit.json",
+  "documents": 40,
+  "gold_spans": 149,
+  "kept": 102,
+  "missed_added": 2,
+  "gold_precision": 0.6845637583892618,
+  "gold_recall": 0.9807692307692307,
+  "gold_noisy": true
+ },
+ "gate": {
+  "rule": "regex recall on the gold email spans",
+  "minimum": 0.95,
+  "value": 0.9651162790697675,
+  "passed": true
+ },
+ "bootstrap": {
+  "unit": "document",
+  "B": 1000,
+  "seed": 20261009
+ },
+ "machine": "local-rtx4090: one RTX 4090 24 GB, Windows 11, Ryzen 9 7900, 128 GB RAM (results/<cN>/<arm>/queue-status.json)",
+ "generator": "bench/score-cap.py",
+ "arms": [
+  {
+   "arm": "gemma4-12b",
+   "baseline": false,
+   "model": "gemma4:12b (google/gemma-4-12B-it)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 12.0,
+   "runs_on": "GPU",
+   "finished": true,
+   "quality": {
+    "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
+    "value": 0.83871,
+    "ci95": [
+     0.705858,
+     0.928965
+    ],
+    "recall": 0.962963,
+    "precision": 0.742857,
+    "vs_best": null,
+    "original_gold_476_docs": {
+     "f1": 0.627027,
+     "ci95": [
+      0.592676,
+      0.660352
+     ],
+     "recall": 0.628278,
+     "precision": 0.625781,
+     "mask_recall": 0.758117,
+     "p_vs_best": 0.132
+    }
+   },
+   "speed": {
+    "unit": "median ms per document (476 documents)",
+    "value": 516.9
+   },
+   "energy": {
+    "j_per_1000_docs": 158520,
+    "note": "GPU only, timed section"
+   },
+   "vram_peak_gb": 9.19,
+   "vram_peak_total_gb": 11.12,
+   "fits_24gb": true
+  },
+  {
+   "arm": "qwen3.8-27b",
+   "baseline": false,
+   "model": "qwen3.8:27b (Qwen/Qwen3.8-27B)",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 27.0,
+   "runs_on": "GPU",
+   "finished": true,
+   "quality": {
+    "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
+    "value": 0.827869,
+    "ci95": [
+     0.738153,
+     0.902119
+    ],
+    "recall": 0.935185,
+    "precision": 0.742647,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.010841,
+     "ci95": [
+      -0.114847,
+      0.112029
+     ],
+     "p": 0.786,
+     "difference_shown": false
+    },
+    "original_gold_476_docs": {
+     "f1": 0.644145,
+     "ci95": [
+      0.615508,
+      0.671804
+     ],
+     "recall": 0.641391,
+     "precision": 0.646924,
+     "mask_recall": 0.797994,
+     "p_vs_best": null
+    }
+   },
+   "speed": {
+    "unit": "median ms per document (476 documents)",
+    "value": 1141.8
+   },
+   "energy": {
+    "j_per_1000_docs": 397306,
+    "note": "GPU only, timed section"
+   },
+   "vram_peak_gb": 18.06,
+   "vram_peak_total_gb": 19.99,
+   "fits_24gb": true
+  },
+  {
+   "arm": "gliner-pii-domains",
+   "baseline": false,
+   "model": "E3-JSI/gliner-multi-pii-domains-v1",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 0.5,
+   "runs_on": "GPU",
+   "finished": true,
+   "quality": {
+    "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
+    "value": 0.738462,
+    "ci95": [
+     0.642808,
+     0.816098
+    ],
+    "recall": 0.666667,
+    "precision": 0.827586,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.100248,
+     "ci95": [
+      -0.049851,
+      0.239028
+     ],
+     "p": 0.19,
+     "difference_shown": false
+    },
+    "original_gold_476_docs": {
+     "f1": 0.564408,
+     "ci95": [
+      0.53165,
+      0.594579
+     ],
+     "recall": 0.432155,
+     "precision": 0.813305,
+     "mask_recall": 0.541016,
+     "p_vs_best": 0.0
+    }
+   },
+   "speed": {
+    "unit": "median ms per document (476 documents)",
+    "value": 27.7
+   },
+   "energy": {
+    "j_per_1000_docs": 5023,
+    "note": "GPU only, timed section"
+   },
+   "vram_peak_gb": 1.97,
+   "vram_peak_total_gb": 3.9,
+   "fits_24gb": true
+  },
+  {
+   "arm": "gliner2.5-multi",
+   "baseline": false,
+   "model": "fastino/gliner2.5-multi-v1",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 0.3,
+   "runs_on": "GPU",
+   "finished": true,
+   "quality": {
+    "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
+    "value": 0.648649,
+    "ci95": [
+     0.516994,
+     0.74238
+    ],
+    "recall": 0.555556,
+    "precision": 0.779221,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.190061,
+     "ci95": [
+      0.046938,
+      0.344662
+     ],
+     "p": 0.014,
+     "difference_shown": true
+    },
+    "original_gold_476_docs": {
+     "f1": 0.514765,
+     "ci95": [
+      0.47827,
+      0.550135
+     ],
+     "recall": 0.402509,
+     "precision": 0.713852,
+     "mask_recall": 0.535713,
+     "p_vs_best": 0.0
+    }
+   },
+   "speed": {
+    "unit": "median ms per document (476 documents)",
+    "value": 21.9
+   },
+   "energy": {
+    "j_per_1000_docs": 4522,
+    "note": "GPU only, timed section"
+   },
+   "vram_peak_gb": 7.59,
+   "vram_peak_total_gb": 9.52,
+   "fits_24gb": true
+  },
+  {
+   "arm": "gliner-multi-pii",
+   "baseline": false,
+   "model": "urchade/gliner_multi_pii-v1",
+   "licence": "Apache-2.0",
+   "licence_class": "open source",
+   "params_b": 0.5,
+   "runs_on": "GPU",
+   "finished": true,
+   "quality": {
+    "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
+    "value": 0.444444,
+    "ci95": [
+     0.281874,
+     0.596284
+    ],
+    "recall": 0.351852,
+    "precision": 0.603175,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.394265,
+     "ci95": [
+      0.198668,
+      0.588768
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    },
+    "original_gold_476_docs": {
+     "f1": 0.426992,
+     "ci95": [
+      0.393683,
+      0.460252
+     ],
+     "recall": 0.31927,
+     "precision": 0.644419,
+     "mask_recall": 0.438416,
+     "p_vs_best": 0.0
+    }
+   },
+   "speed": {
+    "unit": "median ms per document (476 documents)",
+    "value": 27.9
+   },
+   "energy": {
+    "j_per_1000_docs": 4792,
+    "note": "GPU only, timed section"
+   },
+   "vram_peak_gb": 1.97,
+   "vram_peak_total_gb": 3.9,
+   "fits_24gb": true
+  },
+  {
+   "arm": "presidio",
+   "baseline": false,
+   "model": "Microsoft Presidio 2.2.364 with spaCy de_core_news_lg",
+   "licence": "MIT",
+   "licence_class": "open source",
+   "params_b": 0.0,
+   "runs_on": "CPU",
+   "finished": true,
+   "quality": {
+    "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
+    "value": 0.300341,
+    "ci95": [
+     0.212747,
+     0.384621
+    ],
+    "recall": 0.407407,
+    "precision": 0.237838,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.538368,
+     "ci95": [
+      0.392041,
+      0.667405
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    },
+    "original_gold_476_docs": {
+     "f1": 0.271062,
+     "ci95": [
+      0.248557,
+      0.295348
+     ],
+     "recall": 0.31642,
+     "precision": 0.237078,
+     "mask_recall": 0.569029,
+     "p_vs_best": 0.0
+    }
+   },
+   "speed": {
+    "unit": "median ms per document (476 documents)",
+    "value": 36.8
+   },
+   "energy": {
+    "j_per_1000_docs": 1156,
+    "note": "GPU only, timed section; the job used the CPU, the figure is the idle GPU"
+   },
+   "vram_peak_gb": 0.0,
+   "vram_peak_total_gb": 1.93,
+   "fits_24gb": true
+  },
+  {
+   "arm": "regex",
+   "baseline": true,
+   "model": "regular expressions (e-mail, IBAN with checksum, German phone patterns)",
+   "licence": "own code",
+   "licence_class": "open source",
+   "params_b": 0.0,
+   "runs_on": "CPU",
+   "finished": true,
+   "quality": {
+    "metric": "span F1 (exact boundaries, type-agnostic) on the audited gold of 40 documents",
+    "value": 0.15,
+    "ci95": [
+     0.025272,
+     0.274273
+    ],
+    "recall": 0.083333,
+    "precision": 0.75,
+    "vs_best": {
+     "best": "gemma4-12b",
+     "diff": 0.68871,
+     "ci95": [
+      0.527666,
+      0.835556
+     ],
+     "p": 0.0,
+     "difference_shown": true
+    },
+    "original_gold_476_docs": {
+     "f1": 0.135471,
+     "ci95": [
+      0.09852,
+      0.17727
+     ],
+     "recall": 0.074686,
+     "precision": 0.727778,
+     "mask_recall": 0.101547,
+     "p_vs_best": 0.0
+    }
+   },
+   "speed": {
+    "unit": "median ms per document (476 documents)",
+    "value": 0.1
+   },
+   "energy": {
+    "j_per_1000_docs": null,
+    "note": "GPU only, timed section; the job used the CPU, the figure is the idle GPU"
+   },
+   "vram_peak_gb": 0.0,
+   "vram_peak_total_gb": 1.93,
+   "fits_24gb": true
+  }
+ ]
+}

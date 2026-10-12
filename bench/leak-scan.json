@@ -129,6 +129,10 @@
         "reason": "C5 scores per arm and direction (chrF++, BLEU, COMET, paired bootstrap) and the OPUS-MT sanity gate; numbers only, the FLORES+ sentences and the translations are gated, ShareAlike and stay out of the repository (plan/c5.md)"
       },
       {
+        "path": "^results/c9/(score\\.json|gold-audit\\.json)$",
+        "reason": "C9 scores per arm (span F1, recall, precision, typed F1, bootstrap) and the machine audit of the gold (verdicts and short substrings of invented documents, no personal data, no key material); the documents and the predicted texts stay out of the repository (plan/c9.md)"
+      },
+      {
         "path": "^results/t(2|9|10)/(score\\.json|[a-z0-9.-]+/(meta|queue-status)\\.json)$",
         "reason": "T2, T9 and T10: scores, and per arm the runner meta and queue status (versions, timings, GPU totals; PC paths and host name removed by bench/import-t.py); the result rows are the compact dated JSONL files already allowed above"
       },

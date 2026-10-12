@@ -1,0 +1,138 @@
+{
+ "test": "C9",
+ "arm": "gemma4-12b",
+ "job_id": "20261012-105836-c9-gemma4-12b",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "docs_sha256": "76fb93ef7ed74c26d3a99959e2ad79c3073a89a09aecb0ed61d2d42cea2a08a6",
+  "labels_sha256": "9cc1c754064c8c92ac79901610df8c79d7ce2216f27233213202df43de7dfcf0"
+ },
+ "boundary_rule": "c9lib.norm",
+ "sections": [
+  {
+   "name": "load",
+   "start": "2026-10-12T11:15:04.066+02:00",
+   "end": "2026-10-12T11:15:04.134+02:00",
+   "seconds": 0.067
+  },
+  {
+   "name": "warmup",
+   "start": "2026-10-12T11:15:04.134+02:00",
+   "end": "2026-10-12T11:15:10.494+02:00"
+  },
+  {
+   "name": "timed",
+   "start": "2026-10-12T11:15:10.494+02:00",
+   "items": 476,
+   "ps_before": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "ps_during": [
+    {
+     "name": "gemma4:12b",
+     "size": 1334963076,
+     "size_vram": 1334963076,
+     "context_length": 8192
+    }
+   ],
+   "end": "2026-10-12T11:19:41.516+02:00"
+  }
+ ],
+ "started": "2026-10-12T11:15:04.066+02:00",
+ "ollama_tag": "gemma4:12b",
+ "model": {
+  "tag": "gemma4:12b",
+  "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+  "size": 8021618941,
+  "details": {
+   "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "blobs": [
+   "bb722270d54346adc198f213851dbe0207e87c3ecf2a0aff4d92262726215391",
+   "7008a656050bed18f6741406a631e83fa75ee1a02308f2e4f40d978cfbb3ce4b",
+   "0cb0cd0a5c499d92942caa22fe5abb98f6e8874868d590e2b094ece4ac8e6d28"
+  ],
+  "capabilities": [
+   "completion",
+   "vision",
+   "audio",
+   "tools",
+   "thinking"
+  ],
+  "context_length": 262144,
+  "template_sha256": "b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315"
+ },
+ "options": {
+  "temperature": 0,
+  "seed": 1,
+  "num_ctx": 8192,
+  "num_predict": 2048
+ },
+ "format": {
+  "type": "object",
+  "properties": {
+   "entities": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "text": {
+       "type": "string"
+      },
+      "type": {
+       "type": "string",
+       "enum": [
+        "person",
+        "address",
+        "email",
+        "phone",
+        "iban_account",
+        "id_number",
+        "date_of_birth"
+       ]
+      }
+     },
+     "required": [
+      "text",
+      "type"
+     ]
+    }
+   }
+  },
+  "required": [
+   "entities"
+  ]
+ },
+ "prompt": "Finde alle personenbezogenen Daten im folgenden Dokument. Erlaubte Typen:\n- person: Name einer natürlichen Person (Vor- und/oder Nachname)\n- address: Postanschrift oder Standort einer Person (Straße, Hausnummer, Ort, Koordinaten)\n- email: E-Mail-Adresse\n- phone: Telefon- oder Faxnummer\n- iban_account: IBAN, Kontonummer oder Kreditkartennummer\n- id_number: Kennnummer einer Person: Steuer-ID, Sozialversicherungsnummer, Kunden- oder Personalnummer, Pass- oder Führerscheinnummer, Benutzername, IP-Adresse\n- date_of_birth: Geburtsdatum\n\nGib jede Fundstelle genau so wieder, wie sie im Dokument steht (gleiche Schreibweise, keine Ergänzungen), mit ihrem Typ. Firmennamen, allgemeine Datumsangaben und Beträge sind keine personenbezogenen Daten. Antworte nur mit JSON der Form {\"entities\": [{\"text\": \"...\", \"type\": \"...\"}]}.\n\nDokument:\n{document}",
+ "think": false,
+ "offsets": "every non-overlapping exact occurrence of the returned text; not found = false positive",
+ "versions": {
+  "python": "3.12.10",
+  "ollama": "0.35.0"
+ },
+ "summary": {
+  "documents": 476,
+  "span_precision": 0.6257808063600228,
+  "span_recall": 0.6282782212086659,
+  "span_f1": 0.6270270270270271,
+  "email_recall": 0.9069767441860465,
+  "email_gold": 86,
+  "median_s": 0.5168423999998595
+ },
+ "finished": "2026-10-12T11:19:41.520+02:00"
+}

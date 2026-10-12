@@ -266,6 +266,8 @@ def do_import(queue):
         test, arm = status["test"].lower(), status["arm"]
         if test == "c5":
             continue  # C5 rows are derivatives of gated text and stay out of the repository: bench/cap_c5.py
+        if test == "c9":
+            continue  # C9 rows carry predicted texts of invented documents and stay out of the repository: bench/cap_c9.py
         if arm not in arms_all.get(test, {}):
             print(f"skip {jid}: arm {arm} not in the plan", file=sys.stderr)
             continue
@@ -321,6 +323,8 @@ def do_import(queue):
         print(f"imported {jid} -> results/{test}/{ad}/")
     import cap_c5  # noqa: PLC0415
     n += cap_c5.import_c5(queue)
+    import cap_c9  # noqa: PLC0415
+    n += cap_c9.import_c9(queue)
     print(f"{n} jobs imported")
 
 
@@ -943,7 +947,8 @@ def main():
     sys.path.insert(0, str(ROOT / "bench"))
     import cap_c4c8  # noqa: PLC0415
     import cap_c5  # noqa: PLC0415
-    for test, fn in (("c4", cap_c4c8.score_c4), ("c5", cap_c5.score_c5), ("c6", cap_c4c8.score_c6), ("c7", cap_c4c8.score_c7), ("c8", cap_c4c8.score_c8)):
+    import cap_c9  # noqa: PLC0415
+    for test, fn in (("c4", cap_c4c8.score_c4), ("c5", cap_c5.score_c5), ("c6", cap_c4c8.score_c6), ("c7", cap_c4c8.score_c7), ("c8", cap_c4c8.score_c8), ("c9", cap_c9.score_c9)):
         got = fn()
         if got is None:
             continue

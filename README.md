@@ -128,11 +128,20 @@ run, see its findings):
   the scores. [findings.md](results/c5/findings.md)
 - Capability map: [results/capabilities.json](results/capabilities.json),
   per-arm chart data in `results/c1/summary.json` to
-  `results/c8/summary.json` (and `results/c5/summary.json`).
+  `results/c8/summary.json` (and `results/c5/summary.json`,
+  `results/c9/summary.json`).
 
-Not measured yet: **C9 personal data detection**. It has a committed design
-([plan/c9.md](plan/c9.md)) and is `planned` in the tool map; it is listed in
-the run order of [plan/ROADMAP.md](plan/ROADMAP.md).
+- **C9 personal data detection in German text (gold noisy):** on the 476
+  German rows of the synthetic Gretel PII finance set, seven arms. The gold
+  audit of 40 documents was done by a language model (Claude Haiku 5.5, spot
+  check by Claude Opus 5.5), not by a human as the design requires; it found
+  43 of 149 gold spans wrong (gold precision 0.685, recall 0.981), so every
+  number is descriptive and there is no ranking claim. Span F1 on the audited
+  gold: gemma4-12b 0.839 and qwen3.8-27b 0.828 (not separated; on all 476
+  documents with the original gold 0.627 and 0.644), then gliner-pii-domains
+  0.738, gliner2.5-multi 0.649, gliner-multi-pii 0.444, Presidio 0.300, regex
+  0.150. The capability map shows gemma4-12b (9.2 GB). A human audit is still
+  open. [findings.md](results/c9/findings.md)
 
 ### Short tests on route1 (T2, T9, T10)
 
@@ -228,6 +237,7 @@ cannot be fitted to the results. The first one is
 | `bench/run-local-extract.mjs`, `bench/run-gliner-extract.py` | ex1 arms: local LLM with JSON output, GLiNER2 entity extraction |
 | `bench/score-route.mjs`, `bench/score-extract.mjs` | route1 and ex1 scorers, reports in `results/route1/` and `results/ex1/` |
 | `bench/toolmap.mjs`, `plan/toolmap-plan.yaml` | tool map generator and its register, see Tool map |
+| `bench/c9/`, `bench/cap_c9.py` | C9 personal data detection: runners, scorer on the Mac (`score_c9.py`) and the capability row; scores and the gold audit are committed, documents and result rows are not |
 | `bench/c5/`, `bench/cap_c5.py` | C5 translation: runners, COMET, scorer on the Mac (`score_c5.py`) and the capability row; only scores are committed |
 | `bench/t2/`, `bench/t9/`, `bench/t10/`, `bench/import-t.py` | T2, T9, T10: runners and scorer; `import-t.py` keeps compact rows (line, question, pass, choice) in `results/t2/`, `results/t9/`, `results/t10/` |
 | `plan/` | dated test designs, committed before the run |
@@ -407,8 +417,10 @@ Inputs that are not committed, and how to get them:
   revisions into `HF_HOME`) and the Ollama tags with digests in each plan.
 - Anything with personal data, or anything a plan marks as not
   redistributable, goes under `private/` (gitignored) or `.cache/`, never
-  into `cases/`. The planned C9 set is synthetic (Gretel, Apache-2.0) and
-  will be committed under `cases/c9/` as `plan/c9.md` says.
+  into `cases/`. The C9 set is synthetic (Gretel, Apache-2.0) but its
+  documents stay out of git (push protection flagged invented keys in two of
+  them); `bench/c9/freeze.py` rebuilds them byte for byte (SHA-256 in
+  `cases/c9/manifest.json`).
 
 ## PC job queue
 

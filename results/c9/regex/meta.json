@@ -1,0 +1,51 @@
+{
+ "test": "C9",
+ "arm": "regex",
+ "job_id": "20261012-105818-c9-regex",
+ "mock": false,
+ "limit": 0,
+ "inputs": {
+  "docs_sha256": "76fb93ef7ed74c26d3a99959e2ad79c3073a89a09aecb0ed61d2d42cea2a08a6",
+  "labels_sha256": "9cc1c754064c8c92ac79901610df8c79d7ce2216f27233213202df43de7dfcf0"
+ },
+ "boundary_rule": "c9lib.norm",
+ "sections": [
+  {
+   "name": "load",
+   "start": "2026-10-12T10:58:40.550+02:00",
+   "end": "2026-10-12T10:58:40.569+02:00",
+   "seconds": 0.019
+  },
+  {
+   "name": "warmup",
+   "start": "2026-10-12T10:58:40.569+02:00",
+   "end": "2026-10-12T10:58:40.569+02:00"
+  },
+  {
+   "name": "timed",
+   "start": "2026-10-12T10:58:40.569+02:00",
+   "items": 476,
+   "end": "2026-10-12T10:58:40.611+02:00"
+  }
+ ],
+ "started": "2026-10-12T10:58:40.550+02:00",
+ "versions": {
+  "python": "3.12.10"
+ },
+ "summary": {
+  "documents": 476,
+  "span_precision": 0.7277777777777777,
+  "span_recall": 0.07468643101482327,
+  "span_f1": 0.13547052740434332,
+  "email_recall": 0.9651162790697675,
+  "email_gold": 86,
+  "median_s": 5.564999992202502e-05
+ },
+ "gate": {
+  "rule": "regex recall on the gold email spans",
+  "minimum": 0.95,
+  "value": 0.9651162790697675,
+  "passed": true
+ },
+ "finished": "2026-10-12T10:58:40.611+02:00"
+}
