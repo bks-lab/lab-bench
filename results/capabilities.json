@@ -142,7 +142,11 @@
    "report": "results/c4/findings.md",
    "best_local_model": "qwen3-14b",
    "best_by_value": "qwen3-14b",
-   "tie": null,
+   "tie": {
+    "top_by_value": "qwen3-14b",
+    "next": "qwen3.8-27b",
+    "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown"
+   },
    "licence_class": "open source",
    "quality": {
     "metric": "AST accuracy, BFCL v3 non-live, 1,000 items, native tool calling",
@@ -213,6 +217,50 @@
     "value": 0.8721,
     "vram_peak_gb": 1.73,
     "rule": "smallest peak VRAM among the arms the paired test does not separate from the best"
+   },
+   "unfinished": []
+  },
+  {
+   "id": "C7",
+   "capability": "Long context, 4k to 32k tokens",
+   "design": "plan/c7.md",
+   "report": "results/c7/findings.md",
+   "best_local_model": "qwen3-14b",
+   "best_by_value": "qwen3-14b",
+   "tie": {
+    "top_by_value": "qwen3-14b",
+    "next": "qwen3.8-27b",
+    "note": "intervals overlap and the paired test does not separate the two; the one with less peak VRAM is shown"
+   },
+   "licence_class": "open source",
+   "quality": {
+    "metric": "needle accuracy at 32k tokens (180 prompts)",
+    "value": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "at_4k": 1.0,
+    "at_16k": 1.0,
+    "baseline": "the same model at 4k",
+    "baseline_value": 1.0,
+    "reference": "none published; internal check: 95 % on single at 4k (sanity gate)"
+   },
+   "speed": {
+    "unit": "seconds of prompt processing at 32k tokens, median",
+    "value": 8.0632
+   },
+   "vram_peak_gb": 13.97,
+   "energy": {
+    "unit": "GPU joules per 32k-token prompt",
+    "value": 6412
+   },
+   "fits_24gb": true,
+   "smallest_within_interval": {
+    "arm": "qwen3-8b",
+    "value": 0.9833,
+    "vram_peak_gb": 10.04,
+    "rule": "smallest peak VRAM at 32k among the arms the paired test does not separate from the best"
    },
    "unfinished": []
   },
@@ -350,6 +398,30 @@
      "decisions_per_h_at_16": 26816,
      "j_per_1000_tokens_at_16": 5551,
      "peak_vram_gb": 18.12,
+     "offloaded_at_16": false
+    },
+    {
+     "arm": "vllm-qwen3-14b",
+     "engine": "vllm",
+     "params_b": null,
+     "chat_short_tok_s_at_1": 79.6109,
+     "chat_short_tok_s_at_16": 789.495,
+     "decisions_per_h_at_1": 69457,
+     "decisions_per_h_at_16": 138916,
+     "j_per_1000_tokens_at_16": 411,
+     "peak_vram_gb": 19.89,
+     "offloaded_at_16": false
+    },
+    {
+     "arm": "vllm-gemma4-12b",
+     "engine": "vllm",
+     "params_b": null,
+     "chat_short_tok_s_at_1": 76.8011,
+     "chat_short_tok_s_at_16": 708.8441,
+     "decisions_per_h_at_1": 66191,
+     "decisions_per_h_at_16": 156645,
+     "j_per_1000_tokens_at_16": 430,
+     "peak_vram_gb": 21.18,
      "offloaded_at_16": false
     }
    ],
